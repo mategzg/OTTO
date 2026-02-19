@@ -1,0 +1,42 @@
+{
+  "approved_quarantine_ids": [],
+  "quarantine_moves": [
+    {
+      "at": "2026-02-18T02:05:24.494980+00:00",
+      "candidate_id": "ad2a829bad",
+      "from": "C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+      "to": "vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad"
+    },
+    {
+      "at": "2026-02-18T02:58:57.180189+00:00",
+      "bucket": "bad_path_roots",
+      "candidate_id": "3f10fde9d9",
+      "from": "/home/agente/.openclaw/workspace/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+      "to": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9"
+    },
+    {
+      "at": "2026-02-18T02:59:12.589233+00:00",
+      "bucket": "bad_path_roots",
+      "candidate_id": "5de57dc319",
+      "from": "/home/agente/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+      "to": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319"
+    },
+    {
+      "at": "2026-02-18T02:59:33.032881+00:00",
+      "bucket": "old_backups",
+      "candidate_id": "6fb9ed08bb",
+      "from": "/home/agente/_OLD_BAD_PATH_BACKUP.bak_20260212_132230",
+      "to": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb"
+    }
+  ],
+  "quarantined_ids": [
+    "3f10fde9d9",
+    "5de57dc319",
+    "6fb9ed08bb",
+    "ad2a829bad"
+  ],
+  "salvage_last_apply": "2026-02-18T02:59:57.134524+00:00",
+  "salvage_last_plan": "docs/_inbox/repo_salvage_plan_latest.json",
+  "updated_at": "2026-02-18T04:15:26.232127+00:00",
+  "version": 1
+}

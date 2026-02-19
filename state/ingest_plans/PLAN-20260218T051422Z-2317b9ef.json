@@ -1,0 +1,67 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-18T05:14:22.465181+00:00",
+  "operations": [
+    {
+      "content": "# Card: claude_inverse_engineering [1/1]\n\nid: card-external_ingest-e5c2b423c1-01\ntype: concept\ntags: ingest,external_ingest,e5c2b423c1\nsource_ref: vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/MANIFEST.json; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/README.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/2026-02-17-claude-opus-4.6.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/2026-02-17-claude-opus-4.6.md:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-code.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-code.md:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-cowork.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-cowork.md:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-opus-4.6.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-opus-4.6.md:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.ai-injections.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.ai-injections.md:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.html; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.html:Zone.Identifier; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/default-styles.md; vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/default-styles.md:Zone.Identifier\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-18\n\n## Summary\n\nSegmento 1/1 del source `claude_inverse_engineering` asimilado en `external_ingest`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/MANIFEST.json` sha=628ffba9b73a size=4683\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/README.md` sha=bf9c178dffa3 size=521\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/2026-02-17-claude-opus-4.6.md` sha=e7f56e6d393b size=238005\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/2026-02-17-claude-opus-4.6.md:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-code.md` sha=382a8b6c3f1e size=78165\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-code.md:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-cowork.md` sha=12489b476e5e size=115250\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-cowork.md:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-opus-4.6.md` sha=3735f87a7b6e size=254440\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude-opus-4.6.md:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.ai-injections.md` sha=b7c5bb3b74d5 size=10695\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.ai-injections.md:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.html` sha=6df4ee9d6ee2 size=226212\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/claude.html:Zone.Identifier` sha=9d75d085b648 size=60\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/default-styles.md` sha=a0e3bb8ed5cc size=5695\n- `vault/inbox_raw/claude_inverse_engineering/20260218T045727Z/source/default-styles.md:Zone.Identifier` sha=9d75d085b648 size=60\n",
+      "content_sha256": "67f95c61363b848eed0479a148c92b1bdcbad350ad934088a5c183d836c6f9a8",
+      "op_id": "3b56474540c3",
+      "op_type": "write",
+      "source_id": "e5c2b423c1",
+      "target_rel": "brain/cards/external_ingest/card_e5c2b423c1_01.md"
+    },
+    {
+      "content": "# Domain: external_ingest\n\n## Purpose\n\nHub ruteable para conocimiento asimilado del dominio `external_ingest`.\n\n## Use when\n\n- Existe un source pendiente recomendado para este dominio.\n- Necesitas navegar cards y nodos derivados sin leer el crudo.\n\n## Avoid when\n\n- No hay fuentes asimiladas para este dominio.\n- Necesitas acceso literal al crudo (usar vault/inbox_raw/_processed).\n\n## Routing\n\n- Entrar por este hub, luego abrir `sources/*_index.md` y cards asociadas.\n- Para operacion general OpenClaw: `brain/domains/openclaw_ops/00_INDEX.md`.\n\n## Maintenance\n\n- Actualizar por plan/apply del ingest router.\n\n## Links\n\n- `brain/domains/ingest/00_INDEX.md`\n- `brain/cards/`\n",
+      "content_sha256": "514f80f5bf94cbcf093e76f87907bff60106a509b1cb68e961db4870f908f226",
+      "op_id": "9b55d53576c0",
+      "op_type": "write",
+      "source_id": "e5c2b423c1",
+      "target_rel": "brain/domains/external_ingest/00_INDEX.md"
+    },
+    {
+      "content": "# Router: external_ingest\n\n## Purpose\n\nRuta de bajo costo para consultas del dominio asimilado.\n\n## Use when\n\n- Preguntas por contenido incorporado desde `vault/inbox_raw`.\n\n## Avoid when\n\n- Preguntas de operacion repo/hygiene (usar openclaw_ops).\n\n## Routing\n\n- Buscar primero en `sources/*_index.md`.\n- Resolver detalle en cards con `source_ref`.\n- Solo si falta detalle, abrir snapshot en `_processed`.\n\n## Maintenance\n\n- Mantener rutas compatibles con plan/apply actuales.\n\n## Links\n\n- `brain/domains/openclaw_ops/01_ROUTER.md`\n- `vault/inbox_raw/_processed/`\n",
+      "content_sha256": "70967d2d20557fa7cd8cc5eaf20056137313f33e54b83c0cef1d66b9b9c51374",
+      "op_id": "88527dd28297",
+      "op_type": "write",
+      "source_id": "e5c2b423c1",
+      "target_rel": "brain/domains/external_ingest/01_ROUTER.md"
+    },
+    {
+      "content": "# Source Router: claude_inverse_engineering\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `e5c2b423c1`\n- Domain target: `external_ingest`\n- Processed hint: `vault/inbox_raw/_processed/*_e5c2b423c1/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_e5c2b423c1_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/claude_inverse_engineering`\n",
+      "content_sha256": "93487857b20a0162cd8788046fec2ea2e6fea57c54760e7f386eb96c505a4c33",
+      "op_id": "e2ccec1e9110",
+      "op_type": "write",
+      "source_id": "e5c2b423c1",
+      "target_rel": "brain/domains/external_ingest/sources/e5c2b423c1_index.md"
+    }
+  ],
+  "plan_id": "PLAN-20260218T051422Z-2317b9ef",
+  "sources": [
+    {
+      "card_count": 1,
+      "domain": "external_ingest",
+      "inbox_rel_path": "claude_inverse_engineering",
+      "node_rel_path": "brain/domains/external_ingest/sources/e5c2b423c1_index.md",
+      "source_hash": "8603d95a77d247813a9964650c57083c2b874cbd46cc211fb9a1e527cae79ab7",
+      "source_id": "e5c2b423c1",
+      "source_name": "claude_inverse_engineering"
+    }
+  ],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 1,
+    "pending_files": 16,
+    "pending_sources": 1,
+    "pending_total_bytes": 934086,
+    "suspicious_entries": 0
+  },
+  "version": 1
+}

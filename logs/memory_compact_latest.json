@@ -1,0 +1,27 @@
+{
+  "apply": true,
+  "archive": {
+    "archive_file": "docs/_inbox/memory_inbox/_processed/20260218T164758Z_520c5e310f.ndjson",
+    "manifest": "docs/_inbox/memory_inbox/_processed/20260218T164758Z_520c5e310f_MANIFEST.json"
+  },
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-18T16:47:58.734531+00:00",
+  "errors": [],
+  "high_impact_keys": [],
+  "invalid_entries": [],
+  "status": "success",
+  "summary": {
+    "best_known_active": 1,
+    "existing_records": 0,
+    "final_records": 1,
+    "incoming_deduped": 1,
+    "incoming_duplicates": 0,
+    "incoming_invalid": 0,
+    "incoming_total": 1,
+    "incoming_valid": 1
+  },
+  "version": 1,
+  "written_streams": [
+    "memory/06_TIMELINE.ndjson"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "authority": {
+    "canon": "CEO.md",
+    "context_map": "openclaw/CONTEXT_MAP.md",
+    "hubs": [
+      "INDEX.md",
+      "openclaw/00_INDEX.md",
+      "brain/00_INDEX.md"
+    ],
+    "wrappers": [
+      "SOUL.md",
+      "AGENTS.md",
+      "CLAUDE.md"
+    ]
+  },
+  "found_context_files": [
+    "SOUL.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CEO.md",
+    "TOOLS.md",
+    "USER.md",
+    "IDENTITY.md",
+    "HEARTBEAT.md",
+    "INDEX.md",
+    "BOOTSTRAP.md",
+    "openclaw/00_INDEX.md",
+    "openclaw/CONTEXT_MAP.md",
+    "brain/00_INDEX.md"
+  ],
+  "gates_detected": {
+    "doctor_canon": false,
+    "git_preflight": false,
+    "pytest": true,
+    "release_policy": false
+  },
+  "links_verified": {
+    "agents_points_to_ceo": true,
+    "agents_points_to_index": true,
+    "brain_points_to_context_map": true,
+    "claude_points_to_ceo": true,
+    "claude_points_to_index": true,
+    "index_points_to_context_map": true,
+    "openclaw_points_to_context_map": true,
+    "soul_points_to_index": true
+  },
+  "read_orders": {
+    "claude": [
+      "CLAUDE.md",
+      "CEO.md",
+      "INDEX.md",
+      "brain/00_INDEX.md",
+      "openclaw/CONTEXT_MAP.md"
+    ],
+    "codex": [
+      "AGENTS.md",
+      "CEO.md",
+      "INDEX.md",
+      "brain/00_INDEX.md",
+      "openclaw/CONTEXT_MAP.md"
+    ],
+    "otto": [
+      "SOUL.md",
+      "INDEX.md",
+      "brain/00_INDEX.md",
+      "openclaw/00_INDEX.md",
+      "openclaw/CONTEXT_MAP.md"
+    ]
+  },
+  "vault_raw_ignored": true,
+  "version": 1
+}

@@ -1,0 +1,75 @@
+{
+  "actions": {
+    "drop": {
+      "status": "skipped"
+    },
+    "intent": {
+      "confidence": "low",
+      "label_scores": {
+        "chat_normal": 1,
+        "contains_attachment": 0,
+        "contains_corpus": 0,
+        "memory_worthy": 0,
+        "requires_worker_auth": 0,
+        "sg_worthy": 0
+      },
+      "labels": [
+        "chat_normal"
+      ],
+      "primary_intent": "chat_normal",
+      "signals": [],
+      "stats": {
+        "attachment_count": 0,
+        "char_count": 17,
+        "line_count": 1,
+        "token_count": 2
+      }
+    },
+    "memory_capture": {
+      "status": "skipped_outbound"
+    },
+    "owner_reply": {},
+    "session": {
+      "canonical_root": "/home/agente/otto-workspace",
+      "event_id": "evt_b19903dba14a50",
+      "paths": {
+        "meta": "state/sessions/sid_4b82f001472b861a/meta.json",
+        "rolling": "state/sessions/sid_4b82f001472b861a/rolling.ndjson"
+      },
+      "session_id": "sid_4b82f001472b861a",
+      "status": "ok",
+      "tier": "discord_thread"
+    },
+    "sg_evaluation": {},
+    "sg_promotion": {},
+    "worker_pairing": {}
+  },
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-18T23:41:16.174622+00:00",
+  "discord_domain": {
+    "channel_id": "conv-seq017",
+    "channel_name": "#Finanzas",
+    "domain_slug": "finanzas",
+    "mapping_path": "state/discord_domains.json",
+    "updated": true
+  },
+  "event": {
+    "account_id": "acc-main",
+    "action": "sent",
+    "channel": "discord",
+    "channel_id": "conv-seq017",
+    "channel_name": "#Finanzas",
+    "conversation_id": "conv-seq017",
+    "domain_slug": "finanzas",
+    "message_id": "msg-s-017",
+    "peer_id": "conv-seq017",
+    "thread_id": "thread-seq017"
+  },
+  "labels": [
+    "chat_normal"
+  ],
+  "primary_intent": "chat_normal",
+  "session_id": "sid_4b82f001472b861a",
+  "status": "success",
+  "version": 1
+}

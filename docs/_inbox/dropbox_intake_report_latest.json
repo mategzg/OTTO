@@ -1,0 +1,30 @@
+{
+  "apply": {
+    "ingested": [
+      {
+        "hints": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T133432Z_6c8e0dd191/original/legacy_recovery",
+        "source_id": "6c8e0dd191",
+        "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191",
+        "suspected_kind": "html_bundle"
+      }
+    ],
+    "ingested_count": 1,
+    "max_entries": 2
+  },
+  "candidates": [],
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.468069+00:00",
+  "pending_root": "vault/inbox_raw/_pending_drop",
+  "sources_root": "vault/inbox_raw/sources",
+  "state_path": "state/intake_state.json",
+  "summary": {
+    "duplicate_count": 0,
+    "new_count": 0,
+    "pending_count": 0,
+    "pending_total_bytes": 0,
+    "pending_total_files": 0
+  },
+  "version": 1
+}

@@ -1,0 +1,91 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:18:16.938609+00:00",
+  "operations": [
+    {
+      "content": "# Card: 20260219T131816Z_bb980d1560 [1/1]\n\nid: card-openclaw_ops-07cee8d5ea-01\ntype: concept\ntags: ingest,openclaw_ops,07cee8d5ea\nsource_ref: vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/EVENT_META.json; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/MANIFEST.json; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/README.md; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__bad_path_roots__20260218T025857Z_3f10fde9d9__BOOTSTRAP.md; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__bad_path_roots__20260218T025857Z_3f10fde9d9__README.md; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__HEARTBEAT.md; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__IDENTITY.md; vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__plans__2026-02-11-otto-hq-v1.md\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-19\n\n## Summary\n\nSegmento 1/1 del source `20260219T131816Z_bb980d1560` asimilado en `openclaw_ops`.\nCategoria de escritura: `ops_system`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/EVENT_META.json` sha=bee3caa383e1 size=1217\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/MANIFEST.json` sha=72f9992312f9 size=3189\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/README.md` sha=f5d00f06bdc6 size=279\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__bad_path_roots__20260218T025857Z_3f10fde9d9__BOOTSTRAP.md` sha=5c4cb8109916 size=1470\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__bad_path_roots__20260218T025857Z_3f10fde9d9__README.md` sha=31946c5a44f1 size=341\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__HEARTBEAT.md` sha=c8cfdc2d26f8 size=25\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__IDENTITY.md` sha=8bd4cfb57791 size=206\n- `vault/inbox_raw/sources/20260219T131816Z_bb980d1560/source/legacy_recovery/20260219T131816Z_a92d1c21631f/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__plans__2026-02-11-otto-hq-v1.md` sha=aa49c3a62fd6 size=889\n",
+      "content_sha256": "e8e69eedb22a311517e63230c96a080f2012ac4a873de3b72a0878a50ed4bf4c",
+      "op_category": "ops_system",
+      "op_id": "b62614e0e26c",
+      "op_type": "write",
+      "source_id": "07cee8d5ea",
+      "target_rel": "brain/cards/openclaw_ops/card_07cee8d5ea_01.md"
+    },
+    {
+      "content": "# Source Router: 20260219T131816Z_bb980d1560\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `07cee8d5ea`\n- Domain target: `openclaw_ops`\n- Category: `ops_system`\n- Processed hint: `vault/inbox_raw/_processed/*_07cee8d5ea/source/`\n- Cards derivadas:\n  - `brain/cards/openclaw_ops/card_07cee8d5ea_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/sources/20260219T131816Z_bb980d1560`\n",
+      "content_sha256": "e29b44fa064be4e922670a129416f805f6eb06fffa7182b498d86b681bb07214",
+      "op_category": "ops_system",
+      "op_id": "3a293f04f143",
+      "op_type": "write",
+      "source_id": "07cee8d5ea",
+      "target_rel": "brain/domains/openclaw_ops/sources/07cee8d5ea_index.md"
+    }
+  ],
+  "plan_id": "PLAN-20260219T131816Z-2563f77c",
+  "routing_decisions": [
+    {
+      "category": "ops_system",
+      "destinations": [
+        {
+          "kind": "brain_domain",
+          "path": "brain/domains/openclaw_ops"
+        },
+        {
+          "kind": "brain_cards",
+          "path": "brain/cards/openclaw_ops"
+        },
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "openclaw_ops",
+      "reason": "category=ops_system via rule=ops_by_keywords",
+      "reserved_files": [],
+      "rule_id": "ops_by_keywords",
+      "source_id": "07cee8d5ea",
+      "source_name": "20260219T131816Z_bb980d1560"
+    }
+  ],
+  "routing_summary": {
+    "ops_system": 1
+  },
+  "sources": [
+    {
+      "card_count": 1,
+      "category": "ops_system",
+      "domain": "openclaw_ops",
+      "inbox_rel_path": "sources/20260219T131816Z_bb980d1560",
+      "node_rel_path": "brain/domains/openclaw_ops/sources/07cee8d5ea_index.md",
+      "source_hash": "a7fc53701e10357a50f637d18d3fe4399655f5c1a80f5f4f66dd5db220b3e7aa",
+      "source_id": "07cee8d5ea",
+      "source_name": "20260219T131816Z_bb980d1560"
+    }
+  ],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 1,
+    "pending_files": 8,
+    "pending_sources": 1,
+    "pending_total_bytes": 7616,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 1,
+    "pending_files": 8,
+    "pending_sources": 1,
+    "pending_total_bytes": 7616,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

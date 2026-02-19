@@ -1,0 +1,11 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "channel": "telegram_owner",
+  "created_at": "2026-02-18T23:21:14.252396+00:00",
+  "dry_run": false,
+  "fallback_outbox": "docs/_inbox/outbox_latest.md",
+  "message_preview": "Aprobaciones procesadas.\napproved=1\nrejected=0\npending=0",
+  "reason": "missing_telegram_credentials",
+  "sent": false,
+  "version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "channel_id": "conv-seq017",
+  "channel_name_last_seen": "#Finanzas",
+  "compaction_count": 0,
+  "created_at": "2026-02-18T23:41:16.101583+00:00",
+  "distill_count": 0,
+  "domain_slug": "finanzas",
+  "event_count_total": 2,
+  "identity": {
+    "account_id": "acc-main",
+    "agent_id": "otto",
+    "channel": "discord",
+    "channel_id": "conv-seq017",
+    "chat_type": "thread",
+    "peer_id": "conv-seq017",
+    "thread_id": "thread-seq017"
+  },
+  "last_activity": "2026-02-18T23:00:03Z",
+  "last_compact_at": "",
+  "last_distilled_activity": "",
+  "last_distilled_at": "",
+  "recommended_domain": "finanzas",
+  "rolling_chars": 33,
+  "rolling_events": 2,
+  "session_id": "sid_4b82f001472b861a",
+  "session_key": "rtm:v1:otto|discord|acc-main|thread|conv-seq017|conv-seq017|thread-seq017",
+  "tier": "discord_thread"
+}

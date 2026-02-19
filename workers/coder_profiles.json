@@ -1,0 +1,20 @@
+{
+  "default_profile": "manual",
+  "profiles": {
+    "claude": {
+      "args": [],
+      "cmd": "claude",
+      "timeout_sec": 300
+    },
+    "codex": {
+      "args": [],
+      "cmd": "codex",
+      "timeout_sec": 300
+    },
+    "manual": {
+      "args": [],
+      "cmd": "",
+      "timeout_sec": 90
+    }
+  }
+}

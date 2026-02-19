@@ -1,0 +1,30 @@
+# Autonomy Latest
+
+- Root: `/home/agente/otto-workspace`
+- Status: `success`
+- Pending sources(total): 1
+- Pending selected this tick: 1
+- Last plan id: `PLAN-20260219T133432Z-bbd1aa21`
+- Last apply status: `success`
+- Processed ids: `23cfd0ef81`
+- Heartbeat pending_drop: 0
+- Heartbeat sources_pending: 1
+- Heartbeat slices_processed: 0
+- Runtime compactions: 0
+- Runtime distills: 0
+- Runtime approvals pending: 0
+- Runtime approvals delivery sent: `False`
+- Runtime approvals delivery reason: `no_new_items`
+- SG pending approval: 0
+- Outbox queued: 0
+- Outbox delivered(last run): 0
+- Outbox failed(last run): 0
+- Memory pending: 0
+- Memory compact status: `idle`
+- Memory index status: `idle`
+- Surface drift count: 0
+- Surface drift grave count: 0
+- Consecutive failures: 0
+- Paused until: ``
+- JSON report: `docs/_inbox/autonomy_latest.json`
+- Log report: `logs/autonomy_latest.json`

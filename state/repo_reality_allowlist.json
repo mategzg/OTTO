@@ -1,0 +1,24 @@
+{
+  "kept_ids": [
+    "1bbe07ce80",
+    "27f7f952d9",
+    "3d5acd40a1",
+    "6e0e1eba62",
+    "73f6c1fc02",
+    "7825ed0f71",
+    "c16b40a7b1",
+    "d70c621560"
+  ],
+  "kept_paths": {
+    "1bbe07ce80": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+    "27f7f952d9": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+    "3d5acd40a1": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+    "6e0e1eba62": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+    "73f6c1fc02": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+    "7825ed0f71": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+    "c16b40a7b1": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+    "d70c621560": "/home/agente/.openclaw/workspace"
+  },
+  "updated_at": "2026-02-18T04:17:05.981781+00:00",
+  "version": 1
+}

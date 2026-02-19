@@ -1,0 +1,24 @@
+{
+  "compaction_count": 0,
+  "created_at": "2026-02-18T23:03:15.871324+00:00",
+  "distill_count": 0,
+  "event_count_total": 2,
+  "identity": {
+    "account_id": "_",
+    "agent_id": "otto",
+    "channel": "telegram",
+    "channel_id": "_",
+    "chat_type": "dm",
+    "peer_id": "mateo",
+    "thread_id": "_"
+  },
+  "last_activity": "2026-02-18T23:21:14.244506+00:00",
+  "last_compact_at": "",
+  "last_distilled_activity": "",
+  "last_distilled_at": "",
+  "rolling_chars": 20,
+  "rolling_events": 2,
+  "session_id": "sid_8a09ea9204ae51e6",
+  "session_key": "rtm:v1:otto|telegram|_|dm|mateo|_|_",
+  "tier": "telegram_owner"
+}

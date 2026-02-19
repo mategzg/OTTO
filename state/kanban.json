@@ -1,0 +1,32 @@
+{
+  "archive": [
+    {
+      "created_at": "2026-02-11T22:30:02Z",
+      "detail": "Validar logger",
+      "id": "task-20260211223002-a696e70f",
+      "priority": "normal",
+      "title": "Sanity log",
+      "updated_at": "2026-02-11T22:30:02Z"
+    }
+  ],
+  "done": [
+    {
+      "created_at": "2026-02-11T21:58:23Z",
+      "detail": "Crear tarea y moverla entre columnas",
+      "id": "task-20260211215823-f62b4161",
+      "priority": "high",
+      "title": "Validar flujo HQ",
+      "updated_at": "2026-02-11T21:58:23Z"
+    },
+    {
+      "created_at": "2026-02-11T22:29:43Z",
+      "detail": "Integracion HQ OpenClaw",
+      "id": "task-20260211222943-20487fe7",
+      "priority": "high",
+      "title": "Mision V2 demo",
+      "updated_at": "2026-02-11T22:29:43Z"
+    }
+  ],
+  "in_progress": [],
+  "todo": []
+}

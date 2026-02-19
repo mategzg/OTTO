@@ -1,0 +1,21 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "config_exists": true,
+  "created_at": "2026-02-19T00:30:28.757443+00:00",
+  "current_dm_scope": "",
+  "inspected_config_path": "/home/agente/.openclaw/openclaw.json",
+  "needs_change": true,
+  "note": "No se aplicaron cambios automaticamente.",
+  "paths": {
+    "json": "docs/_inbox/openclaw_config_patch_latest.json",
+    "log": "logs/openclaw_config_patch_latest.json",
+    "markdown": "docs/_inbox/openclaw_config_patch_latest.md"
+  },
+  "recommended_patch": {
+    "sessions": {
+      "dmScope": "per-account-channel-peer"
+    }
+  },
+  "status": "report_only",
+  "version": 1
+}

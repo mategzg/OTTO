@@ -1,0 +1,1 @@
+{"as_of": "2026-02-18T16:47:56.314735+00:00", "best_known": true, "captured_at": "2026-02-18T16:47:56.314735+00:00", "confidence": "medium", "fact": "test", "id": "memin-ca010263af49", "key": "profile:test", "notes": "test", "source_ref": "manual:2026-02-18T16:47:56.314735+00:00", "status": "active", "supersedes": [], "tags": [], "type": "profile_fact"}

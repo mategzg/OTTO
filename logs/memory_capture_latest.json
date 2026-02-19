@@ -1,0 +1,22 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "captured_at": "2026-02-18T16:47:56.315006+00:00",
+  "inbox_path": "docs/_inbox/memory_inbox.ndjson",
+  "record": {
+    "as_of": "2026-02-18T16:47:56.314735+00:00",
+    "best_known": false,
+    "captured_at": "2026-02-18T16:47:56.314735+00:00",
+    "confidence": "medium",
+    "fact": "test",
+    "id": "memin-ca010263af49",
+    "key": "profile:test",
+    "notes": "test",
+    "source_ref": "manual:2026-02-18T16:47:56.314735+00:00",
+    "status": "pending",
+    "supersedes": [],
+    "tags": [],
+    "type": "profile_fact"
+  },
+  "status": "ok",
+  "version": 1
+}

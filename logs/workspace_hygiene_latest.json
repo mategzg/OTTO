@@ -1,0 +1,424 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "clean_candidates": [],
+  "created_at": "2026-02-19T04:25:47.825531+00:00",
+  "entries": [
+    {
+      "candidate_id": "d33fea5888",
+      "classification": "tooling",
+      "kind": "dir",
+      "reason": "tooling_dir",
+      "rel_path": ".claude",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "f0bc64786a",
+      "classification": "tooling",
+      "kind": "dir",
+      "reason": "protected_prefix",
+      "rel_path": ".git",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "e8e1ee80b1",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": ".gitignore",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "c2e8c2b8fa",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": ".openclaw",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "6b8b887c4c",
+      "classification": "tooling",
+      "kind": "dir",
+      "reason": "tooling_dir",
+      "rel_path": ".pytest_cache",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "0718ecca91",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "AGENTS.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "2cf1a79c60",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "BOOT.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "170803ce6d",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "BOOTSTRAP.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "389956a73f",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "CEO.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "7c7c25484d",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "CLAUDE.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "40f9cd101f",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "COMMAND_LOGGER.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "3686d933bc",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "HEARTBEAT.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "cc845d0d6d",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "IDENTITY.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "34cc8f3a31",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "INDEX.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "e78f0779c1",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "PROJECT_BRIEF.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "4a28337e4c",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "README.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "812f72a22f",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "REPO_MAP.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "0cfabb55ae",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "SESSION_MEMORY.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "0786457799",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "SOUL.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "448a4afd4c",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "TOOLS.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "c01884ffe2",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "USER.md",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "03d5164c09",
+      "classification": "tooling",
+      "kind": "dir",
+      "reason": "tooling_dir",
+      "rel_path": "__pycache__",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "9a71ac7b63",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "brain",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "6fa15f46e7",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "copilots",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "bf500f988f",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "dashboard",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "ca2e0390a3",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "dashboard_server.py",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "162c2df342",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "docs",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "1a1d352566",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "hooks",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "e395cce2fe",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "hq_logging.py",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "7f26c540c1",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "index_docs.py",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "17a8888b47",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "logs",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "b49c1a096a",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "memory",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "01f745ae7c",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "openclaw",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "ecdb54f521",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "ops",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "9ecacf385f",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "otto_state.py",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "3044e5ed00",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "plans",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "05c7532cc8",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "pytest.ini",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "77622094b3",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "repo_map",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "f5359a3620",
+      "classification": "canon",
+      "kind": "file",
+      "reason": "allowlist_root_file",
+      "rel_path": "requirements.txt",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "9f0acf616b",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "scripts",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "e07f1d92ba",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "state",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "845b07c7ba",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "templates",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "1f63168c7a",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "tests",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "4d5e34d4fe",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "vault",
+      "safe_to_move": false,
+      "scope": "root"
+    },
+    {
+      "candidate_id": "9e559ef5d2",
+      "classification": "canon",
+      "kind": "dir",
+      "reason": "allowlist_root_dir",
+      "rel_path": "workers",
+      "safe_to_move": false,
+      "scope": "root"
+    }
+  ],
+  "policy": {
+    "path": "state/workspace_hygiene_policy.json",
+    "version": 1
+  },
+  "summary": {
+    "candidate_count": 0,
+    "canon_count": 41,
+    "junk_count": 0,
+    "sensitive_count": 0,
+    "tooling_count": 4
+  },
+  "version": 1
+}

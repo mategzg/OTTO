@@ -1,0 +1,8 @@
+# Memory Index Report
+
+- Record count: 1
+- Token count: 3
+- Parse errors: 0
+- Index path: `state/memory_index.json`
+- JSON report: `docs/_inbox/memory_index_report_latest.json`
+- Log report: `logs/memory_index_build_latest.json`

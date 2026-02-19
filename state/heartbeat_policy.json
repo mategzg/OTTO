@@ -1,0 +1,20 @@
+{
+    "failure_backoff_minutes": 30,
+    "interval_minutes": 30,
+    "max_apply_ops_per_heartbeat": 10,
+    "max_compactions_per_tick": 8,
+    "max_consecutive_failures_before_pause": 3,
+    "max_distill_per_tick": 4,
+    "max_hook_backlog_events_per_heartbeat": 25,
+    "max_hook_backlog_runtime_seconds": 20,
+    "max_outbox_chars_per_item": 4000,
+    "max_outbox_items_per_heartbeat": 20,
+    "max_runtime_seconds": 300,
+    "max_sessions_per_tick": 12,
+    "max_sources_per_heartbeat": 2,
+    "run_legacy_recovery": true,
+    "run_prod_doctor": true,
+    "run_project_docs_maintainer": true,
+    "legacy_recovery_force": false,
+    "version": 1
+}

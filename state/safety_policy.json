@@ -1,0 +1,8 @@
+{
+  "autonomy_consecutive_failures_autopause": 3,
+  "autopause_hours": 2,
+  "hook_backlog_consecutive_failures_autopause": 3,
+  "hook_backlog_pending_threshold": 300,
+  "hook_backlog_stall_ticks_autopause": 3,
+  "version": 1
+}

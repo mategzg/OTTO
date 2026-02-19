@@ -1,0 +1,11 @@
+{
+  "archive_strategy": "batch_ndjson_manifest",
+  "enabled": true,
+  "fail_open": true,
+  "max_bytes_per_backlog_file": 10000000,
+  "max_content_preview_chars": 64,
+  "max_events_per_replay_tick": 25,
+  "max_retry_attempts": 5,
+  "max_runtime_seconds": 20,
+  "version": 1
+}

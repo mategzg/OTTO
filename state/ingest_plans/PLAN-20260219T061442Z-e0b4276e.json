@@ -1,0 +1,142 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T06:14:42.634710+00:00",
+  "operations": [
+    {
+      "content": "# Card: 20260219T061442Z_dcfe08f56e [1/1]\n\nid: card-external_ingest-1fcad4e7d3-01\ntype: concept\ntags: ingest,external_ingest,1fcad4e7d3\nsource_ref: vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/EVENT_META.json; vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/MANIFEST.json; vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/README.md; vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__SESSION_MEMORY.md; vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__ROUTER.md; vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__index.md\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-19\n\n## Summary\n\nSegmento 1/1 del source `20260219T061442Z_dcfe08f56e` asimilado en `external_ingest`.\nCategoria de escritura: `brain_knowledge`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/EVENT_META.json` sha=73abaf700833 size=869\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/MANIFEST.json` sha=d5243c73a7ef size=2001\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/README.md` sha=ee8677eb30c9 size=279\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__SESSION_MEMORY.md` sha=7bf3f74fb3ee size=344\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__ROUTER.md` sha=2da08a8af95c size=1416\n- `vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e/source/legacy_recovery/20260219T052121Z_ee45652290d5/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__index.md` sha=ab4d64edcc6a size=726\n",
+      "content_sha256": "c9959bc8855fa0cc1c8e9e0366f5308eef685ea3b48370c6b46e5dfec4d2e0b7",
+      "op_category": "brain_knowledge",
+      "op_id": "48d4695aff75",
+      "op_type": "write",
+      "source_id": "1fcad4e7d3",
+      "target_rel": "brain/cards/external_ingest/card_1fcad4e7d3_01.md"
+    },
+    {
+      "content": "# Card: processed [1/1]\n\nid: card-external_ingest-6ce6d9bfc2-01\ntype: concept\ntags: ingest,external_ingest,6ce6d9bfc2\nsource_ref: vault/inbox_raw/processed/2026-02-19_openclaw_operators_manual_win11_wsl2.md\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-19\n\n## Summary\n\nSegmento 1/1 del source `processed` asimilado en `external_ingest`.\nCategoria de escritura: `brain_knowledge`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/processed/2026-02-19_openclaw_operators_manual_win11_wsl2.md` sha=3617dfcc607b size=60195\n",
+      "content_sha256": "f2592ac0865dce698a3716ca9a293de62f195f703fed104d0899919fabc7f25b",
+      "op_category": "brain_knowledge",
+      "op_id": "8bd794ac7cb6",
+      "op_type": "write",
+      "source_id": "6ce6d9bfc2",
+      "target_rel": "brain/cards/external_ingest/card_6ce6d9bfc2_01.md"
+    },
+    {
+      "content": "# Source Router: 20260219T061442Z_dcfe08f56e\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `1fcad4e7d3`\n- Domain target: `external_ingest`\n- Category: `brain_knowledge`\n- Processed hint: `vault/inbox_raw/_processed/*_1fcad4e7d3/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_1fcad4e7d3_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e`\n",
+      "content_sha256": "e27893e520ce6e743c4283842a54cd12a14e8d603529adfdd02f0542a83a3394",
+      "op_category": "brain_knowledge",
+      "op_id": "8b439dacd653",
+      "op_type": "write",
+      "source_id": "1fcad4e7d3",
+      "target_rel": "brain/domains/external_ingest/sources/1fcad4e7d3_index.md"
+    },
+    {
+      "content": "# Source Router: processed\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `6ce6d9bfc2`\n- Domain target: `external_ingest`\n- Category: `brain_knowledge`\n- Processed hint: `vault/inbox_raw/_processed/*_6ce6d9bfc2/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_6ce6d9bfc2_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/processed`\n",
+      "content_sha256": "676c519ce655d5487753df3c3475f924bfd783c86c84aa54bac221c6359b4b80",
+      "op_category": "brain_knowledge",
+      "op_id": "622aa52cf733",
+      "op_type": "write",
+      "source_id": "6ce6d9bfc2",
+      "target_rel": "brain/domains/external_ingest/sources/6ce6d9bfc2_index.md"
+    }
+  ],
+  "plan_id": "PLAN-20260219T061442Z-e0b4276e",
+  "routing_decisions": [
+    {
+      "category": "brain_knowledge",
+      "destinations": [
+        {
+          "kind": "brain_domain",
+          "path": "brain/domains/external_ingest"
+        },
+        {
+          "kind": "brain_cards",
+          "path": "brain/cards/external_ingest"
+        },
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "category=brain_knowledge via rule=default_brain_knowledge",
+      "reserved_files": [],
+      "rule_id": "default_brain_knowledge",
+      "source_id": "1fcad4e7d3",
+      "source_name": "20260219T061442Z_dcfe08f56e"
+    },
+    {
+      "category": "brain_knowledge",
+      "destinations": [
+        {
+          "kind": "brain_domain",
+          "path": "brain/domains/external_ingest"
+        },
+        {
+          "kind": "brain_cards",
+          "path": "brain/cards/external_ingest"
+        },
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "category=brain_knowledge via rule=default_brain_knowledge",
+      "reserved_files": [],
+      "rule_id": "default_brain_knowledge",
+      "source_id": "6ce6d9bfc2",
+      "source_name": "processed"
+    }
+  ],
+  "routing_summary": {
+    "brain_knowledge": 2
+  },
+  "sources": [
+    {
+      "card_count": 1,
+      "category": "brain_knowledge",
+      "domain": "external_ingest",
+      "inbox_rel_path": "processed",
+      "node_rel_path": "brain/domains/external_ingest/sources/6ce6d9bfc2_index.md",
+      "source_hash": "772323ca62071990a9d1e687f6ceb17c22a1bb8ff4ab5e6ae0c03413ad4ed784",
+      "source_id": "6ce6d9bfc2",
+      "source_name": "processed"
+    },
+    {
+      "card_count": 1,
+      "category": "brain_knowledge",
+      "domain": "external_ingest",
+      "inbox_rel_path": "sources/20260219T061442Z_dcfe08f56e",
+      "node_rel_path": "brain/domains/external_ingest/sources/1fcad4e7d3_index.md",
+      "source_hash": "1d268b367b02de870db2ed7b17ef6525d668ca6a8b6709912f2a426d2bab7620",
+      "source_id": "1fcad4e7d3",
+      "source_name": "20260219T061442Z_dcfe08f56e"
+    }
+  ],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 2,
+    "pending_files": 7,
+    "pending_sources": 2,
+    "pending_total_bytes": 65830,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 2,
+    "pending_files": 7,
+    "pending_sources": 2,
+    "pending_total_bytes": 65830,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

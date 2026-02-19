@@ -1,0 +1,28 @@
+{
+  "channel_id": "discord-fin-1",
+  "channel_name_last_seen": "#Finanzas",
+  "compaction_count": 0,
+  "created_at": "2026-02-18T23:21:14.088039+00:00",
+  "distill_count": 0,
+  "domain_slug": "finanzas",
+  "event_count_total": 1,
+  "identity": {
+    "account_id": "acc-main",
+    "agent_id": "otto",
+    "channel": "discord",
+    "channel_id": "discord-fin-1",
+    "chat_type": "channel",
+    "peer_id": "u-fin-real",
+    "thread_id": "thread-016"
+  },
+  "last_activity": "2026-02-18T23:21:14.085363+00:00",
+  "last_compact_at": "",
+  "last_distilled_activity": "",
+  "last_distilled_at": "",
+  "recommended_domain": "finanzas",
+  "rolling_chars": 15,
+  "rolling_events": 1,
+  "session_id": "sid_71d131da5fef3ded",
+  "session_key": "rtm:v1:otto|discord|acc-main|channel|u-fin-real|discord-fin-1|thread-016",
+  "tier": "discord_thread"
+}

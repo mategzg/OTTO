@@ -1,0 +1,27 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.561032+00:00",
+  "delivery": {
+    "channel": "telegram_owner",
+    "fallback_outbox": "",
+    "reason": "no_new_items",
+    "sent": false
+  },
+  "paths": {
+    "queue": "docs/_inbox/approvals_queue.ndjson",
+    "state": "state/approvals_state.json",
+    "worker_pairings": "state/sg_worker_pairings.json"
+  },
+  "status": "ok",
+  "summary": {
+    "pending_count": 0,
+    "pending_sg_promotion": 0,
+    "pending_worker_pairing": 0,
+    "total_count": 2
+  },
+  "sync": {
+    "enqueued": 0,
+    "skipped": 0
+  },
+  "version": 1
+}

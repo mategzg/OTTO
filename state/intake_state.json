@@ -1,0 +1,50 @@
+{
+  "duplicate_count_total": 0,
+  "ingested_count_total": 3,
+  "last_run_utc": "2026-02-19T13:34:32.473768+00:00",
+  "last_status": "success",
+  "seen_fingerprints": {
+    "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
+      "ingested_at": "2026-02-19T06:14:42.554035+00:00",
+      "source_id": "dcfe08f56e",
+      "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e"
+    },
+    "5cb799bfda0ce6de33547faa91281131daccd00fc9a8157500de165de7233590": {
+      "ingested_at": "2026-02-19T13:34:32.466350+00:00",
+      "source_id": "6c8e0dd191",
+      "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191"
+    },
+    "b1bf45b84f802f0fd71bb794f75aa9fe3a5a5579aa6e34f1f3613472f21d1291": {
+      "ingested_at": "2026-02-19T13:18:16.856368+00:00",
+      "source_id": "bb980d1560",
+      "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
+    }
+  },
+  "sources": {
+    "6c8e0dd191": {
+      "ingested_at": "2026-02-19T13:34:32.466557+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-19T13:34:32.473762+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T133432Z_6c8e0dd191/original/legacy_recovery",
+      "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191",
+      "suspected_kind": "generic_corpus"
+    },
+    "bb980d1560": {
+      "ingested_at": "2026-02-19T13:18:16.856577+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-19T13:18:16.863682+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T131816Z_bb980d1560/original/legacy_recovery",
+      "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560",
+      "suspected_kind": "generic_corpus"
+    },
+    "dcfe08f56e": {
+      "ingested_at": "2026-02-19T06:14:42.554245+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-19T06:14:42.560829+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T061442Z_dcfe08f56e/original/legacy_recovery",
+      "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e",
+      "suspected_kind": "generic_corpus"
+    }
+  },
+  "version": 1
+}

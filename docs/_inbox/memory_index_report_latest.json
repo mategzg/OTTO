@@ -1,0 +1,37 @@
+{
+  "inverted": {
+    "profile": [
+      "memin-ca010263af49"
+    ],
+    "profile_fact": [
+      "memin-ca010263af49"
+    ],
+    "test": [
+      "memin-ca010263af49"
+    ]
+  },
+  "parse_errors": [],
+  "records": {
+    "memin-ca010263af49": {
+      "best_known": true,
+      "captured_at": "2026-02-18T16:47:56.314735+00:00",
+      "confidence": "medium",
+      "id": "memin-ca010263af49",
+      "key": "profile:test",
+      "short_text": "test | test",
+      "source_ref": "manual:2026-02-18T16:47:56.314735+00:00",
+      "status": "active",
+      "stream": "memory/06_TIMELINE.ndjson",
+      "tags": [],
+      "type": "profile_fact"
+    }
+  },
+  "schema_version": 1,
+  "summary": {
+    "parse_error_count": 0,
+    "record_count": 1,
+    "token_count": 3
+  },
+  "updated_at": "2026-02-18T16:48:02.400008+00:00",
+  "version": 1
+}

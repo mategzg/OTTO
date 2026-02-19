@@ -1,0 +1,82 @@
+{
+  "apply_status": "success",
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.501359+00:00",
+  "errors": [],
+  "heartbeat_context": {
+    "ingested_count": 0,
+    "normalized_count": 0,
+    "note": "",
+    "pending_drop_count": 0,
+    "slices_processed_count": 0,
+    "sources_pending_count": 1
+  },
+  "memory": {
+    "compact_status": "idle",
+    "index_status": "idle",
+    "paths": {},
+    "pending_inbox": 0
+  },
+  "pending_selected_sources": 1,
+  "pending_total_sources": 1,
+  "plan_id": "PLAN-20260219T133432Z-bbd1aa21",
+  "processed_ids": [
+    "23cfd0ef81"
+  ],
+  "runtime_context": {
+    "approvals_delivery_reason": "no_new_items",
+    "approvals_delivery_sent": false,
+    "approvals_pending": 0,
+    "approvals_report": "docs/_inbox/approvals_report_latest.json",
+    "compactions_done": 0,
+    "distills_done": 0,
+    "outbox_delivered": 0,
+    "outbox_failed": 0,
+    "outbox_queued": 0,
+    "runtime_report": "docs/_inbox/runtime_report_latest.json",
+    "safety_paused": false,
+    "safety_reason": "",
+    "sessions_scanned": 5,
+    "sg_pending_approval": 0,
+    "sg_promoted_auto": 0,
+    "sg_promotion_report": "docs/_inbox/sg_promotion_report_latest.json"
+  },
+  "state": {
+    "auto_paused_reason": "",
+    "backoff_until_utc": "",
+    "consecutive_failures": 0,
+    "heartbeat_last_report": "docs/_inbox/heartbeat_latest.json",
+    "heartbeat_last_run_utc": "2026-02-19T13:18:16.681905+00:00",
+    "heartbeat_last_status": "success",
+    "last_error": "",
+    "last_plan_id": "PLAN-20260219T133432Z-bbd1aa21",
+    "last_processed_ids": [
+      "23cfd0ef81"
+    ],
+    "last_run_utc": "2026-02-19T13:34:32.501359+00:00",
+    "last_status": "success",
+    "paused_until_utc": ""
+  },
+  "status": "success",
+  "surface_scan": {
+    "fix_actions": [],
+    "paths": {
+      "json": "docs/_inbox/instruction_surface_report_latest.json",
+      "log": "logs/instruction_surface_latest.json",
+      "markdown": "docs/_inbox/instruction_surface_report_latest.md"
+    },
+    "summary": {
+      "allowed_count": 3,
+      "drift_count": 0,
+      "drift_grave_count": 0,
+      "needs_user_count": 0,
+      "reserved_found": 3
+    }
+  },
+  "triage_paths": {
+    "json": "docs/_inbox/corpus_triage_latest.json",
+    "log": "logs/corpus_triage_latest.json",
+    "markdown": "docs/_inbox/corpus_triage_latest.md"
+  },
+  "version": 1
+}

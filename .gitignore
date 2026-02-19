@@ -1,0 +1,53 @@
+# Raw exports are never committed
+vault/chatgpt_export_raw/
+vault/chatgpt_export_raw/**
+vault/**/raw/
+vault/**/raw/**
+vault/inbox_raw/
+vault/inbox_raw/**
+vault/inbox_raw/_pending_drop/
+vault/inbox_raw/_pending_drop/**
+vault/inbox_raw/_processed/
+vault/inbox_raw/_processed/**
+
+# Salvage and quarantine are never committed
+vault/_salvage/
+vault/_salvage/**
+vault/_quarantine/
+vault/_quarantine/**
+
+# Legacy bad backup roots are never committed
+_OLD_BAD_PATH_BACKUP*
+
+# Common local caches/build artifacts
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+dist/
+build/
+
+# Tooling directories
+.vscode/
+.idea/
+.claude/
+.codex/
+hooks/**/node_modules/
+hooks/**/dist/
+hooks/**/.cache/
+
+# Local instruction overrides
+CLAUDE.local.md
+
+# Sensitive filename guardrails
+*API*KEY*
+*api*key*
+*TOKEN*
+*token*
+*SECRET*
+*secret*
+*PASSWORD*
+*password*
+*CREDENTIAL*
+*credential*

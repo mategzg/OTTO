@@ -1,0 +1,26 @@
+{
+  "canonical_root": "/home/agente/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+  "paths": {
+    "json": "docs/_inbox/repo_reality_report_latest.json",
+    "log": "logs/repo_reality_doctor_latest.json",
+    "markdown": "docs/_inbox/repo_reality_report_latest.md"
+  },
+  "root_drift": false,
+  "status": "ok",
+  "summary": {
+    "candidate_count": 0,
+    "kept_count": 0,
+    "needs_user_count": 0,
+    "nested_git_count": 0,
+    "pending_count": 0,
+    "quarantined_count": 0,
+    "safe_to_move_count": 0,
+    "symlink_flag_count": 0,
+    "tracked_risk_count": 0
+  },
+  "telegram": {
+    "ok": false,
+    "reason": "not_needed",
+    "sent": false
+  }
+}

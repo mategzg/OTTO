@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "record_types": [
+    "preference",
+    "project",
+    "decision",
+    "timeline",
+    "principle",
+    "profile_fact"
+  ],
+  "capture_types": [
+    "preference",
+    "project",
+    "decision",
+    "timeline",
+    "principle",
+    "profile_fact",
+    "note_raw"
+  ],
+  "required_common_fields": [
+    "id",
+    "type",
+    "key",
+    "captured_at",
+    "source_ref",
+    "confidence",
+    "best_known",
+    "status",
+    "supersedes",
+    "tags",
+    "notes"
+  ],
+  "confidence_weights": {
+    "high": 3,
+    "medium": 2,
+    "low": 1
+  },
+  "status_values": [
+    "active",
+    "superseded",
+    "archived",
+    "pending"
+  ],
+  "ndjson_streams": {
+    "preference": "memory/03_PREFERENCES.ndjson",
+    "project": "memory/04_PROJECTS.ndjson",
+    "decision": "memory/05_DECISIONS.ndjson",
+    "timeline": "memory/06_TIMELINE.ndjson",
+    "principle": "memory/06_TIMELINE.ndjson",
+    "profile_fact": "memory/06_TIMELINE.ndjson"
+  },
+  "derived_files": {
+    "profile_current": "memory/01_PROFILE_CURRENT.md",
+    "principles_current": "memory/02_PRINCIPLES_CURRENT.md"
+  },
+  "archive_root": "docs/_inbox/memory_inbox/_processed"
+}

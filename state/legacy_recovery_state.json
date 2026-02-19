@@ -1,0 +1,51 @@
+{
+  "last_batch_id": "99b9aa472aec",
+  "last_packaged_ids": [
+    "1a9c1f747e88",
+    "843bee116308",
+    "87b429445901",
+    "ebc65e189692"
+  ],
+  "last_run_utc": "2026-02-19T13:34:32.298416+00:00",
+  "last_scan_status": "ran",
+  "last_scan_ts": "2026-02-19T13:34:32.298416+00:00",
+  "last_status": "packaged",
+  "processed_batches": [
+    {
+      "batch_id": "ee45652290d5",
+      "batch_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T052121Z_ee45652290d5",
+      "created_at": "2026-02-19T05:21:21.768403+00:00",
+      "file_count": 3,
+      "source_kind": "legacy_recovery_v2"
+    },
+    {
+      "batch_id": "a92d1c21631f",
+      "batch_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T131816Z_a92d1c21631f",
+      "created_at": "2026-02-19T13:18:16.841363+00:00",
+      "file_count": 5,
+      "source_kind": "legacy_recovery_v2"
+    },
+    {
+      "batch_id": "99b9aa472aec",
+      "batch_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec",
+      "created_at": "2026-02-19T13:34:32.451096+00:00",
+      "file_count": 4,
+      "source_kind": "legacy_recovery_v2"
+    }
+  ],
+  "processed_candidate_ids": [
+    "18da186f6c38",
+    "1a9c1f747e88",
+    "1e77e2d7d162",
+    "2ee74bdef21f",
+    "521595010fe8",
+    "56025a0a825c",
+    "5e3d6787782a",
+    "64722fc2b602",
+    "843bee116308",
+    "87b429445901",
+    "e7501c3d59c9",
+    "ebc65e189692"
+  ],
+  "version": 2
+}

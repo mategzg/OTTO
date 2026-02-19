@@ -1,0 +1,18 @@
+{
+  "domains": {
+    "conv-seq017": {
+      "channel_name_last_seen": "#Finanzas",
+      "domain_slug": "finanzas",
+      "source": "inferred",
+      "updated_at": "2026-02-18T23:41:16.172625+00:00"
+    },
+    "discord-fin-1": {
+      "channel_name_last_seen": "#Finanzas",
+      "domain_slug": "finanzas",
+      "source": "inferred",
+      "updated_at": "2026-02-18T23:21:14.085876+00:00"
+    }
+  },
+  "updated_at": "2026-02-18T23:41:16.172625+00:00",
+  "version": 1
+}

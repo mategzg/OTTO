@@ -1,0 +1,100 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.571797+00:00",
+  "inbox_rel": "vault/inbox_raw",
+  "sources": [
+    {
+      "approx_language": "markdown",
+      "extensions": {
+        ".html": 1,
+        ".json": 2,
+        ".md": 4
+      },
+      "file_count": 7,
+      "files": [
+        {
+          "mtime": 1771508072.4477017,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/EVENT_META.json",
+          "sha256": "2e37938df6008596075a2d2cb017a2c89d3c661740bf0dbd7d69bf4752c118a4",
+          "size": 1052
+        },
+        {
+          "mtime": 1771508072.4477017,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/MANIFEST.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/MANIFEST.json",
+          "sha256": "a696f9e908f1e085366c0619c812dd9df55b75d6d8c937419a34b780dba47b8b",
+          "size": 2567
+        },
+        {
+          "mtime": 1771508072.4477017,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/README.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/README.md",
+          "sha256": "75a26362ebfd2dbe02515e064010d501cceec58da6cc3d20cb06e65c9f6a8fa3",
+          "size": 279
+        },
+        {
+          "mtime": 1771383552.584291,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__bad_path_roots__20260218T025912Z_5de57dc319__README.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__bad_path_roots__20260218T025912Z_5de57dc319__README.md",
+          "sha256": "39f39f82f158d79e706957507cc4fc55ef8abc0947dbde76ff31c15acf52c2c9",
+          "size": 321
+        },
+        {
+          "mtime": 1770848644.6370456,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__dashboard__index.html",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__dashboard__index.html",
+          "sha256": "64ee0cdf70befaaaeceafc2c0c2df37921dcdd3a26ba00c28aa8fa7b96edfda3",
+          "size": 3585
+        },
+        {
+          "mtime": 1770848787.9919097,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__memory.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__memory.md",
+          "sha256": "9f7486bc53fe5eb46538d6077111c9f7778657c6a1c4becab2698eb0d5bc5c37",
+          "size": 188
+        },
+        {
+          "mtime": 1770760381.6172626,
+          "rel_path": "legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___salvage__20260218T041520Z_d70c621560__staged__IDENTITY.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191/source/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___salvage__20260218T041520Z_d70c621560__staged__IDENTITY.md",
+          "sha256": "e603c9836288a0ca57000bf957e39a1c464613f0038737775c1d7a36e679a21a",
+          "size": 374
+        }
+      ],
+      "high_signal": true,
+      "inbox_rel_path": "sources/20260219T133432Z_6c8e0dd191",
+      "keywords": [
+        "event_meta",
+        "generic_corpus",
+        "html",
+        "manifest",
+        "readme",
+        "vault___quarantine__bad_path_roots__20260218t025912z_5de57dc319__readme",
+        "vault___quarantine__old_backups__20260218t025933z_6fb9ed08bb__dashboard__index",
+        "vault___quarantine__old_backups__20260218t025933z_6fb9ed08bb__docs__empresa__memory",
+        "vault___salvage__20260218t041520z_d70c621560__staged__identity"
+      ],
+      "kind": "dir",
+      "recommended_domain": "external_ingest",
+      "recommended_domain_source": "hints",
+      "source_hash": "0b89578c80f0563e7f3995a2131db956d27a59ab308b6d4f94165d28d919971d",
+      "source_id": "23cfd0ef81",
+      "source_kind": "generic_corpus",
+      "source_name": "20260219T133432Z_6c8e0dd191",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191",
+      "total_bytes": 8366
+    }
+  ],
+  "summary": {
+    "high_signal_sources": 1,
+    "pending_files": 7,
+    "pending_sources": 1,
+    "pending_total_bytes": 8366,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "suspicious_entries": [],
+  "version": 2
+}

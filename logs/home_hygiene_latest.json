@@ -1,0 +1,306 @@
+{
+  "candidates": [],
+  "canonical_root": "/home/agente/otto-workspace",
+  "clean_result": {
+    "blocked_reason": "",
+    "moved": [],
+    "moved_count": 0,
+    "status": "ok"
+  },
+  "created_at": "2026-02-18T04:44:31.507550+00:00",
+  "entries": [
+    {
+      "candidate_id": "3fa8923d77",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.Trash",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "0e43a4abe8",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.bash_history",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "e8fbe1a064",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.bash_logout",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "6c3f389ce0",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.bashrc",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "2e1f751893",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.cache",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "b4f6ba814a",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.claude",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "1f3f82fc34",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "e1e255d2cb",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json.backup.1771362143976",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "1c284ff2ba",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json.backup.1771362191460",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "cfb3d929f2",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json.backup.1771362191490",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "0511f99303",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json.backup.1771362191493",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "6f381e2d9e",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.claude.json.backup.1771362876439",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "cc9fec6e6a",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.codex",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "fbfb3ce388",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.config",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "44a1c68956",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.dotnet",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "62b66250e5",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.landscape",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "207a454965",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.lesshst",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "b1d9c424ea",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.local",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "2bfb73d9fb",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.motd_shown",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "a2202c6b55",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.npm",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "56dc537a3a",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.npm-global",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "6b390ee82d",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.npmrc",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "b71444b2c1",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.openclaw",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "6a250ce395",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.pki",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "4f74547445",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.profile",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "23beb1e2da",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.ssh",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "73007b3223",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.sudo_as_admin_successful",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "c8dbd3fc0e",
+      "classification": "tooling",
+      "kind": "dir",
+      "path": "/home/agente/.vscode-server",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "2a5d59e90e",
+      "classification": "tooling",
+      "kind": "file",
+      "path": "/home/agente/.wget-hsts",
+      "reason": "dot_dir_or_dot_file_skipped",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "203a4a7083",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/SISTEM PROMPTS DE CLAUDE PARA INVERSE ENGINEERING",
+      "reason": "not_obvious_junk",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "0491d4d7d9",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/bin",
+      "reason": "not_obvious_junk",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "dce89c2df6",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/docs",
+      "reason": "not_obvious_junk",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "a28dd503e9",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/otto-workspace",
+      "reason": "canonical_workspace",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "2aab9159fc",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/sg-openclaw",
+      "reason": "not_obvious_junk",
+      "safe_to_move": false
+    },
+    {
+      "candidate_id": "9ba1f3bdac",
+      "classification": "canon",
+      "kind": "dir",
+      "path": "/home/agente/whisper.cpp",
+      "reason": "not_obvious_junk",
+      "safe_to_move": false
+    }
+  ],
+  "home_root": "/home/agente",
+  "policy": {
+    "path": "state/workspace_hygiene_policy.json",
+    "version": 1
+  },
+  "summary": {
+    "candidate_count": 0,
+    "entry_count": 35,
+    "junk_count": 0,
+    "sensitive_count": 0,
+    "skipped_dotdirs": 29
+  },
+  "version": 1
+}

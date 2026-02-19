@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "enabled": true,
+  "interval_minutes": 720,
+  "min_changed_files_to_trigger": 1,
+  "signature_allowlist": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CEO.md",
+    "SOUL.md",
+    "INDEX.md",
+    "openclaw/*.md",
+    "scripts/*.py",
+    "state/channel_runtime_policy.json",
+    "state/heartbeat_policy.json",
+    "state/write_router_policy.json",
+    "state/memory_policy.json",
+    "state/sg_policy.json",
+    "state/instruction_surface_policy.json",
+    "state/workspace_hygiene_policy.json",
+    "state/project_docs_policy.json",
+    "hooks/**",
+    "brain/domains/openclaw_ops/**",
+    "brain/domains/ingest/**",
+    "memory/00_INDEX.md"
+  ],
+  "signature_exclusions": [
+    "vault/**",
+    "docs/_inbox/**",
+    "logs/**",
+    "__pycache__/**",
+    ".pytest_cache/**",
+    ".venv/**",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "hooks/**/node_modules/**",
+    "hooks/**/dist/**",
+    "hooks/**/.cache/**"
+  ]
+}

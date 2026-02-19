@@ -1,0 +1,28 @@
+{
+  "channel_id": "",
+  "channel_name_last_seen": "",
+  "compaction_count": 0,
+  "created_at": "2026-02-18T23:21:14.165234+00:00",
+  "distill_count": 0,
+  "domain_slug": "",
+  "event_count_total": 1,
+  "identity": {
+    "account_id": "sg",
+    "agent_id": "otto",
+    "channel": "whatsapp",
+    "channel_id": "_",
+    "chat_type": "dm",
+    "peer_id": "cliente-016",
+    "thread_id": "_"
+  },
+  "last_activity": "2026-02-18T23:21:14.163400+00:00",
+  "last_compact_at": "",
+  "last_distilled_activity": "",
+  "last_distilled_at": "",
+  "recommended_domain": "",
+  "rolling_chars": 35,
+  "rolling_events": 1,
+  "session_id": "sid_1ed80e4e6187f11b",
+  "session_key": "rtm:v1:otto|whatsapp|sg|dm|cliente-016|_|_",
+  "tier": "whatsapp_client"
+}

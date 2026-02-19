@@ -1,0 +1,58 @@
+{
+    "version": 2,
+    "enabled": true,
+    "interval_minutes": 30,
+    "scan_interval_hours": 2,
+    "max_items_per_tick": 5,
+    "max_bytes_per_tick": 10485760,
+    "allow_types": [
+        "doc_value",
+        "doc_recoverable",
+        "brain_node"
+    ],
+    "recoverable_extensions": [
+        ".md",
+        ".txt",
+        ".pdf",
+        ".json",
+        ".ndjson",
+        ".csv",
+        ".html"
+    ],
+    "denylist_extensions": [
+        ".env",
+        ".pem",
+        ".key",
+        ".pfx",
+        ".exe",
+        ".dll",
+        ".so",
+        ".dylib",
+        ".bin"
+    ],
+    "forbidden_buckets": [
+        "sensitive_blocked",
+        "instruction_drift_blocked",
+        "code_candidate_review"
+    ],
+    "exclude_globs": [
+        "*/docs/_inbox/**",
+        "*/logs/**",
+        "*/ops/**",
+        "*/copilots/**",
+        "*/state/**",
+        "*latest*",
+        "*report*",
+        "*ledger*"
+    ],
+    "target_drop_base": "vault/inbox_raw/_pending_drop/legacy_recovery",
+    "secret_patterns": [
+        "api key",
+        "token",
+        "secret",
+        "password",
+        "private key",
+        "bearer",
+        "credential"
+    ]
+}

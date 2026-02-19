@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "worker_auth_mode": "password_plus_owner_approval",
+  "password_required": true,
+  "worker_password_hash": "a495e726a72130eaa9413a2701891d3a1bfcf0541deb6e3c58afde9de869a240",
+  "worker_password_hint": "clave interna",
+  "owner_channel": "telegram_owner",
+  "promotion_rules": {
+    "low": "auto",
+    "medium": "approval_required",
+    "high": "approval_required"
+  },
+  "actor_detection": {
+    "worker_keywords": [
+      "worker",
+      "trabajador",
+      "backoffice",
+      "operaciones"
+    ],
+    "client_keywords": [
+      "cliente",
+      "client",
+      "cotizacion",
+      "quotation",
+      "pedido"
+    ]
+  },
+  "sensitivity_keywords": {
+    "low": [
+      "estado",
+      "status",
+      "seguimiento",
+      "agenda",
+      "resumen",
+      "nota"
+    ],
+    "medium": [
+      "cotizacion",
+      "quotation",
+      "cliente",
+      "proveedor",
+      "orden",
+      "incidencia",
+      "sop"
+    ],
+    "high": [
+      "password",
+      "token",
+      "secret",
+      "credential",
+      "cuenta",
+      "bank",
+      "dni",
+      "ruc"
+    ]
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "namespace": "brain",
+  "node_count": 40,
+  "nodes": [
+    {
+      "deep_links": [],
+      "path": "brain/00_INDEX.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/01_BRAIN_PROTOCOL.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/02_NODE_TEMPLATE.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/03_CARD_SCHEMA.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/04_WRITING_STYLE.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/external_ingest/card_e5c2b423c1_01.md",
+      "tags": [
+        "e5c2b423c1",
+        "external_ingest",
+        "ingest"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_context_authority.md",
+      "tags": [
+        "authority",
+        "context",
+        "openclaw"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_delegation_matrix.md",
+      "tags": [
+        "claude",
+        "codex",
+        "delegation",
+        "policy"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_hook_commands.md",
+      "tags": [
+        "commands",
+        "hook",
+        "telegram"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_hygiene_policy.md",
+      "tags": [
+        "hygiene",
+        "policy",
+        "sensitive"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_indexer_behavior.md",
+      "tags": [
+        "brain",
+        "indexer",
+        "performance"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_repo_reality_controls.md",
+      "tags": [
+        "quarantine",
+        "root",
+        "salvage"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/cards/openclaw_ops/card_run_ledger.md",
+      "tags": [
+        "evidence",
+        "ledger",
+        "run"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/external_ingest/00_INDEX.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/external_ingest/01_ROUTER.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/external_ingest/sources/e5c2b423c1_index.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/00_INDEX.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/01_ROUTER.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/02_PIPELINE.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/03_DOMAIN_NAMING.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/04_SPLIT_HEURISTICS.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/05_PENDING_POLICY.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/ingest/06_WRITE_ROUTER.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/00_INDEX.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/01_ROUTER.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/02_RUN_PROTOCOL.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/03_REPO_REALITY.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/04_WORKSPACE_HYGIENE.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/05_HOOKS_COMMANDS.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/06_PROMPT_ENGINEERING_PATTERNS.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/07_DELEGATION_POLICY.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/08_LEGACY_RECOVERY.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/08a_SKILLS_SYSTEM.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/09_ARCHITECTURE_MENTAL_MODEL.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/10_BROWSER_RELAY.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/11_SECURITY_HARDENING.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/12_GATEWAY_OPS_RUNBOOKS.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/domains/openclaw_ops/13_INSTALLATION_ENVIRONMENTS.md",
+      "tags": []
+    },
+    {
+      "deep_links": [],
+      "path": "brain/templates/OPS_CARD_TEMPLATE.md",
+      "tags": [
+        "<comma-separated>"
+      ]
+    },
+    {
+      "deep_links": [],
+      "path": "brain/templates/OPS_NODE_TEMPLATE.md",
+      "tags": []
+    }
+  ],
+  "registry_version": 1
+}

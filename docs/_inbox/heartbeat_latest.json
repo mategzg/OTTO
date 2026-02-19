@@ -1,0 +1,11 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:35:05.018348+00:00",
+  "status": "skipped_interval",
+  "summary": {
+    "interval_minutes": 30,
+    "last_run_utc": "2026-02-19T13:34:32.224772+00:00",
+    "pending_drop_count": 0
+  },
+  "version": 1
+}

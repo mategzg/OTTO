@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-02-18T04:16:44.182167+00:00",
+  "destination_root": "/home/agente/otto-workspace",
+  "paths": {
+    "conflicts": "vault/_salvage/20260218T041639Z_d70c621560/CONFLICTS.json",
+    "manifest": "vault/_salvage/20260218T041639Z_d70c621560/MANIFEST.json"
+  },
+  "source_id": "d70c621560",
+  "source_root": "/home/agente/.openclaw/workspace",
+  "summary": {
+    "conflict_count": 7,
+    "entry_count": 3938,
+    "promoted_count": 0,
+    "skipped_conflicts": 7,
+    "skipped_guardrail": 3159,
+    "skipped_identical": 772
+  },
+  "top_paths": [
+    ".gitignore",
+    ".openclaw/CANONICAL_ROOT.json",
+    ".openclaw/workspace-state.json",
+    "AGENTS.md",
+    "BOOT.md",
+    "BOOTSTRAP.md",
+    "CEO.md",
+    "CLAUDE.md",
+    "COMMAND_LOGGER.md",
+    "HEARTBEAT.md",
+    "IDENTITY.md",
+    "INDEX.md",
+    "README.md",
+    "SESSION_MEMORY.md",
+    "SOUL.md",
+    "TOOLS.md",
+    "USER.md",
+    "brain/00_INDEX.md",
+    "brain/01_BRAIN_PROTOCOL.md",
+    "brain/02_NODE_TEMPLATE.md",
+    "brain/03_CARD_SCHEMA.md",
+    "brain/04_WRITING_STYLE.md",
+    "copilots/OpenClaw-MemoryOS_latest.md",
+    "dashboard/app.js",
+    "dashboard_server.py"
+  ],
+  "version": 1
+}

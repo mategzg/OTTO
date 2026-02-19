@@ -1,0 +1,225 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-18T04:15:26.230120+00:00",
+  "doctor_summary": {
+    "backup_count": 0,
+    "candidate_count": 19,
+    "kept_count": 0,
+    "needs_user_count": 0,
+    "nested_git_count": 3,
+    "pathlike_count": 11,
+    "pending_count": 19,
+    "quarantined_count": 0,
+    "safe_to_move_count": 19,
+    "symlink_flag_count": 0
+  },
+  "paths": {
+    "json": "docs/_inbox/repo_salvage_plan_latest.json",
+    "log": "logs/repo_salvage_latest.json",
+    "markdown": "docs/_inbox/repo_salvage_plan_latest.md"
+  },
+  "salvage": {
+    "candidates": [
+      {
+        "candidate_id": "d70c621560",
+        "candidate_path": "/home/agente/.openclaw/workspace",
+        "candidate_type": "nested_repo_git",
+        "conflict_count": 2,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_d70c621560/CONFLICTS.json",
+        "entry_count": 3839,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_d70c621560/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_d70c621560"
+      },
+      {
+        "candidate_id": "3d5acd40a1",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+        "candidate_type": "nested_repo_copy_high_score",
+        "conflict_count": 16,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_3d5acd40a1/CONFLICTS.json",
+        "entry_count": 555,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_3d5acd40a1/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_3d5acd40a1"
+      },
+      {
+        "candidate_id": "b522dcb1ea",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 15,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_b522dcb1ea/CONFLICTS.json",
+        "entry_count": 277,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_b522dcb1ea/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_b522dcb1ea"
+      },
+      {
+        "candidate_id": "6e0e1eba62",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+        "candidate_type": "nested_repo_git",
+        "conflict_count": 6,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_6e0e1eba62/CONFLICTS.json",
+        "entry_count": 294,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_6e0e1eba62/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_6e0e1eba62"
+      },
+      {
+        "candidate_id": "a6d6e4e9ff",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 5,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_a6d6e4e9ff/CONFLICTS.json",
+        "entry_count": 285,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_a6d6e4e9ff/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_a6d6e4e9ff"
+      },
+      {
+        "candidate_id": "ecf9a56bd3",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 5,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ecf9a56bd3/CONFLICTS.json",
+        "entry_count": 194,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ecf9a56bd3/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ecf9a56bd3"
+      },
+      {
+        "candidate_id": "27f7f952d9",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+        "candidate_type": "nested_repo_git",
+        "conflict_count": 7,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_27f7f952d9/CONFLICTS.json",
+        "entry_count": 56,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_27f7f952d9/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_27f7f952d9"
+      },
+      {
+        "candidate_id": "14c36ea7ae",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 4,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_14c36ea7ae/CONFLICTS.json",
+        "entry_count": 7,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_14c36ea7ae/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_14c36ea7ae"
+      },
+      {
+        "candidate_id": "299f824258",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5c1adbab14/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 15,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_299f824258/CONFLICTS.json",
+        "entry_count": 277,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_299f824258/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_299f824258"
+      },
+      {
+        "candidate_id": "02ff56c77b",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5de57dc319/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 5,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_02ff56c77b/CONFLICTS.json",
+        "entry_count": 285,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_02ff56c77b/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_02ff56c77b"
+      },
+      {
+        "candidate_id": "7825ed0f71",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+        "candidate_type": "nested_repo_copy_high_score",
+        "conflict_count": 6,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_7825ed0f71/CONFLICTS.json",
+        "entry_count": 270,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_7825ed0f71/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_7825ed0f71"
+      },
+      {
+        "candidate_id": "e88834e22e",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_6fb9ed08bb/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 4,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_e88834e22e/CONFLICTS.json",
+        "entry_count": 7,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_e88834e22e/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_e88834e22e"
+      },
+      {
+        "candidate_id": "c16b40a7b1",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+        "candidate_type": "nested_repo_copy_high_score",
+        "conflict_count": 5,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_c16b40a7b1/CONFLICTS.json",
+        "entry_count": 269,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_c16b40a7b1/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_c16b40a7b1"
+      },
+      {
+        "candidate_id": "1bbe07ce80",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+        "candidate_type": "nested_repo_copy_high_score",
+        "conflict_count": 6,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_1bbe07ce80/CONFLICTS.json",
+        "entry_count": 545,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_1bbe07ce80/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_1bbe07ce80"
+      },
+      {
+        "candidate_id": "f00e845813",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 13,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_f00e845813/CONFLICTS.json",
+        "entry_count": 275,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_f00e845813/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_f00e845813"
+      },
+      {
+        "candidate_id": "9f636ee42e",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5c1adbab14/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 12,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_9f636ee42e/CONFLICTS.json",
+        "entry_count": 275,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_9f636ee42e/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_9f636ee42e"
+      },
+      {
+        "candidate_id": "da2f8f206c",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5de57dc319/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 4,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_da2f8f206c/CONFLICTS.json",
+        "entry_count": 283,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_da2f8f206c/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_da2f8f206c"
+      },
+      {
+        "candidate_id": "73f6c1fc02",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+        "candidate_type": "nested_repo_copy_high_score",
+        "conflict_count": 4,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_73f6c1fc02/CONFLICTS.json",
+        "entry_count": 269,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_73f6c1fc02/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_73f6c1fc02"
+      },
+      {
+        "candidate_id": "ca51ab97f6",
+        "candidate_path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_6fb9ed08bb/staged/C:\\Users\\sgaca\\SG Acabados\\AGENTE OTTO",
+        "candidate_type": "pathlike_folder",
+        "conflict_count": 4,
+        "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ca51ab97f6/CONFLICTS.json",
+        "entry_count": 7,
+        "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ca51ab97f6/MANIFEST.json",
+        "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260218T041520Z_ca51ab97f6"
+      }
+    ],
+    "conflict_threshold": 50
+  },
+  "scan_base": "/home/agente/.openclaw",
+  "summary": {
+    "blocked": true,
+    "candidate_count": 19,
+    "conflict_count": 138,
+    "entry_count": 8269,
+    "salvage_candidate_count": 19
+  },
+  "version": 1
+}

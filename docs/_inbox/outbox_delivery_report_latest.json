@@ -1,0 +1,31 @@
+{
+  "archive": {
+    "batch_id": "",
+    "item_count": 0,
+    "manifest_path": "",
+    "ndjson_path": ""
+  },
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.235533+00:00",
+  "failures": [],
+  "paths": {
+    "json": "docs/_inbox/outbox_delivery_report_latest.json",
+    "log": "logs/outbox_delivery_latest.json",
+    "markdown": "docs/_inbox/outbox_delivery_report_latest.md",
+    "queue": "docs/_inbox/outbox_queue.ndjson"
+  },
+  "snapshot_path": "docs/_inbox/outbox_latest.md",
+  "status": "success",
+  "summary": {
+    "delivered_in_run": 0,
+    "failed_in_run": 0,
+    "missing_target": 0,
+    "processed_in_run": 0,
+    "queue_delivered": 0,
+    "queue_failed_retryable": 0,
+    "queue_failed_terminal": 0,
+    "queue_pending": 0,
+    "queue_total": 0
+  },
+  "version": 1
+}

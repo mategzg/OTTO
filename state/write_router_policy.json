@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "categories": [
+    "ops_system",
+    "brain_knowledge",
+    "memory_human",
+    "templates",
+    "inbox_only",
+    "ignore"
+  ],
+  "thresholds": {
+    "max_node_chars": 20000,
+    "max_card_chars": 3000,
+    "max_refs": 40,
+    "max_files": 500,
+    "max_bytes": 104857600
+  },
+  "no_overwrite": {
+    "side_by_side_suffix": "__from_{source_id}"
+  },
+  "destinations": {
+    "ops_system": "brain/domains/openclaw_ops",
+    "brain_knowledge": "brain/domains/<domain>",
+    "memory_human": "docs/_inbox/memory_inbox.ndjson",
+    "templates": "brain/templates",
+    "inbox_only": "vault/inbox_raw/_processed",
+    "ignore": "vault/inbox_raw/_processed"
+  },
+  "rules": [
+    {
+      "id": "ignore_archives",
+      "category": "ignore",
+      "extensions": [
+        ".zip",
+        ".tar",
+        ".gz",
+        ".7z",
+        ".rar"
+      ]
+    },
+    {
+      "id": "ops_by_keywords",
+      "category": "ops_system",
+      "keywords": [
+        "openclaw",
+        "otto",
+        "repo",
+        "root",
+        "hygiene",
+        "quarantine",
+        "salvage",
+        "autonomy",
+        "hook",
+        "gates",
+        "ledger",
+        "ops"
+      ],
+      "recommended_domains": [
+        "openclaw_ops"
+      ]
+    },
+    {
+      "id": "memory_by_human_signals",
+      "category": "memory_human",
+      "keywords": [
+        "mateo",
+        "prefer",
+        "preference",
+        "decision",
+        "project",
+        "timeline",
+        "personal",
+        "human"
+      ],
+      "source_name_contains": [
+        "preferences",
+        "decisions",
+        "timeline",
+        "projects",
+        "personal"
+      ]
+    },
+    {
+      "id": "templates_by_prompt_signals",
+      "category": "templates",
+      "keywords": [
+        "prompt",
+        "template",
+        "playbook",
+        "guide",
+        "protocol",
+        "style"
+      ],
+      "source_name_contains": [
+        "prompt",
+        "template",
+        "playbook"
+      ]
+    },
+    {
+      "id": "inbox_only_large_binary",
+      "category": "inbox_only",
+      "extensions": [
+        ".pdf",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx",
+        ".ppt",
+        ".pptx"
+      ]
+    },
+    {
+      "id": "default_brain_knowledge",
+      "category": "brain_knowledge"
+    }
+  ],
+  "reserved_filename_guardrails": {
+    "reserved_filenames": [
+      "AGENTS.md",
+      "AGENTS.override.md",
+      "CLAUDE.md",
+      "CLAUDE.local.md"
+    ],
+    "allowed_locations": [
+      "AGENTS.md",
+      "AGENTS.override.md",
+      "CLAUDE.md",
+      "CLAUDE.local.md",
+      ".claude/CLAUDE.md",
+      ".claude/rules/**"
+    ],
+    "force_category_on_detect": "inbox_only"
+  }
+}

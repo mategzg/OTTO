@@ -1,0 +1,14 @@
+{
+  "counters": {
+    "autonomy_failures": 0,
+    "hook_backlog_failures": 0,
+    "hook_backlog_stall_ticks": 0
+  },
+  "last_auto_trigger": "",
+  "last_change": "",
+  "paused": false,
+  "reason": "",
+  "set_by": "",
+  "until_ts": "",
+  "version": 1
+}

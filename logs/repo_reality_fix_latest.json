@@ -1,0 +1,156 @@
+{
+  "quarantine": {
+    "apply": {
+      "applied": true,
+      "approved_ids": [],
+      "moved": [],
+      "quarantine_root": "vault/_quarantine",
+      "skipped": []
+    },
+    "report": {
+      "apply": {
+        "applied": false,
+        "approved_ids": [],
+        "moved": [],
+        "quarantine_root": "",
+        "skipped": []
+      },
+      "candidates": [],
+      "canonical_root": "/home/agente/.openclaw/workspace",
+      "pinned_root": "/home/agente/.openclaw/workspace",
+      "scan": {
+        "high_score_threshold": 5,
+        "markers": [
+          "CEO.md",
+          "INDEX.md",
+          "openclaw",
+          "ops",
+          "scripts",
+          "brain",
+          "AGENTS.md",
+          "SOUL.md"
+        ],
+        "max_depth": 6
+      },
+      "scan_base": "/home/agente",
+      "state": {
+        "allowlist_file": "state/repo_reality_allowlist.json",
+        "kept_ids": [],
+        "quarantined_ids": [
+          "3f10fde9d9",
+          "5de57dc319",
+          "6fb9ed08bb",
+          "ad2a829bad"
+        ],
+        "state_file": "state/repo_reality_state.json"
+      },
+      "summary": {
+        "backup_count": 0,
+        "candidate_count": 0,
+        "kept_count": 0,
+        "needs_user_count": 0,
+        "nested_git_count": 0,
+        "pathlike_count": 0,
+        "pending_count": 0,
+        "quarantined_count": 0,
+        "safe_to_move_count": 0,
+        "symlink_flag_count": 0
+      },
+      "version": 3
+    },
+    "state_path": "state/repo_reality_state.json"
+  },
+  "report": {
+    "apply": {
+      "applied": false,
+      "approved_ids": [],
+      "moved": [],
+      "quarantine_root": "",
+      "skipped": []
+    },
+    "candidates": [],
+    "canonical_root": "/home/agente/.openclaw/workspace",
+    "pinned_root": "/home/agente/.openclaw/workspace",
+    "scan": {
+      "high_score_threshold": 5,
+      "markers": [
+        "CEO.md",
+        "INDEX.md",
+        "openclaw",
+        "ops",
+        "scripts",
+        "brain",
+        "AGENTS.md",
+        "SOUL.md"
+      ],
+      "max_depth": 6
+    },
+    "scan_base": "/home/agente",
+    "state": {
+      "allowlist_file": "state/repo_reality_allowlist.json",
+      "kept_ids": [],
+      "quarantined_ids": [
+        "3f10fde9d9",
+        "5de57dc319",
+        "6fb9ed08bb",
+        "ad2a829bad"
+      ],
+      "state_file": "state/repo_reality_state.json"
+    },
+    "summary": {
+      "backup_count": 0,
+      "candidate_count": 0,
+      "kept_count": 0,
+      "needs_user_count": 0,
+      "nested_git_count": 0,
+      "pathlike_count": 0,
+      "pending_count": 0,
+      "quarantined_count": 0,
+      "safe_to_move_count": 0,
+      "symlink_flag_count": 0
+    },
+    "version": 3
+  },
+  "salvage_apply": {
+    "ok": true,
+    "plan_path": "/home/agente/.openclaw/workspace/docs/_inbox/repo_salvage_plan_latest.json",
+    "promoted_count": 0,
+    "reason": "applied",
+    "skipped_conflicts": 0
+  },
+  "salvage_plan": {
+    "canonical_root": "/home/agente/.openclaw/workspace",
+    "created_at": "2026-02-18T02:59:57.129511+00:00",
+    "doctor_summary": {
+      "backup_count": 0,
+      "candidate_count": 0,
+      "kept_count": 0,
+      "needs_user_count": 0,
+      "nested_git_count": 0,
+      "pathlike_count": 0,
+      "pending_count": 0,
+      "quarantined_count": 0,
+      "safe_to_move_count": 0,
+      "symlink_flag_count": 0
+    },
+    "paths": {
+      "json": "docs/_inbox/repo_salvage_plan_latest.json",
+      "log": "logs/repo_salvage_latest.json",
+      "markdown": "docs/_inbox/repo_salvage_plan_latest.md"
+    },
+    "salvage": {
+      "candidates": [],
+      "conflict_threshold": 50
+    },
+    "scan_base": "/home/agente",
+    "summary": {
+      "blocked": false,
+      "candidate_count": 0,
+      "conflict_count": 0,
+      "entry_count": 0,
+      "salvage_candidate_count": 0
+    },
+    "version": 1
+  },
+  "status": "ok"
+}

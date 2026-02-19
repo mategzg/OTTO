@@ -1,0 +1,17 @@
+{
+  "archive_file": "docs/_inbox/memory_inbox/_processed/20260218T164758Z_520c5e310f.ndjson",
+  "batch_id": "520c5e310f",
+  "created_at": "2026-02-18T16:47:58.735543+00:00",
+  "entries": [
+    {
+      "id": "memin-ca010263af49",
+      "line_no": 1,
+      "sha256": "d559c6f74a07ac9dcd1c1ae0b5045af735168a10cf846e3e086eeef7164d775e",
+      "size": 357,
+      "type": "profile_fact"
+    }
+  ],
+  "entry_count": 1,
+  "inbox_path": "docs/_inbox/memory_inbox.ndjson",
+  "version": 1
+}

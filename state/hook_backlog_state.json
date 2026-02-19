@@ -1,0 +1,12 @@
+{
+  "consecutive_failures": 0,
+  "last_error": "",
+  "last_failed_count": 0,
+  "last_pending_count": 0,
+  "last_processed_count": 0,
+  "last_replayed_count": 0,
+  "last_run_utc": "2026-02-19T13:34:32.295639+00:00",
+  "last_status": "success",
+  "stall_ticks": 0,
+  "version": 1
+}

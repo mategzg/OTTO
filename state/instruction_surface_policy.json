@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "reserved_filenames": [
+    "AGENTS.md",
+    "AGENTS.override.md",
+    "CLAUDE.md",
+    "CLAUDE.local.md"
+  ],
+  "allowed_locations": {
+    "codex": [
+      "AGENTS.md",
+      "AGENTS.override.md"
+    ],
+    "claude_code": [
+      "CLAUDE.md",
+      "CLAUDE.local.md",
+      ".claude/CLAUDE.md",
+      ".claude/rules/**"
+    ]
+  },
+  "quarantine_root": "vault/_quarantine/instruction_drift",
+  "severity_rules": {
+    "drift_grave_prefixes": [
+      "brain/",
+      "openclaw/",
+      "scripts/",
+      "memory/"
+    ],
+    "drift_default": "drift",
+    "drift_grave": "drift_grave"
+  },
+  "fix_mode_default": "auto_quarantine"
+}

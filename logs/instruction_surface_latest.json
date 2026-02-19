@@ -1,0 +1,49 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.536814+00:00",
+  "items": [
+    {
+      "candidate_id": "093155a109",
+      "classification": "allowed",
+      "filename": "CLAUDE.md",
+      "mtime": 1771431725.363856,
+      "needs_user": false,
+      "path": ".claude/CLAUDE.md",
+      "severity": "allowed",
+      "sha256": "a721ef6c77da069e96c5c7ac2665044ae780f8d1ff268f556d7b4c7d20645abe",
+      "size": 494
+    },
+    {
+      "candidate_id": "37dd68363f",
+      "classification": "allowed",
+      "filename": "AGENTS.md",
+      "mtime": 1771472677.402688,
+      "needs_user": false,
+      "path": "AGENTS.md",
+      "severity": "allowed",
+      "sha256": "928e1cf1f4f0caf272a61d2338326a9a08b3bc6f23aad759de3445a9002ec9f8",
+      "size": 8973
+    },
+    {
+      "candidate_id": "2d5d10cfc5",
+      "classification": "allowed",
+      "filename": "CLAUDE.md",
+      "mtime": 1771472680.3226862,
+      "needs_user": false,
+      "path": "CLAUDE.md",
+      "severity": "allowed",
+      "sha256": "ec4b649a939c01b80102065c9c79276274e44f6e7bd1554e4c82df90cc114c1a",
+      "size": 1605
+    }
+  ],
+  "policy_path": "state/instruction_surface_policy.json",
+  "quarantine_root": "vault/_quarantine/instruction_drift",
+  "summary": {
+    "allowed_count": 3,
+    "drift_count": 0,
+    "drift_grave_count": 0,
+    "needs_user_count": 0,
+    "reserved_found": 3
+  },
+  "version": 1
+}

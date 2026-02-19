@@ -1,0 +1,30 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.474030+00:00",
+  "normalized_results": [
+    {
+      "conversation_count": 0,
+      "detector_reasons": [],
+      "detector_score": 0,
+      "message_count": 0,
+      "normalized": false,
+      "paths": {},
+      "slice_count": 0,
+      "source_id": "6c8e0dd191",
+      "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191",
+      "suspected_kind": "generic_corpus",
+      "used_files": []
+    }
+  ],
+  "summary": {
+    "chatgpt_detected_count": 0,
+    "message_count": 0,
+    "normalized_count": 0,
+    "slice_count": 0,
+    "target_count": 1
+  },
+  "targets": [
+    "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191"
+  ],
+  "version": 1
+}

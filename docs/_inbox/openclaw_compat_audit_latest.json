@@ -1,0 +1,167 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T02:21:31.389206+00:00",
+  "gaps": [
+    "GAP/NO VERIFICADO: contrato oficial cron vs heartbeat no validado en runtime real.",
+    "GAP/NO VERIFICADO: flujo multi-agent externo no validado en este entorno.",
+    "Hook marcado experimental; recomendable validacion en entorno productivo OpenClaw."
+  ],
+  "go_no_go": "go_with_limits",
+  "matrix": [
+    {
+      "evidence_paths": [
+        ".openclaw/CANONICAL_ROOT.json",
+        "openclaw/CONTEXT_MAP.md",
+        "scripts/repo_root.py"
+      ],
+      "gaps": [],
+      "name": "Workspace semantics",
+      "notes": "Raiz canonica pinneada y contexto operativo en repo.",
+      "verdict": "compatible"
+    },
+    {
+      "evidence_paths": [
+        "hooks/otto-runtime-bridge/HOOK.md",
+        "hooks/otto-runtime-bridge/handler.js",
+        "scripts/channel_ingress_adapter.py"
+      ],
+      "gaps": [
+        "Hook marcado experimental; recomendable validacion en entorno productivo OpenClaw."
+      ],
+      "name": "Hooks (message received/sent)",
+      "notes": "Bridge de workspace hook existe y enruta a ingress adapter.",
+      "verdict": "risk"
+    },
+    {
+      "evidence_paths": [
+        "HEARTBEAT.md",
+        "scripts/heartbeat_worker.py",
+        "state/heartbeat_policy.json"
+      ],
+      "gaps": [],
+      "name": "Heartbeat behavior",
+      "notes": "Heartbeat ejecuta pipeline pasivo por bloques sin requerir comandos del usuario.",
+      "verdict": "compatible"
+    },
+    {
+      "evidence_paths": [
+        "AGENTS.md",
+        "HEARTBEAT.md",
+        "scripts/heartbeat_worker.py"
+      ],
+      "gaps": [
+        "GAP/NO VERIFICADO: contrato oficial cron vs heartbeat no validado en runtime real."
+      ],
+      "name": "Cron vs Heartbeat",
+      "notes": "Repo documenta uso de heartbeat; no hay verificacion automatizada de contrato cron OpenClaw en este run.",
+      "verdict": "risk"
+    },
+    {
+      "evidence_paths": [
+        "scripts/channel_ingress_adapter.py",
+        "scripts/session_memory_manager.py",
+        "state/channel_runtime_policy.json"
+      ],
+      "gaps": [],
+      "name": "Sessions/session scoping (zero-mix)",
+      "notes": "Session_id usa canal/account/peer/channel/thread para aislamiento por chat/thread.",
+      "verdict": "compatible"
+    },
+    {
+      "evidence_paths": [
+        ".claude/rules/00_CANON.md",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "brain/domains/openclaw_ops/07_DELEGATION_POLICY.md"
+      ],
+      "gaps": [
+        "GAP/NO VERIFICADO: flujo multi-agent externo no validado en este entorno."
+      ],
+      "name": "Subagents / multi-agent compatibility",
+      "notes": "Delegacion y lectura base estan definidas; falta verificacion e2e con orchestration externa de sub-agents.",
+      "verdict": "risk"
+    },
+    {
+      "evidence_paths": [
+        "docs/_inbox/instruction_surface_report_latest.json",
+        "scripts/instruction_surface_doctor.py",
+        "state/instruction_surface_policy.json"
+      ],
+      "gaps": [],
+      "name": "Delegation + instruction surface control",
+      "notes": "Allowlist de archivos reservados y doctor de drift activos.",
+      "verdict": "compatible"
+    },
+    {
+      "evidence_paths": [
+        "docs/_inbox/repo_reality_report_latest.json",
+        "docs/_inbox/workspace_hygiene_report_latest.json",
+        "scripts/repo_reality_doctor.py",
+        "scripts/workspace_hygiene_doctor.py"
+      ],
+      "gaps": [],
+      "name": "Hygiene + repo reality posture",
+      "notes": "Doctors deterministas presentes para limpieza/no-drift.",
+      "verdict": "compatible"
+    }
+  ],
+  "official_docs_verification": {
+    "unverified_topics": [
+      "GAP/NO VERIFICADO: contrato oficial de cron vs heartbeat en runtime productivo",
+      "GAP/NO VERIFICADO: compatibilidad e2e multi-agent/sandbox fuera de pruebas locales"
+    ],
+    "verified_sources": []
+  },
+  "run_context": {
+    "git_status_short": [
+      "?? .gitignore",
+      "?? .openclaw/",
+      "?? AGENTS.md",
+      "?? BOOT.md",
+      "?? BOOTSTRAP.md",
+      "?? CEO.md",
+      "?? CLAUDE.md",
+      "?? COMMAND_LOGGER.md",
+      "?? HEARTBEAT.md",
+      "?? IDENTITY.md",
+      "?? INDEX.md",
+      "?? PROJECT_BRIEF.md",
+      "?? README.md",
+      "?? REPO_MAP.md",
+      "?? SESSION_MEMORY.md",
+      "?? SOUL.md",
+      "?? TOOLS.md",
+      "?? USER.md",
+      "?? brain/",
+      "?? copilots/",
+      "?? dashboard/",
+      "?? dashboard_server.py",
+      "?? docs/",
+      "?? hooks/",
+      "?? hq_logging.py",
+      "?? index_docs.py",
+      "?? logs/",
+      "?? memory/",
+      "?? openclaw/",
+      "?? ops/",
+      "?? otto_state.py",
+      "?? plans/",
+      "?? pytest.ini",
+      "?? repo_map/",
+      "?? requirements.txt",
+      "?? scripts/",
+      "?? state/",
+      "?? templates/",
+      "?? tests/",
+      "?? vault/",
+      "?? workers/"
+    ],
+    "paths": {
+      "json": "docs/_inbox/openclaw_compat_audit_latest.json",
+      "log": "logs/openclaw_compat_audit_latest.json",
+      "markdown": "docs/_inbox/openclaw_compat_audit_latest.md"
+    }
+  },
+  "status": "ok",
+  "version": 1
+}

@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "session_id_schema": {
+    "version": 1,
+    "fields": [
+      "agent_id",
+      "channel",
+      "account_id",
+      "chat_type",
+      "peer_id",
+      "channel_id",
+      "thread_id"
+    ],
+    "prefix": "rtm:v1",
+    "hash_algo": "sha1",
+    "id_prefix": "sid_",
+    "id_length": 16
+  },
+  "tiers": {
+    "telegram_owner": {
+      "rolling_max_events": 400,
+      "rolling_max_chars": 240000,
+      "summary_max_chars": 8000,
+      "compact_trigger_events": 160,
+      "compact_trigger_chars": 120000,
+      "distill_inactive_hours": 0,
+      "max_facts_per_compact": 120
+    },
+    "discord_domain": {
+      "rolling_max_events": 220,
+      "rolling_max_chars": 120000,
+      "summary_max_chars": 4000,
+      "compact_trigger_events": 90,
+      "compact_trigger_chars": 60000,
+      "distill_inactive_hours": 0,
+      "max_facts_per_compact": 80
+    },
+    "discord_thread": {
+      "rolling_max_events": 180,
+      "rolling_max_chars": 90000,
+      "summary_max_chars": 2500,
+      "compact_trigger_events": 70,
+      "compact_trigger_chars": 45000,
+      "distill_inactive_hours": 24,
+      "max_facts_per_compact": 64
+    },
+    "whatsapp_client": {
+      "rolling_max_events": 60,
+      "rolling_max_chars": 20000,
+      "summary_max_chars": 700,
+      "compact_trigger_events": 24,
+      "compact_trigger_chars": 8000,
+      "distill_inactive_hours": 0,
+      "max_facts_per_compact": 20
+    },
+    "whatsapp_worker": {
+      "rolling_max_events": 120,
+      "rolling_max_chars": 45000,
+      "summary_max_chars": 1500,
+      "compact_trigger_events": 45,
+      "compact_trigger_chars": 18000,
+      "distill_inactive_hours": 0,
+      "max_facts_per_compact": 36
+    }
+  },
+  "heartbeat_limits": {
+    "max_sessions_per_tick": 12,
+    "max_compactions_per_tick": 8,
+    "max_distill_per_tick": 4,
+    "max_runtime_seconds": 300
+  },
+  "capture_rules": {
+    "always_capture_event_fields": [
+      "event_id",
+      "message_id",
+      "timestamp",
+      "channel",
+      "peer_id",
+      "thread_id",
+      "text",
+      "attachments"
+    ],
+    "drop_to_inbox_on_labels": [
+      "contains_corpus",
+      "contains_attachment"
+    ],
+    "whatsapp_no_personal_memory": true,
+    "memory_signal_labels": [
+      "memory_worthy"
+    ],
+    "sg_signal_labels": [
+      "sg_worthy"
+    ]
+  },
+  "distillation_rules": {
+    "discord_thread_to_domain": true,
+    "telegram_owner_to_memory": true,
+    "whatsapp_client_to_sg_kb": "minimal"
+  },
+  "discord_domain_inference": {
+    "enabled": true,
+    "unknown_slug": "unknown",
+    "state_path": "state/discord_domains.json"
+  },
+  "approval_delivery": {
+    "channel": "telegram_owner",
+    "fallback_outbox": "docs/_inbox/outbox_latest.md"
+  },
+  "sensitivity_rules": {
+    "low_auto_promote": true,
+    "medium_requires_approval": true,
+    "high_requires_approval": true,
+    "keywords": {
+      "low": [
+        "estado",
+        "status",
+        "seguimiento",
+        "followup",
+        "agenda",
+        "resumen"
+      ],
+      "medium": [
+        "cotizacion",
+        "quotation",
+        "cliente",
+        "proveedor",
+        "incidencia",
+        "orden"
+      ],
+      "high": [
+        "password",
+        "token",
+        "secret",
+        "credential",
+        "dni",
+        "cuenta bancaria",
+        "bank account"
+      ]
+    }
+  },
+  "nl_classifier_thresholds": {
+    "long_text_chars": 1800,
+    "high_signal_keyword_hits": 2,
+    "corpus_line_threshold": 25
+  },
+  "locks": {
+    "session_lock_name": "session.lock",
+    "compact_lock_name": "compact.lock",
+    "distill_lock_name": "distill.lock"
+  },
+  "no_overwrite": {
+    "side_by_side_suffix": "__from_<id>"
+  }
+}

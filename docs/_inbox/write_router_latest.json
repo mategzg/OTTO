@@ -1,0 +1,18 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-18T15:57:57.078904+00:00",
+  "policy_path": "state/write_router_policy.json",
+  "routing_decisions": [],
+  "routing_summary": {
+    "by_category": {},
+    "source_count": 0
+  },
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "version": 1
+}

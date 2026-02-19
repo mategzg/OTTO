@@ -1,0 +1,6 @@
+{
+  "namespace": "brain",
+  "node_count": 40,
+  "output": "docs/_inbox/brain_registry_latest.json",
+  "registry_version": 1
+}

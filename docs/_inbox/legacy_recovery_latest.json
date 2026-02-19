@@ -1,0 +1,308 @@
+{
+  "batch_id": "99b9aa472aec",
+  "batch_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec",
+  "blocked": [
+    {
+      "candidate_id": "d3f00539586c",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/brain/00_INDEX.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "d02425f387bd",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/brain/04_WRITING_STYLE.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "45f2e80fa7bb",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/openclaw/CONTEXT_MAP.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "a83ca3b5248f",
+      "path": "vault/_salvage/20260218T025727Z_6fb9ed08bb/staged/README.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "bdd3e27b1e05",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/INDEX.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "ac6f83652f18",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/README.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "f0380db75574",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/CEO.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "d1ad169b5425",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/HEARTBEAT.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "de08e8fac48a",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/IDENTITY.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "269ff3f7eedf",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/TOOLS.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "48b3e6ee1772",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/dashboard/index.html",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "68c218131889",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/index.html",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "5c99f0d4cb1f",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/dashboard/index.html",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "62632fc5897c",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/USER.md",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "cb5821ee614d",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/templates/odoo_import_contacts_template.csv",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "ec4c46506ec4",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/docs/checklists/odoo_onboarding_preflight_postconnect.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "967172739701",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/package.json",
+      "reason": "source_missing"
+    },
+    {
+      "candidate_id": "61715b0e8f8f",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/prototipos/scripts/README.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "45dc89c02156",
+      "path": "vault/_quarantine/home_junk/20260218T044414Z_8b1e7453fd/README.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "91bc32df30db",
+      "path": "vault/_quarantine/home_junk/20260218T044414Z_e5f3443961/README.md",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "769dbbe7dc39",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/openclaw_hook.py",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "4948e314c8bd",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/autonomy_tick.py",
+      "reason": "forbidden_bucket:code_candidate_review"
+    },
+    {
+      "candidate_id": "dec91c5e496e",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/repo_reality_doctor.py",
+      "reason": "forbidden_bucket:code_candidate_review"
+    },
+    {
+      "candidate_id": "362f4aef4c22",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/repo_reality_doctor.py",
+      "reason": "forbidden_bucket:code_candidate_review"
+    },
+    {
+      "candidate_id": "154b0c33bfd3",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/odoo/odoo_bulk_import.py",
+      "reason": "forbidden_bucket:code_candidate_review"
+    },
+    {
+      "candidate_id": "27a687bee38b",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/scripts/odoo/odoo_whatsapp_bridge.py",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "84dbef155f29",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/odoo/odoo_client.py",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "16fb1a20061b",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/brain_index_build.py",
+      "reason": "type_not_allowed:script"
+    },
+    {
+      "candidate_id": "1fa54216bb2a",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/odoo/odoo_actions.py",
+      "reason": "type_not_allowed:script"
+    },
+    {
+      "candidate_id": "4258952410a9",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/odoo_probe.py",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "4853a3f36a0b",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/C:/Users/sgaca/SG Acabados/AGENTE OTTO/prototipos/scripts/otto_sip_guarded_ops.py",
+      "reason": "forbidden_bucket:sensitive_blocked"
+    },
+    {
+      "candidate_id": "2db1d68d3b5d",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/scripts/odoo/odoo_cli.py",
+      "reason": "type_not_allowed:script"
+    },
+    {
+      "candidate_id": "cfdff7f05b48",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9/C:/Users/sgaca/SG Acabados/AGENTE OTTO/vault/_quarantine/nested_repo_copies/20260218T020524Z_ad2a829bad/scripts/odoo/odoo_accounting_contracts.py",
+      "reason": "type_not_allowed:script"
+    }
+  ],
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T13:34:32.298416+00:00",
+  "packaged": [
+    {
+      "candidate_id": "87b429445901",
+      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__memory.md",
+      "legacy_type": "doc_value",
+      "size": 188,
+      "source_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md"
+    },
+    {
+      "candidate_id": "1a9c1f747e88",
+      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___salvage__20260218T041520Z_d70c621560__staged__IDENTITY.md",
+      "legacy_type": "doc_value",
+      "size": 374,
+      "source_path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md"
+    },
+    {
+      "candidate_id": "ebc65e189692",
+      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__dashboard__index.html",
+      "legacy_type": "doc_value",
+      "size": 3585,
+      "source_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html"
+    },
+    {
+      "candidate_id": "843bee116308",
+      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__bad_path_roots__20260218T025912Z_5de57dc319__README.md",
+      "legacy_type": "doc_value",
+      "size": 321,
+      "source_path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md"
+    }
+  ],
+  "policy": {
+    "allow_types": [
+      "doc_value",
+      "doc_recoverable",
+      "brain_node"
+    ],
+    "enabled": true,
+    "interval_minutes": 1,
+    "max_bytes_per_tick": 10485760,
+    "max_items_per_tick": 10,
+    "scan_interval_hours": 1,
+    "target_drop_base": "vault/inbox_raw/_pending_drop/legacy_recovery"
+  },
+  "selected": [
+    {
+      "bucket": "doc_recoverable",
+      "candidate_id": "87b429445901",
+      "canonical_coldstore_key": "5b2fc68841fbc64613",
+      "comparison_reason": "no_equivalent_detected",
+      "content_hash": "9f7486bc53fe5eb46538d6077111c9f7778657c6a1c4becab2698eb0d5bc5c37",
+      "feature_signature": "481942320bd0d8f6",
+      "is_artifact_execution": false,
+      "kind_heuristic": "doc",
+      "legacy_type": "doc_value",
+      "normalized_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md",
+      "path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md",
+      "present_in_current": false,
+      "priority_score": 150,
+      "sha256": "9f7486bc53fe5eb46538d6077111c9f7778657c6a1c4becab2698eb0d5bc5c37",
+      "size": 188,
+      "value_keywords": [
+        "memory"
+      ],
+      "value_score": 1
+    },
+    {
+      "bucket": "doc_recoverable",
+      "candidate_id": "1a9c1f747e88",
+      "canonical_coldstore_key": "19e88f980ca1c50b2a",
+      "comparison_reason": "no_equivalent_detected",
+      "content_hash": "e603c9836288a0ca57000bf957e39a1c464613f0038737775c1d7a36e679a21a",
+      "feature_signature": "2cb0450dfc258da3",
+      "is_artifact_execution": false,
+      "kind_heuristic": "doc",
+      "legacy_type": "doc_value",
+      "normalized_path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md",
+      "path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md",
+      "present_in_current": false,
+      "priority_score": 150,
+      "sha256": "e603c9836288a0ca57000bf957e39a1c464613f0038737775c1d7a36e679a21a",
+      "size": 374,
+      "value_keywords": [
+        "openclaw"
+      ],
+      "value_score": 1
+    },
+    {
+      "bucket": "junk_low_value",
+      "candidate_id": "ebc65e189692",
+      "canonical_coldstore_key": "9a58cdfa973a77f89f",
+      "comparison_reason": "no_equivalent_detected",
+      "content_hash": "64ee0cdf70befaaaeceafc2c0c2df37921dcdd3a26ba00c28aa8fa7b96edfda3",
+      "feature_signature": "7b38c435449e85cf",
+      "is_artifact_execution": false,
+      "kind_heuristic": "doc",
+      "legacy_type": "doc_value",
+      "normalized_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html",
+      "path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html",
+      "present_in_current": false,
+      "priority_score": 51,
+      "sha256": "64ee0cdf70befaaaeceafc2c0c2df37921dcdd3a26ba00c28aa8fa7b96edfda3",
+      "size": 3585,
+      "value_keywords": [],
+      "value_score": 0
+    },
+    {
+      "bucket": "junk_low_value",
+      "candidate_id": "843bee116308",
+      "canonical_coldstore_key": "27dbeb30958c92e83a",
+      "comparison_reason": "no_equivalent_detected",
+      "content_hash": "39f39f82f158d79e706957507cc4fc55ef8abc0947dbde76ff31c15acf52c2c9",
+      "feature_signature": "18c53d7b69533711",
+      "is_artifact_execution": false,
+      "kind_heuristic": "doc",
+      "legacy_type": "doc_value",
+      "normalized_path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md",
+      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md",
+      "present_in_current": false,
+      "priority_score": 50,
+      "sha256": "39f39f82f158d79e706957507cc4fc55ef8abc0947dbde76ff31c15acf52c2c9",
+      "size": 321,
+      "value_keywords": [],
+      "value_score": 0
+    }
+  ],
+  "status": "packaged",
+  "summary": {
+    "blocked_count": 33,
+    "legacy_disabled_reason": "",
+    "legacy_scan_ran": true,
+    "packaged_bytes": 4468,
+    "packaged_count": 4,
+    "selected_count": 4
+  },
+  "version": 2
+}
