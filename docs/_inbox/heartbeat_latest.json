@@ -1,11 +1,182 @@
 {
+  "approvals_summary": {
+    "pending_count": 0,
+    "pending_sg_promotion": 0,
+    "pending_worker_pairing": 0,
+    "total_count": 2
+  },
+  "autonomy_paths": {
+    "json": "docs/_inbox/autonomy_latest.json",
+    "log": "logs/autonomy_latest.json",
+    "markdown": "docs/_inbox/autonomy_latest.md"
+  },
+  "autonomy_status": "idle",
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:35:05.018348+00:00",
-  "status": "skipped_interval",
-  "summary": {
+  "created_at": "2026-02-19T15:35:06.320900+00:00",
+  "hook_backlog_paths": {
+    "json": "docs/_inbox/hook_backlog_report_latest.json",
+    "log": "logs/hook_backlog_latest.json",
+    "markdown": "docs/_inbox/hook_backlog_report_latest.md"
+  },
+  "hook_backlog_replay_summary": {
+    "failed_count": 0,
+    "pending_before_count": 0,
+    "pending_count": 0,
+    "processed_count": 0,
+    "replay_seconds": 0.001404,
+    "selected_count": 0
+  },
+  "hook_backlog_scan_summary": {
+    "ack_rows_count": 0,
+    "backlog_bytes": 0,
+    "event_rows_count": 0,
+    "failed_count": 0,
+    "payload_count": 0,
+    "pending_count": 0,
+    "processed_count": 0,
+    "selected_count": 0
+  },
+  "intake_apply_summary": {
+    "ingested": [],
+    "ingested_count": 0,
+    "max_entries": 2
+  },
+  "intake_scan_summary": {
+    "duplicate_count": 0,
+    "new_count": 0,
+    "pending_count": 0,
+    "pending_total_bytes": 0,
+    "pending_total_files": 0
+  },
+  "legacy_recovery_paths": {
+    "json": "docs/_inbox/legacy_recovery_latest.json",
+    "log": "logs/legacy_recovery_latest.json",
+    "markdown": "docs/_inbox/legacy_recovery_latest.md",
+    "policy": "state/legacy_recovery_policy.json",
+    "state": "state/legacy_recovery_state.json"
+  },
+  "legacy_recovery_status": "no_candidates_selected",
+  "legacy_recovery_summary": {
+    "blocked_count": 33,
+    "legacy_disabled_reason": "selection_rules_filtered_all",
+    "legacy_scan_ran": true,
+    "packaged_bytes": 0,
+    "packaged_count": 0,
+    "selected_count": 0
+  },
+  "outbox_delivery_summary": {
+    "delivered_in_run": 0,
+    "failed_in_run": 0,
+    "missing_target": 0,
+    "processed_in_run": 0,
+    "queue_delivered": 0,
+    "queue_failed_retryable": 0,
+    "queue_failed_terminal": 0,
+    "queue_pending": 0,
+    "queue_total": 0
+  },
+  "policy": {
+    "failure_backoff_minutes": 30,
     "interval_minutes": 30,
-    "last_run_utc": "2026-02-19T13:34:32.224772+00:00",
-    "pending_drop_count": 0
+    "legacy_recovery_force": false,
+    "max_apply_ops_per_heartbeat": 10,
+    "max_compactions_per_tick": 8,
+    "max_consecutive_failures_before_pause": 3,
+    "max_distill_per_tick": 4,
+    "max_hook_backlog_events_per_heartbeat": 25,
+    "max_hook_backlog_runtime_seconds": 20,
+    "max_outbox_chars_per_item": 4000,
+    "max_outbox_items_per_heartbeat": 20,
+    "max_runtime_seconds": 300,
+    "max_sessions_per_tick": 12,
+    "max_sources_per_heartbeat": 2,
+    "run_legacy_recovery": true,
+    "run_prod_doctor": true,
+    "run_project_docs_maintainer": true,
+    "version": 1
+  },
+  "prod_doctor_status": "ok",
+  "prod_doctor_summary": {
+    "checks_gap": 1,
+    "checks_ok": 7,
+    "checks_total": 8,
+    "run_interval_hours": 6
+  },
+  "project_docs_summary": {
+    "paths": {
+      "json": "docs/_inbox/project_docs_report_latest.json",
+      "log": "logs/project_docs_latest.json",
+      "markdown": "docs/_inbox/project_docs_report_latest.md"
+    },
+    "status": "skipped_interval",
+    "updated_files_count": 0
+  },
+  "runtime_paths": {
+    "json": "docs/_inbox/runtime_report_latest.json",
+    "log": "logs/runtime_latest.json",
+    "markdown": "docs/_inbox/runtime_report_latest.md"
+  },
+  "runtime_summary": {
+    "compactions_done": 0,
+    "distills_done": 0,
+    "errors": 0,
+    "runtime_seconds": 0.011,
+    "sessions_scanned": 5,
+    "sessions_total": 5
+  },
+  "safety_status": {
+    "canonical_root": "/home/agente/otto-workspace",
+    "counters": {
+      "autonomy_failures": 0,
+      "hook_backlog_failures": 0,
+      "hook_backlog_stall_ticks": 0
+    },
+    "expired": false,
+    "last_auto_trigger": "",
+    "last_change": "",
+    "paused": false,
+    "reason": "",
+    "set_by": "",
+    "until_ts": "",
+    "version": 1
+  },
+  "sg_promotion_summary": {
+    "changed": 0,
+    "pending": 0,
+    "pending_approval": 0,
+    "promoted": 2,
+    "promoted_approved": 0,
+    "promoted_auto": 0,
+    "total": 2
+  },
+  "status": "success",
+  "summary": {
+    "approvals_delivery_reason": "no_new_items",
+    "approvals_delivery_sent": false,
+    "approvals_pending": 0,
+    "hook_backlog_failed": 0,
+    "hook_backlog_pending": 0,
+    "hook_backlog_replayed": 0,
+    "ingested_count": 0,
+    "legacy_disabled_reason": "selection_rules_filtered_all",
+    "legacy_recovery_blocked": 33,
+    "legacy_recovery_packaged": 0,
+    "legacy_recovery_selected": 0,
+    "legacy_recovery_status": "no_candidates_selected",
+    "legacy_scan_ran": true,
+    "normalized_count": 0,
+    "outbox_delivered": 0,
+    "outbox_failed": 0,
+    "outbox_queued": 0,
+    "pending_drop_count": 0,
+    "prod_doctor_status": "ok",
+    "project_docs_status": "skipped_interval",
+    "project_docs_updated_files_count": 0,
+    "runtime_compactions": 0,
+    "runtime_distills": 0,
+    "sg_pending_approval": 0,
+    "sg_promoted_auto": 0,
+    "slices_processed_count": 0
   },
   "version": 1
 }

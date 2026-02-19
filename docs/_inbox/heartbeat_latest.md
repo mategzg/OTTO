@@ -1,5 +1,32 @@
 # Heartbeat Latest
 
-- Status: `skipped_interval`
-- Last run: `2026-02-19T13:34:32.224772+00:00`
-- Interval minutes: 30
+- Status: `success`
+- Pending drop: 0
+- Ingested count: 0
+- Normalized count: 0
+- Slices processed: 0
+- Runtime compactions: 0
+- Runtime distills: 0
+- Approvals pending: 0
+- Approvals delivery sent: `False`
+- Approvals delivery reason: `no_new_items`
+- SG promoted auto: 0
+- SG pending approval: 0
+- Outbox queued: 0
+- Outbox delivered: 0
+- Outbox failed: 0
+- Hook backlog pending: 0
+- Hook backlog replayed: 0
+- Hook backlog failed: 0
+- Legacy recovery status: `no_candidates_selected`
+- Legacy recovery scan ran: `True`
+- Legacy recovery disabled reason: `selection_rules_filtered_all`
+- Legacy recovery packaged: 0
+- Legacy recovery selected: 0
+- Legacy recovery blocked: 33
+- Prod doctor status: `ok`
+- Project docs status: `skipped_interval`
+- Project docs updated files: 0
+- Autonomy status: `idle`
+- JSON report: `docs/_inbox/heartbeat_latest.json`
+- Log report: `logs/heartbeat_latest.json`

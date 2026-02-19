@@ -1,14 +1,14 @@
 # Autonomy Latest
 
 - Root: `/home/agente/otto-workspace`
-- Status: `success`
-- Pending sources(total): 1
-- Pending selected this tick: 1
-- Last plan id: `PLAN-20260219T133432Z-bbd1aa21`
-- Last apply status: `success`
-- Processed ids: `23cfd0ef81`
+- Status: `idle`
+- Pending sources(total): 0
+- Pending selected this tick: 0
+- Last plan id: ``
+- Last apply status: ``
+- Processed ids: ``
 - Heartbeat pending_drop: 0
-- Heartbeat sources_pending: 1
+- Heartbeat sources_pending: 0
 - Heartbeat slices_processed: 0
 - Runtime compactions: 0
 - Runtime distills: 0

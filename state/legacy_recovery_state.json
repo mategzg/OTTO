@@ -6,10 +6,10 @@
     "87b429445901",
     "ebc65e189692"
   ],
-  "last_run_utc": "2026-02-19T13:34:32.298416+00:00",
+  "last_run_utc": "2026-02-19T15:35:06.354385+00:00",
   "last_scan_status": "ran",
-  "last_scan_ts": "2026-02-19T13:34:32.298416+00:00",
-  "last_status": "packaged",
+  "last_scan_ts": "2026-02-19T15:35:06.354385+00:00",
+  "last_status": "no_candidates_selected",
   "processed_batches": [
     {
       "batch_id": "ee45652290d5",

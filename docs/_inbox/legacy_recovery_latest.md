@@ -1,23 +1,20 @@
 # Legacy Recovery Latest v2
 
-- Status: `packaged`
+- Status: `no_candidates_selected`
 - Policy enabled: `True`
 - Legacy scan ran: `True`
-- Disabled reason: ``
-- Selected count: 4
-- Packaged count: 4
+- Disabled reason: `selection_rules_filtered_all`
+- Selected count: 0
+- Packaged count: 0
 - Blocked count: 33
-- Total bytes packaged: 4468
-- Batch path: `vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec`
+- Total bytes packaged: 0
+- Batch path: ``
 - JSON report: `docs/_inbox/legacy_recovery_latest.json`
 - Log report: `logs/legacy_recovery_latest.json`
 
 ## Selected
 
-- `vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md` | type=doc_value | size=188 | score=150
-- `vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md` | type=doc_value | size=374 | score=150
-- `vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html` | type=doc_value | size=3585 | score=51
-- `vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md` | type=doc_value | size=321 | score=50
+- none
 
 ## Blocked
 

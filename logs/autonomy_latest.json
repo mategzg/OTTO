@@ -1,7 +1,7 @@
 {
-  "apply_status": "success",
+  "apply_status": "",
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:34:32.501359+00:00",
+  "created_at": "2026-02-19T15:35:13.701293+00:00",
   "errors": [],
   "heartbeat_context": {
     "ingested_count": 0,
@@ -9,7 +9,7 @@
     "note": "",
     "pending_drop_count": 0,
     "slices_processed_count": 0,
-    "sources_pending_count": 1
+    "sources_pending_count": 0
   },
   "memory": {
     "compact_status": "idle",
@@ -17,12 +17,10 @@
     "paths": {},
     "pending_inbox": 0
   },
-  "pending_selected_sources": 1,
-  "pending_total_sources": 1,
-  "plan_id": "PLAN-20260219T133432Z-bbd1aa21",
-  "processed_ids": [
-    "23cfd0ef81"
-  ],
+  "pending_selected_sources": 0,
+  "pending_total_sources": 0,
+  "plan_id": "",
+  "processed_ids": [],
   "runtime_context": {
     "approvals_delivery_reason": "no_new_items",
     "approvals_delivery_sent": false,
@@ -46,18 +44,16 @@
     "backoff_until_utc": "",
     "consecutive_failures": 0,
     "heartbeat_last_report": "docs/_inbox/heartbeat_latest.json",
-    "heartbeat_last_run_utc": "2026-02-19T13:18:16.681905+00:00",
+    "heartbeat_last_run_utc": "2026-02-19T14:35:14.633221+00:00",
     "heartbeat_last_status": "success",
     "last_error": "",
-    "last_plan_id": "PLAN-20260219T133432Z-bbd1aa21",
-    "last_processed_ids": [
-      "23cfd0ef81"
-    ],
-    "last_run_utc": "2026-02-19T13:34:32.501359+00:00",
-    "last_status": "success",
+    "last_plan_id": "",
+    "last_processed_ids": [],
+    "last_run_utc": "2026-02-19T15:35:13.701293+00:00",
+    "last_status": "idle",
     "paused_until_utc": ""
   },
-  "status": "success",
+  "status": "idle",
   "surface_scan": {
     "fix_actions": [],
     "paths": {

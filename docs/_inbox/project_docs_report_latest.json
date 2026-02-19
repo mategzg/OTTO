@@ -1,10 +1,8 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "changed_files": [
-    "state/heartbeat_policy.json"
-  ],
-  "changed_files_count": 1,
-  "created_at": "2026-02-19T13:34:32.237930+00:00",
+  "changed_files": [],
+  "changed_files_count": 0,
+  "created_at": "2026-02-19T15:35:06.331315+00:00",
   "docs_exist": true,
   "gap_count": 0,
   "gaps": [],
@@ -14,8 +12,8 @@
     "markdown": "docs/_inbox/project_docs_report_latest.md"
   },
   "signature_files_count": 63,
-  "signature_new": "2598dd7ab47bd999ee2f0fb478d8a05ecfb2dfe453fa8e33735c720ee17baa1f",
-  "signature_old": "65557fd39e90661286540f03040b0bf837431340002f5306b9c523530458bef5",
+  "signature_new": "9b59badc6563c8c119fd6dd27754535133f8f30d16b3ae32ba835c43f9d6cb97",
+  "signature_old": "9b59badc6563c8c119fd6dd27754535133f8f30d16b3ae32ba835c43f9d6cb97",
   "status": "skipped_interval",
   "updated_files": [],
   "version": 1

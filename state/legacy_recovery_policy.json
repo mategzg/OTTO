@@ -54,5 +54,21 @@
         "private key",
         "bearer",
         "credential"
+    ],
+    "knowledge_policy": "brain/domains/legacy/POLICY.md",
+    "core_protected_files": [
+        "SOUL.md",
+        "IDENTITY.md",
+        "USER.md",
+        "AGENTS.md",
+        "HEARTBEAT.md",
+        "TOOLS.md",
+        "INDEX.md",
+        "CEO.md"
+    ],
+    "target_dirs": [
+        "brain/cards",
+        "brain/domains",
+        "repo_map"
     ]
 }

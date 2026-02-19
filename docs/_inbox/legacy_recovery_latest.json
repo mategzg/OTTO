@@ -1,6 +1,4 @@
 {
-  "batch_id": "99b9aa472aec",
-  "batch_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec",
   "blocked": [
     {
       "candidate_id": "d3f00539586c",
@@ -169,37 +167,8 @@
     }
   ],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:34:32.298416+00:00",
-  "packaged": [
-    {
-      "candidate_id": "87b429445901",
-      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__docs__empresa__memory.md",
-      "legacy_type": "doc_value",
-      "size": 188,
-      "source_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md"
-    },
-    {
-      "candidate_id": "1a9c1f747e88",
-      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___salvage__20260218T041520Z_d70c621560__staged__IDENTITY.md",
-      "legacy_type": "doc_value",
-      "size": 374,
-      "source_path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md"
-    },
-    {
-      "candidate_id": "ebc65e189692",
-      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__old_backups__20260218T025933Z_6fb9ed08bb__dashboard__index.html",
-      "legacy_type": "doc_value",
-      "size": 3585,
-      "source_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html"
-    },
-    {
-      "candidate_id": "843bee116308",
-      "copied_path": "vault/inbox_raw/_pending_drop/legacy_recovery/20260219T133432Z_99b9aa472aec/source/vault___quarantine__bad_path_roots__20260218T025912Z_5de57dc319__README.md",
-      "legacy_type": "doc_value",
-      "size": 321,
-      "source_path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md"
-    }
-  ],
+  "created_at": "2026-02-19T15:35:06.354385+00:00",
+  "packaged": [],
   "policy": {
     "allow_types": [
       "doc_value",
@@ -207,102 +176,21 @@
       "brain_node"
     ],
     "enabled": true,
-    "interval_minutes": 1,
+    "interval_minutes": 30,
     "max_bytes_per_tick": 10485760,
-    "max_items_per_tick": 10,
-    "scan_interval_hours": 1,
+    "max_items_per_tick": 5,
+    "scan_interval_hours": 2,
     "target_drop_base": "vault/inbox_raw/_pending_drop/legacy_recovery"
   },
-  "selected": [
-    {
-      "bucket": "doc_recoverable",
-      "candidate_id": "87b429445901",
-      "canonical_coldstore_key": "5b2fc68841fbc64613",
-      "comparison_reason": "no_equivalent_detected",
-      "content_hash": "9f7486bc53fe5eb46538d6077111c9f7778657c6a1c4becab2698eb0d5bc5c37",
-      "feature_signature": "481942320bd0d8f6",
-      "is_artifact_execution": false,
-      "kind_heuristic": "doc",
-      "legacy_type": "doc_value",
-      "normalized_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md",
-      "path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/docs/empresa/memory.md",
-      "present_in_current": false,
-      "priority_score": 150,
-      "sha256": "9f7486bc53fe5eb46538d6077111c9f7778657c6a1c4becab2698eb0d5bc5c37",
-      "size": 188,
-      "value_keywords": [
-        "memory"
-      ],
-      "value_score": 1
-    },
-    {
-      "bucket": "doc_recoverable",
-      "candidate_id": "1a9c1f747e88",
-      "canonical_coldstore_key": "19e88f980ca1c50b2a",
-      "comparison_reason": "no_equivalent_detected",
-      "content_hash": "e603c9836288a0ca57000bf957e39a1c464613f0038737775c1d7a36e679a21a",
-      "feature_signature": "2cb0450dfc258da3",
-      "is_artifact_execution": false,
-      "kind_heuristic": "doc",
-      "legacy_type": "doc_value",
-      "normalized_path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md",
-      "path": "vault/_salvage/20260218T041520Z_d70c621560/staged/IDENTITY.md",
-      "present_in_current": false,
-      "priority_score": 150,
-      "sha256": "e603c9836288a0ca57000bf957e39a1c464613f0038737775c1d7a36e679a21a",
-      "size": 374,
-      "value_keywords": [
-        "openclaw"
-      ],
-      "value_score": 1
-    },
-    {
-      "bucket": "junk_low_value",
-      "candidate_id": "ebc65e189692",
-      "canonical_coldstore_key": "9a58cdfa973a77f89f",
-      "comparison_reason": "no_equivalent_detected",
-      "content_hash": "64ee0cdf70befaaaeceafc2c0c2df37921dcdd3a26ba00c28aa8fa7b96edfda3",
-      "feature_signature": "7b38c435449e85cf",
-      "is_artifact_execution": false,
-      "kind_heuristic": "doc",
-      "legacy_type": "doc_value",
-      "normalized_path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html",
-      "path": "vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb/dashboard/index.html",
-      "present_in_current": false,
-      "priority_score": 51,
-      "sha256": "64ee0cdf70befaaaeceafc2c0c2df37921dcdd3a26ba00c28aa8fa7b96edfda3",
-      "size": 3585,
-      "value_keywords": [],
-      "value_score": 0
-    },
-    {
-      "bucket": "junk_low_value",
-      "candidate_id": "843bee116308",
-      "canonical_coldstore_key": "27dbeb30958c92e83a",
-      "comparison_reason": "no_equivalent_detected",
-      "content_hash": "39f39f82f158d79e706957507cc4fc55ef8abc0947dbde76ff31c15acf52c2c9",
-      "feature_signature": "18c53d7b69533711",
-      "is_artifact_execution": false,
-      "kind_heuristic": "doc",
-      "legacy_type": "doc_value",
-      "normalized_path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md",
-      "path": "vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319/README.md",
-      "present_in_current": false,
-      "priority_score": 50,
-      "sha256": "39f39f82f158d79e706957507cc4fc55ef8abc0947dbde76ff31c15acf52c2c9",
-      "size": 321,
-      "value_keywords": [],
-      "value_score": 0
-    }
-  ],
-  "status": "packaged",
+  "selected": [],
+  "status": "no_candidates_selected",
   "summary": {
     "blocked_count": 33,
-    "legacy_disabled_reason": "",
+    "legacy_disabled_reason": "selection_rules_filtered_all",
     "legacy_scan_ran": true,
-    "packaged_bytes": 4468,
-    "packaged_count": 4,
-    "selected_count": 4
+    "packaged_bytes": 0,
+    "packaged_count": 0,
+    "selected_count": 0
   },
   "version": 2
 }

@@ -1,6 +1,6 @@
 # ChatGPT Normalize Report
 
-- Target count: 1
+- Target count: 0
 - ChatGPT detected: 0
 - Normalized count: 0
 - Slice count: 0
@@ -10,4 +10,4 @@
 
 ## Sources
 
-- `vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191` kind=generic_corpus normalized=False slices=0 messages=0
+- None.

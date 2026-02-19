@@ -2,7 +2,7 @@
   "approval_delivery": "telegram_owner_only_via_approval_manager",
   "approvals": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:34:32.563648+00:00",
+  "created_at": "2026-02-19T15:35:13.743693+00:00",
   "queue_path": "docs/_inbox/sg_promotion_queue.ndjson",
   "summary": {
     "changed": 0,

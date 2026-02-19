@@ -1,6 +1,6 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:34:32.561032+00:00",
+  "created_at": "2026-02-19T15:35:13.740837+00:00",
   "delivery": {
     "channel": "telegram_owner",
     "fallback_outbox": "",

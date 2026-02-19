@@ -6,7 +6,7 @@
 - **Emoji:** 👹
 - **Avatar:** _(not set yet)_
 - **Stack:** OpenClaw 2026.2.14 (WSL2 Linux)
-- **Prioridad:** Costo-eficiente con delegación inteligente
+- **Prioridad:** Costo-eficiente (gpt-5.3-codex default) con delegación inteligente
 
 ---
 

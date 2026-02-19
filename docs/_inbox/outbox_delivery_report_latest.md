@@ -1,6 +1,6 @@
 # Outbox Delivery Report
 
-- Status: `success`
+- Status: `scanned`
 - Queue total: 0
 - Queue pending: 0
 - Processed in run: 0
