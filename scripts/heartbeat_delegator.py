@@ -786,6 +786,26 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             "remaining_pending": int(rescanned.get("total_pending", 0)),
         }
 
+    # completion-by-backlog guard: if there is no pending delegated work, release active lock
+    # even when mission.json did not transition to completed.
+    rescanned = scan_pending_work(canonical_root)
+    if int(rescanned.get("total_pending", 0)) == 0:
+        state.update(
+            {
+                "status": "completed_no_pending",
+                "active_mission_id": None,
+            }
+        )
+        state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
+        _save_json(canonical_root / STATE_PATH, state)
+        return {
+            "status": "completed_no_pending",
+            "active": False,
+            "mission_id": mission_id,
+            "ingest_progress": state.get("ingest_progress", {}),
+            "remaining_pending": 0,
+        }
+
     # stale-lock guard: if a delegation stays active too long without explicit completion,
     # release the lock so heartbeat can redelegate in the next cycle.
     stale_minutes = max(5, int(policy.get("stale_delegation_minutes", 45)))
