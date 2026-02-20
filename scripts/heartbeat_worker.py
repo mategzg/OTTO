@@ -7,6 +7,7 @@ import argparse
 import json
 import logging
 import os
+import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -262,6 +263,50 @@ def _mission_learning_pending_count(root: Path) -> int:
     return count
 
 
+def _run_ingest_rescue(root: Path) -> Dict[str, Any]:
+    """Inline rescue when delegation is active but ingest backlog remains stuck."""
+    steps: list[dict[str, Any]] = []
+
+    def _run(cmd: str) -> tuple[int, str]:
+        proc = subprocess.run(cmd, shell=True, cwd=str(root), capture_output=True, text=True)
+        output = (proc.stdout or "") + (("\n" + proc.stderr) if proc.stderr else "")
+        return proc.returncode, output.strip()
+
+    for cmd in [
+        "python3 scripts/corpus_triage.py --root .",
+        "python3 scripts/brain_ingest_router.py --plan --root .",
+    ]:
+        rc, out = _run(cmd)
+        steps.append({"command": cmd, "code": rc, "output": out[-800:]})
+        if rc != 0:
+            return {"status": "failed", "steps": steps}
+
+    plan_id = ""
+    plan_path = root / "docs" / "_inbox" / "corpus_assimilation_plan_latest.json"
+    if plan_path.is_file():
+        try:
+            plan_payload = json.loads(plan_path.read_text(encoding="utf-8"))
+            plan_id = str(plan_payload.get("plan_id", "")).strip()
+        except Exception:
+            plan_id = ""
+    if not plan_id:
+        return {"status": "no_plan", "steps": steps}
+
+    cmd = f"python3 scripts/brain_ingest_router.py --apply {plan_id} --root ."
+    rc, out = _run(cmd)
+    steps.append({"command": cmd, "code": rc, "output": out[-800:]})
+    if rc != 0:
+        return {"status": "failed", "steps": steps, "plan_id": plan_id}
+
+    cmd = "python3 scripts/write_router.py --root ."
+    rc, out = _run(cmd)
+    steps.append({"command": cmd, "code": rc, "output": out[-800:]})
+    if rc != 0:
+        return {"status": "failed", "steps": steps, "plan_id": plan_id}
+
+    return {"status": "success", "steps": steps, "plan_id": plan_id}
+
+
 def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     policy = _load_policy(canonical_root)
@@ -424,10 +469,17 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         elif bool(delegation_completion.get("active", False)):
             delegation = {
                 "status": "delegation_in_progress",
-                "coder_used": None,
+                "coder_used": str(load_delegation_state(canonical_root).get("coder_used") or ""),
                 "items_delegated": int(delegation_pending.get("total_pending", 0)),
                 "active_mission_id": str(delegation_completion.get("mission_id", "")),
             }
+            ingest_backlog = int(delegation_pending.get("pending", {}).get("ingest", {}).get("count", 0))
+            if ingest_backlog > 0 and bool(policy.get("ingest_inline_rescue_on_stall", True)):
+                rescue = _run_ingest_rescue(canonical_root)
+                delegation["ingest_rescue"] = rescue
+                if rescue.get("status") == "success":
+                    # Refresh snapshot after rescue to avoid stale pending counters.
+                    delegation_pending = scan_pending_work(canonical_root)
         else:
             delegation = delegate_to_coder(
                 canonical_root,
@@ -616,6 +668,7 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
                 "delegation_ingest_total_packages": int(ingest_progress.get("total_packages_detected", 0)),
                 "delegation_ingest_packages_processed": int(ingest_progress.get("packages_processed", 0)),
                 "delegation_ingest_packages_remaining": int(ingest_progress.get("packages_remaining", 0)),
+                "delegation_ingest_rescue_status": str((delegation.get("ingest_rescue") or {}).get("status", "")),
                 "project_docs_status": str(project_docs["report"].get("status", "")),
                 "project_docs_updated_files_count": len(project_docs["report"].get("updated_files", [])),
                 "learning_status": str(learning.get("report", {}).get("status", "")),
@@ -698,6 +751,7 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
             f"- Delegation workload: `{report['summary'].get('delegation_workload', '')}`",
             f"- Delegation active mission: `{report['summary'].get('delegation_active_mission', '')}`",
             f"- Ingest progress: {report['summary'].get('delegation_ingest_packages_processed', 0)}/{report['summary'].get('delegation_ingest_total_packages', 0)} (remaining={report['summary'].get('delegation_ingest_packages_remaining', 0)})",
+            f"- Ingest rescue: `{report['summary'].get('delegation_ingest_rescue_status', '')}`",
             f"- Project docs status: `{report['summary'].get('project_docs_status', '')}`",
             f"- Project docs updated files: {report['summary'].get('project_docs_updated_files_count', 0)}",
             f"- Learning status: `{report['summary'].get('learning_status', '')}`",

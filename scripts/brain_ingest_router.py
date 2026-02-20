@@ -859,17 +859,30 @@ def _move_sources_to_processed(canonical_root: Path, plan: Dict[str, Any], *, in
     inbox_root = canonical_root / inbox_rel
     stamp = _stamp()
 
+    # Plan sources can be fine-grained files (e.g., normalized/slices/*.ndjson).
+    # Collapse to top-level source roots so processed move happens once per source package.
+    move_roots: Dict[str, str] = {}
     for source in plan["sources"]:
-        src_rel = source["inbox_rel_path"]
+        src_rel = str(source.get("inbox_rel_path", "")).strip()
+        if not src_rel:
+            continue
+        parts = Path(src_rel).parts
+        if len(parts) >= 2 and parts[0] == "sources":
+            root_rel = f"sources/{parts[1]}"
+        else:
+            root_rel = src_rel
+        move_roots.setdefault(root_rel, str(source.get("source_id", "unknown")))
+
+    for src_rel, source_id in sorted(move_roots.items()):
         src = inbox_root / src_rel
         if not src.exists():
             # Idempotency guard: if another run moved it already, skip instead of failing whole batch.
             continue
 
-        target_root = inbox_root / "_processed" / f"{stamp}_{source['source_id']}"
+        target_root = inbox_root / "_processed" / f"{stamp}_{source_id}"
         suffix = 1
         while target_root.exists():
-            target_root = inbox_root / "_processed" / f"{stamp}_{source['source_id']}_{suffix}"
+            target_root = inbox_root / "_processed" / f"{stamp}_{source_id}_{suffix}"
             suffix += 1
         payload_root = target_root / "source"
         payload_root.parent.mkdir(parents=True, exist_ok=True)
@@ -879,7 +892,7 @@ def _move_sources_to_processed(canonical_root: Path, plan: Dict[str, Any], *, in
         docs = _write_processed_manifest(canonical_root, target_root=target_root, source_path=src, plan_id=plan["plan_id"])
         moved.append(
             {
-                "source_id": source["source_id"],
+                "source_id": source_id,
                 "source_rel": src_rel,
                 "processed_root": target_root.resolve().relative_to(canonical_root.resolve()).as_posix(),
                 "manifest": docs["manifest"],
