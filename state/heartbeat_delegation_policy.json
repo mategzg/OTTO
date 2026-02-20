@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "coder_priority": [
+    "codex",
+    "claude_code"
+  ],
+  "fallback_telegram": true,
+  "max_active_delegations": 1,
+  "stale_delegation_minutes": 20,
+  "priority_order": [
+    "outbox",
+    "reminders",
+    "ingest",
+    "hook_backlog",
+    "research",
+    "odoo",
+    "summarizer",
+    "memory",
+    "health"
+  ],
+  "workload_thresholds": {
+    "light": 5,
+    "medium": 15
+  }
+}

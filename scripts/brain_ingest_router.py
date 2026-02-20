@@ -803,13 +803,18 @@ def _write_processed_manifest(canonical_root: Path, *, target_root: Path, source
     payload = target_root / "source"
     for fp in sorted(_iter_files(payload), key=lambda p: p.as_posix()):
         rel = fp.resolve().relative_to(payload.resolve()).as_posix()
-        stat = fp.stat()
+        try:
+            stat = fp.stat()
+            digest = _sha256_file(fp)
+        except FileNotFoundError:
+            # Concurrent or transient disappearance should not fail the whole apply run.
+            continue
         entries.append(
             {
                 "mtime": stat.st_mtime,
                 "origin_path": str(source_path.resolve()),
                 "rel_path": rel,
-                "sha256": _sha256_file(fp),
+                "sha256": digest,
                 "size": stat.st_size,
             }
         )
@@ -858,7 +863,8 @@ def _move_sources_to_processed(canonical_root: Path, plan: Dict[str, Any], *, in
         src_rel = source["inbox_rel_path"]
         src = inbox_root / src_rel
         if not src.exists():
-            raise RuntimeError(f"Missing source before move: {src_rel}")
+            # Idempotency guard: if another run moved it already, skip instead of failing whole batch.
+            continue
 
         target_root = inbox_root / "_processed" / f"{stamp}_{source['source_id']}"
         suffix = 1

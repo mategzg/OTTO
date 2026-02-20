@@ -252,7 +252,8 @@ def _compute_ingest_progress(existing: Dict[str, Any], pending: Dict[str, Any], 
     base = dict(DEFAULT_STATE["ingest_progress"])
     if isinstance(existing, dict):
         base.update({k: existing.get(k) for k in base.keys()})
-    remaining = int(pending.get("pending", {}).get("ingest_pending", {}).get("count", 0))
+    # Track full ingest backlog (drop + normalize + triage + apply), not only pending_drop.
+    remaining = int(pending.get("pending", {}).get("ingest", {}).get("count", 0))
     processed_prev = max(0, int(base.get("packages_processed", 0)))
     total_prev = max(0, int(base.get("total_packages_detected", 0)))
     total = max(total_prev, processed_prev + remaining)
