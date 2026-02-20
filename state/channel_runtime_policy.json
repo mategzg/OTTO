@@ -97,6 +97,11 @@
     "telegram_owner_to_memory": true,
     "whatsapp_client_to_sg_kb": "minimal"
   },
+  "whatsapp_runtime_guard": {
+    "enabled": true,
+    "min_5h_remaining_pct": 50,
+    "mode": "hold_queue"
+  },
   "discord_domain_inference": {
     "enabled": true,
     "unknown_slug": "unknown",

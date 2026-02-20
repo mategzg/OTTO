@@ -8,7 +8,7 @@ import json
 import re
 import sys
 import unicodedata
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -18,22 +18,58 @@ if str(ROOT) not in sys.path:
 
 from scripts.approval_manager import enqueue_request, is_worker_paired, process_owner_reply
 from scripts.chat_to_inbox_drop import run_chat_to_drop
+from scripts.context_loader import load_context_plan
+from scripts.episode_linker import get_episode
 from scripts.memory_capture import run_capture
+from scripts.mission_activation import decide_and_act as decide_mission_activation
 from scripts.nl_intent_classifier import classify_intent
+from scripts.odoo_enqueuer import enqueue_odoo
+from scripts.research_enqueuer import enqueue_research
 from scripts.repo_root import get_canonical_root
 from scripts.session_memory_manager import append_event
 from scripts.sg_channel_policy import evaluate_sg_event
 from scripts.sg_promotion import enqueue_promotion
 from scripts.outbox_queue import enqueue_message
+from scripts.reminder_engine import add_reminder
+from scripts.status_reporter import build_status, render_status_text
 
 REPORT_JSON = Path("docs/_inbox/ingress_report_latest.json")
 REPORT_MD = Path("docs/_inbox/ingress_report_latest.md")
 REPORT_LOG = Path("logs/ingress_latest.json")
 DISCORD_DOMAINS_PATH = Path("state/discord_domains.json")
 WORKER_PAIRINGS_PATH = Path("state/sg_worker_pairings.json")
+CHANNEL_POLICY_PATH = Path("state/channel_runtime_policy.json")
+USAGE_GUARD_PATH = Path("state/model_usage_guard.json")
+WHATSAPP_HOLD_QUEUE_PATH = Path("state/whatsapp_hold_queue.ndjson")
 
 _SLUG_SEP_RE = re.compile(r"[^a-z0-9]+")
 _WORKER_BACKOFFICE_RE = re.compile(r"\b(backoffice|worker|trabajador|operaciones|interno|acceso)\b", re.IGNORECASE)
+_TOPIC_FOLLOWUP_RE = re.compile(
+    r"\b(sobre eso|y lo de|mas sobre|más sobre|cuentame mas|cuéntame más|que mas|qué más|amplia|amplía|detalla)\b",
+    re.IGNORECASE,
+)
+_TOPIC_TOKEN_RE = re.compile(r"[a-z0-9]+")
+_TOPIC_STOPWORDS = {
+    "el",
+    "la",
+    "los",
+    "las",
+    "de",
+    "del",
+    "en",
+    "y",
+    "a",
+    "que",
+    "es",
+    "se",
+    "con",
+    "por",
+}
+_ODOO_INTENT_PREFIX = "odoo_"
+_REMINDER_HOURS_RE = re.compile(r"\ben\s+(\d{1,3})\s*horas?\b", re.IGNORECASE)
+_REMINDER_MINUTES_RE = re.compile(r"\ben\s+(\d{1,4})\s*minutos?\b", re.IGNORECASE)
+_REMINDER_HHMM_RE = re.compile(r"\ba\s+las\s+(\d{1,2}):(\d{2})\b", re.IGNORECASE)
+_REMINDER_DAY_RE = re.compile(r"\bel\s+d[ií]a\s+(\d{1,2})/(\d{1,2})\b", re.IGNORECASE)
 
 
 def _utc_now() -> str:
@@ -58,6 +94,69 @@ def _load_json_file(path: Path) -> Dict[str, Any]:
 def _save_pairings(root: Path, payload: Dict[str, Any]) -> None:
     payload["updated_at"] = _utc_now()
     _save_json(root / WORKER_PAIRINGS_PATH, payload)
+
+
+def _append_ndjson(path: Path, row: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def _load_channel_policy(root: Path) -> Dict[str, Any]:
+    payload = _load_json_file(root / CHANNEL_POLICY_PATH)
+    return payload if isinstance(payload, dict) else {}
+
+
+def _whatsapp_budget_guard_status(root: Path, event: Dict[str, Any], *, is_inbound: bool) -> Dict[str, Any]:
+    channel = str(event.get("channel", "")).lower()
+    if not is_inbound or channel != "whatsapp":
+        return {"status": "not_applicable", "allowed": True}
+
+    if bool(event.get("metadata", {}).get("budget_replay", False)):
+        return {"status": "bypass_replay", "allowed": True}
+
+    policy = _load_channel_policy(root)
+    guard = policy.get("whatsapp_runtime_guard", {}) if isinstance(policy.get("whatsapp_runtime_guard", {}), dict) else {}
+    if not bool(guard.get("enabled", False)):
+        return {"status": "disabled", "allowed": True}
+
+    min_pct = max(1, int(guard.get("min_5h_remaining_pct", 50)))
+    usage = _load_json_file(root / USAGE_GUARD_PATH)
+    remaining = usage.get("five_hour_remaining_pct")
+    if not isinstance(remaining, int):
+        hold_row = {
+            "ts": _utc_now(),
+            "reason": "missing_5h_usage_data",
+            "remaining_pct": None,
+            "min_pct": min_pct,
+            "event": event,
+        }
+        _append_ndjson(root / WHATSAPP_HOLD_QUEUE_PATH, hold_row)
+        return {
+            "status": "held_missing_usage_data",
+            "allowed": False,
+            "remaining_pct": None,
+            "min_pct": min_pct,
+            "hold_queue_path": WHATSAPP_HOLD_QUEUE_PATH.as_posix(),
+        }
+    if remaining >= min_pct:
+        return {"status": "allowed", "allowed": True, "remaining_pct": remaining, "min_pct": min_pct}
+
+    hold_row = {
+        "ts": _utc_now(),
+        "reason": "below_5h_threshold",
+        "remaining_pct": remaining,
+        "min_pct": min_pct,
+        "event": event,
+    }
+    _append_ndjson(root / WHATSAPP_HOLD_QUEUE_PATH, hold_row)
+    return {
+        "status": "held_below_threshold",
+        "allowed": False,
+        "remaining_pct": remaining,
+        "min_pct": min_pct,
+        "hold_queue_path": WHATSAPP_HOLD_QUEUE_PATH.as_posix(),
+    }
 
 
 def _load_pairings(root: Path) -> Dict[str, Any]:
@@ -93,6 +192,271 @@ def _text_of(event: Dict[str, Any]) -> str:
         if value:
             return value
     return ""
+
+
+def _topic_keywords(text: str, *, max_words: int) -> List[str]:
+    normalized = unicodedata.normalize("NFKD", str(text)).encode("ascii", "ignore").decode("ascii").lower()
+    out: List[str] = []
+    for token in _TOPIC_TOKEN_RE.findall(normalized):
+        if token in _TOPIC_STOPWORDS:
+            continue
+        if token in out:
+            continue
+        out.append(token)
+        if len(out) >= max_words:
+            break
+    return out
+
+
+def _topic_slug_from_text(text: str) -> str:
+    words = _topic_keywords(text, max_words=3)
+    return "_".join(words) if words else ""
+
+
+def _topic_label_from_text(text: str) -> str:
+    words = _topic_keywords(text, max_words=5)
+    return " ".join(words) if words else "tema"
+
+
+def _maybe_add_episodic_context(root: Path, event: Dict[str, Any], intent: Dict[str, Any], *, is_inbound: bool) -> Dict[str, Any]:
+    if not is_inbound:
+        return {"status": "skipped_outbound"}
+    text = str(event.get("text", "")).strip()
+    if not text:
+        return {"status": "skipped_empty"}
+    signals = intent.get("signals", [])
+    if not isinstance(signals, list):
+        signals = []
+    wants_followup = "topic_followup" in signals or bool(_TOPIC_FOLLOWUP_RE.search(text))
+    if not wants_followup:
+        return {"status": "skipped"}
+    topic_slug = _topic_slug_from_text(text)
+    if not topic_slug:
+        return {"status": "skipped_no_topic"}
+    try:
+        episode = get_episode(root, topic_slug)
+    except Exception as exc:
+        return {"status": "error", "error": f"{exc.__class__.__name__}:{exc}"}
+    if not isinstance(episode, dict):
+        return {"status": "not_found", "topic_slug": topic_slug}
+    topic = str(episode.get("topic", "")).strip() or topic_slug
+    summary = str(episode.get("summary", "")).strip()
+    if not summary:
+        return {"status": "empty_summary", "topic_slug": topic_slug}
+    note = f"[CONTEXTO EPISODICO: {topic}]\n{summary[:500]}".strip()
+    metadata = event.get("metadata", {})
+    if not isinstance(metadata, dict):
+        metadata = {}
+    metadata["episodic_context"] = {
+        "topic_slug": topic_slug,
+        "episode_id": str(episode.get("episode_id", "")),
+        "topic": topic,
+        "summary": summary[:500],
+        "note": note,
+    }
+    event["metadata"] = metadata
+    attachments = event.get("attachments", [])
+    if not isinstance(attachments, list):
+        attachments = []
+    attachments.append(
+        {
+            "type": "episodic_context",
+            "episode_id": str(episode.get("episode_id", "")),
+            "topic": topic,
+            "summary": summary[:500],
+        }
+    )
+    event["attachments"] = attachments
+    return {
+        "status": "matched",
+        "topic_slug": topic_slug,
+        "episode_id": str(episode.get("episode_id", "")),
+        "topic": topic,
+    }
+
+
+def _maybe_enqueue_research_request(root: Path, event: Dict[str, Any], intent: Dict[str, Any], session_id: str) -> Dict[str, Any]:
+    if str(event.get("action", "")).strip().lower() == "sent":
+        return {"status": "skipped_outbound"}
+    if str(intent.get("primary_intent", "")) != "research_request":
+        return {"status": "skipped"}
+    text = str(event.get("text", "")).strip()
+    if not text:
+        return {"status": "skipped_empty_text"}
+    topic = _topic_label_from_text(text)
+    requested_by = f"{str(event.get('channel', '')).strip()}:{str(event.get('peer_id', '')).strip()}"
+    enqueued = enqueue_research(root, topic, text, requested_by)
+    target = str(event.get("peer_id", "")).strip()
+    queue_item_id = ""
+    if target:
+        ack = enqueue_message(
+            root,
+            channel=str(event.get("channel", "")).strip(),
+            target=target,
+            text=f"🔍 Entendido. Investigo sobre '{topic}' y te aviso cuando termine.",
+            purpose="research_ack",
+            session_id=session_id,
+            source_ref=f"runtime:{session_id}",
+            metadata={"kind": "research_request", "task_id": str(enqueued.get("task_id", ""))},
+        )
+        queue_item_id = str(ack.get("item_id", ""))
+    return {
+        "status": "enqueued",
+        "task_id": str(enqueued.get("task_id", "")),
+        "enqueue_status": str(enqueued.get("status", "")),
+        "topic": topic,
+        "queue_item_id": queue_item_id,
+    }
+
+
+def _maybe_enqueue_odoo_request(root: Path, event: Dict[str, Any], intent: Dict[str, Any], session_id: str) -> Dict[str, Any]:
+    if str(event.get("action", "")).strip().lower() == "sent":
+        return {"status": "skipped_outbound"}
+    primary = str(intent.get("primary_intent", "")).strip().lower()
+    if not primary.startswith(_ODOO_INTENT_PREFIX):
+        return {"status": "skipped"}
+    text = str(event.get("text", "")).strip()
+    if not text:
+        return {"status": "skipped_empty_text"}
+
+    requested_by = f"{str(event.get('channel', '')).strip()}:{str(event.get('peer_id', '')).strip()}"
+    try:
+        enqueued = enqueue_odoo(root, primary, text, requested_by)
+    except Exception as exc:
+        return {"status": "error", "error": f"{exc.__class__.__name__}:{exc}", "odoo_intent": primary}
+
+    queue_item_id = ""
+    target = str(event.get("peer_id", "")).strip()
+    if target:
+        ack = enqueue_message(
+            root,
+            channel=str(event.get("channel", "")).strip(),
+            target=target,
+            text=f"⚙️ Consultando Odoo sobre '{primary}'. Te aviso cuando tenga resultado.",
+            purpose="odoo_ack",
+            session_id=session_id,
+            source_ref=f"runtime:{session_id}",
+            metadata={"kind": "odoo_request", "task_id": str(enqueued.get("task_id", "")), "odoo_intent": primary},
+        )
+        queue_item_id = str(ack.get("item_id", ""))
+    return {
+        "status": "enqueued",
+        "task_id": str(enqueued.get("task_id", "")),
+        "enqueue_status": str(enqueued.get("status", "")),
+        "odoo_intent": primary,
+        "queue_item_id": queue_item_id,
+    }
+
+
+def _parse_reminder_time(text: str, now: datetime) -> Dict[str, Any]:
+    clean = str(text or "").strip()
+    if not clean:
+        fallback = now + timedelta(hours=1)
+        return {"deliver_at": fallback, "fallback": True, "reason": "empty_text"}
+
+    match = _REMINDER_HOURS_RE.search(clean)
+    if match:
+        hours = max(1, int(match.group(1)))
+        return {"deliver_at": now + timedelta(hours=hours), "fallback": False, "reason": "in_hours"}
+
+    match = _REMINDER_MINUTES_RE.search(clean)
+    if match:
+        minutes = max(1, int(match.group(1)))
+        return {"deliver_at": now + timedelta(minutes=minutes), "fallback": False, "reason": "in_minutes"}
+
+    hhmm = _REMINDER_HHMM_RE.search(clean)
+    day_mm = _REMINDER_DAY_RE.search(clean)
+    tomorrow = ("mañana" in clean.lower()) or ("manana" in clean.lower())
+    if hhmm:
+        hour = min(23, max(0, int(hhmm.group(1))))
+        minute = min(59, max(0, int(hhmm.group(2))))
+        if day_mm:
+            day = min(31, max(1, int(day_mm.group(1))))
+            month = min(12, max(1, int(day_mm.group(2))))
+            year = now.year
+            try:
+                candidate = datetime(year, month, day, hour, minute, tzinfo=timezone.utc)
+            except ValueError:
+                candidate = now + timedelta(hours=1)
+                return {"deliver_at": candidate, "fallback": True, "reason": "invalid_day_month"}
+            if candidate < now:
+                try:
+                    candidate = datetime(year + 1, month, day, hour, minute, tzinfo=timezone.utc)
+                except ValueError:
+                    pass
+            return {"deliver_at": candidate, "fallback": False, "reason": "day_and_time"}
+        base = now + timedelta(days=1 if tomorrow else 0)
+        candidate = base.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        if candidate <= now:
+            candidate = candidate + timedelta(days=1)
+        return {"deliver_at": candidate, "fallback": False, "reason": "time_only"}
+
+    if day_mm:
+        day = min(31, max(1, int(day_mm.group(1))))
+        month = min(12, max(1, int(day_mm.group(2))))
+        year = now.year
+        try:
+            candidate = datetime(year, month, day, 9, 0, tzinfo=timezone.utc)
+        except ValueError:
+            candidate = now + timedelta(hours=1)
+            return {"deliver_at": candidate, "fallback": True, "reason": "invalid_day_month"}
+        if candidate < now:
+            try:
+                candidate = datetime(year + 1, month, day, 9, 0, tzinfo=timezone.utc)
+            except ValueError:
+                pass
+        return {"deliver_at": candidate, "fallback": False, "reason": "day_only"}
+
+    if tomorrow:
+        candidate = (now + timedelta(days=1)).replace(hour=9, minute=0, second=0, microsecond=0)
+        return {"deliver_at": candidate, "fallback": False, "reason": "tomorrow_default_9am"}
+
+    fallback = now + timedelta(hours=1)
+    return {"deliver_at": fallback, "fallback": True, "reason": "parse_fallback_1h"}
+
+
+def _maybe_enqueue_reminder_request(root: Path, event: Dict[str, Any], intent: Dict[str, Any], session_id: str) -> Dict[str, Any]:
+    if str(event.get("action", "")).strip().lower() == "sent":
+        return {"status": "skipped_outbound"}
+    if str(intent.get("primary_intent", "")) != "reminder_request":
+        return {"status": "skipped"}
+    text = str(event.get("text", "")).strip()
+    if not text:
+        return {"status": "skipped_empty_text"}
+
+    now = datetime.now(timezone.utc)
+    parsed = _parse_reminder_time(text, now)
+    due_dt = parsed["deliver_at"]
+    due_iso = due_dt.astimezone(timezone.utc).isoformat()
+    add_out = add_reminder(
+        root,
+        text=text,
+        deliver_at=due_iso,
+        source_session=session_id,
+        channel="telegram_owner",
+    )
+    target = str(event.get("peer_id", "")).strip()
+    if str(event.get("channel", "")).strip().lower().startswith("whatsapp") or not target:
+        target = "telegram_owner"
+    note = " (hora no detectada, recordando en 1h)" if bool(parsed.get("fallback", False)) else ""
+    ack = enqueue_message(
+        root,
+        channel="telegram_owner",
+        target=target,
+        text=f"⏳ Recordatorio agendado para {due_iso}.{note}",
+        purpose="reminder_ack",
+        session_id=session_id,
+        source_ref=f"runtime:{session_id}",
+        metadata={"kind": "reminder_request", "reminder_id": str(add_out.get('id', ''))},
+    )
+    return {
+        "status": "enqueued" if add_out.get("status") in {"enqueued", "duplicate_existing"} else str(add_out.get("status", "")),
+        "reminder_id": str(add_out.get("id", "")),
+        "enqueue_status": str(add_out.get("status", "")),
+        "deliver_at": due_iso,
+        "fallback": bool(parsed.get("fallback", False)),
+        "queue_item_id": str(ack.get("item_id", "")),
+    }
 
 
 def _as_attachments(event: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -506,6 +870,45 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     channel = str(event.get("channel", ""))
     action = str(event.get("action", "received")).strip().lower()
     is_inbound = action != "sent"
+
+    budget_guard = _whatsapp_budget_guard_status(canonical_root, event, is_inbound=is_inbound)
+    if not bool(budget_guard.get("allowed", True)):
+        report = {
+            "canonical_root": str(canonical_root.resolve()),
+            "created_at": _utc_now(),
+            "status": "held_budget_guard",
+            "event": {
+                "channel": channel,
+                "action": action,
+                "peer_id": str(event.get("peer_id", "")),
+                "message_id": str(event.get("message_id", "")),
+            },
+            "primary_intent": "deferred_budget_guard",
+            "labels": ["deferred", "whatsapp_budget_guard"],
+            "actions": {"whatsapp_budget_guard": budget_guard},
+            "version": 1,
+        }
+        _save_json(canonical_root / REPORT_JSON, report)
+        _save_json(canonical_root / REPORT_LOG, report)
+        (canonical_root / REPORT_MD).write_text(
+            "\n".join(
+                [
+                    "# Ingress Report",
+                    "",
+                    "- Status: `held_budget_guard`",
+                    f"- Channel: `{channel}`",
+                    f"- Message id: `{event.get('message_id', '')}`",
+                    f"- Guard status: `{budget_guard.get('status', '')}`",
+                    f"- Remaining 5h pct: `{budget_guard.get('remaining_pct', 'unknown')}`",
+                    f"- Threshold pct: `{budget_guard.get('min_pct', 'unknown')}`",
+                    f"- Hold queue: `{budget_guard.get('hold_queue_path', '')}`",
+                ]
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        return report
+
     domain_info = _infer_discord_domain(canonical_root, event)
     if channel.startswith("discord"):
         event["domain_slug"] = domain_info["domain_slug"] or "unknown"
@@ -522,14 +925,25 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     )
     labels = sorted(set(intent.get("labels", [])))
     event["labels"] = labels
+    episodic_context = _maybe_add_episodic_context(canonical_root, event, intent, is_inbound=is_inbound)
 
     session_out = append_event(canonical_root, event)
     session_id = session_out["session_id"]
+    meta_rel = str(session_out.get("paths", {}).get("meta", ""))
+    session_meta = _load_json_file(canonical_root / meta_rel) if meta_rel else {}
+    session_is_new = int(session_meta.get("event_count_total", 0)) <= 1
 
     actions: Dict[str, Any] = {
         "session": session_out,
         "intent": intent,
+        "context_profile": {},
+        "status_reply": {},
         "owner_reply": {},
+        "episodic_context": episodic_context,
+        "research": {},
+        "reminder": {},
+        "odoo": {},
+        "mission_activation": {},
         "memory_capture": {},
         "drop": {},
         "sg_evaluation": {},
@@ -542,6 +956,47 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     if is_inbound and channel.startswith("telegram") and is_owner:
         owner_reply = process_owner_reply(canonical_root, reply_text=str(event.get("text", "")))
         actions["owner_reply"] = owner_reply
+        if str(intent.get("primary_intent", "")) == "status_request":
+            status_text = render_status_text(build_status(canonical_root))
+            queued = enqueue_message(
+                canonical_root,
+                channel=channel,
+                target=str(event.get("peer_id", "")),
+                text=status_text,
+                purpose="status_reply",
+                session_id=session_id,
+                source_ref=f"runtime:{session_id}",
+                metadata={"kind": "status_request"},
+            )
+            actions["status_reply"] = {
+                "status": "queued",
+                "queue_item_id": queued.get("item_id", ""),
+                "target": str(event.get("peer_id", "")),
+            }
+        else:
+            actions["status_reply"] = {"status": "skipped"}
+    else:
+        actions["status_reply"] = {"status": "skipped"}
+
+    if is_inbound and session_is_new:
+        context_plan = load_context_plan(
+            canonical_root,
+            channel=channel,
+            actor_tier=str(session_out.get("tier", "")),
+            actor_type=str(event.get("actor_type", "")),
+            topic_signals=labels,
+            domain_slug=str(event.get("recommended_domain", event.get("domain_slug", ""))),
+        )
+        actions["context_profile"] = {
+            "status": "loaded",
+            "profile": str(context_plan.get("profile", "")),
+            "entry_count": len(context_plan.get("entries", [])),
+            "entries": context_plan.get("entries", []),
+        }
+    elif is_inbound:
+        actions["context_profile"] = {"status": "skipped_existing_session"}
+    else:
+        actions["context_profile"] = {"status": "skipped_outbound"}
 
     sg_eval = evaluate_sg_event(canonical_root, event) if (is_inbound and channel.startswith("whatsapp")) else {}
     if is_inbound:
@@ -559,8 +1014,24 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         elif "sg_worthy" in labels:
             actions["sg_promotion"] = _maybe_enqueue_sg_promotion(canonical_root, event, labels, session_id, {"sensitivity": "medium"})
 
+        actions["mission_activation"] = decide_mission_activation(
+            canonical_root,
+            event=event,
+            intent=intent,
+            session_id=session_id,
+            sg_eval=sg_eval,
+            owner_reply=actions["owner_reply"],
+        )["report"]
+        actions["research"] = _maybe_enqueue_research_request(canonical_root, event, intent, session_id)
+        actions["reminder"] = _maybe_enqueue_reminder_request(canonical_root, event, intent, session_id)
+        actions["odoo"] = _maybe_enqueue_odoo_request(canonical_root, event, intent, session_id)
         actions["memory_capture"] = _capture_memory_if_applicable(canonical_root, event, labels, session_id)
     else:
+        actions["episodic_context"] = {"status": "skipped_outbound"}
+        actions["research"] = {"status": "skipped_outbound"}
+        actions["reminder"] = {"status": "skipped_outbound"}
+        actions["odoo"] = {"status": "skipped_outbound"}
+        actions["mission_activation"] = {"status": "skipped_outbound"}
         actions["sg_evaluation"] = {"status": "skipped_outbound"}
         actions["worker_pairing"] = {"status": "skipped_outbound"}
         actions["worker_reply"] = {"status": "skipped_outbound"}
@@ -606,10 +1077,17 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         f"- Intent: `{report['primary_intent']}`",
         f"- Labels: `{', '.join(labels) if labels else 'none'}`",
         f"- Drop status: `{actions['drop'].get('status', '')}`",
+        f"- Context profile: `{actions['context_profile'].get('profile', actions['context_profile'].get('status', ''))}`",
+        f"- Status reply: `{actions['status_reply'].get('status', '')}`",
+        f"- Episodic context: `{actions['episodic_context'].get('status', '')}`",
+        f"- Research: `{actions['research'].get('status', '')}`",
+        f"- Reminder: `{actions['reminder'].get('status', '')}`",
+        f"- Odoo: `{actions['odoo'].get('status', '')}`",
         f"- Memory capture: `{actions['memory_capture'].get('status', '')}`",
         f"- Worker pairing: `{actions['worker_pairing'].get('status', '')}`",
         f"- Worker reply: `{actions['worker_reply'].get('status', '')}`",
         f"- SG promotion: `{actions['sg_promotion'].get('status', '')}`",
+        f"- Mission activation: `{actions['mission_activation'].get('decision', actions['mission_activation'].get('status', ''))}`",
         f"- JSON report: `{REPORT_JSON.as_posix()}`",
     ]
     (canonical_root / REPORT_MD).parent.mkdir(parents=True, exist_ok=True)
@@ -635,10 +1113,10 @@ def main() -> int:
     print(
         json.dumps(
             {
-                "status": out["status"],
-                "session_id": out["session_id"],
-                "primary_intent": out["primary_intent"],
-                "labels": out["labels"],
+                "status": out.get("status", "error"),
+                "session_id": out.get("session_id", ""),
+                "primary_intent": out.get("primary_intent", ""),
+                "labels": out.get("labels", []),
                 "paths": {
                     "json": REPORT_JSON.as_posix(),
                     "markdown": REPORT_MD.as_posix(),
