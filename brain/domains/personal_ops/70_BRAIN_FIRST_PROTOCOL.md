@@ -16,6 +16,8 @@ Garantizar que cada respuesta/acción se apoye en conocimiento experto persistid
 - Prompt de delegación = (manual de prompts) + (dominio de la tarea delegada) + (restricciones runtime/scope).
 - No emitir prompt “genérico” si existe rama experta aplicable.
 - Si una tarea toca dos o más dominios, documentar mini-síntesis de criterios usados en el handoff/report.
+- Antes de cualquier acción clave, validar: "¿qué ramas expertas necesito combinar para ejecutar con estándar máximo?".
+- Si la combinación no está bien cubierta por ramas existentes, crear/subdividir rama en el mismo ciclo y reutilizarla en adelante.
 
 ## Regla de autonomía
 - No pedir permiso para crecer ramas cuando mejore desempeño/confiabilidad.
