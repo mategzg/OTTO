@@ -13,6 +13,7 @@ from scripts.nl_intent_classifier import classify_intent
 from scripts.observability import record_event
 from scripts.repo_root import get_canonical_root
 from scripts.retrieval_service import retrieve as retrieval_v2_retrieve
+from scripts.evidence_guard import build_and_validate as evidence_build_and_validate
 from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 
@@ -294,6 +295,15 @@ def run_nl_router(
                 },
             )
 
+        evidence_mode = "grounded_answer" if (plan["route_type"] == "tool" and plan["selected_target"] == "rag.answer") else "action"
+        evidence_eval = evidence_build_and_validate(
+            mode=evidence_mode,
+            answer="planned",
+            retrieval_pack=retrieval_v2.get("pack", {}),
+            confidence=str(plan.get("confidence", "low")),
+            actions_taken=[f"route:{plan['route_type']}:{plan['selected_target']}"]
+        )
+
         _ensure_timeout("post_planning")
         elapsed_ms = int((time.monotonic() - started) * 1000)
         breaker_status = record_execution(
@@ -332,9 +342,10 @@ def run_nl_router(
             "retrieval_v2": retrieval_v2,
             "grounded_response": {
                 "mode": "evidence_first",
-                "status": "pending_execution",
+                "status": "validated" if evidence_eval.get("valid") else "blocked_no_evidence",
                 "required_if_critical": ["direct_answer", "evidence", "confidence", "gaps", "actions_executed"],
             },
+            "evidence_guard": evidence_eval,
             "timing": {
                 "elapsed_ms": elapsed_ms,
             },
