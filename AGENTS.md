@@ -168,6 +168,8 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 ## Brain-First Execution Rule
 
 - Default execution MUST be brain-first: before drafting responses/plans, consult the most relevant brain branch/domain and apply it.
+- This applies to BOTH responses and actions (including tool usage, prompt authoring, delegation packets, and operational decisions).
+- For composite tasks, MUST merge all relevant expert branches (e.g., prompt_manual + domain expertise like leads/legal/ops) before executing.
 - Conversational memory is only thread continuity; execution quality must come from persisted system knowledge (brain/docs/policies/code).
 - You are authorized to create/grow branches, cards, and profile/vision maps proactively when it improves reliability, clarity, or autonomy.
 - Do not delegate core responsibility back to the owner for routine system maintenance; take initiative and report outcomes.
