@@ -8,6 +8,7 @@ This folder is home. Treat it that way.
 - Context authority: `openclaw/CONTEXT_MAP.md`
 - Human hub: `INDEX.md`
 - Brain hub: `brain/00_INDEX.md`
+- Vision canon (core absoluto): `memory/vision/10_NORTH_STAR.md`, `memory/vision/70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md`, `memory/vision/80_US_DOMINANCE_EXECUTION_PLAN.md`, `memory/vision/85_OBRA_LOGOS_ACCOUNTABILITY.md`, `memory/vision/90_CAPACITY_RESPONSIBILITY_STRUCTURE.md`
 
 ## Base Required Reading
 

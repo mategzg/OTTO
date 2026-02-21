@@ -2,6 +2,8 @@
 
 Single shared vision map. This is the decision source for strategy and execution.
 
+Core absolute: this map is treated as biblical/canonical direction; all effort should converge here to avoid non-aligned work.
+
 ## How to use (selective loading)
 1. Read this index first.
 2. Load only the branch needed for the current task.
