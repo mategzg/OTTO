@@ -23,6 +23,10 @@ from scripts.episode_linker import get_episode
 from scripts.memory_capture import run_capture
 from scripts.mission_activation import decide_and_act as decide_mission_activation
 from scripts.nl_intent_classifier import classify_intent
+try:
+    from scripts.nl_skill_router import route_request as route_nl_skill_request
+except Exception:  # pragma: no cover - optional integration
+    route_nl_skill_request = None
 from scripts.odoo_enqueuer import enqueue_odoo
 from scripts.research_enqueuer import enqueue_research
 from scripts.repo_root import get_canonical_root
@@ -1061,6 +1065,7 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         },
         "session_id": session_id,
         "labels": labels,
+        "nl_skill_route": nl_route,
         "primary_intent": intent.get("primary_intent", "chat_normal"),
         "discord_domain": domain_info,
         "actions": actions,
