@@ -23,10 +23,10 @@
     },
     {
       "actual": {
-        "intent": "chat_normal",
-        "route_type": "tool",
+        "intent": "research_request",
+        "route_type": "skill",
         "status": "success",
-        "target": "rag.answer"
+        "target": "research.request"
       },
       "expected": {
         "intent": "research_request",
@@ -34,12 +34,12 @@
         "target": "research.request"
       },
       "id": "g2",
-      "pass": false,
+      "pass": true,
       "question": "Haz una investigación de precios de granito en Lima",
       "scores": {
-        "intent": 0,
-        "route_type": 0,
-        "target": 0
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
       }
     },
     {
@@ -65,10 +65,10 @@
     },
     {
       "actual": {
-        "intent": "sg_worthy",
-        "route_type": "tool",
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
         "status": "success",
-        "target": "rag.answer"
+        "target": "odoo.cotizar"
       },
       "expected": {
         "intent": "odoo_cotizar",
@@ -76,12 +76,12 @@
         "target": "odoo.cotizar"
       },
       "id": "g4",
-      "pass": false,
+      "pass": true,
       "question": "Quiero cotizar mármol para un cliente",
       "scores": {
-        "intent": 0,
-        "route_type": 0,
-        "target": 0
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
       }
     },
     {
@@ -106,16 +106,16 @@
       }
     }
   ],
-  "created_at": "2026-02-21T23:10:49.412059+00:00",
-  "status": "degraded",
+  "created_at": "2026-02-21T23:16:57.564017+00:00",
+  "status": "pass",
   "summary": {
     "metrics": {
-      "groundedness": 0.6,
-      "mrr": 0.6,
-      "ndcg": 0.6
+      "groundedness": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0
     },
-    "pass_rate": 0.6,
-    "passed": 3,
+    "pass_rate": 1.0,
+    "passed": 5,
     "total": 5
   },
   "version": 1

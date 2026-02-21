@@ -54,6 +54,52 @@ WORKER_AUTH_KEYWORDS = {
     "clave",
     "auth",
 }
+STATUS_REQUEST_RE = re.compile(
+    r"\b(estado|status|que esta pasando|cómo vas|como vas|resumen|que tienes pendiente|qué tienes pendiente)\b",
+    re.IGNORECASE,
+)
+RESEARCH_REQUEST_RE = re.compile(
+    r"\b(investiga|investigacion|investigación|busca informacion|busca información|research|investigame|investígame|quiero saber mas sobre|quiero saber más sobre|averigua|encuentra info sobre|dame un informe de|analiza)\b",
+    re.IGNORECASE,
+)
+REMINDER_REQUEST_RE = re.compile(
+    r"\b(recu[eé]rdame|av[ií]same|no me dejes olvidar|recordatorio|ma[nñ]ana a las|en \d+\s*(hora|horas|minuto|minutos)|el d[ií]a \d{1,2}/\d{1,2})\b",
+    re.IGNORECASE,
+)
+TOPIC_FOLLOWUP_RE = re.compile(
+    r"\b(sobre eso|y lo de|mas sobre|más sobre|cuentame mas|cuéntame más|que mas|qué más|amplia|amplía|detalla)\b",
+    re.IGNORECASE,
+)
+ODOO_INTENT_PATTERNS = {
+    "odoo_cotizar": re.compile(
+        r"\b(cotiza|cotizar|hacer cotizacion|hacer cotización|presupuesto para|precio de|cuanto cuesta|cuánto cuesta|dame precio)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_stock": re.compile(
+        r"\b(stock de|cuanto hay de|cuánto hay de|inventario de|hay disponible|stock disponible)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_cliente": re.compile(
+        r"\b(busca cliente|encuentra cliente|cliente llamado|datos de cliente|ficha de cliente)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_factura": re.compile(
+        r"\b(factura de|facturas pendientes|emite factura|crear factura|facturas de cliente)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_pago": re.compile(
+        r"\b(registrar pago|pago de|pagos pendientes|cobros pendientes|esta pagado|está pagado)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_cuenta": re.compile(
+        r"\b(saldo de cuenta|balance de|cuentas por cobrar|cuentas por pagar|estado financiero)\b",
+        re.IGNORECASE,
+    ),
+    "odoo_reporte": re.compile(
+        r"\b(reporte de ventas|resumen contable|informe de|reporte financiero|ventas del mes)\b",
+        re.IGNORECASE,
+    ),
+}
 
 
 def _utc_now() -> str:
@@ -129,6 +175,16 @@ def classify_intent(
         "memory_worthy": 0,
         "sg_worthy": 0,
         "requires_worker_auth": 0,
+        "status_request": 0,
+        "reminder_request": 0,
+        "research_request": 0,
+        "odoo_cotizar": 0,
+        "odoo_stock": 0,
+        "odoo_cliente": 0,
+        "odoo_factura": 0,
+        "odoo_pago": 0,
+        "odoo_cuenta": 0,
+        "odoo_reporte": 0,
     }
     signals: List[str] = []
     tokens = _tokenize(clean_text)
@@ -164,6 +220,26 @@ def classify_intent(
     if str(actor_type).lower() == "worker":
         labels["requires_worker_auth"] += 2
         signals.append("actor_type_worker")
+
+    if STATUS_REQUEST_RE.search(clean_text):
+        labels["status_request"] += 4
+        signals.append("status_request_pattern")
+
+    if REMINDER_REQUEST_RE.search(clean_text):
+        labels["reminder_request"] += 4
+        signals.append("reminder_request_pattern")
+
+    if RESEARCH_REQUEST_RE.search(clean_text):
+        labels["research_request"] += 4
+        signals.append("research_request_pattern")
+
+    if TOPIC_FOLLOWUP_RE.search(clean_text):
+        signals.append("topic_followup")
+
+    for intent_name, pattern in ODOO_INTENT_PATTERNS.items():
+        if pattern.search(clean_text):
+            labels[intent_name] += 5
+            signals.append(f"{intent_name}_pattern")
 
     ranked = sorted(labels.items(), key=lambda item: (-item[1], item[0]))
     primary_label, primary_score = ranked[0]
@@ -250,6 +326,7 @@ def main() -> int:
     parser.add_argument("--attachments-json", default="")
     parser.add_argument("--channel", default="")
     parser.add_argument("--actor-type", default="")
+    parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
     text = sys.stdin.read() if args.stdin else args.text
@@ -263,19 +340,22 @@ def main() -> int:
         channel=args.channel,
         actor_type=args.actor_type,
     )
-    print(
-        json.dumps(
-            {
-                "canonical_root": out["canonical_root"],
-                "primary_intent": out["result"]["primary_intent"],
-                "labels": out["result"]["labels"],
-                "confidence": out["result"]["confidence"],
-            },
-            indent=2,
-            sort_keys=True,
-            ensure_ascii=False,
+    if args.json:
+        print(json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False))
+    else:
+        print(
+            json.dumps(
+                {
+                    "canonical_root": out["canonical_root"],
+                    "primary_intent": out["result"]["primary_intent"],
+                    "labels": out["result"]["labels"],
+                    "confidence": out["result"]["confidence"],
+                },
+                indent=2,
+                sort_keys=True,
+                ensure_ascii=False,
+            )
         )
-    )
     return 0
 
 

@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-02-21T23:17:30Z",
+  "status": "pass",
+  "scope": "SPEC-002 OTTO Supreme Gap Closure",
+  "checks": {
+    "m1_router_unificado": "pass",
+    "m2_registry_lifecycle": "pass",
+    "m3_heuristica_creacion_auditable": "pass",
+    "m4_circuit_breaker_cooldown": "pass",
+    "m5_observabilidad_trace_metrics": "pass",
+    "m6_golden_regression": {
+      "status": "pass",
+      "pass_rate": 1.0,
+      "ndcg": 1.0,
+      "mrr": 1.0,
+      "groundedness": 1.0
+    },
+    "m7_cobertura_semantica_sg": {
+      "status": "ok",
+      "recall_proxy": 1.0
+    },
+    "suite_tests_spec002": {
+      "status": "pass",
+      "tests": 24
+    }
+  },
+  "artifacts": {
+    "golden_report": "docs/_inbox/golden_regression_latest.json",
+    "semantic_report": "docs/_inbox/semantic_coverage_latest.json",
+    "observability_report": "docs/_inbox/observability_summary_latest.json"
+  },
+  "version": 1
+}

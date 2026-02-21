@@ -1,0 +1,19 @@
+{
+  "cost": {
+    "token_estimate": 177
+  },
+  "latency_ms": {
+    "p50": 4,
+    "p95": 4
+  },
+  "rates": {
+    "groundedness_rate": 1.0,
+    "retrieval_hit_rate": 1.0,
+    "retry_rate": 0.0,
+    "router_success_rate": 1.0,
+    "tool_success_rate": 1.0
+  },
+  "updated_at": "2026-02-21T23:17:19.306640+00:00",
+  "version": 1,
+  "window_events": 24
+}
