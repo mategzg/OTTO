@@ -15,6 +15,7 @@ Single shared vision map. This is the decision source for strategy and execution
 - `50_HORIZON_ROADMAP.md` → Time-phased priorities (30/90/180/365 days).
 - `60_DECISION_RUBRIC.md` → Go/No-Go decision filter at action level.
 - `70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md` → Canon blueprint for Austin future role/business.
+- `80_US_DOMINANCE_EXECUTION_PLAN.md` → 24–36 month SG→US→acquisition execution architecture.
 - `90_OPEN_QUESTIONS.md` → Explicit unresolved items.
 
 ## Interpretation rule
