@@ -24,6 +24,7 @@ Operational behavior:
 - Mission contract reference: `docs/_inbox/heartbeat_mission_contract_latest.md`.
 - Delegation fallback chain: `codex` -> `claude_code` -> `telegram_owner`.
 - Ingest masivo es progresivo por lotes delegados: cada ciclo toma un batch dentro de limites de policy y deja remanente para el siguiente heartbeat.
+- Export assimilation must follow phased quality contract: `state/export_assimilation_policy.json` + `docs/_inbox/export_assimilation_contract_latest.md`.
 - Inline stages (always local, lightweight):
   1. reminders
   2. outbox delivery

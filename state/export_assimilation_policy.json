@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "enabled": true,
+  "pipeline_phases": [
+    "phase_1_ingest_raw",
+    "phase_2_reduce_noise",
+    "phase_3_curate_and_write",
+    "phase_4_index_and_verify"
+  ],
+  "phase_1_ingest_raw": {
+    "goal": "Ingesta completa sin pérdida",
+    "steps": [
+      "dropbox_intake",
+      "chatgpt_export_normalize",
+      "corpus_triage"
+    ],
+    "must_have": [
+      "pending_drop_count==0",
+      "normalized/messages.ndjson exists",
+      "triage report generated"
+    ]
+  },
+  "phase_2_reduce_noise": {
+    "goal": "Reducir señal basura y duplicidad",
+    "steps": [
+      "dedupe by source_ref/hash",
+      "classify useful vs low-value",
+      "mark low-value as archive/not-for-promotion"
+    ],
+    "must_have": [
+      "reasons/non-useful logged",
+      "no blind copy of raw corpus into canonical branches"
+    ]
+  },
+  "phase_3_curate_and_write": {
+    "goal": "Redacción de conocimiento útil en rama correcta",
+    "routing": {
+      "profile_identity": "memory/profile/*",
+      "shared_vision": "memory/vision/*",
+      "professional_business_knowledge": "brain/domains/sg_acabados/*",
+      "otto_operational_learning": "brain/domains/personal_ops/*"
+    },
+    "must_have": [
+      "branch boundary respected",
+      "new branches/subbranches allowed when needed",
+      "markdown quality: concise/actionable/non-redundant"
+    ]
+  },
+  "phase_4_index_and_verify": {
+    "goal": "Dejarlo operable para uso diario",
+    "steps": [
+      "memory_index_build",
+      "brain_index_build",
+      "repomap_index_build",
+      "targeted query smoke checks"
+    ],
+    "must_have": [
+      "indexes rebuilt",
+      "query smoke tests return relevant branches",
+      "report with gaps (if any)"
+    ]
+  },
+  "quality_gates": {
+    "require_handoff_artifact": true,
+    "require_evidence_paths": true,
+    "require_gap_tag": "GAP/NO_VERIFICADO",
+    "forbid_false_done": true
+  }
+}
