@@ -277,6 +277,22 @@ def run_nl_router(
                 retrieval_mode="grounded_answer",
                 filters={},
             )
+            diag = retrieval_v2.get("pack", {}).get("diagnostics", {}) if isinstance(retrieval_v2.get("pack", {}), dict) else {}
+            record_event(
+                canonical_root,
+                {
+                    "kind": "retrieval_v2",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": True,
+                    "latency_ms": int(elapsed_ms) if 'elapsed_ms' in locals() else 0,
+                    "lexical_candidates": int(diag.get("lexical_candidates", 0)),
+                    "vector_candidates": int(diag.get("vector_candidates", 0)),
+                    "union_count": int(diag.get("union_count", 0)),
+                    "rerank_model": str(diag.get("rerank_model", "")),
+                    "token_estimate": max(1, len(text) // 6),
+                },
+            )
 
         _ensure_timeout("post_planning")
         elapsed_ms = int((time.monotonic() - started) * 1000)

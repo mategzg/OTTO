@@ -3,8 +3,13 @@
     "enabled": false,
     "lexical_top_n": 20,
     "vector_top_n": 20,
+    "rerank_top_m": 30,
     "final_top_k": 12,
     "max_chunks_per_doc": 3,
-    "min_evidence_score": 0.1
+    "min_evidence_score": 0.1,
+    "fusion_mode": "rrf",
+    "rrf_k": 60,
+    "weighted_bm25": 0.6,
+    "weighted_vector": 0.4
   }
 }
