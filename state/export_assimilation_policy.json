@@ -60,6 +60,13 @@
       "report with gaps (if any)"
     ]
   },
+  "delegation_model": {
+    "use_supervisor_subagent_per_phase": true,
+    "supervisor_waits_for_coder_handoff": true,
+    "allow_parallel_phases_with_isolated_supervisors": true,
+    "forbid_multi_phase_in_single_supervisor": true,
+    "coder_prompt_contract": "PROMPT_MANUAL.md"
+  },
   "quality_gates": {
     "require_handoff_artifact": true,
     "require_evidence_paths": true,

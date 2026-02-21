@@ -14,6 +14,8 @@ Any other state is invalid for closure.
 - No ambiguous active lock without verifiable owner path.
 - No silent backlog drift.
 - No fake completion without gates/evidence.
+- Delegated phase work must be supervised by subagent loops that wait for coder handoff signal before reporting completion.
+- One subagent per phase; no cross-phase mixing inside a single supervisor mission.
 
 ## Escalation trigger
 If pending/failing items persist across cycles without ownership evidence, escalate as alert (not HEARTBEAT_OK).

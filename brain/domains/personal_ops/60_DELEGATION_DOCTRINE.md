@@ -9,6 +9,8 @@
 - Choose autonomously per mission: direct local execution, single delegation + coder, parallel delegations, or supervised iterative delegation.
 - For complex missions, prefer supervisor loop: prompt -> coder result -> verify -> next prompt, until closure.
 - Optimize for throughput + reliability + token efficiency, not just speed.
+- For phased pipelines, enforce **one supervisor subagent per phase**; never mix multiple phases inside the same supervisor loop.
+- Parallelism is allowed only as "N phases => N supervisors", each with isolated scope and its own handoff path.
 
 ## Keep Local When
 - Scope is small, deterministic, and faster end-to-end locally.
