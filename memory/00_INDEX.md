@@ -21,3 +21,8 @@ MemoryOS stores human memory as structured records with `source_ref` evidence.
 - `memory/04_PROJECTS.ndjson`
 - `memory/05_DECISIONS.ndjson`
 - `memory/06_TIMELINE.ndjson`
+
+## Profile Map (ramificado)
+
+- `memory/profile/00_INDEX.md`
+- Lectura selectiva por ramas para reducir carga de contexto/token.
