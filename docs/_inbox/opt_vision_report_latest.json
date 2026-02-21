@@ -1,0 +1,35 @@
+{
+  "task": "optimize_shared_vision_map",
+  "scope": {
+    "allowed": [
+      "memory/vision/00_INDEX.md",
+      "memory/vision/*.md"
+    ],
+    "edited": [
+      "memory/vision/00_INDEX.md",
+      "memory/vision/10_NORTH_STAR.md",
+      "memory/vision/20_PRINCIPLES_AND_LIMITS.md",
+      "memory/vision/30_STRATEGIC_AXES.md",
+      "memory/vision/40_EXECUTION_METRICS.md",
+      "memory/vision/50_HORIZON_ROADMAP.md",
+      "memory/vision/60_DECISION_RUBRIC.md",
+      "memory/vision/90_OPEN_QUESTIONS.md"
+    ],
+    "forbidden_areas_touched": []
+  },
+  "outcomes": {
+    "shared_framing": "strengthened",
+    "decision_rubric": "converted_to_ordered_gate_model",
+    "editorial_quality": "strategy_grade_minimal_fluff",
+    "coherence_non_overlap": "enforced_across_northstar_principles_axes_metrics_horizons_rubric",
+    "navigability": "improved_with_selective_loading_map"
+  },
+  "gaps": [],
+  "notes": [
+    "Open planning items intentionally preserved in 90_OPEN_QUESTIONS.md"
+  ],
+  "required_commit_message": "Optimize shared vision map structure and writing",
+  "commit": {
+    "hash": "0a0ec28"
+  }
+}

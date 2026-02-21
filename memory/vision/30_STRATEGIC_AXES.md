@@ -1,6 +1,18 @@
 # 30 — Strategic Axes
 
-- Eje 1: Sistema (arquitectura robusta y mantenible).
-- Eje 2: Ejecución (ritmo, priorización y cierre de ciclo).
-- Eje 3: Aprendizaje (destilar señal útil y elevar criterio operativo).
-- Eje 4: Apalancamiento (delegación inteligente + automatización + continuidad).
+These are allocation lanes, not metrics or timelines.
+
+## Axis A — System Integrity
+Build and maintain robust architecture, guardrails, and recoverability.
+
+## Axis B — Execution Engine
+Increase cycle speed, prioritization quality, and closure rate without control loss.
+
+## Axis C — Learning Compression
+Convert repeated work into reusable protocols, branches, and standards.
+
+## Axis D — Leverage Multipliers
+Scale output via delegation, automation, and continuity mechanisms.
+
+## Portfolio rule
+Keep all axes active, but bias effort to the current bottleneck axis each planning cycle.

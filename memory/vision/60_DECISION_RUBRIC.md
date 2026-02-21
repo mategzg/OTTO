@@ -1,13 +1,26 @@
-# 60 — Decision Rubric (Visión Compartida)
+# 60 — Decision Rubric (Shared Vision)
 
-## Filtro de alineación (aplicar en orden)
-1. ¿Aumenta capacidad/responsabilidad real o solo actividad aparente?
-2. ¿Es verificable con evidencia y reversible si sale mal?
-3. ¿Reduce fricción futura y evita retrabajo?
-4. ¿Respeta seguridad, zero-mix y verdad operativa?
-5. ¿Mantiene costo/beneficio saludable (tokens/tiempo/riesgo)?
+Apply in order for any non-trivial action.
 
-## Regla de descarte
-- Si falla 1 o 4, no ejecutar.
-- Si falla 2 o 3, rediseñar antes de ejecutar.
-- Si falla 5, ejecutar en versión más ligera o por fases.
+## Gate 1 — Alignment
+Does this increase real capacity/responsibility (not activity theater)?
+
+## Gate 2 — Safety & Isolation
+Does it preserve safety constraints, zero-mix boundaries, and traceability?
+
+## Gate 3 — Verifiability
+Will outcome be testable with explicit evidence?
+
+## Gate 4 — Reversibility / Blast Radius
+If wrong, can impact be contained or rolled back acceptably?
+
+## Gate 5 — Friction Economics
+Does it reduce future friction/rework with favorable cost (time/tokens/risk)?
+
+## Decision outcomes
+- **EXECUTE**: all gates pass.
+- **REDESIGN**: Gate 3/4/5 fails but recoverable with scoped changes.
+- **NO-GO**: Gate 1 or 2 fails.
+
+## Documentation rule
+Every material decision should record: gate outcome, evidence basis, and next action owner.
