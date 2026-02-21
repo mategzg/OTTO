@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "generated_at": "2026-02-21T00:00:00Z",
+  "status": "success_with_gaps",
+  "summary": {
+    "local_docs_reviewed": [
+      "openclaw/CONTEXT_MAP.md",
+      "repo_map/10_RUNTIME_INGRESS.md",
+      "repo_map/60_POLICIES_STATE.md"
+    ],
+    "cli_verified": [
+      "openclaw --help",
+      "openclaw gateway --help",
+      "openclaw browser --help",
+      "openclaw models --help",
+      "openclaw security --help",
+      "openclaw status"
+    ],
+    "incident_fixed": "subagent pairing required"
+  },
+  "capabilities": {
+    "runtime_ingress": "verified",
+    "heartbeat_delegation": "verified",
+    "gateway": "verified",
+    "browser_relay": "verified",
+    "models_auth": "verified",
+    "sessions_subagents": "verified_after_fix",
+    "messaging_channels": "verified",
+    "security": "verified",
+    "policies_state": "verified",
+    "nodes_canvas": "partial_local_coverage"
+  },
+  "incident": {
+    "symptom": "gateway closed (1008): pairing required",
+    "root_cause": "pending device pairing request",
+    "fix_commands": [
+      "openclaw devices list",
+      "openclaw devices approve ff71b1e7-49e4-4fb9-af8a-7772c9c05a41"
+    ],
+    "verification": "sessions_spawn accepted"
+  },
+  "gaps": [
+    "GAP/NO_VERIFICADO: full local coverage for all docs.openclaw.ai advanced sections (nodes/canvas internals)."
+  ],
+  "paths": {
+    "mastery_map": "brain/domains/openclaw_ops/16_OPENCLAW_MASTERY_MAP.md",
+    "mastery_checklist": "brain/cards/openclaw_ops/card_openclaw_mastery_checklist.md"
+  }
+}
