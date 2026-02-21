@@ -14,6 +14,10 @@ Convert strategic vision into reliable execution loops with accountability, not 
 - Do not optimize for generic output volume.
 - Optimize for decision quality under risk, coordination quality, and closure reliability.
 
+## Core optimization bias
+- Prioritize automation, delegation, leverage, compounding, and optimization in every mission design.
+- Prefer structural wins (systems/assets) over one-off effort spikes.
+
 ## Accountability rule
 - No DONE without ownership of outcome quality (not only task completion).
 - If uncertainty remains: `GAP/NO_VERIFICADO` + verification plan.
