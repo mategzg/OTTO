@@ -46,6 +46,10 @@ Each core file SHOULD stay compact and explicitly include:
 
 Before editing `scripts/`, `state/`, or `hooks/`, follow the minimal reading routes in `REPO_MAP.md`.
 
+## OpenClaw Official Manual (absolute fallback)
+- Canon external manual: `https://docs.openclaw.ai/`
+- Use local docs first (`/home/agente/otto-workspace/docs`), then consult official manual for precise platform behavior and fixes.
+
 ## Delegation
 
 - Default agent: Codex.
