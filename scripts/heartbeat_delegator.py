@@ -798,6 +798,16 @@ def _effective_pending_without_health(pending: Dict[str, Any]) -> int:
     return total
 
 
+def _is_health_only_pending(pending: Dict[str, Any]) -> bool:
+    pending_map = pending.get("pending", {}) if isinstance(pending, dict) else {}
+    if not isinstance(pending_map, dict):
+        return False
+    effective = _effective_pending_without_health(pending)
+    health = pending_map.get("health", {})
+    health_count = int(health.get("count", 0)) if isinstance(health, dict) else 0
+    return effective == 0 and health_count > 0
+
+
 def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     state = _ensure_state(canonical_root)
@@ -852,7 +862,27 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     rescanned = scan_pending_work(canonical_root)
     remaining_effective = _effective_pending_without_health(rescanned)
     if remaining_effective == 0:
-        # Delegated run contract: no handoff => failed attempt, must retry delegation.
+        # Health-only pending is not delegated work; allow clean close without forcing handoff.
+        if _is_health_only_pending(rescanned):
+            state.update(
+                {
+                    "status": "completed_no_pending",
+                    "active_mission_id": None,
+                    "active_handoff_path": None,
+                    "missing_handoff_attempts": 0,
+                }
+            )
+            state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
+            _save_json(canonical_root / STATE_PATH, state)
+            return {
+                "status": "completed_no_pending",
+                "active": False,
+                "mission_id": mission_id,
+                "ingest_progress": state.get("ingest_progress", {}),
+                "remaining_pending": 0,
+            }
+
+        # Delegated run contract: no handoff => failed attempt, must retry after root-cause fix.
         if handoff_path and not handoff_exists:
             attempts = int(state.get("missing_handoff_attempts", 0) or 0) + 1
             state.update(

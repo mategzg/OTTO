@@ -270,6 +270,39 @@ def test_check_completed_ignores_health_only_pending(tmp_path: Path, monkeypatch
     _write_json(prod, {"go_no_go": "go_with_limits"})
 
     out = delegator.check_completed_delegations(workspace)
+    assert out["status"] == "completed_no_pending"
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    assert state["active_mission_id"] is None
+
+
+def test_check_completed_missing_handoff_for_effective_work_requests_retry(tmp_path: Path, monkeypatch):
+    workspace = _setup(tmp_path, monkeypatch)
+    state_path = workspace / "state" / "heartbeat_delegation_state.json"
+    _write_json(
+        state_path,
+        {
+            "last_delegation_at": datetime.now(timezone.utc).isoformat(),
+            "coder_used": "codex",
+            "items_delegated": 2,
+            "status": "delegated",
+            "active_mission_id": "hbdel_missing_handoff_1",
+            "active_handoff_path": "docs/_inbox/subagent_handoffs/hbdel_missing_handoff_1.json",
+        },
+    )
+    mission_json = workspace / "state" / "missions" / "hbdel_missing_handoff_1" / "mission.json"
+    mission_json.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(mission_json, {"status": "active"})
+
+    # make pending snapshot effectively empty (no health pending either)
+    (workspace / "state" / "research_queue.json").write_text("[]\n", encoding="utf-8")
+    (workspace / "state" / "odoo_queue.json").write_text("[]\n", encoding="utf-8")
+    (workspace / "state" / "reminders_queue.json").write_text("[]\n", encoding="utf-8")
+    (workspace / "docs" / "_inbox" / "outbox_queue.ndjson").parent.mkdir(parents=True, exist_ok=True)
+    (workspace / "docs" / "_inbox" / "outbox_queue.ndjson").write_text("", encoding="utf-8")
+    (workspace / "docs" / "_inbox" / "prod_doctor_latest.json").parent.mkdir(parents=True, exist_ok=True)
+    _write_json(workspace / "docs" / "_inbox" / "prod_doctor_latest.json", {"go_no_go": "go"})
+
+    out = delegator.check_completed_delegations(workspace)
     assert out["status"] == "missing_handoff_retry"
     state = json.loads(state_path.read_text(encoding="utf-8"))
     assert state["active_mission_id"] is None
