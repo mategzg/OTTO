@@ -10,6 +10,8 @@ Heartbeat is responsible for moving pending work to verified closure, not just r
 
 Any other state is invalid for closure.
 
+If delegated run ends without handoff artifact, classify as failed attempt, report blocker, fix root cause, then retry (no blind auto-retry).
+
 ## Non-negotiables
 - No ambiguous active lock without verifiable owner path.
 - No silent backlog drift.
