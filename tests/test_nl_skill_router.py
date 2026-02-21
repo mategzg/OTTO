@@ -1,0 +1,65 @@
+from pathlib import Path
+
+from scripts.nl_skill_router import route_request
+
+
+def test_router_maps_reminder_to_skill(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = route_request(tmp_path, text="recuerdame mañana pagar", channel="telegram")
+    assert out["intent_id"] == "reminder_request"
+    assert out["route_type"] == "skill"
+    assert out["selected_target"] == "reminder.create"
+
+
+def test_router_create_skill_decision_for_repeated_high_impact_tool(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = route_request(
+        tmp_path,
+        text="explicame la vision completa y cita fuentes",
+        channel="telegram",
+        repeat_count_30d=5,
+        impact_score=9,
+        risk_score=3,
+    )
+    assert out["route_type"] in {"tool", "workflow", "skill"}
+    assert out["create_skill_decision"]["eligible"] is True
+    # chat_normal routes to tool by default, thus create should be enabled
+    assert out["create_skill_decision"]["decision"] == "create"
+
+
+def test_router_defers_skill_creation_when_random(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = route_request(
+        tmp_path,
+        text="hola",
+        channel="telegram",
+        repeat_count_30d=1,
+        impact_score=1,
+        risk_score=1,
+    )
+    assert out["create_skill_decision"]["eligible"] is False
+    assert out["create_skill_decision"]["decision"] == "defer"

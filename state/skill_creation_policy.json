@@ -1,0 +1,6 @@
+{
+  "repeat_threshold_30d": 3,
+  "impact_threshold": 7,
+  "max_risk_for_auto_create": 5,
+  "high_risk_requires_approval": 8
+}

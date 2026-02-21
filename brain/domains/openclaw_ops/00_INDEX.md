@@ -29,6 +29,7 @@ Hub de ruteo para operacion diaria de OpenClaw/OTTO en el workspace canonico.
 - Pregunta: "cuando activar mision automaticamente y cuando escalar a owner" -> `brain/domains/openclaw_ops/15_MISSION_ACTIVATION.md`
 - Pregunta: "como usar docs.openclaw.ai como biblia operativa" -> `brain/domains/openclaw_ops/17_OPENCLAW_DOCS_BIBLE_PROTOCOL.md`
 - Pregunta: "cuál es la arquitectura objetivo suprema de OTTO (LLM+RAG+skills+estabilidad)" -> `brain/domains/openclaw_ops/18_OTTO_SUPREME_ARCHITECTURE_TARGET.md`
+- Pregunta: "cómo enrutar NL -> tool/skill/create-skill" -> `scripts/nl_skill_router.py` + `state/skill_creation_policy.json`
 
 ## Maintenance
 
