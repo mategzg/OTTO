@@ -16,6 +16,7 @@ Improve quality, speed, and cost predictably without sacrificing reliability.
 - Failure patterns (`20`) for early detection.
 - Review items (`90`) when solution is incomplete.
 - Every newly achieved capability not previously documented, with repeatable method and verification criteria.
+- Any relevant new knowledge (chats/exports/docs/incidents) in the correct branch without waiting for explicit user reminders.
 
 ## Quality Bar for Updates
 - Actionable: trigger, action, verification are explicit.
