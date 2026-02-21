@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updated_at": "",
+  "items": [
+    {
+      "id": "g1",
+      "question": "Recuérdame mañana pagar internet",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "g2",
+      "question": "Haz una investigación de precios de granito en Lima",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "g3",
+      "question": "Dame el estado del sistema",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "g4",
+      "question": "Quiero cotizar mármol para un cliente",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "g5",
+      "question": "Explícame la visión y cita fuentes",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    }
+  ]
+}

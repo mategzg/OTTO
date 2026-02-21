@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "g1",
+      "pass": true,
+      "question": "Recuérdame mañana pagar internet",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "g2",
+      "pass": false,
+      "question": "Haz una investigación de precios de granito en Lima",
+      "scores": {
+        "intent": 0,
+        "route_type": 0,
+        "target": 0
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "g3",
+      "pass": true,
+      "question": "Dame el estado del sistema",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "sg_worthy",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "g4",
+      "pass": false,
+      "question": "Quiero cotizar mármol para un cliente",
+      "scores": {
+        "intent": 0,
+        "route_type": 0,
+        "target": 0
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "g5",
+      "pass": true,
+      "question": "Explícame la visión y cita fuentes",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    }
+  ],
+  "created_at": "2026-02-21T23:10:49.412059+00:00",
+  "status": "degraded",
+  "summary": {
+    "metrics": {
+      "groundedness": 0.6,
+      "mrr": 0.6,
+      "ndcg": 0.6
+    },
+    "pass_rate": 0.6,
+    "passed": 3,
+    "total": 5
+  },
+  "version": 1
+}
