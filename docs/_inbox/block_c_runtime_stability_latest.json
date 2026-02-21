@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "status": "success_with_limits",
+  "tests": {
+    "command": "pytest -q tests/test_heartbeat_worker.py tests/test_heartbeat_delegator.py tests/test_brain_ingest_router.py tests/test_write_router.py",
+    "result": "29 passed"
+  },
+  "heartbeat": {
+    "command": "python3 scripts/heartbeat_worker.py --once --force --root .",
+    "status": "success",
+    "delegation_status": "delegated",
+    "delegation_coder": "codex"
+  },
+  "ingest": {
+    "command": "python3 scripts/brain_ingest_router.py --status --root .",
+    "pending_sources": 0,
+    "pending_files": 0
+  },
+  "prod_doctor": {
+    "status": "ok",
+    "go_no_go": "go_with_limits",
+    "known_gap": "GAP/NO VERIFICADO: hook bridge no confirmado por openclaw hooks list"
+  }
+}
