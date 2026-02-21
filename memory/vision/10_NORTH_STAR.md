@@ -1,17 +1,21 @@
 # 10 — North Star
 
 ## Shared objective
-Expand Mateo’s real capacity and responsibility so vision converts into reliable, present-tense execution.
+Build and scale a Mission-Critical Production System business with Austin as future base, where OTTO+Mateo operate as owners of production reliability (not reporting), converting planning into stable weekly throughput by zones/trades with controlled variability.
+
+## Role identity (core)
+- Production System Lead (Takt/Last Planner), system-owner role.
+- Output is not reports; output is reliable flow, commitments, and measurable production.
 
 ## What “progress” means
-- More high-quality decisions per unit time.
-- More closed loops with verifiable outcomes.
-- Less operational friction and less avoidable rework.
+- Higher plan reliability (PPC/WWP) and lower takt variance.
+- Faster constraint closure (constraint cycle time).
+- More throughput by zone with less rework and fewer flow breaks.
 
 ## Alignment test (top-level)
 An initiative is aligned only if it improves at least one of:
-1. Decision quality.
-2. Execution throughput with control.
-3. System reliability under real usage.
+1. Production reliability (commitments kept).
+2. Throughput with control (zones/hitos completed per cadence).
+3. System scalability (playbook reusable across projects).
 
 If none improve, classify as non-aligned work.
