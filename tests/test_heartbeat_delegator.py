@@ -205,7 +205,7 @@ def test_build_delegation_prompt_includes_ingest_commands_when_pending(tmp_path:
     assert "python3 scripts/dropbox_intake.py --apply --root ." in prompt
     assert "python3 scripts/chatgpt_export_normalize.py --root ." in prompt
     assert "python3 scripts/brain_ingest_router.py --plan --root ." in prompt
-    assert "python3 scripts/brain_ingest_router.py --apply \"$PLAN_ID\" --root ." in prompt
+    assert "subprocess.run(['python3','scripts/brain_ingest_router.py','--apply',plan_id,'--root','.'], check=False)" in prompt
     assert "batch permitido" in prompt
 
 
