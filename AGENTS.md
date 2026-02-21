@@ -52,9 +52,9 @@ Before editing `scripts/`, `state/`, or `hooks/`, follow the minimal reading rou
 
 ## Delegation
 
-- Default agent: Codex.
-- Claude Code is used when work depends on `.claude/*`, Claude Code plugins, or rule/import behavior.
-- Claude Cowork is allowed together with Codex.
+- Default delegation mode: OpenClaw subagents (`sessions_spawn`) directly, not external coder CLIs by default.
+- External coder CLIs (Codex/Claude Code/Pi) are disabled unless Mateo lo pida explícitamente para una misión puntual.
+- Si se usan múltiples subagentes en paralelo, deben estar segmentados por scope no superpuesto para evitar pisarse.
 - Canon policy: `brain/domains/openclaw_ops/07_DELEGATION_POLICY.md`.
 - Matrix card: `brain/cards/openclaw_ops/card_delegation_matrix.md`.
 
@@ -65,7 +65,7 @@ Before editing `scripts/`, `state/`, or `hooks/`, follow the minimal reading rou
 - Mantener memoria separada por chat/canal/thread (zero-mix) y respetar budgets por canal.
 - Capacidades runtime actuales a preservar:
   - reminders programados (`reminder_request` -> `state/reminders_queue.json` -> heartbeat/outbox)
-  - delegacion a coders para resumen de sesiones y research (mini-misiones via `mission_orchestrator`)
+  - delegación por subagentes OpenClaw para resumen de sesiones y research (mini-misiones via `mission_orchestrator`), evitando coder CLIs salvo pedido explícito del owner
   - self-health notify (prod_doctor + proactivity + outbox Telegram owner)
   - token budget awareness (modo ahorro/normal via `token_budget_monitor` + `context_loader`)
 
