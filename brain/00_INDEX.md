@@ -22,6 +22,7 @@ short canonical answers, and deep links to details.
 - Follow writing conventions in `brain/04_WRITING_STYLE.md`.
 - For OpenClaw/OTTO operations routing use `brain/domains/openclaw_ops/00_INDEX.md`.
 - For universal corpus ingestion routing use `brain/domains/ingest/00_INDEX.md`.
+- For OTTO operational learning heuristics use `brain/domains/personal_ops/00_INDEX.md`.
 - For MemoryOS (capture -> compact -> query) use `memory/00_INDEX.md`.
 
 ## Anti-Token Rule

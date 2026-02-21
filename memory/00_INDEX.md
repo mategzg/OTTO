@@ -26,3 +26,8 @@ MemoryOS stores human memory as structured records with `source_ref` evidence.
 
 - `memory/profile/00_INDEX.md`
 - Lectura selectiva por ramas para reducir carga de contexto/token.
+
+## Vision Map (compartida)
+
+- `memory/vision/00_INDEX.md`
+- Brújula única OTTO+Mateo; orientar toda decisión y ejecución aquí.
