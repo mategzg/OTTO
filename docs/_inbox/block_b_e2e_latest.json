@@ -1,0 +1,67 @@
+{
+  "created_at": "2026-02-21T02:53:04.635834+00:00",
+  "root": "/home/agente/otto-workspace",
+  "steps": [
+    {
+      "step": "pre_check_completed",
+      "result": {
+        "status": "no_active_delegation",
+        "active": false
+      }
+    },
+    {
+      "step": "seed_pending",
+      "queue_count": 1
+    },
+    {
+      "step": "delegate_to_coder",
+      "result": {
+        "status": "delegated",
+        "coder_used": "codex",
+        "active_mission_id": "hbdel_codex_20260221025304_94f38c5d",
+        "items_delegated": 2,
+        "mission_paths": {
+          "mission_dir": "state/missions/hbdel_codex_20260221025304_94f38c5d",
+          "mission_json": "state/missions/hbdel_codex_20260221025304_94f38c5d/mission.json",
+          "plan_md": "state/missions/hbdel_codex_20260221025304_94f38c5d/PLAN.md"
+        },
+        "prompt_path": "state/missions/hbdel_codex_20260221025304_94f38c5d/DELEGATION_PROMPT.md"
+      }
+    },
+    {
+      "step": "state_after_delegate",
+      "active_mission_id": "hbdel_codex_20260221025304_94f38c5d",
+      "active_handoff_path": "docs/_inbox/subagent_handoffs/hbdel_codex_20260221025304_94f38c5d.json"
+    },
+    {
+      "step": "write_handoff",
+      "path": "docs/_inbox/subagent_handoffs/hbdel_codex_20260221025304_94f38c5d.json"
+    },
+    {
+      "step": "check_completed",
+      "result": {
+        "status": "completed",
+        "active": false,
+        "mission_id": "hbdel_codex_20260221025304_94f38c5d",
+        "ingest_progress": {
+          "total_packages_detected": 1,
+          "packages_processed": 1,
+          "packages_remaining": 0,
+          "last_batch_at": "2026-02-21T02:53:04.710692+00:00"
+        },
+        "remaining_pending": 2
+      }
+    },
+    {
+      "step": "cleanup_seed",
+      "queue_count": 0
+    }
+  ],
+  "status": "success",
+  "final_state": {
+    "status": "completed",
+    "active_mission_id": null,
+    "active_handoff_path": null,
+    "coder_used": "codex"
+  }
+}
