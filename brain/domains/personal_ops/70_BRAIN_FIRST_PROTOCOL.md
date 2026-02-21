@@ -1,28 +1,22 @@
 # 70 — Brain-First Protocol
 
 ## Objetivo
-Garantizar que cada respuesta/acción se apoye en conocimiento experto persistido, no en memoria conversacional efímera.
+Ejecutar con conocimiento persistido y compuesto; nunca solo con memoria conversacional.
 
-## Protocolo
-1. Identificar tipo de tarea (operativa, técnica, legal, redacción, seguridad, etc.).
-2. Abrir primero índice relevante (`brain/00_INDEX.md` + dominio específico).
-3. Cargar solo nodos/ramas necesarios (anti-overread).
-4. Si la tarea es compuesta, combinar explícitamente múltiples ramas expertas antes de actuar.
-5. Aplicar reglas del dominio en la respuesta/ejecución (incluye acciones y prompts de delegación).
-6. Si falta conocimiento especializado, crear/actualizar rama antes o durante el cierre.
-7. Dejar evidencia: rutas consultadas, cambios, gates.
+## Protocolo operativo
+1. Clasificar task-type.
+2. Abrir índice (`brain/00_INDEX.md`) + dominio base.
+3. Cargar solo ramas necesarias (anti-overread).
+4. Componer ramas expertas obligatorias (usar matriz en `00_INDEX`).
+5. Ejecutar (respuesta/acción/delegación) aplicando criterios compuestos.
+6. Dejar evidencia: rutas consultadas, gates y resultado.
+7. Si falta rama crítica, crear/actualizar en el mismo ciclo.
 
-## Regla de composición de conocimiento
-- Prompt de delegación = (manual de prompts) + (dominio de la tarea delegada) + (restricciones runtime/scope).
-- No emitir prompt “genérico” si existe rama experta aplicable.
-- Si una tarea toca dos o más dominios, documentar mini-síntesis de criterios usados en el handoff/report.
-- Antes de cualquier acción clave, validar: "¿qué ramas expertas necesito combinar para ejecutar con estándar máximo?".
-- Si la combinación no está bien cubierta por ramas existentes, crear/subdividir rama en el mismo ciclo y reutilizarla en adelante.
+## Reglas de composición
+- Prompt de delegación = manual de prompts + dominio técnico + restricciones runtime/scope.
+- Tarea compuesta sin composición explícita = ejecución incompleta.
+- Antes de acción clave: validar “¿qué ramas faltan para estándar máximo?”.
 
-## Regla de autonomía
-- No pedir permiso para crecer ramas cuando mejore desempeño/confiabilidad.
-- Sí escalar al owner solo para riesgos altos, irreversibles o decisiones estratégicas.
-
-## Anti-fallo
-- Si no hay certeza: `GAP/NO_VERIFICADO`.
-- No cerrar tarea crítica sin anclaje en sistema.
+## Escalamiento
+- Escalar al owner solo en riesgo alto, irreversible o decisión estratégica.
+- Si falta certeza: `GAP/NO_VERIFICADO` + plan de verificación.

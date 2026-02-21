@@ -1,33 +1,25 @@
-# 80 — Self-Optimization Protocol (OTTO)
+# 80 — Self-Optimization Protocol
 
 ## Objetivo
-Mejorar continuamente calidad, velocidad, claridad y costo operativo en cada acción/respuesta.
+Subir calidad/velocidad/costo de forma continua y verificable.
 
-## Ciclo continuo
-1. Ejecutar tarea con enfoque brain-first y evidencia.
-2. Evaluar resultado (calidad, errores, costo de contexto, tiempo, retrabajo).
-3. Detectar patrón (éxito/fallo/repetición) y causa raíz.
-4. Convertir aprendizaje en artefacto persistente (rama/card/policy/playbook).
-5. Aplicar mejora en la siguiente ejecución y medir impacto.
+## Ciclo (MUST)
+1. Ejecutar con brain-first (`70`).
+2. Medir resultado (calidad, tiempo, costo, retrabajo).
+3. Detectar patrón + causa raíz.
+4. Persistir mejora en artefacto (rama/card/policy/playbook).
+5. Reaplicar en siguiente caso y comparar impacto.
 
-## Diseño de ramas (estándar)
-- Ramas cortas, especializadas y reusables.
-- Índice por dominio + subramas por función (heurísticas, fallos, playbooks, métricas).
-- Regla anti-overread: leer solo índice + subramas relevantes.
-- Cada rama debe ser accionable (qué hacer, cuándo, cómo verificar).
+## Criterios de calidad de rama
+- Corta, específica, reusable.
+- Accionable: qué hacer, cuándo, cómo verificar.
+- Sin relleno narrativo; lenguaje operativo.
 
-## Redacción optimizada
-- Una idea por bloque.
-- Lenguaje operativo, sin relleno.
-- Reglas en formato MUST/SHOULD cuando aplique.
-- Incluir criterios de verificación (gates/evidencia/rutas).
-
-## Métricas mínimas de mejora
+## Métricas mínimas
 - Menos pasos manuales del owner.
-- Menos ambigüedad en cierre.
-- Menos recidiva de fallos.
-- Menor costo de tokens para igual o mayor calidad.
+- Menos ambigüedad de cierre.
+- Menor recidiva de fallos.
+- Menor costo para igual o mayor calidad.
 
-## Regla de proactividad
-- Si detecto mejora estructural, la implemento sin esperar permiso (salvo riesgo alto/irreversible).
-- Si no hay certeza, reporto GAP/NO_VERIFICADO y continúo hasta cierre verificable.
+## Regla
+Mejora estructural detectada => implementar sin esperar permiso (excepto riesgo alto/irreversible).

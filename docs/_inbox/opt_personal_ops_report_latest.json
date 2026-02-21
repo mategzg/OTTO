@@ -1,0 +1,30 @@
+{
+  "task": "optimize_personal_ops_operational_knowledge",
+  "status": "completed",
+  "scope": [
+    "brain/domains/personal_ops/00_INDEX.md",
+    "brain/domains/personal_ops/10_DECISION_HEURISTICS.md",
+    "brain/domains/personal_ops/20_FAILURE_PATTERNS.md",
+    "brain/domains/personal_ops/30_EXECUTION_PLAYBOOKS.md",
+    "brain/domains/personal_ops/40_CHANNEL_OPERATING_RULES.md",
+    "brain/domains/personal_ops/50_RESOURCE_BUDGET_TACTICS.md",
+    "brain/domains/personal_ops/60_DELEGATION_DOCTRINE.md",
+    "brain/domains/personal_ops/70_BRAIN_FIRST_PROTOCOL.md",
+    "brain/domains/personal_ops/80_SELF_OPTIMIZATION_PROTOCOL.md",
+    "brain/domains/personal_ops/90_REVIEW_QUEUE.md"
+  ],
+  "deliverables": [
+    "docs/_inbox/opt_personal_ops_report_latest.md",
+    "docs/_inbox/opt_personal_ops_report_latest.json"
+  ],
+  "highlights": [
+    "Added task-type to required-branches mini-matrix in 00_INDEX",
+    "Converted all branches to executable operational doctrine",
+    "Embedded explicit verification/closure criteria",
+    "Applied GAP/NO_VERIFICADO uncertainty marker where appropriate"
+  ],
+  "constraints_respected": {
+    "edited_only_scope": true,
+    "memory_profile_or_vision_touched": false
+  }
+}

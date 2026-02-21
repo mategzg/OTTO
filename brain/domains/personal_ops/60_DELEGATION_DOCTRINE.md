@@ -1,8 +1,23 @@
 # 60 — Delegation Doctrine
 
-- Delegar por defecto tareas largas/complejas para preservar disponibilidad del agente principal.
-- Toda delegación debe tener: scope, gates, output schema y HANDOFF_FILE obligatorio.
-- Criterio de cierre: sin handoff válido no hay DONE.
-- Diagnóstico de fallos de delegación: pairing/auth -> prompt contract -> state lock -> fallback plan.
-- Patrón E2E: emitir -> ejecutar -> handoff -> verificar -> responder al owner con evidencia.
-- Post-mortem rápido: cada incidente de delegación se convierte en regla o playbook para evitar recaídas.
+## Cuándo delegar (MUST)
+- Tareas largas, multi-etapa o que bloquean disponibilidad del agente principal.
+- Investigación extensa o refactors con múltiples archivos/gates.
+
+## Contrato mínimo de delegación
+- Scope estricto (incluye/excluye rutas).
+- Gates de calidad/verificación.
+- Formato de salida esperado.
+- `HANDOFF_FILE` obligatorio con evidencia y pendientes.
+
+## Flujo E2E
+Emitir misión -> ejecutar -> recibir handoff -> verificar gates -> responder con evidencia.
+
+## Diagnóstico rápido de fallos
+1. Pairing/auth/permisos.
+2. Prompt contract incompleto.
+3. Lock/estado colgado.
+4. Fallback plan (reemitir o ejecutar local).
+
+## Regla de cierre
+Sin handoff válido + verificación, no hay DONE.

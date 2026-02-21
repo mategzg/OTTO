@@ -1,6 +1,18 @@
 # 20 — Failure Patterns
 
-- Lock fantasma de delegación: estado activo sin progreso real.
-- Ingest atascado por move granular incorrecto (slice-level en vez de source-root).
-- Browser relay "reachable" pero no listo por token/attach incompleto.
-- Monitoreo mal calibrado que consume más de lo que ahorra.
+## Patrones recurrentes + señal temprana + contención
+- **Lock fantasma de delegación**
+  - Señal: estado “activo” sin nuevos artefactos/handoff.
+  - Contención: cortar lock, reemitir misión con gates explícitos, exigir HANDOFF_FILE.
+- **Ingest atascado por granularidad incorrecta**
+  - Señal: progreso parcial repetido, pendientes no bajan.
+  - Contención: mover en source-root correcto, reindexar, validar `pending=0`.
+- **Browser relay “reachable” pero no operativo**
+  - Señal: puerto responde pero no hay tab attach/token válido.
+  - Contención: validar attach real + token/sesión antes de acciones UI.
+- **Monitoreo más caro que el ahorro**
+  - Señal: muchas verificaciones con bajo impacto operativo.
+  - Contención: bajar frecuencia, medir por cambio de estado, no por polling fijo.
+
+## Regla
+Cada incidente nuevo debe convertirse en heurística (`10`), playbook (`30`) o cola de revisión (`90`).
