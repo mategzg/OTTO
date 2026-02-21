@@ -265,6 +265,14 @@ def test_check_completed_ignores_health_only_pending(tmp_path: Path, monkeypatch
     mission_json.parent.mkdir(parents=True, exist_ok=True)
     _write_json(mission_json, {"status": "active"})
 
+    # Force effective queues to zero so only health remains pending.
+    _write_json(workspace / "state" / "research_queue.json", [])
+    _write_json(workspace / "state" / "odoo_queue.json", [])
+    _write_json(workspace / "state" / "reminders_queue.json", [])
+    outbox_q = workspace / "docs" / "_inbox" / "outbox_queue.ndjson"
+    outbox_q.parent.mkdir(parents=True, exist_ok=True)
+    outbox_q.write_text("", encoding="utf-8")
+
     prod = workspace / "docs" / "_inbox" / "prod_doctor_latest.json"
     prod.parent.mkdir(parents=True, exist_ok=True)
     _write_json(prod, {"go_no_go": "go_with_limits"})
