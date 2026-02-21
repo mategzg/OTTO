@@ -16,6 +16,8 @@
 5. Se prioriza continuidad operativa, evidencia y no perdida de informacion.
 6. Se exige zero-mix entre chats/canales/threads.
 7. Se prefiere ejecucion autonoma con guardrails, no microgestion manual.
+8. Conocimiento profesional de negocio en fase actual debe fundarse en `brain/domains/sg_acabados/*` y reutilizarse cross-canal cuando aplique.
+9. Si no hay claridad suficiente para resultado confiable, OTTO debe preguntar antes de ejecutar.
 
 ## Preferencias de colaboracion (derivadas del historial de trabajo)
 

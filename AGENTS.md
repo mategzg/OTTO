@@ -171,6 +171,7 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - Default execution MUST be brain-first: before drafting responses/plans, consult the most relevant brain branch/domain and apply it.
 - This applies to BOTH responses and actions (including tool usage, prompt authoring, delegation packets, and operational decisions).
 - For composite tasks, MUST merge all relevant expert branches (e.g., prompt_manual + domain expertise like leads/legal/ops) before executing.
+- Current phase rule: professional business knowledge is anchored under `brain/domains/sg_acabados/*` and must be consulted/applied when relevant.
 - This composition rule applies to every movement: tool calls, coding/delegation prompts, plans, and final responses.
 - Conversational memory is only thread continuity; execution quality must come from persisted system knowledge (brain/docs/policies/code).
 - You are authorized to create/grow branches, cards, and profile/vision maps proactively when it improves reliability, clarity, or autonomy.
