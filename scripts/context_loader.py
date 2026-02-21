@@ -340,44 +340,54 @@ def load_context_plan(
     if _TOKEN_BUDGET_AVAILABLE:
         try:
             _root = str(canonical_root)
-            _savings = is_savings_mode_active(_root)
-            _policy_key = "savings_mode" if _savings else "normal_mode"
-            _policy_path = Path(_root) / "state" / "token_budget_policy.json"
-            _limits: Dict[str, Any] = {}
-            if _policy_path.exists():
-                _limits = json.loads(_policy_path.read_text(encoding="utf-8")).get(_policy_key, {})
+            _session_id = session_id.strip() or "unknown"
+            _channel = channel.lower().strip()
+            _high_power_channel = _channel.startswith(("telegram", "discord"))
 
-            if bool(_limits.get("skip_brain_nodes", False)):
-                deduped = [item for item in deduped if not str(item.get("path", "")).startswith("brain/")]
-
-            _max_files = int(_limits.get("max_files_context", 8))
-            if len(deduped) > _max_files:
-                protected: List[Dict[str, Any]] = []
-                truncatable: List[Dict[str, Any]] = []
-                for item in deduped:
-                    _path = str(item.get("path", ""))
-                    _reason = str(item.get("reason", ""))
-                    if (
-                        _reason in {"active_mission", "episodic_summary", "brain_index_match"}
-                        or _path.endswith("PLAN.md")
-                        or "/missions/" in _path
-                    ):
-                        protected.append(item)
-                    else:
-                        truncatable.append(item)
-                remaining = max(_max_files - len(protected), 0)
-                if remaining > 0:
-                    deduped = protected + truncatable[:remaining]
-                else:
-                    deduped = protected
+            # Owner directive: telegram/discord run in high-power mode (no strict token truncation).
+            if _high_power_channel:
                 logger.info(
-                    "context_loader: token budget limit applied "
-                    f"(mode={'savings' if _savings else 'normal'}, max_files={_max_files})"
+                    "context_loader: high-power channel detected; token budget truncation bypassed "
+                    f"(channel={_channel or 'unknown'})"
                 )
             else:
-                logger.info(f"context_loader: mode={'savings' if _savings else 'normal'}, files={len(deduped)}")
+                _savings = is_savings_mode_active(_root)
+                _policy_key = "savings_mode" if _savings else "normal_mode"
+                _policy_path = Path(_root) / "state" / "token_budget_policy.json"
+                _limits: Dict[str, Any] = {}
+                if _policy_path.exists():
+                    _limits = json.loads(_policy_path.read_text(encoding="utf-8")).get(_policy_key, {})
 
-            _session_id = session_id.strip() or "unknown"
+                if bool(_limits.get("skip_brain_nodes", False)):
+                    deduped = [item for item in deduped if not str(item.get("path", "")).startswith("brain/")]
+
+                _max_files = int(_limits.get("max_files_context", 8))
+                if len(deduped) > _max_files:
+                    protected: List[Dict[str, Any]] = []
+                    truncatable: List[Dict[str, Any]] = []
+                    for item in deduped:
+                        _path = str(item.get("path", ""))
+                        _reason = str(item.get("reason", ""))
+                        if (
+                            _reason in {"active_mission", "episodic_summary", "brain_index_match"}
+                            or _path.endswith("PLAN.md")
+                            or "/missions/" in _path
+                        ):
+                            protected.append(item)
+                        else:
+                            truncatable.append(item)
+                    remaining = max(_max_files - len(protected), 0)
+                    if remaining > 0:
+                        deduped = protected + truncatable[:remaining]
+                    else:
+                        deduped = protected
+                    logger.info(
+                        "context_loader: token budget limit applied "
+                        f"(mode={'savings' if _savings else 'normal'}, max_files={_max_files})"
+                    )
+                else:
+                    logger.info(f"context_loader: mode={'savings' if _savings else 'normal'}, files={len(deduped)}")
+
             if not _session_budget_recorded(canonical_root, _session_id):
                 _paths = sorted({str(e.get("path", "")) for e in deduped if str(e.get("path", "")).strip()})
                 _est = estimate_session_tokens(_paths, root=_root)
