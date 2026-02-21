@@ -10,6 +10,7 @@ from typing import Any, Dict, List
 
 from scripts.nl_intent_classifier import classify_intent
 from scripts.repo_root import get_canonical_root
+from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
 
@@ -101,6 +102,7 @@ def run_nl_router(
     cancel_requested: bool = False,
 ) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
+    ensure_default_registries(canonical_root)
     started = time.monotonic()
     timeout_ms = max(50, _safe_int(timeout_ms, 1500))
     attachments = attachments or []
@@ -133,6 +135,19 @@ def run_nl_router(
 
         _ensure_timeout("post_classification")
         route = INTENT_ROUTE_MAP.get(intent, {"route_type": "tool", "selected_target": "rag.answer"})
+        resolution = resolve_target(
+            canonical_root,
+            route_type=route["route_type"],
+            selected_target=route["selected_target"],
+            channel=channel,
+        )
+        if not bool(resolution.get("ok", False)):
+            fallback = resolution.get("fallback", {"route_type": "tool", "selected_target": "rag.answer"})
+            route = {
+                "route_type": str(fallback.get("route_type", "tool")),
+                "selected_target": str(fallback.get("selected_target", "rag.answer")),
+            }
+
         pol = _policy(canonical_root)
 
         repeat = _safe_int(repeat_count_30d)
@@ -162,6 +177,7 @@ def run_nl_router(
                 f"repeat_count_30d={repeat}",
                 f"impact_score={impact}",
                 f"risk_score={risk}",
+                f"registry_resolution={'ok' if resolution.get('ok') else resolution.get('reason', 'fallback')}",
             ],
             "risk_level": "high" if risk >= 8 else "medium" if risk >= 4 else "low",
             "requires_approval": requires_approval,
@@ -180,6 +196,10 @@ def run_nl_router(
                 "impact_score": impact,
                 "risk_score": risk,
                 "decision": create_decision,
+            },
+            "registry": {
+                "checked": True,
+                "resolution": resolution,
             },
         }
 

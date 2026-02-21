@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "updated_at": "",
+  "entities": {
+    "status.check": {
+      "name": "status.check",
+      "kind": "recipe",
+      "version": "1.0.0",
+      "status": "enabled",
+      "risk_level": "low",
+      "permissions": ["status.read"],
+      "side_effects": [],
+      "input_schema": {"required": [], "optional": ["scope"]},
+      "compatibility": {"channels": ["telegram", "discord", "whatsapp"]}
+    }
+  }
+}

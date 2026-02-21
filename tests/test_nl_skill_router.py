@@ -89,6 +89,29 @@ def test_unified_router_returns_contracts_and_idempotency(tmp_path: Path, monkey
     assert out["contracts"]["execution"]["idempotent"] is True
 
 
+def test_unified_router_falls_back_when_skill_not_registered(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = run_nl_router(
+        tmp_path,
+        text="quiero odoo stock de hoy",
+        channel="telegram",
+        conversation_id="c1",
+        thread_id="t1",
+        message_id="m3",
+    )
+    assert out["status"] == "success"
+    assert out["plan"]["route_type"] == "tool"
+    assert out["plan"]["selected_target"] == "rag.answer"
+
+
 def test_unified_router_honors_cancel(tmp_path: Path, monkeypatch):
     (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
     (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
