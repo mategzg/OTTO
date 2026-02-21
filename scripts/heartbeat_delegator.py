@@ -773,6 +773,30 @@ def delegate_to_coder(
     return {"status": "failed_no_fallback", "items_delegated": total}
 
 
+def _effective_pending_without_health(pending: Dict[str, Any]) -> int:
+    pending_map = pending.get("pending", {}) if isinstance(pending, dict) else {}
+    if not isinstance(pending_map, dict):
+        return 0
+    # Use primary queues only (avoid double-counting ingest sub-stages).
+    primary_keys = [
+        "research",
+        "odoo",
+        "summarizer",
+        "reminders",
+        "ingest",
+        "memory",
+        "outbox",
+        "hook_backlog",
+    ]
+    total = 0
+    for key in primary_keys:
+        value = pending_map.get(key, {})
+        if not isinstance(value, dict):
+            continue
+        total += max(0, int(value.get("count", 0)))
+    return total
+
+
 def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     state = _ensure_state(canonical_root)
@@ -824,7 +848,8 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     # completion-by-backlog guard: if there is no pending delegated work, release active lock
     # even when mission.json did not transition to completed.
     rescanned = scan_pending_work(canonical_root)
-    if int(rescanned.get("total_pending", 0)) == 0:
+    remaining_effective = _effective_pending_without_health(rescanned)
+    if remaining_effective == 0:
         state.update(
             {
                 "status": "completed_no_pending",
@@ -839,7 +864,7 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             "active": False,
             "mission_id": mission_id,
             "ingest_progress": state.get("ingest_progress", {}),
-            "remaining_pending": 0,
+            "remaining_pending": remaining_effective,
         }
 
     # stale-lock guard: if a delegation stays active too long without explicit completion,

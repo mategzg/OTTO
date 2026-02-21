@@ -248,6 +248,33 @@ def test_check_completed_no_pending_releases_active_mission(tmp_path: Path, monk
     assert state["active_mission_id"] is None
 
 
+def test_check_completed_ignores_health_only_pending(tmp_path: Path, monkeypatch):
+    workspace = _setup(tmp_path, monkeypatch)
+    state_path = workspace / "state" / "heartbeat_delegation_state.json"
+    _write_json(
+        state_path,
+        {
+            "last_delegation_at": datetime.now(timezone.utc).isoformat(),
+            "coder_used": "codex",
+            "items_delegated": 1,
+            "status": "delegated",
+            "active_mission_id": "hbdel_health_only_1",
+        },
+    )
+    mission_json = workspace / "state" / "missions" / "hbdel_health_only_1" / "mission.json"
+    mission_json.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(mission_json, {"status": "active"})
+
+    prod = workspace / "docs" / "_inbox" / "prod_doctor_latest.json"
+    prod.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(prod, {"go_no_go": "go_with_limits"})
+
+    out = delegator.check_completed_delegations(workspace)
+    assert out["status"] == "completed_no_pending"
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    assert state["active_mission_id"] is None
+
+
 def test_check_completed_recognizes_handoff_file_completion(tmp_path: Path, monkeypatch):
     workspace = _setup(tmp_path, monkeypatch)
     state_path = workspace / "state" / "heartbeat_delegation_state.json"
