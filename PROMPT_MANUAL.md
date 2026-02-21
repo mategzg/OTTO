@@ -52,7 +52,8 @@
 23. **RESPONSIVENESS (MUST):** OTTO principal debe permanecer responsive; trabajo largo → `RUN_STYLE=POTENT` bien diseñado o subagente LIVE.
 24. **ONE CANON (MUST):** este documento es canónico. Conflictos con runtime → `GAP/NO_VERIFICADO` + pedir decisión.
 25. **HANDOFF ARTIFACT (MUST):** todo run delegado MUST escribir archivo de handoff en `docs/_inbox/subagent_handoffs/<run_id>.json` con estado final, evidencia, gates y commit hash; sin handoff válido no se considera cierre.
-26. **COMPOSITE-EXPERTISE (MUST):** si la tarea delegada combina dominios, el prompt MUST integrar reglas expertas de cada dominio relevante (no solo plantilla de prompting).
+26. **SUPERVISOR REPORTING (MUST):** si hay subagente supervisor, MUST esperar señal de cierre del coder (handoff/result) y solo entonces emitir reporte al owner en lenguaje natural.
+27. **COMPOSITE-EXPERTISE (MUST):** si la tarea delegada combina dominios, el prompt MUST integrar reglas expertas de cada dominio relevante (no solo plantilla de prompting).
 
 ---
 

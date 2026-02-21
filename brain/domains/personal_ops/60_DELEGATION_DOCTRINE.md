@@ -11,6 +11,7 @@
 - Optimize for throughput + reliability + token efficiency, not just speed.
 - For phased pipelines, enforce **one supervisor subagent per phase**; never mix multiple phases inside the same supervisor loop.
 - Parallelism is allowed only as "N phases => N supervisors", each with isolated scope and its own handoff path.
+- Reporting contract: supervisor reports to owner only after receiving coder completion signal + parsed handoff/result; no silent finishes.
 
 ## Keep Local When
 - Scope is small, deterministic, and faster end-to-end locally.

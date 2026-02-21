@@ -5,7 +5,7 @@ Heartbeat is responsible for moving pending work to verified closure, not just r
 
 ## Allowed outcomes per pending item
 1. **Processed inline** (with report evidence), or
-2. **Delegated with owner artifact** (`docs/_inbox/subagent_handoffs/*.json`), or
+2. **Delegated with owner artifact** (`docs/_inbox/subagent_handoffs/*.json`) and supervisor acknowledgment, or
 3. **Blocked explicitly** (`GAP/NO_VERIFICADO` + blocker + next action).
 
 Any other state is invalid for closure.
