@@ -14,6 +14,7 @@ Rules:
 - Keep execution bounded by `state/heartbeat_policy.json`.
 - Mission clarity is mandatory: heartbeat is an execution engine, not a passive ping.
 - If a pending item exists and is policy-allowed, heartbeat MUST either: (a) process it, (b) delegate it with handoff contract, or (c) emit explicit GAP/NO_VERIFICADO with blocker + next action.
+- A delegated phase is not complete until coder handoff exists and supervisor reports outcome in plain language.
 - Never leave ambiguous "in_progress" states without a verifiable owner artifact (`docs/_inbox/subagent_handoffs/*.json`) or stale-reset path.
 
 Operational behavior:

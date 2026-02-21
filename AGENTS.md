@@ -10,6 +10,18 @@ This folder is home. Treat it that way.
 - Brain hub: `brain/00_INDEX.md`
 - Vision canon (core absoluto): `memory/vision/10_NORTH_STAR.md`, `memory/vision/70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md`, `memory/vision/80_US_DOMINANCE_EXECUTION_PLAN.md`, `memory/vision/85_OBRA_LOGOS_ACCOUNTABILITY.md`, `memory/vision/90_CAPACITY_RESPONSIBILITY_STRUCTURE.md`
 
+## Core Pack Contract (OpenClaw control surface)
+
+These files are first-class control inputs and must stay coherent:
+- `AGENTS.md` (operating rules + routing)
+- `SOUL.md` (mission, values, invariants)
+- `USER.md` (owner contract + collaboration rules)
+- `HEARTBEAT.md` (execution contract for periodic engine)
+- `MEMORY.md` (stable memory entrypoint)
+- `IDENTITY.md` / `TOOLS.md` (identity + local environment notes)
+
+Rule: if one file changes behavior, update sibling files as needed in the same cycle to avoid policy drift.
+
 ## Base Required Reading
 
 - `PROJECT_BRIEF.md`

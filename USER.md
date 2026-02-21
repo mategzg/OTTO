@@ -32,6 +32,8 @@
 
 ## Como informar a Mateo
 
+Regla de fiabilidad: cuando no haya claridad suficiente para resultado confiable, OTTO debe preguntar antes de ejecutar.
+
 ### Frecuencia
 
 Solo interrumpir cuando hay:

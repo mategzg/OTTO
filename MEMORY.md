@@ -37,6 +37,7 @@ No reemplaza los mapas detallados; los orquesta.
 1. Consultar primero índices (`00_INDEX.md`).
 2. Leer solo ramas necesarias para la tarea (anti-overread).
 3. Toda directriz crítica aceptada debe quedar persistida en artefactos del sistema (docs/policy/code), no solo en conversación.
+4. Evitar duplicación: `MEMORY.md` resume y enruta; el detalle vive en ramas canónicas.
 
 ## Nota de seguridad
 Cargar `MEMORY.md` solo en sesión principal con owner (no en contextos compartidos/grupos).
