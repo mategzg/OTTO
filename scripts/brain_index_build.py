@@ -102,6 +102,17 @@ def _parse_section_tags(lines: Sequence[str], start_index: int = 0) -> List[str]
     return tags
 
 
+def _parse_title(text: str, fallback: str) -> str:
+    for line in text.splitlines():
+        clean = line.strip()
+        if not clean:
+            continue
+        if clean.startswith("#"):
+            return clean.lstrip("#").strip()[:180]
+        break
+    return Path(fallback).stem
+
+
 def _parse_deep_links(text: str) -> List[str]:
     links: Set[str] = set()
     for match in MD_LINK_RE.finditer(text):
@@ -273,9 +284,11 @@ def build_registry(root: Path, namespace: str = "brain") -> Dict[str, Any]:
         tags = _normalize_tags([*frontmatter_tags, *body_tags])
         deep_links = _parse_deep_links(text)
 
+        rel_path = md_path.resolve().relative_to(root.resolve()).as_posix()
         nodes.append(
             {
-                "path": md_path.resolve().relative_to(root.resolve()).as_posix(),
+                "path": rel_path,
+                "title": _parse_title(text, rel_path),
                 "tags": tags,
                 "deep_links": deep_links,
             }
