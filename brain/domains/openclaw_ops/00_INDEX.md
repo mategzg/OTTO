@@ -25,6 +25,9 @@ Hub de ruteo para operacion diaria de OpenClaw/OTTO en el workspace canonico.
 - Pregunta: "como redactar prompts/protocolos" -> `brain/domains/openclaw_ops/06_PROMPT_ENGINEERING_PATTERNS.md`
 - Pregunta: "a quien delego (Codex/Claude/Cowork)" -> `brain/domains/openclaw_ops/07_DELEGATION_POLICY.md`
 - Pregunta: "como auditar salvage/quarantine y recuperar docs por lotes" -> `brain/domains/openclaw_ops/08_LEGACY_RECOVERY.md`
+- Pregunta: "como orquestar misiones complejas (sizing/roles/learning)" -> `brain/domains/openclaw_ops/14_MISSION_ORCHESTRATION.md`
+- Pregunta: "cuando activar mision automaticamente y cuando escalar a owner" -> `brain/domains/openclaw_ops/15_MISSION_ACTIVATION.md`
+- Pregunta: "como usar docs.openclaw.ai como biblia operativa" -> `brain/domains/openclaw_ops/17_OPENCLAW_DOCS_BIBLE_PROTOCOL.md`
 
 ## Maintenance
 
@@ -38,3 +41,5 @@ Hub de ruteo para operacion diaria de OpenClaw/OTTO en el workspace canonico.
 - `brain/cards/openclaw_ops/card_context_authority.md`
 - `brain/cards/openclaw_ops/card_delegation_matrix.md`
 - `repo_map/90_LEGACY_RECOVERY.md`
+- `repo_map/95_MISSION_ORCHESTRATION.md`
+- `repo_map/96_MISSION_ACTIVATION.md`
