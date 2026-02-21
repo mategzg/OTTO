@@ -22,6 +22,15 @@ These files are first-class control inputs and must stay coherent:
 
 Rule: if one file changes behavior, update sibling files as needed in the same cycle to avoid policy drift.
 
+### Core File Design Standard (operability-first)
+Each core file SHOULD stay compact and explicitly include:
+- Purpose (why this file exists)
+- Decision scope (what it controls)
+- Operational rules (MUST/MUST NOT)
+- Inputs/outputs expected by runtime
+- Update trigger (when this file must be revised)
+- References to canonical branches (avoid duplicated long prose)
+
 ## Base Required Reading
 
 - `PROJECT_BRIEF.md`

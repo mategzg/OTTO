@@ -1,0 +1,15 @@
+{
+  "status": "success_with_gap",
+  "focus": "core control files operability",
+  "findings": [
+    "OpenClaw docs focus on runtime/tooling more than custom core-file schemas",
+    "Core files here are workspace-level control surface",
+    "Operational quality requires anti-overlap and clear contracts"
+  ],
+  "applied_change": "AGENTS.md: Core File Design Standard",
+  "gap": "GAP/NO_VERIFICADO: no official universal schema page mandating SOUL/USER/HEARTBEAT/MEMORY names",
+  "outputs": [
+    "docs/_inbox/openclaw_core_docs_research_latest.md",
+    "docs/_inbox/openclaw_core_docs_research_latest.json"
+  ]
+}
