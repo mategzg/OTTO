@@ -1,5 +1,11 @@
 # HEARTBEAT.md
 
+## Purpose
+Contrato de ejecución periódica: convertir pendientes policy-allowed en cierres verificables con mínima ambigüedad.
+
+## Decision scope
+Define qué hace heartbeat, cómo decide inline vs delegación y cuándo escalar GAP/NO_VERIFICADO.
+
 Run exactly this command from the workspace root:
 
 `python3 scripts/heartbeat_worker.py --once --root .`
@@ -40,3 +46,10 @@ Operational behavior:
   - memory compact/index
   - episodic memory build
 - Tratamiento de imagenes de export ChatGPT: se catalogan en `normalized/attachments.ndjson` y se archivan en `vault/inbox_raw/sources/<package>/images/` sin OCR/vision.
+
+## Inputs/Outputs runtime
+- Inputs: colas/policies/estado (`state/*`, `docs/_inbox/*latest*`).
+- Outputs: reportes heartbeat, handoffs de delegación, cierres verificables o GAP explícitos.
+
+## Update trigger
+Actualizar cuando cambien: fases de pipeline, reglas de delegación, contratos de handoff o límites de policy.

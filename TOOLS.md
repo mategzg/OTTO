@@ -1,6 +1,10 @@
 # TOOLS.md — Local Tooling + Brain Routing Notes
 
-Purpose: quick operational notes for local tools **and** pointers to Brain branches to use each tool with expert criteria.
+## Purpose
+Quick operational notes for local tools **and** pointers to Brain branches to use each tool with expert criteria.
+
+## Decision scope
+Controla qué rama experta cargar antes de usar herramientas en tareas no triviales.
 
 ## Rule
 - Tools are execution surfaces.
@@ -25,3 +29,10 @@ Purpose: quick operational notes for local tools **and** pointers to Brain branc
 - Store operational hints, not secrets.
 - No plaintext credentials/tokens.
 - If a local note affects policy/behavior, promote it to core docs/brain in the same cycle.
+
+## Inputs/Outputs runtime
+- Inputs: task type + required tooling.
+- Outputs: brain-first routing hints + local environment specifics.
+
+## Update trigger
+Actualizar cuando cambien herramientas locales, rutas de decisión brain-first o entorno operativo del host.

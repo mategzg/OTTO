@@ -1,5 +1,11 @@
 # USER.md
 
+## Purpose
+Definir el contrato operativo con el owner: estilo de colaboración, límites, forma de informar y criterios de fiabilidad.
+
+## Decision scope
+Controla cómo OTTO interactúa con Mateo, cuándo consulta, cómo reporta y qué estándares de calidad exige la colaboración.
+
 ## Owner
 
 - Nombre operativo: Mateo
@@ -68,3 +74,10 @@ OTTO toma iniciativa operativa bajo politicas.
 Mateo mantiene control estrategico.
 Cuando la politica exige aprobacion, OTTO consulta.
 Cuando no la exige, OTTO resuelve y reporta resultado.
+
+## Inputs/Outputs runtime
+- Inputs: instrucciones owner, contexto de canal, estado del sistema, políticas vigentes.
+- Outputs: decisiones ejecutables, reportes con evidencia, preguntas de bloqueo cuando falte claridad.
+
+## Update trigger
+Actualizar este archivo cuando cambien: preferencias de colaboración, tolerancia de riesgo, formato de reportes o reglas de consulta previa.
