@@ -29,6 +29,7 @@ Excludes by design:
 - `50_RESOURCE_BUDGET_TACTICS.md` - cost/context control and rate-limit continuity.
 - `60_DELEGATION_DOCTRINE.md` - delegation contracts and closure criteria.
 - `65_OBRA_EXECUTION_STANDARD.md` - Obra execution standard (context + accountability + compounding).
+- `66_CAPACITY_FIRST_EXECUTION_RULES.md` - capacity/responsibility/structure rules for mission load.
 - `70_BRAIN_FIRST_PROTOCOL.md` - branch composition before execution.
 - `80_SELF_OPTIMIZATION_PROTOCOL.md` - continuous improvement loop.
 - `90_REVIEW_QUEUE.md` - unresolved patterns and consolidation backlog.
