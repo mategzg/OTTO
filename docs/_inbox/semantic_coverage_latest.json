@@ -1,0 +1,120 @@
+{
+  "created_at": "2026-02-21T23:12:06.874113+00:00",
+  "domains": {
+    "sg_acabados": {
+      "chunks_count": 28,
+      "queries_total": 4,
+      "queries_with_hits": 4,
+      "query_results": [
+        {
+          "hits": 7,
+          "query": "cotizacion de marmol para cliente",
+          "top_matches": [
+            {
+              "path": "brain/domains/sg_acabados/card_runbooks_b1_b2.md",
+              "score": 2,
+              "start_line": 23,
+              "title": "Template JACK (solo SG)"
+            },
+            {
+              "path": "brain/domains/sg_acabados/00_INDEX.md",
+              "score": 1,
+              "start_line": 1,
+              "title": "SG Acabados Domain — 00_INDEX"
+            },
+            {
+              "path": "brain/domains/sg_acabados/00_INDEX.md",
+              "score": 1,
+              "start_line": 5,
+              "title": "Regla de ubicación (actual)"
+            }
+          ]
+        },
+        {
+          "hits": 3,
+          "query": "estado de inventario y stock",
+          "top_matches": [
+            {
+              "path": "brain/domains/sg_acabados/card_legal_peru_cobranza.md",
+              "score": 1,
+              "start_line": 18,
+              "title": "Preservación Probatoria"
+            },
+            {
+              "path": "brain/domains/sg_acabados/card_odoo_operations.md",
+              "score": 1,
+              "start_line": 22,
+              "title": "Matriz de Riesgo SIP (Sales/Inventory/Purchase)"
+            },
+            {
+              "path": "brain/domains/sg_acabados/card_odoo_operations.md",
+              "score": 1,
+              "start_line": 47,
+              "title": "Estado Actual"
+            }
+          ]
+        },
+        {
+          "hits": 3,
+          "query": "proceso de factura y cobranza",
+          "top_matches": [
+            {
+              "path": "brain/domains/sg_acabados/card_legal_peru_cobranza.md",
+              "score": 1,
+              "start_line": 1,
+              "title": "Card: Playbook Legal Perú — Cobranza y Controversias"
+            },
+            {
+              "path": "brain/domains/sg_acabados/card_legal_peru_cobranza.md",
+              "score": 1,
+              "start_line": 6,
+              "title": "Mapa de Rutas (decisión rápida)"
+            },
+            {
+              "path": "brain/domains/sg_acabados/card_odoo_operations.md",
+              "score": 1,
+              "start_line": 22,
+              "title": "Matriz de Riesgo SIP (Sales/Inventory/Purchase)"
+            }
+          ]
+        },
+        {
+          "hits": 8,
+          "query": "operaciones en odoo para pedidos",
+          "top_matches": [
+            {
+              "path": "brain/domains/sg_acabados/card_odoo_operations.md",
+              "score": 2,
+              "start_line": 47,
+              "title": "Estado Actual"
+            },
+            {
+              "path": "brain/domains/sg_acabados/00_INDEX.md",
+              "score": 1,
+              "start_line": 1,
+              "title": "SG Acabados Domain — 00_INDEX"
+            },
+            {
+              "path": "brain/domains/sg_acabados/10_BIZ_FUNCTIONS_MAP.md",
+              "score": 1,
+              "start_line": 3,
+              "title": "Funciones núcleo"
+            }
+          ]
+        }
+      ],
+      "recall_proxy": 1.0,
+      "synonyms_count": 5
+    }
+  },
+  "status": "ok",
+  "summary": {
+    "domains": [
+      "sg_acabados"
+    ],
+    "queries_total": 4,
+    "queries_with_hits": 4,
+    "recall_proxy": 1.0
+  },
+  "version": 1
+}

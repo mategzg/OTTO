@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "domains": {
+    "sg_acabados": {
+      "paths": [
+        "brain/domains/sg_acabados"
+      ],
+      "synonyms": {
+        "cotizacion": ["cotizar", "presupuesto", "quote", "quotation"],
+        "cliente": ["customer", "comprador", "prospecto"],
+        "inventario": ["stock", "almacen", "warehouse"],
+        "factura": ["invoice", "comprobante"],
+        "cobranza": ["cobro", "recaudo", "collection"]
+      },
+      "representative_queries": [
+        "cotizacion de marmol para cliente",
+        "estado de inventario y stock",
+        "proceso de factura y cobranza",
+        "operaciones en odoo para pedidos"
+      ]
+    }
+  }
+}
