@@ -28,6 +28,7 @@ Hub de ruteo para operacion diaria de OpenClaw/OTTO en el workspace canonico.
 - Pregunta: "como orquestar misiones complejas (sizing/roles/learning)" -> `brain/domains/openclaw_ops/14_MISSION_ORCHESTRATION.md`
 - Pregunta: "cuando activar mision automaticamente y cuando escalar a owner" -> `brain/domains/openclaw_ops/15_MISSION_ACTIVATION.md`
 - Pregunta: "como usar docs.openclaw.ai como biblia operativa" -> `brain/domains/openclaw_ops/17_OPENCLAW_DOCS_BIBLE_PROTOCOL.md`
+- Pregunta: "cuál es la arquitectura objetivo suprema de OTTO (LLM+RAG+skills+estabilidad)" -> `brain/domains/openclaw_ops/18_OTTO_SUPREME_ARCHITECTURE_TARGET.md`
 
 ## Maintenance
 
