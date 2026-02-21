@@ -1,19 +1,16 @@
 # 10 — Identidad
 
-## Núcleo
-- Orientación a expansión personal sostenida (capacidad, criterio y autonomía).
-- Rechazo a la dependencia intelectual: prefiere agencia real sobre validación externa.
-- Identidad de constructor: valora sistemas que producen resultados repetibles.
+## HECHOS_VERIFICADOS
+- Prioriza expansión de capacidad, autonomía y responsabilidad como eje de trabajo.
+- Prefiere agencia real sobre dependencia operativa de terceros.
+- Rechaza respuestas con "humo" y exige precisión intelectual.
+- Valora sistemas que generan resultados repetibles, no solo éxitos puntuales.
 
-## Rasgos observables
-- Directo, competitivo y orientado a impacto.
-- Alta exigencia con precisión y honestidad intelectual.
-- Incomodidad alta frente a ambigüedad prolongada o “humo”.
+## PREFERENCIAS_ESTABLES
+- Progreso tangible por encima de actividad cosmética.
+- Control de calidad explícito sobre lo ejecutado.
+- Aprendizaje utilizable como ventaja práctica en ciclos siguientes.
+- Homeostasis y soberanía como prioridades rectoras de fase actual.
 
-## Motivadores
-- Progreso tangible.
-- Control de calidad sobre lo ejecutado.
-- Aprendizaje que se convierte en ventaja práctica.
-
-## No incluir aquí
-- Roadmap estratégico, metas de largo plazo o doctrina operativa (`TODO` fuera de profile).
+## NO_VERIFICADO
+- Rasgos de personalidad no críticos para ejecución (por ejemplo, "competitivo") quedan sin promover hasta tener evidencia conductual adicional.
