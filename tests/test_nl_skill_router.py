@@ -142,6 +142,38 @@ def test_unified_router_returns_cooldown_when_circuit_open(tmp_path: Path, monke
     assert out["error"]["code"] == "circuit_open"
 
 
+def test_unified_router_includes_retrieval_v2_pack_when_flag_enabled(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+    (tmp_path / "state").mkdir(parents=True)
+    (tmp_path / "brain" / "domains" / "sg_acabados").mkdir(parents=True)
+    (tmp_path / "brain" / "domains" / "sg_acabados" / "card.md").write_text(
+        "# Odoo\nProceso de cotizacion y cliente\n", encoding="utf-8"
+    )
+    (tmp_path / "state" / "retrieval_policy.json").write_text(
+        '{"retrieval_v2": {"enabled": true, "lexical_top_n": 10, "vector_top_n": 10, "final_top_k": 5, "max_chunks_per_doc": 2, "min_evidence_score": 0.0}}\n',
+        encoding="utf-8",
+    )
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = run_nl_router(
+        tmp_path,
+        text="explicame proceso de cotizacion",
+        channel="telegram",
+        conversation_id="c1",
+        thread_id="t1",
+        message_id="m5",
+    )
+    assert out["status"] == "success"
+    assert out["retrieval_v2"]["enabled"] is True
+    assert "pack" in out["retrieval_v2"]
+
+
 def test_unified_router_honors_cancel(tmp_path: Path, monkeypatch):
     (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
     (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")

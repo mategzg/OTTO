@@ -12,10 +12,12 @@ from scripts.circuit_breaker import record_execution, should_allow
 from scripts.nl_intent_classifier import classify_intent
 from scripts.observability import record_event
 from scripts.repo_root import get_canonical_root
+from scripts.retrieval_service import retrieve as retrieval_v2_retrieve
 from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
+RETRIEVAL_POLICY_PATH = Path("state/retrieval_policy.json")
 
 DEFAULT_POLICY: Dict[str, Any] = {
     "repeat_threshold_30d": 3,
@@ -53,6 +55,12 @@ def _policy(root: Path) -> Dict[str, Any]:
     out = dict(DEFAULT_POLICY)
     out.update({k: payload.get(k) for k in DEFAULT_POLICY.keys() if k in payload})
     return out
+
+
+def _retrieval_v2_enabled(root: Path) -> bool:
+    payload = _load_json(root / RETRIEVAL_POLICY_PATH)
+    cfg = payload.get("retrieval_v2", {}) if isinstance(payload.get("retrieval_v2"), dict) else {}
+    return bool(cfg.get("enabled", False))
 
 
 def _domain_for_intent(intent: str) -> str:
@@ -257,6 +265,19 @@ def run_nl_router(
             },
         }
 
+        retrieval_v2 = {
+            "enabled": _retrieval_v2_enabled(canonical_root),
+            "pack": {},
+        }
+        if retrieval_v2["enabled"] and plan["route_type"] == "tool" and plan["selected_target"] == "rag.answer":
+            retrieval_v2["pack"] = retrieval_v2_retrieve(
+                canonical_root,
+                query=text,
+                principal_ctx={"channel": channel, "conversation_id": conversation_id},
+                retrieval_mode="grounded_answer",
+                filters={},
+            )
+
         _ensure_timeout("post_planning")
         elapsed_ms = int((time.monotonic() - started) * 1000)
         breaker_status = record_execution(
@@ -292,6 +313,7 @@ def run_nl_router(
                 "route_type": plan["route_type"],
                 "status": "planned",
             },
+            "retrieval_v2": retrieval_v2,
             "grounded_response": {
                 "mode": "evidence_first",
                 "status": "pending_execution",

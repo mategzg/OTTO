@@ -1,0 +1,10 @@
+{
+  "retrieval_v2": {
+    "enabled": false,
+    "lexical_top_n": 20,
+    "vector_top_n": 20,
+    "final_top_k": 12,
+    "max_chunks_per_doc": 3,
+    "min_evidence_score": 0.1
+  }
+}
