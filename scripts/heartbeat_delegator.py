@@ -36,6 +36,7 @@ PENDING_DROP = Path("vault/inbox_raw/_pending_drop")
 SOURCES_ROOT = Path("vault/inbox_raw/sources")
 INGEST_PLAN_ROOT = Path("state/ingest_plans")
 TRIAGE_REPORT_PATH = Path("docs/_inbox/corpus_triage_latest.json")
+HANDOFF_DIR = Path("docs/_inbox/subagent_handoffs")
 
 _INGEST_PENDING_EXCLUDED_PREFIXES = (
     "mission_learning",
@@ -63,6 +64,7 @@ DEFAULT_STATE: Dict[str, Any] = {
     "active_mission_id": None,
     "active_workload": None,
     "active_prompt_sha1": None,
+    "active_handoff_path": None,
     "ingest_progress": {
         "total_packages_detected": 0,
         "packages_processed": 0,
@@ -507,6 +509,7 @@ def build_delegation_prompt(root: str | Path, pending: Dict[str, Any], workload:
         "- docs/_inbox/*latest.json",
         "- docs/_inbox/*latest.md",
         "- logs/*latest.json",
+        "- docs/_inbox/subagent_handoffs/*.json",
         "- ops/RUN_LEDGER.ndjson",
         "",
         "OBJECTIVE:",
@@ -581,9 +584,14 @@ def build_delegation_prompt(root: str | Path, pending: Dict[str, Any], workload:
             "FAILURE_POLICY:",
             "- Si un comando crítico falla: STOP, reporta output exacto, diagnóstico y fix propuesto.",
             "",
+            "HANDOFF_FILE (MUST):",
+            "- Escribe `docs/_inbox/subagent_handoffs/<mission_id>.json` con status, summary, files_changed, gates, gaps, commit_hash y generated_at.",
+            "- Sin handoff válido la misión queda incompleta.",
+            "",
             "OUTPUT_SCHEMA (MUST):",
             "- Devolver UN YAML con `run` + `copilot_packet`.",
             "- `run.allowed_exceptions` MUST existir.",
+            "- `run.handoff_file` y `run.handoff_written=true` MUST existir.",
             "- Si RUN_STYLE=POTENT, incluir `run.checkpoints[]`.",
             "- `copilot_packet` mínimo: current_state, open_issues, approvals_needed, questions_to_user, suggested_next_steps.",
         ]
@@ -601,11 +609,26 @@ def _mission_id_for_delegation(coder: str, prompt: str) -> str:
     return f"hbdel_{coder}_{stamp}_{short}"
 
 
+def _handoff_rel_path(mission_id: str) -> str:
+    return (HANDOFF_DIR / f"{mission_id}.json").as_posix()
+
+
 def _write_delegation_prompt(root: Path, mission_id: str, prompt: str) -> str:
     mission_dir = root / "state" / "missions" / mission_id
     mission_dir.mkdir(parents=True, exist_ok=True)
     prompt_path = mission_dir / "DELEGATION_PROMPT.md"
-    prompt_path.write_text(prompt, encoding="utf-8")
+    handoff_path = _handoff_rel_path(mission_id)
+    handoff_block = "\n".join(
+        [
+            "",
+            "HANDOFF_FILE (MUST):",
+            f"- `{handoff_path}`",
+            "- Escribe JSON válido al finalizar con: run_id, status, summary, files_changed, gates, gaps, commit_hash, generated_at.",
+            "- Sin HANDOFF_FILE escrito, la misión se considera incompleta.",
+            "",
+        ]
+    )
+    prompt_path.write_text(prompt.rstrip() + "\n" + handoff_block, encoding="utf-8")
     return prompt_path.resolve().relative_to(root.resolve()).as_posix()
 
 
@@ -669,6 +692,7 @@ def delegate_to_coder(
                 "active_mission_id": None,
                 "active_workload": workload,
                 "active_prompt_sha1": _prompt_sha(prompt),
+                "active_handoff_path": None,
             }
         )
         state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), pending, stamp=_utc_now())
@@ -699,6 +723,7 @@ def delegate_to_coder(
                     "active_workload": workload,
                     "active_prompt_sha1": _prompt_sha(prompt),
                     "active_prompt_path": prompt_rel,
+                    "active_handoff_path": _handoff_rel_path(mission_id),
                 }
             )
             state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), pending, stamp=_utc_now())
@@ -725,6 +750,7 @@ def delegate_to_coder(
                 "active_mission_id": None,
                 "active_workload": workload,
                 "active_prompt_sha1": _prompt_sha(prompt),
+                "active_handoff_path": None,
             }
         )
         state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), pending, stamp=_utc_now())
@@ -740,6 +766,7 @@ def delegate_to_coder(
             "active_mission_id": None,
             "active_workload": workload,
             "active_prompt_sha1": _prompt_sha(prompt),
+            "active_handoff_path": None,
         }
     )
     state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), pending, stamp=_utc_now())
@@ -760,6 +787,14 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     mission_status = str(mission.get("status", "")).strip().lower()
     completed = mission_status == "completed"
 
+    handoff_rel = str(state.get("active_handoff_path") or _handoff_rel_path(mission_id)).strip()
+    handoff_path = canonical_root / handoff_rel if handoff_rel else None
+    if not completed and handoff_path and handoff_path.is_file():
+        handoff = _load_json(handoff_path)
+        handoff_status = str(handoff.get("status", "")).strip().lower()
+        if handoff_status in {"success", "failed", "partial", "completed"}:
+            completed = True
+
     if not completed:
         pending_drop = canonical_root / "vault" / "inbox_raw" / "_pending_drop"
         if pending_drop.is_dir():
@@ -774,6 +809,7 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             {
                 "status": "completed",
                 "active_mission_id": None,
+                "active_handoff_path": None,
             }
         )
         state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
@@ -794,6 +830,7 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             {
                 "status": "completed_no_pending",
                 "active_mission_id": None,
+                "active_handoff_path": None,
             }
         )
         state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
@@ -821,6 +858,7 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             {
                 "status": "stale_reset",
                 "active_mission_id": None,
+                "active_handoff_path": None,
             }
         )
         _save_json(canonical_root / STATE_PATH, state)

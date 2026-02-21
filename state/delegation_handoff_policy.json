@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "enabled": true,
+  "handoff_dir": "docs/_inbox/subagent_handoffs",
+  "required_fields": [
+    "run_id",
+    "status",
+    "summary",
+    "files_changed",
+    "gates",
+    "gaps",
+    "commit_hash",
+    "generated_at"
+  ],
+  "valid_status": ["success", "failed", "partial", "completed"],
+  "notes": "Todo run delegado debe escribir handoff JSON; sin esto no se considera cerrado."
+}

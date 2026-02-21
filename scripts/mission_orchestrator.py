@@ -427,6 +427,8 @@ def _render_plan(meta: Dict[str, Any], profile: Dict[str, Any]) -> str:
 
 def _prompt_text(role: str, role_meta: Dict[str, Any], mission_meta: Dict[str, Any], plan_excerpt: str) -> str:
     run_style = "POTENT" if str(mission_meta.get("size", "M")) in {"L", "XL"} else "ATOMIC"
+    safe_role = "".join(ch if ch.isalnum() or ch in {"_", "-"} else "_" for ch in str(role))
+    handoff_file = f"docs/_inbox/subagent_handoffs/{mission_meta['mission_id']}__{safe_role}.json"
     done_checks = [
         "[ ] Objetivo de la misión completado con evidencia verificable.",
         "[ ] No cambios fuera de SCOPE_PATHS (+ ALLOWED_EXCEPTIONS).",
@@ -460,9 +462,10 @@ def _prompt_text(role: str, role_meta: Dict[str, Any], mission_meta: Dict[str, A
             f"- state/missions/{mission_meta['mission_id']}/",
             "- docs/_inbox/mission_prompts_latest.json",
             "- docs/_inbox/mission_prompts_latest.md",
+            "- docs/_inbox/subagent_handoffs/",
             "",
             "ALLOWED_EXCEPTIONS:",
-            "[]",
+            f"- {handoff_file}",
             "",
             "CONSTRAINTS (HARD):",
             "- NO-FABRICATION: desconocido -> GAP/NO_VERIFICADO.",
@@ -483,9 +486,14 @@ def _prompt_text(role: str, role_meta: Dict[str, Any], mission_meta: Dict[str, A
             "FAILURE_POLICY:",
             "Si cualquier gate falla: STOP inmediato, incluye output exacto, diagnóstico y fix propuesto.",
             "",
+            "HANDOFF_FILE (MUST):",
+            f"- `{handoff_file}`",
+            "- Debe escribirse SIEMPRE al finalizar (success|failed|partial) con summary, files_changed, gates, gaps y commit_hash.",
+            "",
             "OUTPUT_SCHEMA (MUST):",
             "- Devolver UN YAML machine-parseable con `run` + `copilot_packet`.",
             "- `run.allowed_exceptions` MUST existir (aunque sea `[]`).",
+            "- `run.handoff_file` y `run.handoff_written=true` MUST estar presentes.",
             "- Si RUN_STYLE=POTENT: incluir `run.checkpoints[]` con gates por checkpoint.",
             "- `copilot_packet` mínimo: current_state, open_issues, approvals_needed, questions_to_user, suggested_next_steps.",
             "",

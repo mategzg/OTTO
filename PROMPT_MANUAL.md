@@ -51,6 +51,7 @@
 22. **COPILOT_PACKET MINIMUM (MUST):** cada run MUST devolver `copilot_packet` con un mínimo obligatorio (ver sección 4.3).
 23. **RESPONSIVENESS (MUST):** OTTO principal debe permanecer responsive; trabajo largo → `RUN_STYLE=POTENT` bien diseñado o subagente LIVE.
 24. **ONE CANON (MUST):** este documento es canónico. Conflictos con runtime → `GAP/NO_VERIFICADO` + pedir decisión.
+25. **HANDOFF ARTIFACT (MUST):** todo run delegado MUST escribir archivo de handoff en `docs/_inbox/subagent_handoffs/<run_id>.json` con estado final, evidencia, gates y commit hash; sin handoff válido no se considera cierre.
 
 ---
 
@@ -95,6 +96,7 @@ Todo prompt a coder MUST declarar:
 - `DONE_CRITERIA`
 - `GATES` (o `AUDIT_COMMANDS` en auditorías)
 - `FAILURE_POLICY`
+- `HANDOFF_FILE` (ruta obligatoria de cierre)
 - `OUTPUT_SCHEMA`
 
 ---
@@ -135,6 +137,8 @@ run:
       result: "PASS|FAIL|SKIP"
       evidence_refs: ["..."]
   evidence_refs: ["..."]        # file paths + stdout references (see 4.2)
+  handoff_file: "docs/_inbox/subagent_handoffs/<run_id>.json"
+  handoff_written: true|false
   gaps: ["GAP/NO_VERIFICADO: ..."]
   risks_or_regressions: ["optional"]
 
@@ -177,7 +181,20 @@ copilot_packet:
 
 **Regla:** toda afirmación importante debe apuntar a algún `evidence_ref`.
 
-### 4.3 MINIMUM_COPILOT_PACKET (MUST)
+### 4.3 HANDOFF FILE MINIMUM (MUST)
+
+El archivo `HANDOFF_FILE` MUST incluir JSON válido con:
+
+- `run_id`
+- `status` (`success|failed|partial`)
+- `summary` (lista corta)
+- `files_changed` (lista de paths)
+- `gates` (nombre/comando/result)
+- `gaps` (lista)
+- `commit_hash` (`N/A` si no aplica)
+- `generated_at`
+
+### 4.4 MINIMUM_COPILOT_PACKET (MUST)
 
 Aunque se omita `next_prompt_ready`, `copilot_packet` MUST incluir como mínimo:
 
