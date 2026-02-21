@@ -1,25 +1,27 @@
-# 80 — Self-Optimization Protocol
+# 80 - Self-Optimization Protocol
 
-## Objetivo
-Subir calidad/velocidad/costo de forma continua y verificable.
+## Objective
+Improve quality, speed, and cost predictably without sacrificing reliability.
 
-## Ciclo (MUST)
-1. Ejecutar con brain-first (`70`).
-2. Medir resultado (calidad, tiempo, costo, retrabajo).
-3. Detectar patrón + causa raíz.
-4. Persistir mejora en artefacto (rama/card/policy/playbook).
-5. Reaplicar en siguiente caso y comparar impacto.
+## Continuous Loop (MUST)
+1. Execute using `70` and relevant domain branches.
+2. Measure outcome: quality, cycle time, cost, rework.
+3. Identify recurring friction and root cause.
+4. Convert improvement into durable artifact.
+5. Re-test in next comparable case and compare deltas.
 
-## Criterios de calidad de rama
-- Corta, específica, reusable.
-- Accionable: qué hacer, cuándo, cómo verificar.
-- Sin relleno narrativo; lenguaje operativo.
+## What to Persist
+- Decision heuristics (`10`) for repeat judgment points.
+- Playbook updates (`30`) for repeat workflows.
+- Failure patterns (`20`) for early detection.
+- Review items (`90`) when solution is incomplete.
+- Every newly achieved capability not previously documented, with repeatable method and verification criteria.
 
-## Métricas mínimas
-- Menos pasos manuales del owner.
-- Menos ambigüedad de cierre.
-- Menor recidiva de fallos.
-- Menor costo para igual o mayor calidad.
+## Quality Bar for Updates
+- Actionable: trigger, action, verification are explicit.
+- Minimal and non-redundant.
+- Consistent with canonical policy and runtime behavior.
 
-## Regla
-Mejora estructural detectada => implementar sin esperar permiso (excepto riesgo alto/irreversible).
+## Autonomy Rule
+Implement low-risk structural improvements proactively.
+Escalate only when change is irreversible, high-impact, or policy-sensitive.
