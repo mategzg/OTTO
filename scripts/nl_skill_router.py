@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import time
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -57,6 +59,184 @@ def _domain_for_intent(intent: str) -> str:
     return "personal_ops"
 
 
+def _build_idempotency_key(
+    *,
+    channel: str,
+    conversation_id: str,
+    thread_id: str,
+    message_id: str,
+    text: str,
+) -> str:
+    basis = "|".join([
+        channel.strip().lower(),
+        conversation_id.strip(),
+        thread_id.strip(),
+        message_id.strip(),
+        text.strip(),
+    ])
+    digest = hashlib.sha256(basis.encode("utf-8")).hexdigest()
+    return f"nlr:{digest[:24]}"
+
+
+def _safe_int(value: Any, default: int = 0) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
+def run_nl_router(
+    root: str | Path,
+    *,
+    text: str,
+    channel: str = "",
+    attachments: List[Dict[str, Any]] | None = None,
+    repeat_count_30d: int = 0,
+    impact_score: int = 0,
+    risk_score: int = 0,
+    conversation_id: str = "",
+    thread_id: str = "",
+    message_id: str = "",
+    timeout_ms: int = 1500,
+    cancel_requested: bool = False,
+) -> Dict[str, Any]:
+    canonical_root = get_canonical_root(root)
+    started = time.monotonic()
+    timeout_ms = max(50, _safe_int(timeout_ms, 1500))
+    attachments = attachments or []
+
+    idempotency_key = _build_idempotency_key(
+        channel=channel,
+        conversation_id=conversation_id,
+        thread_id=thread_id,
+        message_id=message_id,
+        text=text,
+    )
+
+    if cancel_requested:
+        return {
+            "status": "cancelled",
+            "idempotency_key": idempotency_key,
+            "error": {"code": "cancelled", "message": "router execution cancelled before classification"},
+            "version": 2,
+        }
+
+    def _ensure_timeout(stage: str) -> None:
+        elapsed_ms = int((time.monotonic() - started) * 1000)
+        if elapsed_ms > timeout_ms:
+            raise TimeoutError(f"timeout at stage={stage} elapsed_ms={elapsed_ms} timeout_ms={timeout_ms}")
+
+    try:
+        _ensure_timeout("pre_classification")
+        classification = classify_intent(text=text, attachments=attachments, channel=channel)
+        intent = str(classification.get("primary_intent", "chat_normal")).strip() or "chat_normal"
+
+        _ensure_timeout("post_classification")
+        route = INTENT_ROUTE_MAP.get(intent, {"route_type": "tool", "selected_target": "rag.answer"})
+        pol = _policy(canonical_root)
+
+        repeat = _safe_int(repeat_count_30d)
+        impact = _safe_int(impact_score)
+        risk = _safe_int(risk_score)
+        requires_approval = risk >= int(pol.get("high_risk_requires_approval", 8))
+
+        eligible = (
+            repeat >= int(pol.get("repeat_threshold_30d", 3))
+            and impact >= int(pol.get("impact_threshold", 7))
+            and risk <= int(pol.get("max_risk_for_auto_create", 5))
+        )
+
+        if eligible and route["route_type"] in {"tool", "workflow"}:
+            create_decision = "create"
+        else:
+            create_decision = "defer"
+
+        plan = {
+            "intent_id": intent,
+            "confidence": classification.get("confidence", "medium"),
+            "route_type": route["route_type"],
+            "selected_target": route["selected_target"],
+            "domain": _domain_for_intent(intent),
+            "reasons": [
+                f"intent={intent}",
+                f"repeat_count_30d={repeat}",
+                f"impact_score={impact}",
+                f"risk_score={risk}",
+            ],
+            "risk_level": "high" if risk >= 8 else "medium" if risk >= 4 else "low",
+            "requires_approval": requires_approval,
+            "fallback_plan": {
+                "on_cooldown": "read_only_backlog",
+                "on_missing_handoff": "block_fix_retry",
+                "on_low_grounding": "no_verificado_with_next_action",
+            },
+            "cost_estimate": {
+                "tokens": "high" if route["route_type"] == "tool" else "medium",
+                "latency": "high" if route["route_type"] == "tool" else "medium",
+            },
+            "create_skill_decision": {
+                "eligible": eligible,
+                "repeat_count_30d": repeat,
+                "impact_score": impact,
+                "risk_score": risk,
+                "decision": create_decision,
+            },
+        }
+
+        _ensure_timeout("post_planning")
+        elapsed_ms = int((time.monotonic() - started) * 1000)
+        return {
+            "status": "success",
+            "idempotency_key": idempotency_key,
+            "contracts": {
+                "input": {
+                    "channel": channel,
+                    "conversation_id": conversation_id,
+                    "thread_id": thread_id,
+                    "message_id": message_id,
+                    "attachment_count": len(attachments),
+                },
+                "execution": {
+                    "timeout_ms": timeout_ms,
+                    "cancel_requested": cancel_requested,
+                    "idempotent": True,
+                },
+            },
+            "classification": classification,
+            "plan": plan,
+            "execution": {
+                "selected_target": plan["selected_target"],
+                "route_type": plan["route_type"],
+                "status": "planned",
+            },
+            "grounded_response": {
+                "mode": "evidence_first",
+                "status": "pending_execution",
+                "required_if_critical": ["direct_answer", "evidence", "confidence", "gaps", "actions_executed"],
+            },
+            "timing": {
+                "elapsed_ms": elapsed_ms,
+            },
+            "version": 2,
+        }
+    except TimeoutError as exc:
+        return {
+            "status": "timeout",
+            "idempotency_key": idempotency_key,
+            "error": {"code": "timeout", "message": str(exc)},
+            "timing": {"elapsed_ms": int((time.monotonic() - started) * 1000), "timeout_ms": timeout_ms},
+            "version": 2,
+        }
+    except Exception as exc:
+        return {
+            "status": "error",
+            "idempotency_key": idempotency_key,
+            "error": {"code": "router_error", "message": str(exc)},
+            "timing": {"elapsed_ms": int((time.monotonic() - started) * 1000), "timeout_ms": timeout_ms},
+            "version": 2,
+        }
+
+
 def route_request(
     root: str | Path,
     *,
@@ -67,76 +247,69 @@ def route_request(
     impact_score: int = 0,
     risk_score: int = 0,
 ) -> Dict[str, Any]:
-    canonical_root = get_canonical_root(root)
-    pol = _policy(canonical_root)
-    attachments = attachments or []
-
-    intent = classify_intent(text=text, attachments=attachments, channel=channel).get("intent", "chat_normal")
-    route = INTENT_ROUTE_MAP.get(intent, {"route_type": "tool", "selected_target": "rag.answer"})
-
-    requires_approval = int(risk_score) >= int(pol.get("high_risk_requires_approval", 8))
-
-    eligible = (
-        int(repeat_count_30d) >= int(pol.get("repeat_threshold_30d", 3))
-        and int(impact_score) >= int(pol.get("impact_threshold", 7))
-        and int(risk_score) <= int(pol.get("max_risk_for_auto_create", 5))
+    """Backward-compatible router API: returns only the planning payload."""
+    out = run_nl_router(
+        root,
+        text=text,
+        channel=channel,
+        attachments=attachments,
+        repeat_count_30d=repeat_count_30d,
+        impact_score=impact_score,
+        risk_score=risk_score,
     )
-
-    if eligible and route["route_type"] in {"tool", "workflow"}:
-        create_decision = "create"
-    else:
-        create_decision = "defer"
-
-    return {
-        "intent_id": intent,
-        "confidence": 0.8,
-        "route_type": route["route_type"],
-        "selected_target": route["selected_target"],
-        "domain": _domain_for_intent(intent),
-        "reasons": [
-            f"intent={intent}",
-            f"repeat_count_30d={repeat_count_30d}",
-            f"impact_score={impact_score}",
-            f"risk_score={risk_score}",
-        ],
-        "risk_level": "high" if int(risk_score) >= 8 else "medium" if int(risk_score) >= 4 else "low",
-        "requires_approval": requires_approval,
-        "fallback_plan": {
-            "on_cooldown": "read_only_backlog",
-            "on_missing_handoff": "block_fix_retry",
-        },
-        "cost_estimate": {
-            "tokens": "high" if route["route_type"] == "tool" else "medium",
-            "latency": "high" if route["route_type"] == "tool" else "medium",
-        },
-        "create_skill_decision": {
-            "eligible": eligible,
-            "repeat_count_30d": int(repeat_count_30d),
-            "impact_score": int(impact_score),
-            "risk_score": int(risk_score),
-            "decision": create_decision,
-        },
-        "version": 1,
-    }
+    if out.get("status") != "success":
+        return {
+            "intent_id": "chat_normal",
+            "confidence": 0.2,
+            "route_type": "tool",
+            "selected_target": "rag.answer",
+            "domain": "personal_ops",
+            "reasons": ["router_fallback"],
+            "risk_level": "medium",
+            "requires_approval": False,
+            "fallback_plan": {"on_router_failure": "tool_rag_answer"},
+            "cost_estimate": {"tokens": "medium", "latency": "medium"},
+            "create_skill_decision": {
+                "eligible": False,
+                "repeat_count_30d": _safe_int(repeat_count_30d),
+                "impact_score": _safe_int(impact_score),
+                "risk_score": _safe_int(risk_score),
+                "decision": "defer",
+            },
+            "version": 1,
+        }
+    plan = dict(out.get("plan", {}))
+    plan.setdefault("version", 1)
+    return plan
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Natural-language skill router MVP")
+    parser = argparse.ArgumentParser(description="Natural-language skill router (unified)")
     parser.add_argument("--root", default=".")
     parser.add_argument("--text", required=True)
     parser.add_argument("--channel", default="")
     parser.add_argument("--repeat-count-30d", type=int, default=0)
     parser.add_argument("--impact-score", type=int, default=0)
     parser.add_argument("--risk-score", type=int, default=0)
+    parser.add_argument("--conversation-id", default="")
+    parser.add_argument("--thread-id", default="")
+    parser.add_argument("--message-id", default="")
+    parser.add_argument("--timeout-ms", type=int, default=1500)
+    parser.add_argument("--cancel", action="store_true")
     args = parser.parse_args()
 
-    out = route_request(
+    out = run_nl_router(
         args.root,
         text=args.text,
         channel=args.channel,
         repeat_count_30d=args.repeat_count_30d,
         impact_score=args.impact_score,
         risk_score=args.risk_score,
+        conversation_id=args.conversation_id,
+        thread_id=args.thread_id,
+        message_id=args.message_id,
+        timeout_ms=args.timeout_ms,
+        cancel_requested=args.cancel,
     )
     print(json.dumps(out, indent=2, ensure_ascii=False, sort_keys=True))
     return 0

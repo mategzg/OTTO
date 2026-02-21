@@ -24,9 +24,9 @@ from scripts.memory_capture import run_capture
 from scripts.mission_activation import decide_and_act as decide_mission_activation
 from scripts.nl_intent_classifier import classify_intent
 try:
-    from scripts.nl_skill_router import route_request as route_nl_skill_request
+    from scripts.nl_skill_router import run_nl_router
 except Exception:  # pragma: no cover - optional integration
-    route_nl_skill_request = None
+    run_nl_router = None
 from scripts.odoo_enqueuer import enqueue_odoo
 from scripts.research_enqueuer import enqueue_research
 from scripts.repo_root import get_canonical_root
@@ -929,6 +929,33 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     )
     labels = sorted(set(intent.get("labels", [])))
     event["labels"] = labels
+
+    if run_nl_router is not None:
+        nl_route = run_nl_router(
+            canonical_root,
+            text=str(event.get("text", "")),
+            channel=channel,
+            attachments=event.get("attachments", []),
+            conversation_id=str(event.get("conversation_id", "")),
+            thread_id=str(event.get("thread_id", "")),
+            message_id=str(event.get("message_id", "")),
+            timeout_ms=1500,
+        )
+    else:
+        nl_route = {
+            "status": "error",
+            "error": {"code": "router_unavailable", "message": "run_nl_router import failed"},
+            "version": 2,
+        }
+
+    if nl_route.get("status") == "success":
+        routed_intent = str(nl_route.get("plan", {}).get("intent_id", "")).strip()
+        if routed_intent:
+            intent["primary_intent"] = routed_intent
+        routed_conf = str(nl_route.get("classification", {}).get("confidence", "")).strip()
+        if routed_conf:
+            intent["confidence"] = routed_conf
+
     episodic_context = _maybe_add_episodic_context(canonical_root, event, intent, is_inbound=is_inbound)
 
     session_out = append_event(canonical_root, event)

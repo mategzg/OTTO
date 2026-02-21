@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from scripts.nl_skill_router import route_request
+from scripts.nl_skill_router import route_request, run_nl_router
 
 
 def test_router_maps_reminder_to_skill(tmp_path: Path, monkeypatch):
@@ -63,3 +63,50 @@ def test_router_defers_skill_creation_when_random(tmp_path: Path, monkeypatch):
     )
     assert out["create_skill_decision"]["eligible"] is False
     assert out["create_skill_decision"]["decision"] == "defer"
+
+
+def test_unified_router_returns_contracts_and_idempotency(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = run_nl_router(
+        tmp_path,
+        text="recuérdame mañana pagar internet",
+        channel="telegram",
+        conversation_id="c1",
+        thread_id="t1",
+        message_id="m1",
+    )
+    assert out["status"] == "success"
+    assert out["idempotency_key"].startswith("nlr:")
+    assert out["plan"]["intent_id"] == "reminder_request"
+    assert out["contracts"]["execution"]["idempotent"] is True
+
+
+def test_unified_router_honors_cancel(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    out = run_nl_router(
+        tmp_path,
+        text="hola",
+        channel="telegram",
+        conversation_id="c1",
+        thread_id="t1",
+        message_id="m2",
+        cancel_requested=True,
+    )
+    assert out["status"] == "cancelled"
+    assert out["error"]["code"] == "cancelled"
