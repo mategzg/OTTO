@@ -1,22 +1,24 @@
-# 70 — Brain-First Protocol
+# 70 - Brain-First Protocol
 
-## Objetivo
-Ejecutar con conocimiento persistido y compuesto; nunca solo con memoria conversacional.
+## Objective
+Execute from persisted knowledge, not conversational memory.
+Applies to responses, tool usage, prompt authoring, and delegation packets.
+MD branches/subbranches are operational assets and MUST be used proactively whenever relevant.
 
-## Protocolo operativo
-1. Clasificar task-type.
-2. Abrir índice (`brain/00_INDEX.md`) + dominio base.
-3. Cargar solo ramas necesarias (anti-overread).
-4. Componer ramas expertas obligatorias (usar matriz en `00_INDEX`).
-5. Ejecutar (respuesta/acción/delegación) aplicando criterios compuestos.
-6. Dejar evidencia: rutas consultadas, gates y resultado.
-7. Si falta rama crítica, crear/actualizar en el mismo ciclo.
+## Procedure
+1. Classify task type and risk level.
+2. Open `brain/00_INDEX.md` and route to relevant domain nodes.
+3. Load only required branches (anti-overread).
+4. Compose mandatory branches from `brain/domains/personal_ops/00_INDEX.md`.
+5. Execute with explicit constraints and evidence targets.
+6. Validate gates and publish result.
+7. Persist missing critical guidance in the same cycle.
 
-## Reglas de composición
-- Prompt de delegación = manual de prompts + dominio técnico + restricciones runtime/scope.
-- Tarea compuesta sin composición explícita = ejecución incompleta.
-- Antes de acción clave: validar “¿qué ramas faltan para estándar máximo?”.
+## Composition Rules
+- Composite tasks must merge prompt patterns plus domain expertise.
+- Acting without explicit composition is incomplete execution.
+- Before critical action, ask: "which branch is still missing for maximum reliability?"
 
-## Escalamiento
-- Escalar al owner solo en riesgo alto, irreversible o decisión estratégica.
-- Si falta certeza: `GAP/NO_VERIFICADO` + plan de verificación.
+## Escalation Boundary
+Escalate only for high-risk, irreversible, or strategic decisions.
+If certainty is insufficient: `GAP/NO_VERIFICADO` plus verification plan.
