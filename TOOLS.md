@@ -1,42 +1,27 @@
-# TOOLS.md - Local Notes
+# TOOLS.md — Local Tooling + Brain Routing Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+Purpose: quick operational notes for local tools **and** pointers to Brain branches to use each tool with expert criteria.
 
-## What Goes Here
+## Rule
+- Tools are execution surfaces.
+- Brain branches are decision quality.
+- Before using a tool for non-trivial work, load the relevant Brain branch first.
 
-Things like:
+## Brain-first tool routing (quick map)
+- Delegation / coder prompts -> `brain/domains/personal_ops/60_DELEGATION_DOCTRINE.md` + `PROMPT_MANUAL.md`
+- Complex action planning -> `brain/domains/personal_ops/70_BRAIN_FIRST_PROTOCOL.md`
+- System optimization -> `brain/domains/personal_ops/80_SELF_OPTIMIZATION_PROTOCOL.md`
+- Business/professional tasks (current phase) -> `brain/domains/sg_acabados/00_INDEX.md`
+- OpenClaw runtime/gateway/browser/tooling -> `brain/domains/openclaw_ops/00_INDEX.md`
 
+## What goes here (local specifics)
 - Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
+- SSH hosts/aliases
+- Preferred TTS voices/speakers
 - Device nicknames
-- Anything environment-specific
+- Environment-specific hints
 
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
-
-Guardrail: store operational hints, not sensitive secrets in plaintext.
+## Guardrails
+- Store operational hints, not secrets.
+- No plaintext credentials/tokens.
+- If a local note affects policy/behavior, promote it to core docs/brain in the same cycle.

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checks": {
+    "AGENTS_has_core_pack": true,
+    "SOUL_has_vision_canon": true,
+    "USER_has_reliability_rule": true,
+    "HEARTBEAT_has_handoff": true,
+    "MEMORY_has_rule": true,
+    "IDENTITY_has_core_pack": true,
+    "TOOLS_has_brain_routing": true
+  }
+}
