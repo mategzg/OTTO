@@ -5,7 +5,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Set
 
 from scripts.repo_root import get_canonical_root
 
@@ -55,6 +55,56 @@ def _content_hash(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
 
 
+def _principal_tokens(principal_ctx: Dict[str, Any] | None) -> Set[str]:
+    ctx = principal_ctx or {}
+    out: Set[str] = set()
+    user_id = str(ctx.get("user_id", "")).strip()
+    if user_id:
+        out.add(f"user:{user_id}")
+    for gid in ctx.get("group_ids", []) if isinstance(ctx.get("group_ids", []), list) else []:
+        g = str(gid).strip()
+        if g:
+            out.add(f"group:{g}")
+    for role in ctx.get("roles", []) if isinstance(ctx.get("roles", []), list) else []:
+        r = str(role).strip()
+        if r:
+            out.add(f"role:{r}")
+    return out
+
+
+def _is_allowed(chunk: Dict[str, Any], principal_ctx: Dict[str, Any] | None) -> bool:
+    allow = chunk.get("acl_allow", ["public"])
+    deny = chunk.get("acl_deny", [])
+    allow_set = {str(x).strip().lower() for x in allow if str(x).strip()}
+    deny_set = {str(x).strip().lower() for x in deny if str(x).strip()}
+    principal = {x.lower() for x in _principal_tokens(principal_ctx)}
+
+    denied = bool(principal.intersection(deny_set))
+    if denied:
+        return False
+    if "public" in allow_set:
+        return True
+    return bool(principal.intersection(allow_set))
+
+
+def _extract_doc_acl(lines: List[str]) -> Dict[str, List[str]]:
+    acl_allow = ["public"]
+    acl_deny: List[str] = []
+    for line in lines[:12]:
+        l = line.strip().lower()
+        if l.startswith("<!--") and "acl_allow:" in l:
+            raw = l.split("acl_allow:", 1)[1].replace("-->", "").strip()
+            vals = [x.strip() for x in raw.split(",") if x.strip()]
+            if vals:
+                acl_allow = vals
+        if l.startswith("<!--") and "acl_deny:" in l:
+            raw = l.split("acl_deny:", 1)[1].replace("-->", "").strip()
+            vals = [x.strip() for x in raw.split(",") if x.strip()]
+            if vals:
+                acl_deny = vals
+    return {"acl_allow": acl_allow, "acl_deny": acl_deny}
+
+
 def _jaccard(a: List[str], b: List[str]) -> float:
     sa = set(a)
     sb = set(b)
@@ -91,6 +141,7 @@ def _scan_docs(root: Path) -> List[Dict[str, Any]]:
         rel = path.relative_to(root).as_posix()
         lines = text.splitlines()
         doc_version = _content_hash(text)
+        acl_meta = _extract_doc_acl(lines)
         for idx, line in enumerate(lines, start=1):
             clean = line.strip()
             if not clean:
@@ -106,6 +157,8 @@ def _scan_docs(root: Path) -> List[Dict[str, Any]]:
                     "content_hash": _content_hash(clean),
                     "text": clean,
                     "tokens": _tokenize(clean),
+                    "acl_allow": list(acl_meta.get("acl_allow", ["public"])),
+                    "acl_deny": list(acl_meta.get("acl_deny", [])),
                 }
             )
     return out
@@ -142,8 +195,12 @@ def retrieve(
 
     lexical_scored: List[Dict[str, Any]] = []
     vector_scored: List[Dict[str, Any]] = []
+    acl_filtered_count = 0
 
     for c in chunks:
+        if not _is_allowed(c, principal_ctx):
+            acl_filtered_count += 1
+            continue
         s = _score_chunk(query, q_tokens, c)
         if s["bm25"] <= 0 and s["vector"] <= 0:
             continue
@@ -244,7 +301,7 @@ def retrieve(
             "lexical_candidates": len(lexical_hits),
             "vector_candidates": len(vector_hits),
             "union_count": len(union),
-            "acl_filtered_count": 0,
+            "acl_filtered_count": acl_filtered_count,
             "dedupe_count": max(0, len(lexical_hits) + len(vector_hits) - len(union)),
             "rerank_model": "phrase_aware_v1",
             "rerank_latency_ms": 0,

@@ -273,7 +273,7 @@ def run_nl_router(
             retrieval_v2["pack"] = retrieval_v2_retrieve(
                 canonical_root,
                 query=text,
-                principal_ctx={"channel": channel, "conversation_id": conversation_id},
+                principal_ctx={"channel": channel, "conversation_id": conversation_id, "user_id": conversation_id},
                 retrieval_mode="grounded_answer",
                 filters={},
             )
