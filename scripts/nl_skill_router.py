@@ -8,6 +8,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
+from scripts.circuit_breaker import record_execution, should_allow
 from scripts.nl_intent_classifier import classify_intent
 from scripts.repo_root import get_canonical_root
 from scripts.skill_creation_heuristics import evaluate_creation
@@ -117,6 +118,15 @@ def run_nl_router(
     )
 
     if cancel_requested:
+        elapsed_ms = int((time.monotonic() - started) * 1000)
+        record_execution(
+            canonical_root,
+            resource="nl_router",
+            success=True,
+            latency_ms=elapsed_ms,
+            timed_out=False,
+            meta={"status": "cancelled"},
+        )
         return {
             "status": "cancelled",
             "idempotency_key": idempotency_key,
@@ -124,6 +134,23 @@ def run_nl_router(
             "version": 2,
         }
 
+    breaker_gate = should_allow(canonical_root, resource="nl_router")
+    if not bool(breaker_gate.get("allowed", True)):
+        return {
+            "status": "cooldown",
+            "idempotency_key": idempotency_key,
+            "error": {
+                "code": "circuit_open",
+                "message": "nl_router in cooldown, using safe fallback",
+            },
+            "fallback": {
+                "route_type": "tool",
+                "selected_target": "rag.answer",
+                "mode": "no_verificado_with_next_action",
+            },
+            "circuit_breaker": breaker_gate,
+            "version": 2,
+        }
     def _ensure_timeout(stage: str) -> None:
         elapsed_ms = int((time.monotonic() - started) * 1000)
         if elapsed_ms > timeout_ms:
@@ -199,6 +226,14 @@ def run_nl_router(
 
         _ensure_timeout("post_planning")
         elapsed_ms = int((time.monotonic() - started) * 1000)
+        breaker_status = record_execution(
+            canonical_root,
+            resource="nl_router",
+            success=True,
+            latency_ms=elapsed_ms,
+            timed_out=False,
+            meta={"status": "success", "target": plan["selected_target"]},
+        )
         return {
             "status": "success",
             "idempotency_key": idempotency_key,
@@ -231,22 +266,43 @@ def run_nl_router(
             "timing": {
                 "elapsed_ms": elapsed_ms,
             },
+            "circuit_breaker": breaker_status,
             "version": 2,
         }
     except TimeoutError as exc:
+        elapsed_ms = int((time.monotonic() - started) * 1000)
+        breaker_status = record_execution(
+            canonical_root,
+            resource="nl_router",
+            success=False,
+            latency_ms=elapsed_ms,
+            timed_out=True,
+            meta={"status": "timeout"},
+        )
         return {
             "status": "timeout",
             "idempotency_key": idempotency_key,
             "error": {"code": "timeout", "message": str(exc)},
-            "timing": {"elapsed_ms": int((time.monotonic() - started) * 1000), "timeout_ms": timeout_ms},
+            "timing": {"elapsed_ms": elapsed_ms, "timeout_ms": timeout_ms},
+            "circuit_breaker": breaker_status,
             "version": 2,
         }
     except Exception as exc:
+        elapsed_ms = int((time.monotonic() - started) * 1000)
+        breaker_status = record_execution(
+            canonical_root,
+            resource="nl_router",
+            success=False,
+            latency_ms=elapsed_ms,
+            timed_out=False,
+            meta={"status": "error"},
+        )
         return {
             "status": "error",
             "idempotency_key": idempotency_key,
             "error": {"code": "router_error", "message": str(exc)},
-            "timing": {"elapsed_ms": int((time.monotonic() - started) * 1000), "timeout_ms": timeout_ms},
+            "timing": {"elapsed_ms": elapsed_ms, "timeout_ms": timeout_ms},
+            "circuit_breaker": breaker_status,
             "version": 2,
         }
 

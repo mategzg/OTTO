@@ -112,6 +112,34 @@ def test_unified_router_falls_back_when_skill_not_registered(tmp_path: Path, mon
     assert out["plan"]["selected_target"] == "rag.answer"
 
 
+def test_unified_router_returns_cooldown_when_circuit_open(tmp_path: Path, monkeypatch):
+    (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
+    (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")
+    (tmp_path / "openclaw").mkdir(parents=True)
+    (tmp_path / "scripts").mkdir(parents=True)
+
+    import scripts.nl_skill_router as r
+
+    monkeypatch.setattr(r, "get_canonical_root", lambda root: Path(root).resolve())
+
+    # force breaker open via repeated failed records
+    from scripts.circuit_breaker import record_execution
+
+    for _ in range(6):
+        record_execution(tmp_path, resource="nl_router", success=False, latency_ms=100, timed_out=True)
+
+    out = run_nl_router(
+        tmp_path,
+        text="hola",
+        channel="telegram",
+        conversation_id="c1",
+        thread_id="t1",
+        message_id="m4",
+    )
+    assert out["status"] == "cooldown"
+    assert out["error"]["code"] == "circuit_open"
+
+
 def test_unified_router_honors_cancel(tmp_path: Path, monkeypatch):
     (tmp_path / "CEO.md").write_text("# CEO\n", encoding="utf-8")
     (tmp_path / "INDEX.md").write_text("# INDEX\n", encoding="utf-8")

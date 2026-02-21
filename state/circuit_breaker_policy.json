@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "resources": {
+    "nl_router": {
+      "enabled": true,
+      "window_size": 20,
+      "error_rate_open_threshold": 0.5,
+      "latency_p95_open_ms": 1500,
+      "timeout_open_count": 3,
+      "cooldown_seconds": 120
+    },
+    "tooling": {
+      "enabled": true,
+      "window_size": 20,
+      "error_rate_open_threshold": 0.5,
+      "latency_p95_open_ms": 2500,
+      "timeout_open_count": 3,
+      "cooldown_seconds": 180
+    },
+    "retrieval": {
+      "enabled": true,
+      "window_size": 20,
+      "error_rate_open_threshold": 0.5,
+      "latency_p95_open_ms": 2000,
+      "timeout_open_count": 3,
+      "cooldown_seconds": 180
+    },
+    "cron_jobs": {
+      "enabled": true,
+      "window_size": 20,
+      "error_rate_open_threshold": 0.5,
+      "latency_p95_open_ms": 3000,
+      "timeout_open_count": 3,
+      "cooldown_seconds": 300
+    }
+  }
+}
