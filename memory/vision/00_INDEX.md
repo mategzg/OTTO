@@ -12,6 +12,8 @@
 - `memory/vision/20_PRINCIPLES_AND_LIMITS.md`
 - `memory/vision/30_STRATEGIC_AXES.md`
 - `memory/vision/40_EXECUTION_METRICS.md`
+- `memory/vision/50_HORIZON_ROADMAP.md`
+- `memory/vision/60_DECISION_RUBRIC.md`
 - `memory/vision/90_OPEN_QUESTIONS.md`
 
 ## Regla

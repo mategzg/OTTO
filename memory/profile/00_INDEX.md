@@ -12,6 +12,9 @@ Objetivo: mantener perfil profundo por dominios, con lectura selectiva (zero-ove
 - `memory/profile/20_OPERATING_STYLE.md`
 - `memory/profile/30_EXECUTION_RULES.md`
 - `memory/profile/40_SYSTEM_PREFERENCES.md`
+- `memory/profile/50_DECISION_PATTERNS.md`
+- `memory/profile/60_COMMUNICATION_CONTRACT.md`
+- `memory/profile/70_COLLABORATION_BOUNDARIES.md`
 - `memory/profile/90_OPEN_QUESTIONS.md`
 
 ## Principio
