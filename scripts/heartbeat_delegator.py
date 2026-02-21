@@ -65,6 +65,7 @@ DEFAULT_STATE: Dict[str, Any] = {
     "active_workload": None,
     "active_prompt_sha1": None,
     "active_handoff_path": None,
+    "missing_handoff_attempts": 0,
     "ingest_progress": {
         "total_packages_detected": 0,
         "packages_processed": 0,
@@ -812,7 +813,8 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
 
     handoff_rel = str(state.get("active_handoff_path") or _handoff_rel_path(mission_id)).strip()
     handoff_path = canonical_root / handoff_rel if handoff_rel else None
-    if not completed and handoff_path and handoff_path.is_file():
+    handoff_exists = bool(handoff_path and handoff_path.is_file())
+    if not completed and handoff_exists and handoff_path:
         handoff = _load_json(handoff_path)
         handoff_status = str(handoff.get("status", "")).strip().lower()
         if handoff_status in {"success", "failed", "partial", "completed"}:
@@ -850,11 +852,35 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
     rescanned = scan_pending_work(canonical_root)
     remaining_effective = _effective_pending_without_health(rescanned)
     if remaining_effective == 0:
+        # Delegated run contract: no handoff => failed attempt, must retry delegation.
+        if handoff_path and not handoff_exists:
+            attempts = int(state.get("missing_handoff_attempts", 0) or 0) + 1
+            state.update(
+                {
+                    "status": "missing_handoff_retry",
+                    "active_mission_id": None,
+                    "active_handoff_path": None,
+                    "missing_handoff_attempts": attempts,
+                }
+            )
+            state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
+            _save_json(canonical_root / STATE_PATH, state)
+            return {
+                "status": "missing_handoff_retry",
+                "active": False,
+                "mission_id": mission_id,
+                "handoff_path": handoff_rel,
+                "missing_handoff_attempts": attempts,
+                "ingest_progress": state.get("ingest_progress", {}),
+                "remaining_pending": remaining_effective,
+            }
+
         state.update(
             {
                 "status": "completed_no_pending",
                 "active_mission_id": None,
                 "active_handoff_path": None,
+                "missing_handoff_attempts": 0,
             }
         )
         state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())

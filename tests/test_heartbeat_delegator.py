@@ -270,9 +270,10 @@ def test_check_completed_ignores_health_only_pending(tmp_path: Path, monkeypatch
     _write_json(prod, {"go_no_go": "go_with_limits"})
 
     out = delegator.check_completed_delegations(workspace)
-    assert out["status"] == "completed_no_pending"
+    assert out["status"] == "missing_handoff_retry"
     state = json.loads(state_path.read_text(encoding="utf-8"))
     assert state["active_mission_id"] is None
+    assert int(state.get("missing_handoff_attempts", 0)) >= 1
 
 
 def test_check_completed_recognizes_handoff_file_completion(tmp_path: Path, monkeypatch):
