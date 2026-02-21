@@ -9,6 +9,7 @@ import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Set
+from hashlib import sha1
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -82,6 +83,50 @@ def _short_text(row: Dict[str, Any]) -> str:
     return text[:280]
 
 
+def _collect_memory_markdown_paths(root: Path, policy: Dict[str, Any]) -> List[Path]:
+    configured = policy.get("markdown_streams", [])
+    rel_paths: List[str] = []
+    if isinstance(configured, list):
+        rel_paths.extend(str(item).strip() for item in configured if str(item).strip())
+    if not rel_paths:
+        rel_paths = [
+            "memory/01_PROFILE_CURRENT.md",
+            "memory/02_PRINCIPLES_CURRENT.md",
+            "memory/profile/*.md",
+            "memory/vision/*.md",
+        ]
+
+    out: List[Path] = []
+    seen: Set[str] = set()
+    for rel in rel_paths:
+        if any(ch in rel for ch in "*?[]"):
+            for match in sorted(root.glob(rel)):
+                if match.is_file() and match.suffix.lower() == ".md":
+                    key = match.resolve().as_posix()
+                    if key not in seen:
+                        seen.add(key)
+                        out.append(match)
+        else:
+            candidate = root / rel
+            if candidate.is_file() and candidate.suffix.lower() == ".md":
+                key = candidate.resolve().as_posix()
+                if key not in seen:
+                    seen.add(key)
+                    out.append(candidate)
+    return out
+
+
+def _markdown_short_text(text: str) -> str:
+    for line in text.splitlines():
+        ln = line.strip()
+        if not ln:
+            continue
+        if ln.startswith("#"):
+            ln = ln.lstrip("#").strip()
+        return ln[:280]
+    return ""
+
+
 def build_memory_index(root: str | Path) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     policy = load_memory_policy(canonical_root, create_if_missing=True)
@@ -128,6 +173,32 @@ def build_memory_index(root: str | Path) -> Dict[str, Any]:
             )
             for token in sorted(set(_tokenize(token_basis))):
                 inverted.setdefault(token, set()).add(record_id)
+
+    # Index curated markdown memory maps (profile/vision/current files)
+    for md_path in _collect_memory_markdown_paths(canonical_root, policy):
+        rel = md_path.resolve().relative_to(canonical_root.resolve()).as_posix()
+        text = md_path.read_text(encoding="utf-8", errors="ignore")
+        record_id = f"memmd-{sha1(rel.encode('utf-8')).hexdigest()[:12]}"
+        short_text = _markdown_short_text(text) or rel
+        md_type = "vision_doc" if rel.startswith("memory/vision/") else "profile_doc" if rel.startswith("memory/profile/") else "memory_doc"
+        payload = {
+            "id": record_id,
+            "type": md_type,
+            "key": rel,
+            "tags": ["markdown", "memory_map"],
+            "captured_at": utc_now_iso(),
+            "source_ref": f"{rel}#md",
+            "short_text": short_text,
+            "best_known": True,
+            "status": "active",
+            "confidence": "high",
+            "stream": rel,
+        }
+        records[record_id] = payload
+
+        token_basis = " ".join([short_text, rel, text[:4000], md_type])
+        for token in sorted(set(_tokenize(token_basis))):
+            inverted.setdefault(token, set()).add(record_id)
 
     index = {
         "schema_version": int(policy.get("schema_version", 1)),
