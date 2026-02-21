@@ -20,6 +20,7 @@ if str(ROOT) not in sys.path:
 from scripts.autonomy_tick import run_autonomy_tick
 from scripts.approval_manager import process_pending_approvals
 from scripts.chatgpt_export_normalize import run_normalize
+from scripts.circuit_breaker import should_allow
 from scripts.dropbox_intake import run_apply as run_intake_apply
 from scripts.dropbox_intake import run_scan as run_intake_scan
 from scripts.episodic_memory_builder import run_build as run_episodic_memory_builder
@@ -454,6 +455,12 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         if bool(policy.get("run_prod_doctor", True)):
             prod_doctor = run_prod_doctor(canonical_root, force=False)
 
+        breaker_gates = {
+            "cron_jobs": should_allow(canonical_root, resource="cron_jobs"),
+            "tooling": should_allow(canonical_root, resource="tooling"),
+            "retrieval": should_allow(canonical_root, resource="retrieval"),
+        }
+
         delegation_policy = load_delegation_policy(canonical_root)
         delegation_completion = check_completed_delegations(canonical_root)
         delegation_pending = scan_pending_work(canonical_root)
@@ -464,7 +471,15 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
             delegation_workload,
             policy=delegation_policy,
         )
-        if not bool(delegation_policy.get("enabled", True)):
+        if not bool(breaker_gates["cron_jobs"].get("allowed", True)):
+            delegation = {
+                "status": "cooldown_skip",
+                "coder_used": None,
+                "items_delegated": 0,
+                "active_mission_id": None,
+                "reason": str(breaker_gates["cron_jobs"].get("reason", "cron_jobs_cooldown")),
+            }
+        elif not bool(delegation_policy.get("enabled", True)):
             delegation = {"status": "disabled", "coder_used": None, "items_delegated": 0, "active_mission_id": None}
         elif bool(delegation_completion.get("active", False)):
             delegation = {
@@ -527,8 +542,10 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         learning = {"report": {"status": "delegated", "summary": {"promoted_count": 0, "candidate_files_processed": 0}}}
         episodic_memory = {"status": "delegated", "episodes_built": 0, "index_size_bytes": 0}
         summarizer = {"status": "delegated", "check": {"added": 0, "pending": int(delegation_pending.get("pending", {}).get("summarizer", {}).get("count", 0))}, "create": {"created": 0, "fallback": 0}, "ingest": {"done": 0}}
-        research = {"status": "delegated", "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
-        odoo = {"status": "delegated", "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
+        research_status = "delegated" if bool(breaker_gates.get("retrieval", {}).get("allowed", True)) else "skipped_cooldown"
+        odoo_status = "delegated" if bool(breaker_gates.get("tooling", {}).get("allowed", True)) else "skipped_cooldown"
+        research = {"status": research_status, "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
+        odoo = {"status": odoo_status, "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
         autonomy = {"status": "delegated", "paths": {}}
         proactivity = {"report": {"status": "delegated", "summary": {"queued_count": 0}}}
 
@@ -560,7 +577,7 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         except Exception as exc:  # pragma: no cover - defensive guard
             health_notify = {"queued": False, "reason": f"error:{exc.__class__.__name__}"}
 
-        status = "success" if str(delegation.get("status", "")) in {"delegated", "delegation_in_progress", "no_work", "fallback_telegram", "disabled"} else "partial"
+        status = "success" if str(delegation.get("status", "")) in {"delegated", "delegation_in_progress", "no_work", "fallback_telegram", "disabled", "cooldown_skip"} else "partial"
 
         report = {
             "canonical_root": str(canonical_root.resolve()),
@@ -669,6 +686,9 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
                 "delegation_ingest_packages_processed": int(ingest_progress.get("packages_processed", 0)),
                 "delegation_ingest_packages_remaining": int(ingest_progress.get("packages_remaining", 0)),
                 "delegation_ingest_rescue_status": str((delegation.get("ingest_rescue") or {}).get("status", "")),
+                "breaker_cron_jobs_allowed": bool(breaker_gates.get("cron_jobs", {}).get("allowed", True)),
+                "breaker_tooling_allowed": bool(breaker_gates.get("tooling", {}).get("allowed", True)),
+                "breaker_retrieval_allowed": bool(breaker_gates.get("retrieval", {}).get("allowed", True)),
                 "project_docs_status": str(project_docs["report"].get("status", "")),
                 "project_docs_updated_files_count": len(project_docs["report"].get("updated_files", [])),
                 "learning_status": str(learning.get("report", {}).get("status", "")),
