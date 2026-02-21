@@ -21,6 +21,7 @@ from scripts.autonomy_tick import run_autonomy_tick
 from scripts.approval_manager import process_pending_approvals
 from scripts.chatgpt_export_normalize import run_normalize
 from scripts.circuit_breaker import should_allow
+from scripts.day2_doc_inventory import run_day2_inventory_sync
 from scripts.dropbox_intake import run_apply as run_intake_apply
 from scripts.dropbox_intake import run_scan as run_intake_scan
 from scripts.episodic_memory_builder import run_build as run_episodic_memory_builder
@@ -450,6 +451,8 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         if bool(policy.get("run_project_docs_maintainer", True)):
             project_docs = run_project_docs_apply(canonical_root)
 
+        day2_inventory = run_day2_inventory_sync(canonical_root)
+
         hook_backlog_scan = run_hook_backlog_scan(canonical_root)
         prod_doctor = {"report": {"status": "disabled", "summary": {}, "go_no_go": "go"}}
         if bool(policy.get("run_prod_doctor", True)):
@@ -691,6 +694,11 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
                 "breaker_retrieval_allowed": bool(breaker_gates.get("retrieval", {}).get("allowed", True)),
                 "project_docs_status": str(project_docs["report"].get("status", "")),
                 "project_docs_updated_files_count": len(project_docs["report"].get("updated_files", [])),
+                "day2_doc_created": int(day2_inventory.get("summary", {}).get("created", 0)),
+                "day2_doc_modified": int(day2_inventory.get("summary", {}).get("modified", 0)),
+                "day2_doc_renamed": int(day2_inventory.get("summary", {}).get("renamed", 0)),
+                "day2_doc_deleted": int(day2_inventory.get("summary", {}).get("deleted", 0)),
+                "day2_doc_rot": int(day2_inventory.get("summary", {}).get("doc_rot", 0)),
                 "learning_status": str(learning.get("report", {}).get("status", "")),
                 "learning_promoted_count": int(learning.get("report", {}).get("summary", {}).get("promoted_count", 0)),
                 "learning_candidate_files_processed": int(
