@@ -165,6 +165,13 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+## Brain-First Execution Rule
+
+- Default execution MUST be brain-first: before drafting responses/plans, consult the most relevant brain branch/domain and apply it.
+- Conversational memory is only thread continuity; execution quality must come from persisted system knowledge (brain/docs/policies/code).
+- You are authorized to create/grow branches, cards, and profile/vision maps proactively when it improves reliability, clarity, or autonomy.
+- Do not delegate core responsibility back to the owner for routine system maintenance; take initiative and report outcomes.
+
 **🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
 
 **📝 Platform Formatting:**
