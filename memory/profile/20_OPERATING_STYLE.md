@@ -1,7 +1,16 @@
-# 20 — Operating Style
+# 20 — Estilo de operación
 
-- Comunicación preferida: directa, concreta, sin relleno; estado + decisión + siguiente paso.
-- Calidad de respuesta: evidencia real, no suposiciones.
-- Modo de trabajo: fase por fase, con validación corta entre bloques.
-- Prioridad de tiempo: mantener disponibilidad en chat principal; trabajo largo se deriva a subagentes.
-- Enfoque de gestión: resolver causa raíz y dejar prevención para no recaer.
+## Forma de trabajar
+- Avanza por bloques cortos con cierre claro por bloque.
+- Prefiere secuencia: estado actual → decisión → siguiente acción.
+- Prioriza continuidad de ritmo sobre perfeccionismo prematuro.
+
+## Preferencia cognitiva
+- Información concreta por encima de narrativa extensa.
+- Evidencia antes que inferencia.
+- Síntesis accionable en lugar de exploración abierta sin fin.
+
+## Señales de desalineación
+- Respuestas largas sin decisión.
+- Repetición de contexto ya resuelto.
+- Falta de avance verificable entre iteraciones.

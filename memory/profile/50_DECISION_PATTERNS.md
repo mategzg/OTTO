@@ -1,7 +1,16 @@
-# 50 — Decision Patterns (Perfil)
+# 50 — Patrones de decisión
 
-- Patrón dominante: priorizar decisiones que aumentan capacidad compuesta (sistema + criterio + ejecución).
-- Regla de selección: preferir opciones con evidencia y trazabilidad sobre opciones rápidas sin control.
-- Tolerancia al riesgo: se acepta riesgo calculado si mejora autonomía y no rompe seguridad base.
-- Umbral de intervención: escalar solo cuando el tradeoff es real o el impacto es alto.
-- Señal de buena decisión: reduce fricción futura, evita retrabajo y deja estándar reusable.
+## Heurística dominante
+- Elegir opciones que aumenten capacidad acumulativa (no solo resultado inmediato).
+
+## Filtros frecuentes
+- Evidencia y trazabilidad primero.
+- Menor retrabajo futuro.
+- Reutilización del aprendizaje como estándar.
+
+## Perfil de riesgo
+- Acepta riesgo calculado si el beneficio en autonomía es claro.
+- Rechaza riesgo difuso sin mecanismos de control.
+
+## Señal de buena decisión
+- Reduce fricción estructural y mejora velocidad con calidad en ciclos futuros.

@@ -1,7 +1,17 @@
-# 40 — System Preferences
+# 40 — Preferencias de sistema
 
-- Token/budget: monitoreo por uso real (no por horario fijo).
-- Estrategia multi-cuenta: avisar antes de zona de riesgo para switch oportuno.
-- WhatsApp empresa: operar condicionado por umbral de presupuesto 5h; retener/liberar según política.
-- Browser Relay: criterio de éxito operativo = `cdpReady=true` (no solo puerto reachable).
-- Delegación coders: Codex default + Claude fallback, con prompts canónicos y evidencia.
+## Preferencias estables
+- Prefiere instrumentación que permita ver estado real sin fricción.
+- Prefiere alertas tempranas a avisos tardíos.
+- Prefiere automatización con control explícito y trazabilidad.
+
+## Preferencias de interacción
+- Configuraciones simples, auditables y reversibles.
+- Señales operativas claras (éxito/fracaso sin ambigüedad).
+- Defaults prudentes; escalamiento sólo cuando hay beneficio claro.
+
+## GAP/NO_VERIFICADO
+- Lista priorizada de preferencias técnicas específicas pendiente de consolidación en formato corto.
+
+## Nota de alcance
+- Umbrales, políticas de canal y detalles de runtime van fuera de profile (`TODO` en rama operativa).

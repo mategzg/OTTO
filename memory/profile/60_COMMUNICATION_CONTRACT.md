@@ -1,7 +1,18 @@
-# 60 — Communication Contract (Perfil)
+# 60 — Contrato de comunicación
 
-- Inicio corto: estado real + decisión + siguiente paso.
-- Capa técnica debajo: evidencia (rutas, comandos, tests/gates, resultado).
-- Verdad primero: no maquillar incertidumbre; usar GAP/NO_VERIFICADO cuando aplique.
-- Anti-ruido: evitar mensajes redundantes, especulación y walls of text sin acción.
-- Criterio de cierre: no declarar “listo” sin verificación proporcional al riesgo.
+## Formato preferido
+- Apertura breve: estado real + decisión + siguiente paso.
+- Capa de soporte: evidencia mínima necesaria, no volcado masivo.
+
+## Principios
+- Verdad primero: no maquillar vacíos de certeza.
+- Densidad útil: cada mensaje debe mover decisión o ejecución.
+- Proporcionalidad: profundidad según riesgo/impacto.
+
+## Fricciones a evitar
+- Redundancia.
+- Especulación presentada como hecho.
+- Mensajes extensos sin conclusión operativa.
+
+## Marcador obligatorio
+- Usar `GAP/NO_VERIFICADO` cuando falte confirmación suficiente.
