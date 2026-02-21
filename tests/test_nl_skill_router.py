@@ -87,6 +87,8 @@ def test_unified_router_returns_contracts_and_idempotency(tmp_path: Path, monkey
     assert out["idempotency_key"].startswith("nlr:")
     assert out["plan"]["intent_id"] == "reminder_request"
     assert out["contracts"]["execution"]["idempotent"] is True
+    assert (tmp_path / "logs" / "observability_events.ndjson").is_file()
+    assert (tmp_path / "docs" / "_inbox" / "observability_summary_latest.json").is_file()
 
 
 def test_unified_router_falls_back_when_skill_not_registered(tmp_path: Path, monkeypatch):

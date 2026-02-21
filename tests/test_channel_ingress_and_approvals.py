@@ -84,6 +84,7 @@ def test_ingress_zero_mix_by_channel_and_thread(tmp_path: Path, monkeypatch):
     assert first["session_id"] != second["session_id"]
     assert first["session_id"] != third["session_id"]
     assert second["session_id"] != third["session_id"]
+    assert "trace_id" in first
 
 
 def test_sent_event_logs_session_but_skips_side_effects(tmp_path: Path, monkeypatch):

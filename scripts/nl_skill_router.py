@@ -10,6 +10,7 @@ from typing import Any, Dict, List
 
 from scripts.circuit_breaker import record_execution, should_allow
 from scripts.nl_intent_classifier import classify_intent
+from scripts.observability import record_event
 from scripts.repo_root import get_canonical_root
 from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
@@ -117,6 +118,36 @@ def run_nl_router(
         text=text,
     )
 
+    def _obs(status: str, *, success: bool, elapsed_ms: int, route_type: str = "", selected_target: str = "", retry_count: int = 0) -> None:
+        record_event(
+            canonical_root,
+            {
+                "kind": "nl_router",
+                "trace_id": idempotency_key,
+                "channel": channel,
+                "status": status,
+                "success": success,
+                "latency_ms": max(0, int(elapsed_ms)),
+                "route_type": route_type,
+                "selected_target": selected_target,
+                "retry_count": max(0, int(retry_count)),
+                "token_estimate": max(1, len(text) // 4),
+            },
+        )
+        if route_type == "tool" and selected_target == "rag.answer":
+            record_event(
+                canonical_root,
+                {
+                    "kind": "retrieval",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": success,
+                    "latency_ms": max(0, int(elapsed_ms)),
+                    "retrieval_hit": bool(success),
+                    "token_estimate": max(1, len(text) // 8),
+                },
+            )
+
     if cancel_requested:
         elapsed_ms = int((time.monotonic() - started) * 1000)
         record_execution(
@@ -127,6 +158,7 @@ def run_nl_router(
             timed_out=False,
             meta={"status": "cancelled"},
         )
+        _obs("cancelled", success=True, elapsed_ms=elapsed_ms)
         return {
             "status": "cancelled",
             "idempotency_key": idempotency_key,
@@ -136,6 +168,7 @@ def run_nl_router(
 
     breaker_gate = should_allow(canonical_root, resource="nl_router")
     if not bool(breaker_gate.get("allowed", True)):
+        _obs("cooldown", success=False, elapsed_ms=int((time.monotonic() - started) * 1000))
         return {
             "status": "cooldown",
             "idempotency_key": idempotency_key,
@@ -234,6 +267,7 @@ def run_nl_router(
             timed_out=False,
             meta={"status": "success", "target": plan["selected_target"]},
         )
+        _obs("success", success=True, elapsed_ms=elapsed_ms, route_type=plan["route_type"], selected_target=plan["selected_target"])
         return {
             "status": "success",
             "idempotency_key": idempotency_key,
@@ -279,6 +313,7 @@ def run_nl_router(
             timed_out=True,
             meta={"status": "timeout"},
         )
+        _obs("timeout", success=False, elapsed_ms=elapsed_ms)
         return {
             "status": "timeout",
             "idempotency_key": idempotency_key,
@@ -297,6 +332,7 @@ def run_nl_router(
             timed_out=False,
             meta={"status": "error"},
         )
+        _obs("error", success=False, elapsed_ms=elapsed_ms)
         return {
             "status": "error",
             "idempotency_key": idempotency_key,

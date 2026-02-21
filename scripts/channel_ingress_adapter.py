@@ -28,6 +28,7 @@ try:
 except Exception:  # pragma: no cover - optional integration
     run_nl_router = None
 from scripts.odoo_enqueuer import enqueue_odoo
+from scripts.observability import record_event
 from scripts.research_enqueuer import enqueue_research
 from scripts.repo_root import get_canonical_root
 from scripts.session_memory_manager import append_event
@@ -1074,10 +1075,13 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     else:
         actions["drop"] = {"status": "skipped_outbound" if not is_inbound else "skipped"}
 
+    trace_id = str(nl_route.get("idempotency_key", "")).strip() if isinstance(nl_route, dict) else ""
+
     report = {
         "canonical_root": str(canonical_root.resolve()),
         "created_at": _utc_now(),
         "status": "success",
+        "trace_id": trace_id,
         "event": {
             "channel": channel,
             "action": str(event.get("action", "received")),
@@ -1098,6 +1102,19 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         "actions": actions,
         "version": 1,
     }
+    record_event(
+        canonical_root,
+        {
+            "kind": "tooling",
+            "trace_id": trace_id,
+            "channel": channel,
+            "success": report.get("status") == "success",
+            "latency_ms": int(nl_route.get("timing", {}).get("elapsed_ms", 0)) if isinstance(nl_route, dict) else 0,
+            "retry_count": 0,
+            "token_estimate": max(1, len(str(event.get("text", ""))) // 4),
+        },
+    )
+
     _save_json(canonical_root / REPORT_JSON, report)
     _save_json(canonical_root / REPORT_LOG, report)
     lines = [
