@@ -2,5 +2,13 @@
   "repeat_threshold_30d": 3,
   "impact_threshold": 7,
   "max_risk_for_auto_create": 5,
-  "high_risk_requires_approval": 8
+  "high_risk_requires_approval": 8,
+  "score_threshold_create": 0.65,
+  "weights": {
+    "repeat": 0.30,
+    "impact": 0.30,
+    "generality": 0.20,
+    "risk": 0.10,
+    "latency_cost": 0.10
+  }
 }

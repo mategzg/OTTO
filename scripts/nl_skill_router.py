@@ -10,6 +10,7 @@ from typing import Any, Dict, List
 
 from scripts.nl_intent_classifier import classify_intent
 from scripts.repo_root import get_canonical_root
+from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
@@ -155,16 +156,15 @@ def run_nl_router(
         risk = _safe_int(risk_score)
         requires_approval = risk >= int(pol.get("high_risk_requires_approval", 8))
 
-        eligible = (
-            repeat >= int(pol.get("repeat_threshold_30d", 3))
-            and impact >= int(pol.get("impact_threshold", 7))
-            and risk <= int(pol.get("max_risk_for_auto_create", 5))
+        creation_eval = evaluate_creation(
+            canonical_root,
+            route_type=route["route_type"],
+            selected_target=route["selected_target"],
+            repeat_count_30d=repeat,
+            impact_score=impact,
+            risk_score=risk,
+            trace_id=idempotency_key,
         )
-
-        if eligible and route["route_type"] in {"tool", "workflow"}:
-            create_decision = "create"
-        else:
-            create_decision = "defer"
 
         plan = {
             "intent_id": intent,
@@ -190,13 +190,7 @@ def run_nl_router(
                 "tokens": "high" if route["route_type"] == "tool" else "medium",
                 "latency": "high" if route["route_type"] == "tool" else "medium",
             },
-            "create_skill_decision": {
-                "eligible": eligible,
-                "repeat_count_30d": repeat,
-                "impact_score": impact,
-                "risk_score": risk,
-                "decision": create_decision,
-            },
+            "create_skill_decision": creation_eval,
             "registry": {
                 "checked": True,
                 "resolution": resolution,
