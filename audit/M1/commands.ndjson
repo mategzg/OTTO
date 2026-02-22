@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:19:08Z", "cmd": "python benchmark dispatcher burst (inline)", "output": "audit/M1/benchmark_dispatcher.json"}
+{"ts": "2026-02-22T03:19:08Z", "cmd": "pytest -q tests/test_spec004_m1_dispatcher.py tests/test_outbox_queue_and_delivery_mock_cli.py", "output": "audit/M1/pytest_m1.txt"}

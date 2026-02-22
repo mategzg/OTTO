@@ -79,6 +79,14 @@ def materialize_state(events: Iterable[Dict[str, Any]]) -> Dict[str, Dict[str, A
         if event_type == "enqueue":
             state[item_id] = dict(event)
             continue
+        if event_type == "collect":
+            current = state.get(item_id)
+            if not isinstance(current, dict):
+                continue
+            current["text"] = str(event.get("text", current.get("text", "")))
+            current["updated_at"] = str(event.get("created_at", current.get("updated_at", current.get("created_at", ""))))
+            current["metadata"] = event.get("metadata", current.get("metadata", {})) if isinstance(event.get("metadata", {}), dict) else current.get("metadata", {})
+            continue
         if event_type == "delivery":
             current = state.get(item_id)
             if not isinstance(current, dict):
@@ -173,6 +181,36 @@ def enqueue_message(
         payload["source_ref"],
         payload["created_at"],
     )
+
+    collect_key = str(payload.get("metadata", {}).get("collect_key", "")).strip()
+    if collect_key:
+        for row in materialized_items(canonical_root):
+            if str(row.get("status", "pending")) not in PENDING_STATUSES:
+                continue
+            md = row.get("metadata", {}) if isinstance(row.get("metadata", {}), dict) else {}
+            if str(md.get("collect_key", "")).strip() != collect_key:
+                continue
+            if str(row.get("channel", "")) != payload["channel"] or str(row.get("target", "")) != payload["target"]:
+                continue
+            update = {
+                "event_type": "collect",
+                "id": str(row.get("id", "")),
+                "created_at": created_at,
+                "text": clean_text,
+                "metadata": payload.get("metadata", {}),
+                "version": 1,
+            }
+            _append_ndjson(canonical_root / OUTBOX_QUEUE_PATH, update)
+            snapshot_path = write_latest_snapshot(canonical_root)
+            return {
+                "status": "collected",
+                "queued": False,
+                "item_id": str(row.get("id", "")),
+                "queue_path": OUTBOX_QUEUE_PATH.as_posix(),
+                "snapshot_path": snapshot_path,
+                "target": payload["target"],
+            }
+
     _append_ndjson(canonical_root / OUTBOX_QUEUE_PATH, payload)
     snapshot_path = write_latest_snapshot(canonical_root)
     return {

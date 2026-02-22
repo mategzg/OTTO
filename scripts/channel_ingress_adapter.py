@@ -21,6 +21,7 @@ from scripts.chat_to_inbox_drop import run_chat_to_drop
 from scripts.context_loader import load_context_plan
 from scripts.episode_linker import get_episode
 from scripts.memory_capture import run_capture
+from scripts.dispatcher_policy import load_dispatcher_policy, should_delegate, within_limits
 from scripts.mission_activation import decide_and_act as decide_mission_activation
 from scripts.nl_intent_classifier import classify_intent
 try:
@@ -965,9 +966,25 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     session_meta = _load_json_file(canonical_root / meta_rel) if meta_rel else {}
     session_is_new = int(session_meta.get("event_count_total", 0)) <= 1
 
+    dispatcher_policy = load_dispatcher_policy(canonical_root)
+    selected_target = str(nl_route.get("plan", {}).get("selected_target", "")) if isinstance(nl_route, dict) else ""
+    delegate_decision = should_delegate(
+        dispatcher_policy,
+        intent_id=str(intent.get("primary_intent", "")),
+        attachments=event.get("attachments", []),
+        selected_target=selected_target,
+    )
+    limits_check = within_limits(dispatcher_policy, active_runs=0, spawn_depth=0, children_for_agent=0)
+
     actions: Dict[str, Any] = {
         "session": session_out,
         "intent": intent,
+        "dispatcher": {
+            "should_delegate": bool(delegate_decision.get("delegate", False)),
+            "reason": str(delegate_decision.get("reason", "")),
+            "limits": limits_check,
+            "ack_target_ms": int(dispatcher_policy.get("ack_target_ms", 2000)),
+        },
         "context_profile": {},
         "status_reply": {},
         "owner_reply": {},

@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "ack_ms": {
+    "count": 60,
+    "p50": 4.284620023099706,
+    "p95": 4.937442441587336,
+    "max": 6.037911982275546
+  },
+  "queue_collect": {
+    "pending_items_for_target": 1,
+    "last_text": "ack 59"
+  },
+  "dispatcher_limits": {
+    "ok": true,
+    "active_runs": 0,
+    "spawn_depth": 0,
+    "children_for_agent": 0,
+    "maxConcurrent": 8,
+    "maxSpawnDepth": 2,
+    "maxChildrenPerAgent": 20
+  },
+  "generated_at": "2026-02-22T03:19:07Z"
+}
