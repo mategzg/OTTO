@@ -12,7 +12,7 @@
         "route_type": "skill",
         "target": "reminder.create"
       },
-      "id": "g1",
+      "id": "r1",
       "pass": true,
       "question": "Recuérdame mañana pagar internet",
       "scores": {
@@ -23,6 +23,195 @@
     },
     {
       "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r2",
+      "pass": true,
+      "question": "Avísame mañana a las 9 revisar facturas",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r3",
+      "pass": true,
+      "question": "No me dejes olvidar enviar el reporte",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r4",
+      "pass": true,
+      "question": "Pon un recordatorio para llamar al cliente",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r5",
+      "pass": true,
+      "question": "Recuérdame el día 25/02 pagar alquiler",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r6",
+      "pass": true,
+      "question": "Avísame en 2 horas revisar correo",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r7",
+      "pass": true,
+      "question": "Recuérdame mañana a las 8 revisar inventario",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r8",
+      "pass": true,
+      "question": "Necesito un recordatorio para la reunión",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r9",
+      "pass": true,
+      "question": "Avísame en 30 minutos sobre la cotización",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "reminder.create"
+      },
+      "expected": {
+        "intent": "reminder_request",
+        "route_type": "skill",
+        "target": "reminder.create"
+      },
+      "id": "r10",
+      "pass": true,
+      "question": "Recuérdame mañana pagar proveedores",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
         "intent": "research_request",
         "route_type": "skill",
         "status": "success",
@@ -33,9 +222,198 @@
         "route_type": "skill",
         "target": "research.request"
       },
-      "id": "g2",
+      "id": "s1",
       "pass": true,
-      "question": "Haz una investigación de precios de granito en Lima",
+      "question": "Investiga precios de granito en Lima",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s2",
+      "pass": true,
+      "question": "Necesito una investigación de mármol travertino",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s3",
+      "pass": true,
+      "question": "Busca información de proveedores de cuarzo",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s4",
+      "pass": true,
+      "question": "Research sobre tendencias de acabados 2026",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s5",
+      "pass": true,
+      "question": "Investígame opciones de logística para piedra",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s6",
+      "pass": true,
+      "question": "Quiero saber más sobre selladores de mármol",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s7",
+      "pass": true,
+      "question": "Averigua costos de importación de porcelanato",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s8",
+      "pass": true,
+      "question": "Encuentra info sobre pulido industrial",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s9",
+      "pass": true,
+      "question": "Investiga mercado de granito en Lima",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "status": "success",
+        "target": "research.request"
+      },
+      "expected": {
+        "intent": "research_request",
+        "route_type": "skill",
+        "target": "research.request"
+      },
+      "id": "s10",
+      "pass": true,
+      "question": "Analiza competencia de acabados premium",
       "scores": {
         "intent": 1,
         "route_type": 1,
@@ -54,7 +432,7 @@
         "route_type": "workflow",
         "target": "status.check"
       },
-      "id": "g3",
+      "id": "t1",
       "pass": true,
       "question": "Dame el estado del sistema",
       "scores": {
@@ -65,6 +443,195 @@
     },
     {
       "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t2",
+      "pass": true,
+      "question": "Necesito status general",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t3",
+      "pass": true,
+      "question": "Cómo vas con todo hoy",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t4",
+      "pass": true,
+      "question": "Cómo vas con las tareas",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t5",
+      "pass": true,
+      "question": "Como vas con pendientes",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t6",
+      "pass": true,
+      "question": "Dame un resumen de operación",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t7",
+      "pass": true,
+      "question": "Qué tienes pendiente",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t8",
+      "pass": true,
+      "question": "Necesito estado de misiones",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t9",
+      "pass": true,
+      "question": "Status de OTTO ahora",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "status": "success",
+        "target": "status.check"
+      },
+      "expected": {
+        "intent": "status_request",
+        "route_type": "workflow",
+        "target": "status.check"
+      },
+      "id": "t10",
+      "pass": true,
+      "question": "Resumen rápido del día",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
         "intent": "odoo_cotizar",
         "route_type": "skill",
         "status": "success",
@@ -75,9 +642,198 @@
         "route_type": "skill",
         "target": "odoo.cotizar"
       },
-      "id": "g4",
+      "id": "o1",
       "pass": true,
       "question": "Quiero cotizar mármol para un cliente",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o2",
+      "pass": true,
+      "question": "Cotizar granito negro para cocina",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o3",
+      "pass": true,
+      "question": "Hacer cotización para proyecto hotel",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o4",
+      "pass": true,
+      "question": "Necesito presupuesto para piedra sinterizada",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o5",
+      "pass": true,
+      "question": "Dame precio de cuarzo blanco",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o6",
+      "pass": true,
+      "question": "Cuánto cuesta el mármol carrara",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o7",
+      "pass": true,
+      "question": "Cuanto cuesta granito pulido",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o8",
+      "pass": true,
+      "question": "Cotiza 20m2 de porcelanato",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o9",
+      "pass": true,
+      "question": "Presupuesto para cliente constructora",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "status": "success",
+        "target": "odoo.cotizar"
+      },
+      "expected": {
+        "intent": "odoo_cotizar",
+        "route_type": "skill",
+        "target": "odoo.cotizar"
+      },
+      "id": "o10",
+      "pass": true,
+      "question": "Cotizar pedido de encimeras",
       "scores": {
         "intent": 1,
         "route_type": 1,
@@ -96,7 +852,7 @@
         "route_type": "tool",
         "target": "rag.answer"
       },
-      "id": "g5",
+      "id": "c1",
       "pass": true,
       "question": "Explícame la visión y cita fuentes",
       "scores": {
@@ -104,19 +860,208 @@
         "route_type": 1,
         "target": 1
       }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c2",
+      "pass": true,
+      "question": "Quiero entender mejor nuestro norte estratégico",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "memory_worthy",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c3",
+      "pass": false,
+      "question": "Explícame de forma simple el proyecto",
+      "scores": {
+        "intent": 0,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c4",
+      "pass": true,
+      "question": "Cuál es la prioridad más importante ahora",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c5",
+      "pass": true,
+      "question": "Explícame cómo estamos organizados",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c6",
+      "pass": true,
+      "question": "Necesito una síntesis de alto nivel",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c7",
+      "pass": true,
+      "question": "Qué recomendarías para mejorar foco",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c8",
+      "pass": true,
+      "question": "Cuéntame los principios operativos clave",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c9",
+      "pass": true,
+      "question": "Cómo deberíamos priorizar esta semana",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
+    },
+    {
+      "actual": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "status": "success",
+        "target": "rag.answer"
+      },
+      "expected": {
+        "intent": "chat_normal",
+        "route_type": "tool",
+        "target": "rag.answer"
+      },
+      "id": "c10",
+      "pass": true,
+      "question": "Explica la arquitectura objetivo en simple",
+      "scores": {
+        "intent": 1,
+        "route_type": 1,
+        "target": 1
+      }
     }
   ],
-  "created_at": "2026-02-21T23:51:40.278364+00:00",
-  "status": "pass",
+  "created_at": "2026-02-22T00:01:39.456716+00:00",
+  "status": "degraded",
   "summary": {
     "metrics": {
       "groundedness": 1.0,
-      "mrr": 1.0,
+      "mrr": 0.99,
       "ndcg": 1.0
     },
-    "pass_rate": 1.0,
-    "passed": 5,
-    "total": 5
+    "pass_rate": 0.98,
+    "passed": 49,
+    "total": 50
   },
   "version": 1
 }

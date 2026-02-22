@@ -1,38 +1,353 @@
 {
-  "version": 1,
+  "version": 2,
   "updated_at": "",
   "items": [
     {
-      "id": "g1",
+      "id": "r1",
       "question": "Recuérdame mañana pagar internet",
       "expected_intent": "reminder_request",
       "expected_route_type": "skill",
       "expected_target": "reminder.create"
     },
     {
-      "id": "g2",
-      "question": "Haz una investigación de precios de granito en Lima",
+      "id": "r2",
+      "question": "Avísame mañana a las 9 revisar facturas",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r3",
+      "question": "No me dejes olvidar enviar el reporte",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r4",
+      "question": "Pon un recordatorio para llamar al cliente",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r5",
+      "question": "Recuérdame el día 25/02 pagar alquiler",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r6",
+      "question": "Avísame en 2 horas revisar correo",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r7",
+      "question": "Recuérdame mañana a las 8 revisar inventario",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r8",
+      "question": "Necesito un recordatorio para la reunión",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r9",
+      "question": "Avísame en 30 minutos sobre la cotización",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "r10",
+      "question": "Recuérdame mañana pagar proveedores",
+      "expected_intent": "reminder_request",
+      "expected_route_type": "skill",
+      "expected_target": "reminder.create"
+    },
+    {
+      "id": "s1",
+      "question": "Investiga precios de granito en Lima",
       "expected_intent": "research_request",
       "expected_route_type": "skill",
       "expected_target": "research.request"
     },
     {
-      "id": "g3",
+      "id": "s2",
+      "question": "Necesito una investigación de mármol travertino",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s3",
+      "question": "Busca información de proveedores de cuarzo",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s4",
+      "question": "Research sobre tendencias de acabados 2026",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s5",
+      "question": "Investígame opciones de logística para piedra",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s6",
+      "question": "Quiero saber más sobre selladores de mármol",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s7",
+      "question": "Averigua costos de importación de porcelanato",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s8",
+      "question": "Encuentra info sobre pulido industrial",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s9",
+      "question": "Investiga mercado de granito en Lima",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "s10",
+      "question": "Analiza competencia de acabados premium",
+      "expected_intent": "research_request",
+      "expected_route_type": "skill",
+      "expected_target": "research.request"
+    },
+    {
+      "id": "t1",
       "question": "Dame el estado del sistema",
       "expected_intent": "status_request",
       "expected_route_type": "workflow",
       "expected_target": "status.check"
     },
     {
-      "id": "g4",
+      "id": "t2",
+      "question": "Necesito status general",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t3",
+      "question": "Cómo vas con todo hoy",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t4",
+      "question": "Cómo vas con las tareas",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t5",
+      "question": "Como vas con pendientes",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t6",
+      "question": "Dame un resumen de operación",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t7",
+      "question": "Qué tienes pendiente",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t8",
+      "question": "Necesito estado de misiones",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t9",
+      "question": "Status de OTTO ahora",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "t10",
+      "question": "Resumen rápido del día",
+      "expected_intent": "status_request",
+      "expected_route_type": "workflow",
+      "expected_target": "status.check"
+    },
+    {
+      "id": "o1",
       "question": "Quiero cotizar mármol para un cliente",
       "expected_intent": "odoo_cotizar",
       "expected_route_type": "skill",
       "expected_target": "odoo.cotizar"
     },
     {
-      "id": "g5",
+      "id": "o2",
+      "question": "Cotizar granito negro para cocina",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o3",
+      "question": "Hacer cotización para proyecto hotel",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o4",
+      "question": "Necesito presupuesto para piedra sinterizada",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o5",
+      "question": "Dame precio de cuarzo blanco",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o6",
+      "question": "Cuánto cuesta el mármol carrara",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o7",
+      "question": "Cuanto cuesta granito pulido",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o8",
+      "question": "Cotiza 20m2 de porcelanato",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o9",
+      "question": "Presupuesto para cliente constructora",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "o10",
+      "question": "Cotizar pedido de encimeras",
+      "expected_intent": "odoo_cotizar",
+      "expected_route_type": "skill",
+      "expected_target": "odoo.cotizar"
+    },
+    {
+      "id": "c1",
       "question": "Explícame la visión y cita fuentes",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c2",
+      "question": "Quiero entender mejor nuestro norte estratégico",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c3",
+      "question": "Explícame de forma simple el proyecto",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c4",
+      "question": "Cuál es la prioridad más importante ahora",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c5",
+      "question": "Explícame cómo estamos organizados",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c6",
+      "question": "Necesito una síntesis de alto nivel",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c7",
+      "question": "Qué recomendarías para mejorar foco",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c8",
+      "question": "Cuéntame los principios operativos clave",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c9",
+      "question": "Cómo deberíamos priorizar esta semana",
+      "expected_intent": "chat_normal",
+      "expected_route_type": "tool",
+      "expected_target": "rag.answer"
+    },
+    {
+      "id": "c10",
+      "question": "Explica la arquitectura objetivo en simple",
       "expected_intent": "chat_normal",
       "expected_route_type": "tool",
       "expected_target": "rag.answer"

@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "actual": 50,
+      "name": "min_total",
+      "ok": true,
+      "required": 50
+    },
+    {
+      "actual": 0.98,
+      "name": "min_pass_rate",
+      "ok": true,
+      "required": 0.95
+    },
+    {
+      "actual": 1.0,
+      "name": "min_ndcg",
+      "ok": true,
+      "required": 0.95
+    },
+    {
+      "actual": 0.99,
+      "name": "min_mrr",
+      "ok": true,
+      "required": 0.95
+    },
+    {
+      "actual": 1.0,
+      "name": "min_groundedness",
+      "ok": true,
+      "required": 0.95
+    }
+  ],
+  "golden_summary": {
+    "metrics": {
+      "groundedness": 1.0,
+      "mrr": 0.99,
+      "ndcg": 1.0
+    },
+    "pass_rate": 0.98,
+    "passed": 49,
+    "total": 50
+  },
+  "status": "pass",
+  "thresholds": {
+    "min_groundedness": 0.95,
+    "min_mrr": 0.95,
+    "min_ndcg": 0.95,
+    "min_pass_rate": 0.95,
+    "min_total": 50
+  },
+  "version": 1
+}

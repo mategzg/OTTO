@@ -1,0 +1,7 @@
+{
+  "min_total": 50,
+  "min_pass_rate": 0.95,
+  "min_ndcg": 0.95,
+  "min_mrr": 0.95,
+  "min_groundedness": 0.95
+}
