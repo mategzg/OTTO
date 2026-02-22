@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "handoff_gate": "AwaitApproval",
+  "requires_resumeToken": true,
+  "artifacts": [
+    "audit/M5/dry_run.json",
+    "audit/M5/await_approval.json",
+    "audit/M5/completed.json"
+  ],
+  "generated_at": "2026-02-22T03:37:42Z"
+}
