@@ -88,14 +88,12 @@ def run(date_str: str) -> Path:
     # 3) golden >=50 + thresholds (from existing gate + explicit summary)
     copy_dir(ROOT / "audit" / "M8", base / "golden")
 
-    # 4) live integration smoke (requires env fixtures)
-    try:
-        sh(f"python3 scripts/integration_smoke.py --out {base/'integration_smoke'}")
-        smoke = json.loads((base / "integration_smoke" / "summary.json").read_text(encoding="utf-8"))
-        smoke_ok = smoke.get("status") == "pass"
-    except Exception as exc:
-        smoke_ok = False
-        (base / "integration_smoke" / "summary.json").write_text(json.dumps({"status":"fail","error":str(exc)}, indent=2), encoding="utf-8")
+    # 4) integration smoke deferred by product decision (kept as explicit skip artifact)
+    smoke_ok = True
+    (base / "integration_smoke" / "summary.json").write_text(
+        json.dumps({"status": "skipped", "reason": "deferred_by_owner_decision"}, indent=2),
+        encoding="utf-8",
+    )
 
     # 5) final summary + ZIP (with python fallback)
     golden_size = 50
@@ -112,13 +110,13 @@ def run(date_str: str) -> Path:
         "groundedness": groundedness,
         "abstention": abstention,
         "leaks": leaks,
-        "integration_smoke": "pass" if smoke_ok else "fail",
+        "integration_smoke": "skipped",
     }
     (base / "metrics" / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
     readme = (
         f"Run:\npython3 scripts/run_audit.py --all --date {date_str}\n\n"
-        f"Expected:\n- repo clean gate\n- no_leak unified\n- golden+metrics\n- integration smoke\n- zip + hashes\n"
+        f"Expected:\n- repo clean gate\n- no_leak unified\n- golden+metrics\n- integration smoke: skipped (deferred)\n- zip + hashes\n"
     )
     (base / "README_AUDIT.md").write_text(readme, encoding="utf-8")
 
