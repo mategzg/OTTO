@@ -44,19 +44,24 @@ def copy_dir(src: Path, dst: Path) -> None:
 
 def run(date_str: str) -> Path:
     base = ROOT / "audit" / "final" / date_str
+
+    # 0) Fail-fast CLEAN (before mutating workspace)
+    status = sh("git status --porcelain", check=False).strip()
+    if status:
+        snap = base / "snapshot"
+        met = base / "metrics"
+        snap.mkdir(parents=True, exist_ok=True)
+        met.mkdir(parents=True, exist_ok=True)
+        (snap / "git_status.txt").write_text(status + "\n", encoding="utf-8")
+        summary = {"generated_at": datetime.utcnow().isoformat() + "Z", "go_no_go": "no_go", "reason": "repo_dirty"}
+        (met / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+        raise SystemExit(1)
+
     if base.exists():
         shutil.rmtree(base)
     for d in ["snapshot","tests","security","no_leak","delegation","retrieval","ingest","sharepoint","odoo","marketplace","day2","metrics","golden","integration_smoke"]:
         (base / d).mkdir(parents=True, exist_ok=True)
-
-    # 0) Fail-fast CLEAN
-    status = sh("git status --porcelain", check=False).strip()
-    (base / "snapshot" / "git_status.txt").write_text(status + "\n", encoding="utf-8")
-    if status:
-        summary = {"generated_at": datetime.utcnow().isoformat() + "Z", "go_no_go": "no_go", "reason": "repo_dirty"}
-        (base / "metrics" / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
-        hash_tree(base)
-        raise SystemExit(1)
+    (base / "snapshot" / "git_status.txt").write_text("\n", encoding="utf-8")
 
     # 1) snapshot
     git_txt = (
