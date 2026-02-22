@@ -2,12 +2,12 @@
   "apply": {
     "ingested": [
       {
-        "hints": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/HINTS.json",
-        "manifest": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/MANIFEST.json",
-        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042707Z_cd8c522cc7/original/backup_semantic_extract_20260222T042656Z",
-        "source_id": "cd8c522cc7",
-        "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7",
-        "suspected_kind": "json_export"
+        "hints": "vault/inbox_raw/sources/20260222T162442Z_065f800160/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260222T162442Z_065f800160/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T162442Z_065f800160/original/a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)",
+        "source_id": "065f800160",
+        "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160",
+        "suspected_kind": "chatgpt_export_candidate"
       }
     ],
     "ingested_count": 1,
@@ -15,7 +15,7 @@
   },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T04:27:07.687769+00:00",
+  "created_at": "2026-02-22T16:25:20.701989+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
   "state_path": "state/intake_state.json",

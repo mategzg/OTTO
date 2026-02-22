@@ -1,4 +1,4 @@
-# 95 — ChatGPT Capability Extract (RETIRADO como sink primario)
+# 95 — Capability Extract (RETIRADO como sink primario)
 
 Este archivo queda solo como **redirect histórico**.
 

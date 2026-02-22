@@ -35,7 +35,7 @@ Excludes by design:
 - `80_SELF_OPTIMIZATION_PROTOCOL.md` - continuous improvement loop.
 - `85_RAG_ARCHITECTURE_GROWTH.md` - responsabilidad continua de crecimiento/optimización de arquitectura RAG.
 - `90_REVIEW_QUEUE.md` - unresolved patterns and consolidation backlog.
-- `95_CHATGPT_CAPABILITY_EXTRACT_20260222.md` - **retired as sink primario**; mantener solo como redirect histórico.
+- `95_CAPABILITY_EXTRACT_20260222.md` - **retired as sink primario**; mantener solo como redirect histórico.
 
 ## Composition Matrix (task -> required branches)
 - Operational incident -> `10` + `20` + `30`.

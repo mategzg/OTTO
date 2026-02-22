@@ -1,26 +1,529 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T04:28:25.596345+00:00",
+  "created_at": "2026-02-22T17:07:09.268263+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260222T042825Z-f79ddaf7",
+  "plan_id": "PLAN-20260222T170655Z-b5332134",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260222T042825Z_8b2a4f7be1/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260222T042825Z_8b2a4f7be1",
-      "readme": "vault/inbox_raw/_processed/20260222T042825Z_8b2a4f7be1/README.md",
-      "source_id": "8b2a4f7be1",
-      "source_rel": "sources/20260222T042521Z_0cc409a21f"
+      "manifest": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412",
+      "readme": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/README.md",
+      "source_id": "cdf87af412",
+      "source_rel": "sources/20260222T162442Z_065f800160"
     }
   ],
   "status": "success",
   "summary": {
-    "by_category": {},
+    "by_category": {
+      "brain_knowledge": 100
+    },
     "conflict_side_by_side": 0,
-    "created": 0,
+    "created": 100,
     "processed_moves": 1,
     "unchanged": 0
   },
   "version": 2,
-  "writes": []
+  "writes": [
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_03fd92558d_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_06db5c39b5_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_07f85806ed_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_09a93f0d40_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_0e5da36550_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_12b4f8c1f1_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_1326a31eb1_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_14807fef5e_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_158dd6862b_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_1b64c1edaa_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_1d9b6ba067_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_20375dd3e2_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_28ce5ec577_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_3019fb02bd_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_32848f0a90_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_4e02a8be5b_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_59944bd9f5_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_5c98887faa_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_6d5ad9e885_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_71c33d962c_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_7c20e12df3_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_8469b5b288_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_8a67439798_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_8a6b21437d_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_8ddbed5b75_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_991cb78267_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_9d94b45866_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_a01bc3d244_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_a041483a8e_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_a35b71bc69_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_a5df9a1f54_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_a7b2c69e98_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_aabc73cc93_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_ab1797c9f1_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_ab2414e66d_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_ac69936470_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_af6a663ccd_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_b108e6a978_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_c49d20c73d_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_c4a9388ddb_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_cca8f82679_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_cdf87af412_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_d4f4a9e890_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_d8e7df6159_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_e5cd368f4f_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_eab5b1093a_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_ed17c2d0eb_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_f16dd1ab82_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_f3d756ae3f_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/cards/external_ingest/card_ff4e0d21db_01.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/03fd92558d_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/06db5c39b5_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/07f85806ed_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/09a93f0d40_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/0e5da36550_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/12b4f8c1f1_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/1326a31eb1_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/14807fef5e_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/158dd6862b_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/1b64c1edaa_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/1d9b6ba067_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/20375dd3e2_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/28ce5ec577_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/3019fb02bd_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/32848f0a90_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/4e02a8be5b_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/59944bd9f5_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/5c98887faa_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/6d5ad9e885_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/71c33d962c_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/7c20e12df3_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/8469b5b288_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/8a67439798_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/8a6b21437d_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/8ddbed5b75_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/991cb78267_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/9d94b45866_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/a01bc3d244_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/a041483a8e_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/a35b71bc69_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/a5df9a1f54_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/a7b2c69e98_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/aabc73cc93_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/ab1797c9f1_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/ab2414e66d_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/ac69936470_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/af6a663ccd_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/b108e6a978_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/c49d20c73d_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/c4a9388ddb_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/cca8f82679_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/cdf87af412_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/d4f4a9e890_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/d8e7df6159_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/e5cd368f4f_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/eab5b1093a_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/ed17c2d0eb_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/f16dd1ab82_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/f3d756ae3f_index.md",
+      "status": "created"
+    },
+    {
+      "category": "brain_knowledge",
+      "path": "brain/domains/external_ingest/sources/ff4e0d21db_index.md",
+      "status": "created"
+    }
+  ]
 }
