@@ -24,7 +24,11 @@ from scripts.circuit_breaker import should_allow
 from scripts.day2_doc_inventory import run_day2_inventory_sync
 from scripts.dropbox_intake import run_apply as run_intake_apply
 from scripts.dropbox_intake import run_scan as run_intake_scan
-from scripts.episodic_memory_builder import run_build as run_episodic_memory_builder
+try:
+    from scripts.episodic_memory_builder import run_build as run_episodic_memory_builder
+except Exception:  # pragma: no cover - optional integration
+    def run_episodic_memory_builder(*_args, **_kwargs):
+        return {"status": "unavailable", "episodes_built": 0, "index_size_bytes": 0}
 from scripts.hook_backlog import run_replay as run_hook_backlog_replay
 from scripts.hook_backlog import run_scan as run_hook_backlog_scan
 from scripts.heartbeat_delegator import (
@@ -37,18 +41,45 @@ from scripts.heartbeat_delegator import (
     scan_pending_work,
 )
 from scripts.legacy_recovery_worker import run_once as run_legacy_recovery_once
-from scripts.learning_promoter import run_promoter as run_learning_promoter
-from scripts.odoo_agent import run_odoo as run_odoo_agent
+try:
+    from scripts.learning_promoter import run_promoter as run_learning_promoter
+except Exception:  # pragma: no cover - optional integration
+    def run_learning_promoter(*_args, **_kwargs):
+        return {"report": {"status": "unavailable", "summary": {"promoted_count": 0, "candidate_files_processed": 0}}}
+try:
+    from scripts.odoo_agent import run_odoo as run_odoo_agent
+except Exception:  # pragma: no cover - optional integration
+    def run_odoo_agent(*_args, **_kwargs):
+        return {"status": "unavailable", "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
 from scripts.outbox_delivery import run_deliver as run_outbox_deliver
 from scripts.outbox_queue import enqueue_message, materialized_items
-from scripts.proactivity_engine import queue_topic_alert, run_proactivity
-from scripts.reminder_engine import process_reminders as run_reminder_engine
-from scripts.research_agent import run_research_stage
+try:
+    from scripts.proactivity_engine import queue_topic_alert, run_proactivity
+except Exception:  # pragma: no cover - optional integration
+    def queue_topic_alert(*_args, **_kwargs):
+        return {"queued": False, "reason": "proactivity_engine_unavailable"}
+
+    def run_proactivity(*_args, **_kwargs):
+        return {"report": {"status": "unavailable", "summary": {"queued_count": 0}}}
+try:
+    from scripts.reminder_engine import process_reminders as run_reminder_engine
+except Exception:  # pragma: no cover - optional integration
+    def run_reminder_engine(*_args, **_kwargs):
+        return {"delivered": 0, "expired": 0, "pending": 0}
+try:
+    from scripts.research_agent import run_research_stage
+except Exception:  # pragma: no cover - optional integration
+    def run_research_stage(*_args, **_kwargs):
+        return {"status": "unavailable", "tasks_processed": 0, "tasks_done": 0, "tasks_failed": 0}
 from scripts.prod_doctor import run_prod_doctor
 from scripts.project_docs_maintainer import run_apply as run_project_docs_apply
 from scripts.repo_root import get_canonical_root
 from scripts.safety_switch import autopause_switch, get_safety_status, load_policy as load_safety_policy
-from scripts.session_summarizer import run_stage as run_session_summarizer_stage
+try:
+    from scripts.session_summarizer import run_stage as run_session_summarizer_stage
+except Exception:  # pragma: no cover - optional integration
+    def run_session_summarizer_stage(*_args, **_kwargs):
+        return {"status": "unavailable", "check": {"added": 0, "pending": 0}, "create": {"created": 0, "fallback": 0}, "ingest": {"done": 0}}
 from scripts.session_memory_manager import run_session_maintenance
 from scripts.sg_promotion import process_promotions
 from scripts.whatsapp_budget_guard import refresh_usage_state as refresh_whatsapp_usage_state
@@ -509,7 +540,7 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
         delegation_state = load_delegation_state(canonical_root)
         ingest_progress = delegation_state.get("ingest_progress", {}) if isinstance(delegation_state, dict) else {}
 
-        # Heavy stages are delegated to coders; keep backward-compatible report payloads.
+        # Inline lightweight stages (reminders/outbox already done) + delegated heavy stages.
         backlog_pending = int(delegation_pending.get("pending", {}).get("hook_backlog", {}).get("count", 0))
         hook_backlog_replay = {
             "report": {
@@ -535,8 +566,11 @@ def run_heartbeat_once(root: str | Path, *, force: bool = False) -> Dict[str, An
             },
             "paths": {},
         }
-        intake_scan = {"report": {"summary": {"status": "delegated"}}}
-        intake_apply = {"report": {"apply": {"ingested_count": 0, "ingested": [], "status": "delegated"}}}
+        intake_scan = run_intake_scan(canonical_root)
+        intake_apply = run_intake_apply(
+            canonical_root,
+            max_entries=max(1, int(policy.get("max_apply_ops_per_heartbeat", 10))),
+        )
         normalized_total = 0
         normalized_slices = 0
         runtime = {"summary": {"sessions_touched": 0, "compactions_done": 0, "distills_done": 0, "status": "delegated"}}
