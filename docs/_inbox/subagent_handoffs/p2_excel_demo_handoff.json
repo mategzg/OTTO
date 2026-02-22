@@ -1,0 +1,21 @@
+{
+  "mission_id": "p2_excel_demo_2026-02-22T21:47:55Z",
+  "tier": "P2",
+  "delegate_to": "codex",
+  "status": "completed",
+  "completed_at": "2026-02-22T21:47:55Z",
+  "artifacts": [
+    "data/demo_empresa_prueba.xlsx",
+    "docs/_inbox/subagent_handoffs/p2_excel_demo_handoff.json",
+    "docs/_inbox/p2_excel_demo_result.md"
+  ],
+  "summary": "Archivo Excel demo creado con hojas Ventas, Inventario y Clientes, incluyendo formulas y KPI de ventas.",
+  "verification": {
+    "tests_run": [
+      "test -f data/demo_empresa_prueba.xlsx",
+      "python3 -c \"from zipfile import ZipFile; z=ZipFile('data/demo_empresa_prueba.xlsx'); assert all(n in z.namelist() for n in ['xl/worksheets/sheet1.xml','xl/worksheets/sheet2.xml','xl/worksheets/sheet3.xml'])\"",
+      "python3 -c \"from zipfile import ZipFile; s=ZipFile('data/demo_empresa_prueba.xlsx').read('xl/worksheets/sheet1.xml').decode(); assert 'D2*E2' in s and 'SUM(F2:F11)' in s\""
+    ],
+    "result": "passed"
+  }
+}
