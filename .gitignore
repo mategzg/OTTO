@@ -54,3 +54,6 @@ CLAUDE.local.md
 
 # Final audit bundles are generated artifacts
 audit/final/
+
+# Local environment secrets
+.env.odoo.local
