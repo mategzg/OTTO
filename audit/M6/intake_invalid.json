@@ -1,0 +1,11 @@
+{
+  "ts": "2026-02-22T03:40:01.069898+00:00",
+  "pack": "/home/agente/otto-workspace/audit/M6/invalid_pack.zip",
+  "pack_id": "f9549e7ad0ff",
+  "status": "rejected",
+  "reason": "missing_skill_md",
+  "risk_score": 0,
+  "relevance_score": 2,
+  "has_skill_md": false,
+  "promoted_path": ""
+}

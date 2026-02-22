@@ -1,0 +1,11 @@
+{
+  "ts": "2026-02-22T03:40:01.067435+00:00",
+  "pack": "/home/agente/otto-workspace/audit/M6/valid_pack.zip",
+  "pack_id": "ab904b8042ae",
+  "status": "promoted",
+  "reason": "passed",
+  "risk_score": 0,
+  "relevance_score": 6,
+  "has_skill_md": true,
+  "promoted_path": "skills/production/valid_pack"
+}
