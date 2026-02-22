@@ -114,6 +114,7 @@ def run_nl_router(
     timeout_ms: int = 1500,
     cancel_requested: bool = False,
     agent_id: str = "otto",
+    actor_type: str = "",
 ) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     ensure_default_registries(canonical_root)
@@ -281,7 +282,12 @@ def run_nl_router(
             retrieval_v2["pack"] = retrieval_v2_retrieve(
                 canonical_root,
                 query=text,
-                principal_ctx={"channel": channel, "conversation_id": conversation_id, "user_id": conversation_id},
+                principal_ctx={
+                    "channel": channel,
+                    "actor_type": actor_type,
+                    "conversation_id": conversation_id,
+                    "user_id": conversation_id,
+                },
                 retrieval_mode="grounded_answer",
                 filters={},
             )

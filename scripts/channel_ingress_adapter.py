@@ -980,6 +980,7 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
             message_id=str(event.get("message_id", "")),
             timeout_ms=1500,
             agent_id=str(event.get("agent_id", "otto")),
+            actor_type=str(event.get("actor_type", "")),
         )
     else:
         nl_route = {

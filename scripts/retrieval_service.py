@@ -25,6 +25,24 @@ DEFAULT_POLICY: Dict[str, Any] = {
         "rrf_k": 60,
         "weighted_bm25": 0.6,
         "weighted_vector": 0.4,
+        "channel_path_policy": {
+            "whatsapp": {
+                "client": {
+                    "allow_prefixes": [
+                        "brain/domains/sg_acabados/",
+                        "brain/sg/",
+                        "docs/empresa/public/",
+                        "docs/public/",
+                    ],
+                    "deny_prefixes": [
+                        "memory/",
+                        "repo_map/",
+                        "brain/domains/personal_ops/",
+                        "brain/domains/openclaw_ops/",
+                    ],
+                }
+            }
+        },
     }
 }
 
@@ -173,6 +191,30 @@ def _score_chunk(query: str, q_tokens: List[str], chunk: Dict[str, Any]) -> Dict
     return {"bm25": bm25, "vector": vector, "phrase": phrase}
 
 
+def _channel_path_allowed(path: str, principal_ctx: Dict[str, Any] | None, cfg: Dict[str, Any]) -> bool:
+    ctx = principal_ctx or {}
+    channel = str(ctx.get("channel", "")).strip().lower()
+    actor = str(ctx.get("actor_type", "")).strip().lower() or "client"
+    if not channel:
+        return True
+
+    channel_policies = cfg.get("channel_path_policy", {}) if isinstance(cfg.get("channel_path_policy", {}), dict) else {}
+    chan_cfg = channel_policies.get(channel, {}) if isinstance(channel_policies.get(channel, {}), dict) else {}
+    role_cfg = chan_cfg.get(actor, {}) if isinstance(chan_cfg.get(actor, {}), dict) else {}
+    if not role_cfg:
+        return True
+
+    clean_path = str(path or "").strip().lower()
+    allow_prefixes = [str(x).strip().lower() for x in role_cfg.get("allow_prefixes", []) if str(x).strip()]
+    deny_prefixes = [str(x).strip().lower() for x in role_cfg.get("deny_prefixes", []) if str(x).strip()]
+
+    if any(clean_path.startswith(prefix) for prefix in deny_prefixes):
+        return False
+    if allow_prefixes:
+        return any(clean_path.startswith(prefix) for prefix in allow_prefixes)
+    return True
+
+
 def retrieve(
     root: str | Path,
     *,
@@ -196,8 +238,12 @@ def retrieve(
     lexical_scored: List[Dict[str, Any]] = []
     vector_scored: List[Dict[str, Any]] = []
     acl_filtered_count = 0
+    channel_filtered_count = 0
 
     for c in chunks:
+        if not _channel_path_allowed(str(c.get("path", "")), principal_ctx, cfg):
+            channel_filtered_count += 1
+            continue
         if not _is_allowed(c, principal_ctx):
             acl_filtered_count += 1
             continue
@@ -302,6 +348,7 @@ def retrieve(
             "vector_candidates": len(vector_hits),
             "union_count": len(union),
             "acl_filtered_count": acl_filtered_count,
+            "channel_filtered_count": channel_filtered_count,
             "dedupe_count": max(0, len(lexical_hits) + len(vector_hits) - len(union)),
             "rerank_model": "phrase_aware_v1",
             "rerank_latency_ms": 0,
