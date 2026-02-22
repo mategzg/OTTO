@@ -37,6 +37,28 @@ def build_and_validate(
         enforced_mode = "chat_normal"
 
     if enforced_mode == "grounded_answer":
+        diag = pack.get("diagnostics", {}) if isinstance(pack.get("diagnostics", {}), dict) else {}
+        requested_audience = str(diag.get("requested_audience", "")).strip().lower()
+        wrong_audience = []
+        for c in topk:
+            aud = str(c.get("audience", "internal")).strip().lower()
+            if requested_audience and aud != requested_audience:
+                wrong_audience.append(str(c.get("path", "")))
+        if wrong_audience:
+            gaps.append("Citas fuera de audiencia solicitada.")
+            return {
+                "valid": False,
+                "output": {
+                    "mode": "grounded_answer",
+                    "answer": "NO_VERIFICADO",
+                    "citations": [],
+                    "gaps": gaps,
+                    "confidence": "low",
+                    "actions_taken": actions_taken,
+                },
+                "reason": "audience_mismatch",
+            }
+
         if not citations or abstention_hint:
             gaps.append("No hay evidencia suficiente en retrieval para responder con certeza.")
             return {
