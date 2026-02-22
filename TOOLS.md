@@ -14,7 +14,7 @@ Controla qué rama experta cargar antes de usar herramientas en tareas no trivia
 ## Brain-first tool routing (quick map)
 - Delegation / coder prompts -> `brain/domains/personal_ops/60_DELEGATION_DOCTRINE.md` + `PROMPT_MANUAL.md`
 - Complex action planning -> `brain/domains/personal_ops/70_BRAIN_FIRST_PROTOCOL.md`
-- System optimization -> `brain/domains/personal_ops/80_SELF_OPTIMIZATION_PROTOCOL.md`
+- System optimization -> `brain/domains/personal_ops/80_SELF_OPTIMIZATION_PROTOCOL.md` + `brain/domains/personal_ops/85_RAG_ARCHITECTURE_GROWTH.md`
 - Business/professional tasks (current phase) -> `brain/domains/sg_acabados/00_INDEX.md`
 - OpenClaw runtime/gateway/browser/tooling -> `brain/domains/openclaw_ops/00_INDEX.md`
 

@@ -1,0 +1,27 @@
+{
+  "run_at_utc": "2026-02-22T19:05:00Z",
+  "source": "20260222T162442Z_065f800160 (reingest v2 artifacts)",
+  "new_capabilities": [
+    "NL-First Runtime Contract",
+    "Single-Writer Execution Pattern",
+    "Non-Destructive Default Guardrail",
+    "Capacity-First Prioritization",
+    "Efficiency-with-Quality Constraint",
+    "Evidence-Backed Deep Research Mode"
+  ],
+  "canonical_paths": [
+    "brain/domains/personal_ops/10_DECISION_HEURISTICS.md",
+    "brain/domains/personal_ops/30_EXECUTION_PLAYBOOKS.md",
+    "brain/domains/personal_ops/50_RESOURCE_BUDGET_TACTICS.md",
+    "brain/domains/personal_ops/35_PERSONAL_DEVELOPMENT_STACK.md",
+    "brain/domains/personal_ops/85_RAG_ARCHITECTURE_GROWTH.md",
+    "brain/domains/sg_acabados/20_OPERATING_STANDARDS.md"
+  ],
+  "retired_primary_sink": "brain/domains/personal_ops/95_CHATGPT_CAPABILITY_EXTRACT_20260222.md",
+  "examples_of_use": [
+    "Delegación paralela solo por scope no superpuesto + merge final por escritor único.",
+    "Refactor incremental con rollback en lugar de vaciado de repo.",
+    "Ingest con batch/slice/dedupe y reportes de cobertura."
+  ],
+  "profile_vs_brain_boundary": "En brain se promueven solo patrones transferibles de capacidad; señales biográficas quedan en memory/profile y memory NDJSON."
+}

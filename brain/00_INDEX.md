@@ -23,6 +23,7 @@ short canonical answers, and deep links to details.
 - For OpenClaw/OTTO operations routing use `brain/domains/openclaw_ops/00_INDEX.md`.
 - For universal corpus ingestion routing use `brain/domains/ingest/00_INDEX.md`.
 - For OTTO operational learning heuristics use `brain/domains/personal_ops/00_INDEX.md`.
+- For personal development knowledge (psychology/philosophy/neuroscience/health), route through `brain/domains/personal_ops/35_PERSONAL_DEVELOPMENT_STACK.md`.
 - For MemoryOS (capture -> compact -> query) use `memory/00_INDEX.md`.
 
 ## Anti-Token Rule
