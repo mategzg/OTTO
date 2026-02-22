@@ -1073,6 +1073,31 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     sg_eval = evaluate_sg_event(canonical_root, event) if (is_inbound and channel.startswith("whatsapp")) else {}
     if is_inbound:
         if sg_eval:
+            # Hard boundary: WhatsApp stays client by default unless worker auth is explicitly granted.
+            auth = sg_eval.get("auth", {}) if isinstance(sg_eval.get("auth", {}), dict) else {}
+            auth_status = str(auth.get("status", "")).strip().lower()
+            sg_actor = str(sg_eval.get("actor", "")).strip().lower()
+            worker_granted = sg_actor == "worker" and auth_status == "granted"
+            event["actor_type"] = "worker" if worker_granted else "client"
+
+            # Persist successful worker unlock (password-only mode) as paired for this peer.
+            if worker_granted:
+                account_id = str(event.get("account_id", "_")).strip() or "_"
+                peer_id = str(event.get("peer_id", "_")).strip() or "_"
+                worker_key = "|".join(["whatsapp", account_id.lower(), peer_id.lower()])
+                pairings = _load_pairings(canonical_root)
+                pairings.setdefault("workers", {})
+                pairings["workers"][worker_key] = {
+                    "status": "paired",
+                    "paired_at": _utc_now(),
+                    "channel": "whatsapp",
+                    "account_id": account_id,
+                    "peer_id": peer_id,
+                    "display_name": str(event.get("metadata", {}).get("author_name", "")),
+                    "source_ref": f"runtime:{session_id}",
+                }
+                _save_pairings(canonical_root, pairings)
+
             actions["sg_evaluation"] = sg_eval
             actions["worker_pairing"] = _maybe_enqueue_worker_pairing(canonical_root, event, sg_eval, session_id)
             actions["worker_reply"] = _maybe_reply_worker_flow(
