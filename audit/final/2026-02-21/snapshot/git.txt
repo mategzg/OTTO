@@ -1,4 +1,0 @@
-branch: spec004/m8
-commit: 11417f78786df74e944fc962a1c383a952527be5
-status_clean: false
-date_utc: 2026-02-22T03:47:02.275982Z

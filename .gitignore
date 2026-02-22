@@ -51,3 +51,6 @@ CLAUDE.local.md
 *password*
 *CREDENTIAL*
 *credential*
+
+# Final audit bundles are generated artifacts
+audit/final/

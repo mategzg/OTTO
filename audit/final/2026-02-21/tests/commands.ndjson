@@ -1,1 +1,0 @@
-{"ts": "2026-02-22T03:44:54Z", "cmd": "gh pr list --repo mategzg/OTTO --state open --json number,title,headRefName,isDraft,url", "output": "audit/M8/pr_inventory.json"}
