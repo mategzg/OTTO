@@ -35,17 +35,37 @@ try:
     from scripts.nl_skill_router import run_nl_router
 except Exception:  # pragma: no cover - optional integration
     run_nl_router = None
-from scripts.odoo_enqueuer import enqueue_odoo
+try:
+    from scripts.odoo_enqueuer import enqueue_odoo
+except Exception:  # pragma: no cover - optional integration
+    def enqueue_odoo(*_args, **_kwargs):
+        raise RuntimeError("odoo_enqueuer_unavailable")
+
 from scripts.observability import record_event
-from scripts.research_enqueuer import enqueue_research
+try:
+    from scripts.research_enqueuer import enqueue_research
+except Exception:  # pragma: no cover - optional integration
+    def enqueue_research(*_args, **_kwargs):
+        return {"status": "unavailable", "reason": "research_enqueuer_unavailable", "task_id": ""}
 from scripts.repo_root import get_canonical_root
 from scripts.runtime_guardrails import is_real_peer, load_guardrails, redact_no_leak_report
 from scripts.session_memory_manager import append_event
 from scripts.sg_channel_policy import evaluate_sg_event
 from scripts.sg_promotion import enqueue_promotion
 from scripts.outbox_queue import enqueue_message
-from scripts.reminder_engine import add_reminder
-from scripts.status_reporter import build_status, render_status_text
+try:
+    from scripts.reminder_engine import add_reminder
+except Exception:  # pragma: no cover - optional integration
+    def add_reminder(*_args, **_kwargs):
+        return {"status": "unavailable", "id": ""}
+try:
+    from scripts.status_reporter import build_status, render_status_text
+except Exception:  # pragma: no cover - optional integration
+    def build_status(*_args, **_kwargs):
+        return {"status": "unavailable"}
+
+    def render_status_text(*_args, **_kwargs):
+        return "Status no disponible en este runtime."
 
 REPORT_JSON = Path("docs/_inbox/ingress_report_latest.json")
 REPORT_MD = Path("docs/_inbox/ingress_report_latest.md")
@@ -1065,14 +1085,20 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         elif "sg_worthy" in labels:
             actions["sg_promotion"] = _maybe_enqueue_sg_promotion(canonical_root, event, labels, session_id, {"sensitivity": "medium"})
 
-        actions["mission_activation"] = decide_mission_activation(
+        mission_activation_out = decide_mission_activation(
             canonical_root,
             event=event,
             intent=intent,
             session_id=session_id,
             sg_eval=sg_eval,
             owner_reply=actions["owner_reply"],
-        )["report"]
+        )
+        if isinstance(mission_activation_out, dict) and isinstance(mission_activation_out.get("report"), dict):
+            actions["mission_activation"] = mission_activation_out["report"]
+        elif isinstance(mission_activation_out, dict):
+            actions["mission_activation"] = mission_activation_out
+        else:
+            actions["mission_activation"] = {"status": "skipped", "reason": "mission_activation_invalid_output"}
         actions["research"] = _maybe_enqueue_research_request(canonical_root, event, intent, session_id)
         actions["reminder"] = _maybe_enqueue_reminder_request(canonical_root, event, intent, session_id)
         actions["odoo"] = _maybe_enqueue_odoo_request(canonical_root, event, intent, session_id)
