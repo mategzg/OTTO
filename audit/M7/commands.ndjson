@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:42:18Z", "cmd": "pytest -q tests/test_spec004_m7_day2.py tests/test_circuit_breaker.py", "output": "audit/M7/pytest_m7.txt"}
+{"ts": "2026-02-22T03:42:18Z", "cmd": "python3 -m scripts.day2_autonomy --root .", "output": "audit/M7/fault_injection_run.json"}

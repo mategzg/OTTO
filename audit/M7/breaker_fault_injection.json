@@ -1,0 +1,45 @@
+{
+  "after": {
+    "cron_jobs": {
+      "allowed": false,
+      "open_until": "2026-02-22T03:47:18.601480+00:00",
+      "reason": "timeouts:4",
+      "resource": "cron_jobs",
+      "status": "open"
+    },
+    "router": {
+      "allowed": true,
+      "resource": "nl_router",
+      "status": "closed"
+    },
+    "tooling": {
+      "allowed": true,
+      "resource": "tooling",
+      "status": "closed"
+    }
+  },
+  "before": {
+    "cron_jobs": {
+      "allowed": true,
+      "resource": "cron_jobs",
+      "status": "closed"
+    },
+    "router": {
+      "allowed": true,
+      "resource": "nl_router",
+      "status": "closed"
+    },
+    "tooling": {
+      "allowed": true,
+      "resource": "tooling",
+      "status": "closed"
+    }
+  },
+  "created_at": "2026-02-22T03:42:18.602468+00:00",
+  "cross_surface_breaker": {
+    "cron_allowed": false,
+    "router_allowed": true,
+    "tooling_allowed": true
+  },
+  "status": "ok"
+}
