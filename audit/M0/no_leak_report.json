@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "status": "implemented",
+  "checks": [
+    {
+      "id": "retrieval_snippets_redaction_path",
+      "status": "implemented",
+      "evidence": [
+        "scripts/channel_ingress_adapter.py::_redact_no_leak"
+      ]
+    },
+    {
+      "id": "citations_redaction_path",
+      "status": "implemented",
+      "evidence": [
+        "scripts/channel_ingress_adapter.py::_redact_no_leak"
+      ]
+    },
+    {
+      "id": "tool_output_archive_no_stdout_stderr",
+      "status": "tested",
+      "evidence": [
+        "tests/test_spec004_m0_guardrails.py::test_no_leak_outbox_archive_omits_tool_outputs"
+      ]
+    },
+    {
+      "id": "attachments_leak_control",
+      "status": "tested",
+      "evidence": [
+        "tests/test_spec004_m0_guardrails.py::test_no_leak_redaction_removes_attachments",
+        "scripts/channel_ingress_adapter.py::_redact_no_leak"
+      ]
+    }
+  ],
+  "artifacts": {
+    "tests": "audit/M0/pytest_spec004_m0.txt",
+    "security_audit": "audit/M0/security_audit_deep.json"
+  },
+  "generated_at": "2026-02-22T03:06:37Z"
+}

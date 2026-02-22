@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from scripts.repo_root import get_canonical_root
+from scripts.runtime_guardrails import is_real_peer
 
 POLICY_PATH = Path("state/channel_runtime_policy.json")
 SESSIONS_ROOT = Path("state/sessions")
@@ -252,6 +253,10 @@ def build_session_id(event: Dict[str, Any], policy: Dict[str, Any]) -> Dict[str,
             normalized[field] = _normalize_component(event.get(field, "otto"))
         else:
             normalized[field] = _normalize_component(event.get(field, ""))
+
+    if str(normalized.get("channel", "")).startswith("whatsapp") and str(normalized.get("chat_type", "")) == "dm":
+        if not is_real_peer(normalized.get("peer_id", "")):
+            raise ValueError("dm_scope_violation:whatsapp_requires_real_peer")
 
     tuple_raw = "|".join(normalized[field] for field in fields)
     prefix = str(schema.get("prefix", "rtm:v1"))
