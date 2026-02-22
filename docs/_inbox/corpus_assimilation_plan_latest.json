@@ -1,8 +1,8 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T04:25:36.741889+00:00",
+  "created_at": "2026-02-22T04:28:25.100237+00:00",
   "operations": [],
-  "plan_id": "PLAN-20260222T042536Z-f79ddaf7",
+  "plan_id": "PLAN-20260222T042825Z-f79ddaf7",
   "routing_decisions": [
     {
       "category": "ignore",
@@ -38,9 +38,9 @@
   "status": "ok",
   "stop_reasons": [],
   "thresholds": {
-    "max_bytes": 104857600,
+    "max_bytes": 130000000,
     "max_card_chars": 3000,
-    "max_files": 500,
+    "max_files": 100,
     "max_node_chars": 20000,
     "max_refs": 40
   },

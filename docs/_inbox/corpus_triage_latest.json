@@ -1,88 +1,13 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T04:25:36.738930+00:00",
+  "created_at": "2026-02-22T04:28:26.917225+00:00",
   "inbox_rel": "vault/inbox_raw",
-  "sources": [
-    {
-      "approx_language": "text",
-      "extensions": {
-        ".json": 1,
-        ".sha256": 1,
-        ".tar": 1,
-        ".txt": 3
-      },
-      "file_count": 6,
-      "files": [
-        {
-          "mtime": 1771734312.2243736,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/MANIFEST.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/MANIFEST.json",
-          "sha256": "41c225b48564a083032517fcb73ce30a8fd9c6bbbb62b72b4b18341fd87537e1",
-          "size": 368
-        },
-        {
-          "mtime": 1771734310.5145001,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/README.txt",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/README.txt",
-          "sha256": "378ed4493c500500d9bb8ac90ea7cd4bdf9c5c3d8062a3b48701b004989290e4",
-          "size": 85
-        },
-        {
-          "mtime": 1771734310.9050803,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/changes_name_status.txt",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/changes_name_status.txt",
-          "sha256": "743f5b5dc7dbec9a9900609ab1501c785cc043b0d605a21cc892fa8e89bfc3ee",
-          "size": 85203
-        },
-        {
-          "mtime": 1771734311.1133897,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/changes_stat.txt",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/changes_stat.txt",
-          "sha256": "5f07982a0c5dd6b9e0eea6bc25df99cfa340b97192e4de5afa85400b1e6f2ecc",
-          "size": 96189
-        },
-        {
-          "mtime": 1771734311.725299,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/files/backup_branch_snapshot_20260222T042510Z.tar",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/files/backup_branch_snapshot_20260222T042510Z.tar",
-          "sha256": "e963710d0f71c660ff4989e126d02078c9f1e292096fddd600a0bdf79518dfc8",
-          "size": 104642560
-        },
-        {
-          "mtime": 1771734312.193995,
-          "rel_path": "backup_branch_assimilation_20260222T042510Z/files/backup_branch_snapshot_20260222T042510Z.tar.sha256",
-          "root_rel_path": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/source/backup_branch_assimilation_20260222T042510Z/files/backup_branch_snapshot_20260222T042510Z.tar.sha256",
-          "sha256": "176e1546ae738d6fbc7955ca76c0aaa228a3d39ffb1bcb9ff4879fce0b8d125c",
-          "size": 65
-        }
-      ],
-      "high_signal": true,
-      "inbox_rel_path": "sources/20260222T042521Z_0cc409a21f",
-      "keywords": [
-        "backup_branch_snapshot_20260222t042510z",
-        "changes_name_status",
-        "changes_stat",
-        "json_export",
-        "manifest",
-        "readme",
-        "sha256"
-      ],
-      "kind": "dir",
-      "recommended_domain": "external_ingest",
-      "recommended_domain_source": "hints",
-      "source_hash": "0b5533b8bdcfbd320539f8e04b9c2ef2ad84d7c3b983054257cc187566ab052e",
-      "source_id": "8b2a4f7be1",
-      "source_kind": "json_export",
-      "source_name": "20260222T042521Z_0cc409a21f",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260222T042521Z_0cc409a21f",
-      "total_bytes": 104824470
-    }
-  ],
+  "sources": [],
   "summary": {
-    "high_signal_sources": 1,
-    "pending_files": 6,
-    "pending_sources": 1,
-    "pending_total_bytes": 104824470,
+    "high_signal_sources": 0,
+    "pending_files": 0,
+    "pending_sources": 0,
+    "pending_total_bytes": 0,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

@@ -1,13 +1,13 @@
 # Corpus Assimilation Plan
 
-- Plan ID: `PLAN-20260222T042536Z-f79ddaf7`
+- Plan ID: `PLAN-20260222T042825Z-f79ddaf7`
 - Status: `ok`
 - Stop reasons: ``
 - Pending sources(selected): 1
 - Pending sources(total): 1
 - Operations: 0
 - Routing summary: `{"ignore": 1}`
-- Plan path: `state/ingest_plans/PLAN-20260222T042536Z-f79ddaf7.json`
+- Plan path: `state/ingest_plans/PLAN-20260222T042825Z-f79ddaf7.json`
 - JSON report: `docs/_inbox/corpus_assimilation_plan_latest.json`
 - Log report: `logs/corpus_assimilation_plan_latest.json`
 

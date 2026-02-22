@@ -2,11 +2,11 @@
   "apply": {
     "ingested": [
       {
-        "hints": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/HINTS.json",
-        "manifest": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f/MANIFEST.json",
-        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042521Z_0cc409a21f/original/backup_branch_assimilation_20260222T042510Z",
-        "source_id": "0cc409a21f",
-        "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f",
+        "hints": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042707Z_cd8c522cc7/original/backup_semantic_extract_20260222T042656Z",
+        "source_id": "cd8c522cc7",
+        "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7",
         "suspected_kind": "json_export"
       }
     ],
@@ -15,7 +15,7 @@
   },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T04:25:22.338277+00:00",
+  "created_at": "2026-02-22T04:27:07.687769+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
   "state_path": "state/intake_state.json",

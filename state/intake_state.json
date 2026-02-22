@@ -1,13 +1,18 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 4,
-  "last_run_utc": "2026-02-22T04:25:22.336812+00:00",
+  "ingested_count_total": 5,
+  "last_run_utc": "2026-02-22T04:27:07.686227+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
       "ingested_at": "2026-02-19T06:14:42.554035+00:00",
       "source_id": "dcfe08f56e",
       "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e"
+    },
+    "3d56b3f514cf38240e341775eab1d17768b9e6474bdf3ae16dcb98de91a5113e": {
+      "ingested_at": "2026-02-22T04:27:07.685708+00:00",
+      "source_id": "cd8c522cc7",
+      "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7"
     },
     "5cb799bfda0ce6de33547faa91281131daccd00fc9a8157500de165de7233590": {
       "ingested_at": "2026-02-19T13:34:32.466350+00:00",
@@ -48,6 +53,13 @@
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T131816Z_bb980d1560/original/legacy_recovery",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560",
       "suspected_kind": "generic_corpus"
+    },
+    "cd8c522cc7": {
+      "ingested_at": "2026-02-22T04:27:07.685951+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042707Z_cd8c522cc7/original/backup_semantic_extract_20260222T042656Z",
+      "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7",
+      "suspected_kind": "json_export"
     },
     "dcfe08f56e": {
       "ingested_at": "2026-02-19T06:14:42.554245+00:00",
