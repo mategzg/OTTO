@@ -11,6 +11,15 @@ from scripts.repo_root import get_canonical_root
 
 POLICY_PATH = Path("state/retrieval_policy.json")
 TOKEN_RE = re.compile(r"[a-z0-9_áéíóúñ]+", re.IGNORECASE)
+STOPWORDS = {
+    # es
+    "de", "la", "el", "los", "las", "un", "una", "unos", "unas", "y", "o", "u", "en", "con", "sin",
+    "por", "para", "del", "al", "que", "como", "se", "es", "a", "mi", "tu", "su", "lo", "le", "te",
+    "si", "no", "ya", "mas", "más", "sobre", "esta", "este", "estos", "estas",
+    # en
+    "the", "a", "an", "and", "or", "to", "of", "in", "on", "for", "with", "without", "is", "are", "be",
+    "as", "by", "from", "at", "that", "this", "these", "those", "it",
+}
 
 DEFAULT_POLICY: Dict[str, Any] = {
     "retrieval_v2": {
@@ -58,7 +67,15 @@ def _load_json(path: Path) -> Dict[str, Any]:
 
 
 def _tokenize(text: str) -> List[str]:
-    return [t.lower() for t in TOKEN_RE.findall(text or "") if len(t) > 1]
+    out: List[str] = []
+    for raw in TOKEN_RE.findall(text or ""):
+        t = raw.lower()
+        if len(t) <= 1:
+            continue
+        if t in STOPWORDS:
+            continue
+        out.append(t)
+    return out
 
 
 def _policy(root: Path) -> Dict[str, Any]:
@@ -134,14 +151,15 @@ def _jaccard(a: List[str], b: List[str]) -> float:
 
 
 def _phrase_boost(query: str, text: str) -> float:
-    q = " ".join(_tokenize(query))
-    t = " ".join(_tokenize(text))
+    q_tokens_raw = [t.lower() for t in TOKEN_RE.findall(query or "") if len(t) > 1]
+    t_tokens_raw = [t.lower() for t in TOKEN_RE.findall(text or "") if len(t) > 1]
+    q = " ".join(q_tokens_raw)
+    t = " ".join(t_tokens_raw)
     if q and q in t:
         return 1.0
     # light ordered-token boost
-    tokens = _tokenize(query)
-    if len(tokens) >= 2:
-        two = " ".join(tokens[:2])
+    if len(q_tokens_raw) >= 2:
+        two = " ".join(q_tokens_raw[:2])
         if two in t:
             return 0.35
     return 0.0
