@@ -27,12 +27,12 @@ Definir a que agente delegar cada tipo de trabajo manteniendo autoridad unica y 
   - No usar coder autonomo end-to-end.
   - Ejecutar en modo supervisado por etapas (plan -> implementacion parcial -> validacion) con checkpoints humanos.
   - Requiere evidencia dura por fase (diff, tests, riesgos, rollback) antes de cerrar.
-- **P1 - Importante pero controlable**
-  - Permitir coder con supervisor y gates intermedios.
-  - El handoff final es necesario pero no suficiente: debe incluir verificacion de pruebas y alcance.
+- **P1 - Importante / clave de calidad**
+  - Sin coder autonomo.
+  - Resolver directo (manual/asistido) con control de contexto completo y checkpoints de precision.
 - **P2 - Repetitivo, bajo riesgo, receta conocida**
   - Delegacion directa a coder permitida para ahorrar cuota/contexto.
-  - Requiere handoff minimo verificable (archivos, pruebas, estado final).
+  - No requiere vigilancia en vivo: basta handoff verificable al cierre (archivos, pruebas, estado final).
 
 ## Delegation Record
 
