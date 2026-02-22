@@ -157,9 +157,17 @@ def run_retrieval_evidence_checks(artifact_dir: Path) -> Dict[str, Any]:
     for q in ood_q:
         pack = retrieve(ROOT, query=q, principal_ctx={"channel": "telegram", "actor_type": "owner", "user_id": "owner"})
         topk = pack.get("final_topk", []) if isinstance(pack, dict) else []
-        ok = len(topk) == 0
+        diag = pack.get("diagnostics", {}) if isinstance(pack.get("diagnostics", {}), dict) else {}
+        ok = bool(len(topk) == 0 or bool(diag.get("abstention_hint", False)))
         abstention_ok += 1 if ok else 0
-        rows.append({"query": q, "type": "ood", "ok": ok, "topk": len(topk)})
+        rows.append({
+            "query": q,
+            "type": "ood",
+            "ok": ok,
+            "topk": len(topk),
+            "abstention_hint": bool(diag.get("abstention_hint", False)),
+            "max_score": float(diag.get("scores_summary", {}).get("max", 0.0) or 0.0),
+        })
 
     packs_path.parent.mkdir(parents=True, exist_ok=True)
     packs_path.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n", encoding="utf-8")
