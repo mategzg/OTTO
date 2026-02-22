@@ -15,3 +15,8 @@
 
 ## Nota de alcance
 - Umbrales, políticas de canal y detalles de runtime van fuera de profile (`TODO` en rama operativa).
+
+## Addendum (reingest 2026-02-22)
+- Preferencia explícita por interacción NL-first y no depender de comandos/triggers (confianza alta).
+- Preferencia de trabajar principalmente en `otto-workspace` (confianza alta).
+- Preferencia por evitar flujos destructivos de repo (no stash/vaciado masivo) (confianza alta).

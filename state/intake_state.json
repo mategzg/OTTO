@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 5,
-  "last_run_utc": "2026-02-22T04:27:07.686227+00:00",
+  "ingested_count_total": 6,
+  "last_run_utc": "2026-02-22T16:25:20.697946+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -19,6 +19,11 @@
       "source_id": "6c8e0dd191",
       "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191"
     },
+    "7f7e6ddb78caa6c4a1bbd0fb7158cd00e159174d153285f5ab2395cfae3891e6": {
+      "ingested_at": "2026-02-22T16:25:20.697433+00:00",
+      "source_id": "065f800160",
+      "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160"
+    },
     "b1bf45b84f802f0fd71bb794f75aa9fe3a5a5579aa6e34f1f3613472f21d1291": {
       "ingested_at": "2026-02-19T13:18:16.856368+00:00",
       "source_id": "bb980d1560",
@@ -31,6 +36,13 @@
     }
   },
   "sources": {
+    "065f800160": {
+      "ingested_at": "2026-02-22T16:25:20.697677+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T162442Z_065f800160/original/a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)",
+      "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160",
+      "suspected_kind": "chatgpt_export_candidate"
+    },
     "0cc409a21f": {
       "ingested_at": "2026-02-22T04:25:22.336539+00:00",
       "normalized": false,

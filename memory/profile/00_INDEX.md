@@ -21,6 +21,7 @@ Objetivo: mantener un perfil operativo de alta señal (identidad, preferencias e
 - `memory/profile/70_COLLABORATION_BOUNDARIES.md`: límites y responsabilidades de colaboración.
 - `memory/profile/80_MENTALITY_COMPASS.md`: brújula mentalidad/filtro interno de decisión.
 - `memory/profile/90_OPEN_QUESTIONS.md`: incertidumbres activas (`NO_VERIFICADO`).
+- `memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md`: evidencia puntual de la segunda pasada de reingest perfil/memoria.
 
 ## Norma de señal
 - Priorizar hechos observables y repetibles.

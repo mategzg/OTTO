@@ -14,3 +14,7 @@
 
 ## Señal de buena decisión
 - Reduce fricción estructural y mejora velocidad con calidad en ciclos futuros.
+
+## Addendum (reingest 2026-02-22)
+- Patrón de decisión recurrente: priorizar control de colisión operacional ("un codex / un repo") sobre paralelismo caótico.
+- Patrón de decisión táctica: aplicar cambios operativos conservadores cuando detecta riesgo de comportamiento no deseado (p.ej. limpieza temporal de jobs).
