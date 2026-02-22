@@ -1,0 +1,613 @@
+{
+  "created_at": "2026-02-22T19:16:51.402893+00:00",
+  "queries_total": 60,
+  "queries_with_hits": 48,
+  "overall_hit_rate": 0.8,
+  "by_bucket": {
+    "professional_sg": {
+      "queries": 5,
+      "hits": 4,
+      "hit_rate": 0.8
+    },
+    "personal_development": {
+      "queries": 5,
+      "hits": 5,
+      "hit_rate": 1.0
+    },
+    "profile_owner": {
+      "queries": 5,
+      "hits": 4,
+      "hit_rate": 0.8
+    },
+    "vision_owner": {
+      "queries": 5,
+      "hits": 5,
+      "hit_rate": 1.0
+    },
+    "biography_history": {
+      "queries": 5,
+      "hits": 4,
+      "hit_rate": 0.8
+    },
+    "strategy_business": {
+      "queries": 5,
+      "hits": 5,
+      "hit_rate": 1.0
+    },
+    "philosophy": {
+      "queries": 5,
+      "hits": 3,
+      "hit_rate": 0.6
+    },
+    "psychology": {
+      "queries": 5,
+      "hits": 5,
+      "hit_rate": 1.0
+    },
+    "neuroscience_health": {
+      "queries": 5,
+      "hits": 4,
+      "hit_rate": 0.8
+    },
+    "persuasion_communication": {
+      "queries": 5,
+      "hits": 2,
+      "hit_rate": 0.4
+    },
+    "habits_execution": {
+      "queries": 5,
+      "hits": 4,
+      "hit_rate": 0.8
+    },
+    "misc_knowledge": {
+      "queries": 5,
+      "hits": 3,
+      "hit_rate": 0.6
+    }
+  },
+  "gaps": [
+    {
+      "bucket": "professional_sg",
+      "query": "estandares de ventas y postventa",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "limites de colaboracion",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "biography_history",
+      "query": "hitos cronologicos 2026",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "philosophy",
+      "query": "etica de ejecucion",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "philosophy",
+      "query": "marcos filosoficos practicos",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "higiene de estres",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "manejo de objeciones",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "framework de comunicacion",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "negociacion efectiva",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "checklist de consistencia",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "aprendizajes transversales",
+      "gap": "no lexical hit in synthesized branches"
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "notas auxiliares",
+      "gap": "no lexical hit in synthesized branches"
+    }
+  ],
+  "query_results": [
+    {
+      "bucket": "professional_sg",
+      "query": "operacion SG acabados",
+      "hits": 1,
+      "top_match": "brain/domains/sg_acabados/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "professional_sg",
+      "query": "estandares de ventas y postventa",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "professional_sg",
+      "query": "flujo legal cobranza peru",
+      "hits": 3,
+      "top_match": "brain/domains/sg_acabados/40_PERSUASION_AND_CLIENT_COMMUNICATION.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "professional_sg",
+      "query": "runbook operaciones odoo",
+      "hits": 1,
+      "top_match": "brain/domains/sg_acabados/40_PERSUASION_AND_CLIENT_COMMUNICATION.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "professional_sg",
+      "query": "gobernanza accountability sg",
+      "hits": 2,
+      "top_match": "brain/domains/sg_acabados/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "personal_development",
+      "query": "stack desarrollo personal transferible",
+      "hits": 6,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 4,
+      "pass": true
+    },
+    {
+      "bucket": "personal_development",
+      "query": "criterios de autocontrol",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "personal_development",
+      "query": "aprendizaje continuo practico",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "personal_development",
+      "query": "mejorar capacidad de ejecucion",
+      "hits": 4,
+      "top_match": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "personal_development",
+      "query": "framework crecimiento personal",
+      "hits": 3,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "preferencias operativas de mateo",
+      "hits": 4,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "contrato de comunicacion owner",
+      "hits": 5,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "estilo de trabajo del owner",
+      "hits": 9,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "limites de colaboracion",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "profile_owner",
+      "query": "reglas perfil actual",
+      "hits": 7,
+      "top_match": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "vision_owner",
+      "query": "mision autonomia absoluta",
+      "hits": 3,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 3,
+      "pass": true
+    },
+    {
+      "bucket": "vision_owner",
+      "query": "north star del sistema",
+      "hits": 9,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "vision_owner",
+      "query": "vision de capacidad responsabilidad",
+      "hits": 5,
+      "top_match": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "vision_owner",
+      "query": "horizonte estrategico owner",
+      "hits": 4,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "vision_owner",
+      "query": "principios de vision",
+      "hits": 4,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "biography_history",
+      "query": "eventos historicos clave del owner",
+      "hits": 7,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "biography_history",
+      "query": "hitos cronologicos 2026",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "biography_history",
+      "query": "timeline de decisiones",
+      "hits": 2,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "biography_history",
+      "query": "biografia operativa relevante",
+      "hits": 1,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "biography_history",
+      "query": "historial de cambios de enfoque",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/41_HABITS_EXECUTION_SYSTEMS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "strategy_business",
+      "query": "estrategia de negocio",
+      "hits": 4,
+      "top_match": "brain/domains/personal_ops/42_PERSONAL_DEVELOPMENT_SYNTHESIS.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "strategy_business",
+      "query": "priorizacion de funciones business",
+      "hits": 3,
+      "top_match": "brain/domains/sg_acabados/40_PERSUASION_AND_CLIENT_COMMUNICATION.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "strategy_business",
+      "query": "modelo go to market",
+      "hits": 3,
+      "top_match": "brain/domains/sg_acabados/30_STRATEGY_BUSINESS_PLAYBOOK.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "strategy_business",
+      "query": "decision sobre margenes y pricing",
+      "hits": 5,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "strategy_business",
+      "query": "framework de crecimiento empresarial",
+      "hits": 2,
+      "top_match": "brain/domains/sg_acabados/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "philosophy",
+      "query": "filosofia aplicada a decisiones",
+      "hits": 3,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "philosophy",
+      "query": "criterio epistemico de verdad",
+      "hits": 6,
+      "top_match": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "philosophy",
+      "query": "etica de ejecucion",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "philosophy",
+      "query": "virtud y disciplina",
+      "hits": 2,
+      "top_match": "brain/domains/personal_ops/41_HABITS_EXECUTION_SYSTEMS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "philosophy",
+      "query": "marcos filosoficos practicos",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "psychology",
+      "query": "psicologia de comportamiento",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "psychology",
+      "query": "sesgos en toma de decisiones",
+      "hits": 2,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "psychology",
+      "query": "motivacion y autorregulacion",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/37_PSYCHOLOGY_BEHAVIOR_MODELS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "psychology",
+      "query": "gestion emocional para ejecucion",
+      "hits": 14,
+      "top_match": "brain/domains/personal_ops/37_PSYCHOLOGY_BEHAVIOR_MODELS.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "psychology",
+      "query": "modelos psicologicos aplicables",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/37_PSYCHOLOGY_BEHAVIOR_MODELS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "protocolo de sueño y energia",
+      "hits": 2,
+      "top_match": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "neurociencia de atencion",
+      "hits": 2,
+      "top_match": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "top_score": 2,
+      "pass": true
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "higiene de estres",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "salud para rendimiento cognitivo",
+      "hits": 14,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 3,
+      "pass": true
+    },
+    {
+      "bucket": "neuroscience_health",
+      "query": "recuperacion y foco",
+      "hits": 3,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "tecnicas de persuasion",
+      "hits": 3,
+      "top_match": "brain/domains/sg_acabados/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "manejo de objeciones",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "framework de comunicacion",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "copywriting para conversion",
+      "hits": 14,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "persuasion_communication",
+      "query": "negociacion efectiva",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "sistemas de habitos",
+      "hits": 2,
+      "top_match": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "rutinas de ejecucion diaria",
+      "hits": 1,
+      "top_match": "brain/domains/personal_ops/00_INDEX.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "checklist de consistencia",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "disciplina operacional",
+      "hits": 2,
+      "top_match": "brain/domains/personal_ops/41_HABITS_EXECUTION_SYSTEMS.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "habits_execution",
+      "query": "deep work aplicado",
+      "hits": 3,
+      "top_match": "memory/01_PROFILE_CURRENT.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "conocimiento general no categorizado",
+      "hits": 4,
+      "top_match": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "temas varios del export",
+      "hits": 13,
+      "top_match": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "top_score": 3,
+      "pass": true
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "aprendizajes transversales",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "insights complementarios",
+      "hits": 11,
+      "top_match": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "top_score": 1,
+      "pass": true
+    },
+    {
+      "bucket": "misc_knowledge",
+      "query": "notas auxiliares",
+      "hits": 0,
+      "top_match": "",
+      "top_score": 0,
+      "pass": false
+    }
+  ],
+  "version": 1
+}

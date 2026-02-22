@@ -47,3 +47,10 @@ Excludes by design:
 
 ## Maintenance Rule
 If a rule repeats in multiple branches, keep one canonical copy and cross-reference it.
+
+- `36_PHILOSOPHY_DECISION_MODELS.md` - filosofía aplicada para criterios de decisión.
+- `37_PSYCHOLOGY_BEHAVIOR_MODELS.md` - psicología aplicada a conducta y autorregulación.
+- `38_NEUROSCIENCE_HEALTH_PROTOCOLS.md` - neurociencia/salud para rendimiento sostenido.
+- `39_PERSUASION_COMMUNICATION_SYSTEMS.md` - persuasión y comunicación estratégica.
+- `41_HABITS_EXECUTION_SYSTEMS.md` - sistemas de hábitos y ejecución diaria.
+- `42_PERSONAL_DEVELOPMENT_SYNTHESIS.md` - síntesis transversal de desarrollo personal.

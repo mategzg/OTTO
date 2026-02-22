@@ -1,0 +1,152 @@
+{
+  "created_at": "2026-02-22T19:16:51.297994+00:00",
+  "messages_path": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160/normalized/messages.ndjson",
+  "processed_root": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160",
+  "buckets": {
+    "professional_sg": {
+      "count": 5017,
+      "avg_confidence": 0.711,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/professional_sg.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "personal_development": {
+      "count": 1023,
+      "avg_confidence": 0.63,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/personal_development.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "profile_owner": {
+      "count": 1789,
+      "avg_confidence": 0.626,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/profile_owner.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "vision_owner": {
+      "count": 1121,
+      "avg_confidence": 0.647,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/vision_owner.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "biography_history": {
+      "count": 2280,
+      "avg_confidence": 0.636,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/biography_history.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "strategy_business": {
+      "count": 496,
+      "avg_confidence": 0.661,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/strategy_business.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "philosophy": {
+      "count": 394,
+      "avg_confidence": 0.66,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/philosophy.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "psychology": {
+      "count": 651,
+      "avg_confidence": 0.688,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/psychology.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "neuroscience_health": {
+      "count": 562,
+      "avg_confidence": 0.683,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/neuroscience_health.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "persuasion_communication": {
+      "count": 344,
+      "avg_confidence": 0.659,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/persuasion_communication.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "habits_execution": {
+      "count": 594,
+      "avg_confidence": 0.678,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/habits_execution.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    },
+    "misc_knowledge": {
+      "count": 8815,
+      "avg_confidence": 0.2,
+      "manifest": "docs/_inbox/export_raw_buckets_latest/misc_knowledge.json",
+      "sample_refs": [
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json",
+        "a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)/conversations.json"
+      ]
+    }
+  },
+  "version": 1
+}

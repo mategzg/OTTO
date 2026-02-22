@@ -25,3 +25,6 @@ Resumen operativo del perfil de Mateo (basado en evidencia explícita del export
 
 ## Fuente canónica ramificada
 - `memory/profile/00_INDEX.md`
+
+## Reprocess updates
+- Reprocess 2026-02-22 raw-first: `memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md`
