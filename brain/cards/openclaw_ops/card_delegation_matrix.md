@@ -15,6 +15,9 @@ Matriz corta de delegacion operativa:
 - default -> Codex
 - plugins/rules/imports `.claude/*` -> Claude Code
 - cowork permitido -> Codex + Claude Cowork
+- P0 critico/primera vez/alto riesgo -> NO coder autonomo (modo supervisado por etapas)
+- P1 importante -> coder + supervisor + gates
+- P2 repetitivo/bajo riesgo -> coder directo con handoff minimo verificable
 
 ## How to apply
 

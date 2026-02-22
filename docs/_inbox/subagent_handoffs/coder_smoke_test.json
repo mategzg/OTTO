@@ -1,0 +1,14 @@
+{
+  "mission_id": "coder-smoke-test-2026-02-22",
+  "delegate_to": "codex",
+  "status": "completed",
+  "completed_at": "2026-02-22T21:21:54Z",
+  "files_changed": [
+    "docs/_inbox/subagent_handoffs/coder_smoke_test.json",
+    "docs/_inbox/coder_smoke_result.md"
+  ],
+  "tests": [
+    "artifact_write_smoke"
+  ],
+  "summary": "Smoke test handoff artifacts were created successfully with minimal safe changes."
+}
