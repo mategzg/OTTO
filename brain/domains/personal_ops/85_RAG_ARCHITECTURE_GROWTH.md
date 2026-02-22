@@ -7,8 +7,10 @@ La optimización de RAG es responsabilidad permanente del sistema, no trabajo pu
 1. Integrar conocimiento nuevo en ramas canónicas por dominio.
 2. Evitar sinks aislados tipo `*_CAPABILITY_EXTRACT_*` como destino primario.
 3. Mantener límites PROFILE vs BRAIN estrictos.
-4. Actualizar índices/mapas de navegación en el mismo ciclo de promoción.
-5. Ejecutar checks de routing/retrieval tras cambios estructurales.
+4. Aplicar **raw-first bucketization** antes de cualquier síntesis.
+5. Actualizar índices/mapas de navegación en el mismo ciclo de promoción.
+6. Ejecutar checks de routing/retrieval tras cambios estructurales.
+7. Operar proactivamente ante nuevos exports (sin esperar comandos), con reporte de evidencia.
 
 ## Routing canónico mínimo
 - Profesional/empresa -> `brain/domains/sg_acabados/*`
