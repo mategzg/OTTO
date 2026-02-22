@@ -2,8 +2,10 @@
 
 Componentes habilitados:
 - STT local: `faster-whisper`
-- OCR local (sin Tesseract): `rapidocr-onnxruntime`
+- OCR local: `rapidocr-onnxruntime` + `Tesseract/OCRmyPDF`
 - Vector DB local: `Qdrant` (binario local)
+- Automatización local: `n8n`
+- Monitoreo local: `Prometheus + Loki + Promtail + Grafana`
 
 ## 1) Instalar + arrancar Qdrant
 ```bash
@@ -16,7 +18,29 @@ bash free_stack/start_qdrant.sh
 python3 free_stack/validate_phase1.py
 ```
 
-## 3) Uso rápido
+## 3) Fase 2 (n8n + monitoreo)
+### Instalar binarios de observabilidad
+```bash
+bash free_stack/install_phase2.sh
+```
+
+### Arrancar n8n
+```bash
+bash free_stack/start_n8n.sh
+```
+
+### Arrancar monitoreo
+```bash
+bash free_stack/start_monitoring.sh
+```
+
+Paneles:
+- n8n: http://127.0.0.1:5678
+- Prometheus: http://127.0.0.1:9090
+- Loki: http://127.0.0.1:3100
+- Grafana: http://127.0.0.1:3000  (login inicial: `admin` / `admin`)
+
+## 4) Uso rápido
 ### Transcribir audio
 ```python
 from faster_whisper import WhisperModel
