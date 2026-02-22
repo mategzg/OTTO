@@ -16,6 +16,7 @@ from scripts.retrieval_service import retrieve as retrieval_v2_retrieve
 from scripts.evidence_guard import build_and_validate as evidence_build_and_validate
 from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
+from scripts.runtime_guardrails import is_tool_allowed
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
 RETRIEVAL_POLICY_PATH = Path("state/retrieval_policy.json")
@@ -112,6 +113,7 @@ def run_nl_router(
     message_id: str = "",
     timeout_ms: int = 1500,
     cancel_requested: bool = False,
+    agent_id: str = "otto",
 ) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     ensure_default_registries(canonical_root)
@@ -218,6 +220,10 @@ def run_nl_router(
                 "selected_target": str(fallback.get("selected_target", "rag.answer")),
             }
 
+        tool_gate = is_tool_allowed(canonical_root, agent_id=agent_id or "otto", target=str(route["selected_target"]))
+        if not bool(tool_gate.get("allowed", False)):
+            route = {"route_type": "tool", "selected_target": "rag.answer"}
+
         pol = _policy(canonical_root)
 
         repeat = _safe_int(repeat_count_30d)
@@ -264,6 +270,7 @@ def run_nl_router(
                 "checked": True,
                 "resolution": resolution,
             },
+            "tool_policy": tool_gate,
         }
 
         retrieval_v2 = {
@@ -465,6 +472,7 @@ def main() -> int:
         message_id=args.message_id,
         timeout_ms=args.timeout_ms,
         cancel_requested=args.cancel,
+        agent_id="otto",
     )
     print(json.dumps(out, indent=2, ensure_ascii=False, sort_keys=True))
     return 0

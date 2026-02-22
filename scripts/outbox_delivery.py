@@ -27,6 +27,7 @@ from scripts.outbox_queue import (
     write_latest_snapshot,
 )
 from scripts.repo_root import get_canonical_root
+from scripts.runtime_guardrails import load_guardrails
 
 REPORT_JSON = Path("docs/_inbox/outbox_delivery_report_latest.json")
 REPORT_MD = Path("docs/_inbox/outbox_delivery_report_latest.md")
@@ -57,6 +58,22 @@ def _report_paths() -> Dict[str, str]:
         "log": LOG_JSON.as_posix(),
         "queue": OUTBOX_QUEUE_PATH.as_posix(),
     }
+
+
+def _should_block_send(item: Dict[str, Any], guardrails: Dict[str, Any]) -> bool:
+    send_policy = guardrails.get("send_policy", {}) if isinstance(guardrails.get("send_policy", {}), dict) else {}
+    source_ref = str(item.get("source_ref", "")).strip().lower()
+    blocked_sources = [str(x).lower() for x in send_policy.get("block_sources", []) if str(x).strip()]
+    if not any(source_ref.startswith(prefix) for prefix in blocked_sources):
+        return False
+    channel = str(item.get("channel", "")).strip().lower()
+    protected_channels = [str(x).lower() for x in send_policy.get("protected_channels", []) if str(x).strip()]
+    if protected_channels and not any(channel.startswith(pc) for pc in protected_channels):
+        return False
+    metadata = item.get("metadata", {}) if isinstance(item.get("metadata", {}), dict) else {}
+    recipient_type = str(metadata.get("recipient_type", "client")).strip().lower() or "client"
+    internal_types = {str(x).lower() for x in send_policy.get("internal_recipient_types", []) if str(x).strip()}
+    return recipient_type not in internal_types
 
 
 def _write_report(root: Path, report: Dict[str, Any]) -> None:
@@ -98,6 +115,7 @@ def run_scan(root: str | Path) -> Dict[str, Any]:
             "delivered_in_run": 0,
             "failed_in_run": 0,
             "missing_target": 0,
+            "blocked_by_policy": 0,
         },
         "snapshot_path": snapshot,
         "items_preview": [
@@ -134,9 +152,11 @@ def run_deliver(
     delivered_count = 0
     failed_count = 0
     missing_target = 0
+    blocked_by_policy = 0
     failures: List[Dict[str, Any]] = []
     delivered_rows: List[Dict[str, Any]] = []
     batch_id = "deliver_" + stamp()
+    guardrails = load_guardrails(canonical_root)
 
     for item in to_process:
         if (time.monotonic() - start) >= max(1, int(max_runtime_seconds)):
@@ -147,6 +167,20 @@ def run_deliver(
         target = str(item.get("target", "")).strip()
         text = str(item.get("text", ""))
         channel = str(item.get("channel", "telegram_owner"))
+
+        if _should_block_send(item, guardrails):
+            append_delivery_event(
+                canonical_root,
+                item_id=item_id,
+                status="failed_terminal",
+                delivered=False,
+                attempt_count=attempt_count,
+                last_error="blocked_send_policy",
+            )
+            blocked_by_policy += 1
+            failed_count += 1
+            failures.append({"id": item_id, "reason": "blocked_send_policy"})
+            continue
 
         if not target:
             append_delivery_event(
@@ -195,8 +229,6 @@ def run_deliver(
             row_copy["delivery_batch_id"] = batch_id
             row_copy["delivery_info"] = {
                 "cmd": sent.get("cmd", []),
-                "stdout": sent.get("stdout", ""),
-                "stderr": sent.get("stderr", ""),
                 "returncode": sent.get("returncode", 0),
             }
             delivered_rows.append(row_copy)
@@ -232,6 +264,7 @@ def run_deliver(
             "delivered_in_run": delivered_count,
             "failed_in_run": failed_count,
             "missing_target": missing_target,
+            "blocked_by_policy": blocked_by_policy,
         },
         "archive": archive,
         "snapshot_path": snapshot,
