@@ -1,29 +1,47 @@
-# RAG local optimizado (Qdrant)
+# RAG local optimizado (Qdrant “oro”)
 
-## Qué hace
-- Chunking con overlap
-- Embeddings multilingües locales
-- Indexado en Qdrant
-- Búsqueda híbrida (dense + BM25) con rerank simple
+## Implementado
+- Hybrid real en Qdrant:
+  - vector `dense` (semántico)
+  - vector `sparse` (keywords BM25-like hash tf-idf)
+- Filtro estricto por payload antes de topK (anti-leaks)
+- Payload indexes para performance
+- Query pipeline con RRF + dedupe/diversidad + citas auditables
+- Contrato de evidencia: sin evidencia => `NO_VERIFICADO + GAPS`
 
 ## 1) Asegura Qdrant
 ```bash
 bash free_stack/start_qdrant.sh
 ```
 
-## 2) Prepara corpus
-Guarda tus textos `.txt` en una carpeta, ejemplo:
-`data/rag_corpus/*.txt`
-
-## 3) Construir índice
+## 2) Indexar con metadata de seguridad
 ```bash
-python3 free_stack/rag/build_rag_index.py --input-dir data/rag_corpus --collection rag_local
+python3 free_stack/rag/build_rag_index.py \
+  --input-dir data/rag_corpus \
+  --collection rag_local \
+  --audience staff \
+  --domain sg \
+  --channel whatsapp \
+  --peer-id 51999999999 \
+  --thread-id none \
+  --doc-type note
 ```
 
-## 4) Consultar
+## 3) Consultar con filtros (obligatorio)
 ```bash
-python3 free_stack/rag/query_rag.py --collection rag_local --query "¿Qué decidimos sobre precios de melamina?"
+python3 free_stack/rag/query_rag.py \
+  --collection rag_local \
+  --query "SKU-MEL-123 precio" \
+  --audience staff \
+  --domain sg \
+  --channel whatsapp \
+  --peer_id 51999999999 \
+  --top-n-candidates 120 \
+  --top-k-final 10 \
+  --max-per-doc 2
 ```
 
-## Tip pro
-Convierte primero audios/PDF/imagenes a texto con el stack ya instalado, y luego indexa esos `.txt` aquí.
+## 4) Certificación mínima
+```bash
+python3 free_stack/rag/validate_rag.py
+```
