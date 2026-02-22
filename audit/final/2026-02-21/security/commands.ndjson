@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:06:37Z", "cmd": "pytest -q tests/test_spec004_m0_guardrails.py tests/test_session_memory_manager.py tests/test_outbox_queue_and_delivery_mock_cli.py tests/test_nl_skill_router.py tests/test_acl_no_leak_candidates.py tests/test_acl_no_leak_citations.py", "output": "audit/M0/pytest_spec004_m0.txt"}
+{"ts": "2026-02-22T03:06:37Z", "cmd": "openclaw security audit --deep --json > audit/M0/security_audit_deep.json", "output": "audit/M0/security_audit_deep.json"}
