@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 3,
-  "last_run_utc": "2026-02-19T15:35:06.489911+00:00",
+  "ingested_count_total": 4,
+  "last_run_utc": "2026-02-22T04:25:22.336812+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -18,9 +18,21 @@
       "ingested_at": "2026-02-19T13:18:16.856368+00:00",
       "source_id": "bb980d1560",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
+    },
+    "f938adeeb8f7ea858d6e4962146238f6ded36edbb91a391fd1f90445f4b79685": {
+      "ingested_at": "2026-02-22T04:25:22.336305+00:00",
+      "source_id": "0cc409a21f",
+      "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f"
     }
   },
   "sources": {
+    "0cc409a21f": {
+      "ingested_at": "2026-02-22T04:25:22.336539+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042521Z_0cc409a21f/original/backup_branch_assimilation_20260222T042510Z",
+      "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f",
+      "suspected_kind": "json_export"
+    },
     "6c8e0dd191": {
       "ingested_at": "2026-02-19T13:34:32.466557+00:00",
       "normalized": false,
