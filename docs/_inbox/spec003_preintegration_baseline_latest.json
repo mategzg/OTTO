@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-02-22T00:00:00Z",
+  "status": "ready_for_external_design_integration",
+  "summary": {
+    "current_commit": "f71d295",
+    "working_tree_dirty_entries": 1410,
+    "runtime": {
+      "python": "3.10.12",
+      "node": "v22.22.0"
+    },
+    "spec003_progress": {
+      "m0": "done",
+      "m1": "done",
+      "m2": "done",
+      "m3": "done",
+      "m4": "done",
+      "m5": "done",
+      "m6": "done",
+      "m7": "done"
+    },
+    "test_suite": {
+      "focused_tests": 17,
+      "status": "pass"
+    }
+  },
+  "critical_entrypoints": [
+    "scripts/nl_skill_router.py::run_nl_router",
+    "scripts/retrieval_service.py::retrieve",
+    "scripts/evidence_guard.py::build_and_validate",
+    "scripts/circuit_breaker.py::should_allow",
+    "scripts/heartbeat_worker.py::run_heartbeat_once",
+    "scripts/day2_doc_inventory.py::run_day2_inventory_sync",
+    "scripts/golden_regression_runner.py::run_golden_regression",
+    "scripts/golden_regression_gate.py::run_gate",
+    "scripts/release_audit.py::run_release_audit"
+  ],
+  "integration_rules": {
+    "no_blind_merge": true,
+    "require_phase_gates": true,
+    "require_tests_per_phase": true,
+    "require_rollback_path": true
+  },
+  "next_safe_steps_without_external_design": [
+    "Freeze a pre-integration branch for comparison",
+    "Add adapter seams instead of replacing entrypoints",
+    "Add compatibility tests for router/retrieval/evidence contracts",
+    "Prepare migration checklist for state/* policy files"
+  ],
+  "version": 1
+}
