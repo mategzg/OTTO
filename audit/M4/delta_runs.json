@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "checks": {
+    "delta_token_persisted": true,
+    "rename_delete_tombstones": true,
+    "audience_enforcement": true,
+    "incremental_idempotent_rerun": true
+  },
+  "artifacts": [
+    "state/sharepoint_sync_state.json",
+    "state/sharepoint_manifest.json",
+    "state/sharepoint_tombstones.ndjson",
+    "audit/M4/sync_run.json"
+  ],
+  "generated_at": "2026-02-22T03:34:44Z"
+}

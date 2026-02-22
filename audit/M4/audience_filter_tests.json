@@ -1,0 +1,4 @@
+{
+  "status": "ok",
+  "test": "tests/test_spec004_m4_sharepoint_sync.py::test_audience_enforcement_in_retrieval"
+}
