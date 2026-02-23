@@ -1,157 +1,54 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:57:37.489709+00:00",
+  "created_at": "2026-02-23T03:58:06.217439+00:00",
   "inbox_rel": "vault/inbox_raw",
   "sources": [
     {
-      "approx_language": "markdown",
+      "approx_language": "json",
       "extensions": {
         ".json": 1,
-        ".md": 4
+        ".md": 1
       },
-      "file_count": 5,
+      "file_count": 2,
       "files": [
         {
-          "mtime": 1771819054.4889898,
-          "rel_path": "manolo_b2c_text_20260223T035733Z/01_file_75---a1e575e1-6b9a-4f75-b268-719ce7378448.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/01_file_75---a1e575e1-6b9a-4f75-b268-719ce7378448.md",
-          "sha256": "626a6fe1b460e0c60f4b8b66016357180011ee7a7d7deb2c1594a77757eb0dba",
-          "size": 239914
+          "mtime": 1771819086.0158775,
+          "rel_path": "manolo_instrucciones_20260223T035806Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728/source/manolo_instrucciones_20260223T035806Z/EVENT_META.json",
+          "sha256": "1498744104f2f029b21e9b921eead3bf32db2063b7eef21810de6513d95011b7",
+          "size": 120
         },
         {
-          "mtime": 1771819054.847573,
-          "rel_path": "manolo_b2c_text_20260223T035733Z/02_file_76---5c6b4477-055c-4b77-a9c5-47297c118c51.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/02_file_76---5c6b4477-055c-4b77-a9c5-47297c118c51.md",
-          "sha256": "2992c3d175efa07259de29901f82fc9b6373abd053ee092064cdd0df733e5150",
-          "size": 16875
-        },
-        {
-          "mtime": 1771819055.232078,
-          "rel_path": "manolo_b2c_text_20260223T035733Z/03_file_77---585a19f0-6571-4673-a8f8-fdb44cef496e.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/03_file_77---585a19f0-6571-4673-a8f8-fdb44cef496e.md",
-          "sha256": "3bf0da05dfb768b601f5cf439a6c1be664676df01fab6caaa96e50ae261943f1",
-          "size": 17597
-        },
-        {
-          "mtime": 1771819057.158923,
-          "rel_path": "manolo_b2c_text_20260223T035733Z/04_file_78---d7b2efa8-7bdd-444b-b5a8-105528c72b89.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/04_file_78---d7b2efa8-7bdd-444b-b5a8-105528c72b89.md",
-          "sha256": "7231736b2e5527948c679ca1f04f989303b7ef1032c8887e9b1ae7bed2c348a3",
-          "size": 274088
-        },
-        {
-          "mtime": 1771819057.158923,
-          "rel_path": "manolo_b2c_text_20260223T035733Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/EVENT_META.json",
-          "sha256": "b7e9d38bb4a8292c7c6077dcfbce7581975b9119bde6d4c18bf9e700f547c314",
-          "size": 126
+          "mtime": 1771819086.0115688,
+          "rel_path": "manolo_instrucciones_20260223T035806Z/manolo_instrucciones.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728/source/manolo_instrucciones_20260223T035806Z/manolo_instrucciones.md",
+          "sha256": "2fab5a661c589db0619519f2fb704de4a81eb2cc9d33847eff7b366128ac0725",
+          "size": 3268
         }
       ],
       "high_signal": true,
-      "inbox_rel_path": "sources/20260223T035737Z_2fe07e03cf",
+      "inbox_rel_path": "sources/20260223T035806Z_6ff13db728",
       "keywords": [
-        "01_file_75",
-        "02_file_76",
-        "03_file_77",
-        "04_file_78",
-        "055c",
-        "105528c72b89",
-        "444b",
-        "4673",
-        "47297c118c51",
-        "4b77",
-        "4f75",
-        "585a19f0",
-        "5c6b4477",
-        "6571",
-        "6b9a",
-        "719ce7378448",
-        "7bdd",
-        "a1e575e1",
-        "a8f8",
-        "a9c5",
-        "generic_corpus"
-      ],
-      "kind": "dir",
-      "recommended_domain": "external_ingest",
-      "recommended_domain_source": "hints",
-      "source_hash": "cb9dbdb614e32bf496beb96ecf6528f5443164c867c20e5a62c2683b9f1420ee",
-      "source_id": "109263f75f",
-      "source_kind": "generic_corpus",
-      "source_name": "20260223T035737Z_2fe07e03cf",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
-      "total_bytes": 548600
-    },
-    {
-      "approx_language": "unknown",
-      "extensions": {
-        ".json": 1,
-        ".pdf": 4
-      },
-      "file_count": 5,
-      "files": [
-        {
-          "mtime": 1771819053.2533898,
-          "rel_path": "manolo_b2c_20260223T035733Z/01_kb_proveedores_b2c_operativa.pdf",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/01_kb_proveedores_b2c_operativa.pdf",
-          "sha256": "f7eac1b2234549608c32ef11294c525ff4f7eee17ce2213f4ce909506aa3d657",
-          "size": 263377
-        },
-        {
-          "mtime": 1771819053.2533898,
-          "rel_path": "manolo_b2c_20260223T035733Z/02_kb_criterio_senior_diseno_residencial_b2c.pdf",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/02_kb_criterio_senior_diseno_residencial_b2c.pdf",
-          "sha256": "da3e242da67b913c472976efa3cfe7f9899de3855485c303a7baea37925ce466",
-          "size": 203920
-        },
-        {
-          "mtime": 1771819053.2533898,
-          "rel_path": "manolo_b2c_20260223T035733Z/03_b2c_offer_architect_kb_especifica.pdf",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/03_b2c_offer_architect_kb_especifica.pdf",
-          "sha256": "6dd37ae9417b6b0b59a7d97dceab2653c1098f7169ae7f7cd6ea480f998e7c40",
-          "size": 253539
-        },
-        {
-          "mtime": 1771819053.25771,
-          "rel_path": "manolo_b2c_20260223T035733Z/04_kb_proveedores_b2c.pdf",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/04_kb_proveedores_b2c.pdf",
-          "sha256": "fa98d3fa55363583ccb86948adfb4b619274326c19e54e7a0e66306ae5bfc3d0",
-          "size": 429032
-        },
-        {
-          "mtime": 1771819053.25771,
-          "rel_path": "manolo_b2c_20260223T035733Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/EVENT_META.json",
-          "sha256": "93f88c712d064e38fc27a676dcf9259fe8a710d8f8d97fa244d8b8a97f932f6e",
-          "size": 204
-        }
-      ],
-      "high_signal": true,
-      "inbox_rel_path": "sources/20260223T035737Z_8418855593",
-      "keywords": [
-        "01_kb_proveedores_b2c_operativa",
-        "02_kb_criterio_senior_diseno_residencial_b2c",
-        "03_b2c_offer_architect_kb_especifica",
-        "04_kb_proveedores_b2c",
         "event_meta",
-        "generic_corpus"
+        "json_export",
+        "manolo_instrucciones"
       ],
       "kind": "dir",
       "recommended_domain": "external_ingest",
       "recommended_domain_source": "hints",
-      "source_hash": "876e772632c35e213eccf56fbb02af18e3701afef97b4da5be3e682332b8fe6f",
-      "source_id": "8a918da6a9",
-      "source_kind": "generic_corpus",
-      "source_name": "20260223T035737Z_8418855593",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035737Z_8418855593",
-      "total_bytes": 1150072
+      "source_hash": "fa40a58e1c5fa1b98ab7f0bc1c058352527dcd35dffbdd16cec49612d5235c30",
+      "source_id": "acc7b44a95",
+      "source_kind": "json_export",
+      "source_name": "20260223T035806Z_6ff13db728",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035806Z_6ff13db728",
+      "total_bytes": 3388
     }
   ],
   "summary": {
-    "high_signal_sources": 2,
-    "pending_files": 10,
-    "pending_sources": 2,
-    "pending_total_bytes": 1698672,
+    "high_signal_sources": 1,
+    "pending_files": 2,
+    "pending_sources": 1,
+    "pending_total_bytes": 3388,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

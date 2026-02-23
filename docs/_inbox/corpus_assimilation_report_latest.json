@@ -1,23 +1,16 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:57:37.748002+00:00",
+  "created_at": "2026-02-23T03:58:06.315430+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260223T035737Z-ee8e7418",
+  "plan_id": "PLAN-20260223T035806Z-437a6a83",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f",
-      "readme": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f/README.md",
-      "source_id": "109263f75f",
-      "source_rel": "sources/20260223T035737Z_2fe07e03cf"
-    },
-    {
-      "manifest": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9",
-      "readme": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9/README.md",
-      "source_id": "8a918da6a9",
-      "source_rel": "sources/20260223T035737Z_8418855593"
+      "manifest": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95",
+      "readme": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95/README.md",
+      "source_id": "acc7b44a95",
+      "source_rel": "sources/20260223T035806Z_6ff13db728"
     }
   ],
   "status": "success",
@@ -27,19 +20,19 @@
     },
     "conflict_side_by_side": 0,
     "created": 2,
-    "processed_moves": 2,
+    "processed_moves": 1,
     "unchanged": 0
   },
   "version": 2,
   "writes": [
     {
       "category": "brain_knowledge",
-      "path": "brain/cards/external_ingest/card_109263f75f_01.md",
+      "path": "brain/cards/external_ingest/card_acc7b44a95_01.md",
       "status": "created"
     },
     {
       "category": "brain_knowledge",
-      "path": "brain/domains/external_ingest/sources/109263f75f_index.md",
+      "path": "brain/domains/external_ingest/sources/acc7b44a95_index.md",
       "status": "created"
     }
   ]

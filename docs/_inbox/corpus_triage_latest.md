@@ -2,10 +2,10 @@
 
 - Canonical root: `/home/agente/otto-workspace`
 - Inbox rel: `vault/inbox_raw`
-- Pending sources: 2
-- Pending files: 10
-- Pending bytes: 1698672
-- High signal sources: 2
+- Pending sources: 1
+- Pending files: 2
+- Pending bytes: 3388
+- High signal sources: 1
 - Slice units: 0
 - Suggested units/tick: 2
 - Suspicious inbox entries: 0
@@ -14,8 +14,7 @@
 
 ## Sources
 
-- `sources/20260223T035737Z_2fe07e03cf` | id=109263f75f | files=5 | bytes=548600 | domain=external_ingest | high_signal=True
-- `sources/20260223T035737Z_8418855593` | id=8a918da6a9 | files=5 | bytes=1150072 | domain=external_ingest | high_signal=True
+- `sources/20260223T035806Z_6ff13db728` | id=acc7b44a95 | files=2 | bytes=3388 | domain=external_ingest | high_signal=True
 
 ## Suspicious Entries
 
