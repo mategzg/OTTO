@@ -15,7 +15,7 @@ from scripts.observability import record_event
 from scripts.repo_root import get_canonical_root
 from scripts.retrieval_service import retrieve as retrieval_v2_retrieve
 from scripts.evidence_guard import build_and_validate as evidence_build_and_validate
-from scripts.skill_creation_heuristics import evaluate_creation
+from scripts.skill_creation_heuristics import evaluate_creation, observed_repeat_count_30d
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 from scripts.runtime_guardrails import is_tool_allowed
 from scripts.plugin_execution_contract import evaluate_plugin_target
@@ -270,6 +270,8 @@ def run_nl_router(
         pol = _policy(canonical_root)
 
         repeat = _safe_int(repeat_count_30d)
+        if repeat <= 0:
+            repeat = observed_repeat_count_30d(canonical_root, selected_target=str(route["selected_target"]))
         impact = _safe_int(impact_score)
         risk = _safe_int(risk_score)
         requires_approval = risk >= int(pol.get("high_risk_requires_approval", 8))
@@ -293,6 +295,7 @@ def run_nl_router(
             "reasons": [
                 f"intent={intent}",
                 f"repeat_count_30d={repeat}",
+                f"repeat_source={'auto_log' if _safe_int(repeat_count_30d) <= 0 else 'input'}",
                 f"impact_score={impact}",
                 f"risk_score={risk}",
                 f"registry_resolution={'ok' if resolution.get('ok') else resolution.get('reason', 'fallback')}",
