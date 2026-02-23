@@ -108,6 +108,12 @@ button.danger { background: #7f1d1d; }
   margin: 12px 0;
   align-items: center;
 }
+.action-hint {
+  margin: 6px 2px 2px;
+  font-size: 11px;
+  color: #93a4bf;
+  opacity: .95;
+}
 .tab { background: #1e293b; }
 .tabs-right {
   justify-self: end;
@@ -196,10 +202,22 @@ body.compact #personal-next-impact,
 body.compact .delegation-card > .sub { display: none; }
 
 body.compact .footer-meta { margin-top: 4px; font-size: 11px; }
+body.compact .action-hint { display: none; }
 body.compact .mobile-dock { padding: 6px; gap: 6px; }
 body.compact .mobile-dock button { min-height: 39px; padding: 8px 10px; font-size: 14px; }
 
 @media (max-width: 860px) {
+  .tabs {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 6px;
+  }
+  .tabs-right {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    justify-content: space-between;
+  }
+  .sync-badge { max-width: 84px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
   .tab-panel.active {
     display: grid;
     grid-template-columns: 1fr;

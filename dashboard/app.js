@@ -39,6 +39,11 @@ const el = {
   btnSgAlt: document.getElementById('btn-sg-alt'),
   btnPersonalExec: document.getElementById('btn-personal-exec'),
   btnCompact: document.getElementById('btn-compact'),
+  btnViewCritical: document.getElementById('btn-view-critical'),
+  btnViewOpps: document.getElementById('btn-view-opps'),
+  btnViewBlockers: document.getElementById('btn-view-blockers'),
+  btnOrderNow: document.getElementById('btn-order-now'),
+  btnResolveNow: document.getElementById('btn-resolve-now'),
 
   sgCashTrend: document.getElementById('sg-cash-trend'),
   sgPipelineTrend: document.getElementById('sg-pipeline-trend'),
@@ -71,8 +76,8 @@ function setPill(status, mode = 'live') {
     return;
   }
   const map = {
-    available: { text: '🟢 Disponible', color: '#10b981' },
-    busy: { text: '🟡 Ejecutando...', color: '#f59e0b' },
+    available: { text: '🟢 Disponible (panel)', color: '#10b981' },
+    busy: { text: '🟡 Ejecutando en panel...', color: '#f59e0b' },
     blocked: { text: '🔴 Bloqueado', color: '#ef4444' },
   };
   const cfg = map[String(status || '').toLowerCase()] || map.available;
@@ -285,6 +290,13 @@ el.btnPause?.addEventListener('click', () => {
 el.btnSgExec?.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.', el.btnSgExec).catch(console.error));
 el.btnSgAlt?.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.', el.btnSgAlt).catch(console.error));
 el.btnPersonalExec?.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.', el.btnPersonalExec).catch(console.error));
+
+// Secondary CTAs now do real actions + explicit feedback
+el.btnViewCritical?.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Envié "Ver críticas" como ejecución SG.', el.btnViewCritical).catch(console.error));
+el.btnViewOpps?.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Envié "Ver oportunidades" (alternativa SG).', el.btnViewOpps).catch(console.error));
+el.btnViewBlockers?.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Envié "Ver bloqueos" para resolución.', el.btnViewBlockers).catch(console.error));
+el.btnOrderNow?.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Envié "Ordenar ahora" a ejecución personal.', el.btnOrderNow).catch(console.error));
+el.btnResolveNow?.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Envié "Resolver ahora" a ejecución personal.', el.btnResolveNow).catch(console.error));
 
 el.mBtnRefresh?.addEventListener('click', () => refresh(true).catch(console.error));
 el.mBtnActivity?.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));

@@ -47,7 +47,7 @@
           <p id="sg-cash" class="metric">S/ 0</p>
           <div id="sg-cash-trend" class="trend"></div>
           <p id="sg-overdue" class="sub">0 vencidas</p>
-          <button class="cta">Ver críticas</button>
+          <button id="btn-view-critical" class="cta">Ver críticas</button>
         </article>
 
         <article class="card">
@@ -55,14 +55,14 @@
           <p id="sg-pipeline" class="metric">S/ 0</p>
           <div id="sg-pipeline-trend" class="trend"></div>
           <p id="sg-hot-count" class="sub">0 oportunidades esta semana</p>
-          <button class="cta">Ver oportunidades</button>
+          <button id="btn-view-opps" class="cta">Ver oportunidades</button>
         </article>
 
         <article class="card">
           <div class="card-head"><h3>Operación en Riesgo</h3><span id="sg-risk-light" class="light green"></span></div>
           <p id="sg-risk" class="metric">0 frentes</p>
           <p id="sg-top-risk" class="sub">Top riesgo: sin riesgo crítico</p>
-          <button class="cta">Ver bloqueos</button>
+          <button id="btn-view-blockers" class="cta">Ver bloqueos</button>
         </article>
 
         <article class="card highlight">
@@ -86,14 +86,14 @@
           <div class="card-head"><h3>Pendientes Críticos</h3><span id="personal-critical-light" class="light green"></span></div>
           <p id="personal-critical" class="metric">0</p>
           <p id="personal-due" class="sub">0 vencen hoy</p>
-          <button class="cta">Ordenar ahora</button>
+          <button id="btn-order-now" class="cta">Ordenar ahora</button>
         </article>
 
         <article class="card">
           <div class="card-head"><h3>Próxima Decisión Importante</h3><span class="light blue"></span></div>
           <p id="personal-next-decision" class="sub lead">Sin decisión pendiente</p>
           <p id="personal-next-eta" class="impact">Sugerido: -</p>
-          <button class="cta">Resolver ahora</button>
+          <button id="btn-resolve-now" class="cta">Resolver ahora</button>
         </article>
 
         <article class="card highlight">
@@ -109,6 +109,7 @@
       <span id="data-mode">Modo: -</span>
       <span id="last-updated">Actualizado: -</span>
     </div>
+    <p id="action-hint" class="action-hint">Tip: Actividad te muestra exactamente qué acción se disparó y si se confirmó.</p>
 
     <aside id="activity-drawer" class="drawer hidden">
       <div class="drawer-head">
