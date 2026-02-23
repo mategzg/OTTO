@@ -149,6 +149,8 @@ def evaluate_creation(
     generality_score: int = 5,
     latency_cost_score: int = 5,
     trace_id: str = "",
+    suggested_name: str = "",
+    pattern_key: str = "",
 ) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     policy = load_policy(canonical_root)
@@ -235,6 +237,9 @@ def evaluate_creation(
             canonical_root,
             {
                 "selected_target": selected_target,
+                "suggested_name": suggested_name or selected_target,
+                "pattern_key": pattern_key or selected_target,
+                "artifact_type": "skill" if str(suggested_name).startswith("skill.") else "workflow",
                 "route_type": route_type,
                 "score": out["score"],
                 "priority": priority,

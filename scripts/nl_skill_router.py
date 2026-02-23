@@ -102,6 +102,21 @@ def _match_plugin_route(root: Path, text: str) -> Dict[str, str]:
     return {}
 
 
+def _autocreate_signature(text: str, selected_target: str) -> Dict[str, str]:
+    t = (text or "").lower()
+    st = str(selected_target or "")
+    if any(k in t for k in ["lead", "leads", "prospect", "prospecto", "prospeccion", "lista de clientes"]):
+        return {
+            "suggested_name": "skill.lead-hunting-otto",
+            "pattern_key": "mission.lead_hunting.optimized",
+        }
+    base = st.replace("plugin.", "").replace(".", "-").strip("-") or "general"
+    return {
+        "suggested_name": f"skill.{base}-workflow",
+        "pattern_key": f"mission.{base}.optimized",
+    }
+
+
 def _domain_for_intent(intent: str) -> str:
     if intent.startswith("odoo_"):
         return "sg_acabados"
@@ -276,6 +291,7 @@ def run_nl_router(
         risk = _safe_int(risk_score)
         requires_approval = risk >= int(pol.get("high_risk_requires_approval", 8))
 
+        signature = _autocreate_signature(text, str(route["selected_target"]))
         creation_eval = evaluate_creation(
             canonical_root,
             route_type=route["route_type"],
@@ -284,6 +300,8 @@ def run_nl_router(
             impact_score=impact,
             risk_score=risk,
             trace_id=idempotency_key,
+            suggested_name=signature.get("suggested_name", ""),
+            pattern_key=signature.get("pattern_key", ""),
         )
 
         plan = {

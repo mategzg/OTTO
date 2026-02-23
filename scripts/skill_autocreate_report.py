@@ -23,7 +23,7 @@ def run() -> None:
     else:
         for it in items:
             lines.append(
-                f"- {it.get('selected_target','')} | prio={it.get('priority','')} | score={it.get('score','')} | repeat30d={it.get('repeat_count_30d','')} | status={it.get('status','pending')}"
+                f"- {it.get('suggested_name', it.get('selected_target',''))} <- {it.get('selected_target','')} | type={it.get('artifact_type','workflow')} | prio={it.get('priority','')} | score={it.get('score','')} | repeat30d={it.get('repeat_count_30d','')} | status={it.get('status','pending')}"
             )
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
