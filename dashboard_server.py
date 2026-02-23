@@ -249,6 +249,25 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     runtime_topbar = _runtime_topbar_snapshot()
     topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
     topbar.update({k: v for k, v in runtime_topbar.items() if k in {"active_delegations_total", "active_subagents", "active_coders", "delegations"}})
+
+    # If runtime sees no active sessions, infer lightweight live activity from dashboard events.
+    activity_for_infer = payload.get("activity") if isinstance(payload.get("activity"), list) else []
+    running_items = [a for a in activity_for_infer[-5:] if isinstance(a, dict) and str(a.get("status", "")).lower() == "running"]
+    if int(topbar.get("active_delegations_total", 0) or 0) == 0 and running_items:
+        topbar["active_delegations_total"] = len(running_items)
+        topbar["active_subagents"] = len([x for x in running_items if str(x.get("type", "")).lower() == "subagent"])
+        topbar["active_coders"] = len([x for x in running_items if str(x.get("type", "")).lower() == "coder"])
+        topbar["delegations"] = [
+            {
+                "label": str(x.get("label", "Ejecución"))[:28],
+                "type": "subagent" if str(x.get("type", "")).lower() == "subagent" else "coder" if str(x.get("type", "")).lower() == "coder" else "subagent",
+                "progress": 40,
+                "status": "running",
+            }
+            for x in running_items[:3]
+        ]
+
+    topbar["otto_status"] = "busy" if int(topbar.get("active_delegations_total", 0) or 0) > 0 else "available"
     payload["topbar"] = topbar
 
     meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
@@ -276,7 +295,7 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
 
 
 def _append_dashboard_event(root: Path, *, label: str, status: str = "done", kind: str = "system") -> None:
-    ts = datetime.now().strftime("%H:%M")
+    ts = datetime.now().strftime("%H:%M:%S")
     entry = {"time": ts, "label": label, "status": status, "type": kind}
 
     dashboard_state_path = root / "state" / "dashboard_v1.json"
@@ -447,11 +466,20 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                 _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
                 return
 
+            action_label = actions[parsed.path]["label"]
+            action_kind = actions[parsed.path]["kind"]
+
             _append_dashboard_event(
                 self.project_root,
-                label=actions[parsed.path]["label"],
+                label=f"{action_label} (iniciada)",
                 status="running",
-                kind=actions[parsed.path]["kind"],
+                kind=action_kind,
+            )
+            _append_dashboard_event(
+                self.project_root,
+                label=f"{action_label} (ack)",
+                status="done",
+                kind=action_kind,
             )
             _json_response(self, HTTPStatus.OK, {"ok": True, "action": parsed.path})
 
