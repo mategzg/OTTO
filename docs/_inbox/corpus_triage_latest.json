@@ -1,6 +1,6 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T04:02:28.129061+00:00",
+  "created_at": "2026-02-23T04:04:10.733524+00:00",
   "inbox_rel": "vault/inbox_raw",
   "sources": [
     {
@@ -12,43 +12,43 @@
       "file_count": 2,
       "files": [
         {
-          "mtime": 1771819343.7856433,
-          "rel_path": "alex_hormozi_research_20260223T040223Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da/source/alex_hormozi_research_20260223T040223Z/EVENT_META.json",
-          "sha256": "1bb6f876f1df09298387675009a786dd2bdd722bd94954bf4120002f9d7cede7",
-          "size": 177
+          "mtime": 1771819450.188619,
+          "rel_path": "alex_hormozi_phase2_20260223T040410Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/EVENT_META.json",
+          "sha256": "e69e430744625332073a49d051670cc2597b1540c77b563d5805d92b38e8ac08",
+          "size": 199
         },
         {
-          "mtime": 1771819343.7856433,
-          "rel_path": "alex_hormozi_research_20260223T040223Z/alex_hormozi_research_synthesis.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da/source/alex_hormozi_research_20260223T040223Z/alex_hormozi_research_synthesis.md",
-          "sha256": "dad6be32f739fde4f2353fd80f395af7926c0c0351166b60f9a8a108f1d96fdd",
-          "size": 4609
+          "mtime": 1771819450.188619,
+          "rel_path": "alex_hormozi_phase2_20260223T040410Z/alex_hormozi_phase2_sg_playbook.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/alex_hormozi_phase2_sg_playbook.md",
+          "sha256": "38388e6f49373e9ed1fd2ca73b0c688079c32ecd84fba69e126365586cecb7c5",
+          "size": 5399
         }
       ],
       "high_signal": true,
-      "inbox_rel_path": "sources/20260223T040227Z_6c2f7449da",
+      "inbox_rel_path": "sources/20260223T040410Z_327504361f",
       "keywords": [
-        "alex_hormozi_research_synthesis",
+        "alex_hormozi_phase2_sg_playbook",
         "event_meta",
         "json_export"
       ],
       "kind": "dir",
       "recommended_domain": "external_ingest",
       "recommended_domain_source": "hints",
-      "source_hash": "b6b3bb22136aeb4fd549d0a8582d4a6963aab8a474e80a6ea1196fbad1596c39",
-      "source_id": "e8e1ffe8e6",
+      "source_hash": "1203e22bde86a91f9acb8a56a9e5d8533f076909c26079d0d7b59dfed69411b8",
+      "source_id": "e2abe95751",
       "source_kind": "json_export",
-      "source_name": "20260223T040227Z_6c2f7449da",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040227Z_6c2f7449da",
-      "total_bytes": 4786
+      "source_name": "20260223T040410Z_327504361f",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040410Z_327504361f",
+      "total_bytes": 5598
     }
   ],
   "summary": {
     "high_signal_sources": 1,
     "pending_files": 2,
     "pending_sources": 1,
-    "pending_total_bytes": 4786,
+    "pending_total_bytes": 5598,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0
