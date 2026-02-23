@@ -25,7 +25,7 @@ body {
   color: var(--text);
   padding: 12px;
   padding-top: calc(12px + env(safe-area-inset-top, 0px));
-  padding-bottom: calc(86px + var(--safe-bottom));
+  padding-bottom: calc(14px + var(--safe-bottom));
   overscroll-behavior-y: none;
 }
 
@@ -108,22 +108,12 @@ button.danger { background: #7f1d1d; }
   margin: 12px 0;
   align-items: center;
 }
-.action-hint {
-  margin: 6px 2px 2px;
-  font-size: 11px;
-  color: #93a4bf;
-  opacity: .95;
-}
 .tab { background: #1e293b; }
 .tabs-right {
   justify-self: end;
   display: flex;
   align-items: center;
   gap: 8px;
-}
-.compact-toggle {
-  padding: 8px 12px;
-  min-height: 36px;
 }
 .sync-badge {
   font-size: 12px;
@@ -213,22 +203,20 @@ body.compact .mobile-dock button { min-height: 39px; padding: 8px 10px; font-siz
   }
   .tabs-right {
     grid-column: 1 / -1;
-    justify-self: stretch;
-    justify-content: space-between;
+    justify-self: end;
   }
   .sync-badge { max-width: 84px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .tab-panel.active {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
     padding-bottom: 2px;
   }
-  body.compact .tab-panel.active {
-    gap: 4px;
-  }
-  body.compact #tab-sg .card:nth-child(4),
-  body.compact #tab-personal .card:nth-child(4) {
+  .card { padding: 10px; }
+  .metric { font-size: 26px; }
+  #tab-sg .card:nth-child(4),
+  #tab-personal .card:nth-child(4) {
     display: none;
   }
 }
@@ -331,3 +319,5 @@ body.compact .mobile-dock button { min-height: 39px; padding: 8px 10px; font-siz
   .metric { font-size: 31px; }
   .mobile-dock { display: none; }
 }
+
+#btn-compact{display:none !important;}

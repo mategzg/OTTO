@@ -35,7 +35,6 @@
       <button class="tab active" data-tab="sg">SG</button>
       <button class="tab" data-tab="personal">Personal</button>
       <div class="tabs-right">
-        <button id="btn-compact" class="ghost compact-toggle">Compacto</button>
         <span id="sync-badge" class="sync-badge">sync...</span>
       </div>
     </nav>
@@ -47,7 +46,6 @@
           <p id="sg-cash" class="metric">S/ 0</p>
           <div id="sg-cash-trend" class="trend"></div>
           <p id="sg-overdue" class="sub">0 vencidas</p>
-          <button id="btn-view-critical" class="cta">Ver críticas</button>
         </article>
 
         <article class="card">
@@ -55,24 +53,18 @@
           <p id="sg-pipeline" class="metric">S/ 0</p>
           <div id="sg-pipeline-trend" class="trend"></div>
           <p id="sg-hot-count" class="sub">0 oportunidades esta semana</p>
-          <button id="btn-view-opps" class="cta">Ver oportunidades</button>
         </article>
 
         <article class="card">
           <div class="card-head"><h3>Operación en Riesgo</h3><span id="sg-risk-light" class="light green"></span></div>
           <p id="sg-risk" class="metric">0 frentes</p>
           <p id="sg-top-risk" class="sub">Top riesgo: sin riesgo crítico</p>
-          <button id="btn-view-blockers" class="cta">Ver bloqueos</button>
         </article>
 
         <article class="card highlight">
           <div class="card-head"><h3>Siguiente Mejor Decisión</h3><span class="light blue"></span></div>
           <p id="sg-next-decision" class="sub lead">Sin recomendación</p>
           <p id="sg-next-impact" class="impact">Impacto: -</p>
-          <div class="cta-row">
-            <button id="btn-sg-exec" class="cta">Ejecutar con OTTO</button>
-            <button id="btn-sg-alt" class="ghost">Ver alternativa</button>
-          </div>
         </article>
       </section>
 
@@ -86,14 +78,12 @@
           <div class="card-head"><h3>Pendientes Críticos</h3><span id="personal-critical-light" class="light green"></span></div>
           <p id="personal-critical" class="metric">0</p>
           <p id="personal-due" class="sub">0 vencen hoy</p>
-          <button id="btn-order-now" class="cta">Ordenar ahora</button>
         </article>
 
         <article class="card">
           <div class="card-head"><h3>Próxima Decisión Importante</h3><span class="light blue"></span></div>
           <p id="personal-next-decision" class="sub lead">Sin decisión pendiente</p>
           <p id="personal-next-eta" class="impact">Sugerido: -</p>
-          <button id="btn-resolve-now" class="cta">Resolver ahora</button>
         </article>
 
         <article class="card highlight">
@@ -109,7 +99,6 @@
       <span id="data-mode">Modo: -</span>
       <span id="last-updated">Actualizado: -</span>
     </div>
-    <p id="action-hint" class="action-hint">Tip: Actividad te muestra exactamente qué acción se disparó y si se confirmó.</p>
 
     <aside id="activity-drawer" class="drawer hidden">
       <div class="drawer-head">
@@ -118,12 +107,6 @@
       </div>
       <ul id="activity-list" class="timeline"></ul>
     </aside>
-
-    <nav class="mobile-dock">
-      <button id="m-btn-refresh">Actualizar</button>
-      <button id="m-btn-activity">Actividad</button>
-      <button id="m-btn-primary" class="primary">Ejecutar</button>
-    </nav>
 
     <div id="toast" class="toast hidden"></div>
 

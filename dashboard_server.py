@@ -9,6 +9,7 @@ from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
+import urllib.request
 
 ROOT = Path(__file__).resolve().parent
 
@@ -253,6 +254,64 @@ def _build_observability_activity(root: Path, limit: int = 8) -> tuple[list[dict
     return list(reversed(out)), channels
 
 
+
+
+def _recent_channel_activity_count(root: Path, window_seconds: int = 45) -> int:
+    events = _tail_ndjson(root / "logs" / "observability_events.ndjson", 60)
+    now = datetime.now().astimezone()
+    count = 0
+    for item in reversed(events):
+        if not isinstance(item, dict):
+            continue
+        ch = str(item.get("channel", "")).lower()
+        if ch not in {"telegram", "discord", "whatsapp"}:
+            continue
+        ts = str(item.get("ts", ""))
+        try:
+            dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone()
+            if abs((now - dt).total_seconds()) <= window_seconds:
+                count += 1
+        except Exception:
+            continue
+    return count
+
+
+
+def _fetch_json(url: str, token: str = "", timeout: float = 2.0) -> dict[str, object]:
+    try:
+        req = urllib.request.Request(url)
+        if token:
+            req.add_header("Authorization", f"Bearer {token}")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosec B310
+            raw = resp.read().decode("utf-8")
+        data = json.loads(raw)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _apply_external_sources(payload: dict[str, object]) -> dict[str, object]:
+    notion_url = os.getenv("NOTION_DASHBOARD_URL", "").strip()
+    notion_token = os.getenv("NOTION_DASHBOARD_TOKEN", "").strip()
+    odoo_url = os.getenv("ODOO_DASHBOARD_URL", "").strip()
+    odoo_token = os.getenv("ODOO_DASHBOARD_TOKEN", "").strip()
+
+    if notion_url:
+        notion = _fetch_json(notion_url, notion_token)
+        if isinstance(notion.get("personal"), dict):
+            personal = payload.get("personal") if isinstance(payload.get("personal"), dict) else {}
+            personal.update(notion.get("personal"))
+            payload["personal"] = personal
+
+    if odoo_url:
+        odoo = _fetch_json(odoo_url, odoo_token)
+        if isinstance(odoo.get("sg"), dict):
+            sg = payload.get("sg") if isinstance(payload.get("sg"), dict) else {}
+            sg.update(odoo.get("sg"))
+            payload["sg"] = sg
+
+    return payload
+
 def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     default_payload: dict[str, object] = {
         "topbar": {
@@ -294,6 +353,7 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
 
     raw_payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
     payload = _deep_merge_defaults(raw_payload, default_payload)
+    payload = _apply_external_sources(payload if isinstance(payload, dict) else default_payload)
     if not isinstance(payload, dict):
         payload = default_payload
 
@@ -351,7 +411,11 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
             for x in running_items[:3]
         ]
 
-    topbar["otto_status"] = "busy" if int(topbar.get("active_delegations_total", 0) or 0) > 0 else "available"
+    recent_runtime_activity = _recent_channel_activity_count(root, window_seconds=45)
+    if int(topbar.get("active_delegations_total", 0) or 0) > 0 or recent_runtime_activity > 0:
+        topbar["otto_status"] = "busy"
+    else:
+        topbar["otto_status"] = "available"
     payload["topbar"] = topbar
 
     meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
