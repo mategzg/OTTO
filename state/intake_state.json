@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 13,
-  "last_run_utc": "2026-02-23T04:04:10.561365+00:00",
+  "ingested_count_total": 14,
+  "last_run_utc": "2026-02-23T04:07:40.080445+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -43,6 +43,11 @@
       "ingested_at": "2026-02-19T13:18:16.856368+00:00",
       "source_id": "bb980d1560",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
+    },
+    "c54251d2bc12b8382a69504ef5985a55bd69c03e074b47c4dfb92cb6886eb0c4": {
+      "ingested_at": "2026-02-23T04:07:40.079879+00:00",
+      "source_id": "bb0532edc6",
+      "source_rel": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6"
     },
     "cc6f3106c4655d2f1d0eb261a680aa0486a3113fd35a02d1c5e516e371719ced": {
       "ingested_at": "2026-02-23T03:55:31.698318+00:00",
@@ -144,6 +149,13 @@
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035737Z_8418855593/original/manolo_b2c_20260223T035733Z",
       "source_rel": "vault/inbox_raw/sources/20260223T035737Z_8418855593",
       "suspected_kind": "generic_corpus"
+    },
+    "bb0532edc6": {
+      "ingested_at": "2026-02-23T04:07:40.080169+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040740Z_bb0532edc6/original/alex_hormozi_phase3_20260223T040739Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6",
+      "suspected_kind": "json_export"
     },
     "bb980d1560": {
       "ingested_at": "2026-02-19T13:18:16.856577+00:00",

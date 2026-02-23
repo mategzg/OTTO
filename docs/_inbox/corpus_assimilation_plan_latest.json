@@ -1,27 +1,27 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T04:04:10.737639+00:00",
+  "created_at": "2026-02-23T04:07:40.414248+00:00",
   "operations": [
     {
-      "content": "# Card: 20260223T040410Z_327504361f [1/1]\n\nid: card-external_ingest-e2abe95751-01\ntype: concept\ntags: ingest,external_ingest,e2abe95751\nsource_ref: vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/EVENT_META.json; vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/alex_hormozi_phase2_sg_playbook.md\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-23\n\n## Summary\n\nSegmento 1/1 del source `20260223T040410Z_327504361f` asimilado en `external_ingest`.\nCategoria de escritura: `brain_knowledge`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/EVENT_META.json` sha=e69e43074462 size=199\n- `vault/inbox_raw/sources/20260223T040410Z_327504361f/source/alex_hormozi_phase2_20260223T040410Z/alex_hormozi_phase2_sg_playbook.md` sha=38388e6f4937 size=5399\n",
-      "content_sha256": "ffbd551c91f63fe4de61d4b9ee6cb468c79de320472007436f4b0e6ee3fed92d",
+      "content": "# Card: 20260223T040740Z_bb0532edc6 [1/1]\n\nid: card-external_ingest-3b7564bec3-01\ntype: concept\ntags: ingest,external_ingest,3b7564bec3\nsource_ref: vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/EVENT_META.json; vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/alex_hormozi_phase3_quotebank_sg.md\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-23\n\n## Summary\n\nSegmento 1/1 del source `20260223T040740Z_bb0532edc6` asimilado en `external_ingest`.\nCategoria de escritura: `brain_knowledge`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/EVENT_META.json` sha=f12e1a35e4fd size=191\n- `vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/alex_hormozi_phase3_quotebank_sg.md` sha=8bbe5560e4b5 size=4115\n",
+      "content_sha256": "dc6d6509faa26150b04a9b71562ad9f7e47e284ffd8752060aec29caf4dd479a",
       "op_category": "brain_knowledge",
-      "op_id": "a022ced19bc5",
+      "op_id": "515aa48fdd7c",
       "op_type": "write",
-      "source_id": "e2abe95751",
-      "target_rel": "brain/cards/external_ingest/card_e2abe95751_01.md"
+      "source_id": "3b7564bec3",
+      "target_rel": "brain/cards/external_ingest/card_3b7564bec3_01.md"
     },
     {
-      "content": "# Source Router: 20260223T040410Z_327504361f\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `e2abe95751`\n- Domain target: `external_ingest`\n- Category: `brain_knowledge`\n- Processed hint: `vault/inbox_raw/_processed/*_e2abe95751/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_e2abe95751_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040410Z_327504361f`\n",
-      "content_sha256": "bd24684bcd31f48be9713aeea6be3bfeab056eafc98d4dbb6127bb63f6f69165",
+      "content": "# Source Router: 20260223T040740Z_bb0532edc6\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `3b7564bec3`\n- Domain target: `external_ingest`\n- Category: `brain_knowledge`\n- Processed hint: `vault/inbox_raw/_processed/*_3b7564bec3/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_3b7564bec3_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040740Z_bb0532edc6`\n",
+      "content_sha256": "ecc02d09f866ff9008ea7af9dacba41a7816fb58b5c3f4baa8d5109b283a343c",
       "op_category": "brain_knowledge",
-      "op_id": "e3f3e98e2931",
+      "op_id": "7c78043d68ea",
       "op_type": "write",
-      "source_id": "e2abe95751",
-      "target_rel": "brain/domains/external_ingest/sources/e2abe95751_index.md"
+      "source_id": "3b7564bec3",
+      "target_rel": "brain/domains/external_ingest/sources/3b7564bec3_index.md"
     }
   ],
-  "plan_id": "PLAN-20260223T040410Z-e7b05917",
+  "plan_id": "PLAN-20260223T040740Z-b77bb7ca",
   "routing_decisions": [
     {
       "category": "brain_knowledge",
@@ -43,8 +43,8 @@
       "reason": "category=brain_knowledge via rule=default_brain_knowledge",
       "reserved_files": [],
       "rule_id": "default_brain_knowledge",
-      "source_id": "e2abe95751",
-      "source_name": "20260223T040410Z_327504361f"
+      "source_id": "3b7564bec3",
+      "source_name": "20260223T040740Z_bb0532edc6"
     }
   ],
   "routing_summary": {
@@ -55,11 +55,11 @@
       "card_count": 1,
       "category": "brain_knowledge",
       "domain": "external_ingest",
-      "inbox_rel_path": "sources/20260223T040410Z_327504361f",
-      "node_rel_path": "brain/domains/external_ingest/sources/e2abe95751_index.md",
-      "source_hash": "1203e22bde86a91f9acb8a56a9e5d8533f076909c26079d0d7b59dfed69411b8",
-      "source_id": "e2abe95751",
-      "source_name": "20260223T040410Z_327504361f"
+      "inbox_rel_path": "sources/20260223T040740Z_bb0532edc6",
+      "node_rel_path": "brain/domains/external_ingest/sources/3b7564bec3_index.md",
+      "source_hash": "c9ffc3e2ad28e81e6d5369a5bf429c77f92d0a193df9bdb6f478b0f80be89134",
+      "source_id": "3b7564bec3",
+      "source_name": "20260223T040740Z_bb0532edc6"
     }
   ],
   "status": "ok",
@@ -75,14 +75,14 @@
     "high_signal_sources": 1,
     "pending_files": 2,
     "pending_sources": 1,
-    "pending_total_bytes": 5598,
+    "pending_total_bytes": 4306,
     "suspicious_entries": 0
   },
   "triage_summary_total": {
     "high_signal_sources": 1,
     "pending_files": 2,
     "pending_sources": 1,
-    "pending_total_bytes": 5598,
+    "pending_total_bytes": 4306,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0
