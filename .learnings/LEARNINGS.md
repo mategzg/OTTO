@@ -31,3 +31,30 @@ Always run repo verification protocol for specific repo claims: check commits + 
 - **Notes**: Protocol promoted to AGENTS.md and USER.md.
 
 ---
+
+## [LRN-20260223-002] correction
+
+**Logged**: 2026-02-23T08:10:00-05:00
+**Priority**: critical
+**Status**: pending
+**Area**: docs
+
+### Summary
+No debo reportar “integrado/operativo” cuando solo existe inventario en docs/state sin consumo real en runtime.
+
+### Details
+Se verificó que `docs/_inbox/plugin_drop/*` y registros `state/plugin_*` y `state/cc_plugin_*` existen, pero su uso está acotado a scripts de ingest/certificación y no aparece integración activa en el runtime principal. Esto confirma riesgo de “humo” si comunico estado sin distinguir `catalogado` vs `operativo`.
+
+### Suggested Action
+Introducir estatus binario verificable por capa: `CATALOGADO`, `RUTEADO`, `EJECUTABLE`, `OPERATIVO_EN_PROD`, y exigir evidencia de consumo runtime antes de afirmar operación.
+
+### Metadata
+- Source: user_feedback
+- Related Files: state/plugin_runtime_registry.json, state/cc_plugin_runtime_registry.json, scripts/plugin_drop_processor.py, scripts/cc_plugin_ingest.py
+- Tags: truthfulness, integration, runtime-evidence
+- Pattern-Key: never.claim.operational.without.runtime_path
+- Recurrence-Count: 1
+- First-Seen: 2026-02-23
+- Last-Seen: 2026-02-23
+
+---
