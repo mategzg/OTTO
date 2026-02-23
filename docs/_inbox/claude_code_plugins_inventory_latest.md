@@ -1,6 +1,6 @@
 # Claude Code Plugins Inventory (latest)
 
-Actualizado: 2026-02-23T00:23:19Z
+Actualizado: 2026-02-23T20:43:02Z
 - Plugins detectados: **52**
 - MCP servers únicos: **10**
 - Estado base: **READY_PLAYBOOK** (NL-first)

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-23T00:23:19Z",
+  "updated_at": "2026-02-23T20:43:02Z",
   "routes": [
     {
       "intent": "review|pr|pull request|bugs|seguridad",
@@ -32,6 +32,188 @@
     {
       "intent": "language server|types|lsp",
       "plugin": "typescript-lsp"
+    },
+    {
+      "intent": "\\\\bNotion\\\\b",
+      "plugin": "Notion"
+    },
+    {
+      "intent": "\\\\bagent\\\\s*[-_ ]?\\\\s*sdk\\\\s*[-_ ]?\\\\s*dev\\\\b",
+      "plugin": "agent-sdk-dev"
+    },
+    {
+      "intent": "\\\\basana\\\\b",
+      "plugin": "asana"
+    },
+    {
+      "intent": "\\\\batlassian\\\\b",
+      "plugin": "atlassian"
+    },
+    {
+      "intent": "\\\\bcircleback\\\\b",
+      "plugin": "circleback"
+    },
+    {
+      "intent": "\\\\bclangd\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "clangd-lsp"
+    },
+    {
+      "intent": "\\\\bclaude\\\\s*[-_ ]?\\\\s*code\\\\s*[-_ ]?\\\\s*setup\\\\b",
+      "plugin": "claude-code-setup"
+    },
+    {
+      "intent": "\\\\bclaude\\\\s*[-_ ]?\\\\s*md\\\\s*[-_ ]?\\\\s*management\\\\b",
+      "plugin": "claude-md-management"
+    },
+    {
+      "intent": "\\\\bcsharp\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "csharp-lsp"
+    },
+    {
+      "intent": "\\\\bexplanatory\\\\s*[-_ ]?\\\\s*output\\\\s*[-_ ]?\\\\s*style\\\\b",
+      "plugin": "explanatory-output-style"
+    },
+    {
+      "intent": "\\\\bfeature\\\\s*[-_ ]?\\\\s*dev\\\\b",
+      "plugin": "feature-dev"
+    },
+    {
+      "intent": "\\\\bfigma\\\\b",
+      "plugin": "figma"
+    },
+    {
+      "intent": "\\\\bfirebase\\\\b",
+      "plugin": "firebase"
+    },
+    {
+      "intent": "\\\\bfirecrawl\\\\b",
+      "plugin": "firecrawl"
+    },
+    {
+      "intent": "\\\\bfrontend\\\\s*[-_ ]?\\\\s*design\\\\b",
+      "plugin": "frontend-design"
+    },
+    {
+      "intent": "\\\\bgitlab\\\\b",
+      "plugin": "gitlab"
+    },
+    {
+      "intent": "\\\\bgopls\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "gopls-lsp"
+    },
+    {
+      "intent": "\\\\bgreptile\\\\b",
+      "plugin": "greptile"
+    },
+    {
+      "intent": "\\\\bhookify\\\\b",
+      "plugin": "hookify"
+    },
+    {
+      "intent": "\\\\bhuggingface\\\\s*[-_ ]?\\\\s*skills\\\\b",
+      "plugin": "huggingface-skills"
+    },
+    {
+      "intent": "\\\\bjdtls\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "jdtls-lsp"
+    },
+    {
+      "intent": "\\\\bkotlin\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "kotlin-lsp"
+    },
+    {
+      "intent": "\\\\blaravel\\\\s*[-_ ]?\\\\s*boost\\\\b",
+      "plugin": "laravel-boost"
+    },
+    {
+      "intent": "\\\\blearning\\\\s*[-_ ]?\\\\s*output\\\\s*[-_ ]?\\\\s*style\\\\b",
+      "plugin": "learning-output-style"
+    },
+    {
+      "intent": "\\\\blinear\\\\b",
+      "plugin": "linear"
+    },
+    {
+      "intent": "\\\\blua\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "lua-lsp"
+    },
+    {
+      "intent": "\\\\bphp\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "php-lsp"
+    },
+    {
+      "intent": "\\\\bpinecone\\\\b",
+      "plugin": "pinecone"
+    },
+    {
+      "intent": "\\\\bplayground\\\\b",
+      "plugin": "playground"
+    },
+    {
+      "intent": "\\\\bplugin\\\\s*[-_ ]?\\\\s*dev\\\\b",
+      "plugin": "plugin-dev"
+    },
+    {
+      "intent": "\\\\bposthog\\\\b",
+      "plugin": "posthog"
+    },
+    {
+      "intent": "\\\\bpr\\\\s*[-_ ]?\\\\s*review\\\\s*[-_ ]?\\\\s*toolkit\\\\b",
+      "plugin": "pr-review-toolkit"
+    },
+    {
+      "intent": "\\\\bpyright\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "pyright-lsp"
+    },
+    {
+      "intent": "\\\\bqodo\\\\s*[-_ ]?\\\\s*skills\\\\b",
+      "plugin": "qodo-skills"
+    },
+    {
+      "intent": "\\\\bralph\\\\s*[-_ ]?\\\\s*loop\\\\b",
+      "plugin": "ralph-loop"
+    },
+    {
+      "intent": "\\\\brust\\\\s*[-_ ]?\\\\s*analyzer\\\\s*[-_ ]?\\\\s*lsp\\\\b",
+      "plugin": "rust-analyzer-lsp"
+    },
+    {
+      "intent": "\\\\bsecurity\\\\s*[-_ ]?\\\\s*guidance\\\\b",
+      "plugin": "security-guidance"
+    },
+    {
+      "intent": "\\\\bsentry\\\\b",
+      "plugin": "sentry"
+    },
+    {
+      "intent": "\\\\bserena\\\\b",
+      "plugin": "serena"
+    },
+    {
+      "intent": "\\\\bskill\\\\s*[-_ ]?\\\\s*creator\\\\b",
+      "plugin": "skill-creator"
+    },
+    {
+      "intent": "\\\\bslack\\\\b",
+      "plugin": "slack"
+    },
+    {
+      "intent": "\\\\bsonatype\\\\s*[-_ ]?\\\\s*guide\\\\b",
+      "plugin": "sonatype-guide"
+    },
+    {
+      "intent": "\\\\bstripe\\\\b",
+      "plugin": "stripe"
+    },
+    {
+      "intent": "\\\\bsuperpowers\\\\b",
+      "plugin": "superpowers"
     }
-  ]
+  ],
+  "meta": {
+    "curated": 8,
+    "auto_generated": 44,
+    "total": 52,
+    "note": "Auto routes match explicit plugin-name mentions in natural language."
+  }
 }

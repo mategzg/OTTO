@@ -141,18 +141,38 @@ def run() -> None:
     }
     REGISTRY.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    curated_routes = [
+        {"intent": "review|pr|pull request|bugs|seguridad", "plugin": "code-review"},
+        {"intent": "docs version|api docs|reference", "plugin": "context7"},
+        {"intent": "deploy|vercel|build fail", "plugin": "vercel"},
+        {"intent": "browser test|e2e|playwright", "plugin": "playwright"},
+        {"intent": "github|issue|workflow|actions", "plugin": "github"},
+        {"intent": "refactor|simplify code", "plugin": "code-simplifier"},
+        {"intent": "security scan|vulnerability", "plugin": "semgrep"},
+        {"intent": "language server|types|lsp", "plugin": "typescript-lsp"},
+    ]
+
+    existing = {r["plugin"] for r in curated_routes}
+    auto_routes = []
+    for p in plugins:
+        name = p["plugin"]
+        if name in existing:
+            continue
+        tokens = [t for t in re.split(r"[-_]+", name) if t]
+        if not tokens:
+            continue
+        pattern = r"\\b" + r"\\s*[-_ ]?\\s*".join(re.escape(t) for t in tokens) + r"\\b"
+        auto_routes.append({"intent": pattern, "plugin": name})
+
     routing = {
         "updated_at": now,
-        "routes": [
-            {"intent": "review|pr|pull request|bugs|seguridad", "plugin": "code-review"},
-            {"intent": "docs version|api docs|reference", "plugin": "context7"},
-            {"intent": "deploy|vercel|build fail", "plugin": "vercel"},
-            {"intent": "browser test|e2e|playwright", "plugin": "playwright"},
-            {"intent": "github|issue|workflow|actions", "plugin": "github"},
-            {"intent": "refactor|simplify code", "plugin": "code-simplifier"},
-            {"intent": "security scan|vulnerability", "plugin": "semgrep"},
-            {"intent": "language server|types|lsp", "plugin": "typescript-lsp"},
-        ],
+        "routes": curated_routes + auto_routes,
+        "meta": {
+            "curated": len(curated_routes),
+            "auto_generated": len(auto_routes),
+            "total": len(curated_routes) + len(auto_routes),
+            "note": "Auto routes match explicit plugin-name mentions in natural language.",
+        },
     }
     ROUTING.write_text(json.dumps(routing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
