@@ -32,11 +32,27 @@ const FALLBACK = {
   activity: [
     { time: '-', label: 'Sin actividad live conectada aún', status: 'done', type: 'system' },
   ],
+  meta: {
+    mode: 'fallback',
+    last_updated: '-',
+    plugin_stack: ['live-bridge', 'action-forwarder', 'resilience-fallback'],
+  },
 };
+
+function withMeta(payload, mode) {
+  const out = { ...(payload || {}) };
+  out.meta = {
+    ...(out.meta || {}),
+    mode,
+    last_updated: new Date().toLocaleTimeString('es-PE', { hour12: false }),
+    plugin_stack: ['live-bridge', 'action-forwarder', 'resilience-fallback'],
+  };
+  return out;
+}
 
 export async function getDashboardPayload() {
   const sourceUrl = process.env.OTTO_DASHBOARD_URL;
-  if (!sourceUrl) return FALLBACK;
+  if (!sourceUrl) return withMeta(FALLBACK, 'fallback');
 
   try {
     const headers = {};
@@ -50,12 +66,12 @@ export async function getDashboardPayload() {
       cache: 'no-store',
     });
 
-    if (!response.ok) return FALLBACK;
+    if (!response.ok) return withMeta(FALLBACK, 'fallback');
     const data = await response.json();
-    if (!data || typeof data !== 'object') return FALLBACK;
-    return data;
+    if (!data || typeof data !== 'object') return withMeta(FALLBACK, 'fallback');
+    return withMeta(data, 'live');
   } catch {
-    return FALLBACK;
+    return withMeta(FALLBACK, 'fallback');
   }
 }
 

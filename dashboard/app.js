@@ -38,6 +38,10 @@ const el = {
   btnSgExec: document.getElementById('btn-sg-exec'),
   btnSgAlt: document.getElementById('btn-sg-alt'),
   btnPersonalExec: document.getElementById('btn-personal-exec'),
+
+  syncBadge: document.getElementById('sync-badge'),
+  dataMode: document.getElementById('data-mode'),
+  lastUpdated: document.getElementById('last-updated'),
 };
 
 function setPill(status) {
@@ -126,6 +130,14 @@ function renderActivity(items) {
   });
 }
 
+function setSync(status, text) {
+  el.syncBadge.classList.remove('ok', 'warn', 'err');
+  if (status === 'ok') el.syncBadge.classList.add('ok');
+  if (status === 'warn') el.syncBadge.classList.add('warn');
+  if (status === 'err') el.syncBadge.classList.add('err');
+  el.syncBadge.textContent = text;
+}
+
 function render(data) {
   const d = data || {};
   const top = d.topbar || {};
@@ -168,22 +180,34 @@ function render(data) {
   el.personalNextImpact.textContent = `Impacto: ${personal.next_action_impact || '-'}`;
 
   renderActivity(d.activity || []);
+
+  const meta = d.meta || {};
+  el.dataMode.textContent = `Modo: ${meta.mode || 'unknown'}`;
+  el.lastUpdated.textContent = `Actualizado: ${meta.last_updated || '-'}`;
+  setSync(meta.mode === 'live' ? 'ok' : 'warn', meta.mode === 'live' ? 'live' : 'fallback');
 }
 
 async function refresh() {
+  setSync('warn', 'sync...');
   const response = await fetch('/api/dashboard-v1', { cache: 'no-store' });
-  if (!response.ok) throw new Error('No se pudo cargar dashboard');
+  if (!response.ok) {
+    setSync('err', 'offline');
+    throw new Error('No se pudo cargar dashboard');
+  }
   render(await response.json());
 }
 
-async function runAction(path, successText) {
+async function runAction(path, successText, trigger) {
+  if (trigger) trigger.disabled = true;
   const response = await fetch(path, { method: 'POST' });
   if (!response.ok) {
     alert('No se pudo ejecutar la acción.');
+    if (trigger) trigger.disabled = false;
     return;
   }
   alert(successText);
   await refresh();
+  if (trigger) trigger.disabled = false;
 }
 
 document.querySelectorAll('.tab').forEach((btn) => {
@@ -197,15 +221,15 @@ document.querySelectorAll('.tab').forEach((btn) => {
 
 el.btnActivity.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
 el.btnCloseActivity.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
-el.btnRefresh.addEventListener('click', () => runAction('/api/actions/refresh', 'Dashboard actualizado.').catch(console.error));
+el.btnRefresh.addEventListener('click', () => runAction('/api/actions/refresh', 'Dashboard actualizado.', el.btnRefresh).catch(console.error));
 el.btnPause.addEventListener('click', () => {
   if (window.confirm('¿Pausar delegación ahora?')) {
-    runAction('/api/actions/pause-delegation', 'Delegación pausada.').catch(console.error);
+    runAction('/api/actions/pause-delegation', 'Delegación pausada.', el.btnPause).catch(console.error);
   }
 });
-el.btnSgExec.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.').catch(console.error));
-el.btnSgAlt.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.').catch(console.error));
-el.btnPersonalExec.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.').catch(console.error));
+el.btnSgExec.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.', el.btnSgExec).catch(console.error));
+el.btnSgAlt.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.', el.btnSgAlt).catch(console.error));
+el.btnPersonalExec.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.', el.btnPersonalExec).catch(console.error));
 
 refresh().catch(console.error);
 setInterval(() => refresh().catch(console.error), POLL_MS);

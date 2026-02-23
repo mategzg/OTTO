@@ -160,6 +160,7 @@ def _runtime_topbar_snapshot() -> dict[str, object]:
             "active_subagents": 0,
             "active_coders": 0,
             "delegations": [],
+            "source_mode": "fallback",
         }
 
     subagents = [s for s in sessions if isinstance(s, dict) and "subagent" in str(s.get("key", ""))]
@@ -188,6 +189,7 @@ def _runtime_topbar_snapshot() -> dict[str, object]:
         "active_subagents": len(subagents),
         "active_coders": len(coders),
         "delegations": delegations,
+        "source_mode": "live",
     }
 
 
@@ -224,6 +226,10 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
             "next_action_impact": "-",
         },
         "activity": [],
+        "meta": {
+            "mode": "fallback",
+            "last_updated": "-",
+        },
     }
 
     raw_payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
@@ -244,6 +250,11 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
     topbar.update({k: v for k, v in runtime_topbar.items() if k in {"active_delegations_total", "active_subagents", "active_coders", "delegations"}})
     payload["topbar"] = topbar
+
+    meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
+    meta["mode"] = runtime_topbar.get("source_mode", "fallback")
+    meta["last_updated"] = datetime.now().strftime("%H:%M:%S")
+    payload["meta"] = meta
 
     # Recent activity fallback.
     activity = payload.get("activity")
