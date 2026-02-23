@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -209,6 +210,22 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     return payload
 
 
+def _append_dashboard_event(root: Path, *, label: str, status: str = "done", kind: str = "system") -> None:
+    ts = datetime.now().strftime("%H:%M")
+    entry = {"time": ts, "label": label, "status": status, "type": kind}
+
+    dashboard_state_path = root / "state" / "dashboard_v1.json"
+    payload = _safe_json_load(dashboard_state_path, {})
+    if not isinstance(payload, dict):
+        payload = {}
+    current = payload.get("activity") if isinstance(payload.get("activity"), list) else []
+    current = [item for item in current if isinstance(item, dict)]
+    current.append(entry)
+    payload["activity"] = current[-5:]
+    dashboard_state_path.parent.mkdir(parents=True, exist_ok=True)
+    dashboard_state_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def _json_response(handler: BaseHTTPRequestHandler, status: int, payload: object) -> None:
     body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False).encode("utf-8")
     handler.send_response(status)
@@ -336,6 +353,29 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                 return
 
             _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found", "path": parsed.path})
+
+        def do_POST(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+
+            actions = {
+                "/api/actions/refresh": {"label": "Dashboard refrescado", "kind": "system"},
+                "/api/actions/pause-delegation": {"label": "Delegación pausada", "kind": "system"},
+                "/api/actions/execute-sg": {"label": "Ejecución decisión SG solicitada", "kind": "subagent"},
+                "/api/actions/sg-alternative": {"label": "Alternativa SG solicitada", "kind": "system"},
+                "/api/actions/execute-personal": {"label": "Acción personal ejecutada", "kind": "subagent"},
+            }
+
+            if parsed.path not in actions:
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found", "path": parsed.path})
+                return
+
+            _append_dashboard_event(
+                self.project_root,
+                label=actions[parsed.path]["label"],
+                status="running",
+                kind=actions[parsed.path]["kind"],
+            )
+            _json_response(self, HTTPStatus.OK, {"ok": True, "action": parsed.path})
 
         def log_message(self, format: str, *args: object) -> None:  # noqa: A003
             return

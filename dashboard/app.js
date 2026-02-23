@@ -176,8 +176,14 @@ async function refresh() {
   render(await response.json());
 }
 
-function actionStub(text) {
-  alert(`Acción registrada: ${text}`);
+async function runAction(path, successText) {
+  const response = await fetch(path, { method: 'POST' });
+  if (!response.ok) {
+    alert('No se pudo ejecutar la acción.');
+    return;
+  }
+  alert(successText);
+  await refresh();
 }
 
 document.querySelectorAll('.tab').forEach((btn) => {
@@ -191,13 +197,15 @@ document.querySelectorAll('.tab').forEach((btn) => {
 
 el.btnActivity.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
 el.btnCloseActivity.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
-el.btnRefresh.addEventListener('click', () => refresh().catch(console.error));
+el.btnRefresh.addEventListener('click', () => runAction('/api/actions/refresh', 'Dashboard actualizado.').catch(console.error));
 el.btnPause.addEventListener('click', () => {
-  if (window.confirm('¿Pausar delegación ahora?')) actionStub('Pausar delegación');
+  if (window.confirm('¿Pausar delegación ahora?')) {
+    runAction('/api/actions/pause-delegation', 'Delegación pausada.').catch(console.error);
+  }
 });
-el.btnSgExec.addEventListener('click', () => actionStub('Ejecutar decisión SG con OTTO'));
-el.btnSgAlt.addEventListener('click', () => actionStub('Ver alternativa SG'));
-el.btnPersonalExec.addEventListener('click', () => actionStub('Hazlo por mí (Personal)'));
+el.btnSgExec.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.').catch(console.error));
+el.btnSgAlt.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.').catch(console.error));
+el.btnPersonalExec.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.').catch(console.error));
 
 refresh().catch(console.error);
 setInterval(() => refresh().catch(console.error), POLL_MS);
