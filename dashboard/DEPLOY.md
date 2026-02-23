@@ -17,6 +17,13 @@ Si no defines estas dos, el dashboard queda sin auth.
 - `OTTO_ACTIONS_BASE_URL` = base URL del runtime OTTO
 - `OTTO_ACTIONS_TOKEN` = bearer token opcional para acciones POST
 
+### Bridge local recomendado (autónomo)
+- Token local: `DASHBOARD_BRIDGE_TOKEN` (protege el bridge)
+- Script local: `dashboard/run_live_bridge.sh`
+- El script levanta:
+  - `dashboard_server.py` local (127.0.0.1:18999)
+  - túnel `cloudflared` (trycloudflare URL)
+
 El dashboard llamará:
 - `POST {OTTO_ACTIONS_BASE_URL}/api/actions/refresh`
 - `POST {OTTO_ACTIONS_BASE_URL}/api/actions/pause-delegation`

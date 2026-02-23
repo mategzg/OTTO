@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import subprocess
 from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -142,6 +144,53 @@ def _deep_merge_defaults(value: object, defaults: object) -> object:
     return defaults if value is None else value
 
 
+def _run_json_command(command: list[str], timeout: float = 2.5) -> object:
+    try:
+        out = subprocess.check_output(command, text=True, timeout=timeout)
+        return json.loads(out)
+    except Exception:
+        return {}
+
+
+def _runtime_topbar_snapshot() -> dict[str, object]:
+    sessions = _run_json_command(["openclaw", "sessions", "--active", "60", "--json"])
+    if not isinstance(sessions, list):
+        return {
+            "active_delegations_total": 0,
+            "active_subagents": 0,
+            "active_coders": 0,
+            "delegations": [],
+        }
+
+    subagents = [s for s in sessions if isinstance(s, dict) and "subagent" in str(s.get("key", ""))]
+    coders = [s for s in sessions if isinstance(s, dict) and any(x in str(s.get("key", "")).lower() for x in ["codex", "claude", "pi"])]
+
+    delegations: list[dict[str, object]] = []
+    for item in subagents[:3]:
+        key = str(item.get("key", "subagent"))
+        delegations.append({
+            "label": key.split(":")[-1][:28],
+            "type": "subagent",
+            "progress": 65,
+            "status": "running",
+        })
+    for item in coders[: max(0, 3 - len(delegations))]:
+        key = str(item.get("key", "coder"))
+        delegations.append({
+            "label": key.split(":")[-1][:28],
+            "type": "coder",
+            "progress": 55,
+            "status": "running",
+        })
+
+    return {
+        "active_delegations_total": len(subagents) + len(coders),
+        "active_subagents": len(subagents),
+        "active_coders": len(coders),
+        "delegations": delegations,
+    }
+
+
 def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     default_payload: dict[str, object] = {
         "topbar": {
@@ -190,6 +239,11 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
         if not topbar.get("otto_status"):
             topbar["otto_status"] = "busy" if status in {"success", "running"} else "available"
             payload["topbar"] = topbar
+
+    runtime_topbar = _runtime_topbar_snapshot()
+    topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
+    topbar.update({k: v for k, v in runtime_topbar.items() if k in {"active_delegations_total", "active_subagents", "active_coders", "delegations"}})
+    payload["topbar"] = topbar
 
     # Recent activity fallback.
     activity = payload.get("activity")
@@ -250,6 +304,13 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
     class Handler(BaseHTTPRequestHandler):
         project_root = root.resolve()
 
+        def _authorized(self) -> bool:
+            token = os.getenv("DASHBOARD_BRIDGE_TOKEN", "").strip()
+            if not token:
+                return True
+            auth = self.headers.get("Authorization", "")
+            return auth == f"Bearer {token}"
+
         def do_GET(self) -> None:  # noqa: N802
             parsed = urlparse(self.path)
 
@@ -293,6 +354,9 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                 return
 
             if parsed.path == "/api/dashboard-v1":
+                if not self._authorized():
+                    _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
+                    return
                 payload = _build_dashboard_v1_payload(self.project_root)
                 _json_response(self, HTTPStatus.OK, payload)
                 return
@@ -367,6 +431,9 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
 
             if parsed.path not in actions:
                 _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found", "path": parsed.path})
+                return
+            if not self._authorized():
+                _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
                 return
 
             _append_dashboard_event(
