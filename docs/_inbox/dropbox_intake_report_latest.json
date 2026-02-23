@@ -2,20 +2,28 @@
   "apply": {
     "ingested": [
       {
-        "hints": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/HINTS.json",
-        "manifest": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/MANIFEST.json",
-        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
-        "source_id": "40f0d7c629",
-        "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
+        "hints": "vault/inbox_raw/sources/20260223T035737Z_8418855593/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260223T035737Z_8418855593/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035737Z_8418855593/original/manolo_b2c_20260223T035733Z",
+        "source_id": "8418855593",
+        "source_rel": "vault/inbox_raw/sources/20260223T035737Z_8418855593",
+        "suspected_kind": "json_export"
+      },
+      {
+        "hints": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035737Z_2fe07e03cf/original/manolo_b2c_text_20260223T035733Z",
+        "source_id": "2fe07e03cf",
+        "source_rel": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
         "suspected_kind": "json_export"
       }
     ],
-    "ingested_count": 1,
+    "ingested_count": 2,
     "max_entries": 200
   },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:56:04.285373+00:00",
+  "created_at": "2026-02-23T03:57:37.266143+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
   "state_path": "state/intake_state.json",

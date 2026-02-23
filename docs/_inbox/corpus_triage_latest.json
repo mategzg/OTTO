@@ -1,107 +1,157 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:56:04.415891+00:00",
+  "created_at": "2026-02-23T03:57:37.489709+00:00",
   "inbox_rel": "vault/inbox_raw",
   "sources": [
     {
       "approx_language": "markdown",
       "extensions": {
         ".json": 1,
-        ".md": 6
+        ".md": 4
       },
-      "file_count": 7,
+      "file_count": 5,
       "files": [
         {
-          "mtime": 1771818958.1507595,
-          "rel_path": "jack_b2b_text_20260223T035557Z/01_file_69---e157c4cb-c81d-49f3-b59a-0731ad32e897.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/01_file_69---e157c4cb-c81d-49f3-b59a-0731ad32e897.md",
-          "sha256": "2779cf5917932f2649a6ec4f48c8cf709eb8b9f286b7c95cf7aa45850045134b",
-          "size": 6906
+          "mtime": 1771819054.4889898,
+          "rel_path": "manolo_b2c_text_20260223T035733Z/01_file_75---a1e575e1-6b9a-4f75-b268-719ce7378448.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/01_file_75---a1e575e1-6b9a-4f75-b268-719ce7378448.md",
+          "sha256": "626a6fe1b460e0c60f4b8b66016357180011ee7a7d7deb2c1594a77757eb0dba",
+          "size": 239914
         },
         {
-          "mtime": 1771818958.1903596,
-          "rel_path": "jack_b2b_text_20260223T035557Z/02_file_70---d2d4b41b-7d13-4f4e-a610-f1e85c5351a1.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/02_file_70---d2d4b41b-7d13-4f4e-a610-f1e85c5351a1.md",
-          "sha256": "63184c6555d69062308ae2610af7aa5577cc9c1a77d37269cb36af3ce2a90693",
-          "size": 1853
+          "mtime": 1771819054.847573,
+          "rel_path": "manolo_b2c_text_20260223T035733Z/02_file_76---5c6b4477-055c-4b77-a9c5-47297c118c51.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/02_file_76---5c6b4477-055c-4b77-a9c5-47297c118c51.md",
+          "sha256": "2992c3d175efa07259de29901f82fc9b6373abd053ee092064cdd0df733e5150",
+          "size": 16875
         },
         {
-          "mtime": 1771818958.5907595,
-          "rel_path": "jack_b2b_text_20260223T035557Z/03_file_71---f5511a2a-cae4-4405-a255-6721c19be76b.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/03_file_71---f5511a2a-cae4-4405-a255-6721c19be76b.md",
-          "sha256": "80946c9ce2f03c5d69dbb67c77e814e7fdcd3887b264682a94e346554aee5538",
-          "size": 17981
+          "mtime": 1771819055.232078,
+          "rel_path": "manolo_b2c_text_20260223T035733Z/03_file_77---585a19f0-6571-4673-a8f8-fdb44cef496e.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/03_file_77---585a19f0-6571-4673-a8f8-fdb44cef496e.md",
+          "sha256": "3bf0da05dfb768b601f5cf439a6c1be664676df01fab6caaa96e50ae261943f1",
+          "size": 17597
         },
         {
-          "mtime": 1771818958.9867594,
-          "rel_path": "jack_b2b_text_20260223T035557Z/04_file_72---4085d3e9-2c69-49b0-94e6-70b6ebdaddb5.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/04_file_72---4085d3e9-2c69-49b0-94e6-70b6ebdaddb5.md",
-          "sha256": "1effda5a289d2cfc44e9e1b53754d42653e21becfe18b96db0b12c6720e0b0ae",
-          "size": 16749
+          "mtime": 1771819057.158923,
+          "rel_path": "manolo_b2c_text_20260223T035733Z/04_file_78---d7b2efa8-7bdd-444b-b5a8-105528c72b89.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/04_file_78---d7b2efa8-7bdd-444b-b5a8-105528c72b89.md",
+          "sha256": "7231736b2e5527948c679ca1f04f989303b7ef1032c8887e9b1ae7bed2c348a3",
+          "size": 274088
         },
         {
-          "mtime": 1771818959.9503596,
-          "rel_path": "jack_b2b_text_20260223T035557Z/05_file_73---18cdaa39-c277-4114-b082-5afd0702f51b.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/05_file_73---18cdaa39-c277-4114-b082-5afd0702f51b.md",
-          "sha256": "343e36c2e31695dffd8030fbc2f88b33fba3b80756d69252b5acc42372fd1744",
-          "size": 174999
-        },
-        {
-          "mtime": 1771818960.1439595,
-          "rel_path": "jack_b2b_text_20260223T035557Z/06_file_74---512cbe4c-cab6-45e7-85f8-295af4520711.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/06_file_74---512cbe4c-cab6-45e7-85f8-295af4520711.md",
-          "sha256": "ac2fca846c35d49c231323b8a8715ab6857d07403b2c179dd09dfbbf77cae0b9",
-          "size": 8682
-        },
-        {
-          "mtime": 1771818960.1439595,
-          "rel_path": "jack_b2b_text_20260223T035557Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/EVENT_META.json",
-          "sha256": "ad19a6550c7c3091cea3a4ffa036acb488321bea5c4a028801c1af942d6a8ae0",
-          "size": 121
+          "mtime": 1771819057.158923,
+          "rel_path": "manolo_b2c_text_20260223T035733Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf/source/manolo_b2c_text_20260223T035733Z/EVENT_META.json",
+          "sha256": "b7e9d38bb4a8292c7c6077dcfbce7581975b9119bde6d4c18bf9e700f547c314",
+          "size": 126
         }
       ],
       "high_signal": true,
-      "inbox_rel_path": "sources/20260223T035604Z_40f0d7c629",
+      "inbox_rel_path": "sources/20260223T035737Z_2fe07e03cf",
       "keywords": [
-        "01_file_69",
-        "02_file_70",
-        "03_file_71",
-        "04_file_72",
-        "05_file_73",
-        "06_file_74",
-        "0731ad32e897",
-        "18cdaa39",
-        "295af4520711",
-        "2c69",
-        "4085d3e9",
-        "4114",
-        "4405",
-        "45e7",
-        "49b0",
-        "49f3",
-        "4f4e",
-        "512cbe4c",
-        "5afd0702f51b",
-        "6721c19be76b",
-        "json_export"
+        "01_file_75",
+        "02_file_76",
+        "03_file_77",
+        "04_file_78",
+        "055c",
+        "105528c72b89",
+        "444b",
+        "4673",
+        "47297c118c51",
+        "4b77",
+        "4f75",
+        "585a19f0",
+        "5c6b4477",
+        "6571",
+        "6b9a",
+        "719ce7378448",
+        "7bdd",
+        "a1e575e1",
+        "a8f8",
+        "a9c5",
+        "generic_corpus"
       ],
       "kind": "dir",
       "recommended_domain": "external_ingest",
       "recommended_domain_source": "hints",
-      "source_hash": "2eb5d441ce5f9fc691d77b1bb31e403a3b5faebffefad630efaef606502ff502",
-      "source_id": "b50b754905",
-      "source_kind": "json_export",
-      "source_name": "20260223T035604Z_40f0d7c629",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
-      "total_bytes": 227291
+      "source_hash": "cb9dbdb614e32bf496beb96ecf6528f5443164c867c20e5a62c2683b9f1420ee",
+      "source_id": "109263f75f",
+      "source_kind": "generic_corpus",
+      "source_name": "20260223T035737Z_2fe07e03cf",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
+      "total_bytes": 548600
+    },
+    {
+      "approx_language": "unknown",
+      "extensions": {
+        ".json": 1,
+        ".pdf": 4
+      },
+      "file_count": 5,
+      "files": [
+        {
+          "mtime": 1771819053.2533898,
+          "rel_path": "manolo_b2c_20260223T035733Z/01_kb_proveedores_b2c_operativa.pdf",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/01_kb_proveedores_b2c_operativa.pdf",
+          "sha256": "f7eac1b2234549608c32ef11294c525ff4f7eee17ce2213f4ce909506aa3d657",
+          "size": 263377
+        },
+        {
+          "mtime": 1771819053.2533898,
+          "rel_path": "manolo_b2c_20260223T035733Z/02_kb_criterio_senior_diseno_residencial_b2c.pdf",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/02_kb_criterio_senior_diseno_residencial_b2c.pdf",
+          "sha256": "da3e242da67b913c472976efa3cfe7f9899de3855485c303a7baea37925ce466",
+          "size": 203920
+        },
+        {
+          "mtime": 1771819053.2533898,
+          "rel_path": "manolo_b2c_20260223T035733Z/03_b2c_offer_architect_kb_especifica.pdf",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/03_b2c_offer_architect_kb_especifica.pdf",
+          "sha256": "6dd37ae9417b6b0b59a7d97dceab2653c1098f7169ae7f7cd6ea480f998e7c40",
+          "size": 253539
+        },
+        {
+          "mtime": 1771819053.25771,
+          "rel_path": "manolo_b2c_20260223T035733Z/04_kb_proveedores_b2c.pdf",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/04_kb_proveedores_b2c.pdf",
+          "sha256": "fa98d3fa55363583ccb86948adfb4b619274326c19e54e7a0e66306ae5bfc3d0",
+          "size": 429032
+        },
+        {
+          "mtime": 1771819053.25771,
+          "rel_path": "manolo_b2c_20260223T035733Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T035737Z_8418855593/source/manolo_b2c_20260223T035733Z/EVENT_META.json",
+          "sha256": "93f88c712d064e38fc27a676dcf9259fe8a710d8f8d97fa244d8b8a97f932f6e",
+          "size": 204
+        }
+      ],
+      "high_signal": true,
+      "inbox_rel_path": "sources/20260223T035737Z_8418855593",
+      "keywords": [
+        "01_kb_proveedores_b2c_operativa",
+        "02_kb_criterio_senior_diseno_residencial_b2c",
+        "03_b2c_offer_architect_kb_especifica",
+        "04_kb_proveedores_b2c",
+        "event_meta",
+        "generic_corpus"
+      ],
+      "kind": "dir",
+      "recommended_domain": "external_ingest",
+      "recommended_domain_source": "hints",
+      "source_hash": "876e772632c35e213eccf56fbb02af18e3701afef97b4da5be3e682332b8fe6f",
+      "source_id": "8a918da6a9",
+      "source_kind": "generic_corpus",
+      "source_name": "20260223T035737Z_8418855593",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035737Z_8418855593",
+      "total_bytes": 1150072
     }
   ],
   "summary": {
-    "high_signal_sources": 1,
-    "pending_files": 7,
-    "pending_sources": 1,
-    "pending_total_bytes": 227291,
+    "high_signal_sources": 2,
+    "pending_files": 10,
+    "pending_sources": 2,
+    "pending_total_bytes": 1698672,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

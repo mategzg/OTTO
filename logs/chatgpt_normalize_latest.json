@@ -1,6 +1,6 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:55:31.770788+00:00",
+  "created_at": "2026-02-23T03:57:37.331185+00:00",
   "normalized_results": [
     {
       "conversation_count": 0,
@@ -10,8 +10,21 @@
       "normalized": false,
       "paths": {},
       "slice_count": 0,
-      "source_id": "10a53a2e97",
-      "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97",
+      "source_id": "2fe07e03cf",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
+      "suspected_kind": "generic_corpus",
+      "used_files": []
+    },
+    {
+      "conversation_count": 0,
+      "detector_reasons": [],
+      "detector_score": 0,
+      "message_count": 0,
+      "normalized": false,
+      "paths": {},
+      "slice_count": 0,
+      "source_id": "8418855593",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_8418855593",
       "suspected_kind": "generic_corpus",
       "used_files": []
     }
@@ -21,10 +34,11 @@
     "message_count": 0,
     "normalized_count": 0,
     "slice_count": 0,
-    "target_count": 1
+    "target_count": 2
   },
   "targets": [
-    "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97"
+    "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
+    "vault/inbox_raw/sources/20260223T035737Z_8418855593"
   ],
   "version": 1
 }

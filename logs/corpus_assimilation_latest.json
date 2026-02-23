@@ -1,16 +1,23 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:56:04.518352+00:00",
+  "created_at": "2026-02-23T03:57:37.748002+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260223T035604Z-175003ef",
+  "plan_id": "PLAN-20260223T035737Z-ee8e7418",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260223T035604Z_b50b754905/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260223T035604Z_b50b754905",
-      "readme": "vault/inbox_raw/_processed/20260223T035604Z_b50b754905/README.md",
-      "source_id": "b50b754905",
-      "source_rel": "sources/20260223T035604Z_40f0d7c629"
+      "manifest": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f",
+      "readme": "vault/inbox_raw/_processed/20260223T035737Z_109263f75f/README.md",
+      "source_id": "109263f75f",
+      "source_rel": "sources/20260223T035737Z_2fe07e03cf"
+    },
+    {
+      "manifest": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9",
+      "readme": "vault/inbox_raw/_processed/20260223T035737Z_8a918da6a9/README.md",
+      "source_id": "8a918da6a9",
+      "source_rel": "sources/20260223T035737Z_8418855593"
     }
   ],
   "status": "success",
@@ -20,19 +27,19 @@
     },
     "conflict_side_by_side": 0,
     "created": 2,
-    "processed_moves": 1,
+    "processed_moves": 2,
     "unchanged": 0
   },
   "version": 2,
   "writes": [
     {
       "category": "brain_knowledge",
-      "path": "brain/cards/external_ingest/card_b50b754905_01.md",
+      "path": "brain/cards/external_ingest/card_109263f75f_01.md",
       "status": "created"
     },
     {
       "category": "brain_knowledge",
-      "path": "brain/domains/external_ingest/sources/b50b754905_index.md",
+      "path": "brain/domains/external_ingest/sources/109263f75f_index.md",
       "status": "created"
     }
   ]
