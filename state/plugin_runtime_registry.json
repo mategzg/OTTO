@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-23T00:06:08Z",
+  "updated_at": "2026-02-23T00:07:54Z",
   "source_dir": "docs/_inbox/plugin_drop",
   "policy": {
     "nl_first": true,
@@ -13,18 +13,18 @@
       "domain_fit": "sg_ops",
       "priority": "high",
       "commands": [
-        "/triage",
-        "/research",
         "/draft-response",
         "/escalate",
-        "/kb-article"
+        "/kb-article",
+        "/research",
+        "/triage"
       ],
       "skills": [
-        "ticket-triage",
         "customer-research",
-        "response-drafting",
         "escalation",
-        "knowledge-management"
+        "knowledge-management",
+        "response-drafting",
+        "ticket-triage"
       ],
       "mcp_servers": [
         "atlassian",
@@ -48,19 +48,19 @@
       "priority": "medium",
       "commands": [
         "/analyze",
-        "/explore-data",
-        "/write-query",
-        "/create-viz",
         "/build-dashboard",
-        "/validate"
+        "/create-viz",
+        "/explore-data",
+        "/validate",
+        "/write-query"
       ],
       "skills": [
-        "sql-queries",
         "data-exploration",
-        "data-visualization",
-        "statistical-analysis",
         "data-validation",
-        "interactive-dashboard-builder"
+        "data-visualization",
+        "interactive-dashboard-builder",
+        "sql-queries",
+        "statistical-analysis"
       ],
       "mcp_servers": [
         "amplitude",
@@ -82,8 +82,8 @@
       "domain_fit": "knowledge_retrieval",
       "priority": "medium",
       "commands": [
-        "/search",
-        "/digest"
+        "/digest",
+        "/search"
       ],
       "skills": [],
       "mcp_servers": [
@@ -106,19 +106,19 @@
       "domain_fit": "sg_governance",
       "priority": "high",
       "commands": [
+        "/income-statement",
         "/journal-entry",
         "/reconciliation",
-        "/income-statement",
-        "/variance-analysis",
-        "/sox-testing"
+        "/sox-testing",
+        "/variance-analysis"
       ],
       "skills": [
+        "audit-support",
+        "close-management",
+        "financial-statements",
         "journal-entry-prep",
         "reconciliation",
-        "financial-statements",
-        "variance-analysis",
-        "close-management",
-        "audit-support"
+        "variance-analysis"
       ],
       "mcp_servers": [
         "bigquery",
@@ -140,12 +140,12 @@
       "priority": "high",
       "commands": [],
       "skills": [
-        "contract-review",
-        "nda-triage",
-        "compliance",
         "canned-responses",
+        "compliance",
+        "contract-review",
         "legal-risk-assessment",
-        "meeting-briefing"
+        "meeting-briefing",
+        "nda-triage"
       ],
       "mcp_servers": [
         "atlassian",
@@ -166,19 +166,19 @@
       "domain_fit": "sg_ops",
       "priority": "high",
       "commands": [
-        "/draft-content",
-        "/campaign-plan",
         "/brand-review",
+        "/campaign-plan",
         "/competitive-brief",
+        "/draft-content",
+        "/email-sequence",
         "/performance-report",
-        "/seo-audit",
-        "/email-sequence"
+        "/seo-audit"
       ],
       "skills": [
-        "content-creation",
-        "campaign-planning",
         "brand-voice",
+        "campaign-planning",
         "competitive-analysis",
+        "content-creation",
         "performance-analytics"
       ],
       "mcp_servers": [
@@ -204,20 +204,20 @@
       "domain_fit": "execution_system",
       "priority": "medium",
       "commands": [
-        "/write-spec",
+        "/competitive-brief",
+        "/metrics-review",
         "/roadmap-update",
         "/stakeholder-update",
         "/synthesize-research",
-        "/competitive-brief",
-        "/metrics-review"
+        "/write-spec"
       ],
       "skills": [
+        "competitive-analysis",
         "feature-spec",
+        "metrics-tracking",
         "roadmap-management",
         "stakeholder-comms",
-        "user-research-synthesis",
-        "competitive-analysis",
-        "metrics-tracking"
+        "user-research-synthesis"
       ],
       "mcp_servers": [
         "amplitude",
@@ -282,10 +282,10 @@
       "skills": [
         "account-research",
         "call-prep",
-        "daily-briefing",
-        "draft-outreach",
         "competitive-intelligence",
-        "create-an-asset"
+        "create-an-asset",
+        "daily-briefing",
+        "draft-outreach"
       ],
       "mcp_servers": [
         "atlassian",
@@ -304,5 +304,35 @@
         "Supercharged mode requires MCP auth per connector"
       ]
     }
+  ],
+  "unique_mcp_servers": [
+    "ahrefs",
+    "amplitude",
+    "asana",
+    "atlassian",
+    "bigquery",
+    "box",
+    "canva",
+    "clay",
+    "clickup",
+    "close",
+    "databricks",
+    "egnyte",
+    "figma",
+    "fireflies",
+    "guru",
+    "hex",
+    "hubspot",
+    "intercom",
+    "klaviyo",
+    "linear",
+    "monday",
+    "ms365",
+    "notion",
+    "pendo",
+    "similarweb",
+    "slack",
+    "snowflake",
+    "zoominfo"
   ]
 }
