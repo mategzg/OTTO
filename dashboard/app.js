@@ -293,7 +293,7 @@ el.btnCompact?.addEventListener('click', () => {
   document.body.classList.toggle('compact');
   const on = document.body.classList.contains('compact');
   el.btnCompact.textContent = on ? 'Expandida' : 'Compacto';
-  showToast(on ? 'Vista compacta activada' : 'Vista expandida activada');
+  showToast(on ? 'Compacto PRO activado' : 'Vista expandida activada');
 });
 
 refresh().catch(console.error);

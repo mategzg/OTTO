@@ -150,15 +150,28 @@ button.danger { background: #7f1d1d; }
   clip-path: polygon(0% 75%, 12% 70%, 24% 76%, 36% 48%, 48% 55%, 60% 35%, 72% 41%, 84% 22%, 100% 18%, 100% 100%, 0% 100%);
 }
 
+body.compact { padding: 8px; padding-top: calc(8px + env(safe-area-inset-top, 0px)); }
 body.compact .card,
-body.compact .card-mini { padding: 8px; border-radius: 12px; }
-body.compact .metric { font-size: 20px; margin: 4px 0; }
-body.compact .lead { font-size: 14px; }
-body.compact .sub { font-size: 12px; }
+body.compact .card-mini { padding: 7px; border-radius: 11px; }
+body.compact .topbar { gap: 6px; }
+body.compact .tabs { margin: 8px 0; gap: 6px; }
+body.compact .metric { font-size: 17px; margin: 2px 0; line-height: 1.1; }
+body.compact h3 { margin: 2px 0; font-size: 18px; }
+body.compact .lead { font-size: 13px; }
+body.compact .sub { font-size: 11px; margin: 0; }
+body.compact .label { font-size: 11px; }
+body.compact .big { font-size: 16px; margin: 2px 0; }
+body.compact .chip { font-size: 10px; padding: 3px 8px; }
 body.compact .trend,
 body.compact .cta,
 body.compact .cta-row,
-body.compact .impact { display: none; }
+body.compact .impact,
+body.compact #delegation-list,
+body.compact #sg-next-impact,
+body.compact #personal-next-impact { display: none; }
+body.compact .footer-meta { margin-top: 6px; font-size: 11px; }
+body.compact .mobile-dock { padding: 6px; gap: 6px; }
+body.compact .mobile-dock button { min-height: 38px; padding: 8px 10px; font-size: 14px; }
 
 @media (max-width: 860px) {
   .tab-panel.active {
@@ -168,7 +181,11 @@ body.compact .impact { display: none; }
     padding-bottom: 2px;
   }
   body.compact .tab-panel.active {
-    gap: 6px;
+    gap: 5px;
+  }
+  body.compact #tab-sg .card:nth-child(4),
+  body.compact #tab-personal .card:nth-child(4) {
+    display: none;
   }
 }
 
