@@ -1,0 +1,799 @@
+{
+  "updated_at": "2026-02-23T00:23:19Z",
+  "policy": {
+    "nl_first": true,
+    "p0_p1_no_autonomous_coder": true,
+    "p2_delegable_with_handoff": true
+  },
+  "plugins": [
+    {
+      "plugin": "Notion",
+      "selected_version": "0.1.0",
+      "versions_detected": [
+        "0.1.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [
+        "/Notion:create-database-row",
+        "/Notion:create-page",
+        "/Notion:create-task",
+        "/Notion:database-query",
+        "/Notion:find",
+        "/Notion:search",
+        "/Notion:tasks:build <url>",
+        "/Notion:tasks:explain-diff",
+        "/Notion:tasks:plan <url>",
+        "/Notion:tasks:setup"
+      ],
+      "skills": [],
+      "mcp_servers": [
+        "notion"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "agent-sdk-dev",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "asana",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "atlassian",
+      "selected_version": "5d300c892a43",
+      "versions_detected": [
+        "5d300c892a43"
+      ],
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "atlassian"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "circleback",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "circleback"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "clangd-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "claude-code-setup",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "claude-md-management",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "code-review",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "quality-security",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "code-simplifier",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "low",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "context7",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "csharp-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "explanatory-output-style",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "feature-dev",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "figma",
+      "selected_version": "1.1.0",
+      "versions_detected": [
+        "1.1.0"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "figma",
+        "figma-desktop"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "firebase",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "firecrawl",
+      "selected_version": "1.0.3",
+      "versions_detected": [
+        "1.0.3"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "frontend-design",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "github",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "gitlab",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "gopls-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "greptile",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "hookify",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "huggingface-skills",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [
+        "hugging-face-cli",
+        "hugging-face-datasets",
+        "hugging-face-evaluation",
+        "hugging-face-jobs",
+        "hugging-face-model-trainer",
+        "hugging-face-paper-publisher",
+        "hugging-face-tool-builder",
+        "hugging-face-trackio"
+      ],
+      "mcp_servers": [
+        "huggingface-skills"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "jdtls-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "kotlin-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "laravel-boost",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "learning-output-style",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "linear",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "lua-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "php-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "pinecone",
+      "selected_version": "1.1.2",
+      "versions_detected": [
+        "1.1.2"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "pinecone"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "playground",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "playwright",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "plugin-dev",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "posthog",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "posthog"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "pr-review-toolkit",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "quality-security",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "pyright-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "qodo-skills",
+      "selected_version": "0.3.0",
+      "versions_detected": [
+        "0.3.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "ralph-loop",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "rust-analyzer-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "security-guidance",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "2cd88e7947b7",
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "quality-security",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "semgrep",
+      "selected_version": "9fa3dd7166a1",
+      "versions_detected": [
+        "9fa3dd7166a1"
+      ],
+      "priority": "high",
+      "class": "quality-security",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "sentry",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [
+        "sentry-ios-swift-setup",
+        "sentry-setup-ai-monitoring",
+        "sentry-setup-logging",
+        "sentry-setup-metrics",
+        "sentry-setup-tracing"
+      ],
+      "mcp_servers": [
+        "sentry"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "serena",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "skill-creator",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "slack",
+      "selected_version": "aa296ec81e8c",
+      "versions_detected": [
+        "aa296ec81e8c"
+      ],
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "sonatype-guide",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "low",
+      "class": "general",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "stripe",
+      "selected_version": "0.1.0",
+      "versions_detected": [
+        "0.1.0"
+      ],
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [
+        "stripe"
+      ],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "superpowers",
+      "selected_version": "4.3.1",
+      "versions_detected": [
+        "4.3.0",
+        "4.3.1"
+      ],
+      "priority": "high",
+      "class": "workflow-automation",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "typescript-lsp",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": [],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    },
+    {
+      "plugin": "vercel",
+      "selected_version": "1.0.0",
+      "versions_detected": [
+        "1.0.0"
+      ],
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": [
+        "/deploy",
+        "/vercel-logs",
+        "/vercel-setup"
+      ],
+      "skills": [],
+      "mcp_servers": [],
+      "status": "READY_PLAYBOOK",
+      "supercharged": "OPTIONAL_CONNECTORS"
+    }
+  ]
+}

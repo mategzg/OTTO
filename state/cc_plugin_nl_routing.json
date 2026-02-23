@@ -1,0 +1,37 @@
+{
+  "updated_at": "2026-02-23T00:23:19Z",
+  "routes": [
+    {
+      "intent": "review|pr|pull request|bugs|seguridad",
+      "plugin": "code-review"
+    },
+    {
+      "intent": "docs version|api docs|reference",
+      "plugin": "context7"
+    },
+    {
+      "intent": "deploy|vercel|build fail",
+      "plugin": "vercel"
+    },
+    {
+      "intent": "browser test|e2e|playwright",
+      "plugin": "playwright"
+    },
+    {
+      "intent": "github|issue|workflow|actions",
+      "plugin": "github"
+    },
+    {
+      "intent": "refactor|simplify code",
+      "plugin": "code-simplifier"
+    },
+    {
+      "intent": "security scan|vulnerability",
+      "plugin": "semgrep"
+    },
+    {
+      "intent": "language server|types|lsp",
+      "plugin": "typescript-lsp"
+    }
+  ]
+}
