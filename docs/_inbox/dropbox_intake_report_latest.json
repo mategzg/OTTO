@@ -2,20 +2,20 @@
   "apply": {
     "ingested": [
       {
-        "hints": "vault/inbox_raw/sources/20260222T162442Z_065f800160/HINTS.json",
-        "manifest": "vault/inbox_raw/sources/20260222T162442Z_065f800160/MANIFEST.json",
-        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T162442Z_065f800160/original/a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)",
-        "source_id": "065f800160",
-        "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160",
-        "suspected_kind": "chatgpt_export_candidate"
+        "hints": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/HINTS.json",
+        "manifest": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/MANIFEST.json",
+        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
+        "source_id": "40f0d7c629",
+        "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
+        "suspected_kind": "json_export"
       }
     ],
     "ingested_count": 1,
-    "max_entries": 5
+    "max_entries": 200
   },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-22T16:25:20.701989+00:00",
+  "created_at": "2026-02-23T03:56:04.285373+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
   "state_path": "state/intake_state.json",

@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 6,
-  "last_run_utc": "2026-02-22T16:25:20.697946+00:00",
+  "ingested_count_total": 8,
+  "last_run_utc": "2026-02-23T03:56:04.283835+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -29,6 +29,16 @@
       "source_id": "bb980d1560",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
     },
+    "cc6f3106c4655d2f1d0eb261a680aa0486a3113fd35a02d1c5e516e371719ced": {
+      "ingested_at": "2026-02-23T03:55:31.698318+00:00",
+      "source_id": "10a53a2e97",
+      "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97"
+    },
+    "dd7247e536784c17b9a16940de9f19ad3468462dc07773977297826662d187ec": {
+      "ingested_at": "2026-02-23T03:56:04.283341+00:00",
+      "source_id": "40f0d7c629",
+      "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629"
+    },
     "f938adeeb8f7ea858d6e4962146238f6ded36edbb91a391fd1f90445f4b79685": {
       "ingested_at": "2026-02-22T04:25:22.336305+00:00",
       "source_id": "0cc409a21f",
@@ -48,6 +58,21 @@
       "normalized": false,
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042521Z_0cc409a21f/original/backup_branch_assimilation_20260222T042510Z",
       "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f",
+      "suspected_kind": "json_export"
+    },
+    "10a53a2e97": {
+      "ingested_at": "2026-02-23T03:55:31.698718+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T03:55:31.770434+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035531Z_10a53a2e97/original/jack_b2b_20260223T035526Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97",
+      "suspected_kind": "generic_corpus"
+    },
+    "40f0d7c629": {
+      "ingested_at": "2026-02-23T03:56:04.283564+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
       "suspected_kind": "json_export"
     },
     "6c8e0dd191": {
