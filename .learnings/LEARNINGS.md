@@ -53,8 +53,13 @@ Introducir estatus binario verificable por capa: `CATALOGADO`, `RUTEADO`, `EJECU
 - Related Files: state/plugin_runtime_registry.json, state/cc_plugin_runtime_registry.json, scripts/plugin_drop_processor.py, scripts/cc_plugin_ingest.py
 - Tags: truthfulness, integration, runtime-evidence
 - Pattern-Key: never.claim.operational.without.runtime_path
-- Recurrence-Count: 1
+- Recurrence-Count: 2
 - First-Seen: 2026-02-23
 - Last-Seen: 2026-02-23
+
+### Resolution
+- **Resolved**: 2026-02-23T15:55:00-05:00
+- **Commit/PR**: pending
+- **Notes**: Reforzar respuesta con distinción explícita Skills vs Plugins y verificación directa en `state/cc_plugin_runtime_registry.json` + reportes `_latest`.
 
 ---
