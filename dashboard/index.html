@@ -2,18 +2,19 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OTTO Dashboard v1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1224" />
+    <title>OTTO Dashboard Elite</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <header class="topbar">
-      <div class="card-mini">
+      <div class="card-mini identity-card">
         <div class="label">OTTO</div>
         <div id="otto-pill" class="pill">-</div>
       </div>
 
-      <div class="card-mini">
+      <div class="card-mini delegation-card">
         <div class="label">Delegación en vivo</div>
         <div id="delegation-total" class="big">0 activas</div>
         <div class="chips">
@@ -25,8 +26,8 @@
 
       <div class="card-mini actions">
         <button id="btn-refresh">Actualizar</button>
-        <button id="btn-activity">Ver actividad</button>
-        <button id="btn-pause" class="danger">Pausar delegación</button>
+        <button id="btn-activity">Actividad</button>
+        <button id="btn-pause" class="danger">Pausar</button>
       </div>
     </header>
 
@@ -111,6 +112,14 @@
       </div>
       <ul id="activity-list" class="timeline"></ul>
     </aside>
+
+    <nav class="mobile-dock">
+      <button id="m-btn-refresh">Actualizar</button>
+      <button id="m-btn-activity">Actividad</button>
+      <button id="m-btn-primary" class="primary">Ejecutar</button>
+    </nav>
+
+    <div id="toast" class="toast hidden"></div>
 
     <script src="/app.js"></script>
   </body>

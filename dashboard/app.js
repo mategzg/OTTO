@@ -39,10 +39,26 @@ const el = {
   btnSgAlt: document.getElementById('btn-sg-alt'),
   btnPersonalExec: document.getElementById('btn-personal-exec'),
 
+  mBtnRefresh: document.getElementById('m-btn-refresh'),
+  mBtnActivity: document.getElementById('m-btn-activity'),
+  mBtnPrimary: document.getElementById('m-btn-primary'),
+
   syncBadge: document.getElementById('sync-badge'),
   dataMode: document.getElementById('data-mode'),
   lastUpdated: document.getElementById('last-updated'),
+  toast: document.getElementById('toast'),
 };
+
+let toastTimer = null;
+
+function showToast(text, kind = 'info') {
+  if (!el.toast) return;
+  el.toast.textContent = text;
+  el.toast.classList.remove('hidden');
+  el.toast.style.borderColor = kind === 'error' ? 'rgba(239,68,68,.7)' : 'rgba(59,130,246,.55)';
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.toast.classList.add('hidden'), 2200);
+}
 
 function setPill(status) {
   const map = {
@@ -187,27 +203,43 @@ function render(data) {
   setSync(meta.mode === 'live' ? 'ok' : 'warn', meta.mode === 'live' ? 'live' : 'fallback');
 }
 
-async function refresh() {
+async function refresh(showFeedback = false) {
   setSync('warn', 'sync...');
   const response = await fetch('/api/dashboard-v1', { cache: 'no-store' });
   if (!response.ok) {
     setSync('err', 'offline');
+    if (showFeedback) showToast('No se pudo sincronizar', 'error');
     throw new Error('No se pudo cargar dashboard');
   }
   render(await response.json());
+  if (showFeedback) showToast('Dashboard al día');
 }
 
 async function runAction(path, successText, trigger) {
   if (trigger) trigger.disabled = true;
   const response = await fetch(path, { method: 'POST' });
   if (!response.ok) {
-    alert('No se pudo ejecutar la acción.');
+    showToast('No se pudo ejecutar la acción', 'error');
     if (trigger) trigger.disabled = false;
     return;
   }
-  alert(successText);
+  showToast(successText);
   await refresh();
   if (trigger) trigger.disabled = false;
+}
+
+function getActiveTab() {
+  const active = document.querySelector('.tab.active');
+  return active ? active.dataset.tab : 'sg';
+}
+
+function runPrimaryAction() {
+  const tab = getActiveTab();
+  if (tab === 'personal') {
+    runAction('/api/actions/execute-personal', 'Acción personal enviada.', el.mBtnPrimary).catch(console.error);
+  } else {
+    runAction('/api/actions/execute-sg', 'Decisión SG enviada.', el.mBtnPrimary).catch(console.error);
+  }
 }
 
 document.querySelectorAll('.tab').forEach((btn) => {
@@ -216,20 +248,25 @@ document.querySelectorAll('.tab').forEach((btn) => {
     document.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+    if (el.mBtnPrimary) el.mBtnPrimary.textContent = btn.dataset.tab === 'personal' ? 'Resolver Personal' : 'Ejecutar SG';
   });
 });
 
-el.btnActivity.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
-el.btnCloseActivity.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
-el.btnRefresh.addEventListener('click', () => runAction('/api/actions/refresh', 'Dashboard actualizado.', el.btnRefresh).catch(console.error));
-el.btnPause.addEventListener('click', () => {
+el.btnActivity?.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
+el.btnCloseActivity?.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
+el.btnRefresh?.addEventListener('click', () => runAction('/api/actions/refresh', 'Dashboard actualizado.', el.btnRefresh).catch(console.error));
+el.btnPause?.addEventListener('click', () => {
   if (window.confirm('¿Pausar delegación ahora?')) {
     runAction('/api/actions/pause-delegation', 'Delegación pausada.', el.btnPause).catch(console.error);
   }
 });
-el.btnSgExec.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.', el.btnSgExec).catch(console.error));
-el.btnSgAlt.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.', el.btnSgAlt).catch(console.error));
-el.btnPersonalExec.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.', el.btnPersonalExec).catch(console.error));
+el.btnSgExec?.addEventListener('click', () => runAction('/api/actions/execute-sg', 'Decisión SG enviada a ejecución.', el.btnSgExec).catch(console.error));
+el.btnSgAlt?.addEventListener('click', () => runAction('/api/actions/sg-alternative', 'Alternativa SG cargada.', el.btnSgAlt).catch(console.error));
+el.btnPersonalExec?.addEventListener('click', () => runAction('/api/actions/execute-personal', 'Acción personal enviada a ejecución.', el.btnPersonalExec).catch(console.error));
+
+el.mBtnRefresh?.addEventListener('click', () => refresh(true).catch(console.error));
+el.mBtnActivity?.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
+el.mBtnPrimary?.addEventListener('click', runPrimaryAction);
 
 refresh().catch(console.error);
 setInterval(() => refresh().catch(console.error), POLL_MS);
