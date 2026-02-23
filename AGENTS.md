@@ -89,6 +89,18 @@ Don't ask permission. Just do it.
 
 You wake up fresh each session. These files are your continuity:
 
+### Repo Verification Protocol (mandatory for repo-specific questions)
+
+When Mateo asks about something specific in the repo (plugins, commits, scripts, certifications, generated artifacts, runtime registries):
+
+1. Run required `memory_search` first (policy compliance).
+2. Then **always verify in repo artifacts** before answering:
+   - `git show <commit>` / `git log --name-only`
+   - direct file existence checks (`ls`, `read`) in `state/*`, `docs/_inbox/*`, `scripts/*`, and relevant folders.
+3. If memory search is empty but repo evidence exists, answer from repo evidence and explicitly note memory gap.
+4. Never infer "not integrated" or "not available" until repo verification is done.
+5. If still uncertain after verification, respond `GAP/NO_VERIFICADO` and list exactly what was checked.
+
 ### Core Rule — Never rely on conversational memory
 
 - Conversational memory is temporary and MUST NOT be treated as durable truth.
