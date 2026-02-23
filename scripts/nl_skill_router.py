@@ -18,6 +18,7 @@ from scripts.evidence_guard import build_and_validate as evidence_build_and_vali
 from scripts.skill_creation_heuristics import evaluate_creation
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
 from scripts.runtime_guardrails import is_tool_allowed
+from scripts.plugin_execution_contract import evaluate_plugin_target
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
 RETRIEVAL_POLICY_PATH = Path("state/retrieval_policy.json")
@@ -389,6 +390,35 @@ def run_nl_router(
                     "selected_target": plan["selected_target"],
                 },
             )
+
+        plugin_exec = evaluate_plugin_target(canonical_root, plan["selected_target"])
+        execution_payload = {
+            "selected_target": plan["selected_target"],
+            "route_type": plan["route_type"],
+            "status": "planned",
+        }
+        if plugin_exec.get("applicable"):
+            execution_payload = {
+                "selected_target": plan["selected_target"],
+                "route_type": plan["route_type"],
+                "status": str(plugin_exec.get("status", "OK_PARTIAL")),
+                "mode": plugin_exec.get("mode", "standalone"),
+                "next_action": plugin_exec.get("next_action", "run_playbook"),
+                "connector_summary": plugin_exec.get("connector_summary", {}),
+            }
+            record_event(
+                canonical_root,
+                {
+                    "kind": "plugin_execution",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": str(plugin_exec.get("status", "")).startswith("OK"),
+                    "latency_ms": elapsed_ms,
+                    "plugin": plugin_exec.get("plugin", ""),
+                    "status": plugin_exec.get("status", ""),
+                },
+            )
+
         return {
             "status": "success",
             "idempotency_key": idempotency_key,
@@ -408,11 +438,7 @@ def run_nl_router(
             },
             "classification": classification,
             "plan": plan,
-            "execution": {
-                "selected_target": plan["selected_target"],
-                "route_type": plan["route_type"],
-                "status": "planned",
-            },
+            "execution": execution_payload,
             "retrieval_v2": retrieval_v2,
             "grounded_response": {
                 "mode": "evidence_first",

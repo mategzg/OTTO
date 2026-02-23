@@ -37,12 +37,15 @@ def run() -> None:
         out = run_nl_router(ROOT, text=text, channel="telegram")
         plan = out.get("plan", {}) if isinstance(out.get("plan", {}), dict) else {}
         selected = str(plan.get("selected_target", ""))
+        execution = out.get("execution", {}) if isinstance(out.get("execution", {}), dict) else {}
+        exec_status = str(execution.get("status", ""))
         checks.append({
             "text": text,
             "expected": expected,
             "selected_target": selected,
             "route_type": str(plan.get("route_type", "")),
-            "pass": selected == expected,
+            "execution_status": exec_status,
+            "pass": (selected == expected) and (exec_status.startswith("OK") or exec_status == "planned"),
         })
 
     passed = sum(1 for c in checks if c["pass"])
@@ -69,7 +72,7 @@ def run() -> None:
     ]
     for c in checks:
         status = "PASS" if c["pass"] else "FAIL"
-        lines.append(f"- [{status}] expected={c['expected']} | got={c['selected_target']} | route={c['route_type']}")
+        lines.append(f"- [{status}] expected={c['expected']} | got={c['selected_target']} | route={c['route_type']} | exec={c.get('execution_status','')}")
 
     OUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
