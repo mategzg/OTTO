@@ -1,0 +1,81 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --card: #1f2937;
+  --muted: #9ca3af;
+  --text: #f8fafc;
+  --green: #10b981;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --blue: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 14px;
+}
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+}
+.card-mini, .card {
+  background: var(--panel);
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 12px;
+}
+.label { color: var(--muted); font-size: 12px; }
+.big { font-size: 24px; font-weight: 700; margin: 4px 0; }
+.pill {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #334155;
+}
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { background: #334155; border-radius: 999px; padding: 5px 10px; font-size: 12px; }
+.actions { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+button {
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-weight: 600;
+}
+.tabs { display: flex; gap: 8px; margin: 14px 0; }
+.tab { background: #1e293b; }
+.tab.active { background: var(--blue); }
+.tab-panel { display: none; }
+.tab-panel.active { display: grid; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.metric { font-size: 32px; font-weight: 800; margin: 6px 0; }
+.sub { color: #d1d5db; margin: 2px 0; }
+.highlight { border-color: var(--blue); }
+.impact { color: var(--muted); font-weight: 600; }
+.list { margin: 8px 0 0 0; padding-left: 18px; }
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 92vw);
+  height: 100vh;
+  background: #020617;
+  border-left: 1px solid #334155;
+  padding: 12px;
+  overflow: auto;
+}
+.drawer.hidden { display: none; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; }
+@media (max-width: 860px) {
+  .topbar { grid-template-columns: 1fr; }
+  .actions { justify-content: flex-start; }
+  .grid-2 { grid-template-columns: 1fr; }
+}

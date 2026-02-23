@@ -1,0 +1,31 @@
+{
+  "topbar": {
+    "otto_status": "available",
+    "active_delegations_total": 0,
+    "active_subagents": 0,
+    "active_coders": 0
+  },
+  "sg": {
+    "cash_receivable_7d": 0,
+    "overdue_count": 0,
+    "hot_pipeline_value": 0,
+    "hot_opportunities_count": 0,
+    "ops_risk_count": 0,
+    "top_risk_label": "Sin riesgo crítico",
+    "next_best_decision": "Sin recomendación",
+    "next_best_decision_impact": "-"
+  },
+  "personal": {
+    "top3": [
+      "Definir foco principal del día",
+      "Revisar prioridad SG",
+      "Cerrar 1 decisión importante"
+    ],
+    "critical_count": 0,
+    "due_today_count": 0,
+    "next_decision": "Sin decisión pendiente",
+    "next_action": "Tomar la primera decisión de alto impacto del día",
+    "next_action_impact": "medium"
+  },
+  "activity": []
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mateo Control v1</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="otto-status card-mini">
+        <div class="label">OTTO</div>
+        <div id="otto-pill" class="pill">-</div>
+      </div>
+
+      <div class="delegation card-mini">
+        <div class="label">Delegación en vivo</div>
+        <div id="delegation-total" class="big">0 activas</div>
+        <div class="chips">
+          <span id="chip-subagent" class="chip">Subagente x0</span>
+          <span id="chip-coder" class="chip">Coder x0</span>
+        </div>
+      </div>
+
+      <div class="actions card-mini">
+        <button id="btn-refresh">Actualizar</button>
+        <button id="btn-activity">Ver actividad</button>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="sg">SG</button>
+      <button class="tab" data-tab="personal">Personal</button>
+    </nav>
+
+    <main>
+      <section id="tab-sg" class="tab-panel active grid-2">
+        <article class="card">
+          <h3>Caja / Cobranza hoy</h3>
+          <p id="sg-cash" class="metric">S/ 0</p>
+          <p id="sg-overdue" class="sub">0 vencidas</p>
+        </article>
+
+        <article class="card">
+          <h3>Pipeline activo</h3>
+          <p id="sg-pipeline" class="metric">S/ 0</p>
+          <p id="sg-hot-count" class="sub">0 oportunidades calientes</p>
+        </article>
+
+        <article class="card">
+          <h3>Operación en riesgo</h3>
+          <p id="sg-risk" class="metric">0 frentes</p>
+          <p id="sg-top-risk" class="sub">Sin riesgo crítico</p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Siguiente mejor decisión</h3>
+          <p id="sg-next-decision" class="sub">Sin recomendación</p>
+          <p id="sg-next-impact" class="impact">Impacto: -</p>
+        </article>
+      </section>
+
+      <section id="tab-personal" class="tab-panel grid-2">
+        <article class="card">
+          <h3>Top 3 del día</h3>
+          <ul id="personal-top3" class="list"></ul>
+        </article>
+
+        <article class="card">
+          <h3>Pendientes críticos</h3>
+          <p id="personal-critical" class="metric">0</p>
+          <p id="personal-due" class="sub">0 vencen hoy</p>
+        </article>
+
+        <article class="card">
+          <h3>Próxima decisión importante</h3>
+          <p id="personal-next-decision" class="sub">Sin decisión pendiente</p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Siguiente mejor acción</h3>
+          <p id="personal-next-action" class="sub">Sin recomendación</p>
+          <p id="personal-next-impact" class="impact">Impacto: -</p>
+        </article>
+      </section>
+    </main>
+
+    <aside id="activity-drawer" class="drawer hidden">
+      <div class="drawer-head">
+        <h3>Actividad reciente</h3>
+        <button id="btn-close-activity">Cerrar</button>
+      </div>
+      <ul id="activity-list" class="list"></ul>
+    </aside>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

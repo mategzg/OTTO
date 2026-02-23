@@ -126,6 +126,67 @@ def _load_ledger(root: Path, limit: int) -> list[dict[str, str]]:
     return items[:limit]
 
 
+def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
+    default_payload: dict[str, object] = {
+        "topbar": {
+            "otto_status": "available",
+            "active_delegations_total": 0,
+            "active_subagents": 0,
+            "active_coders": 0,
+        },
+        "sg": {
+            "cash_receivable_7d": 0,
+            "overdue_count": 0,
+            "hot_pipeline_value": 0,
+            "hot_opportunities_count": 0,
+            "ops_risk_count": 0,
+            "top_risk_label": "Sin riesgo crítico",
+            "next_best_decision": "Sin recomendación",
+            "next_best_decision_impact": "-",
+        },
+        "personal": {
+            "top3": [],
+            "critical_count": 0,
+            "due_today_count": 0,
+            "next_decision": "",
+            "next_action": "",
+            "next_action_impact": "-",
+        },
+        "activity": [],
+    }
+
+    payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
+    if not isinstance(payload, dict):
+        payload = default_payload
+
+    # Light auto-fallback from heartbeat status when present.
+    heartbeat = _safe_json_load(root / "docs" / "_inbox" / "heartbeat_latest.json", {})
+    if isinstance(heartbeat, dict):
+        status = str(heartbeat.get("status", "")).strip().lower()
+        topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
+        if not topbar.get("otto_status"):
+            topbar["otto_status"] = "busy" if status in {"success", "running"} else "available"
+            payload["topbar"] = topbar
+
+    # Recent activity fallback.
+    activity = payload.get("activity")
+    if not isinstance(activity, list) or not activity:
+        events = _tail_ndjson(root / "logs" / "activity.ndjson", 5)
+        normalized: list[dict[str, object]] = []
+        for item in events[-5:]:
+            normalized.append(
+                {
+                    "time": item.get("ts", "-"),
+                    "label": item.get("event", "evento"),
+                    "status": "done",
+                    "type": "system",
+                }
+            )
+        payload["activity"] = normalized
+
+    return payload
+
+
 def _json_response(handler: BaseHTTPRequestHandler, status: int, payload: object) -> None:
     body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False).encode("utf-8")
     handler.send_response(status)
@@ -177,6 +238,24 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                     js_path.read_text(encoding="utf-8"),
                     "application/javascript; charset=utf-8",
                 )
+                return
+
+            if parsed.path == "/style.css":
+                css_path = self.project_root / "dashboard" / "style.css"
+                if not css_path.exists():
+                    _text_response(self, HTTPStatus.NOT_FOUND, "Missing dashboard/style.css", "text/plain")
+                    return
+                _text_response(
+                    self,
+                    HTTPStatus.OK,
+                    css_path.read_text(encoding="utf-8"),
+                    "text/css; charset=utf-8",
+                )
+                return
+
+            if parsed.path == "/api/dashboard-v1":
+                payload = _build_dashboard_v1_payload(self.project_root)
+                _json_response(self, HTTPStatus.OK, payload)
                 return
 
             if parsed.path == "/api/status":

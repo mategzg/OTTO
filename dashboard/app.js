@@ -1,158 +1,119 @@
-'use strict';
+const POLL_MS = 8000;
 
-const POLL_MS = 5000;
-const DOCS_LIMIT = 120;
+const el = {
+  ottoPill: document.getElementById('otto-pill'),
+  delegationTotal: document.getElementById('delegation-total'),
+  chipSubagent: document.getElementById('chip-subagent'),
+  chipCoder: document.getElementById('chip-coder'),
 
-const statusPill = document.getElementById('status-pill');
-const statusTask = document.getElementById('status-task');
-const statusRaw = document.getElementById('status-raw');
-const kanbanRaw = document.getElementById('kanban-raw');
-const activityList = document.getElementById('activity-list');
-const docsList = document.getElementById('docs-list');
-const docsHint = document.getElementById('docs-hint');
-const ledgerList = document.getElementById('ledger-list');
-const ledgerHint = document.getElementById('ledger-hint');
+  sgCash: document.getElementById('sg-cash'),
+  sgOverdue: document.getElementById('sg-overdue'),
+  sgPipeline: document.getElementById('sg-pipeline'),
+  sgHotCount: document.getElementById('sg-hot-count'),
+  sgRisk: document.getElementById('sg-risk'),
+  sgTopRisk: document.getElementById('sg-top-risk'),
+  sgNextDecision: document.getElementById('sg-next-decision'),
+  sgNextImpact: document.getElementById('sg-next-impact'),
 
-const statusColors = {
-  idle: 'var(--idle)',
-  thinking: 'var(--thinking)',
-  working: 'var(--working)',
-  offline: 'var(--offline)'
+  personalTop3: document.getElementById('personal-top3'),
+  personalCritical: document.getElementById('personal-critical'),
+  personalDue: document.getElementById('personal-due'),
+  personalNextDecision: document.getElementById('personal-next-decision'),
+  personalNextAction: document.getElementById('personal-next-action'),
+  personalNextImpact: document.getElementById('personal-next-impact'),
+
+  activityDrawer: document.getElementById('activity-drawer'),
+  activityList: document.getElementById('activity-list'),
+
+  btnRefresh: document.getElementById('btn-refresh'),
+  btnActivity: document.getElementById('btn-activity'),
+  btnCloseActivity: document.getElementById('btn-close-activity'),
 };
 
-async function fetchJson(url) {
-  const response = await fetch(url, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`${response.status} ${response.statusText}`);
-  }
-  return response.json();
+function setPill(status) {
+  const map = {
+    available: { text: '🟢 Disponible', color: '#10b981' },
+    busy: { text: '🟡 Ocupado', color: '#f59e0b' },
+    blocked: { text: '🔴 Bloqueado', color: '#ef4444' },
+  };
+  const cfg = map[String(status || '').toLowerCase()] || map.available;
+  el.ottoPill.textContent = cfg.text;
+  el.ottoPill.style.background = cfg.color;
 }
 
-function pretty(value) {
-  return JSON.stringify(value, null, 2);
+function money(n) {
+  const v = Number(n || 0);
+  return `S/ ${v.toLocaleString('es-PE')}`;
 }
 
-function renderStatus(status) {
-  const normalized = String(status.status || 'idle').toLowerCase();
-  statusPill.textContent = normalized;
-  statusPill.style.background = statusColors[normalized] || 'var(--offline)';
-  statusTask.textContent = status.task ? `Tarea actual: ${status.task}` : 'sin tarea activa';
-  statusRaw.textContent = pretty(status);
-}
+function render(data) {
+  const d = data || {};
+  const top = d.topbar || {};
+  const sg = d.sg || {};
+  const personal = d.personal || {};
 
-function renderKanban(kanban) {
-  kanbanRaw.textContent = pretty(kanban);
-}
+  setPill(top.otto_status);
+  el.delegationTotal.textContent = `${top.active_delegations_total || 0} activas`;
+  el.chipSubagent.textContent = `Subagente x${top.active_subagents || 0}`;
+  el.chipCoder.textContent = `Coder x${top.active_coders || 0}`;
 
-function humanActivity(entry) {
-  const ts = entry.ts || 'n/a';
-  const event = entry.event || 'event';
-  let payload = entry.payload || {};
-  if (!entry.payload && entry.detail) {
-    try {
-      payload = JSON.parse(entry.detail);
-    } catch {
-      payload = {};
-    }
-  }
+  el.sgCash.textContent = money(sg.cash_receivable_7d);
+  el.sgOverdue.textContent = `${sg.overdue_count || 0} vencidas`;
+  el.sgPipeline.textContent = money(sg.hot_pipeline_value);
+  el.sgHotCount.textContent = `${sg.hot_opportunities_count || 0} oportunidades calientes`;
+  el.sgRisk.textContent = `${sg.ops_risk_count || 0} frentes`;
+  el.sgTopRisk.textContent = sg.top_risk_label || 'Sin riesgo crítico';
+  el.sgNextDecision.textContent = sg.next_best_decision || 'Sin recomendación';
+  el.sgNextImpact.textContent = `Impacto: ${sg.next_best_decision_impact || '-'}`;
 
-  if (event === 'set_status') {
-    return `${ts} -> status=${payload.status || ''} task=${payload.task || ''}`;
-  }
-  if (event === 'add_task') {
-    return `${ts} -> add ${payload.id || ''} [${payload.priority || ''}] ${payload.title || ''}`;
-  }
-  if (event === 'move_task') {
-    return `${ts} -> move ${payload.task_id || ''}: ${payload.from || '?'} -> ${payload.to || '?'}`;
-  }
-  if (event === 'move_task_missing') {
-    return `${ts} -> move missing ${payload.task_id || ''} -> ${payload.to || ''}`;
-  }
-  if (entry.detail) {
-    return `${ts} -> ${event}: ${entry.detail}`;
-  }
-  return `${ts} -> ${event}`;
-}
+  el.personalTop3.innerHTML = '';
+  const top3 = Array.isArray(personal.top3) && personal.top3.length ? personal.top3 : ['Sin prioridades cargadas'];
+  top3.slice(0, 3).forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    el.personalTop3.appendChild(li);
+  });
 
-function renderActivity(items) {
-  activityList.innerHTML = '';
+  el.personalCritical.textContent = `${personal.critical_count || 0}`;
+  el.personalDue.textContent = `${personal.due_today_count || 0} vencen hoy`;
+  el.personalNextDecision.textContent = personal.next_decision || 'Sin decisión pendiente';
+  el.personalNextAction.textContent = personal.next_action || 'Sin recomendación';
+  el.personalNextImpact.textContent = `Impacto: ${personal.next_action_impact || '-'}`;
+
+  el.activityList.innerHTML = '';
+  const items = Array.isArray(d.activity) ? d.activity : [];
   if (!items.length) {
     const li = document.createElement('li');
-    li.textContent = '(sin actividad)';
-    activityList.appendChild(li);
-    return;
+    li.textContent = 'Sin actividad reciente';
+    el.activityList.appendChild(li);
+  } else {
+    items.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = `${item.time || '-'} · ${item.label || '-'} (${item.status || '-'})`;
+      el.activityList.appendChild(li);
+    });
   }
-
-  const ordered = [...items].reverse();
-  for (const item of ordered) {
-    const li = document.createElement('li');
-    li.textContent = humanActivity(item);
-    activityList.appendChild(li);
-  }
-}
-
-function renderDocs(files) {
-  docsList.innerHTML = '';
-  const limited = files.slice(0, DOCS_LIMIT);
-
-  for (const file of limited) {
-    const li = document.createElement('li');
-    li.textContent = `${file.path} (${file.size} bytes)`;
-    docsList.appendChild(li);
-  }
-
-  docsHint.textContent = files.length > DOCS_LIMIT
-    ? `Mostrando ${DOCS_LIMIT} de ${files.length} archivos`
-    : `Mostrando ${files.length} archivos`;
-
-  if (!files.length) {
-    const li = document.createElement('li');
-    li.textContent = '(sin archivos en docs/empresa)';
-    docsList.appendChild(li);
-  }
-}
-
-function renderLedger(items) {
-  ledgerList.innerHTML = '';
-  if (!items.length) {
-    const li = document.createElement('li');
-    li.textContent = '(sin items en ledger)';
-    ledgerList.appendChild(li);
-    ledgerHint.textContent = 'Agrega filas con scripts/append_ledger.py';
-    return;
-  }
-
-  for (const item of items) {
-    const li = document.createElement('li');
-    if (item.table === 'licitaciones') {
-      li.textContent = `[Licitaciones] ${item.fecha || ''} | ${item.fuente || ''} | ${item.keyword || ''} | ${item.archivo_doc || ''}`;
-    } else {
-      li.textContent = `[Leads] ${item.fecha || ''} | ${item.empresa || ''} | ${item.contacto || ''} | ${item.archivo_doc || ''}`;
-    }
-    ledgerList.appendChild(li);
-  }
-  ledgerHint.textContent = `Mostrando ${items.length} items`;
 }
 
 async function refresh() {
-  try {
-    const [status, kanban, activity, docs, ledger] = await Promise.all([
-      fetchJson('/api/status'),
-      fetchJson('/api/kanban'),
-      fetchJson('/api/activity?tail=80'),
-      fetchJson('/api/docs?path=docs/empresa'),
-      fetchJson('/api/ledger?limit=20')
-    ]);
-
-    renderStatus(status);
-    renderKanban(kanban);
-    renderActivity(activity);
-    renderDocs(docs);
-    renderLedger(ledger);
-  } catch (error) {
-    statusTask.textContent = `Error: ${error.message}`;
-  }
+  const response = await fetch('/api/dashboard-v1', { cache: 'no-store' });
+  if (!response.ok) throw new Error('No se pudo cargar dashboard');
+  const data = await response.json();
+  render(data);
 }
 
-refresh();
-setInterval(refresh, POLL_MS);
+document.querySelectorAll('.tab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+  });
+});
+
+el.btnActivity.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
+el.btnCloseActivity.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
+el.btnRefresh.addEventListener('click', () => refresh().catch(console.error));
+
+refresh().catch(console.error);
+setInterval(() => refresh().catch(console.error), POLL_MS);
