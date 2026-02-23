@@ -1,16 +1,16 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T04:07:40.514716+00:00",
+  "created_at": "2026-02-23T04:09:36.160616+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260223T040740Z-b77bb7ca",
+  "plan_id": "PLAN-20260223T040936Z-e2537aab",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260223T040740Z_3b7564bec3/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260223T040740Z_3b7564bec3",
-      "readme": "vault/inbox_raw/_processed/20260223T040740Z_3b7564bec3/README.md",
-      "source_id": "3b7564bec3",
-      "source_rel": "sources/20260223T040740Z_bb0532edc6"
+      "manifest": "vault/inbox_raw/_processed/20260223T040936Z_4c92779c30/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T040936Z_4c92779c30",
+      "readme": "vault/inbox_raw/_processed/20260223T040936Z_4c92779c30/README.md",
+      "source_id": "4c92779c30",
+      "source_rel": "sources/20260223T040935Z_4205b85142"
     }
   ],
   "status": "success",
@@ -27,12 +27,12 @@
   "writes": [
     {
       "category": "brain_knowledge",
-      "path": "brain/cards/external_ingest/card_3b7564bec3_01.md",
+      "path": "brain/cards/external_ingest/card_4c92779c30_01.md",
       "status": "created"
     },
     {
       "category": "brain_knowledge",
-      "path": "brain/domains/external_ingest/sources/3b7564bec3_index.md",
+      "path": "brain/domains/external_ingest/sources/4c92779c30_index.md",
       "status": "created"
     }
   ]

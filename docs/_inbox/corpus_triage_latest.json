@@ -1,6 +1,6 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T04:07:40.410859+00:00",
+  "created_at": "2026-02-23T04:09:36.060096+00:00",
   "inbox_rel": "vault/inbox_raw",
   "sources": [
     {
@@ -12,43 +12,43 @@
       "file_count": 2,
       "files": [
         {
-          "mtime": 1771819659.9766273,
-          "rel_path": "alex_hormozi_phase3_20260223T040739Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/EVENT_META.json",
-          "sha256": "f12e1a35e4fd454c098f11d45e1ae528a97bb49205eaef2e45645b0389b18560",
-          "size": 191
+          "mtime": 1771819775.8669279,
+          "rel_path": "alex_hormozi_cheatsheet_20260223T040935Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040935Z_4205b85142/source/alex_hormozi_cheatsheet_20260223T040935Z/EVENT_META.json",
+          "sha256": "a63882d9aef112bfe83f74c1a62b32c82318195d4f1276f40d35e2fd71718b24",
+          "size": 143
         },
         {
-          "mtime": 1771819659.9766273,
-          "rel_path": "alex_hormozi_phase3_20260223T040739Z/alex_hormozi_phase3_quotebank_sg.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6/source/alex_hormozi_phase3_20260223T040739Z/alex_hormozi_phase3_quotebank_sg.md",
-          "sha256": "8bbe5560e4b583540f4af933bfe5728d2d40c1dfea2e8f34ce35eb4ee75b7a26",
-          "size": 4115
+          "mtime": 1771819775.8626125,
+          "rel_path": "alex_hormozi_cheatsheet_20260223T040935Z/chuleta_comercial_sg_hormozi_1pagina.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040935Z_4205b85142/source/alex_hormozi_cheatsheet_20260223T040935Z/chuleta_comercial_sg_hormozi_1pagina.md",
+          "sha256": "651eb06d77d35101c8b84527322369f2544e39dd746c406dc9b1e67b5271a79e",
+          "size": 1938
         }
       ],
       "high_signal": true,
-      "inbox_rel_path": "sources/20260223T040740Z_bb0532edc6",
+      "inbox_rel_path": "sources/20260223T040935Z_4205b85142",
       "keywords": [
-        "alex_hormozi_phase3_quotebank_sg",
+        "chuleta_comercial_sg_hormozi_1pagina",
         "event_meta",
         "json_export"
       ],
       "kind": "dir",
       "recommended_domain": "external_ingest",
       "recommended_domain_source": "hints",
-      "source_hash": "c9ffc3e2ad28e81e6d5369a5bf429c77f92d0a193df9bdb6f478b0f80be89134",
-      "source_id": "3b7564bec3",
+      "source_hash": "be5acf9a83f46c239ab7139723fc9c3c46b5a5cd8fd7d784e5815355a17dd1fa",
+      "source_id": "4c92779c30",
       "source_kind": "json_export",
-      "source_name": "20260223T040740Z_bb0532edc6",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040740Z_bb0532edc6",
-      "total_bytes": 4306
+      "source_name": "20260223T040935Z_4205b85142",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040935Z_4205b85142",
+      "total_bytes": 2081
     }
   ],
   "summary": {
     "high_signal_sources": 1,
     "pending_files": 2,
     "pending_sources": 1,
-    "pending_total_bytes": 4306,
+    "pending_total_bytes": 2081,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 14,
-  "last_run_utc": "2026-02-23T04:07:40.080445+00:00",
+  "ingested_count_total": 15,
+  "last_run_utc": "2026-02-23T04:09:35.923971+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -43,6 +43,11 @@
       "ingested_at": "2026-02-19T13:18:16.856368+00:00",
       "source_id": "bb980d1560",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
+    },
+    "b42502f2daeeefcf0f00237924586fe1989886b01a838e9d2ff6d2f368946e6a": {
+      "ingested_at": "2026-02-23T04:09:35.923479+00:00",
+      "source_id": "4205b85142",
+      "source_rel": "vault/inbox_raw/sources/20260223T040935Z_4205b85142"
     },
     "c54251d2bc12b8382a69504ef5985a55bd69c03e074b47c4dfb92cb6886eb0c4": {
       "ingested_at": "2026-02-23T04:07:40.079879+00:00",
@@ -118,6 +123,13 @@
       "normalized": false,
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
       "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
+      "suspected_kind": "json_export"
+    },
+    "4205b85142": {
+      "ingested_at": "2026-02-23T04:09:35.923708+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040935Z_4205b85142/original/alex_hormozi_cheatsheet_20260223T040935Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040935Z_4205b85142",
       "suspected_kind": "json_export"
     },
     "6c2f7449da": {
