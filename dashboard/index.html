@@ -34,6 +34,7 @@
     <nav class="tabs">
       <button class="tab active" data-tab="sg">SG</button>
       <button class="tab" data-tab="personal">Personal</button>
+      <button id="btn-compact" class="tab ghost">Compacto</button>
       <span id="sync-badge" class="sync-badge">sync...</span>
     </nav>
 
@@ -42,6 +43,7 @@
         <article class="card">
           <div class="card-head"><h3>Caja y Cobranza Hoy</h3><span id="sg-cash-light" class="light green"></span></div>
           <p id="sg-cash" class="metric">S/ 0</p>
+          <div id="sg-cash-trend" class="trend"></div>
           <p id="sg-overdue" class="sub">0 vencidas</p>
           <button class="cta">Ver críticas</button>
         </article>
@@ -49,6 +51,7 @@
         <article class="card">
           <div class="card-head"><h3>Pipeline Activo</h3><span id="sg-pipeline-light" class="light green"></span></div>
           <p id="sg-pipeline" class="metric">S/ 0</p>
+          <div id="sg-pipeline-trend" class="trend"></div>
           <p id="sg-hot-count" class="sub">0 oportunidades esta semana</p>
           <button class="cta">Ver oportunidades</button>
         </article>

@@ -38,6 +38,10 @@ const el = {
   btnSgExec: document.getElementById('btn-sg-exec'),
   btnSgAlt: document.getElementById('btn-sg-alt'),
   btnPersonalExec: document.getElementById('btn-personal-exec'),
+  btnCompact: document.getElementById('btn-compact'),
+
+  sgCashTrend: document.getElementById('sg-cash-trend'),
+  sgPipelineTrend: document.getElementById('sg-pipeline-trend'),
 
   mBtnRefresh: document.getElementById('m-btn-refresh'),
   mBtnActivity: document.getElementById('m-btn-activity'),
@@ -154,6 +158,16 @@ function setSync(status, text) {
   el.syncBadge.textContent = text;
 }
 
+function renderTrend(node, level = 0.5) {
+  if (!node) return;
+  const v = Math.max(0.05, Math.min(0.95, Number(level) || 0.5));
+  const line = document.createElement('div');
+  line.className = 'trend-line';
+  line.style.opacity = String(0.55 + (v * 0.45));
+  node.innerHTML = '';
+  node.appendChild(line);
+}
+
 function render(data) {
   const d = data || {};
   const top = d.topbar || {};
@@ -171,8 +185,10 @@ function render(data) {
   setLight(el.sgRiskLight, sg.risk_status);
 
   el.sgCash.textContent = `${money(sg.cash_receivable_7d)} por cobrar (7 días)`;
+  renderTrend(el.sgCashTrend, (Number(sg.cash_receivable_7d || 0) % 100) / 100);
   el.sgOverdue.textContent = `${sg.overdue_count || 0} vencidas`;
   el.sgPipeline.textContent = `${money(sg.hot_pipeline_value)} en pipeline caliente`;
+  renderTrend(el.sgPipelineTrend, (Number(sg.hot_pipeline_value || 0) % 100) / 100);
   el.sgHotCount.textContent = `${sg.hot_opportunities_count || 0} oportunidades esta semana`;
   el.sgRisk.textContent = `${sg.ops_risk_count || 0} frentes en ámbar/rojo`;
   el.sgTopRisk.textContent = `Top riesgo: ${sg.top_risk_label || 'sin riesgo crítico'}`;
@@ -267,6 +283,11 @@ el.btnPersonalExec?.addEventListener('click', () => runAction('/api/actions/exec
 el.mBtnRefresh?.addEventListener('click', () => refresh(true).catch(console.error));
 el.mBtnActivity?.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
 el.mBtnPrimary?.addEventListener('click', runPrimaryAction);
+el.btnCompact?.addEventListener('click', () => {
+  document.body.classList.toggle('compact');
+  const on = document.body.classList.contains('compact');
+  showToast(on ? 'Modo compacto activado' : 'Modo compacto desactivado');
+});
 
 refresh().catch(console.error);
 setInterval(() => refresh().catch(console.error), POLL_MS);

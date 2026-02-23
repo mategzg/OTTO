@@ -96,7 +96,7 @@ button.danger { background: #7f1d1d; }
 
 .tabs {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr auto;
   gap: 8px;
   margin: 12px 0;
   align-items: center;
@@ -118,6 +118,41 @@ button.danger { background: #7f1d1d; }
 .tab-panel { display: none; }
 .tab-panel.active { display: grid; }
 .grid-2 { grid-template-columns: 1fr; gap: 10px; }
+
+.trend {
+  width: 100%;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: linear-gradient(180deg, rgba(37,99,235,.22), rgba(15,23,42,.2));
+  margin: 6px 0 4px;
+  overflow: hidden;
+}
+.trend-line {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(59,130,246,.15), rgba(96,165,250,.6));
+  clip-path: polygon(0% 75%, 12% 70%, 24% 76%, 36% 48%, 48% 55%, 60% 35%, 72% 41%, 84% 22%, 100% 18%, 100% 100%, 0% 100%);
+}
+
+body.compact .card,
+body.compact .card-mini { padding: 10px; border-radius: 14px; }
+body.compact .metric { font-size: 22px; }
+body.compact .lead { font-size: 15px; }
+body.compact .sub { font-size: 13px; }
+
+@media (max-width: 860px) {
+  .tab-panel.active {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 2px;
+  }
+  .tab-panel.active .card {
+    min-width: 88vw;
+    scroll-snap-align: start;
+  }
+}
 
 .card-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .light {
