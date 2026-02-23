@@ -1,6 +1,6 @@
 # Hook Backlog Report
 
-- Status: `success`
+- Status: `scanned`
 - Pending total: 0
 - Replay selected: 0
 - Replay processed: 0

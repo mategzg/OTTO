@@ -14,7 +14,7 @@
       "clean_path": true,
       "contains_symlink": false,
       "disposition": "kept",
-      "file_count": 3947,
+      "file_count": 3977,
       "has_git_dir": true,
       "has_git_file": false,
       "markers_found": [
@@ -34,7 +34,7 @@
       "safe_to_move": true,
       "safety_reason": "",
       "score": 8,
-      "size_estimate_bytes": 13414451
+      "size_estimate_bytes": 13518446
     },
     {
       "candidate_id": "3d5acd40a1",
@@ -253,9 +253,11 @@
     ],
     "quarantined_ids": [
       "3f10fde9d9",
+      "45f4d07b1a",
       "5de57dc319",
       "6fb9ed08bb",
-      "ad2a829bad"
+      "ad2a829bad",
+      "c412f69a86"
     ],
     "state_file": "state/repo_reality_state.json"
   },

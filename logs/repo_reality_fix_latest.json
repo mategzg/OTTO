@@ -2,8 +2,24 @@
   "quarantine": {
     "apply": {
       "applied": true,
-      "approved_ids": [],
-      "moved": [],
+      "approved_ids": [
+        "45f4d07b1a",
+        "c412f69a86"
+      ],
+      "moved": [
+        {
+          "bucket": "nested_repo_copies",
+          "candidate_id": "45f4d07b1a",
+          "from": "/home/agente/.openclaw/workspace-sg_frontline",
+          "to": "/home/agente/otto-workspace/vault/_quarantine/nested_repo_copies/20260223T165458Z_45f4d07b1a"
+        },
+        {
+          "bucket": "nested_repo_copies",
+          "candidate_id": "c412f69a86",
+          "from": "/home/agente/sg-frontline-workspace",
+          "to": "/home/agente/otto-workspace/vault/_quarantine/nested_repo_copies/20260223T165458Z_c412f69a86"
+        }
+      ],
       "quarantine_root": "vault/_quarantine",
       "skipped": []
     },
@@ -15,9 +31,224 @@
         "quarantine_root": "",
         "skipped": []
       },
-      "candidates": [],
-      "canonical_root": "/home/agente/.openclaw/workspace",
-      "pinned_root": "/home/agente/.openclaw/workspace",
+      "candidates": [
+        {
+          "candidate_id": "d70c621560",
+          "candidate_type": "nested_repo_git",
+          "classification": "nested_repo_git",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 3977,
+          "has_git_dir": true,
+          "has_git_file": false,
+          "markers_found": [
+            "AGENTS.md",
+            "CEO.md",
+            "INDEX.md",
+            "SOUL.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace",
+          "realpath": "/home/agente/.openclaw/workspace",
+          "rel_path": ".openclaw/workspace",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 8,
+          "size_estimate_bytes": 13518446
+        },
+        {
+          "candidate_id": "3d5acd40a1",
+          "candidate_type": "nested_repo_copy_high_score",
+          "classification": "nested_repo_copy_high_score",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 555,
+          "has_git_dir": false,
+          "has_git_file": false,
+          "markers_found": [
+            "AGENTS.md",
+            "CEO.md",
+            "INDEX.md",
+            "SOUL.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+          "rel_path": ".openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 8,
+          "size_estimate_bytes": 1363577
+        },
+        {
+          "candidate_id": "6e0e1eba62",
+          "candidate_type": "nested_repo_git",
+          "classification": "nested_repo_git",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 305,
+          "has_git_dir": true,
+          "has_git_file": false,
+          "markers_found": [
+            "AGENTS.md",
+            "SOUL.md"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+          "rel_path": ".openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 2,
+          "size_estimate_bytes": 726262
+        },
+        {
+          "candidate_id": "27f7f952d9",
+          "candidate_type": "nested_repo_git",
+          "classification": "nested_repo_git",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 63,
+          "has_git_dir": true,
+          "has_git_file": false,
+          "markers_found": [
+            "AGENTS.md",
+            "SOUL.md",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+          "rel_path": ".openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 3,
+          "size_estimate_bytes": 98575
+        },
+        {
+          "candidate_id": "7825ed0f71",
+          "candidate_type": "nested_repo_copy_high_score",
+          "classification": "nested_repo_copy_high_score",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 277,
+          "has_git_dir": false,
+          "has_git_file": false,
+          "markers_found": [
+            "CEO.md",
+            "INDEX.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+          "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 6,
+          "size_estimate_bytes": 678207
+        },
+        {
+          "candidate_id": "c16b40a7b1",
+          "candidate_type": "nested_repo_copy_high_score",
+          "classification": "nested_repo_copy_high_score",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 277,
+          "has_git_dir": false,
+          "has_git_file": false,
+          "markers_found": [
+            "CEO.md",
+            "INDEX.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+          "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 6,
+          "size_estimate_bytes": 678207
+        },
+        {
+          "candidate_id": "1bbe07ce80",
+          "candidate_type": "nested_repo_copy_high_score",
+          "classification": "nested_repo_copy_high_score",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 554,
+          "has_git_dir": false,
+          "has_git_file": false,
+          "markers_found": [
+            "AGENTS.md",
+            "CEO.md",
+            "INDEX.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+          "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 7,
+          "size_estimate_bytes": 1363236
+        },
+        {
+          "candidate_id": "73f6c1fc02",
+          "candidate_type": "nested_repo_copy_high_score",
+          "classification": "nested_repo_copy_high_score",
+          "clean_path": true,
+          "contains_symlink": false,
+          "disposition": "kept",
+          "file_count": 277,
+          "has_git_dir": false,
+          "has_git_file": false,
+          "markers_found": [
+            "CEO.md",
+            "INDEX.md",
+            "brain",
+            "openclaw",
+            "ops",
+            "scripts"
+          ],
+          "needs_user": false,
+          "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+          "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+          "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+          "safe_to_move": true,
+          "safety_reason": "",
+          "score": 6,
+          "size_estimate_bytes": 678559
+        }
+      ],
+      "canonical_root": "/home/agente/otto-workspace",
+      "pinned_root": "/home/agente/otto-workspace",
       "scan": {
         "high_score_threshold": 5,
         "markers": [
@@ -35,19 +266,30 @@
       "scan_base": "/home/agente",
       "state": {
         "allowlist_file": "state/repo_reality_allowlist.json",
-        "kept_ids": [],
+        "kept_ids": [
+          "1bbe07ce80",
+          "27f7f952d9",
+          "3d5acd40a1",
+          "6e0e1eba62",
+          "73f6c1fc02",
+          "7825ed0f71",
+          "c16b40a7b1",
+          "d70c621560"
+        ],
         "quarantined_ids": [
           "3f10fde9d9",
+          "45f4d07b1a",
           "5de57dc319",
           "6fb9ed08bb",
-          "ad2a829bad"
+          "ad2a829bad",
+          "c412f69a86"
         ],
         "state_file": "state/repo_reality_state.json"
       },
       "summary": {
         "backup_count": 0,
-        "candidate_count": 0,
-        "kept_count": 0,
+        "candidate_count": 8,
+        "kept_count": 8,
         "needs_user_count": 0,
         "nested_git_count": 0,
         "pathlike_count": 0,
@@ -68,9 +310,224 @@
       "quarantine_root": "",
       "skipped": []
     },
-    "candidates": [],
-    "canonical_root": "/home/agente/.openclaw/workspace",
-    "pinned_root": "/home/agente/.openclaw/workspace",
+    "candidates": [
+      {
+        "candidate_id": "d70c621560",
+        "candidate_type": "nested_repo_git",
+        "classification": "nested_repo_git",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 3977,
+        "has_git_dir": true,
+        "has_git_file": false,
+        "markers_found": [
+          "AGENTS.md",
+          "CEO.md",
+          "INDEX.md",
+          "SOUL.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace",
+        "realpath": "/home/agente/.openclaw/workspace",
+        "rel_path": ".openclaw/workspace",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 8,
+        "size_estimate_bytes": 13518446
+      },
+      {
+        "candidate_id": "3d5acd40a1",
+        "candidate_type": "nested_repo_copy_high_score",
+        "classification": "nested_repo_copy_high_score",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 555,
+        "has_git_dir": false,
+        "has_git_file": false,
+        "markers_found": [
+          "AGENTS.md",
+          "CEO.md",
+          "INDEX.md",
+          "SOUL.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+        "rel_path": ".openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025857Z_3f10fde9d9",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 8,
+        "size_estimate_bytes": 1363577
+      },
+      {
+        "candidate_id": "6e0e1eba62",
+        "candidate_type": "nested_repo_git",
+        "classification": "nested_repo_git",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 305,
+        "has_git_dir": true,
+        "has_git_file": false,
+        "markers_found": [
+          "AGENTS.md",
+          "SOUL.md"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+        "rel_path": ".openclaw/workspace/vault/_quarantine/bad_path_roots/20260218T025912Z_5de57dc319",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 2,
+        "size_estimate_bytes": 726262
+      },
+      {
+        "candidate_id": "27f7f952d9",
+        "candidate_type": "nested_repo_git",
+        "classification": "nested_repo_git",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 63,
+        "has_git_dir": true,
+        "has_git_file": false,
+        "markers_found": [
+          "AGENTS.md",
+          "SOUL.md",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+        "rel_path": ".openclaw/workspace/vault/_quarantine/old_backups/20260218T025933Z_6fb9ed08bb",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 3,
+        "size_estimate_bytes": 98575
+      },
+      {
+        "candidate_id": "7825ed0f71",
+        "candidate_type": "nested_repo_copy_high_score",
+        "classification": "nested_repo_copy_high_score",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 277,
+        "has_git_dir": false,
+        "has_git_file": false,
+        "markers_found": [
+          "CEO.md",
+          "INDEX.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+        "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025727Z_5fa3c9b487/staged",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 6,
+        "size_estimate_bytes": 678207
+      },
+      {
+        "candidate_id": "c16b40a7b1",
+        "candidate_type": "nested_repo_copy_high_score",
+        "classification": "nested_repo_copy_high_score",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 277,
+        "has_git_dir": false,
+        "has_git_file": false,
+        "markers_found": [
+          "CEO.md",
+          "INDEX.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+        "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_0f17efd3df/staged",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 6,
+        "size_estimate_bytes": 678207
+      },
+      {
+        "candidate_id": "1bbe07ce80",
+        "candidate_type": "nested_repo_copy_high_score",
+        "classification": "nested_repo_copy_high_score",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 554,
+        "has_git_dir": false,
+        "has_git_file": false,
+        "markers_found": [
+          "AGENTS.md",
+          "CEO.md",
+          "INDEX.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+        "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_3f10fde9d9/staged",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 7,
+        "size_estimate_bytes": 1363236
+      },
+      {
+        "candidate_id": "73f6c1fc02",
+        "candidate_type": "nested_repo_copy_high_score",
+        "classification": "nested_repo_copy_high_score",
+        "clean_path": true,
+        "contains_symlink": false,
+        "disposition": "kept",
+        "file_count": 277,
+        "has_git_dir": false,
+        "has_git_file": false,
+        "markers_found": [
+          "CEO.md",
+          "INDEX.md",
+          "brain",
+          "openclaw",
+          "ops",
+          "scripts"
+        ],
+        "needs_user": false,
+        "path": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+        "realpath": "/home/agente/.openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+        "rel_path": ".openclaw/workspace/vault/_salvage/20260218T025819Z_5fa3c9b487/staged",
+        "safe_to_move": true,
+        "safety_reason": "",
+        "score": 6,
+        "size_estimate_bytes": 678559
+      }
+    ],
+    "canonical_root": "/home/agente/otto-workspace",
+    "pinned_root": "/home/agente/otto-workspace",
     "scan": {
       "high_score_threshold": 5,
       "markers": [
@@ -88,19 +545,30 @@
     "scan_base": "/home/agente",
     "state": {
       "allowlist_file": "state/repo_reality_allowlist.json",
-      "kept_ids": [],
+      "kept_ids": [
+        "1bbe07ce80",
+        "27f7f952d9",
+        "3d5acd40a1",
+        "6e0e1eba62",
+        "73f6c1fc02",
+        "7825ed0f71",
+        "c16b40a7b1",
+        "d70c621560"
+      ],
       "quarantined_ids": [
         "3f10fde9d9",
+        "45f4d07b1a",
         "5de57dc319",
         "6fb9ed08bb",
-        "ad2a829bad"
+        "ad2a829bad",
+        "c412f69a86"
       ],
       "state_file": "state/repo_reality_state.json"
     },
     "summary": {
       "backup_count": 0,
-      "candidate_count": 0,
-      "kept_count": 0,
+      "candidate_count": 8,
+      "kept_count": 8,
       "needs_user_count": 0,
       "nested_git_count": 0,
       "pathlike_count": 0,
@@ -113,24 +581,25 @@
   },
   "salvage_apply": {
     "ok": true,
-    "plan_path": "/home/agente/.openclaw/workspace/docs/_inbox/repo_salvage_plan_latest.json",
+    "plan_path": "/home/agente/otto-workspace/docs/_inbox/repo_salvage_plan_latest.json",
     "promoted_count": 0,
     "reason": "applied",
-    "skipped_conflicts": 0
+    "skipped_conflicts": 16,
+    "skipped_guardrail": 0
   },
   "salvage_plan": {
-    "canonical_root": "/home/agente/.openclaw/workspace",
-    "created_at": "2026-02-18T02:59:57.129511+00:00",
+    "canonical_root": "/home/agente/otto-workspace",
+    "created_at": "2026-02-23T16:54:49.607497+00:00",
     "doctor_summary": {
       "backup_count": 0,
-      "candidate_count": 0,
-      "kept_count": 0,
+      "candidate_count": 10,
+      "kept_count": 8,
       "needs_user_count": 0,
-      "nested_git_count": 0,
+      "nested_git_count": 1,
       "pathlike_count": 0,
-      "pending_count": 0,
+      "pending_count": 2,
       "quarantined_count": 0,
-      "safe_to_move_count": 0,
+      "safe_to_move_count": 2,
       "symlink_flag_count": 0
     },
     "paths": {
@@ -139,16 +608,37 @@
       "markdown": "docs/_inbox/repo_salvage_plan_latest.md"
     },
     "salvage": {
-      "candidates": [],
+      "candidates": [
+        {
+          "candidate_id": "45f4d07b1a",
+          "candidate_path": "/home/agente/.openclaw/workspace-sg_frontline",
+          "candidate_type": "nested_repo_git",
+          "conflict_count": 8,
+          "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_45f4d07b1a/CONFLICTS.json",
+          "entry_count": 8,
+          "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_45f4d07b1a/MANIFEST.json",
+          "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_45f4d07b1a"
+        },
+        {
+          "candidate_id": "c412f69a86",
+          "candidate_path": "/home/agente/sg-frontline-workspace",
+          "candidate_type": "nested_repo_copy_high_score",
+          "conflict_count": 8,
+          "conflicts_path": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_c412f69a86/CONFLICTS.json",
+          "entry_count": 8,
+          "manifest_path": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_c412f69a86/MANIFEST.json",
+          "stage_root": "/home/agente/otto-workspace/vault/_salvage/20260223T165449Z_c412f69a86"
+        }
+      ],
       "conflict_threshold": 50
     },
     "scan_base": "/home/agente",
     "summary": {
       "blocked": false,
-      "candidate_count": 0,
-      "conflict_count": 0,
-      "entry_count": 0,
-      "salvage_candidate_count": 0
+      "candidate_count": 10,
+      "conflict_count": 16,
+      "entry_count": 16,
+      "salvage_candidate_count": 2
     },
     "version": 1
   },
