@@ -5,6 +5,7 @@ const el = {
   delegationTotal: document.getElementById('delegation-total'),
   chipSubagent: document.getElementById('chip-subagent'),
   chipCoder: document.getElementById('chip-coder'),
+  delegationList: document.getElementById('delegation-list'),
 
   sgCash: document.getElementById('sg-cash'),
   sgOverdue: document.getElementById('sg-overdue'),
@@ -14,20 +15,29 @@ const el = {
   sgTopRisk: document.getElementById('sg-top-risk'),
   sgNextDecision: document.getElementById('sg-next-decision'),
   sgNextImpact: document.getElementById('sg-next-impact'),
+  sgCashLight: document.getElementById('sg-cash-light'),
+  sgPipelineLight: document.getElementById('sg-pipeline-light'),
+  sgRiskLight: document.getElementById('sg-risk-light'),
 
   personalTop3: document.getElementById('personal-top3'),
   personalCritical: document.getElementById('personal-critical'),
   personalDue: document.getElementById('personal-due'),
   personalNextDecision: document.getElementById('personal-next-decision'),
+  personalNextEta: document.getElementById('personal-next-eta'),
   personalNextAction: document.getElementById('personal-next-action'),
   personalNextImpact: document.getElementById('personal-next-impact'),
+  personalCriticalLight: document.getElementById('personal-critical-light'),
 
   activityDrawer: document.getElementById('activity-drawer'),
   activityList: document.getElementById('activity-list'),
 
   btnRefresh: document.getElementById('btn-refresh'),
   btnActivity: document.getElementById('btn-activity'),
+  btnPause: document.getElementById('btn-pause'),
   btnCloseActivity: document.getElementById('btn-close-activity'),
+  btnSgExec: document.getElementById('btn-sg-exec'),
+  btnSgAlt: document.getElementById('btn-sg-alt'),
+  btnPersonalExec: document.getElementById('btn-personal-exec'),
 };
 
 function setPill(status) {
@@ -41,9 +51,79 @@ function setPill(status) {
   el.ottoPill.style.background = cfg.color;
 }
 
+function setLight(node, status) {
+  node.classList.remove('green', 'amber', 'red');
+  const s = String(status || '').toLowerCase();
+  if (s === 'amber') node.classList.add('amber');
+  else if (s === 'red') node.classList.add('red');
+  else node.classList.add('green');
+}
+
 function money(n) {
-  const v = Number(n || 0);
-  return `S/ ${v.toLocaleString('es-PE')}`;
+  return `S/ ${Number(n || 0).toLocaleString('es-PE')}`;
+}
+
+function pct(v) {
+  const n = Number(v);
+  if (Number.isNaN(n)) return 0;
+  return Math.max(0, Math.min(100, n));
+}
+
+function renderDelegations(items) {
+  el.delegationList.innerHTML = '';
+  const list = Array.isArray(items) ? items.slice(0, 3) : [];
+  if (!list.length) {
+    el.delegationList.innerHTML = '<p class="sub">Sin delegaciones activas</p>';
+    return;
+  }
+
+  list.forEach((d) => {
+    const row = document.createElement('div');
+    row.className = 'd-row';
+
+    const label = document.createElement('div');
+    label.className = 'd-label';
+    label.textContent = `${d.type === 'coder' ? 'Coder' : 'Subagente'} · ${d.label || 'Tarea'}`;
+
+    const barWrap = document.createElement('div');
+    barWrap.className = 'bar-wrap';
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.width = `${pct(d.progress)}%`;
+    barWrap.appendChild(bar);
+
+    row.appendChild(label);
+    row.appendChild(barWrap);
+    el.delegationList.appendChild(row);
+  });
+}
+
+function renderActivity(items) {
+  el.activityList.innerHTML = '';
+  const list = Array.isArray(items) ? items.slice(0, 5) : [];
+
+  if (!list.length) {
+    el.activityList.innerHTML = '<li class="event"><span class="sub">Sin actividad reciente</span></li>';
+    return;
+  }
+
+  list.forEach((item) => {
+    const li = document.createElement('li');
+    li.className = 'event';
+
+    const status = String(item.status || 'done').toLowerCase();
+    const badgeClass = status === 'blocked' ? 'red' : status === 'running' ? 'amber' : 'green';
+
+    li.innerHTML = `
+      <div class="event-top">
+        <strong>${item.time || '-'}</strong>
+        <span class="chip ${badgeClass}">${status}</span>
+        <span class="chip">${item.type || 'system'}</span>
+      </div>
+      <p>${item.label || '-'}</p>
+    `;
+    el.activityList.appendChild(li);
+  });
 }
 
 function render(data) {
@@ -56,50 +136,48 @@ function render(data) {
   el.delegationTotal.textContent = `${top.active_delegations_total || 0} activas`;
   el.chipSubagent.textContent = `Subagente x${top.active_subagents || 0}`;
   el.chipCoder.textContent = `Coder x${top.active_coders || 0}`;
+  renderDelegations(top.delegations || []);
 
-  el.sgCash.textContent = money(sg.cash_receivable_7d);
+  setLight(el.sgCashLight, sg.cash_status);
+  setLight(el.sgPipelineLight, sg.pipeline_status);
+  setLight(el.sgRiskLight, sg.risk_status);
+
+  el.sgCash.textContent = `${money(sg.cash_receivable_7d)} por cobrar (7 días)`;
   el.sgOverdue.textContent = `${sg.overdue_count || 0} vencidas`;
-  el.sgPipeline.textContent = money(sg.hot_pipeline_value);
-  el.sgHotCount.textContent = `${sg.hot_opportunities_count || 0} oportunidades calientes`;
-  el.sgRisk.textContent = `${sg.ops_risk_count || 0} frentes`;
-  el.sgTopRisk.textContent = sg.top_risk_label || 'Sin riesgo crítico';
+  el.sgPipeline.textContent = `${money(sg.hot_pipeline_value)} en pipeline caliente`;
+  el.sgHotCount.textContent = `${sg.hot_opportunities_count || 0} oportunidades esta semana`;
+  el.sgRisk.textContent = `${sg.ops_risk_count || 0} frentes en ámbar/rojo`;
+  el.sgTopRisk.textContent = `Top riesgo: ${sg.top_risk_label || 'sin riesgo crítico'}`;
   el.sgNextDecision.textContent = sg.next_best_decision || 'Sin recomendación';
   el.sgNextImpact.textContent = `Impacto: ${sg.next_best_decision_impact || '-'}`;
 
+  setLight(el.personalCriticalLight, personal.critical_status);
   el.personalTop3.innerHTML = '';
-  const top3 = Array.isArray(personal.top3) && personal.top3.length ? personal.top3 : ['Sin prioridades cargadas'];
-  top3.slice(0, 3).forEach((item) => {
+  const top3 = Array.isArray(personal.top3) && personal.top3.length ? personal.top3.slice(0, 3) : ['Sin prioridades cargadas'];
+  top3.forEach((item) => {
     const li = document.createElement('li');
-    li.textContent = item;
+    li.innerHTML = `<label><input type="checkbox" /> <span>${item}</span></label>`;
     el.personalTop3.appendChild(li);
   });
 
-  el.personalCritical.textContent = `${personal.critical_count || 0}`;
+  el.personalCritical.textContent = `${personal.critical_count || 0} críticos`;
   el.personalDue.textContent = `${personal.due_today_count || 0} vencen hoy`;
   el.personalNextDecision.textContent = personal.next_decision || 'Sin decisión pendiente';
+  el.personalNextEta.textContent = `Sugerido: ${personal.next_decision_eta || '-'}`;
   el.personalNextAction.textContent = personal.next_action || 'Sin recomendación';
   el.personalNextImpact.textContent = `Impacto: ${personal.next_action_impact || '-'}`;
 
-  el.activityList.innerHTML = '';
-  const items = Array.isArray(d.activity) ? d.activity : [];
-  if (!items.length) {
-    const li = document.createElement('li');
-    li.textContent = 'Sin actividad reciente';
-    el.activityList.appendChild(li);
-  } else {
-    items.forEach((item) => {
-      const li = document.createElement('li');
-      li.textContent = `${item.time || '-'} · ${item.label || '-'} (${item.status || '-'})`;
-      el.activityList.appendChild(li);
-    });
-  }
+  renderActivity(d.activity || []);
 }
 
 async function refresh() {
   const response = await fetch('/api/dashboard-v1', { cache: 'no-store' });
   if (!response.ok) throw new Error('No se pudo cargar dashboard');
-  const data = await response.json();
-  render(data);
+  render(await response.json());
+}
+
+function actionStub(text) {
+  alert(`Acción registrada: ${text}`);
 }
 
 document.querySelectorAll('.tab').forEach((btn) => {
@@ -114,6 +192,12 @@ document.querySelectorAll('.tab').forEach((btn) => {
 el.btnActivity.addEventListener('click', () => el.activityDrawer.classList.remove('hidden'));
 el.btnCloseActivity.addEventListener('click', () => el.activityDrawer.classList.add('hidden'));
 el.btnRefresh.addEventListener('click', () => refresh().catch(console.error));
+el.btnPause.addEventListener('click', () => {
+  if (window.confirm('¿Pausar delegación ahora?')) actionStub('Pausar delegación');
+});
+el.btnSgExec.addEventListener('click', () => actionStub('Ejecutar decisión SG con OTTO'));
+el.btnSgAlt.addEventListener('click', () => actionStub('Ver alternativa SG'));
+el.btnPersonalExec.addEventListener('click', () => actionStub('Hazlo por mí (Personal)'));
 
 refresh().catch(console.error);
 setInterval(() => refresh().catch(console.error), POLL_MS);

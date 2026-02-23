@@ -126,6 +126,21 @@ def _load_ledger(root: Path, limit: int) -> list[dict[str, str]]:
     return items[:limit]
 
 
+def _deep_merge_defaults(value: object, defaults: object) -> object:
+    if isinstance(defaults, dict):
+        base = value if isinstance(value, dict) else {}
+        merged: dict[str, object] = {}
+        for key, default_val in defaults.items():
+            merged[key] = _deep_merge_defaults(base.get(key), default_val)
+        for key, extra_val in base.items():
+            if key not in merged:
+                merged[key] = extra_val
+        return merged
+    if isinstance(defaults, list):
+        return value if isinstance(value, list) else defaults
+    return defaults if value is None else value
+
+
 def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     default_payload: dict[str, object] = {
         "topbar": {
@@ -133,14 +148,18 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
             "active_delegations_total": 0,
             "active_subagents": 0,
             "active_coders": 0,
+            "delegations": [],
         },
         "sg": {
             "cash_receivable_7d": 0,
             "overdue_count": 0,
+            "cash_status": "green",
             "hot_pipeline_value": 0,
             "hot_opportunities_count": 0,
+            "pipeline_status": "green",
             "ops_risk_count": 0,
             "top_risk_label": "Sin riesgo crítico",
+            "risk_status": "green",
             "next_best_decision": "Sin recomendación",
             "next_best_decision_impact": "-",
         },
@@ -148,14 +167,17 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
             "top3": [],
             "critical_count": 0,
             "due_today_count": 0,
+            "critical_status": "green",
             "next_decision": "",
+            "next_decision_eta": "",
             "next_action": "",
             "next_action_impact": "-",
         },
         "activity": [],
     }
 
-    payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
+    raw_payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
+    payload = _deep_merge_defaults(raw_payload, default_payload)
     if not isinstance(payload, dict):
         payload = default_payload
 
