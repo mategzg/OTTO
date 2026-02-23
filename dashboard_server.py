@@ -252,7 +252,27 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
 
     # If runtime sees no active sessions, infer lightweight live activity from dashboard events.
     activity_for_infer = payload.get("activity") if isinstance(payload.get("activity"), list) else []
-    running_items = [a for a in activity_for_infer[-5:] if isinstance(a, dict) and str(a.get("status", "")).lower() == "running"]
+
+    now = datetime.now()
+    running_items: list[dict[str, object]] = []
+    for a in activity_for_infer[-8:]:
+        if not isinstance(a, dict):
+            continue
+        if str(a.get("status", "")).lower() != "running":
+            continue
+        raw_time = str(a.get("time", ""))
+        is_recent = False
+        try:
+            # supports HH:MM:SS and legacy HH:MM
+            fmt = "%H:%M:%S" if len(raw_time.split(":")) == 3 else "%H:%M"
+            parsed = datetime.strptime(raw_time, fmt)
+            candidate = now.replace(hour=parsed.hour, minute=parsed.minute, second=getattr(parsed, "second", 0), microsecond=0)
+            is_recent = abs((now - candidate).total_seconds()) <= 30
+        except Exception:
+            is_recent = True
+        if is_recent:
+            running_items.append(a)
+
     if int(topbar.get("active_delegations_total", 0) or 0) == 0 and running_items:
         topbar["active_delegations_total"] = len(running_items)
         topbar["active_subagents"] = len([x for x in running_items if str(x.get("type", "")).lower() == "subagent"])
