@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import time
 from pathlib import Path
 from typing import Any, Dict, List
@@ -20,6 +21,8 @@ from scripts.runtime_guardrails import is_tool_allowed
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
 RETRIEVAL_POLICY_PATH = Path("state/retrieval_policy.json")
+PLUGIN_ROUTING_PATH = Path("state/plugin_nl_routing.json")
+CC_PLUGIN_ROUTING_PATH = Path("state/cc_plugin_nl_routing.json")
 
 DEFAULT_POLICY: Dict[str, Any] = {
     "repeat_threshold_30d": 3,
@@ -63,6 +66,39 @@ def _retrieval_v2_enabled(root: Path) -> bool:
     payload = _load_json(root / RETRIEVAL_POLICY_PATH)
     cfg = payload.get("retrieval_v2", {}) if isinstance(payload.get("retrieval_v2"), dict) else {}
     return bool(cfg.get("enabled", False))
+
+
+def _plugin_route_candidates(root: Path) -> List[Dict[str, str]]:
+    rows: List[Dict[str, str]] = []
+    for rel in (PLUGIN_ROUTING_PATH, CC_PLUGIN_ROUTING_PATH):
+        payload = _load_json(root / rel)
+        key = "intent_routes" if "intent_routes" in payload else "routes"
+        for item in payload.get(key, []) if isinstance(payload.get(key), list) else []:
+            pattern = str((item or {}).get("intent", "")).strip()
+            plugin = str((item or {}).get("plugin", "")).strip()
+            if not pattern or not plugin:
+                continue
+            rows.append({"pattern": pattern, "plugin": plugin})
+    return rows
+
+
+def _match_plugin_route(root: Path, text: str) -> Dict[str, str]:
+    query = (text or "").strip()
+    if not query:
+        return {}
+    for row in _plugin_route_candidates(root):
+        try:
+            if re.search(row["pattern"], query, flags=re.IGNORECASE):
+                return row
+        except re.error:
+            continue
+
+    # Minimal synonym fallback for high-frequency intents when patterns are too strict.
+    lower = query.lower()
+    if ("document" in lower or "docs" in lower or "documentacion" in lower or "referencia" in lower) and ("api" in lower or "version" in lower):
+        return {"pattern": "synonym_fallback_context7", "plugin": "context7"}
+
+    return {}
 
 
 def _domain_for_intent(intent: str) -> str:
@@ -208,6 +244,11 @@ def run_nl_router(
 
         _ensure_timeout("post_classification")
         route = INTENT_ROUTE_MAP.get(intent, {"route_type": "tool", "selected_target": "rag.answer"})
+
+        plugin_match = _match_plugin_route(canonical_root, text)
+        if plugin_match:
+            route = {"route_type": "workflow", "selected_target": f"plugin.{plugin_match['plugin']}"}
+
         resolution = resolve_target(
             canonical_root,
             route_type=route["route_type"],
@@ -254,7 +295,7 @@ def run_nl_router(
                 f"impact_score={impact}",
                 f"risk_score={risk}",
                 f"registry_resolution={'ok' if resolution.get('ok') else resolution.get('reason', 'fallback')}",
-            ],
+            ] + ([f"plugin_route={plugin_match.get('plugin','')}", f"plugin_pattern={plugin_match.get('pattern','')}"] if plugin_match else []),
             "risk_level": "high" if risk >= 8 else "medium" if risk >= 4 else "low",
             "requires_approval": requires_approval,
             "fallback_plan": {
@@ -270,6 +311,12 @@ def run_nl_router(
             "registry": {
                 "checked": True,
                 "resolution": resolution,
+            },
+            "plugin_dispatch": {
+                "matched": bool(plugin_match),
+                "plugin": plugin_match.get("plugin", "") if plugin_match else "",
+                "pattern": plugin_match.get("pattern", "") if plugin_match else "",
+                "status": "planned" if plugin_match else "n/a",
             },
             "tool_policy": tool_gate,
         }
@@ -328,6 +375,20 @@ def run_nl_router(
             meta={"status": "success", "target": plan["selected_target"]},
         )
         _obs("success", success=True, elapsed_ms=elapsed_ms, route_type=plan["route_type"], selected_target=plan["selected_target"])
+        if plugin_match:
+            record_event(
+                canonical_root,
+                {
+                    "kind": "plugin_route",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": True,
+                    "latency_ms": elapsed_ms,
+                    "plugin": plugin_match.get("plugin", ""),
+                    "pattern": plugin_match.get("pattern", ""),
+                    "selected_target": plan["selected_target"],
+                },
+            )
         return {
             "status": "success",
             "idempotency_key": idempotency_key,
