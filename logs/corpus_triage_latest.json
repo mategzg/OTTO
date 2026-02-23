@@ -1,6 +1,6 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:58:06.217439+00:00",
+  "created_at": "2026-02-23T04:02:28.129061+00:00",
   "inbox_rel": "vault/inbox_raw",
   "sources": [
     {
@@ -12,43 +12,43 @@
       "file_count": 2,
       "files": [
         {
-          "mtime": 1771819086.0158775,
-          "rel_path": "manolo_instrucciones_20260223T035806Z/EVENT_META.json",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728/source/manolo_instrucciones_20260223T035806Z/EVENT_META.json",
-          "sha256": "1498744104f2f029b21e9b921eead3bf32db2063b7eef21810de6513d95011b7",
-          "size": 120
+          "mtime": 1771819343.7856433,
+          "rel_path": "alex_hormozi_research_20260223T040223Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da/source/alex_hormozi_research_20260223T040223Z/EVENT_META.json",
+          "sha256": "1bb6f876f1df09298387675009a786dd2bdd722bd94954bf4120002f9d7cede7",
+          "size": 177
         },
         {
-          "mtime": 1771819086.0115688,
-          "rel_path": "manolo_instrucciones_20260223T035806Z/manolo_instrucciones.md",
-          "root_rel_path": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728/source/manolo_instrucciones_20260223T035806Z/manolo_instrucciones.md",
-          "sha256": "2fab5a661c589db0619519f2fb704de4a81eb2cc9d33847eff7b366128ac0725",
-          "size": 3268
+          "mtime": 1771819343.7856433,
+          "rel_path": "alex_hormozi_research_20260223T040223Z/alex_hormozi_research_synthesis.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da/source/alex_hormozi_research_20260223T040223Z/alex_hormozi_research_synthesis.md",
+          "sha256": "dad6be32f739fde4f2353fd80f395af7926c0c0351166b60f9a8a108f1d96fdd",
+          "size": 4609
         }
       ],
       "high_signal": true,
-      "inbox_rel_path": "sources/20260223T035806Z_6ff13db728",
+      "inbox_rel_path": "sources/20260223T040227Z_6c2f7449da",
       "keywords": [
+        "alex_hormozi_research_synthesis",
         "event_meta",
-        "json_export",
-        "manolo_instrucciones"
+        "json_export"
       ],
       "kind": "dir",
       "recommended_domain": "external_ingest",
       "recommended_domain_source": "hints",
-      "source_hash": "fa40a58e1c5fa1b98ab7f0bc1c058352527dcd35dffbdd16cec49612d5235c30",
-      "source_id": "acc7b44a95",
+      "source_hash": "b6b3bb22136aeb4fd549d0a8582d4a6963aab8a474e80a6ea1196fbad1596c39",
+      "source_id": "e8e1ffe8e6",
       "source_kind": "json_export",
-      "source_name": "20260223T035806Z_6ff13db728",
-      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035806Z_6ff13db728",
-      "total_bytes": 3388
+      "source_name": "20260223T040227Z_6c2f7449da",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T040227Z_6c2f7449da",
+      "total_bytes": 4786
     }
   ],
   "summary": {
     "high_signal_sources": 1,
     "pending_files": 2,
     "pending_sources": 1,
-    "pending_total_bytes": 3388,
+    "pending_total_bytes": 4786,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

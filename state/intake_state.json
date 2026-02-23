@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 11,
-  "last_run_utc": "2026-02-23T03:58:06.086730+00:00",
+  "ingested_count_total": 12,
+  "last_run_utc": "2026-02-23T04:02:27.997060+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -43,6 +43,11 @@
       "ingested_at": "2026-02-23T03:55:31.698318+00:00",
       "source_id": "10a53a2e97",
       "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97"
+    },
+    "db0fff0505008a219c7780c0fdd47b7bab991902ec316a0655807cbbea5ccca5": {
+      "ingested_at": "2026-02-23T04:02:27.996562+00:00",
+      "source_id": "6c2f7449da",
+      "source_rel": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da"
     },
     "dd7247e536784c17b9a16940de9f19ad3468462dc07773977297826662d187ec": {
       "ingested_at": "2026-02-23T03:56:04.283341+00:00",
@@ -96,6 +101,13 @@
       "normalized": false,
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
       "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
+      "suspected_kind": "json_export"
+    },
+    "6c2f7449da": {
+      "ingested_at": "2026-02-23T04:02:27.996787+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040227Z_6c2f7449da/original/alex_hormozi_research_20260223T040223Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da",
       "suspected_kind": "json_export"
     },
     "6c8e0dd191": {

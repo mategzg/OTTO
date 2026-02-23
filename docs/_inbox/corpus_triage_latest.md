@@ -4,7 +4,7 @@
 - Inbox rel: `vault/inbox_raw`
 - Pending sources: 1
 - Pending files: 2
-- Pending bytes: 3388
+- Pending bytes: 4786
 - High signal sources: 1
 - Slice units: 0
 - Suggested units/tick: 2
@@ -14,7 +14,7 @@
 
 ## Sources
 
-- `sources/20260223T035806Z_6ff13db728` | id=acc7b44a95 | files=2 | bytes=3388 | domain=external_ingest | high_signal=True
+- `sources/20260223T040227Z_6c2f7449da` | id=e8e1ffe8e6 | files=2 | bytes=4786 | domain=external_ingest | high_signal=True
 
 ## Suspicious Entries
 

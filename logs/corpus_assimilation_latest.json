@@ -1,16 +1,16 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T03:58:06.315430+00:00",
+  "created_at": "2026-02-23T04:02:28.232535+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260223T035806Z-437a6a83",
+  "plan_id": "PLAN-20260223T040228Z-34479eff",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95",
-      "readme": "vault/inbox_raw/_processed/20260223T035806Z_acc7b44a95/README.md",
-      "source_id": "acc7b44a95",
-      "source_rel": "sources/20260223T035806Z_6ff13db728"
+      "manifest": "vault/inbox_raw/_processed/20260223T040228Z_e8e1ffe8e6/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T040228Z_e8e1ffe8e6",
+      "readme": "vault/inbox_raw/_processed/20260223T040228Z_e8e1ffe8e6/README.md",
+      "source_id": "e8e1ffe8e6",
+      "source_rel": "sources/20260223T040227Z_6c2f7449da"
     }
   ],
   "status": "success",
@@ -27,12 +27,12 @@
   "writes": [
     {
       "category": "brain_knowledge",
-      "path": "brain/cards/external_ingest/card_acc7b44a95_01.md",
+      "path": "brain/cards/external_ingest/card_e8e1ffe8e6_01.md",
       "status": "created"
     },
     {
       "category": "brain_knowledge",
-      "path": "brain/domains/external_ingest/sources/acc7b44a95_index.md",
+      "path": "brain/domains/external_ingest/sources/e8e1ffe8e6_index.md",
       "status": "created"
     }
   ]
