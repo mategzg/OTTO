@@ -1,13 +1,18 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 15,
-  "last_run_utc": "2026-02-23T16:55:30.586393+00:00",
+  "ingested_count_total": 16,
+  "last_run_utc": "2026-02-23T17:00:40.744679+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
       "ingested_at": "2026-02-19T06:14:42.554035+00:00",
       "source_id": "dcfe08f56e",
       "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e"
+    },
+    "11605a8ee21dfe086a874e27b6cc767e13a44991e86bd6dad8408b452bed4270": {
+      "ingested_at": "2026-02-23T17:00:36.377341+00:00",
+      "source_id": "fbb57be4b6",
+      "source_rel": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6"
     },
     "17bc9f14afb4cf473d0ef3718bcfe9df3193c2f89d8b4962be32ac284a82978e": {
       "ingested_at": "2026-02-23T04:04:10.560715+00:00",
@@ -190,6 +195,14 @@
       "normalized_at": "2026-02-19T06:14:42.560829+00:00",
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T061442Z_dcfe08f56e/original/legacy_recovery",
       "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e",
+      "suspected_kind": "generic_corpus"
+    },
+    "fbb57be4b6": {
+      "ingested_at": "2026-02-23T17:00:36.377596+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T17:00:40.744669+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T170036Z_fbb57be4b6/original/quarantine_review_20260223T170033Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6",
       "suspected_kind": "generic_corpus"
     }
   },
