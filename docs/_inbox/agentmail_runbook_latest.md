@@ -3,16 +3,16 @@
 ## Inbox operativo
 - `sgacabados@agentmail.to`
 
-## Ejecución manual (sin auto reply)
+## Ejecución manual (default = auto reply activo)
 ```bash
 export AGENTMAIL_API_KEY='***'
 python3 /home/agente/otto-workspace/scripts/agentmail_autonomy_worker.py --inbox sgacabados@agentmail.to
 ```
 
-## Ejecución con auto reply
+## Ejecución en modo draft-only (sin enviar)
 ```bash
 export AGENTMAIL_API_KEY='***'
-python3 /home/agente/otto-workspace/scripts/agentmail_autonomy_worker.py --inbox sgacabados@agentmail.to --auto-reply
+python3 /home/agente/otto-workspace/scripts/agentmail_autonomy_worker.py --inbox sgacabados@agentmail.to --draft-only
 ```
 
 ## Reportes
@@ -21,5 +21,5 @@ python3 /home/agente/otto-workspace/scripts/agentmail_autonomy_worker.py --inbox
 - Estado de dedupe: `state/agentmail_autonomy_state.json`
 
 ## Regla operativa
-- Por defecto: `draft_only` (sin respuesta automática).
-- Activar `--auto-reply` solo cuando lo pidas explícitamente.
+- Por defecto: `auto-reply` activo.
+- Usar `--draft-only` cuando quieras correr en modo seguro/sin envío.

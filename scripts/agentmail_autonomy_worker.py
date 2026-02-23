@@ -166,10 +166,12 @@ def _write_report(payload: Dict[str, Any]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="AgentMail autonomy worker")
     parser.add_argument("--inbox", default="sgacabados@agentmail.to")
-    parser.add_argument("--auto-reply", action="store_true")
+    parser.add_argument("--auto-reply", action="store_true", default=True)
+    parser.add_argument("--draft-only", action="store_true", help="disable auto-reply for this run")
     args = parser.parse_args()
 
-    payload = run_once(inbox_id=args.inbox, auto_reply=args.auto_reply)
+    auto_reply = bool(args.auto_reply) and not bool(args.draft_only)
+    payload = run_once(inbox_id=args.inbox, auto_reply=auto_reply)
     _write_report(payload)
     return 0 if payload.get("status") == "OK" else 1
 
