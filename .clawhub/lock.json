@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "skills": {
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1771813303596
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1771813305394
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1771813307207
+    },
+    "notion": {
+      "version": "1.0.0",
+      "installedAt": 1771813309245
+    },
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1771813311151
+    },
+    "model-usage": {
+      "version": "1.0.0",
+      "installedAt": 1771813314462
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1771813316401
+    },
+    "tmux": {
+      "version": "1.0.0",
+      "installedAt": 1771813318414
+    },
+    "openai-whisper": {
+      "version": "1.0.0",
+      "installedAt": 1771813321633
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1771813325693
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1771813333034
+    },
+    "session-logs": {
+      "version": "1.0.0",
+      "installedAt": 1771813334835
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1771813336662
+    }
+  }
+}
