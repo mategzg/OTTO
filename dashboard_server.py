@@ -164,13 +164,13 @@ def _runtime_topbar_snapshot() -> dict[str, object]:
         }
 
     subagents = [s for s in sessions if isinstance(s, dict) and "subagent" in str(s.get("key", ""))]
-    coders = [s for s in sessions if isinstance(s, dict) and any(x in str(s.get("key", "")).lower() for x in ["codex", "claude", "pi"])]
+    coders = [s for s in sessions if isinstance(s, dict) and any(x in str(s.get("key", "")).lower() for x in ["codex", "claude", "pi", "coder"])]
 
     delegations: list[dict[str, object]] = []
     for item in subagents[:3]:
         key = str(item.get("key", "subagent"))
         delegations.append({
-            "label": key.split(":")[-1][:28],
+            "label": key.split(":")[-1][:32],
             "type": "subagent",
             "progress": 65,
             "status": "running",
@@ -178,7 +178,7 @@ def _runtime_topbar_snapshot() -> dict[str, object]:
     for item in coders[: max(0, 3 - len(delegations))]:
         key = str(item.get("key", "coder"))
         delegations.append({
-            "label": key.split(":")[-1][:28],
+            "label": key.split(":")[-1][:32],
             "type": "coder",
             "progress": 55,
             "status": "running",
@@ -191,6 +191,66 @@ def _runtime_topbar_snapshot() -> dict[str, object]:
         "delegations": delegations,
         "source_mode": "live",
     }
+
+
+def _short_time(value: str) -> str:
+    if not value:
+        return "-"
+    try:
+        if "T" in value:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return dt.astimezone().strftime("%H:%M:%S")
+        if len(value.split(":")) >= 2:
+            return value[:8]
+    except Exception:
+        pass
+    return value[:8]
+
+
+def _build_observability_activity(root: Path, limit: int = 8) -> tuple[list[dict[str, object]], dict[str, int]]:
+    events = _tail_ndjson(root / "logs" / "observability_events.ndjson", max(limit * 8, 40))
+    out: list[dict[str, object]] = []
+    channels = {"telegram": 0, "discord": 0, "whatsapp": 0}
+
+    for item in reversed(events):
+        if not isinstance(item, dict):
+            continue
+        channel = str(item.get("channel", "system")).lower()
+        kind = str(item.get("kind", "event")).lower()
+        target = str(item.get("selected_target") or item.get("plugin") or "").strip()
+        status_raw = str(item.get("status", "")).upper()
+        ok = bool(item.get("success", False))
+
+        if channel in channels:
+            channels[channel] += 1
+
+        if any(k in kind for k in ["plugin_execution", "plugin_route", "nl_router", "tooling", "retrieval"]):
+            if "plugin_execution" in kind:
+                badge = "done" if ok else "blocked"
+                label = f"{channel}: plugin {target or '-'} -> {status_raw or 'OK'}"
+            elif "plugin_route" in kind or "nl_router" in kind:
+                badge = "running"
+                label = f"{channel}: ruteando -> {target or kind}"
+            elif "retrieval" in kind:
+                badge = "done"
+                label = f"{channel}: retrieval {'hit' if item.get('retrieval_hit') else 'miss'}"
+            else:
+                badge = "done" if ok else "blocked"
+                label = f"{channel}: {kind}"
+
+            out.append(
+                {
+                    "time": _short_time(str(item.get("ts", ""))),
+                    "label": label[:120],
+                    "status": badge,
+                    "type": channel,
+                }
+            )
+
+        if len(out) >= limit:
+            break
+
+    return list(reversed(out)), channels
 
 
 def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
@@ -250,7 +310,11 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
     topbar.update({k: v for k, v in runtime_topbar.items() if k in {"active_delegations_total", "active_subagents", "active_coders", "delegations"}})
 
-    # If runtime sees no active sessions, infer lightweight live activity from dashboard events.
+    obs_activity, channel_counts = _build_observability_activity(root, limit=8)
+    if obs_activity:
+        payload["activity"] = obs_activity
+
+    # If runtime sees no active sessions, infer lightweight live activity from recent activity.
     activity_for_infer = payload.get("activity") if isinstance(payload.get("activity"), list) else []
 
     now = datetime.now()
@@ -293,6 +357,7 @@ def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
     meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
     meta["mode"] = runtime_topbar.get("source_mode", "fallback")
     meta["last_updated"] = datetime.now().strftime("%H:%M:%S")
+    meta["channels"] = channel_counts
     payload["meta"] = meta
 
     # Recent activity fallback.

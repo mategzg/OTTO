@@ -224,7 +224,11 @@ function render(data) {
 
   renderActivity(d.activity || []);
 
-  el.dataMode.textContent = `Modo: ${meta.mode || 'unknown'}`;
+  const channels = meta.channels || {};
+  const tg = Number(channels.telegram || 0);
+  const dc = Number(channels.discord || 0);
+  const wa = Number(channels.whatsapp || 0);
+  el.dataMode.textContent = `Modo: ${meta.mode || 'unknown'} · TG:${tg} DC:${dc} WA:${wa}`;
   el.lastUpdated.textContent = `Actualizado: ${meta.last_updated || '-'}`;
   setSync(meta.mode === 'live' ? 'ok' : 'warn', meta.mode === 'live' ? 'LIVE' : 'DEMO');
 }
