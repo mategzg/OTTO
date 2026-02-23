@@ -54,6 +54,7 @@ Before editing `scripts/`, `state/`, or `hooks/`, follow the minimal reading rou
 
 - Default delegation mode: OpenClaw subagents (`sessions_spawn`) directly, not external coder CLIs by default.
 - External coder CLIs (Codex/Claude Code/Pi) are disabled unless Mateo lo pida explícitamente para una misión puntual.
+- Regla de niveles vigente: Nivel 1 (crítico/alto riesgo) OTTO directo sin delegar; Nivel 2 delegación por subagente OpenClaw; Nivel 3 repetitivo/bajo riesgo puede usar coder directo con handoff verificable.
 - Si se usan múltiples subagentes en paralelo, deben estar segmentados por scope no superpuesto para evitar pisarse.
 - Canon policy: `brain/domains/openclaw_ops/07_DELEGATION_POLICY.md`.
 - Matrix card: `brain/cards/openclaw_ops/card_delegation_matrix.md`.

@@ -23,14 +23,14 @@ Definir a que agente delegar cada tipo de trabajo manteniendo autoridad unica y 
 
 ## Criticality Matrix (autonomia vs control)
 
-- **P0 - Critico / alta precision / alto riesgo / primera vez**
-  - No usar coder autonomo end-to-end.
-  - Ejecutar en modo supervisado por etapas (plan -> implementacion parcial -> validacion) con checkpoints humanos.
+- **Nivel 1 (equiv. P0) - Critico / alta precision / alto riesgo / primera vez**
+  - Resolver directo por OTTO (sin delegacion).
+  - No usar subagente ni coder autonomo end-to-end.
   - Requiere evidencia dura por fase (diff, tests, riesgos, rollback) antes de cerrar.
-- **P1 - Importante / clave de calidad**
-  - Sin coder autonomo.
-  - Resolver directo (manual/asistido) con control de contexto completo y checkpoints de precision.
-- **P2 - Repetitivo, bajo riesgo, receta conocida**
+- **Nivel 2 (equiv. P1) - Importante / clave de calidad pero delegable**
+  - Delegar por subagente OpenClaw (`sessions_spawn`) con scope acotado.
+  - Cierre solo con handoff verificable (artefactos + estado final).
+- **Nivel 3 (equiv. P2) - Repetitivo, bajo riesgo, receta conocida**
   - Delegacion directa a coder permitida para ahorrar cuota/contexto.
   - No requiere vigilancia en vivo: basta handoff verificable al cierre (archivos, pruebas, estado final).
 
