@@ -135,22 +135,24 @@ button.danger { background: #7f1d1d; }
 }
 
 body.compact .card,
-body.compact .card-mini { padding: 10px; border-radius: 14px; }
-body.compact .metric { font-size: 22px; }
-body.compact .lead { font-size: 15px; }
-body.compact .sub { font-size: 13px; }
+body.compact .card-mini { padding: 8px; border-radius: 12px; }
+body.compact .metric { font-size: 20px; margin: 4px 0; }
+body.compact .lead { font-size: 14px; }
+body.compact .sub { font-size: 12px; }
+body.compact .trend,
+body.compact .cta,
+body.compact .cta-row,
+body.compact .impact { display: none; }
 
 @media (max-width: 860px) {
   .tab-panel.active {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 10px;
     padding-bottom: 2px;
   }
-  .tab-panel.active .card {
-    min-width: 88vw;
-    scroll-snap-align: start;
+  body.compact .tab-panel.active {
+    gap: 6px;
   }
 }
 

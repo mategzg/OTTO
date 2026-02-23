@@ -64,10 +64,15 @@ function showToast(text, kind = 'info') {
   toastTimer = setTimeout(() => el.toast.classList.add('hidden'), 2200);
 }
 
-function setPill(status) {
+function setPill(status, mode = 'live') {
+  if (mode !== 'live') {
+    el.ottoPill.textContent = '🟠 Demo (sin live bridge)';
+    el.ottoPill.style.background = '#f59e0b';
+    return;
+  }
   const map = {
     available: { text: '🟢 Disponible', color: '#10b981' },
-    busy: { text: '🟡 Ocupado', color: '#f59e0b' },
+    busy: { text: '🟡 Ejecutando...', color: '#f59e0b' },
     blocked: { text: '🔴 Bloqueado', color: '#ef4444' },
   };
   const cfg = map[String(status || '').toLowerCase()] || map.available;
@@ -174,7 +179,8 @@ function render(data) {
   const sg = d.sg || {};
   const personal = d.personal || {};
 
-  setPill(top.otto_status);
+  const meta = d.meta || {};
+  setPill(top.otto_status, meta.mode);
   el.delegationTotal.textContent = `${top.active_delegations_total || 0} activas`;
   el.chipSubagent.textContent = `Subagente x${top.active_subagents || 0}`;
   el.chipCoder.textContent = `Coder x${top.active_coders || 0}`;
@@ -213,10 +219,9 @@ function render(data) {
 
   renderActivity(d.activity || []);
 
-  const meta = d.meta || {};
   el.dataMode.textContent = `Modo: ${meta.mode || 'unknown'}`;
   el.lastUpdated.textContent = `Actualizado: ${meta.last_updated || '-'}`;
-  setSync(meta.mode === 'live' ? 'ok' : 'warn', meta.mode === 'live' ? 'live' : 'fallback');
+  setSync(meta.mode === 'live' ? 'ok' : 'warn', meta.mode === 'live' ? 'LIVE' : 'DEMO');
 }
 
 async function refresh(showFeedback = false) {
@@ -233,6 +238,7 @@ async function refresh(showFeedback = false) {
 
 async function runAction(path, successText, trigger) {
   if (trigger) trigger.disabled = true;
+  setPill('busy', 'live');
   const response = await fetch(path, { method: 'POST' });
   if (!response.ok) {
     showToast('No se pudo ejecutar la acción', 'error');
@@ -286,7 +292,8 @@ el.mBtnPrimary?.addEventListener('click', runPrimaryAction);
 el.btnCompact?.addEventListener('click', () => {
   document.body.classList.toggle('compact');
   const on = document.body.classList.contains('compact');
-  showToast(on ? 'Modo compacto activado' : 'Modo compacto desactivado');
+  el.btnCompact.textContent = on ? 'Expandida' : 'Compacto';
+  showToast(on ? 'Vista compacta activada' : 'Vista expandida activada');
 });
 
 refresh().catch(console.error);
