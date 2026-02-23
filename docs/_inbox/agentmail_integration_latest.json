@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-02-23T01:03:33Z",
+  "status": "GAP",
+  "checks": {
+    "env_key_present": false,
+    "sdk_installed": true,
+    "inbox_create": false
+  },
+  "notes": [
+    "missing_env: AGENTMAIL_API_KEY"
+  ]
+}
