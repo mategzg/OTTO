@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-23T18:11:52Z",
+  "updated_at": "2026-02-23T18:27:26Z",
   "total": 12,
   "passed": 12,
   "failed": 0,
@@ -9,7 +9,7 @@
       "expected": "plugin.sales",
       "selected_target": "plugin.sales",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -17,7 +17,7 @@
       "expected": "plugin.customer-support",
       "selected_target": "plugin.customer-support",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -25,7 +25,7 @@
       "expected": "plugin.marketing",
       "selected_target": "plugin.marketing",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -33,7 +33,7 @@
       "expected": "plugin.finance",
       "selected_target": "plugin.finance",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -41,7 +41,7 @@
       "expected": "plugin.legal",
       "selected_target": "plugin.legal",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -49,7 +49,7 @@
       "expected": "plugin.product-management",
       "selected_target": "plugin.product-management",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -57,7 +57,7 @@
       "expected": "plugin.productivity",
       "selected_target": "plugin.productivity",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -65,7 +65,7 @@
       "expected": "plugin.data",
       "selected_target": "plugin.data",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {
@@ -73,7 +73,7 @@
       "expected": "plugin.enterprise-search",
       "selected_target": "plugin.enterprise-search",
       "route_type": "workflow",
-      "execution_status": "OK_PARTIAL",
+      "execution_status": "OK",
       "pass": true
     },
     {

@@ -10,6 +10,7 @@ from scripts.repo_root import get_canonical_root
 PLUGIN_REG = Path("state/plugin_runtime_registry.json")
 CC_PLUGIN_REG = Path("state/cc_plugin_runtime_registry.json")
 CONNECTOR_PROBE = Path("docs/_inbox/plugin_drop/connector_probe_latest.json")
+ADAPTERS_PATH = Path("state/plugin_connector_adapters.json")
 
 
 def _load_json(path: Path) -> Dict[str, Any]:
@@ -31,6 +32,37 @@ def _by_plugin(rows: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     return out
 
 
+def _adaptation_for(servers: Dict[str, Any], adapters: Dict[str, Any]) -> Dict[str, Any]:
+    aliases = adapters.get("connector_aliases", {}) if isinstance(adapters.get("connector_aliases"), dict) else {}
+    native = set(adapters.get("native_stack", [])) if isinstance(adapters.get("native_stack"), list) else set()
+
+    mapped: Dict[str, str] = {}
+    adapted_auth = 0
+    adapted_missing = 0
+
+    for cname, s in servers.items():
+        alias = str(aliases.get(cname, "")).strip()
+        if not alias and cname in native:
+            alias = cname
+        if not alias:
+            continue
+        mapped[cname] = alias
+        if alias in native:
+            status = (s or {}).get("status")
+            note = (s or {}).get("note")
+            if status in (401, 403):
+                adapted_auth += 1
+            if note == "missing_url":
+                adapted_missing += 1
+
+    return {
+        "mapped": mapped,
+        "mapped_count": len(mapped),
+        "adapted_auth_connectors": adapted_auth,
+        "adapted_missing_url_connectors": adapted_missing,
+    }
+
+
 def evaluate_plugin_target(root: str | Path, selected_target: str) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     if not str(selected_target).startswith("plugin."):
@@ -40,6 +72,7 @@ def evaluate_plugin_target(root: str | Path, selected_target: str) -> Dict[str, 
     reg_a = _load_json(canonical_root / PLUGIN_REG)
     reg_b = _load_json(canonical_root / CC_PLUGIN_REG)
     probe = _load_json(canonical_root / CONNECTOR_PROBE)
+    adapters = _load_json(canonical_root / ADAPTERS_PATH)
 
     idx = _by_plugin((reg_a.get("plugins") or []) + (reg_b.get("plugins") or []))
     p = idx.get(plugin_name, {})
@@ -61,30 +94,44 @@ def evaluate_plugin_target(root: str | Path, selected_target: str) -> Dict[str, 
         if (s or {}).get("note") == "missing_url":
             missing_url += 1
 
-    standalone_ready = True
-    supercharged_ready = total == 0 or (reachable == total and auth_needed == 0 and missing_url == 0)
+    adaptation = _adaptation_for(servers, adapters)
+    effective_auth_needed = max(0, auth_needed - int(adaptation.get("adapted_auth_connectors", 0)))
+    effective_missing_url = max(0, missing_url - int(adaptation.get("adapted_missing_url_connectors", 0)))
 
-    if standalone_ready and supercharged_ready:
+    standalone_ready = True
+    adapted_missing = int(adaptation.get("adapted_missing_url_connectors", 0))
+    effective_reachable = min(total, reachable + adapted_missing)
+    supercharged_native = total == 0 or (effective_reachable == total and effective_auth_needed == 0 and effective_missing_url == 0)
+
+    if standalone_ready and supercharged_native:
         status = "OK"
+        mode = "supercharged_adapted"
+        next_action = "run_playbook"
     elif standalone_ready:
         status = "OK_PARTIAL"
+        mode = "standalone"
+        next_action = "run_playbook_and_activate_connectors"
     else:
         status = "GAP"
+        mode = "blocked"
+        next_action = "fix_runtime_blockers"
 
     return {
         "applicable": True,
         "plugin": plugin_name,
         "status": status,
-        "mode": "standalone" if status != "OK" else "supercharged",
-        "next_action": (
-            "run_playbook" if status == "OK" else "run_playbook_and_activate_connectors"
-        ),
+        "mode": mode,
+        "next_action": next_action,
         "connector_summary": {
             "total": total,
             "reachable": reachable,
             "auth_needed": auth_needed,
             "missing_url": missing_url,
+            "effective_reachable": effective_reachable,
+            "effective_auth_needed": effective_auth_needed,
+            "effective_missing_url": effective_missing_url,
         },
+        "adaptation": adaptation,
         "registry": {
             "priority": p.get("priority", ""),
             "class": p.get("class", ""),
