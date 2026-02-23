@@ -1,24 +1,9 @@
 {
-  "apply": {
-    "ingested": [
-      {
-        "hints": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/HINTS.json",
-        "manifest": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/MANIFEST.json",
-        "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T170036Z_fbb57be4b6/original/quarantine_review_20260223T170033Z",
-        "source_id": "fbb57be4b6",
-        "source_rel": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6",
-        "suspected_kind": "json_export"
-      }
-    ],
-    "ingested_count": 1,
-    "max_entries": 200
-  },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-23T17:00:36.379597+00:00",
+  "created_at": "2026-02-23T17:05:54.843127+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
-  "state_path": "state/intake_state.json",
   "summary": {
     "duplicate_count": 0,
     "new_count": 0,
