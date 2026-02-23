@@ -1,10 +1,10 @@
 const FALLBACK = {
   topbar: {
     otto_status: 'available',
-    active_delegations_total: 1,
-    active_subagents: 1,
+    active_delegations_total: 0,
+    active_subagents: 0,
     active_coders: 0,
-    delegations: [{ label: 'Dashboard v1 rollout', type: 'subagent', progress: 72, status: 'running' }],
+    delegations: [],
   },
   sg: {
     cash_receivable_7d: 24500,
@@ -30,9 +30,7 @@ const FALLBACK = {
     next_action_impact: 'Alto',
   },
   activity: [
-    { time: '09:41', label: 'Normalizando backlog SG', status: 'running', type: 'subagent' },
-    { time: '09:37', label: 'Cargado spec v1 dashboard', status: 'done', type: 'system' },
-    { time: '09:30', label: 'Ajuste de semáforos y CTAs', status: 'done', type: 'coder' },
+    { time: '-', label: 'Sin actividad live conectada aún', status: 'done', type: 'system' },
   ],
 };
 
