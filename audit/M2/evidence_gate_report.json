@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "enforced": {
+    "audience_filter_pre_topk": true,
+    "answer_gate_audience_check": true,
+    "abstention_no_evidence": true,
+    "retrieval_pack_trace_saved": true
+  },
+  "artifacts": [
+    "audit/M2/retrieval_packs/",
+    "audit/M2/pytest_m2.txt"
+  ]
+}

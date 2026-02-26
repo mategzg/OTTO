@@ -1,6 +1,6 @@
 {
   "retrieval_v2": {
-    "enabled": false,
+    "enabled": true,
     "lexical_top_n": 20,
     "vector_top_n": 20,
     "rerank_top_m": 30,

@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:22:25Z", "cmd": "pytest -q tests/test_spec004_m2_answer_gate.py tests/test_retrieval_hybrid_pipeline.py tests/test_acl_no_leak_candidates.py tests/test_acl_no_leak_citations.py tests/test_nl_skill_router.py", "output": "audit/M2/pytest_m2.txt"}
+{"ts": "2026-02-22T03:22:25Z", "cmd": "python3 -m scripts.nl_skill_router --root . --text \"necesito info de cotizacion\" --channel whatsapp --conversation-id client123 --message-id m2trace", "output": "audit/M2/retrieval_packs/nlr_34e7550646beb60722148956.json"}

@@ -98,6 +98,25 @@ def _safe_int(value: Any, default: int = 0) -> int:
         return default
 
 
+def _audience_from_channel(channel: str) -> str:
+    c = str(channel or "").strip().lower()
+    if c.startswith("whatsapp"):
+        return "client"
+    if c.startswith("telegram"):
+        return "internal"
+    if c.startswith("discord"):
+        return "staff"
+    return "internal"
+
+
+def _save_retrieval_pack(root: Path, trace_id: str, pack: Dict[str, Any]) -> str:
+    out_dir = root / "audit" / "M2" / "retrieval_packs"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"{trace_id}.json"
+    path.write_text(json.dumps(pack, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+    return path.resolve().relative_to(root.resolve()).as_posix()
+
+
 def run_nl_router(
     root: str | Path,
     *,
@@ -269,15 +288,18 @@ def run_nl_router(
         retrieval_v2 = {
             "enabled": _retrieval_v2_enabled(canonical_root),
             "pack": {},
+            "pack_path": "",
         }
         if retrieval_v2["enabled"] and plan["route_type"] == "tool" and plan["selected_target"] == "rag.answer":
+            audience = _audience_from_channel(channel)
             retrieval_v2["pack"] = retrieval_v2_retrieve(
                 canonical_root,
                 query=text,
-                principal_ctx={"channel": channel, "conversation_id": conversation_id, "user_id": conversation_id},
+                principal_ctx={"channel": channel, "conversation_id": conversation_id, "user_id": conversation_id, "audience": audience},
                 retrieval_mode="grounded_answer",
-                filters={},
+                filters={"audience": audience},
             )
+            retrieval_v2["pack_path"] = _save_retrieval_pack(canonical_root, idempotency_key.replace(":", "_"), retrieval_v2["pack"])
             diag = retrieval_v2.get("pack", {}).get("diagnostics", {}) if isinstance(retrieval_v2.get("pack", {}), dict) else {}
             record_event(
                 canonical_root,

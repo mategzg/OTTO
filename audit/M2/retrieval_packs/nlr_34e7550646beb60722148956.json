@@ -1,0 +1,40 @@
+{
+  "candidates_lexical": [],
+  "candidates_union": [],
+  "candidates_vector": [],
+  "diagnostics": {
+    "abstention_hint": true,
+    "acl_filtered_count": 0,
+    "audience_filtered_count": 4987,
+    "coverage": 0,
+    "dedupe_count": 0,
+    "enabled": true,
+    "filters": {
+      "audience": "client"
+    },
+    "fusion_mode": "rrf",
+    "lexical_candidates": 0,
+    "min_evidence_score": 0.1,
+    "principal_ctx": {
+      "audience": "client",
+      "channel": "whatsapp",
+      "conversation_id": "client123",
+      "user_id": "client123"
+    },
+    "requested_audience": "client",
+    "rerank_latency_ms": 0,
+    "rerank_model": "phrase_aware_v1",
+    "retrieval_mode": "grounded_answer",
+    "scores_summary": {
+      "max": 0.0,
+      "min": 0.0
+    },
+    "union_count": 0,
+    "vector_candidates": 0
+  },
+  "final_topk": [],
+  "query_rewrites": [
+    "necesito info de cotizacion"
+  ],
+  "reranked": []
+}
