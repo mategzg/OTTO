@@ -19,9 +19,17 @@ if str(ROOT) not in sys.path:
 from scripts.approval_manager import enqueue_request, is_worker_paired, process_owner_reply
 from scripts.chat_to_inbox_drop import run_chat_to_drop
 from scripts.context_loader import load_context_plan
-from scripts.episode_linker import get_episode
+try:
+    from scripts.episode_linker import get_episode
+except Exception:  # pragma: no cover - optional integration
+    def get_episode(*_args, **_kwargs):
+        return {}
 from scripts.memory_capture import run_capture
-from scripts.mission_activation import decide_and_act as decide_mission_activation
+try:
+    from scripts.mission_activation import decide_and_act as decide_mission_activation
+except Exception:  # pragma: no cover - optional integration
+    def decide_mission_activation(*_args, **_kwargs):
+        return {"status": "skipped", "reason": "mission_activation_unavailable"}
 from scripts.nl_intent_classifier import classify_intent
 try:
     from scripts.nl_skill_router import run_nl_router
@@ -31,6 +39,7 @@ from scripts.odoo_enqueuer import enqueue_odoo
 from scripts.observability import record_event
 from scripts.research_enqueuer import enqueue_research
 from scripts.repo_root import get_canonical_root
+from scripts.runtime_guardrails import is_real_peer, load_guardrails, redact_no_leak_report
 from scripts.session_memory_manager import append_event
 from scripts.sg_channel_policy import evaluate_sg_event
 from scripts.sg_promotion import enqueue_promotion
@@ -94,6 +103,10 @@ def _load_json_file(path: Path) -> Dict[str, Any]:
     except json.JSONDecodeError:
         return {}
     return payload if isinstance(payload, dict) else {}
+
+
+def _redact_no_leak(report: Dict[str, Any]) -> Dict[str, Any]:
+    return redact_no_leak_report(report)
 
 
 def _save_pairings(root: Path, payload: Dict[str, Any]) -> None:
@@ -914,6 +927,11 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         )
         return report
 
+    guardrails = load_guardrails(canonical_root)
+    if channel.startswith("whatsapp") and str(event.get("chat_type", "")).lower() == "dm":
+        if bool(guardrails.get("dm_scope", {}).get("whatsapp_require_real_peer", True)) and not is_real_peer(str(event.get("peer_id", ""))):
+            raise RuntimeError("dm_scope_violation:whatsapp_requires_real_peer")
+
     domain_info = _infer_discord_domain(canonical_root, event)
     if channel.startswith("discord"):
         event["domain_slug"] = domain_info["domain_slug"] or "unknown"
@@ -941,6 +959,7 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
             thread_id=str(event.get("thread_id", "")),
             message_id=str(event.get("message_id", "")),
             timeout_ms=1500,
+            agent_id=str(event.get("agent_id", "otto")),
         )
     else:
         nl_route = {
@@ -1102,6 +1121,9 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         "actions": actions,
         "version": 1,
     }
+    if bool(guardrails.get("no_leak", {}).get("whatsapp_client_redaction", True)) and channel.startswith("whatsapp") and str(event.get("actor_type", "")).lower() == "client":
+        report = _redact_no_leak(report)
+
     record_event(
         canonical_root,
         {
