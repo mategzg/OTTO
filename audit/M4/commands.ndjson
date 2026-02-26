@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:34:44Z", "cmd": "pytest -q tests/test_spec004_m4_sharepoint_sync.py tests/test_retrieval_hybrid_pipeline.py", "output": "audit/M4/pytest_m4.txt"}
+{"ts": "2026-02-22T03:34:44Z", "cmd": "python3 -m scripts.sharepoint_sync --root .", "output": "audit/M4/sync_run.json"}

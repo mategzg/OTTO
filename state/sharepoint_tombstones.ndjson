@@ -1,0 +1,2 @@
+{"from": "brain/sg/source_docs/demo_a.md", "id": "demo1", "op": "rename", "to": "brain/sg/source_docs/demo_b.md", "ts": "2026-02-22T03:35:02.306288+00:00"}
+{"id": "demo1", "op": "delete", "path": "brain/sg/source_docs/demo_b.md", "ts": "2026-02-22T03:35:02.308301+00:00"}

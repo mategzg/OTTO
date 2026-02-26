@@ -1,0 +1,14 @@
+{
+  "created": 0,
+  "deleted": 0,
+  "delta_token": "",
+  "idempotent_rerun": true,
+  "paths": {
+    "manifest": "state/sharepoint_manifest.json",
+    "state": "state/sharepoint_sync_state.json",
+    "tombstones": "state/sharepoint_tombstones.ndjson"
+  },
+  "renamed": 0,
+  "status": "ok",
+  "updated": 0
+}

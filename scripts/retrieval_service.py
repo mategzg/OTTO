@@ -87,10 +87,11 @@ def _is_allowed(chunk: Dict[str, Any], principal_ctx: Dict[str, Any] | None) -> 
     return bool(principal.intersection(allow_set))
 
 
-def _extract_doc_acl(lines: List[str]) -> Dict[str, List[str]]:
+def _extract_doc_acl(lines: List[str]) -> Dict[str, Any]:
     acl_allow = ["public"]
     acl_deny: List[str] = []
-    for line in lines[:12]:
+    audience = "internal"
+    for line in lines[:16]:
         l = line.strip().lower()
         if l.startswith("<!--") and "acl_allow:" in l:
             raw = l.split("acl_allow:", 1)[1].replace("-->", "").strip()
@@ -102,7 +103,11 @@ def _extract_doc_acl(lines: List[str]) -> Dict[str, List[str]]:
             vals = [x.strip() for x in raw.split(",") if x.strip()]
             if vals:
                 acl_deny = vals
-    return {"acl_allow": acl_allow, "acl_deny": acl_deny}
+        if l.startswith("<!--") and "audience:" in l:
+            raw = l.split("audience:", 1)[1].replace("-->", "").strip()
+            if raw in {"client", "staff", "internal"}:
+                audience = raw
+    return {"acl_allow": acl_allow, "acl_deny": acl_deny, "audience": audience}
 
 
 def _jaccard(a: List[str], b: List[str]) -> float:
@@ -159,6 +164,7 @@ def _scan_docs(root: Path) -> List[Dict[str, Any]]:
                     "tokens": _tokenize(clean),
                     "acl_allow": list(acl_meta.get("acl_allow", ["public"])),
                     "acl_deny": list(acl_meta.get("acl_deny", [])),
+                    "audience": str(acl_meta.get("audience", "internal")),
                 }
             )
     return out
@@ -196,8 +202,13 @@ def retrieve(
     lexical_scored: List[Dict[str, Any]] = []
     vector_scored: List[Dict[str, Any]] = []
     acl_filtered_count = 0
+    audience_filtered_count = 0
+    requested_audience = str((filters or {}).get("audience", "")).strip().lower() or str((principal_ctx or {}).get("audience", "")).strip().lower()
 
     for c in chunks:
+        if requested_audience and str(c.get("audience", "internal")).strip().lower() != requested_audience:
+            audience_filtered_count += 1
+            continue
         if not _is_allowed(c, principal_ctx):
             acl_filtered_count += 1
             continue
@@ -302,6 +313,8 @@ def retrieve(
             "vector_candidates": len(vector_hits),
             "union_count": len(union),
             "acl_filtered_count": acl_filtered_count,
+            "audience_filtered_count": audience_filtered_count,
+            "requested_audience": requested_audience,
             "dedupe_count": max(0, len(lexical_hits) + len(vector_hits) - len(union)),
             "rerank_model": "phrase_aware_v1",
             "rerank_latency_ms": 0,
