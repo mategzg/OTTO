@@ -1,0 +1,10 @@
+{
+  "status": "ok",
+  "checks": {
+    "heartbeat_no_spam": true,
+    "cron_isolated_session": true,
+    "breaker_cross_surface": true,
+    "fault_injection": true
+  },
+  "generated_at": "2026-02-22T03:42:18Z"
+}

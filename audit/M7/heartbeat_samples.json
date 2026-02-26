@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-02-22T03:42:18.602693+00:00",
+  "cron_session_example": "cron:sharepoint-sync",
+  "heartbeat_no_alert": "HEARTBEAT_OK",
+  "heartbeat_with_alert": "⚠️ alerta de prueba"
+}
