@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:40:01Z", "cmd": "pytest -q tests/test_spec004_m6_skills_intake.py tests/test_skill_recipe_registry.py", "output": "audit/M6/pytest_m6.txt"}
+{"ts": "2026-02-22T03:40:01Z", "cmd": "skills intake valid/invalid/rollback simulation", "output": "audit/M6/intake_valid.json|audit/M6/intake_invalid.json|audit/M6/rollback.json"}

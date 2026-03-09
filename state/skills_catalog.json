@@ -1,0 +1,12 @@
+{
+  "last_promoted": "",
+  "skills": [
+    {
+      "path": "skills/production/valid_pack",
+      "promoted_at": "2026-02-22T03:40:01.067621+00:00",
+      "skill_key": "valid_pack",
+      "when_not_to_use": "If outside declared scope",
+      "when_to_use": "See SKILL.md"
+    }
+  ]
+}

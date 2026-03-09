@@ -1,0 +1,3 @@
+{"has_skill_md": true, "pack": "/home/agente/otto-workspace/audit/M6/valid_pack.zip", "pack_id": "ab904b8042ae", "promoted_path": "skills/production/valid_pack", "reason": "passed", "relevance_score": 6, "risk_score": 0, "status": "promoted", "ts": "2026-02-22T03:40:01.067435+00:00"}
+{"has_skill_md": false, "pack": "/home/agente/otto-workspace/audit/M6/invalid_pack.zip", "pack_id": "f9549e7ad0ff", "promoted_path": "", "reason": "missing_skill_md", "relevance_score": 2, "risk_score": 0, "status": "rejected", "ts": "2026-02-22T03:40:01.069898+00:00"}
+{"removed": "skills/production/valid_pack", "status": "rolled_back", "ts": "2026-02-22T03:40:01.071804+00:00"}
