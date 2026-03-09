@@ -1,0 +1,28 @@
+{
+  "ack_target_ms": 2000,
+  "delegation": {
+    "always_delegate_if": {
+      "has_attachments": true,
+      "intent_ids": [
+        "research_request",
+        "reminder_request",
+        "odoo_cotizar",
+        "odoo_stock",
+        "odoo_cliente",
+        "odoo_factura",
+        "odoo_pago",
+        "odoo_cuenta",
+        "odoo_reporte"
+      ],
+      "router_targets_not_safe": [
+        "rag.answer"
+      ]
+    }
+  },
+  "limits": {
+    "maxChildrenPerAgent": 20,
+    "maxConcurrent": 8,
+    "maxSpawnDepth": 2
+  },
+  "version": 1
+}
