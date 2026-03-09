@@ -54,6 +54,7 @@ Before editing `scripts/`, `state/`, or `hooks/`, follow the minimal reading rou
 
 - Default delegation mode: OpenClaw subagents (`sessions_spawn`) directly, not external coder CLIs by default.
 - External coder CLIs (Codex/Claude Code/Pi) are disabled unless Mateo lo pida explícitamente para una misión puntual.
+- Regla de niveles vigente: Nivel 1 (crítico/alto riesgo) OTTO directo sin delegar; Nivel 2 delegación por subagente OpenClaw; Nivel 3 repetitivo/bajo riesgo puede usar coder directo con handoff verificable.
 - Si se usan múltiples subagentes en paralelo, deben estar segmentados por scope no superpuesto para evitar pisarse.
 - Canon policy: `brain/domains/openclaw_ops/07_DELEGATION_POLICY.md`.
 - Matrix card: `brain/cards/openclaw_ops/card_delegation_matrix.md`.
@@ -87,6 +88,18 @@ Don't ask permission. Just do it.
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
+
+### Repo Verification Protocol (mandatory for repo-specific questions)
+
+When Mateo asks about something specific in the repo (plugins, commits, scripts, certifications, generated artifacts, runtime registries):
+
+1. Run required `memory_search` first (policy compliance).
+2. Then **always verify in repo artifacts** before answering:
+   - `git show <commit>` / `git log --name-only`
+   - direct file existence checks (`ls`, `read`) in `state/*`, `docs/_inbox/*`, `scripts/*`, and relevant folders.
+3. If memory search is empty but repo evidence exists, answer from repo evidence and explicitly note memory gap.
+4. Never infer "not integrated" or "not available" until repo verification is done.
+5. If still uncertain after verification, respond `GAP/NO_VERIFICADO` and list exactly what was checked.
 
 ### Core Rule — Never rely on conversational memory
 

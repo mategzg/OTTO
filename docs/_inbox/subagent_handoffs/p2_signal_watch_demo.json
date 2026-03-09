@@ -1,0 +1,21 @@
+{
+  "mission_id": "p2_signal_watch_demo",
+  "tier": "p2",
+  "delegate_to": "signal_watch",
+  "status": "completed",
+  "completed_at": "2026-02-22T00:00:00Z",
+  "artifacts": [
+    "data/demo_empresa_signal.xlsx",
+    "docs/_inbox/p2_signal_watch_result.md"
+  ],
+  "summary": "Se generó un demo de señal empresarial con hoja Resumen y cálculo automático del total por fila.",
+  "verification": {
+    "checks": [
+      "Archivo Excel creado con hoja 'Resumen'",
+      "8 filas de muestra insertadas",
+      "Columna Total con fórmula Cantidad*Precio",
+      "Resumen en español generado"
+    ],
+    "result": "ok"
+  }
+}

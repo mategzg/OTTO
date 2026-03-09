@@ -19,24 +19,53 @@ if str(ROOT) not in sys.path:
 from scripts.approval_manager import enqueue_request, is_worker_paired, process_owner_reply
 from scripts.chat_to_inbox_drop import run_chat_to_drop
 from scripts.context_loader import load_context_plan
-from scripts.episode_linker import get_episode
+try:
+    from scripts.episode_linker import get_episode
+except Exception:  # pragma: no cover - optional integration
+    def get_episode(*_args, **_kwargs):
+        return {}
 from scripts.memory_capture import run_capture
-from scripts.mission_activation import decide_and_act as decide_mission_activation
+try:
+    from scripts.mission_activation import decide_and_act as decide_mission_activation
+except Exception:  # pragma: no cover - optional integration
+    def decide_mission_activation(*_args, **_kwargs):
+        return {"status": "skipped", "reason": "mission_activation_unavailable"}
 from scripts.nl_intent_classifier import classify_intent
 try:
     from scripts.nl_skill_router import run_nl_router
 except Exception:  # pragma: no cover - optional integration
     run_nl_router = None
-from scripts.odoo_enqueuer import enqueue_odoo
+try:
+    from scripts.odoo_enqueuer import enqueue_odoo
+except Exception:  # pragma: no cover - optional integration
+    def enqueue_odoo(*_args, **_kwargs):
+        raise RuntimeError("odoo_enqueuer_unavailable")
+
 from scripts.observability import record_event
-from scripts.research_enqueuer import enqueue_research
+try:
+    from scripts.research_enqueuer import enqueue_research
+except Exception:  # pragma: no cover - optional integration
+    def enqueue_research(*_args, **_kwargs):
+        return {"status": "unavailable", "reason": "research_enqueuer_unavailable", "task_id": ""}
 from scripts.repo_root import get_canonical_root
+from scripts.runtime_guardrails import is_real_peer, load_guardrails, redact_no_leak_report
 from scripts.session_memory_manager import append_event
 from scripts.sg_channel_policy import evaluate_sg_event
 from scripts.sg_promotion import enqueue_promotion
 from scripts.outbox_queue import enqueue_message
-from scripts.reminder_engine import add_reminder
-from scripts.status_reporter import build_status, render_status_text
+try:
+    from scripts.reminder_engine import add_reminder
+except Exception:  # pragma: no cover - optional integration
+    def add_reminder(*_args, **_kwargs):
+        return {"status": "unavailable", "id": ""}
+try:
+    from scripts.status_reporter import build_status, render_status_text
+except Exception:  # pragma: no cover - optional integration
+    def build_status(*_args, **_kwargs):
+        return {"status": "unavailable"}
+
+    def render_status_text(*_args, **_kwargs):
+        return "Status no disponible en este runtime."
 
 REPORT_JSON = Path("docs/_inbox/ingress_report_latest.json")
 REPORT_MD = Path("docs/_inbox/ingress_report_latest.md")
@@ -94,6 +123,10 @@ def _load_json_file(path: Path) -> Dict[str, Any]:
     except json.JSONDecodeError:
         return {}
     return payload if isinstance(payload, dict) else {}
+
+
+def _redact_no_leak(report: Dict[str, Any]) -> Dict[str, Any]:
+    return redact_no_leak_report(report)
 
 
 def _save_pairings(root: Path, payload: Dict[str, Any]) -> None:
@@ -914,6 +947,11 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         )
         return report
 
+    guardrails = load_guardrails(canonical_root)
+    if channel.startswith("whatsapp") and str(event.get("chat_type", "")).lower() == "dm":
+        if bool(guardrails.get("dm_scope", {}).get("whatsapp_require_real_peer", True)) and not is_real_peer(str(event.get("peer_id", ""))):
+            raise RuntimeError("dm_scope_violation:whatsapp_requires_real_peer")
+
     domain_info = _infer_discord_domain(canonical_root, event)
     if channel.startswith("discord"):
         event["domain_slug"] = domain_info["domain_slug"] or "unknown"
@@ -941,6 +979,8 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
             thread_id=str(event.get("thread_id", "")),
             message_id=str(event.get("message_id", "")),
             timeout_ms=1500,
+            agent_id=str(event.get("agent_id", "otto")),
+            actor_type=str(event.get("actor_type", "")),
         )
     else:
         nl_route = {
@@ -1033,6 +1073,31 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
     sg_eval = evaluate_sg_event(canonical_root, event) if (is_inbound and channel.startswith("whatsapp")) else {}
     if is_inbound:
         if sg_eval:
+            # Hard boundary: WhatsApp stays client by default unless worker auth is explicitly granted.
+            auth = sg_eval.get("auth", {}) if isinstance(sg_eval.get("auth", {}), dict) else {}
+            auth_status = str(auth.get("status", "")).strip().lower()
+            sg_actor = str(sg_eval.get("actor", "")).strip().lower()
+            worker_granted = sg_actor == "worker" and auth_status == "granted"
+            event["actor_type"] = "worker" if worker_granted else "client"
+
+            # Persist successful worker unlock (password-only mode) as paired for this peer.
+            if worker_granted:
+                account_id = str(event.get("account_id", "_")).strip() or "_"
+                peer_id = str(event.get("peer_id", "_")).strip() or "_"
+                worker_key = "|".join(["whatsapp", account_id.lower(), peer_id.lower()])
+                pairings = _load_pairings(canonical_root)
+                pairings.setdefault("workers", {})
+                pairings["workers"][worker_key] = {
+                    "status": "paired",
+                    "paired_at": _utc_now(),
+                    "channel": "whatsapp",
+                    "account_id": account_id,
+                    "peer_id": peer_id,
+                    "display_name": str(event.get("metadata", {}).get("author_name", "")),
+                    "source_ref": f"runtime:{session_id}",
+                }
+                _save_pairings(canonical_root, pairings)
+
             actions["sg_evaluation"] = sg_eval
             actions["worker_pairing"] = _maybe_enqueue_worker_pairing(canonical_root, event, sg_eval, session_id)
             actions["worker_reply"] = _maybe_reply_worker_flow(
@@ -1046,14 +1111,20 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         elif "sg_worthy" in labels:
             actions["sg_promotion"] = _maybe_enqueue_sg_promotion(canonical_root, event, labels, session_id, {"sensitivity": "medium"})
 
-        actions["mission_activation"] = decide_mission_activation(
+        mission_activation_out = decide_mission_activation(
             canonical_root,
             event=event,
             intent=intent,
             session_id=session_id,
             sg_eval=sg_eval,
             owner_reply=actions["owner_reply"],
-        )["report"]
+        )
+        if isinstance(mission_activation_out, dict) and isinstance(mission_activation_out.get("report"), dict):
+            actions["mission_activation"] = mission_activation_out["report"]
+        elif isinstance(mission_activation_out, dict):
+            actions["mission_activation"] = mission_activation_out
+        else:
+            actions["mission_activation"] = {"status": "skipped", "reason": "mission_activation_invalid_output"}
         actions["research"] = _maybe_enqueue_research_request(canonical_root, event, intent, session_id)
         actions["reminder"] = _maybe_enqueue_reminder_request(canonical_root, event, intent, session_id)
         actions["odoo"] = _maybe_enqueue_odoo_request(canonical_root, event, intent, session_id)
@@ -1102,6 +1173,9 @@ def handle_runtime_event(root: str | Path, raw_event: Dict[str, Any]) -> Dict[st
         "actions": actions,
         "version": 1,
     }
+    if bool(guardrails.get("no_leak", {}).get("whatsapp_client_redaction", True)) and channel.startswith("whatsapp") and str(event.get("actor_type", "")).lower() == "client":
+        report = _redact_no_leak(report)
+
     record_event(
         canonical_root,
         {

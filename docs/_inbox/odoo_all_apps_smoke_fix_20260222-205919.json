@@ -1,0 +1,82 @@
+{
+  "stamp": "20260222-205919",
+  "uid": 2,
+  "tests": [
+    {
+      "app": "Actividades_fix",
+      "ok": false,
+      "error": "execute_kw:mail.activity.create failed after 3 attempts: <Fault 2: 'The operation cannot be completed: Activities have to be linked to records with a not null res_id.'>"
+    },
+    {
+      "app": "Citas_fix",
+      "ok": true,
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "app": "Documentos_fix",
+      "ok": true,
+      "result": {
+        "count": 30
+      }
+    },
+    {
+      "app": "Planeación_fix",
+      "ok": true,
+      "result": {
+        "count": 1
+      }
+    },
+    {
+      "app": "Marketing_fix",
+      "ok": true,
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "app": "Inventario_fix",
+      "ok": true,
+      "result": {
+        "count": 5
+      }
+    },
+    {
+      "app": "Empleados_fix",
+      "ok": true,
+      "result": {
+        "count": 3
+      }
+    },
+    {
+      "app": "Asistencias_fix",
+      "ok": true,
+      "result": {
+        "count": 7
+      }
+    },
+    {
+      "app": "Gastos_fix",
+      "ok": true,
+      "result": {
+        "count": 0
+      }
+    },
+    {
+      "app": "Reclutamiento_fix",
+      "ok": true,
+      "result": {
+        "applicant_id": 4,
+        "vals": {
+          "partner_name": "ZZ Candidate 20260222-205919",
+          "email_from": "zzcand_20260222-205919@example.com",
+          "job_id": 1
+        },
+        "required": [
+          "kanban_state"
+        ]
+      }
+    }
+  ]
+}

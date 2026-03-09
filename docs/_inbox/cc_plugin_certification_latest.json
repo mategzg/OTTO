@@ -1,0 +1,694 @@
+{
+  "updated_at": "2026-02-23T00:25:53Z",
+  "policy": {
+    "external_integrations_optional": true,
+    "nl_first_required": true,
+    "p0_p1_no_autonomous_coder": true,
+    "p2_delegable_with_handoff": true
+  },
+  "summary": {
+    "total": 52,
+    "ok": 43,
+    "ok_partial": 9,
+    "gap": 0,
+    "routes": 8
+  },
+  "results": [
+    {
+      "plugin": "Notion",
+      "priority": "low",
+      "class": "general",
+      "commands": 10,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "agent-sdk-dev",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "asana",
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "atlassian",
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "circleback",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "clangd-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "claude-code-setup",
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "claude-md-management",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "code-review",
+      "priority": "high",
+      "class": "quality-security",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "code-simplifier",
+      "priority": "low",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "context7",
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "csharp-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "explanatory-output-style",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "feature-dev",
+      "priority": "high",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "figma",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 2,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "firebase",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "firecrawl",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "frontend-design",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "github",
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "gitlab",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "gopls-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "greptile",
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "hookify",
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "huggingface-skills",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 8,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "jdtls-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "kotlin-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "laravel-boost",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "learning-output-style",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "linear",
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "lua-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "php-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "pinecone",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "playground",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "playwright",
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "plugin-dev",
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "posthog",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "pr-review-toolkit",
+      "priority": "high",
+      "class": "quality-security",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "pyright-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "qodo-skills",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "ralph-loop",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "rust-analyzer-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "security-guidance",
+      "priority": "high",
+      "class": "quality-security",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "semgrep",
+      "priority": "high",
+      "class": "quality-security",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "sentry",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 5,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "serena",
+      "priority": "high",
+      "class": "code-understanding",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "skill-creator",
+      "priority": "medium",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "slack",
+      "priority": "low",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "sonatype-guide",
+      "priority": "low",
+      "class": "general",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "stripe",
+      "priority": "medium",
+      "class": "integration-mcp",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 1,
+      "status": "OK_PARTIAL",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "superpowers",
+      "priority": "high",
+      "class": "workflow-automation",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "typescript-lsp",
+      "priority": "medium",
+      "class": "language-intelligence",
+      "commands": 0,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    },
+    {
+      "plugin": "vercel",
+      "priority": "high",
+      "class": "integration-mcp",
+      "commands": 3,
+      "skills": 0,
+      "mcp_servers": 0,
+      "status": "OK",
+      "notes": [
+        "NL-first playbook operational",
+        "External connector auth is optional"
+      ]
+    }
+  ]
+}

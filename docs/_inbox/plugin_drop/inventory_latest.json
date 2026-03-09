@@ -1,0 +1,21 @@
+{
+  "source": "docs/_inbox/plugin_drop",
+  "plugins_found": 9,
+  "plugins": [
+    {"name": "customer-support", "version": "1.0.0", "mcp_servers": 7},
+    {"name": "data", "version": "1.0.0", "mcp_servers": 6},
+    {"name": "enterprise-search", "version": "1.0.0", "mcp_servers": 6},
+    {"name": "finance", "version": "1.0.0", "mcp_servers": 5},
+    {"name": "legal", "version": "1.0.0", "mcp_servers": 5},
+    {"name": "marketing", "version": "1.0.0", "mcp_servers": 9},
+    {"name": "product-management", "version": "1.0.0", "mcp_servers": 12},
+    {"name": "productivity", "version": "1.0.0", "mcp_servers": 8},
+    {"name": "sales", "version": "1.0.0", "mcp_servers": 9}
+  ],
+  "unique_mcp_servers": 28,
+  "notes": [
+    "Windows ADS artifacts detected (*.Zone.Identifier); safe to ignore or clean during import.",
+    "Connectors require external auth/tokens before becoming operational.",
+    "Plugin docs are present (README.md + CONNECTORS.md + .mcp.json)."
+  ]
+}

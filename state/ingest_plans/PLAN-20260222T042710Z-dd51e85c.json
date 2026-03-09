@@ -1,0 +1,105 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-22T04:27:10.524669+00:00",
+  "operations": [
+    {
+      "content": "# Card: Reserved Filename Guardrail (CLAUDE.md)\n\nid: card-guardrail-347abcf5ce-claude_example\ntype: principle\ntags: ingest,guardrail,reserved_filename\nstatus: active\nconfidence: 1.0\nsource_ref: /home/agente/otto-workspace/vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7\n\n## Summary\n\nSe detecto `CLAUDE.md` dentro de un corpus. El router forzo categoria `inbox_only`.\n\n## How to apply\n\n- No promover AGENTS*/CLAUDE* fuera de allowlist.\n- Mantener el crudo en `_processed` como fuente auditada.\n\n## References\n\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/MANIFEST.json`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/README.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/CLAUDE.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/PROJECT_BRIEF.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/REPO_MAP.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_00398b862b_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_008126b43f_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_00871df34d_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0094520766_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_014779a860_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_01c1a7d995_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_01d654e0d9_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_01e7d11b1e_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_01f3152a86_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_020059db73_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_028c8e2a8b_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_02ef7fa249_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_031337cda7_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_03187cc2d4_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_03d315e9ad_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_040fc7e6bf_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0434671565_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0446778473_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_046bfaab01_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_04c6be1f64_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_04fa8f9227_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_053c522bde_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_05d183a296_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0621a5c8e6_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0679905fbd_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_06e6fd9a9f_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_07170461c8_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_09b43c7850_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0a335bd8fd_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0a9672e18b_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0acf6c6cde_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0b0b0c6f13_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0c41a91b28_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0c854aa30a_01.md`\n- `vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7/source/backup_semantic_extract_20260222T042656Z/source/files/brain/cards/external_ingest/card_0d16967885_01.md`\n",
+      "content_sha256": "113c934a9734166ada73ceeeaaf8934ea17ef68e3449273a46c2f5de12046bda",
+      "op_category": "inbox_only",
+      "op_id": "7e4a301eabf9",
+      "op_type": "write",
+      "source_id": "347abcf5ce",
+      "target_rel": "brain/cards/external_ingest/card_347abcf5ce_claude_example.md"
+    }
+  ],
+  "plan_id": "PLAN-20260222T042710Z-dd51e85c",
+  "routing_decisions": [
+    {
+      "category": "inbox_only",
+      "destinations": [
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "reserved filenames detected: CLAUDE.md",
+      "reserved_files": [
+        "CLAUDE.md"
+      ],
+      "rule_id": "reserved_filename_guardrail",
+      "source_id": "347abcf5ce",
+      "source_name": "20260222T042707Z_cd8c522cc7"
+    },
+    {
+      "category": "ignore",
+      "destinations": [
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "category=ignore via rule=ignore_archives",
+      "reserved_files": [],
+      "rule_id": "ignore_archives",
+      "source_id": "8b2a4f7be1",
+      "source_name": "20260222T042521Z_0cc409a21f"
+    }
+  ],
+  "routing_summary": {
+    "ignore": 1,
+    "inbox_only": 1
+  },
+  "sources": [
+    {
+      "card_count": 0,
+      "category": "ignore",
+      "domain": "external_ingest",
+      "inbox_rel_path": "sources/20260222T042521Z_0cc409a21f",
+      "node_rel_path": "",
+      "source_hash": "0b5533b8bdcfbd320539f8e04b9c2ef2ad84d7c3b983054257cc187566ab052e",
+      "source_id": "8b2a4f7be1",
+      "source_name": "20260222T042521Z_0cc409a21f"
+    },
+    {
+      "card_count": 1,
+      "category": "inbox_only",
+      "domain": "external_ingest",
+      "inbox_rel_path": "sources/20260222T042707Z_cd8c522cc7",
+      "node_rel_path": "brain/cards/external_ingest/card_347abcf5ce_claude_example.md",
+      "source_hash": "a52fa82a8430fd517fb131126ad7d7d9a2c589f899177920e9f41031970a97bd",
+      "source_id": "347abcf5ce",
+      "source_name": "20260222T042707Z_cd8c522cc7"
+    }
+  ],
+  "status": "blocked",
+  "stop_reasons": [
+    "pending_bytes_exceeds_limit:113885504>104857600",
+    "pending_files_exceeds_limit:1465>500"
+  ],
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 2,
+    "pending_files": 1465,
+    "pending_sources": 2,
+    "pending_total_bytes": 113885504,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 2,
+    "pending_files": 1465,
+    "pending_sources": 2,
+    "pending_total_bytes": 113885504,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

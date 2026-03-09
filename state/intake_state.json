@@ -1,7 +1,7 @@
 {
   "duplicate_count_total": 0,
-  "ingested_count_total": 3,
-  "last_run_utc": "2026-02-19T15:35:06.489911+00:00",
+  "ingested_count_total": 16,
+  "last_run_utc": "2026-02-23T17:00:40.744679+00:00",
   "last_status": "success",
   "seen_fingerprints": {
     "0a57d0a3287d0024096335c6585e4b788c4120d4236e2e43cc6ccaccd6545194": {
@@ -9,18 +9,141 @@
       "source_id": "dcfe08f56e",
       "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e"
     },
+    "11605a8ee21dfe086a874e27b6cc767e13a44991e86bd6dad8408b452bed4270": {
+      "ingested_at": "2026-02-23T17:00:36.377341+00:00",
+      "source_id": "fbb57be4b6",
+      "source_rel": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6"
+    },
+    "17bc9f14afb4cf473d0ef3718bcfe9df3193c2f89d8b4962be32ac284a82978e": {
+      "ingested_at": "2026-02-23T04:04:10.560715+00:00",
+      "source_id": "327504361f",
+      "source_rel": "vault/inbox_raw/sources/20260223T040410Z_327504361f"
+    },
+    "3d56b3f514cf38240e341775eab1d17768b9e6474bdf3ae16dcb98de91a5113e": {
+      "ingested_at": "2026-02-22T04:27:07.685708+00:00",
+      "source_id": "cd8c522cc7",
+      "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7"
+    },
     "5cb799bfda0ce6de33547faa91281131daccd00fc9a8157500de165de7233590": {
       "ingested_at": "2026-02-19T13:34:32.466350+00:00",
       "source_id": "6c8e0dd191",
       "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191"
     },
+    "7f7e6ddb78caa6c4a1bbd0fb7158cd00e159174d153285f5ab2395cfae3891e6": {
+      "ingested_at": "2026-02-22T16:25:20.697433+00:00",
+      "source_id": "065f800160",
+      "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160"
+    },
+    "844a4d6d440df4381e79f2850ecbbb0a86aa318ef3b5559b6d7f663c4d6be9b6": {
+      "ingested_at": "2026-02-23T03:57:37.250646+00:00",
+      "source_id": "8418855593",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_8418855593"
+    },
+    "906d39a3d7ba791cc0405aaac2ce37a183fb3126b7ba7686fc28a7f3e983ce64": {
+      "ingested_at": "2026-02-23T03:57:37.263875+00:00",
+      "source_id": "2fe07e03cf",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf"
+    },
     "b1bf45b84f802f0fd71bb794f75aa9fe3a5a5579aa6e34f1f3613472f21d1291": {
       "ingested_at": "2026-02-19T13:18:16.856368+00:00",
       "source_id": "bb980d1560",
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560"
+    },
+    "b42502f2daeeefcf0f00237924586fe1989886b01a838e9d2ff6d2f368946e6a": {
+      "ingested_at": "2026-02-23T04:09:35.923479+00:00",
+      "source_id": "4205b85142",
+      "source_rel": "vault/inbox_raw/sources/20260223T040935Z_4205b85142"
+    },
+    "c54251d2bc12b8382a69504ef5985a55bd69c03e074b47c4dfb92cb6886eb0c4": {
+      "ingested_at": "2026-02-23T04:07:40.079879+00:00",
+      "source_id": "bb0532edc6",
+      "source_rel": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6"
+    },
+    "cc6f3106c4655d2f1d0eb261a680aa0486a3113fd35a02d1c5e516e371719ced": {
+      "ingested_at": "2026-02-23T03:55:31.698318+00:00",
+      "source_id": "10a53a2e97",
+      "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97"
+    },
+    "db0fff0505008a219c7780c0fdd47b7bab991902ec316a0655807cbbea5ccca5": {
+      "ingested_at": "2026-02-23T04:02:27.996562+00:00",
+      "source_id": "6c2f7449da",
+      "source_rel": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da"
+    },
+    "dd7247e536784c17b9a16940de9f19ad3468462dc07773977297826662d187ec": {
+      "ingested_at": "2026-02-23T03:56:04.283341+00:00",
+      "source_id": "40f0d7c629",
+      "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629"
+    },
+    "f0e4249812df1bfa6782ea13f018f2281397b3dba5a963d06cee8c47b1d6fd68": {
+      "ingested_at": "2026-02-23T03:58:06.086227+00:00",
+      "source_id": "6ff13db728",
+      "source_rel": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728"
+    },
+    "f938adeeb8f7ea858d6e4962146238f6ded36edbb91a391fd1f90445f4b79685": {
+      "ingested_at": "2026-02-22T04:25:22.336305+00:00",
+      "source_id": "0cc409a21f",
+      "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f"
     }
   },
   "sources": {
+    "065f800160": {
+      "ingested_at": "2026-02-22T16:25:20.697677+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T162442Z_065f800160/original/a6e19e8d35d2fb8cdf6aac4beea595f2140d6da5161af63e3e45b9ff02b19b4c-2026-02-19-16-27-17-c39632f55ccd4c39afc879f654449f7c (1)",
+      "source_rel": "vault/inbox_raw/sources/20260222T162442Z_065f800160",
+      "suspected_kind": "chatgpt_export_candidate"
+    },
+    "0cc409a21f": {
+      "ingested_at": "2026-02-22T04:25:22.336539+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042521Z_0cc409a21f/original/backup_branch_assimilation_20260222T042510Z",
+      "source_rel": "vault/inbox_raw/sources/20260222T042521Z_0cc409a21f",
+      "suspected_kind": "json_export"
+    },
+    "10a53a2e97": {
+      "ingested_at": "2026-02-23T03:55:31.698718+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T03:55:31.770434+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035531Z_10a53a2e97/original/jack_b2b_20260223T035526Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035531Z_10a53a2e97",
+      "suspected_kind": "generic_corpus"
+    },
+    "2fe07e03cf": {
+      "ingested_at": "2026-02-23T03:57:37.264131+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T03:57:37.330822+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035737Z_2fe07e03cf/original/manolo_b2c_text_20260223T035733Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_2fe07e03cf",
+      "suspected_kind": "generic_corpus"
+    },
+    "327504361f": {
+      "ingested_at": "2026-02-23T04:04:10.560994+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040410Z_327504361f/original/alex_hormozi_phase2_20260223T040410Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040410Z_327504361f",
+      "suspected_kind": "json_export"
+    },
+    "40f0d7c629": {
+      "ingested_at": "2026-02-23T03:56:04.283564+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035604Z_40f0d7c629/original/jack_b2b_text_20260223T035557Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035604Z_40f0d7c629",
+      "suspected_kind": "json_export"
+    },
+    "4205b85142": {
+      "ingested_at": "2026-02-23T04:09:35.923708+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040935Z_4205b85142/original/alex_hormozi_cheatsheet_20260223T040935Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040935Z_4205b85142",
+      "suspected_kind": "json_export"
+    },
+    "6c2f7449da": {
+      "ingested_at": "2026-02-23T04:02:27.996787+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040227Z_6c2f7449da/original/alex_hormozi_research_20260223T040223Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040227Z_6c2f7449da",
+      "suspected_kind": "json_export"
+    },
     "6c8e0dd191": {
       "ingested_at": "2026-02-19T13:34:32.466557+00:00",
       "normalized": false,
@@ -28,6 +151,28 @@
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T133432Z_6c8e0dd191/original/legacy_recovery",
       "source_rel": "vault/inbox_raw/sources/20260219T133432Z_6c8e0dd191",
       "suspected_kind": "generic_corpus"
+    },
+    "6ff13db728": {
+      "ingested_at": "2026-02-23T03:58:06.086458+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035806Z_6ff13db728/original/manolo_instrucciones_20260223T035806Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035806Z_6ff13db728",
+      "suspected_kind": "json_export"
+    },
+    "8418855593": {
+      "ingested_at": "2026-02-23T03:57:37.250907+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T03:57:37.330832+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T035737Z_8418855593/original/manolo_b2c_20260223T035733Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T035737Z_8418855593",
+      "suspected_kind": "generic_corpus"
+    },
+    "bb0532edc6": {
+      "ingested_at": "2026-02-23T04:07:40.080169+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T040740Z_bb0532edc6/original/alex_hormozi_phase3_20260223T040739Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T040740Z_bb0532edc6",
+      "suspected_kind": "json_export"
     },
     "bb980d1560": {
       "ingested_at": "2026-02-19T13:18:16.856577+00:00",
@@ -37,12 +182,27 @@
       "source_rel": "vault/inbox_raw/sources/20260219T131816Z_bb980d1560",
       "suspected_kind": "generic_corpus"
     },
+    "cd8c522cc7": {
+      "ingested_at": "2026-02-22T04:27:07.685951+00:00",
+      "normalized": false,
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260222T042707Z_cd8c522cc7/original/backup_semantic_extract_20260222T042656Z",
+      "source_rel": "vault/inbox_raw/sources/20260222T042707Z_cd8c522cc7",
+      "suspected_kind": "json_export"
+    },
     "dcfe08f56e": {
       "ingested_at": "2026-02-19T06:14:42.554245+00:00",
       "normalized": false,
       "normalized_at": "2026-02-19T06:14:42.560829+00:00",
       "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260219T061442Z_dcfe08f56e/original/legacy_recovery",
       "source_rel": "vault/inbox_raw/sources/20260219T061442Z_dcfe08f56e",
+      "suspected_kind": "generic_corpus"
+    },
+    "fbb57be4b6": {
+      "ingested_at": "2026-02-23T17:00:36.377596+00:00",
+      "normalized": false,
+      "normalized_at": "2026-02-23T17:00:40.744669+00:00",
+      "origin_rel": "vault/inbox_raw/_pending_drop/_ingested/20260223T170036Z_fbb57be4b6/original/quarantine_review_20260223T170033Z",
+      "source_rel": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6",
       "suspected_kind": "generic_corpus"
     }
   },

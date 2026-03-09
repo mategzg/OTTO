@@ -1,0 +1,77 @@
+{
+  "updated_at": "2026-02-23T18:13:24Z",
+  "rows": [
+    {
+      "plugin": "sales",
+      "priority": "high",
+      "total": 9,
+      "auth_needed": 7,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "customer-support",
+      "priority": "high",
+      "total": 7,
+      "auth_needed": 6,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "marketing",
+      "priority": "high",
+      "total": 9,
+      "auth_needed": 6,
+      "missing_url": 0,
+      "ok_200": 1
+    },
+    {
+      "plugin": "legal",
+      "priority": "high",
+      "total": 5,
+      "auth_needed": 4,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "finance",
+      "priority": "high",
+      "total": 5,
+      "auth_needed": 1,
+      "missing_url": 2,
+      "ok_200": 0
+    },
+    {
+      "plugin": "product-management",
+      "priority": "medium",
+      "total": 12,
+      "auth_needed": 11,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "productivity",
+      "priority": "medium",
+      "total": 8,
+      "auth_needed": 7,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "enterprise-search",
+      "priority": "medium",
+      "total": 6,
+      "auth_needed": 5,
+      "missing_url": 0,
+      "ok_200": 0
+    },
+    {
+      "plugin": "data",
+      "priority": "medium",
+      "total": 6,
+      "auth_needed": 3,
+      "missing_url": 2,
+      "ok_200": 0
+    }
+  ]
+}

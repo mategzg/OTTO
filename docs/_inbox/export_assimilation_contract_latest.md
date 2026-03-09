@@ -5,8 +5,9 @@ Guarantee that large ChatGPT exports are transformed into useful, correctly-rout
 
 ## Mandatory phases
 1. **Ingest Raw**: complete intake/normalize/triage without loss.
-2. **Reduce Noise**: dedupe + filter low-value content.
-3. **Curate & Write**: write to correct branch with strict boundaries:
+2. **Raw Bucketization**: classify all content into canonical raw buckets before synthesis (professional_sg, personal_development, profile_owner, vision_owner, biography_history, strategy_business, philosophy, psychology, neuroscience_health, persuasion_communication, habits_execution, misc_knowledge).
+3. **Reduce Noise**: dedupe + filter low-value content.
+4. **Curate & Write**: write to correct branch with strict boundaries:
    - profile -> `memory/profile/*`
    - vision -> `memory/vision/*`
    - business/professional -> `brain/domains/sg_acabados/*`

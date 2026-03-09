@@ -10,6 +10,7 @@
 - El monitoreo nunca debe costar más que el ahorro esperado.
 - Aplicar guardias de retención/liberación solo donde el costo lo justifique.
 - Offload de trabajo largo con delegación (`60`) y supervisión mínima efectiva.
+- Aplicar **efficiency-with-quality**: reducir costo (tokens/CPU/latencia) sin bajar completitud ni rigor factual.
 
 ## Señales de cambio de modo
 - Aumento brusco de tokens/contexto por turno.

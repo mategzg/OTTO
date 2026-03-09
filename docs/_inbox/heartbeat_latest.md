@@ -2,6 +2,7 @@
 
 - Status: `success`
 - Pending drop: 0
+- Mission learning pending: 0
 - Ingested count: 0
 - Normalized count: 0
 - Slices processed: 0
@@ -9,7 +10,7 @@
 - Runtime distills: 0
 - Approvals pending: 0
 - Approvals delivery sent: `False`
-- Approvals delivery reason: `no_new_items`
+- Approvals delivery reason: `delegated`
 - SG promoted auto: 0
 - SG pending approval: 0
 - Outbox queued: 0
@@ -18,15 +19,46 @@
 - Hook backlog pending: 0
 - Hook backlog replayed: 0
 - Hook backlog failed: 0
-- Legacy recovery status: `no_candidates_selected`
-- Legacy recovery scan ran: `True`
-- Legacy recovery disabled reason: `selection_rules_filtered_all`
+- Legacy recovery status: `delegated`
+- Legacy recovery scan ran: `False`
+- Legacy recovery disabled reason: `delegated`
 - Legacy recovery packaged: 0
 - Legacy recovery selected: 0
-- Legacy recovery blocked: 33
+- Legacy recovery blocked: 0
 - Prod doctor status: `ok`
-- Project docs status: `skipped_interval`
-- Project docs updated files: 0
-- Autonomy status: `idle`
+- Reminders delivered: 0
+- Reminders expired: 0
+- Reminders pending: 0
+- Episodic memory status: `delegated`
+- Episodic episodes built: 0
+- Summarizer status: `delegated`
+- Summarizer added: 0
+- Summarizer missions created: 0
+- Summarizer done: 0
+- Research status: `delegated`
+- Research tasks processed: 0
+- Research tasks done: 0
+- Odoo status: `delegated`
+- Odoo tasks processed: 0
+- Odoo tasks done: 0
+- Health notify queued: `False`
+- Health notify reason: `proactivity_engine_unavailable`
+- WhatsApp 5h remaining pct: `None`
+- WhatsApp usage status: `ok`
+- WhatsApp hold release: `no_usage_data` (released=0)
+- Proactivity status: `delegated`
+- Proactivity queued: 0
+- Delegation status: `delegated`
+- Delegation coder: `codex`
+- Delegation workload: `light`
+- Delegation active mission: `hbdel_codex_20260223165530_54ecd251`
+- Ingest progress: 0/0 (remaining=0)
+- Ingest rescue: ``
+- Project docs status: `updated`
+- Project docs updated files: 1
+- Learning status: `delegated`
+- Learning promoted: 0
+- Learning candidate files processed: 0
+- Autonomy status: `delegated`
 - JSON report: `docs/_inbox/heartbeat_latest.json`
 - Log report: `logs/heartbeat_latest.json`

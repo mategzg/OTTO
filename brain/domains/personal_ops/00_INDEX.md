@@ -25,6 +25,7 @@ Excludes by design:
 - `10_DECISION_HEURISTICS.md` - decision order and go/no-go checks.
 - `20_FAILURE_PATTERNS.md` - recurring failures, detection, and containment.
 - `30_EXECUTION_PLAYBOOKS.md` - executable sequences by workload.
+- `35_PERSONAL_DEVELOPMENT_STACK.md` - psicología/filosofía/neurociencia/salud como conocimiento transferible.
 - `40_CHANNEL_OPERATING_RULES.md` - channel-specific output and leak guards.
 - `50_RESOURCE_BUDGET_TACTICS.md` - cost/context control and rate-limit continuity.
 - `60_DELEGATION_DOCTRINE.md` - delegation contracts and closure criteria.
@@ -32,7 +33,9 @@ Excludes by design:
 - `66_CAPACITY_FIRST_EXECUTION_RULES.md` - capacity/responsibility/structure rules for mission load.
 - `70_BRAIN_FIRST_PROTOCOL.md` - branch composition before execution.
 - `80_SELF_OPTIMIZATION_PROTOCOL.md` - continuous improvement loop.
+- `85_RAG_ARCHITECTURE_GROWTH.md` - responsabilidad continua de crecimiento/optimización de arquitectura RAG.
 - `90_REVIEW_QUEUE.md` - unresolved patterns and consolidation backlog.
+- `95_CAPABILITY_EXTRACT_20260222.md` - **retired as sink primario**; mantener solo como redirect histórico.
 
 ## Composition Matrix (task -> required branches)
 - Operational incident -> `10` + `20` + `30`.
@@ -44,3 +47,10 @@ Excludes by design:
 
 ## Maintenance Rule
 If a rule repeats in multiple branches, keep one canonical copy and cross-reference it.
+
+- `36_PHILOSOPHY_DECISION_MODELS.md` - filosofía aplicada para criterios de decisión.
+- `37_PSYCHOLOGY_BEHAVIOR_MODELS.md` - psicología aplicada a conducta y autorregulación.
+- `38_NEUROSCIENCE_HEALTH_PROTOCOLS.md` - neurociencia/salud para rendimiento sostenido.
+- `39_PERSUASION_COMMUNICATION_SYSTEMS.md` - persuasión y comunicación estratégica.
+- `41_HABITS_EXECUTION_SYSTEMS.md` - sistemas de hábitos y ejecución diaria.
+- `42_PERSONAL_DEVELOPMENT_SYNTHESIS.md` - síntesis transversal de desarrollo personal.

@@ -1,0 +1,92 @@
+{
+  "updated_at": "2026-02-23T20:42:29Z",
+  "rows": [
+    {
+      "plugin": "customer-support",
+      "priority": "high",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 7
+    },
+    {
+      "plugin": "finance",
+      "priority": "high",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 5
+    },
+    {
+      "plugin": "legal",
+      "priority": "high",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 5
+    },
+    {
+      "plugin": "marketing",
+      "priority": "high",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 9
+    },
+    {
+      "plugin": "sales",
+      "priority": "high",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 9
+    },
+    {
+      "plugin": "data",
+      "priority": "medium",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 6
+    },
+    {
+      "plugin": "enterprise-search",
+      "priority": "medium",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 6
+    },
+    {
+      "plugin": "product-management",
+      "priority": "medium",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 12
+    },
+    {
+      "plugin": "productivity",
+      "priority": "medium",
+      "status": "OK",
+      "mode": "supercharged_adapted",
+      "effective_auth_needed": 0,
+      "effective_missing_url": 0,
+      "mapped_connectors": 8
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "ok": 9,
+    "ok_partial": 0,
+    "gap": 0
+  }
+}

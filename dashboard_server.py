@@ -2,10 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import subprocess
+from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
+import urllib.request
 
 ROOT = Path(__file__).resolve().parent
 
@@ -126,6 +130,335 @@ def _load_ledger(root: Path, limit: int) -> list[dict[str, str]]:
     return items[:limit]
 
 
+def _deep_merge_defaults(value: object, defaults: object) -> object:
+    if isinstance(defaults, dict):
+        base = value if isinstance(value, dict) else {}
+        merged: dict[str, object] = {}
+        for key, default_val in defaults.items():
+            merged[key] = _deep_merge_defaults(base.get(key), default_val)
+        for key, extra_val in base.items():
+            if key not in merged:
+                merged[key] = extra_val
+        return merged
+    if isinstance(defaults, list):
+        return value if isinstance(value, list) else defaults
+    return defaults if value is None else value
+
+
+def _run_json_command(command: list[str], timeout: float = 2.5) -> object:
+    try:
+        out = subprocess.check_output(command, text=True, timeout=timeout)
+        return json.loads(out)
+    except Exception:
+        return {}
+
+
+def _runtime_topbar_snapshot() -> dict[str, object]:
+    sessions = _run_json_command(["openclaw", "sessions", "--active", "60", "--json"])
+    if not isinstance(sessions, list):
+        return {
+            "active_delegations_total": 0,
+            "active_subagents": 0,
+            "active_coders": 0,
+            "delegations": [],
+            "source_mode": "fallback",
+        }
+
+    subagents = [s for s in sessions if isinstance(s, dict) and "subagent" in str(s.get("key", ""))]
+    coders = [s for s in sessions if isinstance(s, dict) and any(x in str(s.get("key", "")).lower() for x in ["codex", "claude", "pi", "coder"])]
+
+    delegations: list[dict[str, object]] = []
+    for item in subagents[:3]:
+        key = str(item.get("key", "subagent"))
+        delegations.append({
+            "label": key.split(":")[-1][:32],
+            "type": "subagent",
+            "progress": 65,
+            "status": "running",
+        })
+    for item in coders[: max(0, 3 - len(delegations))]:
+        key = str(item.get("key", "coder"))
+        delegations.append({
+            "label": key.split(":")[-1][:32],
+            "type": "coder",
+            "progress": 55,
+            "status": "running",
+        })
+
+    return {
+        "active_delegations_total": len(subagents) + len(coders),
+        "active_subagents": len(subagents),
+        "active_coders": len(coders),
+        "delegations": delegations,
+        "source_mode": "live",
+    }
+
+
+def _short_time(value: str) -> str:
+    if not value:
+        return "-"
+    try:
+        if "T" in value:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return dt.astimezone().strftime("%H:%M:%S")
+        if len(value.split(":")) >= 2:
+            return value[:8]
+    except Exception:
+        pass
+    return value[:8]
+
+
+def _build_observability_activity(root: Path, limit: int = 8) -> tuple[list[dict[str, object]], dict[str, int]]:
+    events = _tail_ndjson(root / "logs" / "observability_events.ndjson", max(limit * 8, 40))
+    out: list[dict[str, object]] = []
+    channels = {"telegram": 0, "discord": 0, "whatsapp": 0}
+
+    for item in reversed(events):
+        if not isinstance(item, dict):
+            continue
+        channel = str(item.get("channel", "system")).lower()
+        kind = str(item.get("kind", "event")).lower()
+        target = str(item.get("selected_target") or item.get("plugin") or "").strip()
+        status_raw = str(item.get("status", "")).upper()
+        ok = bool(item.get("success", False))
+
+        if channel in channels:
+            channels[channel] += 1
+
+        if any(k in kind for k in ["plugin_execution", "plugin_route", "nl_router", "tooling", "retrieval"]):
+            if "plugin_execution" in kind:
+                badge = "done" if ok else "blocked"
+                label = f"{channel}: plugin {target or '-'} -> {status_raw or 'OK'}"
+            elif "plugin_route" in kind or "nl_router" in kind:
+                badge = "running"
+                label = f"{channel}: ruteando -> {target or kind}"
+            elif "retrieval" in kind:
+                badge = "done"
+                label = f"{channel}: retrieval {'hit' if item.get('retrieval_hit') else 'miss'}"
+            else:
+                badge = "done" if ok else "blocked"
+                label = f"{channel}: {kind}"
+
+            out.append(
+                {
+                    "time": _short_time(str(item.get("ts", ""))),
+                    "label": label[:120],
+                    "status": badge,
+                    "type": channel,
+                }
+            )
+
+        if len(out) >= limit:
+            break
+
+    return list(reversed(out)), channels
+
+
+
+
+def _recent_channel_activity_count(root: Path, window_seconds: int = 45) -> int:
+    events = _tail_ndjson(root / "logs" / "observability_events.ndjson", 60)
+    now = datetime.now().astimezone()
+    count = 0
+    for item in reversed(events):
+        if not isinstance(item, dict):
+            continue
+        ch = str(item.get("channel", "")).lower()
+        if ch not in {"telegram", "discord", "whatsapp"}:
+            continue
+        ts = str(item.get("ts", ""))
+        try:
+            dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone()
+            if abs((now - dt).total_seconds()) <= window_seconds:
+                count += 1
+        except Exception:
+            continue
+    return count
+
+
+
+def _fetch_json(url: str, token: str = "", timeout: float = 2.0) -> dict[str, object]:
+    try:
+        req = urllib.request.Request(url)
+        if token:
+            req.add_header("Authorization", f"Bearer {token}")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosec B310
+            raw = resp.read().decode("utf-8")
+        data = json.loads(raw)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _apply_external_sources(payload: dict[str, object]) -> dict[str, object]:
+    notion_url = os.getenv("NOTION_DASHBOARD_URL", "").strip()
+    notion_token = os.getenv("NOTION_DASHBOARD_TOKEN", "").strip()
+    odoo_url = os.getenv("ODOO_DASHBOARD_URL", "").strip()
+    odoo_token = os.getenv("ODOO_DASHBOARD_TOKEN", "").strip()
+
+    if notion_url:
+        notion = _fetch_json(notion_url, notion_token)
+        if isinstance(notion.get("personal"), dict):
+            personal = payload.get("personal") if isinstance(payload.get("personal"), dict) else {}
+            personal.update(notion.get("personal"))
+            payload["personal"] = personal
+
+    if odoo_url:
+        odoo = _fetch_json(odoo_url, odoo_token)
+        if isinstance(odoo.get("sg"), dict):
+            sg = payload.get("sg") if isinstance(payload.get("sg"), dict) else {}
+            sg.update(odoo.get("sg"))
+            payload["sg"] = sg
+
+    return payload
+
+def _build_dashboard_v1_payload(root: Path) -> dict[str, object]:
+    default_payload: dict[str, object] = {
+        "topbar": {
+            "otto_status": "available",
+            "active_delegations_total": 0,
+            "active_subagents": 0,
+            "active_coders": 0,
+            "delegations": [],
+        },
+        "sg": {
+            "cash_receivable_7d": 0,
+            "overdue_count": 0,
+            "cash_status": "green",
+            "hot_pipeline_value": 0,
+            "hot_opportunities_count": 0,
+            "pipeline_status": "green",
+            "ops_risk_count": 0,
+            "top_risk_label": "Sin riesgo crítico",
+            "risk_status": "green",
+            "next_best_decision": "Sin recomendación",
+            "next_best_decision_impact": "-",
+        },
+        "personal": {
+            "top3": [],
+            "critical_count": 0,
+            "due_today_count": 0,
+            "critical_status": "green",
+            "next_decision": "",
+            "next_decision_eta": "",
+            "next_action": "",
+            "next_action_impact": "-",
+        },
+        "activity": [],
+        "meta": {
+            "mode": "fallback",
+            "last_updated": "-",
+        },
+    }
+
+    raw_payload = _safe_json_load(root / "state" / "dashboard_v1.json", default_payload)
+    payload = _deep_merge_defaults(raw_payload, default_payload)
+    payload = _apply_external_sources(payload if isinstance(payload, dict) else default_payload)
+    if not isinstance(payload, dict):
+        payload = default_payload
+
+    # Light auto-fallback from heartbeat status when present.
+    heartbeat = _safe_json_load(root / "docs" / "_inbox" / "heartbeat_latest.json", {})
+    if isinstance(heartbeat, dict):
+        status = str(heartbeat.get("status", "")).strip().lower()
+        topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
+        if not topbar.get("otto_status"):
+            topbar["otto_status"] = "busy" if status in {"success", "running"} else "available"
+            payload["topbar"] = topbar
+
+    runtime_topbar = _runtime_topbar_snapshot()
+    topbar = payload.get("topbar") if isinstance(payload.get("topbar"), dict) else {}
+    topbar.update({k: v for k, v in runtime_topbar.items() if k in {"active_delegations_total", "active_subagents", "active_coders", "delegations"}})
+
+    obs_activity, channel_counts = _build_observability_activity(root, limit=8)
+    if obs_activity:
+        payload["activity"] = obs_activity
+
+    # If runtime sees no active sessions, infer lightweight live activity from recent activity.
+    activity_for_infer = payload.get("activity") if isinstance(payload.get("activity"), list) else []
+
+    now = datetime.now()
+    running_items: list[dict[str, object]] = []
+    for a in activity_for_infer[-8:]:
+        if not isinstance(a, dict):
+            continue
+        if str(a.get("status", "")).lower() != "running":
+            continue
+        raw_time = str(a.get("time", ""))
+        is_recent = False
+        try:
+            # supports HH:MM:SS and legacy HH:MM
+            fmt = "%H:%M:%S" if len(raw_time.split(":")) == 3 else "%H:%M"
+            parsed = datetime.strptime(raw_time, fmt)
+            candidate = now.replace(hour=parsed.hour, minute=parsed.minute, second=getattr(parsed, "second", 0), microsecond=0)
+            is_recent = abs((now - candidate).total_seconds()) <= 30
+        except Exception:
+            is_recent = True
+        if is_recent:
+            running_items.append(a)
+
+    if int(topbar.get("active_delegations_total", 0) or 0) == 0 and running_items:
+        topbar["active_delegations_total"] = len(running_items)
+        topbar["active_subagents"] = len([x for x in running_items if str(x.get("type", "")).lower() == "subagent"])
+        topbar["active_coders"] = len([x for x in running_items if str(x.get("type", "")).lower() == "coder"])
+        topbar["delegations"] = [
+            {
+                "label": str(x.get("label", "Ejecución"))[:28],
+                "type": "subagent" if str(x.get("type", "")).lower() == "subagent" else "coder" if str(x.get("type", "")).lower() == "coder" else "subagent",
+                "progress": 40,
+                "status": "running",
+            }
+            for x in running_items[:3]
+        ]
+
+    recent_runtime_activity = _recent_channel_activity_count(root, window_seconds=45)
+    if int(topbar.get("active_delegations_total", 0) or 0) > 0 or recent_runtime_activity > 0:
+        topbar["otto_status"] = "busy"
+    else:
+        topbar["otto_status"] = "available"
+    payload["topbar"] = topbar
+
+    meta = payload.get("meta") if isinstance(payload.get("meta"), dict) else {}
+    meta["mode"] = runtime_topbar.get("source_mode", "fallback")
+    meta["last_updated"] = datetime.now().strftime("%H:%M:%S")
+    meta["channels"] = channel_counts
+    payload["meta"] = meta
+
+    # Recent activity fallback.
+    activity = payload.get("activity")
+    if not isinstance(activity, list) or not activity:
+        events = _tail_ndjson(root / "logs" / "activity.ndjson", 5)
+        normalized: list[dict[str, object]] = []
+        for item in events[-5:]:
+            normalized.append(
+                {
+                    "time": item.get("ts", "-"),
+                    "label": item.get("event", "evento"),
+                    "status": "done",
+                    "type": "system",
+                }
+            )
+        payload["activity"] = normalized
+
+    return payload
+
+
+def _append_dashboard_event(root: Path, *, label: str, status: str = "done", kind: str = "system") -> None:
+    ts = datetime.now().strftime("%H:%M:%S")
+    entry = {"time": ts, "label": label, "status": status, "type": kind}
+
+    dashboard_state_path = root / "state" / "dashboard_v1.json"
+    payload = _safe_json_load(dashboard_state_path, {})
+    if not isinstance(payload, dict):
+        payload = {}
+    current = payload.get("activity") if isinstance(payload.get("activity"), list) else []
+    current = [item for item in current if isinstance(item, dict)]
+    current.append(entry)
+    payload["activity"] = current[-5:]
+    dashboard_state_path.parent.mkdir(parents=True, exist_ok=True)
+    dashboard_state_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def _json_response(handler: BaseHTTPRequestHandler, status: int, payload: object) -> None:
     body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False).encode("utf-8")
     handler.send_response(status)
@@ -149,6 +482,13 @@ def _text_response(handler: BaseHTTPRequestHandler, status: int, text: str, cont
 def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
     class Handler(BaseHTTPRequestHandler):
         project_root = root.resolve()
+
+        def _authorized(self) -> bool:
+            token = os.getenv("DASHBOARD_BRIDGE_TOKEN", "").strip()
+            if not token:
+                return True
+            auth = self.headers.get("Authorization", "")
+            return auth == f"Bearer {token}"
 
         def do_GET(self) -> None:  # noqa: N802
             parsed = urlparse(self.path)
@@ -177,6 +517,27 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                     js_path.read_text(encoding="utf-8"),
                     "application/javascript; charset=utf-8",
                 )
+                return
+
+            if parsed.path == "/style.css":
+                css_path = self.project_root / "dashboard" / "style.css"
+                if not css_path.exists():
+                    _text_response(self, HTTPStatus.NOT_FOUND, "Missing dashboard/style.css", "text/plain")
+                    return
+                _text_response(
+                    self,
+                    HTTPStatus.OK,
+                    css_path.read_text(encoding="utf-8"),
+                    "text/css; charset=utf-8",
+                )
+                return
+
+            if parsed.path == "/api/dashboard-v1":
+                if not self._authorized():
+                    _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
+                    return
+                payload = _build_dashboard_v1_payload(self.project_root)
+                _json_response(self, HTTPStatus.OK, payload)
                 return
 
             if parsed.path == "/api/status":
@@ -235,6 +596,41 @@ def make_handler(root: Path) -> type[BaseHTTPRequestHandler]:
                 return
 
             _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found", "path": parsed.path})
+
+        def do_POST(self) -> None:  # noqa: N802
+            parsed = urlparse(self.path)
+
+            actions = {
+                "/api/actions/refresh": {"label": "Dashboard refrescado", "kind": "system"},
+                "/api/actions/pause-delegation": {"label": "Delegación pausada", "kind": "system"},
+                "/api/actions/execute-sg": {"label": "Ejecución decisión SG solicitada", "kind": "subagent"},
+                "/api/actions/sg-alternative": {"label": "Alternativa SG solicitada", "kind": "system"},
+                "/api/actions/execute-personal": {"label": "Acción personal ejecutada", "kind": "subagent"},
+            }
+
+            if parsed.path not in actions:
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "not_found", "path": parsed.path})
+                return
+            if not self._authorized():
+                _json_response(self, HTTPStatus.UNAUTHORIZED, {"error": "unauthorized"})
+                return
+
+            action_label = actions[parsed.path]["label"]
+            action_kind = actions[parsed.path]["kind"]
+
+            _append_dashboard_event(
+                self.project_root,
+                label=f"{action_label} (iniciada)",
+                status="running",
+                kind=action_kind,
+            )
+            _append_dashboard_event(
+                self.project_root,
+                label=f"{action_label} (ack)",
+                status="done",
+                kind=action_kind,
+            )
+            _json_response(self, HTTPStatus.OK, {"ok": True, "action": parsed.path})
 
         def log_message(self, format: str, *args: object) -> None:  # noqa: A003
             return

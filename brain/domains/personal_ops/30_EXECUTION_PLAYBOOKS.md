@@ -23,5 +23,17 @@
 3. Re-scan/rebuild índice.
 4. Validar integridad (sin pérdida no intencional).
 
+## P5. Single-Writer para cambios de repo
+1. Definir escritor principal (owner agent) y bloquear colisiones de edición.
+2. Permitir paralelismo solo en análisis/research/scouting con scopes no superpuestos.
+3. Consolidar cambios finales en una sola pasada de escritura.
+4. Ejecutar test/gates al final de la integración única.
+
+## P6. Guardrail no-destructivo por defecto
+1. Evitar stash masivo, vaciado o move-all como primera opción.
+2. Elegir cambios incrementales y reversibles por lotes pequeños.
+3. Si una acción destructiva es inevitable, exigir backup + plan de rollback explícito.
+4. Registrar evidencia del antes/después.
+
 ## Criterio de cierre
 Sin evidencia verificable de gate final, el playbook sigue abierto.

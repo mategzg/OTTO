@@ -1,37 +1,6634 @@
 {
   "inverted": {
-    "profile": [
-      "memin-ca010263af49"
+    "00_index": [
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a"
     ],
-    "profile_fact": [
-      "memin-ca010263af49"
+    "01_profile_current": [
+      "memmd-80292ed0717e"
+    ],
+    "01z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "02_principles_current": [
+      "memmd-e6ed2a4d483d"
+    ],
+    "02z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "06z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "0d210531e71e": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "100": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "10_identity": [
+      "memmd-a75811363a0a",
+      "memmd-fcdb6549d963"
+    ],
+    "10_identity_vision": [
+      "memmd-79b035be805a"
+    ],
+    "10_north_star": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "10z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "14t20": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "14t21": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "14z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "17t17": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "180": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "18t03": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "18t04": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "18t18": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "19t00": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "19t03": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "2026": [
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "20260222t162442z_065f800160": [
+      "memmd-80292ed0717e"
+    ],
+    "20260222t170659z_cdf87af412": [
+      "memmd-80292ed0717e"
+    ],
+    "20_operating_style": [
+      "memmd-0e868342b14b",
+      "memmd-a75811363a0a"
+    ],
+    "20_principles_and_limits": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034"
+    ],
+    "29z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "30_execution_rules": [
+      "memmd-10d092eccfc9",
+      "memmd-a75811363a0a"
+    ],
+    "30_strategic_axes": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034"
+    ],
+    "35z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "365": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "36z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "40_execution_metrics": [
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "40_system_preferences": [
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "4591f8455b35": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "50_decision_patterns": [
+      "memmd-6ab394267dab",
+      "memmd-a75811363a0a"
+    ],
+    "50_horizon_roadmap": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "55z": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "60_communication_contract": [
+      "memmd-3c103d6ddc1c",
+      "memmd-a75811363a0a"
+    ],
+    "60_decision_rubric": [
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "70_collaboration_boundaries": [
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a"
+    ],
+    "70_mission_critical_production_system": [
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "80_mentality_compass": [
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "80_us_dominance_execution_plan": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5db0d5987034"
+    ],
+    "85_obra_logos_accountability": [
+      "memmd-5db0d5987034",
+      "memmd-feb982859da4"
+    ],
+    "8a037dac47aa": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "90_capacity_responsibility_structure": [
+      "memmd-441bd7314e72",
+      "memmd-5db0d5987034"
+    ],
+    "90_open_questions": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a"
+    ],
+    "90s": [
+      "memmd-d200c10e5250"
+    ],
+    "95_reingest_profile_evidence_20260222": [
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-d9af45a1d9e2"
+    ],
+    "_processed": [
+      "memmd-80292ed0717e"
+    ],
+    "abarata": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "abierta": [
+      "memmd-0e868342b14b"
+    ],
+    "abiertas": [
+      "memmd-a470522da885"
+    ],
+    "abierto": [
+      "memmd-10d092eccfc9"
+    ],
+    "abrevia": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "absoluta": [
+      "mem-proftl-20260222-001",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "absolute": [
+      "memmd-5db0d5987034"
+    ],
+    "absorber": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "abundancia": [
+      "memmd-d200c10e5250"
+    ],
+    "accept": [
+      "memmd-7e92d86d4277"
+    ],
+    "acceptably": [
+      "memmd-bbce2d262171"
+    ],
+    "acceptance": [
+      "memmd-7e92d86d4277"
+    ],
+    "access": [
+      "memmd-7e92d86d4277"
+    ],
+    "acci": [
+      "memmd-0e868342b14b",
+      "memmd-d200c10e5250"
+    ],
+    "accionable": [
+      "memmd-0e868342b14b"
+    ],
+    "acciones": [
+      "memmd-80292ed0717e"
+    ],
+    "accountability": [
+      "memmd-5db0d5987034",
+      "memmd-feb982859da4"
+    ],
+    "accumulation": [
+      "memmd-0667d7c680dd"
+    ],
+    "acelerar": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "acepta": [
+      "memmd-6ab394267dab"
+    ],
+    "aceptables": [
+      "memmd-10d092eccfc9"
+    ],
+    "aceptaci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "acquisition": [
+      "memmd-5db0d5987034"
+    ],
+    "across": [
+      "memmd-19316b22f697"
+    ],
+    "action": [
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "actions": [
+      "memmd-0667d7c680dd",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "activada": [
+      "mem-profdec-20260222-002"
+    ],
+    "activas": [
+      "memmd-a75811363a0a"
+    ],
+    "active": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741",
+      "memmd-e6ed2a4d483d"
+    ],
+    "actividad": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-fcdb6549d963"
+    ],
+    "activity": [
+      "memmd-bbce2d262171"
+    ],
+    "activo": [
+      "memmd-441bd7314e72"
+    ],
+    "activos": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "actual": [
+      "mem-proftl-20260222-002",
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85",
+      "memmd-fcdb6549d963"
+    ],
+    "actualmente": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "actuar": [
+      "memmd-79b035be805a"
+    ],
+    "acumulada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "acumulativa": [
+      "memmd-6ab394267dab"
+    ],
+    "addendum": [
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f"
+    ],
+    "adicional": [
+      "memmd-fcdb6549d963"
+    ],
+    "adjustment": [
+      "memmd-7e92d86d4277"
+    ],
+    "adjustments": [
+      "memmd-7e92d86d4277"
+    ],
+    "adoption": [
+      "memmd-7519e3e7c741"
+    ],
+    "adorno": [
+      "memmd-feb982859da4"
+    ],
+    "adquisici": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "afirmaci": [
+      "memmd-10d092eccfc9"
+    ],
+    "agencia": [
+      "memmd-fcdb6549d963"
+    ],
+    "agenda": [
+      "memmd-441bd7314e72"
+    ],
+    "agente": [
+      "mem-profpref-20260222-002",
+      "memmd-80292ed0717e"
+    ],
+    "aging": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "ahora": [
+      "memmd-441bd7314e72"
+    ],
+    "ajeno": [
+      "memmd-d200c10e5250"
+    ],
+    "ajustar": [
+      "memmd-a470522da885"
+    ],
+    "alcance": [
+      "memmd-10d092eccfc9",
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "alertas": [
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250"
+    ],
+    "ales": [
+      "memmd-0e868342b14b",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-cde01070df1f"
+    ],
+    "algo": [
+      "memmd-10d092eccfc9",
+      "memmd-441bd7314e72"
+    ],
+    "aligned": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "alignment": [
+      "memmd-19316b22f697",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "alimenta": [
+      "memmd-feb982859da4"
+    ],
+    "alineaci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-79b035be805a"
+    ],
+    "alineada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "alineadas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "all": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "allocated": [
+      "memmd-5db0d5987034"
+    ],
+    "allocation": [
+      "memmd-41e9a285e5be"
+    ],
+    "alta": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "alto": [
+      "memmd-5a62c8725685"
+    ],
+    "altos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "ambici": [
+      "memmd-441bd7314e72"
+    ],
+    "ambig": [
+      "memmd-cde01070df1f"
+    ],
+    "ambigua": [
+      "mem-profdec-20260222-002"
+    ],
+    "ambiguos": [
+      "memmd-10d092eccfc9"
+    ],
+    "amplifica": [
+      "memmd-441bd7314e72"
+    ],
+    "ancladas": [
+      "memmd-5a62c8725685"
+    ],
+    "answers": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "antes": [
+      "mem-profdec-20260222-001",
+      "memmd-0e868342b14b",
+      "memmd-441bd7314e72",
+      "memmd-80292ed0717e"
+    ],
+    "anti": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "any": [
+      "memmd-bbce2d262171"
+    ],
+    "aparece": [
+      "memmd-a75811363a0a"
+    ],
+    "aparentar": [
+      "memmd-5a62c8725685"
+    ],
+    "apariencia": [
+      "memmd-10d092eccfc9"
+    ],
+    "apertura": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "aplaude": [
+      "memmd-d200c10e5250"
+    ],
+    "aplicar": [
+      "mem-profdec-20260222-004",
+      "memmd-6ab394267dab"
+    ],
+    "apoyo": [
+      "mem-profdec-20260222-003"
+    ],
+    "apply": [
+      "memmd-bbce2d262171"
+    ],
+    "aprendizaje": [
+      "mem-proftl-20260222-001",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-fcdb6549d963"
+    ],
+    "aprobaci": [
+      "memmd-d200c10e5250"
+    ],
+    "apuestas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "architect": [
+      "mem-profdec-20260222-003"
+    ],
+    "architecture": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034"
+    ],
+    "archivo": [
+      "memmd-d200c10e5250"
+    ],
+    "are": [
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "area": [
+      "memmd-7e92d86d4277"
+    ],
+    "arquitectura": [
+      "mem-profpref-20260222-007",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "artefacto": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "artifacts": [
+      "memmd-0667d7c680dd"
+    ],
+    "asignaci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "asistente_apoyo_prompts": [
+      "mem-profdec-20260222-003"
+    ],
+    "asset": [
+      "memmd-7e92d86d4277"
+    ],
+    "assigned": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "assumption": [
+      "memmd-0667d7c680dd"
+    ],
+    "atenci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250"
+    ],
+    "auditability": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741"
+    ],
+    "auditable": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741"
+    ],
+    "auditables": [
+      "memmd-cde01070df1f"
+    ],
+    "aumenta": [
+      "memmd-d200c10e5250"
+    ],
+    "aumenten": [
+      "memmd-6ab394267dab"
+    ],
+    "aunque": [
+      "memmd-d200c10e5250"
+    ],
+    "austin": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "aut": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "authority": [
+      "memmd-7e92d86d4277"
+    ],
+    "autodesk": [
+      "memmd-7e92d86d4277"
+    ],
+    "autoenga": [
+      "memmd-d200c10e5250"
+    ],
+    "automation": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "automatizaci": [
+      "memmd-441bd7314e72",
+      "memmd-cde01070df1f"
+    ],
+    "automatizar": [
+      "memmd-441bd7314e72"
+    ],
+    "autonom": [
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-004",
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963"
+    ],
+    "autonomy": [
+      "memmd-7519e3e7c741"
+    ],
+    "autor": [
+      "memmd-d200c10e5250"
+    ],
+    "autoridad": [
+      "memmd-feb982859da4"
+    ],
+    "avance": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "avanza": [
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "avisos": [
+      "memmd-cde01070df1f"
+    ],
+    "avoid": [
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "axes": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034"
+    ],
+    "axiomas": [
+      "memmd-441bd7314e72"
+    ],
+    "axis": [
+      "memmd-41e9a285e5be"
+    ],
+    "back": [
+      "memmd-bbce2d262171"
+    ],
+    "backlog": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-a75811363a0a"
+    ],
+    "baja": [
+      "memmd-441bd7314e72"
+    ],
+    "bajo": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "basado": [
+      "memmd-80292ed0717e"
+    ],
+    "base": [
+      "mem-proftl-20260222-003",
+      "memmd-10d092eccfc9",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e"
+    ],
+    "based": [
+      "memmd-0667d7c680dd"
+    ],
+    "baseline": [
+      "memmd-7519e3e7c741"
+    ],
+    "basics": [
+      "memmd-7e92d86d4277"
+    ],
+    "basis": [
+      "memmd-bbce2d262171"
+    ],
+    "basta": [
+      "memmd-feb982859da4"
+    ],
+    "becoming": [
+      "memmd-7e92d86d4277"
+    ],
+    "before": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "belongs": [
+      "memmd-5db0d5987034"
+    ],
+    "beneficio": [
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f"
+    ],
+    "bets": [
+      "memmd-5db0d5987034"
+    ],
+    "bias": [
+      "memmd-41e9a285e5be"
+    ],
+    "biblical": [
+      "memmd-5db0d5987034"
+    ],
+    "binario": [
+      "memmd-441bd7314e72"
+    ],
+    "biogr": [
+      "memmd-80292ed0717e"
+    ],
+    "bitos": [
+      "memmd-d200c10e5250"
+    ],
+    "blast": [
+      "memmd-bbce2d262171"
+    ],
+    "block": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "bloque": [
+      "memmd-0e868342b14b"
+    ],
+    "bloqueo": [
+      "memmd-5a62c8725685"
+    ],
+    "bloques": [
+      "memmd-0e868342b14b"
+    ],
+    "blueprint": [
+      "memmd-5db0d5987034"
+    ],
+    "board": [
+      "memmd-7e92d86d4277"
+    ],
+    "bottleneck": [
+      "memmd-41e9a285e5be"
+    ],
+    "boundaries": [
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "bounded": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "brain_focus_declared": [
+      "mem-proftl-20260222-002"
+    ],
+    "branch": [
+      "memmd-5db0d5987034"
+    ],
+    "branches": [
+      "memmd-41e9a285e5be"
+    ],
+    "breaks": [
+      "memmd-19316b22f697"
+    ],
+    "breve": [
+      "memmd-3c103d6ddc1c",
+      "memmd-d200c10e5250"
+    ],
+    "bruta": [
+      "memmd-441bd7314e72"
+    ],
+    "brutal": [
+      "memmd-10d092eccfc9"
+    ],
+    "bruto": [
+      "memmd-441bd7314e72"
+    ],
+    "buena": [
+      "memmd-6ab394267dab"
+    ],
+    "buffers": [
+      "memmd-441bd7314e72",
+      "memmd-7e92d86d4277"
+    ],
+    "build": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be"
+    ],
+    "bullet": [
+      "memmd-a470522da885"
+    ],
+    "buscada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "business": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "but": [
+      "memmd-41e9a285e5be",
+      "memmd-bbce2d262171"
+    ],
+    "cada": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-feb982859da4"
+    ],
+    "cadence": [
+      "memmd-19316b22f697",
+      "memmd-59fb4ac5ca1c",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "cadencia": [
+      "memmd-a75811363a0a"
+    ],
+    "cadencias": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "caer": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "calculado": [
+      "memmd-6ab394267dab"
+    ],
+    "calibraci": [
+      "memmd-441bd7314e72"
+    ],
+    "calidad": [
+      "mem-profpref-20260222-005",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-6ab394267dab",
+      "memmd-a75811363a0a",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "cambio": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "cambios": [
+      "memmd-6ab394267dab"
+    ],
+    "can": [
+      "memmd-80292ed0717e",
+      "memmd-bbce2d262171",
+      "memmd-d9af45a1d9e2"
+    ],
+    "canal": [
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "canon": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277",
+      "memmd-feb982859da4"
+    ],
+    "canonical": [
+      "memmd-5db0d5987034",
+      "memmd-e6ed2a4d483d"
+    ],
+    "caos": [
+      "memmd-441bd7314e72"
+    ],
+    "capa": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "capability": [
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "capacidad": [
+      "mem-profpref-20260222-005",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "capacity": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "capas": [
+      "mem-profdec-20260222-001",
+      "memmd-80292ed0717e"
+    ],
+    "capital": [
+      "memmd-441bd7314e72"
+    ],
+    "captar": [
+      "memmd-feb982859da4"
+    ],
+    "carga": [
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685"
+    ],
+    "cargar": [
+      "memmd-a75811363a0a"
+    ],
+    "caro": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "casi": [
+      "memmd-feb982859da4"
+    ],
+    "castiga": [
+      "memmd-d200c10e5250"
+    ],
+    "cclaude": [
+      "memmd-80292ed0717e"
+    ],
+    "centers": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "centrado": [
+      "memmd-80292ed0717e"
+    ],
+    "central": [
+      "memmd-79b035be805a",
+      "memmd-feb982859da4"
+    ],
+    "ceo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "cerebro": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "cero": [
+      "memmd-feb982859da4"
+    ],
+    "cerrar": [
+      "memmd-feb982859da4"
+    ],
+    "certeza": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "changes": [
+      "memmd-bbce2d262171"
+    ],
+    "channel": [
+      "mem-proftl-20260222-005",
+      "memmd-59fb4ac5ca1c"
+    ],
+    "chaser": [
+      "memmd-7e92d86d4277"
+    ],
+    "chatgpt": [
+      "memmd-80292ed0717e"
+    ],
+    "chatgpt_reingest_v2": [
+      "mem-profdec-20260222-001",
+      "mem-profdec-20260222-002",
+      "mem-profdec-20260222-003",
+      "mem-profdec-20260222-004",
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-002",
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-004",
+      "mem-profpref-20260222-005",
+      "mem-profpref-20260222-006",
+      "mem-profpref-20260222-007",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-002",
+      "mem-proftl-20260222-003",
+      "mem-proftl-20260222-004",
+      "mem-proftl-20260222-005"
+    ],
+    "checklists": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "checks": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "ciclo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "ciclos": [
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-fcdb6549d963"
+    ],
+    "ciega": [
+      "memmd-d200c10e5250"
+    ],
+    "cierre": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-5a62c8725685",
+      "memmd-feb982859da4"
+    ],
+    "cita": [
+      "mem-profdec-20260222-003",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-003",
+      "memmd-10d092eccfc9",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f"
+    ],
+    "citamente": [
+      "memmd-a470522da885"
+    ],
+    "cito": [
+      "memmd-79b035be805a",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "citos": [
+      "mem-profpref-20260222-001",
+      "memmd-10d092eccfc9",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e"
+    ],
+    "claim": [
+      "memmd-feb982859da4"
+    ],
+    "claims": [
+      "memmd-0667d7c680dd"
+    ],
+    "clara": [
+      "memmd-5a62c8725685"
+    ],
+    "claras": [
+      "memmd-cde01070df1f"
+    ],
+    "claridad": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250"
+    ],
+    "claro": [
+      "memmd-0e868342b14b",
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f"
+    ],
+    "classify": [
+      "memmd-19316b22f697"
+    ],
+    "claude": [
+      "mem-profpref-20260222-007",
+      "memmd-d9af45a1d9e2"
+    ],
+    "clear_jobs_list": [
+      "mem-profdec-20260222-004"
+    ],
+    "cleo": [
+      "memmd-d200c10e5250"
+    ],
+    "closed": [
+      "memmd-7e92d86d4277"
+    ],
+    "closure": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "cloud": [
+      "memmd-7e92d86d4277"
+    ],
+    "cnica": [
+      "memmd-a75811363a0a"
+    ],
+    "cnicas": [
+      "memmd-cde01070df1f"
+    ],
+    "cnico": [
+      "memmd-80292ed0717e"
+    ],
+    "cnicos": [
+      "memmd-10d092eccfc9",
+      "memmd-a75811363a0a"
+    ],
+    "coders": [
+      "mem-profpref-20260222-003"
+    ],
+    "codex": [
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-007",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "cognitiva": [
+      "memmd-0e868342b14b",
+      "memmd-a470522da885"
+    ],
+    "colaboraci": [
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a"
+    ],
+    "colisi": [
+      "memmd-6ab394267dab"
+    ],
+    "colisiones": [
+      "memmd-80292ed0717e"
+    ],
+    "comandos": [
+      "mem-profpref-20260222-001",
+      "mem-proftl-20260222-004",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "commitment": [
+      "memmd-7e92d86d4277"
+    ],
+    "commitments": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "commoditizarse": [
+      "memmd-feb982859da4"
+    ],
+    "commodity": [
+      "memmd-7e92d86d4277"
+    ],
+    "company": [
+      "memmd-7e92d86d4277"
+    ],
+    "compass": [
+      "memmd-d200c10e5250"
+    ],
+    "competitivo": [
+      "memmd-fcdb6549d963"
+    ],
+    "compiten": [
+      "memmd-a470522da885"
+    ],
+    "completa": [
+      "mem-profpref-20260222-006",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "completed": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "completion": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "completo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "completos": [
+      "mem-profpref-20260222-006",
+      "memmd-d9af45a1d9e2"
+    ],
+    "complexity": [
+      "memmd-7519e3e7c741"
+    ],
+    "compliance": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "compone": [
+      "memmd-441bd7314e72"
+    ],
+    "comportamiento": [
+      "memmd-6ab394267dab"
+    ],
+    "compounding": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-7519e3e7c741",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "compra": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "comprar": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "compresi": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "compression": [
+      "memmd-41e9a285e5be"
+    ],
+    "comprime": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "computacional": [
+      "mem-profpref-20260222-005"
+    ],
+    "comunicaci": [
+      "memmd-3c103d6ddc1c",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a"
+    ],
+    "comunicacional": [
+      "memmd-feb982859da4"
+    ],
+    "concentra": [
+      "memmd-feb982859da4"
+    ],
+    "concentrar": [
+      "mem-profpref-20260222-002"
+    ],
+    "conclusi": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "concreta": [
+      "memmd-0e868342b14b"
+    ],
+    "concrete": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "concretos": [
+      "memmd-10d092eccfc9"
+    ],
+    "condici": [
+      "memmd-5a62c8725685"
+    ],
+    "conductas": [
+      "memmd-10d092eccfc9"
+    ],
+    "conductual": [
+      "memmd-441bd7314e72",
+      "memmd-fcdb6549d963"
+    ],
+    "confianza": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-feb982859da4"
+    ],
+    "configuraci": [
+      "mem-profdec-20260222-004"
+    ],
+    "configuracion_inicial": [
+      "mem-profdec-20260222-002"
+    ],
+    "configuraciones": [
+      "memmd-cde01070df1f"
+    ],
+    "confirma": [
+      "mem-profdec-20260222-004",
+      "mem-proftl-20260222-005",
+      "memmd-d9af45a1d9e2"
+    ],
+    "confirmaci": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "confirmada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "conflict": [
+      "memmd-0667d7c680dd"
+    ],
+    "conflicts": [
+      "memmd-0667d7c680dd"
+    ],
+    "confundir": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "conocimiento": [
+      "mem-profdec-20260222-003",
+      "memmd-feb982859da4"
+    ],
+    "consecuencia": [
+      "memmd-441bd7314e72"
+    ],
+    "conserva": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "conservadores": [
+      "memmd-6ab394267dab"
+    ],
+    "consistencia": [
+      "memmd-feb982859da4"
+    ],
+    "consolidaci": [
+      "memmd-cde01070df1f"
+    ],
+    "constraint": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "constraints": [
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "construction": [
+      "memmd-7e92d86d4277"
+    ],
+    "construir": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-3bd1b1a7aa85",
+      "memmd-80292ed0717e"
+    ],
+    "construye": [
+      "memmd-d200c10e5250"
+    ],
+    "construyen": [
+      "memmd-d200c10e5250"
+    ],
+    "consultada": [
+      "mem-profdec-20260222-002"
+    ],
+    "consumidor": [
+      "memmd-d200c10e5250"
+    ],
+    "contained": [
+      "memmd-bbce2d262171"
+    ],
+    "contenido": [
+      "memmd-a75811363a0a"
+    ],
+    "context": [
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "contexto": [
+      "memmd-0e868342b14b",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e",
+      "memmd-feb982859da4"
+    ],
+    "contextuales": [
+      "memmd-80292ed0717e"
+    ],
+    "continua": [
+      "memmd-5a62c8725685"
+    ],
+    "continuidad": [
+      "mem-profpref-20260222-007",
+      "memmd-0e868342b14b",
+      "memmd-80292ed0717e"
+    ],
+    "continuity": [
+      "memmd-41e9a285e5be"
+    ],
+    "contrato": [
+      "mem-proftl-20260222-004",
+      "memmd-3c103d6ddc1c",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a"
+    ],
+    "contratos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "control": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "controlable": [
+      "memmd-441bd7314e72"
+    ],
+    "controlado": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "controlled": [
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "controller": [
+      "memmd-7e92d86d4277"
+    ],
+    "converge": [
+      "memmd-5db0d5987034"
+    ],
+    "convert": [
+      "memmd-41e9a285e5be"
+    ],
+    "convertida": [
+      "memmd-441bd7314e72"
+    ],
+    "converting": [
+      "memmd-19316b22f697"
+    ],
+    "convertir": [
+      "memmd-79b035be805a"
+    ],
+    "convertirlo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "conviene": [
+      "memmd-a470522da885"
+    ],
+    "convierte": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "convierten": [
+      "memmd-441bd7314e72"
+    ],
+    "coordinaci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "coordination": [
+      "memmd-7e92d86d4277"
+    ],
+    "core": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "correcta": [
+      "memmd-441bd7314e72"
+    ],
+    "correctas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "corrective": [
+      "memmd-7e92d86d4277"
+    ],
+    "correcto": [
+      "memmd-d200c10e5250"
+    ],
+    "corto": [
+      "memmd-cde01070df1f"
+    ],
+    "cortos": [
+      "memmd-0e868342b14b"
+    ],
+    "cosm": [
+      "memmd-5a62c8725685",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "cost": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-61d3d7d1b4e6",
+      "memmd-bbce2d262171"
+    ],
+    "costo": [
+      "mem-profpref-20260222-005",
+      "memmd-feb982859da4"
+    ],
+    "costs": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "cpu": [
+      "mem-profpref-20260222-005",
+      "memmd-80292ed0717e"
+    ],
+    "crear": [
+      "memmd-d200c10e5250"
+    ],
+    "creates": [
+      "memmd-0667d7c680dd"
+    ],
+    "crece": [
+      "memmd-feb982859da4"
+    ],
+    "crecientes": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "crecimiento": [
+      "memmd-441bd7314e72"
+    ],
+    "creencias": [
+      "memmd-79b035be805a"
+    ],
+    "criteria": [
+      "memmd-7e92d86d4277"
+    ],
+    "criterio": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "criterios": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "critical": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "crm": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "cron_jobs_cleanup": [
+      "mem-profdec-20260222-004"
+    ],
+    "ctica": [
+      "memmd-6ab394267dab",
+      "memmd-fcdb6549d963"
+    ],
+    "cticas": [
+      "memmd-80292ed0717e"
+    ],
+    "cuando": [
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-a470522da885",
+      "memmd-cde01070df1f",
+      "memmd-feb982859da4"
+    ],
+    "cuenta": [
+      "mem-profpref-20260222-007",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "cuentas": [
+      "mem-profpref-20260222-007",
+      "memmd-a470522da885"
+    ],
+    "cuerpo": [
+      "memmd-d200c10e5250"
+    ],
+    "cuesta": [
+      "memmd-feb982859da4"
+    ],
+    "cultura": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "cumple": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "current": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e",
+      "memmd-e6ed2a4d483d"
+    ],
+    "cycle": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c",
+      "memmd-7e92d86d4277"
+    ],
+    "daily": [
+      "memmd-7e92d86d4277"
+    ],
+    "dashboards": [
+      "memmd-7e92d86d4277"
+    ],
+    "data": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "dates": [
+      "memmd-7e92d86d4277"
+    ],
+    "datos": [
+      "memmd-80292ed0717e"
+    ],
+    "day": [
+      "memmd-7e92d86d4277"
+    ],
+    "days": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "debe": [
+      "mem-profpref-20260222-001",
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-feb982859da4"
+    ],
+    "deben": [
+      "memmd-5a62c8725685",
+      "memmd-a470522da885"
+    ],
+    "debt": [
+      "memmd-0667d7c680dd"
+    ],
+    "decide": [
+      "mem-profdec-20260222-002",
+      "memmd-feb982859da4"
+    ],
+    "decidido": [
+      "memmd-d200c10e5250"
+    ],
+    "decidiendo": [
+      "memmd-d200c10e5250"
+    ],
+    "decidir": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "decisi": [
+      "memmd-0e868342b14b",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "decision": [
+      "mem-profdec-20260222-001",
+      "mem-profdec-20260222-002",
+      "mem-profdec-20260222-003",
+      "mem-profdec-20260222-004",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "decisiones": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2"
+    ],
+    "decisions": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "declara": [
+      "mem-profdec-20260222-001",
+      "mem-profpref-20260222-001",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-d9af45a1d9e2"
+    ],
+    "declaraci": [
+      "mem-proftl-20260222-001"
+    ],
+    "declarada": [
+      "memmd-80292ed0717e"
+    ],
+    "declarar": [
+      "memmd-10d092eccfc9"
+    ],
+    "declines": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "decreases": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "default": [
+      "memmd-0667d7c680dd"
+    ],
+    "defaults": [
+      "memmd-cde01070df1f"
+    ],
+    "defecto": [
+      "mem-profpref-20260222-004",
+      "memmd-5a62c8725685",
+      "memmd-a470522da885"
+    ],
+    "defendibles": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "define": [
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "defines": [
+      "memmd-5db0d5987034"
+    ],
+    "definiciones": [
+      "memmd-441bd7314e72"
+    ],
+    "definido": [
+      "memmd-10d092eccfc9"
+    ],
+    "definitive": [
+      "memmd-7e92d86d4277"
+    ],
+    "degrada": [
+      "memmd-d200c10e5250"
+    ],
+    "degradar": [
+      "memmd-441bd7314e72"
+    ],
+    "degrades": [
+      "memmd-0667d7c680dd"
+    ],
+    "dejar": [
+      "mem-profdec-20260222-004",
+      "memmd-80292ed0717e"
+    ],
+    "del": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e"
+    ],
+    "delay": [
+      "memmd-0667d7c680dd"
+    ],
+    "delega": [
+      "memmd-441bd7314e72"
+    ],
+    "delegable": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "delegaci": [
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685"
+    ],
+    "delegada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "delegar": [
+      "memmd-441bd7314e72"
+    ],
+    "delegation": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "deliver": [
+      "memmd-7e92d86d4277"
+    ],
+    "deliverables": [
+      "memmd-7e92d86d4277"
+    ],
+    "delivery": [
+      "memmd-7e92d86d4277"
+    ],
+    "demand": [
+      "memmd-7e92d86d4277"
+    ],
+    "demanda": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "densa": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "densidad": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "dentro": [
+      "memmd-5a62c8725685"
+    ],
+    "depende": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "dependencia": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "depender": [
+      "mem-profpref-20260222-001",
+      "memmd-cde01070df1f"
+    ],
+    "deployment": [
+      "memmd-7e92d86d4277"
+    ],
+    "depth_over_briefness": [
+      "mem-profpref-20260222-006"
+    ],
+    "derivadas": [
+      "memmd-feb982859da4"
+    ],
+    "desactivada": [
+      "mem-profdec-20260222-002"
+    ],
+    "desalineaci": [
+      "memmd-0e868342b14b"
+    ],
+    "desarrollo": [
+      "mem-profdec-20260222-001"
+    ],
+    "desde": [
+      "memmd-79b035be805a",
+      "memmd-d200c10e5250"
+    ],
+    "deseado": [
+      "memmd-6ab394267dab"
+    ],
+    "desempe": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "desgaste": [
+      "memmd-441bd7314e72"
+    ],
+    "despite": [
+      "memmd-7519e3e7c741"
+    ],
+    "desplaza": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "despu": [
+      "memmd-441bd7314e72"
+    ],
+    "destructivas": [
+      "memmd-80292ed0717e"
+    ],
+    "destructivos": [
+      "mem-profpref-20260222-004",
+      "memmd-cde01070df1f"
+    ],
+    "desv": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "desviaci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250"
+    ],
+    "detalladas": [
+      "memmd-5a62c8725685"
+    ],
+    "detalles": [
+      "memmd-cde01070df1f"
+    ],
+    "detecta": [
+      "memmd-6ab394267dab"
+    ],
+    "deuda": [
+      "memmd-441bd7314e72"
+    ],
+    "developers": [
+      "mem-profdec-20260222-003"
+    ],
+    "df85ab035870": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "difuso": [
+      "memmd-6ab394267dab"
+    ],
+    "direcci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250"
+    ],
+    "directa": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "direction": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "dirty": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "disciplinada": [
+      "memmd-5a62c8725685"
+    ],
+    "dise": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "disfrazado": [
+      "memmd-d200c10e5250"
+    ],
+    "dispara": [
+      "memmd-441bd7314e72"
+    ],
+    "distribuci": [
+      "memmd-d200c10e5250"
+    ],
+    "document": [
+      "memmd-7e92d86d4277"
+    ],
+    "documentation": [
+      "memmd-bbce2d262171"
+    ],
+    "does": [
+      "memmd-bbce2d262171"
+    ],
+    "dolor": [
+      "memmd-d200c10e5250"
+    ],
+    "dominance": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "dominancia": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "dominante": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-6ab394267dab"
+    ],
+    "done": [
+      "memmd-7e92d86d4277"
+    ],
+    "down": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "downside": [
+      "memmd-0667d7c680dd"
+    ],
+    "drama": [
+      "memmd-7e92d86d4277"
+    ],
+    "drift": [
+      "memmd-7519e3e7c741"
+    ],
+    "duda": [
+      "memmd-d200c10e5250"
+    ],
+    "due": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "duplicados": [
+      "memmd-a75811363a0a"
+    ],
+    "durable": [
+      "memmd-feb982859da4"
+    ],
+    "e38fd745241a": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "e7fe6fa10497": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "each": [
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c"
+    ],
+    "early": [
+      "memmd-7e92d86d4277"
+    ],
+    "econ": [
+      "memmd-feb982859da4"
+    ],
+    "economics": [
+      "memmd-bbce2d262171"
+    ],
+    "ecosystem": [
+      "memmd-7e92d86d4277"
+    ],
+    "edad": [
+      "memmd-cde01070df1f"
+    ],
+    "ee3bc1f1d0bb": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "effectiveness": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "efficiency": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "effort": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034"
+    ],
+    "eje": [
+      "memmd-fcdb6549d963"
+    ],
+    "ejecuci": [
+      "mem-profpref-20260222-002",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "ejecuta": [
+      "memmd-5a62c8725685"
+    ],
+    "ejecutada": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "ejecutado": [
+      "memmd-fcdb6549d963"
+    ],
+    "ejecutar": [
+      "memmd-feb982859da4"
+    ],
+    "ejecutora": [
+      "memmd-feb982859da4"
+    ],
+    "ejemplo": [
+      "memmd-fcdb6549d963"
+    ],
+    "elecci": [
+      "mem-profdec-20260222-003"
+    ],
+    "elegir": [
+      "memmd-6ab394267dab",
+      "memmd-d200c10e5250"
+    ],
+    "elijo": [
+      "memmd-d200c10e5250"
+    ],
+    "eliminar": [
+      "memmd-a75811363a0a"
+    ],
+    "elite": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "emocional": [
+      "memmd-441bd7314e72"
+    ],
+    "empresa": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "encima": [
+      "memmd-0e868342b14b",
+      "memmd-fcdb6549d963"
+    ],
+    "end": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "energ": [
+      "memmd-441bd7314e72"
+    ],
+    "enforce": [
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "engine": [
+      "memmd-41e9a285e5be"
+    ],
+    "ense": [
+      "memmd-d200c10e5250"
+    ],
+    "entorno": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250"
+    ],
+    "entre": [
+      "memmd-0e868342b14b",
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a"
+    ],
+    "entrega": [
+      "memmd-a75811363a0a"
+    ],
+    "entregable": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "entregables": [
+      "mem-profpref-20260222-006"
+    ],
+    "entrenar": [
+      "memmd-441bd7314e72"
+    ],
+    "equipo": [
+      "memmd-441bd7314e72"
+    ],
+    "era": [
+      "memmd-5db0d5987034"
+    ],
+    "eros": [
+      "memmd-feb982859da4"
+    ],
+    "error": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "esa": [
+      "memmd-79b035be805a"
+    ],
+    "escalable": [
+      "mem-proftl-20260222-001"
+    ],
+    "escalaci": [
+      "memmd-5a62c8725685"
+    ],
+    "escalamiento": [
+      "memmd-cde01070df1f"
+    ],
+    "escalar": [
+      "memmd-5a62c8725685"
+    ],
+    "escalate": [
+      "memmd-5db0d5987034"
+    ],
+    "escalation": [
+      "memmd-7e92d86d4277"
+    ],
+    "escasos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "escritores": [
+      "mem-profpref-20260222-003"
+    ],
+    "ese": [
+      "mem-profdec-20260222-002",
+      "mem-profdec-20260222-003",
+      "mem-profdec-20260222-004",
+      "memmd-80292ed0717e"
+    ],
+    "espec": [
+      "memmd-a470522da885",
+      "memmd-cde01070df1f"
+    ],
+    "especulaci": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "esperada": [
+      "memmd-10d092eccfc9"
+    ],
+    "esperado": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-a75811363a0a"
+    ],
+    "esperar": [
+      "memmd-d200c10e5250"
+    ],
+    "esquema": [
+      "memmd-80292ed0717e"
+    ],
+    "est": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-feb982859da4"
+    ],
+    "estable": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "estables": [
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "establish": [
+      "memmd-7519e3e7c741"
+    ],
+    "estado": [
+      "memmd-0e868342b14b",
+      "memmd-3c103d6ddc1c",
+      "memmd-cde01070df1f"
+    ],
+    "estados": [
+      "memmd-10d092eccfc9"
+    ],
+    "estar": [
+      "memmd-feb982859da4"
+    ],
+    "estilo": [
+      "memmd-0e868342b14b",
+      "memmd-a470522da885"
+    ],
+    "esto": [
+      "memmd-d200c10e5250"
+    ],
+    "estoy": [
+      "memmd-d200c10e5250"
+    ],
+    "estr": [
+      "memmd-441bd7314e72"
+    ],
+    "estrat": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "estrategia": [
+      "mem-profpref-20260222-004"
+    ],
+    "estricto": [
+      "memmd-a470522da885"
+    ],
+    "estructura": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-a75811363a0a"
+    ],
+    "estructurada": [
+      "memmd-441bd7314e72"
+    ],
+    "estructural": [
+      "memmd-6ab394267dab"
+    ],
+    "estructuras": [
+      "memmd-441bd7314e72"
+    ],
+    "eta": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "etc": [
+      "memmd-80292ed0717e"
+    ],
+    "etiquetarse": [
+      "memmd-a75811363a0a"
+    ],
+    "every": [
+      "memmd-bbce2d262171"
+    ],
+    "evidence": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-bbce2d262171",
+      "memmd-d9af45a1d9e2"
+    ],
+    "evidencia": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "evitar": [
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-004",
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f"
+    ],
+    "evolution": [
+      "memmd-7e92d86d4277"
+    ],
+    "exacto": [
+      "mem-profdec-20260222-002"
+    ],
+    "excel": [
+      "memmd-7e92d86d4277"
+    ],
+    "excusa": [
+      "memmd-d200c10e5250"
+    ],
+    "execute": [
+      "memmd-bbce2d262171"
+    ],
+    "execution": [
+      "mem-profpref-20260222-003",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "execution_model": [
+      "mem-profpref-20260222-003"
+    ],
+    "executive": [
+      "memmd-7e92d86d4277"
+    ],
+    "exhaustiva": [
+      "mem-profpref-20260222-006"
+    ],
+    "exige": [
+      "memmd-fcdb6549d963"
+    ],
+    "exista": [
+      "memmd-10d092eccfc9",
+      "memmd-5a62c8725685"
+    ],
+    "existe": [
+      "memmd-441bd7314e72"
+    ],
+    "existente": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "exists": [
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "expandir": [
+      "memmd-441bd7314e72"
+    ],
+    "expansi": [
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-fcdb6549d963"
+    ],
+    "expansion": [
+      "memmd-7519e3e7c741"
+    ],
+    "experiencia": [
+      "memmd-feb982859da4"
+    ],
+    "expl": [
+      "mem-profdec-20260222-003",
+      "mem-profpref-20260222-001",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-003",
+      "memmd-10d092eccfc9",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "explicit": [
+      "memmd-0667d7c680dd",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "explicita": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "explora": [
+      "mem-profpref-20260222-007"
+    ],
+    "exploraci": [
+      "memmd-0e868342b14b",
+      "memmd-feb982859da4"
+    ],
+    "export": [
+      "memmd-80292ed0717e"
+    ],
+    "extensa": [
+      "memmd-0e868342b14b"
+    ],
+    "extensi": [
+      "memmd-79b035be805a"
+    ],
+    "extensos": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "externo": [
+      "memmd-d200c10e5250"
+    ],
+    "extraer": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "f2286d8d3183": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "fails": [
+      "memmd-bbce2d262171"
+    ],
+    "fallback": [
+      "mem-profpref-20260222-007"
+    ],
+    "falta": [
+      "memmd-0e868342b14b"
+    ],
+    "falte": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "familia": [
+      "memmd-441bd7314e72",
+      "memmd-80292ed0717e"
+    ],
+    "family": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "fase": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-80292ed0717e",
+      "memmd-fcdb6549d963"
+    ],
+    "fases": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "faster": [
+      "memmd-19316b22f697"
+    ],
+    "fatiga": [
+      "memmd-a470522da885"
+    ],
+    "favorable": [
+      "memmd-bbce2d262171"
+    ],
+    "fdd7fe5fd2ab": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "feasible": [
+      "memmd-0667d7c680dd"
+    ],
+    "feature": [
+      "mem-profdec-20260222-002"
+    ],
+    "feedback": [
+      "memmd-441bd7314e72"
+    ],
+    "fewer": [
+      "memmd-19316b22f697"
+    ],
+    "ficas": [
+      "memmd-a470522da885",
+      "memmd-cde01070df1f"
+    ],
+    "ficos": [
+      "memmd-80292ed0717e"
+    ],
+    "field": [
+      "memmd-7e92d86d4277"
+    ],
+    "filter": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "filtro": [
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "filtros": [
+      "memmd-6ab394267dab",
+      "memmd-a75811363a0a"
+    ],
+    "fin": [
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "final": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-59fb4ac5ca1c"
+    ],
+    "finanzas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "finita": [
+      "memmd-feb982859da4"
+    ],
+    "first": [
+      "mem-proftl-20260222-004",
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "flag": [
+      "memmd-0667d7c680dd"
+    ],
+    "flow": [
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "flows": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "flujos": [
+      "memmd-cde01070df1f"
+    ],
+    "focalizado": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "foco": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "focus": [
+      "mem-profdec-20260222-001",
+      "memmd-7519e3e7c741"
+    ],
+    "focus_brain_now": [
+      "mem-profdec-20260222-001"
+    ],
+    "forma": [
+      "memmd-0e868342b14b",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "formal": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "formato": [
+      "memmd-3c103d6ddc1c",
+      "memmd-cde01070df1f"
+    ],
+    "fracaso": [
+      "memmd-cde01070df1f"
+    ],
+    "fragility": [
+      "memmd-7519e3e7c741"
+    ],
+    "fragmentaci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "fragmentar": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "frecuentes": [
+      "memmd-6ab394267dab"
+    ],
+    "frequency": [
+      "memmd-7519e3e7c741"
+    ],
+    "fricci": [
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f"
+    ],
+    "fricciones": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "friction": [
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "frontera": [
+      "memmd-feb982859da4"
+    ],
+    "fuente": [
+      "memmd-80292ed0717e"
+    ],
+    "fuera": [
+      "memmd-10d092eccfc9",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "fuerte": [
+      "memmd-d200c10e5250"
+    ],
+    "fuertes": [
+      "memmd-80292ed0717e"
+    ],
+    "full": [
+      "memmd-7e92d86d4277"
+    ],
+    "funci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "funcional": [
+      "memmd-feb982859da4"
+    ],
+    "funcionando": [
+      "mem-proftl-20260222-005",
+      "memmd-d9af45a1d9e2"
+    ],
+    "futura": [
+      "memmd-441bd7314e72"
+    ],
+    "future": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "futuro": [
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab"
+    ],
+    "futuros": [
+      "memmd-6ab394267dab"
+    ],
+    "gains": [
+      "memmd-0667d7c680dd"
+    ],
+    "gana": [
+      "memmd-feb982859da4"
+    ],
+    "gap": [
+      "memmd-0667d7c680dd",
+      "memmd-3c103d6ddc1c",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f"
+    ],
+    "gastos": [
+      "memmd-441bd7314e72"
+    ],
+    "gate": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-bbce2d262171"
+    ],
+    "gates": [
+      "memmd-bbce2d262171",
+      "memmd-feb982859da4"
+    ],
+    "gating": [
+      "memmd-5db0d5987034"
+    ],
+    "gen": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "general": [
+      "memmd-feb982859da4"
+    ],
+    "generan": [
+      "memmd-fcdb6549d963"
+    ],
+    "generated": [
+      "memmd-e6ed2a4d483d"
+    ],
+    "gica": [
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "gico": [
+      "memmd-a75811363a0a"
+    ],
+    "gicos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "global": [
+      "memmd-7e92d86d4277"
+    ],
+    "gobierna": [
+      "memmd-441bd7314e72"
+    ],
+    "golpe": [
+      "memmd-d200c10e5250"
+    ],
+    "governance": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "gpt": [
+      "mem-profdec-20260222-003"
+    ],
+    "grande": [
+      "memmd-441bd7314e72"
+    ],
+    "green": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "growth": [
+      "memmd-7519e3e7c741"
+    ],
+    "guardrails": [
+      "memmd-41e9a285e5be",
+      "memmd-5a62c8725685"
+    ],
+    "guiados": [
+      "memmd-79b035be805a"
+    ],
+    "habilidad": [
+      "memmd-441bd7314e72"
+    ],
+    "hace": [
+      "memmd-d200c10e5250"
+    ],
+    "handoff": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "handover": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "hasta": [
+      "memmd-fcdb6549d963"
+    ],
+    "hay": [
+      "memmd-441bd7314e72",
+      "memmd-cde01070df1f"
+    ],
+    "health": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "heartbeat": [
+      "memmd-7519e3e7c741"
+    ],
+    "heavier": [
+      "memmd-7519e3e7c741"
+    ],
+    "hecho": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "hechos": [
+      "memmd-a75811363a0a"
+    ],
+    "hechos_verificados": [
+      "memmd-fcdb6549d963"
+    ],
+    "here": [
+      "memmd-5db0d5987034"
+    ],
+    "herida": [
+      "memmd-d200c10e5250"
+    ],
+    "heur": [
+      "memmd-6ab394267dab"
+    ],
+    "hidden": [
+      "memmd-0667d7c680dd"
+    ],
+    "high": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "higher": [
+      "memmd-19316b22f697"
+    ],
+    "higiene": [
+      "memmd-d200c10e5250"
+    ],
+    "hip": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "hist": [
+      "mem-profdec-20260222-003"
+    ],
+    "hitos": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "home": [
+      "mem-profpref-20260222-002",
+      "memmd-80292ed0717e"
+    ],
+    "homeostasis": [
+      "memmd-0667d7c680dd",
+      "memmd-fcdb6549d963"
+    ],
+    "horas": [
+      "memmd-441bd7314e72"
+    ],
+    "horizon": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-7519e3e7c741"
+    ],
+    "horizons": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "hormozi": [
+      "memmd-d200c10e5250"
+    ],
+    "hospitals": [
+      "memmd-7e92d86d4277"
+    ],
+    "how": [
+      "memmd-5db0d5987034"
+    ],
+    "huddles": [
+      "memmd-7e92d86d4277"
+    ],
+    "humana": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "humanas": [
+      "memmd-441bd7314e72"
+    ],
+    "humano": [
+      "memmd-feb982859da4"
+    ],
+    "humo": [
+      "memmd-10d092eccfc9",
+      "memmd-fcdb6549d963"
+    ],
+    "hygiene": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "identidad": [
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "identity": [
+      "memmd-19316b22f697",
+      "memmd-79b035be805a"
+    ],
+    "ids": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "igual": [
+      "memmd-d200c10e5250"
+    ],
+    "imagen": [
+      "memmd-d200c10e5250"
+    ],
+    "impact": [
+      "memmd-bbce2d262171"
+    ],
+    "impacto": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "impl": [
+      "memmd-10d092eccfc9"
+    ],
+    "importa": [
+      "memmd-feb982859da4"
+    ],
+    "improve": [
+      "memmd-19316b22f697",
+      "memmd-7519e3e7c741"
+    ],
+    "improves": [
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "improvisaci": [
+      "memmd-441bd7314e72"
+    ],
+    "inbox_raw": [
+      "memmd-80292ed0717e"
+    ],
+    "incendios": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "incertidumbre": [
+      "memmd-10d092eccfc9",
+      "memmd-a75811363a0a"
+    ],
+    "incertidumbres": [
+      "memmd-a75811363a0a"
+    ],
+    "incomode": [
+      "memmd-d200c10e5250"
+    ],
+    "incorporados": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "increase": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "independiente": [
+      "memmd-d200c10e5250"
+    ],
+    "index": [
+      "memmd-5db0d5987034"
+    ],
+    "inevitablemente": [
+      "memmd-feb982859da4"
+    ],
+    "inferencia": [
+      "memmd-0e868342b14b"
+    ],
+    "infinito": [
+      "memmd-feb982859da4"
+    ],
+    "informaci": [
+      "memmd-0e868342b14b"
+    ],
+    "infraestructura": [
+      "memmd-feb982859da4"
+    ],
+    "inicialmente": [
+      "mem-profdec-20260222-002"
+    ],
+    "iniciativa": [
+      "memmd-5a62c8725685"
+    ],
+    "initiative": [
+      "memmd-19316b22f697"
+    ],
+    "inmediato": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-6ab394267dab"
+    ],
+    "inspectable": [
+      "memmd-0667d7c680dd"
+    ],
+    "instalar": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "install": [
+      "memmd-7e92d86d4277"
+    ],
+    "instrumentable": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "instrumentaci": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-cde01070df1f"
+    ],
+    "insuficiente": [
+      "memmd-80292ed0717e"
+    ],
+    "integraci": [
+      "mem-proftl-20260222-005",
+      "memmd-d200c10e5250"
+    ],
+    "integrador": [
+      "memmd-feb982859da4"
+    ],
+    "integrity": [
+      "memmd-41e9a285e5be"
+    ],
+    "intelectual": [
+      "memmd-fcdb6549d963"
+    ],
+    "intenci": [
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a"
+    ],
+    "inter": [
+      "mem-profpref-20260222-007",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "interacci": [
+      "mem-proftl-20260222-004",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f"
+    ],
+    "interaction": [
+      "mem-profpref-20260222-001"
+    ],
+    "interfaces": [
+      "memmd-7e92d86d4277"
+    ],
+    "interior": [
+      "memmd-d200c10e5250"
+    ],
+    "interno": [
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "interpretation": [
+      "memmd-5db0d5987034"
+    ],
+    "intervention": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "introduce": [
+      "memmd-7519e3e7c741"
+    ],
+    "invariants": [
+      "memmd-7519e3e7c741"
+    ],
+    "investigaci": [
+      "mem-profpref-20260222-006"
+    ],
+    "irreversibilidad": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "isolation": [
+      "memmd-0667d7c680dd",
+      "memmd-bbce2d262171"
+    ],
+    "items": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "iteraciones": [
+      "memmd-0e868342b14b"
+    ],
+    "jam": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "jer": [
+      "memmd-d200c10e5250"
+    ],
+    "jobs": [
+      "mem-profdec-20260222-004",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "jula": [
+      "memmd-a75811363a0a"
+    ],
+    "justicia": [
+      "memmd-d200c10e5250"
+    ],
+    "keep": [
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c"
+    ],
+    "keep_feature_disabled_initially": [
+      "mem-profdec-20260222-002"
+    ],
+    "kept": [
+      "memmd-19316b22f697"
+    ],
+    "kpi": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "kpis": [
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "laboratorio": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "labs": [
+      "memmd-7e92d86d4277"
+    ],
+    "lagging": [
+      "memmd-5db0d5987034"
+    ],
+    "lanes": [
+      "memmd-41e9a285e5be"
+    ],
+    "largas": [
+      "memmd-0e868342b14b",
+      "memmd-a470522da885"
+    ],
+    "largo": [
+      "memmd-80292ed0717e"
+    ],
+    "last": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "latency": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "laws": [
+      "memmd-5db0d5987034"
+    ],
+    "lead": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "leadership": [
+      "memmd-7e92d86d4277"
+    ],
+    "leading": [
+      "memmd-5db0d5987034"
+    ],
+    "leads": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "lean": [
+      "memmd-7e92d86d4277"
+    ],
+    "learning": [
+      "memmd-41e9a285e5be"
+    ],
+    "least": [
+      "memmd-19316b22f697"
+    ],
+    "lectura": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-a75811363a0a"
+    ],
+    "leer": [
+      "memmd-a75811363a0a"
+    ],
+    "legibilidad": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "lenguaje": [
+      "mem-profpref-20260222-001",
+      "mem-proftl-20260222-004",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250"
+    ],
+    "less": [
+      "memmd-19316b22f697"
+    ],
+    "level": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "leverage": [
+      "memmd-41e9a285e5be"
+    ],
+    "leyes": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "libera": [
+      "memmd-441bd7314e72"
+    ],
+    "lida": [
+      "memmd-441bd7314e72"
+    ],
+    "limits": [
+      "memmd-0667d7c680dd"
+    ],
+    "limpiar": [
+      "memmd-80292ed0717e"
+    ],
+    "limpieza": [
+      "memmd-6ab394267dab"
+    ],
+    "line": [
+      "memmd-7e92d86d4277"
+    ],
+    "linked": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "list": [
+      "memmd-7e92d86d4277"
+    ],
+    "lista": [
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "listo": [
+      "memmd-10d092eccfc9"
+    ],
+    "literacy": [
+      "memmd-7e92d86d4277"
+    ],
+    "load": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741"
+    ],
+    "loading": [
+      "memmd-5db0d5987034"
+    ],
+    "local": [
+      "memmd-feb982859da4"
+    ],
+    "log": [
+      "memmd-7e92d86d4277"
+    ],
+    "logic": [
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "logistics": [
+      "memmd-7e92d86d4277"
+    ],
+    "logos": [
+      "memmd-5db0d5987034",
+      "memmd-feb982859da4"
+    ],
+    "lookahead": [
+      "memmd-7e92d86d4277"
+    ],
+    "loop": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "loops": [
+      "memmd-7519e3e7c741"
+    ],
+    "loss": [
+      "memmd-41e9a285e5be"
+    ],
+    "loter": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "low": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-7519e3e7c741"
+    ],
+    "lower": [
+      "memmd-19316b22f697"
+    ],
+    "lps": [
+      "memmd-7e92d86d4277"
+    ],
+    "ltiples": [
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-007",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "lucidez": [
+      "memmd-441bd7314e72",
+      "memmd-d200c10e5250"
+    ],
+    "lugar": [
+      "memmd-0e868342b14b",
+      "memmd-d200c10e5250"
+    ],
+    "macro": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "maestros": [
+      "memmd-d200c10e5250"
+    ],
+    "maintain": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "maintained": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "management": [
+      "memmd-7e92d86d4277"
+    ],
+    "mandato": [
+      "memmd-feb982859da4"
+    ],
+    "mando": [
+      "memmd-d200c10e5250"
+    ],
+    "mantener": [
+      "mem-profdec-20260222-002",
+      "memmd-a75811363a0a",
+      "memmd-d9af45a1d9e2"
+    ],
+    "mantenerla": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "manteniendo": [
+      "mem-profpref-20260222-005"
+    ],
+    "manual": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "map": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-a75811363a0a"
+    ],
+    "maquillar": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "marca": [
+      "mem-proftl-20260222-003"
+    ],
+    "marcador": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "marcarlo": [
+      "memmd-a75811363a0a"
+    ],
+    "marco": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-79b035be805a"
+    ],
+    "margen": [
+      "memmd-feb982859da4"
+    ],
+    "marginal": [
+      "memmd-feb982859da4"
+    ],
+    "marketing": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "masivo": [
+      "mem-profpref-20260222-004",
+      "memmd-3c103d6ddc1c",
+      "memmd-cde01070df1f"
+    ],
+    "master": [
+      "memmd-7e92d86d4277"
+    ],
+    "mateo": [
+      "mem-profpref-20260222-001",
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a"
+    ],
+    "material": [
+      "memmd-5a62c8725685",
+      "memmd-61d3d7d1b4e6",
+      "memmd-bbce2d262171"
+    ],
+    "mature": [
+      "memmd-7519e3e7c741"
+    ],
+    "maximize": [
+      "memmd-5db0d5987034"
+    ],
+    "mayormente": [
+      "mem-profpref-20260222-002"
+    ],
+    "means": [
+      "memmd-19316b22f697"
+    ],
+    "measurable": [
+      "memmd-19316b22f697"
+    ],
+    "measured": [
+      "memmd-5db0d5987034"
+    ],
+    "measurements": [
+      "memmd-7519e3e7c741"
+    ],
+    "mecanismos": [
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab"
+    ],
+    "mechanisms": [
+      "memmd-41e9a285e5be"
+    ],
+    "mediante": [
+      "memmd-d200c10e5250"
+    ],
+    "medias": [
+      "memmd-80292ed0717e"
+    ],
+    "medible": [
+      "memmd-d200c10e5250"
+    ],
+    "medida": [
+      "memmd-d200c10e5250"
+    ],
+    "medido": [
+      "memmd-441bd7314e72"
+    ],
+    "meeting": [
+      "memmd-7e92d86d4277"
+    ],
+    "mejor": [
+      "memmd-feb982859da4"
+    ],
+    "mejora": [
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-feb982859da4"
+    ],
+    "mejorar": [
+      "memmd-feb982859da4"
+    ],
+    "memoria": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a"
+    ],
+    "memory": [
+      "memmd-0667d7c680dd",
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-41e9a285e5be",
+      "memmd-441bd7314e72",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5a62c8725685",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-6ab394267dab",
+      "memmd-7519e3e7c741",
+      "memmd-79b035be805a",
+      "memmd-7e92d86d4277",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-bbce2d262171",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-e6ed2a4d483d",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "memory_doc": [
+      "memmd-80292ed0717e",
+      "memmd-e6ed2a4d483d"
+    ],
+    "memoryos": [
+      "memmd-e6ed2a4d483d"
+    ],
+    "menciona": [
+      "mem-profdec-20260222-003"
+    ],
+    "menor": [
+      "memmd-6ab394267dab"
+    ],
+    "menos": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "mensaje": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "mensajes": [
+      "memmd-3c103d6ddc1c",
+      "memmd-80292ed0717e"
+    ],
+    "mensuales": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "mentalidad": [
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "mentality": [
+      "memmd-d200c10e5250"
+    ],
+    "mep": [
+      "memmd-7e92d86d4277"
+    ],
+    "mercado": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250"
+    ],
+    "meses": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "messages": [
+      "memmd-80292ed0717e"
+    ],
+    "metric": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "metrics": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "mica": [
+      "memmd-feb982859da4"
+    ],
+    "micro": [
+      "memmd-7e92d86d4277"
+    ],
+    "microgesti": [
+      "memmd-5a62c8725685"
+    ],
+    "miedo": [
+      "memmd-d200c10e5250"
+    ],
+    "mini": [
+      "memmd-a470522da885"
+    ],
+    "minimal": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "mis": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "misi": [
+      "mem-proftl-20260222-001",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "mismo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "missing": [
+      "memmd-0667d7c680dd"
+    ],
+    "mission": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "mission_autonomy_declared": [
+      "mem-proftl-20260222-001"
+    ],
+    "mite": [
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "mites": [
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "mix": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "modela": [
+      "memmd-d200c10e5250"
+    ],
+    "modelar": [
+      "memmd-a470522da885"
+    ],
+    "modo": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-a75811363a0a"
+    ],
+    "momento": [
+      "mem-profdec-20260222-002",
+      "mem-profdec-20260222-004",
+      "memmd-80292ed0717e"
+    ],
+    "month": [
+      "memmd-5db0d5987034"
+    ],
+    "monthly": [
+      "memmd-7e92d86d4277"
+    ],
+    "months": [
+      "memmd-7e92d86d4277"
+    ],
+    "moral": [
+      "memmd-d200c10e5250"
+    ],
+    "more": [
+      "memmd-19316b22f697"
+    ],
+    "motion": [
+      "memmd-0667d7c680dd"
+    ],
+    "motivadores": [
+      "memmd-a75811363a0a"
+    ],
+    "mover": [
+      "mem-profpref-20260222-004",
+      "memmd-3c103d6ddc1c"
+    ],
+    "moverlo": [
+      "memmd-a75811363a0a"
+    ],
+    "movimiento": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "msg_id": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "msp": [
+      "memmd-7e92d86d4277"
+    ],
+    "multi": [
+      "mem-profpref-20260222-007",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "multi_account_fallback": [
+      "mem-profpref-20260222-007"
+    ],
+    "multiagente": [
+      "memmd-5a62c8725685"
+    ],
+    "multiplicador": [
+      "memmd-441bd7314e72"
+    ],
+    "multiplicadores": [
+      "memmd-441bd7314e72"
+    ],
+    "multipliers": [
+      "memmd-41e9a285e5be"
+    ],
+    "must": [
+      "memmd-0667d7c680dd"
+    ],
+    "nace": [
+      "memmd-d200c10e5250"
+    ],
+    "nacional": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "nadie": [
+      "memmd-d200c10e5250"
+    ],
+    "narrativa": [
+      "memmd-0e868342b14b"
+    ],
+    "narrative": [
+      "memmd-0667d7c680dd"
+    ],
+    "narrativo": [
+      "memmd-a470522da885"
+    ],
+    "natural": [
+      "mem-profpref-20260222-001",
+      "mem-proftl-20260222-004",
+      "memmd-80292ed0717e"
+    ],
+    "navisworks": [
+      "memmd-7e92d86d4277"
+    ],
+    "ndar": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "ndares": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "ndice": [
+      "memmd-a75811363a0a"
+    ],
+    "ndjson": [
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2",
+      "memmd-e6ed2a4d483d"
+    ],
+    "necesaria": [
+      "memmd-3c103d6ddc1c",
+      "memmd-a75811363a0a"
+    ],
+    "needed": [
+      "memmd-5db0d5987034"
+    ],
+    "negocio": [
+      "memmd-d200c10e5250"
+    ],
+    "negocios": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "negotiable": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "negotiation": [
+      "memmd-7e92d86d4277"
+    ],
+    "neos": [
+      "mem-profpref-20260222-003"
+    ],
+    "next": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "nica": [
+      "memmd-80292ed0717e"
+    ],
+    "niche": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "nicho": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "nichos": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "nico": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "nietzsche": [
+      "memmd-d200c10e5250"
+    ],
+    "nima": [
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-a75811363a0a"
+    ],
+    "nl_first_no_commands": [
+      "mem-profpref-20260222-001"
+    ],
+    "nl_first_requirement_reasserted": [
+      "mem-proftl-20260222-004"
+    ],
+    "no_stash_no_repo_emptying": [
+      "mem-profpref-20260222-004"
+    ],
+    "no_verificado": [
+      "memmd-0667d7c680dd",
+      "memmd-3c103d6ddc1c",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "noma": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "nombrar": [
+      "memmd-d200c10e5250"
+    ],
+    "non": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "none": [
+      "memmd-19316b22f697",
+      "memmd-e6ed2a4d483d"
+    ],
+    "norma": [
+      "memmd-a75811363a0a"
+    ],
+    "normalized": [
+      "memmd-80292ed0717e"
+    ],
+    "north": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "not": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "nota": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2"
+    ],
+    "ntesis": [
+      "memmd-0e868342b14b",
+      "memmd-a470522da885"
+    ],
+    "nueva": [
+      "memmd-441bd7314e72"
+    ],
+    "objective": [
+      "memmd-19316b22f697"
+    ],
+    "objetivo": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-a75811363a0a"
+    ],
+    "obligatorio": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c"
+    ],
+    "obra": [
+      "memmd-5db0d5987034",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "observable": [
+      "memmd-0667d7c680dd"
+    ],
+    "observables": [
+      "memmd-a75811363a0a"
+    ],
+    "ocultar": [
+      "memmd-10d092eccfc9"
+    ],
+    "ocurrir": [
+      "memmd-441bd7314e72"
+    ],
+    "oferta": [
+      "memmd-d200c10e5250"
+    ],
+    "office": [
+      "memmd-7e92d86d4277"
+    ],
+    "one": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "only": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "opci": [
+      "mem-profdec-20260222-002"
+    ],
+    "opcional": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "opciones": [
+      "memmd-6ab394267dab"
+    ],
+    "open": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "openclaw": [
+      "mem-proftl-20260222-005"
+    ],
+    "operable": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "operaci": [
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685"
+    ],
+    "operacional": [
+      "memmd-6ab394267dab"
+    ],
+    "operan": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "operar": [
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-007",
+      "mem-proftl-20260222-003",
+      "memmd-79b035be805a",
+      "memmd-d9af45a1d9e2",
+      "memmd-feb982859da4"
+    ],
+    "operate": [
+      "memmd-19316b22f697"
+    ],
+    "operating": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "operation": [
+      "memmd-7519e3e7c741"
+    ],
+    "operational": [
+      "memmd-7e92d86d4277"
+    ],
+    "operations": [
+      "memmd-7e92d86d4277"
+    ],
+    "operativa": [
+      "mem-proftl-20260222-004",
+      "mem-proftl-20260222-005",
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "operativas": [
+      "memmd-441bd7314e72",
+      "memmd-cde01070df1f",
+      "memmd-feb982859da4"
+    ],
+    "operativo": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "operativos": [
+      "memmd-6ab394267dab",
+      "memmd-a470522da885"
+    ],
+    "ops": [
+      "mem-profdec-20260222-004",
+      "memmd-7e92d86d4277"
+    ],
+    "optimizaci": [
+      "mem-profpref-20260222-005",
+      "memmd-80292ed0717e"
+    ],
+    "optimizar": [
+      "mem-profpref-20260222-005",
+      "memmd-3bd1b1a7aa85"
+    ],
+    "optimization": [
+      "mem-profpref-20260222-005",
+      "memmd-0667d7c680dd"
+    ],
+    "orden": [
+      "memmd-441bd7314e72"
+    ],
+    "order": [
+      "memmd-bbce2d262171"
+    ],
+    "orquestaci": [
+      "memmd-feb982859da4"
+    ],
+    "otras": [
+      "mem-profdec-20260222-001"
+    ],
+    "otro": [
+      "memmd-a470522da885"
+    ],
+    "otto": [
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-002",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-003",
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2",
+      "memmd-feb982859da4"
+    ],
+    "outcome": [
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "outcomes": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171",
+      "memmd-d200c10e5250"
+    ],
+    "output": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-feb982859da4"
+    ],
+    "over": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "overlapping": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034"
+    ],
+    "own": [
+      "memmd-7e92d86d4277"
+    ],
+    "owner": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5a62c8725685",
+      "memmd-61d3d7d1b4e6",
+      "memmd-79b035be805a",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "owners": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "ownership": [
+      "memmd-7e92d86d4277"
+    ],
+    "package": [
+      "memmd-7e92d86d4277"
+    ],
+    "packaging": [
+      "memmd-7e92d86d4277"
+    ],
+    "pagar": [
+      "memmd-d200c10e5250"
+    ],
+    "paralelismo": [
+      "memmd-6ab394267dab"
+    ],
+    "paralelo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "pareja": [
+      "memmd-441bd7314e72"
+    ],
+    "pasada": [
+      "memmd-a75811363a0a"
+    ],
+    "paso": [
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c"
+    ],
+    "pass": [
+      "memmd-bbce2d262171"
+    ],
+    "path": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "patr": [
+      "memmd-6ab394267dab"
+    ],
+    "patrones": [
+      "memmd-6ab394267dab"
+    ],
+    "patterns": [
+      "memmd-7519e3e7c741"
+    ],
+    "pdca": [
+      "memmd-7e92d86d4277"
+    ],
+    "penalidad": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "pendiente": [
+      "memmd-cde01070df1f"
+    ],
+    "per": [
+      "memmd-19316b22f697",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "percepci": [
+      "memmd-d200c10e5250"
+    ],
+    "perder": [
+      "mem-profpref-20260222-005"
+    ],
+    "perfeccionismo": [
+      "memmd-0e868342b14b"
+    ],
+    "perfil": [
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-d9af45a1d9e2"
+    ],
+    "performance": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "performed": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "permita": [
+      "memmd-cde01070df1f"
+    ],
+    "persistencia": [
+      "memmd-5a62c8725685"
+    ],
+    "persistent": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "personal": [
+      "memmd-5db0d5987034",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a"
+    ],
+    "personales": [
+      "memmd-10d092eccfc9",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885"
+    ],
+    "personalidad": [
+      "memmd-fcdb6549d963"
+    ],
+    "peso": [
+      "memmd-441bd7314e72"
+    ],
+    "phase": [
+      "memmd-7e92d86d4277"
+    ],
+    "phased": [
+      "memmd-5db0d5987034"
+    ],
+    "pida": [
+      "memmd-a470522da885"
+    ],
+    "pide": [
+      "mem-profpref-20260222-005",
+      "mem-profpref-20260222-006",
+      "memmd-d9af45a1d9e2"
+    ],
+    "pisen": [
+      "mem-profpref-20260222-003"
+    ],
+    "plan": [
+      "mem-profpref-20260222-006",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "planned": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "planner": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "planning": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-59fb4ac5ca1c",
+      "memmd-7e92d86d4277"
+    ],
+    "planora": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "planos": [
+      "memmd-441bd7314e72"
+    ],
+    "plantillas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "plataforma": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "platform": [
+      "memmd-7e92d86d4277"
+    ],
+    "playbook": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277",
+      "memmd-feb982859da4"
+    ],
+    "plazo": [
+      "memmd-80292ed0717e"
+    ],
+    "pol": [
+      "memmd-10d092eccfc9",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "policy": [
+      "memmd-feb982859da4"
+    ],
+    "por": [
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-004",
+      "mem-proftl-20260222-003",
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "portador": [
+      "memmd-feb982859da4"
+    ],
+    "portfolio": [
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034"
+    ],
+    "post": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "potencia": [
+      "memmd-d200c10e5250"
+    ],
+    "potencial": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "power": [
+      "memmd-7e92d86d4277"
+    ],
+    "ppc": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "precio": [
+      "memmd-d200c10e5250"
+    ],
+    "precisa": [
+      "mem-profpref-20260222-006"
+    ],
+    "precisi": [
+      "memmd-fcdb6549d963"
+    ],
+    "precision": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "preference": [
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-002",
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-004",
+      "mem-profpref-20260222-005",
+      "mem-profpref-20260222-006",
+      "mem-profpref-20260222-007"
+    ],
+    "preferencia": [
+      "mem-proftl-20260222-003",
+      "memmd-0e868342b14b",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "preferencias": [
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "preferencias_estables": [
+      "memmd-fcdb6549d963"
+    ],
+    "preferido": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "prefiere": [
+      "mem-profpref-20260222-002",
+      "mem-profpref-20260222-003",
+      "memmd-0e868342b14b",
+      "memmd-a470522da885",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963"
+    ],
+    "prefs": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "preguntas": [
+      "memmd-a470522da885",
+      "memmd-d200c10e5250"
+    ],
+    "prematuro": [
+      "memmd-0e868342b14b"
+    ],
+    "prerequisites": [
+      "memmd-7e92d86d4277"
+    ],
+    "presentada": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "presente": [
+      "memmd-441bd7314e72"
+    ],
+    "preserve": [
+      "memmd-bbce2d262171"
+    ],
+    "preserving": [
+      "memmd-7519e3e7c741"
+    ],
+    "presi": [
+      "memmd-441bd7314e72"
+    ],
+    "primario": [
+      "memmd-441bd7314e72"
+    ],
+    "primavera": [
+      "memmd-7e92d86d4277"
+    ],
+    "primero": [
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab"
+    ],
+    "principal": [
+      "mem-profpref-20260222-003",
+      "mem-proftl-20260222-003",
+      "memmd-3bd1b1a7aa85",
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250"
+    ],
+    "principalmente": [
+      "mem-proftl-20260222-003",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "principio": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "principios": [
+      "memmd-3c103d6ddc1c",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a"
+    ],
+    "principles": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-e6ed2a4d483d"
+    ],
+    "prioridad": [
+      "memmd-d200c10e5250"
+    ],
+    "prioridad_de_fase": [
+      "mem-profdec-20260222-001"
+    ],
+    "prioridades": [
+      "memmd-fcdb6549d963"
+    ],
+    "priorities": [
+      "memmd-5db0d5987034"
+    ],
+    "prioritization": [
+      "memmd-41e9a285e5be"
+    ],
+    "prioritize": [
+      "memmd-0667d7c680dd"
+    ],
+    "priority": [
+      "memmd-0667d7c680dd"
+    ],
+    "prioriza": [
+      "memmd-0e868342b14b",
+      "memmd-fcdb6549d963"
+    ],
+    "priorizada": [
+      "memmd-cde01070df1f"
+    ],
+    "priorizar": [
+      "mem-profdec-20260222-001",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250"
+    ],
+    "priorizarse": [
+      "memmd-a470522da885"
+    ],
+    "proactive": [
+      "memmd-7519e3e7c741"
+    ],
+    "probado": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "problema": [
+      "memmd-d200c10e5250"
+    ],
+    "procedimientos": [
+      "memmd-10d092eccfc9"
+    ],
+    "proceso": [
+      "memmd-441bd7314e72"
+    ],
+    "procore": [
+      "memmd-7e92d86d4277"
+    ],
+    "procurement": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "producci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "produce": [
+      "memmd-441bd7314e72"
+    ],
+    "production": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "productization": [
+      "memmd-7e92d86d4277"
+    ],
+    "productize": [
+      "memmd-7e92d86d4277"
+    ],
+    "profile": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-5a62c8725685",
+      "memmd-5db0d5987034",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963"
+    ],
+    "profile_doc": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963"
+    ],
+    "profundidad": [
+      "memmd-3c103d6ddc1c",
+      "memmd-a470522da885"
+    ],
+    "program": [
+      "memmd-7e92d86d4277"
+    ],
+    "progreso": [
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a",
+      "memmd-fcdb6549d963"
+    ],
+    "progress": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "projects": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "promoted": [
+      "memmd-e6ed2a4d483d"
+    ],
+    "promover": [
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963"
+    ],
+    "promovidos": [
+      "memmd-80292ed0717e"
+    ],
+    "prompts": [
+      "mem-profdec-20260222-003"
+    ],
+    "proof": [
+      "memmd-0667d7c680dd"
+    ],
+    "prop": [
+      "memmd-79b035be805a"
+    ],
+    "propia": [
+      "memmd-d200c10e5250"
+    ],
+    "proporcional": [
+      "memmd-10d092eccfc9"
+    ],
+    "proporcionalidad": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "propuesta": [
+      "memmd-d200c10e5250"
+    ],
+    "protect": [
+      "memmd-0667d7c680dd"
+    ],
+    "protege": [
+      "memmd-feb982859da4"
+    ],
+    "protocolo": [
+      "memmd-d200c10e5250"
+    ],
+    "protocols": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "prudentes": [
+      "memmd-cde01070df1f"
+    ],
+    "pruebas": [
+      "memmd-feb982859da4"
+    ],
+    "puede": [
+      "memmd-d200c10e5250"
+    ],
+    "puente": [
+      "memmd-feb982859da4"
+    ],
+    "pull": [
+      "memmd-7e92d86d4277"
+    ],
+    "puntual": [
+      "memmd-a75811363a0a",
+      "memmd-d9af45a1d9e2"
+    ],
+    "puntuales": [
+      "memmd-fcdb6549d963"
+    ],
+    "quality": [
+      "memmd-41e9a285e5be",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "que": [
+      "mem-profdec-20260222-001",
+      "mem-profpref-20260222-001",
+      "mem-profpref-20260222-003",
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "queda": [
+      "memmd-d200c10e5250"
+    ],
+    "quedan": [
+      "memmd-fcdb6549d963"
+    ],
+    "quedar": [
+      "memmd-5a62c8725685"
+    ],
+    "quede": [
+      "memmd-10d092eccfc9"
+    ],
+    "questions": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "queue": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "quien": [
+      "memmd-5a62c8725685"
+    ],
+    "quiero": [
+      "memmd-79b035be805a",
+      "memmd-d200c10e5250"
+    ],
+    "quina": [
+      "memmd-feb982859da4"
+    ],
+    "quito": [
+      "memmd-d200c10e5250"
+    ],
+    "radius": [
+      "memmd-bbce2d262171"
+    ],
+    "raise": [
+      "memmd-7519e3e7c741"
+    ],
+    "rama": [
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-feb982859da4"
+    ],
+    "ramas": [
+      "mem-profpref-20260222-003",
+      "memmd-a75811363a0a"
+    ],
+    "ramificada": [
+      "memmd-80292ed0717e"
+    ],
+    "rasgos": [
+      "memmd-a470522da885",
+      "memmd-fcdb6549d963"
+    ],
+    "rate": [
+      "memmd-41e9a285e5be",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "ratio": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "rdida": [
+      "memmd-5a62c8725685"
+    ],
+    "reacci": [
+      "memmd-d200c10e5250"
+    ],
+    "read": [
+      "memmd-5db0d5987034"
+    ],
+    "readiness": [
+      "memmd-7e92d86d4277"
+    ],
+    "ready": [
+      "memmd-7e92d86d4277"
+    ],
+    "reafirma": [
+      "mem-proftl-20260222-004"
+    ],
+    "real": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-80292ed0717e",
+      "memmd-bbce2d262171",
+      "memmd-cde01070df1f",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "reales": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "realidad": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "realista": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "reality": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "reasons": [
+      "memmd-7e92d86d4277"
+    ],
+    "recalibrate": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "rechaza": [
+      "mem-profpref-20260222-004",
+      "memmd-6ab394267dab",
+      "memmd-fcdb6549d963"
+    ],
+    "rechazo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "record": [
+      "memmd-bbce2d262171"
+    ],
+    "recoverability": [
+      "memmd-41e9a285e5be"
+    ],
+    "recoverable": [
+      "memmd-bbce2d262171"
+    ],
+    "recovery": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "rector": [
+      "memmd-79b035be805a"
+    ],
+    "rectora": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "rectoras": [
+      "memmd-fcdb6549d963"
+    ],
+    "recurrente": [
+      "memmd-6ab394267dab"
+    ],
+    "recurrentes": [
+      "memmd-a75811363a0a"
+    ],
+    "recurring": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "recursos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "red": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "redesign": [
+      "memmd-bbce2d262171"
+    ],
+    "reduce": [
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "redundancia": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "referencia": [
+      "mem-profdec-20260222-002"
+    ],
+    "referencias": [
+      "memmd-80292ed0717e"
+    ],
+    "regional": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "registro": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "regla": [
+      "mem-proftl-20260222-004",
+      "memmd-3bd1b1a7aa85",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "reglas": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-5a62c8725685",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a"
+    ],
+    "regression": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "regulaci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "regular": [
+      "memmd-7519e3e7c741"
+    ],
+    "reingest": [
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "relaciones": [
+      "memmd-441bd7314e72"
+    ],
+    "relevante": [
+      "memmd-10d092eccfc9"
+    ],
+    "relevantes": [
+      "memmd-5a62c8725685"
+    ],
+    "reliability": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "reliable": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "remains": [
+      "memmd-5db0d5987034"
+    ],
+    "remove": [
+      "memmd-7519e3e7c741"
+    ],
+    "reordena": [
+      "memmd-441bd7314e72"
+    ],
+    "repeatable": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "repeated": [
+      "memmd-41e9a285e5be"
+    ],
+    "repetible": [
+      "memmd-441bd7314e72"
+    ],
+    "repetibles": [
+      "memmd-a75811363a0a",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "repetici": [
+      "memmd-0e868342b14b",
+      "memmd-441bd7314e72",
+      "memmd-d200c10e5250"
+    ],
+    "replicable": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "repo": [
+      "mem-profpref-20260222-003",
+      "mem-profpref-20260222-004",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "reporting": [
+      "memmd-19316b22f697"
+    ],
+    "reports": [
+      "memmd-19316b22f697"
+    ],
+    "reprioritization": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "reproducible": [
+      "memmd-feb982859da4"
+    ],
+    "reputaci": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "require": [
+      "memmd-0667d7c680dd"
+    ],
+    "research": [
+      "mem-profpref-20260222-006"
+    ],
+    "resentimiento": [
+      "memmd-d200c10e5250"
+    ],
+    "respaldado": [
+      "memmd-feb982859da4"
+    ],
+    "responder": [
+      "memmd-feb982859da4"
+    ],
+    "responsabilidad": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "responsabilidades": [
+      "memmd-a75811363a0a"
+    ],
+    "responsable": [
+      "memmd-5a62c8725685"
+    ],
+    "responsables": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "responsibility": [
+      "memmd-bbce2d262171"
+    ],
+    "respuestas": [
+      "memmd-0e868342b14b",
+      "memmd-fcdb6549d963"
+    ],
+    "resuelto": [
+      "memmd-0e868342b14b"
+    ],
+    "resultado": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-79b035be805a"
+    ],
+    "resultados": [
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "resumen": [
+      "memmd-80292ed0717e",
+      "memmd-a470522da885"
+    ],
+    "retainer": [
+      "memmd-7e92d86d4277"
+    ],
+    "retrabajo": [
+      "memmd-6ab394267dab"
+    ],
+    "reusable": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "reutilizaci": [
+      "memmd-6ab394267dab"
+    ],
+    "reversibility": [
+      "memmd-0667d7c680dd",
+      "memmd-bbce2d262171"
+    ],
+    "reversible": [
+      "memmd-a470522da885"
+    ],
+    "reversibles": [
+      "memmd-cde01070df1f"
+    ],
+    "review": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "revisi": [
+      "memmd-441bd7314e72"
+    ],
+    "revisiones": [
+      "memmd-a470522da885"
+    ],
+    "rework": [
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6",
+      "memmd-bbce2d262171"
+    ],
+    "rgenes": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "rico": [
+      "mem-profdec-20260222-003",
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
+    ],
+    "riesgo": [
+      "memmd-3c103d6ddc1c",
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-feb982859da4"
+    ],
+    "riesgos": [
+      "memmd-10d092eccfc9"
+    ],
+    "right": [
+      "memmd-7e92d86d4277"
+    ],
+    "risk": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-bbce2d262171"
+    ],
+    "ritmo": [
+      "memmd-0e868342b14b",
+      "memmd-3bd1b1a7aa85",
+      "memmd-a470522da885"
+    ],
+    "ritualiza": [
+      "memmd-441bd7314e72"
+    ],
+    "ritualizar": [
+      "memmd-441bd7314e72"
+    ],
+    "rituals": [
+      "memmd-7e92d86d4277"
+    ],
+    "roadmap": [
+      "memmd-7519e3e7c741",
+      "memmd-a75811363a0a"
+    ],
+    "robust": [
+      "memmd-41e9a285e5be"
+    ],
+    "robusto": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "rol": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "role": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "roles": [
+      "memmd-441bd7314e72",
+      "memmd-7e92d86d4277"
+    ],
+    "rolled": [
+      "memmd-bbce2d262171"
+    ],
+    "rotaci": [
+      "memmd-a470522da885"
+    ],
+    "routine": [
+      "memmd-7519e3e7c741"
+    ],
+    "rquico": [
+      "memmd-d200c10e5250"
+    ],
+    "rubric": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "ruido": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "rule": [
+      "memmd-0667d7c680dd",
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "rules": [
+      "memmd-7e92d86d4277"
+    ],
+    "runbooks": [
+      "memmd-10d092eccfc9",
+      "memmd-a75811363a0a"
+    ],
+    "runtime": [
+      "mem-profdec-20260222-002",
+      "memmd-61d3d7d1b4e6",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f"
+    ],
+    "rutas": [
+      "memmd-feb982859da4"
+    ],
+    "rutinaria": [
+      "memmd-5a62c8725685"
+    ],
+    "sacrificar": [
+      "memmd-80292ed0717e"
+    ],
+    "safe": [
+      "memmd-7519e3e7c741"
+    ],
+    "safety": [
+      "mem-profpref-20260222-004",
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "salud": [
+      "memmd-441bd7314e72"
+    ],
+    "scalability": [
+      "memmd-19316b22f697"
+    ],
+    "scale": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "scaling": [
+      "memmd-5db0d5987034"
+    ],
+    "scheduler": [
+      "memmd-7e92d86d4277"
+    ],
+    "scheduling": [
+      "memmd-7e92d86d4277"
+    ],
+    "scoped": [
+      "memmd-bbce2d262171"
+    ],
+    "secuencia": [
+      "memmd-0e868342b14b"
+    ],
+    "secundarias": [
+      "memmd-80292ed0717e"
+    ],
+    "seg": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "segunda": [
+      "memmd-a75811363a0a"
+    ],
+    "seguridad": [
+      "memmd-80292ed0717e"
+    ],
+    "select_gpt_n1_for_developer_support": [
+      "mem-profdec-20260222-003"
+    ],
+    "selective": [
+      "memmd-5db0d5987034"
+    ],
+    "self": [
+      "memmd-0667d7c680dd"
+    ],
+    "semanales": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "semi": [
+      "memmd-10d092eccfc9"
+    ],
+    "sentido": [
+      "memmd-d200c10e5250"
+    ],
+    "sentir": [
+      "memmd-d200c10e5250"
+    ],
+    "separado": [
+      "memmd-a75811363a0a"
+    ],
+    "sequence": [
+      "memmd-7e92d86d4277"
+    ],
+    "sequencing": [
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "services": [
+      "memmd-7e92d86d4277"
+    ],
+    "set": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "shared": [
+      "memmd-19316b22f697",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "sharper": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "should": [
+      "memmd-5db0d5987034",
+      "memmd-bbce2d262171"
+    ],
+    "siendo": [
+      "memmd-d200c10e5250"
+    ],
+    "siguiente": [
+      "memmd-0e868342b14b",
+      "memmd-3c103d6ddc1c"
+    ],
+    "siguientes": [
+      "memmd-fcdb6549d963"
+    ],
+    "silent": [
+      "memmd-0667d7c680dd"
+    ],
+    "simples": [
+      "memmd-cde01070df1f"
+    ],
+    "simult": [
+      "mem-profpref-20260222-003"
+    ],
+    "sin": [
+      "mem-profpref-20260222-005",
+      "mem-proftl-20260222-004",
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-cde01070df1f",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "single": [
+      "memmd-5db0d5987034"
+    ],
+    "single_codex_single_repo": [
+      "mem-profpref-20260222-003"
+    ],
+    "sistema": [
+      "mem-profdec-20260222-001",
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-002",
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-feb982859da4"
+    ],
+    "sistemas": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "site": [
+      "memmd-7e92d86d4277"
+    ],
+    "sito": [
+      "memmd-79b035be805a"
+    ],
+    "sla": [
+      "memmd-7e92d86d4277"
+    ],
+    "soberan": [
+      "memmd-fcdb6549d963"
+    ],
+    "soberana": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "social": [
+      "memmd-d200c10e5250"
+    ],
+    "software": [
+      "mem-profdec-20260222-003"
+    ],
+    "solo": [
+      "mem-profpref-20260222-006",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-6ab394267dab",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-d9af45a1d9e2",
+      "memmd-fcdb6549d963"
+    ],
+    "son": [
+      "memmd-10d092eccfc9",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-79b035be805a"
+    ],
+    "sop": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "soporte": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "sops": [
+      "memmd-7e92d86d4277"
+    ],
+    "sostener": [
+      "memmd-441bd7314e72",
+      "memmd-feb982859da4"
+    ],
+    "sostenerse": [
+      "memmd-10d092eccfc9"
+    ],
+    "sostenible": [
+      "memmd-441bd7314e72"
+    ],
+    "sostenida": [
+      "memmd-d200c10e5250"
+    ],
+    "sostienen": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "source": [
+      "memmd-5db0d5987034",
+      "memmd-80292ed0717e"
+    ],
+    "sovereignty": [
+      "memmd-0667d7c680dd"
+    ],
+    "specified": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "speed": [
+      "memmd-0667d7c680dd",
+      "memmd-41e9a285e5be"
+    ],
+    "sprint": [
+      "memmd-7e92d86d4277"
+    ],
+    "squeda": [
+      "memmd-80292ed0717e"
+    ],
+    "stability": [
+      "memmd-0667d7c680dd"
+    ],
+    "stabilize": [
+      "memmd-7519e3e7c741"
+    ],
+    "stable": [
+      "memmd-19316b22f697",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "stack": [
+      "memmd-7e92d86d4277"
+    ],
+    "standardize": [
+      "memmd-7519e3e7c741"
+    ],
+    "standards": [
+      "memmd-41e9a285e5be"
+    ],
+    "star": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034"
+    ],
+    "stash": [
+      "mem-profpref-20260222-004",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "states": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "status": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "stica": [
+      "memmd-6ab394267dab"
+    ],
+    "strategic": [
+      "memmd-0667d7c680dd",
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741"
+    ],
+    "strategy": [
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6"
+    ],
+    "strong": [
+      "memmd-7e92d86d4277"
+    ],
+    "structure": [
+      "memmd-5db0d5987034"
+    ],
+    "sue": [
+      "memmd-441bd7314e72"
+    ],
+    "suficiente": [
+      "memmd-10d092eccfc9",
+      "memmd-3c103d6ddc1c",
+      "memmd-a470522da885"
+    ],
+    "superficial": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "superseded": [
+      "memmd-e6ed2a4d483d"
+    ],
+    "suprema": [
+      "mem-proftl-20260222-001",
+      "memmd-d9af45a1d9e2"
+    ],
+    "sustained": [
+      "memmd-7519e3e7c741"
+    ],
+    "switching": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "system": [
+      "mem-profpref-20260222-002",
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "tablero": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "takt": [
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-7e92d86d4277"
+    ],
+    "talento": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "tangible": [
+      "memmd-fcdb6549d963"
+    ],
+    "tard": [
+      "memmd-cde01070df1f"
+    ],
+    "tarea": [
+      "memmd-a75811363a0a"
+    ],
+    "tareas": [
+      "memmd-10d092eccfc9"
+    ],
+    "target": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7e92d86d4277"
+    ],
+    "task": [
+      "memmd-5db0d5987034"
+    ],
+    "tasks": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "telegram": [
+      "mem-proftl-20260222-005",
+      "memmd-d9af45a1d9e2"
+    ],
+    "telegram_link_confirmed": [
+      "mem-proftl-20260222-005"
+    ],
+    "templates": [
+      "memmd-7e92d86d4277"
+    ],
+    "temporal": [
+      "memmd-6ab394267dab"
+    ],
+    "temporales": [
+      "memmd-80292ed0717e"
+    ],
+    "tempranas": [
+      "memmd-cde01070df1f"
+    ],
+    "tener": [
+      "memmd-fcdb6549d963"
+    ],
+    "terceros": [
+      "memmd-fcdb6549d963"
+    ],
+    "terminadas": [
+      "memmd-10d092eccfc9"
+    ],
+    "terminar": [
+      "memmd-feb982859da4"
+    ],
+    "tesis": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-feb982859da4"
     ],
     "test": [
-      "memin-ca010263af49"
+      "memmd-19316b22f697",
+      "memmd-441bd7314e72"
+    ],
+    "testable": [
+      "memmd-bbce2d262171"
+    ],
+    "tested": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "theater": [
+      "memmd-bbce2d262171"
+    ],
+    "then": [
+      "memmd-7e92d86d4277"
+    ],
+    "these": [
+      "memmd-41e9a285e5be"
+    ],
+    "they": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "threshold": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "thresholds": [
+      "memmd-7519e3e7c741"
+    ],
+    "through": [
+      "memmd-7519e3e7c741"
+    ],
+    "throughput": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "tica": [
+      "memmd-441bd7314e72",
+      "memmd-a470522da885",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-fcdb6549d963"
+    ],
+    "ticas": [
+      "memmd-10d092eccfc9",
+      "memmd-cde01070df1f"
+    ],
+    "ticket": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "tico": [
+      "memmd-441bd7314e72",
+      "memmd-5a62c8725685",
+      "memmd-6ab394267dab",
+      "memmd-feb982859da4"
+    ],
+    "ticos": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-fcdb6549d963"
+    ],
+    "tiempo": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "tiempos": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "tiende": [
+      "memmd-feb982859da4"
+    ],
+    "til": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-3c103d6ddc1c",
+      "memmd-441bd7314e72"
+    ],
+    "time": [
+      "memmd-19316b22f697",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171"
+    ],
+    "timeline": [
+      "mem-proftl-20260222-001",
+      "mem-proftl-20260222-002",
+      "mem-proftl-20260222-003",
+      "mem-proftl-20260222-004",
+      "mem-proftl-20260222-005",
+      "memmd-d9af45a1d9e2"
+    ],
+    "timelines": [
+      "memmd-41e9a285e5be"
+    ],
+    "timing": [
+      "memmd-441bd7314e72"
+    ],
+    "tipo": [
+      "memmd-80292ed0717e",
+      "memmd-a470522da885"
+    ],
+    "toda": [
+      "memmd-10d092eccfc9",
+      "memmd-a75811363a0a",
+      "memmd-feb982859da4"
+    ],
+    "token": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "token_cpu_efficiency": [
+      "mem-profpref-20260222-005"
+    ],
+    "tokens": [
+      "mem-profpref-20260222-005",
+      "memmd-80292ed0717e",
+      "memmd-bbce2d262171"
+    ],
+    "tool": [
+      "memmd-7e92d86d4277"
+    ],
+    "tool_choice": [
+      "mem-profdec-20260222-003"
+    ],
+    "tooling": [
+      "mem-profpref-20260222-007"
+    ],
+    "tools": [
+      "memmd-7e92d86d4277"
+    ],
+    "top": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "total": [
+      "memmd-441bd7314e72"
+    ],
+    "touchplan": [
+      "memmd-7e92d86d4277"
+    ],
+    "trabajar": [
+      "mem-profpref-20260222-002",
+      "memmd-0e868342b14b",
+      "memmd-cde01070df1f"
+    ],
+    "trabajo": [
+      "mem-profpref-20260222-007",
+      "memmd-3bd1b1a7aa85",
+      "memmd-79b035be805a",
+      "memmd-80292ed0717e",
+      "memmd-a75811363a0a",
+      "memmd-fcdb6549d963"
+    ],
+    "traceability": [
+      "memmd-0667d7c680dd",
+      "memmd-bbce2d262171"
+    ],
+    "trade": [
+      "memmd-7e92d86d4277"
+    ],
+    "tradeoff": [
+      "memmd-5a62c8725685"
+    ],
+    "trades": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "traer": [
+      "memmd-441bd7314e72"
+    ],
+    "tramo": [
+      "mem-profdec-20260222-003"
+    ],
+    "transfiere": [
+      "memmd-5a62c8725685"
+    ],
+    "transici": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "trap": [
+      "memmd-7e92d86d4277"
+    ],
+    "trazabilidad": [
+      "memmd-6ab394267dab",
+      "memmd-cde01070df1f"
+    ],
+    "trazable": [
+      "memmd-80292ed0717e"
+    ],
+    "treat": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "treated": [
+      "memmd-5db0d5987034"
+    ],
+    "trend": [
+      "memmd-7e92d86d4277"
+    ],
+    "trending": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "trends": [
+      "memmd-7e92d86d4277"
+    ],
+    "trica": [
+      "memmd-441bd7314e72"
+    ],
+    "triggers": [
+      "mem-profpref-20260222-001",
+      "memmd-59fb4ac5ca1c",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "trivial": [
+      "memmd-441bd7314e72",
+      "memmd-bbce2d262171"
+    ],
+    "trust": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-5db0d5987034"
+    ],
+    "trusted": [
+      "memmd-7519e3e7c741"
+    ],
+    "turn": [
+      "memmd-7e92d86d4277"
+    ],
+    "ubicaci": [
+      "memmd-80292ed0717e"
+    ],
+    "umbral": [
+      "memmd-a470522da885"
+    ],
+    "umbrales": [
+      "memmd-a470522da885",
+      "memmd-cde01070df1f"
+    ],
+    "una": [
+      "mem-profdec-20260222-002",
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "uncertainty": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034"
+    ],
+    "under": [
+      "memmd-7519e3e7c741"
+    ],
+    "unit": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "universales": [
+      "memmd-80292ed0717e"
+    ],
+    "unless": [
+      "memmd-0667d7c680dd"
+    ],
+    "unresolved": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034"
+    ],
+    "update": [
+      "memmd-0667d7c680dd"
+    ],
+    "updates": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "upgrades": [
+      "memmd-0667d7c680dd"
+    ],
+    "urgencia": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72"
+    ],
+    "usada": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "usadas": [
+      "memmd-80292ed0717e"
+    ],
+    "usage": [
+      "memmd-7519e3e7c741"
+    ],
+    "usando": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "usar": [
+      "mem-profdec-20260222-003",
+      "mem-profpref-20260222-001",
+      "memmd-3c103d6ddc1c",
+      "memmd-d9af45a1d9e2"
+    ],
+    "use": [
+      "memmd-0667d7c680dd",
+      "memmd-5db0d5987034"
+    ],
+    "used": [
+      "memmd-7e92d86d4277"
+    ],
+    "user": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "uso": [
+      "memmd-80292ed0717e",
+      "memmd-d200c10e5250"
+    ],
+    "utilidad": [
+      "memmd-79b035be805a"
+    ],
+    "utilizable": [
+      "memmd-fcdb6549d963"
+    ],
+    "vac": [
+      "mem-profdec-20260222-004",
+      "memmd-3c103d6ddc1c",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "vaciado": [
+      "memmd-cde01070df1f"
+    ],
+    "vaciar": [
+      "mem-profpref-20260222-004",
+      "memmd-80292ed0717e",
+      "memmd-d9af45a1d9e2"
+    ],
+    "validaci": [
+      "memmd-10d092eccfc9"
+    ],
+    "validate": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "validated": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "valioso": [
+      "memmd-feb982859da4"
+    ],
+    "valor": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "valora": [
+      "memmd-fcdb6549d963"
+    ],
+    "valores": [
+      "memmd-79b035be805a"
+    ],
+    "value": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "values": [
+      "memmd-59fb4ac5ca1c"
+    ],
+    "van": [
+      "memmd-cde01070df1f"
+    ],
+    "vanidad": [
+      "memmd-d200c10e5250"
+    ],
+    "variability": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "variance": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "vault": [
+      "memmd-80292ed0717e"
+    ],
+    "velocidad": [
+      "memmd-6ab394267dab",
+      "memmd-a470522da885"
+    ],
+    "vender": [
+      "memmd-feb982859da4"
+    ],
+    "ventaja": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-fcdb6549d963",
+      "memmd-feb982859da4"
+    ],
+    "ventas": [
+      "memmd-3bd1b1a7aa85"
+    ],
+    "ver": [
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f"
+    ],
+    "verdad": [
+      "memmd-3c103d6ddc1c",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "verifiability": [
+      "memmd-bbce2d262171"
+    ],
+    "verificable": [
+      "memmd-0e868342b14b",
+      "memmd-10d092eccfc9",
+      "memmd-79b035be805a"
+    ],
+    "verificables": [
+      "mem-profpref-20260222-006"
+    ],
+    "verification": [
+      "memmd-0667d7c680dd"
+    ],
+    "version": [
+      "mem-profdec-20260222-004"
+    ],
+    "vez": [
+      "memmd-d200c10e5250"
+    ],
+    "via": [
+      "memmd-41e9a285e5be"
+    ],
+    "vida": [
+      "memmd-79b035be805a"
+    ],
+    "vinculaci": [
+      "mem-proftl-20260222-005"
+    ],
+    "vinculada": [
+      "mem-proftl-20260222-005"
+    ],
+    "vinculado": [
+      "memmd-d9af45a1d9e2"
+    ],
+    "virtud": [
+      "memmd-d200c10e5250"
+    ],
+    "visi": [
+      "memmd-3bd1b1a7aa85",
+      "memmd-441bd7314e72",
+      "memmd-79b035be805a",
+      "memmd-a75811363a0a",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "visible": [
+      "memmd-7519e3e7c741"
+    ],
+    "visibles": [
+      "memmd-10d092eccfc9"
+    ],
+    "vision": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-441bd7314e72",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-79b035be805a",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171",
+      "memmd-d200c10e5250",
+      "memmd-feb982859da4"
+    ],
+    "vision_doc": [
+      "memmd-0667d7c680dd",
+      "memmd-19316b22f697",
+      "memmd-3bd1b1a7aa85",
+      "memmd-41e9a285e5be",
+      "memmd-441bd7314e72",
+      "memmd-59fb4ac5ca1c",
+      "memmd-5db0d5987034",
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277",
+      "memmd-bbce2d262171",
+      "memmd-feb982859da4"
+    ],
+    "visual": [
+      "memmd-7e92d86d4277"
+    ],
+    "vive": [
+      "memmd-d200c10e5250"
+    ],
+    "vivida": [
+      "memmd-feb982859da4"
+    ],
+    "volcado": [
+      "memmd-3c103d6ddc1c"
+    ],
+    "voluntad": [
+      "memmd-441bd7314e72"
+    ],
+    "vplanner": [
+      "memmd-7e92d86d4277"
+    ],
+    "vuelve": [
+      "memmd-441bd7314e72",
+      "memmd-d200c10e5250"
+    ],
+    "week": [
+      "memmd-7e92d86d4277"
+    ],
+    "weekly": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "while": [
+      "memmd-61d3d7d1b4e6",
+      "memmd-7519e3e7c741"
+    ],
+    "why": [
+      "memmd-5db0d5987034"
+    ],
+    "will": [
+      "memmd-bbce2d262171"
+    ],
+    "within": [
+      "memmd-61d3d7d1b4e6"
+    ],
+    "without": [
+      "memmd-41e9a285e5be",
+      "memmd-7519e3e7c741",
+      "memmd-7e92d86d4277"
+    ],
+    "work": [
+      "memmd-19316b22f697",
+      "memmd-41e9a285e5be",
+      "memmd-5db0d5987034",
+      "memmd-7e92d86d4277"
+    ],
+    "workflows": [
+      "mem-profpref-20260222-004",
+      "memmd-7519e3e7c741"
+    ],
+    "workspace": [
+      "mem-profpref-20260222-002",
+      "mem-proftl-20260222-003",
+      "memmd-80292ed0717e",
+      "memmd-cde01070df1f",
+      "memmd-d9af45a1d9e2"
+    ],
+    "workspace_preference_stated": [
+      "mem-proftl-20260222-003"
+    ],
+    "workspace_primary_otto_workspace": [
+      "mem-profpref-20260222-002"
+    ],
+    "wrong": [
+      "memmd-bbce2d262171"
+    ],
+    "wwp": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "xima": [
+      "memmd-79b035be805a"
+    ],
+    "ximo": [
+      "memmd-10d092eccfc9"
+    ],
+    "xito": [
+      "memmd-cde01070df1f"
+    ],
+    "xitos": [
+      "memmd-fcdb6549d963"
+    ],
+    "year": [
+      "memmd-7519e3e7c741"
+    ],
+    "yet": [
+      "memmd-59fb4ac5ca1c",
+      "memmd-e6ed2a4d483d"
+    ],
+    "zero": [
+      "memmd-0667d7c680dd",
+      "memmd-7519e3e7c741",
+      "memmd-bbce2d262171"
+    ],
+    "zone": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "zones": [
+      "memmd-19316b22f697",
+      "memmd-7e92d86d4277"
+    ],
+    "zoning": [
+      "memmd-7e92d86d4277"
     ]
   },
   "parse_errors": [],
   "records": {
-    "memin-ca010263af49": {
+    "mem-profdec-20260222-001": {
       "best_known": true,
-      "captured_at": "2026-02-18T16:47:56.314735+00:00",
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profdec-20260222-001",
+      "key": "decision:focus_brain_now",
+      "short_text": "Declara foco inmediato en construir 'el cerebro'. | Priorizar el desarrollo del cerebro/sistema de memoria antes que otras capas. | prioridad_de_fase",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:75bef3a6-5598-4ea7-b5cd-8f401c7834da:8a037dac47aa",
+      "status": "active",
+      "stream": "memory/05_DECISIONS.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "focus"
+      ],
+      "type": "decision"
+    },
+    "mem-profdec-20260222-002": {
+      "best_known": false,
+      "captured_at": "2026-02-22T18:20:00Z",
       "confidence": "medium",
-      "id": "memin-ca010263af49",
-      "key": "profile:test",
-      "short_text": "test | test",
-      "source_ref": "manual:2026-02-18T16:47:56.314735+00:00",
+      "id": "mem-profdec-20260222-002",
+      "key": "decision:keep_feature_disabled_initially",
+      "short_text": "Decide mantener una opción no activada inicialmente (referencia ambigua al feature exacto). | Mantener desactivada la opción consultada en ese momento. | configuracion_inicial",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:d391b966-161e-4952-a824-c8b28fdf32a1:af77c4c36597",
+      "status": "active",
+      "stream": "memory/05_DECISIONS.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "runtime"
+      ],
+      "type": "decision"
+    },
+    "mem-profdec-20260222-003": {
+      "best_known": false,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profdec-20260222-003",
+      "key": "decision:select_gpt_n1_for_developer_support",
+      "short_text": "Menciona elección explícita de GPT N1 para Developers en ese tramo histórico. | Usar GPT N1 for Developers (Software Architect GPT) para apoyo de prompts/conocimiento. | asistente_apoyo_prompts",
+      "source_ref": "chatgpt_export:msg_id=69924926-81dc-832c-aef8-ac743b1e213f:3ab2c831-f2cc-42b0-b32c-941c453eb15e:325a49489841",
+      "status": "active",
+      "stream": "memory/05_DECISIONS.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "tool_choice"
+      ],
+      "type": "decision"
+    },
+    "mem-profdec-20260222-004": {
+      "best_known": false,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profdec-20260222-004",
+      "key": "decision:clear_jobs_list",
+      "short_text": "Confirma aplicar configuración jobs vacía en ese momento. | Dejar jobs como {\"version\":1,\"jobs\":[]}. | cron_jobs_cleanup",
+      "source_ref": "chatgpt_export:msg_id=69924926-81dc-832c-aef8-ac743b1e213f:747e1d34-8fdc-4b9b-aa4e-1a418408d376:df85ab035870",
+      "status": "active",
+      "stream": "memory/05_DECISIONS.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "ops"
+      ],
+      "type": "decision"
+    },
+    "mem-profpref-20260222-001": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-001",
+      "key": "preference:interaction:nl_first_no_commands",
+      "short_text": "Declara que usará lenguaje natural y no comandos/triggers. | OTTO debe operar por lenguaje natural; no depender de comandos explícitos.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:b355f9c2-6abf-4042-b1ed-f01b314fbbc5:e38fd745241a",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "mateo",
+        "interaction"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-002": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-002",
+      "key": "preference:system:workspace_primary_otto_workspace",
+      "short_text": "Prefiere concentrar ejecución en otto-workspace. | Trabajar mayormente en /home/agente/otto-workspace.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:3ebfd321-129f-4e63-942a-495fa38315e9:f2286d8d3183",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "workspace"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-003": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-003",
+      "key": "preference:execution:single_codex_single_repo",
+      "short_text": "Prefiere evitar múltiples escritores simultáneos en el repo. | Un Codex principal + un repo; evitar ramas/coders que se pisen.",
+      "source_ref": "chatgpt_export:msg_id=69925b9c-4c64-8331-bf64-17d7f0b8606e:1265bd63-c8b5-4732-aa18-5e197a63d1de:e7fe6fa10497",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "execution_model"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-004": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-004",
+      "key": "preference:safety:no_stash_no_repo_emptying",
+      "short_text": "Rechaza vaciar/mover repo como estrategia por defecto. | Evitar workflows destructivos (stash masivo/vaciar repo/mover todo).",
+      "source_ref": "chatgpt_export:msg_id=69925b9c-4c64-8331-bf64-17d7f0b8606e:ece5193b-e0f4-4765-9683-31d16be8549f:fdd7fe5fd2ab",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "safety"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-005": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "medium",
+      "id": "mem-profpref-20260222-005",
+      "key": "preference:optimization:token_cpu_efficiency",
+      "short_text": "Pide optimización de CPU/tokens sin perder capacidad. | Optimizar costo computacional manteniendo calidad/capacidad.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:57a308c3-a150-4adf-a7ca-d07bf9c484b3:1762b339251d",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "optimization"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-006": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-006",
+      "key": "preference:research:depth_over_briefness",
+      "short_text": "Pide investigación exhaustiva, precisa y completa. | Entregables de research completos y verificables (no solo plan).",
+      "source_ref": "chatgpt_export:msg_id=69924926-81dc-832c-aef8-ac743b1e213f:a4bd36a4-2425-4d35-87eb-ba9a1b87c05f:dcbc8f3d1cee",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "research"
+      ],
+      "type": "preference"
+    },
+    "mem-profpref-20260222-007": {
+      "best_known": false,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-profpref-20260222-007",
+      "key": "preference:tooling:multi_account_fallback",
+      "short_text": "Explora arquitectura multi-cuenta para continuidad de trabajo. | Interés en operar con múltiples cuentas de Codex (+Claude fallback).",
+      "source_ref": "chatgpt_export:msg_id=6993bdb6-1404-8329-aab7-9cbe15357fbd:9399fdbb-5055-48b8-8298-f89a97da4171:0d210531e71e",
+      "status": "active",
+      "stream": "memory/03_PREFERENCES.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "tooling"
+      ],
+      "type": "preference"
+    },
+    "mem-proftl-20260222-001": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-proftl-20260222-001",
+      "key": "timeline:mission_autonomy_declared",
+      "short_text": "Declara misión suprema de autonomía absoluta para OTTO. | Declaración explícita de misión: autonomía absoluta + sistema escalable de aprendizaje.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:ccf9e04c-df99-4edd-a938-80a74edf95aa:4591f8455b35",
       "status": "active",
       "stream": "memory/06_TIMELINE.ndjson",
-      "tags": [],
-      "type": "profile_fact"
+      "tags": [
+        "chatgpt_reingest_v2",
+        "timeline"
+      ],
+      "type": "timeline"
+    },
+    "mem-proftl-20260222-002": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-proftl-20260222-002",
+      "key": "timeline:brain_focus_declared",
+      "short_text": "Declara foco actual en construir el cerebro. | Foco inmediato en cerebro/memoria del sistema.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:75bef3a6-5598-4ea7-b5cd-8f401c7834da:8a037dac47aa",
+      "status": "active",
+      "stream": "memory/06_TIMELINE.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "timeline"
+      ],
+      "type": "timeline"
+    },
+    "mem-proftl-20260222-003": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-proftl-20260222-003",
+      "key": "timeline:workspace_preference_stated",
+      "short_text": "Marca otto-workspace como base principal. | Preferencia explícita por operar principalmente en otto-workspace.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:3ebfd321-129f-4e63-942a-495fa38315e9:f2286d8d3183",
+      "status": "active",
+      "stream": "memory/06_TIMELINE.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "timeline"
+      ],
+      "type": "timeline"
+    },
+    "mem-proftl-20260222-004": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-proftl-20260222-004",
+      "key": "timeline:nl_first_requirement_reasserted",
+      "short_text": "Reafirma regla NL-first sin comandos. | Contrato de interacción: lenguaje natural y autonomía operativa.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:b355f9c2-6abf-4042-b1ed-f01b314fbbc5:e38fd745241a",
+      "status": "active",
+      "stream": "memory/06_TIMELINE.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "timeline"
+      ],
+      "type": "timeline"
+    },
+    "mem-proftl-20260222-005": {
+      "best_known": false,
+      "captured_at": "2026-02-22T18:20:00Z",
+      "confidence": "high",
+      "id": "mem-proftl-20260222-005",
+      "key": "timeline:telegram_link_confirmed",
+      "short_text": "Confirma vinculación de OpenClaw con Telegram funcionando. | Integración Telegram ya vinculada y operativa.",
+      "source_ref": "chatgpt_export:msg_id=69952d13-5d88-8325-a6c1-5de2e2cb91d8:a0810d63-9331-4890-97a5-735f3c209e6a:ee3bc1f1d0bb",
+      "status": "active",
+      "stream": "memory/06_TIMELINE.ndjson",
+      "tags": [
+        "chatgpt_reingest_v2",
+        "timeline",
+        "channel"
+      ],
+      "type": "timeline"
+    },
+    "memmd-0667d7c680dd": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.847979+00:00",
+      "confidence": "high",
+      "id": "memmd-0667d7c680dd",
+      "key": "memory/vision/20_PRINCIPLES_AND_LIMITS.md",
+      "short_text": "20 — Principles & Limits",
+      "source_ref": "memory/vision/20_PRINCIPLES_AND_LIMITS.md#md",
+      "status": "active",
+      "stream": "memory/vision/20_PRINCIPLES_AND_LIMITS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-0e868342b14b": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.842588+00:00",
+      "confidence": "high",
+      "id": "memmd-0e868342b14b",
+      "key": "memory/profile/20_OPERATING_STYLE.md",
+      "short_text": "20 — Estilo de operación",
+      "source_ref": "memory/profile/20_OPERATING_STYLE.md#md",
+      "status": "active",
+      "stream": "memory/profile/20_OPERATING_STYLE.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-10d092eccfc9": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.843416+00:00",
+      "confidence": "high",
+      "id": "memmd-10d092eccfc9",
+      "key": "memory/profile/30_EXECUTION_RULES.md",
+      "short_text": "30 — Reglas personales de ejecución",
+      "source_ref": "memory/profile/30_EXECUTION_RULES.md#md",
+      "status": "active",
+      "stream": "memory/profile/30_EXECUTION_RULES.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-19316b22f697": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.846723+00:00",
+      "confidence": "high",
+      "id": "memmd-19316b22f697",
+      "key": "memory/vision/10_NORTH_STAR.md",
+      "short_text": "10 — North Star",
+      "source_ref": "memory/vision/10_NORTH_STAR.md#md",
+      "status": "active",
+      "stream": "memory/vision/10_NORTH_STAR.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-3bd1b1a7aa85": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.850840+00:00",
+      "confidence": "high",
+      "id": "memmd-3bd1b1a7aa85",
+      "key": "memory/vision/80_US_DOMINANCE_EXECUTION_PLAN.md",
+      "short_text": "80 — US Dominance Execution Plan (24–36 meses)",
+      "source_ref": "memory/vision/80_US_DOMINANCE_EXECUTION_PLAN.md#md",
+      "status": "active",
+      "stream": "memory/vision/80_US_DOMINANCE_EXECUTION_PLAN.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-3c103d6ddc1c": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844133+00:00",
+      "confidence": "high",
+      "id": "memmd-3c103d6ddc1c",
+      "key": "memory/profile/60_COMMUNICATION_CONTRACT.md",
+      "short_text": "60 — Contrato de comunicación",
+      "source_ref": "memory/profile/60_COMMUNICATION_CONTRACT.md#md",
+      "status": "active",
+      "stream": "memory/profile/60_COMMUNICATION_CONTRACT.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-41e9a285e5be": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.848739+00:00",
+      "confidence": "high",
+      "id": "memmd-41e9a285e5be",
+      "key": "memory/vision/30_STRATEGIC_AXES.md",
+      "short_text": "30 — Strategic Axes",
+      "source_ref": "memory/vision/30_STRATEGIC_AXES.md#md",
+      "status": "active",
+      "stream": "memory/vision/30_STRATEGIC_AXES.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-441bd7314e72": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.851713+00:00",
+      "confidence": "high",
+      "id": "memmd-441bd7314e72",
+      "key": "memory/vision/90_CAPACITY_RESPONSIBILITY_STRUCTURE.md",
+      "short_text": "90 — Arquitectura de Futuro: Capacidad, Responsabilidad, Estructura",
+      "source_ref": "memory/vision/90_CAPACITY_RESPONSIBILITY_STRUCTURE.md#md",
+      "status": "active",
+      "stream": "memory/vision/90_CAPACITY_RESPONSIBILITY_STRUCTURE.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-59fb4ac5ca1c": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.852085+00:00",
+      "confidence": "high",
+      "id": "memmd-59fb4ac5ca1c",
+      "key": "memory/vision/90_OPEN_QUESTIONS.md",
+      "short_text": "90 — Open Questions",
+      "source_ref": "memory/vision/90_OPEN_QUESTIONS.md#md",
+      "status": "active",
+      "stream": "memory/vision/90_OPEN_QUESTIONS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-5a62c8725685": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844341+00:00",
+      "confidence": "high",
+      "id": "memmd-5a62c8725685",
+      "key": "memory/profile/70_COLLABORATION_BOUNDARIES.md",
+      "short_text": "70 — Límites de colaboración",
+      "source_ref": "memory/profile/70_COLLABORATION_BOUNDARIES.md#md",
+      "status": "active",
+      "stream": "memory/profile/70_COLLABORATION_BOUNDARIES.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-5db0d5987034": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.845972+00:00",
+      "confidence": "high",
+      "id": "memmd-5db0d5987034",
+      "key": "memory/vision/00_INDEX.md",
+      "short_text": "Vision Map — Shared (OTTO + Mateo)",
+      "source_ref": "memory/vision/00_INDEX.md#md",
+      "status": "active",
+      "stream": "memory/vision/00_INDEX.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-61d3d7d1b4e6": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.849017+00:00",
+      "confidence": "high",
+      "id": "memmd-61d3d7d1b4e6",
+      "key": "memory/vision/40_EXECUTION_METRICS.md",
+      "short_text": "40 — Execution Metrics",
+      "source_ref": "memory/vision/40_EXECUTION_METRICS.md#md",
+      "status": "active",
+      "stream": "memory/vision/40_EXECUTION_METRICS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-6ab394267dab": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.843895+00:00",
+      "confidence": "high",
+      "id": "memmd-6ab394267dab",
+      "key": "memory/profile/50_DECISION_PATTERNS.md",
+      "short_text": "50 — Patrones de decisión",
+      "source_ref": "memory/profile/50_DECISION_PATTERNS.md#md",
+      "status": "active",
+      "stream": "memory/profile/50_DECISION_PATTERNS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-7519e3e7c741": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.849290+00:00",
+      "confidence": "high",
+      "id": "memmd-7519e3e7c741",
+      "key": "memory/vision/50_HORIZON_ROADMAP.md",
+      "short_text": "50 — Horizon Roadmap (Shared Vision)",
+      "source_ref": "memory/vision/50_HORIZON_ROADMAP.md#md",
+      "status": "active",
+      "stream": "memory/vision/50_HORIZON_ROADMAP.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-79b035be805a": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.842239+00:00",
+      "confidence": "high",
+      "id": "memmd-79b035be805a",
+      "key": "memory/profile/10_IDENTITY_VISION.md",
+      "short_text": "10 — Identity & Vision",
+      "source_ref": "memory/profile/10_IDENTITY_VISION.md#md",
+      "status": "active",
+      "stream": "memory/profile/10_IDENTITY_VISION.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-7e92d86d4277": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.850385+00:00",
+      "confidence": "high",
+      "id": "memmd-7e92d86d4277",
+      "key": "memory/vision/70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md",
+      "short_text": "70 — Mission-Critical Production System Plan (Canon)",
+      "source_ref": "memory/vision/70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md#md",
+      "status": "active",
+      "stream": "memory/vision/70_MISSION_CRITICAL_PRODUCTION_SYSTEM.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-80292ed0717e": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.841049+00:00",
+      "confidence": "high",
+      "id": "memmd-80292ed0717e",
+      "key": "memory/01_PROFILE_CURRENT.md",
+      "short_text": "Profile Current",
+      "source_ref": "memory/01_PROFILE_CURRENT.md#md",
+      "status": "active",
+      "stream": "memory/01_PROFILE_CURRENT.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "memory_doc"
+    },
+    "memmd-a470522da885": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844985+00:00",
+      "confidence": "high",
+      "id": "memmd-a470522da885",
+      "key": "memory/profile/90_OPEN_QUESTIONS.md",
+      "short_text": "90 — Preguntas abiertas (Perfil)",
+      "source_ref": "memory/profile/90_OPEN_QUESTIONS.md#md",
+      "status": "active",
+      "stream": "memory/profile/90_OPEN_QUESTIONS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-a75811363a0a": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.841598+00:00",
+      "confidence": "high",
+      "id": "memmd-a75811363a0a",
+      "key": "memory/profile/00_INDEX.md",
+      "short_text": "Profile Map — Mateo",
+      "source_ref": "memory/profile/00_INDEX.md#md",
+      "status": "active",
+      "stream": "memory/profile/00_INDEX.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-bbce2d262171": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.850070+00:00",
+      "confidence": "high",
+      "id": "memmd-bbce2d262171",
+      "key": "memory/vision/60_DECISION_RUBRIC.md",
+      "short_text": "60 — Decision Rubric (Shared Vision)",
+      "source_ref": "memory/vision/60_DECISION_RUBRIC.md#md",
+      "status": "active",
+      "stream": "memory/vision/60_DECISION_RUBRIC.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
+    },
+    "memmd-cde01070df1f": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.843636+00:00",
+      "confidence": "high",
+      "id": "memmd-cde01070df1f",
+      "key": "memory/profile/40_SYSTEM_PREFERENCES.md",
+      "short_text": "40 — Preferencias de sistema",
+      "source_ref": "memory/profile/40_SYSTEM_PREFERENCES.md#md",
+      "status": "active",
+      "stream": "memory/profile/40_SYSTEM_PREFERENCES.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-d200c10e5250": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844567+00:00",
+      "confidence": "high",
+      "id": "memmd-d200c10e5250",
+      "key": "memory/profile/80_MENTALITY_COMPASS.md",
+      "short_text": "80 — Mentality Compass (Nietzsche + Hormozi)",
+      "source_ref": "memory/profile/80_MENTALITY_COMPASS.md#md",
+      "status": "active",
+      "stream": "memory/profile/80_MENTALITY_COMPASS.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-d9af45a1d9e2": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.845206+00:00",
+      "confidence": "high",
+      "id": "memmd-d9af45a1d9e2",
+      "key": "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md",
+      "short_text": "95 — Reingest Profile Evidence (2026-02-22)",
+      "source_ref": "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md#md",
+      "status": "active",
+      "stream": "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-e6ed2a4d483d": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.841458+00:00",
+      "confidence": "high",
+      "id": "memmd-e6ed2a4d483d",
+      "key": "memory/02_PRINCIPLES_CURRENT.md",
+      "short_text": "Principles Current",
+      "source_ref": "memory/02_PRINCIPLES_CURRENT.md#md",
+      "status": "active",
+      "stream": "memory/02_PRINCIPLES_CURRENT.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "memory_doc"
+    },
+    "memmd-fcdb6549d963": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.841852+00:00",
+      "confidence": "high",
+      "id": "memmd-fcdb6549d963",
+      "key": "memory/profile/10_IDENTITY.md",
+      "short_text": "10 — Identidad",
+      "source_ref": "memory/profile/10_IDENTITY.md#md",
+      "status": "active",
+      "stream": "memory/profile/10_IDENTITY.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "profile_doc"
+    },
+    "memmd-feb982859da4": {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.851369+00:00",
+      "confidence": "high",
+      "id": "memmd-feb982859da4",
+      "key": "memory/vision/85_OBRA_LOGOS_ACCOUNTABILITY.md",
+      "short_text": "85 — Obra + Logos + Accountability (Canon)",
+      "source_ref": "memory/vision/85_OBRA_LOGOS_ACCOUNTABILITY.md#md",
+      "status": "active",
+      "stream": "memory/vision/85_OBRA_LOGOS_ACCOUNTABILITY.md",
+      "tags": [
+        "markdown",
+        "memory_map"
+      ],
+      "type": "vision_doc"
     }
   },
   "schema_version": 1,
   "summary": {
     "parse_error_count": 0,
-    "record_count": 1,
-    "token_count": 3
+    "record_count": 42,
+    "token_count": 1602
   },
-  "updated_at": "2026-02-18T16:48:02.400008+00:00",
+  "updated_at": "2026-02-22T18:49:23.852147+00:00",
   "version": 1
 }

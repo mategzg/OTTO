@@ -1,0 +1,467 @@
+{
+  "updated_at": "2026-02-23T20:42:30Z",
+  "plugins": [
+    {
+      "plugin": "customer-support",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "intercom": {
+          "url": "https://mcp.intercom.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "hubspot": {
+          "url": "https://mcp.hubspot.com/anthropic",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "guru": {
+          "url": "https://mcp.api.getguru.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "data",
+      "version": "1.0.0",
+      "servers": {
+        "snowflake": {
+          "url": "",
+          "reachable": false,
+          "status": null,
+          "note": "missing_url"
+        },
+        "databricks": {
+          "url": "",
+          "reachable": false,
+          "status": null,
+          "note": "missing_url"
+        },
+        "bigquery": {
+          "url": "https://bigquery.googleapis.com/mcp",
+          "reachable": true,
+          "status": 405,
+          "note": "http_error"
+        },
+        "hex": {
+          "url": "https://app.hex.tech/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "amplitude": {
+          "url": "https://mcp.amplitude.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "enterprise-search",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "guru": {
+          "url": "https://mcp.api.getguru.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "asana": {
+          "url": "https://mcp.asana.com/v2/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "finance",
+      "version": "1.0.0",
+      "servers": {
+        "snowflake": {
+          "url": "",
+          "reachable": false,
+          "status": null,
+          "note": "missing_url"
+        },
+        "databricks": {
+          "url": "",
+          "reachable": false,
+          "status": null,
+          "note": "missing_url"
+        },
+        "bigquery": {
+          "url": "https://bigquery.googleapis.com/mcp",
+          "reachable": true,
+          "status": 405,
+          "note": "http_error"
+        },
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "legal",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "box": {
+          "url": "https://mcp.box.com",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "egnyte": {
+          "url": "https://mcp-server.egnyte.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "marketing",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "canva": {
+          "url": "https://mcp.canva.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "figma": {
+          "url": "https://mcp.figma.com/mcp",
+          "reachable": true,
+          "status": 405,
+          "note": "http_error"
+        },
+        "hubspot": {
+          "url": "https://mcp.hubspot.com/anthropic",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "amplitude": {
+          "url": "https://mcp.amplitude.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ahrefs": {
+          "url": "https://api.ahrefs.com/mcp/mcp",
+          "reachable": true,
+          "status": 400,
+          "note": "http_error"
+        },
+        "similarweb": {
+          "url": "https://mcp.similarweb.com",
+          "reachable": true,
+          "status": 200,
+          "note": "ok"
+        },
+        "klaviyo": {
+          "url": "https://mcp.klaviyo.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "product-management",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "linear": {
+          "url": "https://mcp.linear.app/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "asana": {
+          "url": "https://mcp.asana.com/v2/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "monday": {
+          "url": "https://mcp.monday.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "clickup": {
+          "url": "https://mcp.clickup.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "figma": {
+          "url": "https://mcp.figma.com/mcp",
+          "reachable": true,
+          "status": 405,
+          "note": "http_error"
+        },
+        "amplitude": {
+          "url": "https://mcp.amplitude.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "pendo": {
+          "url": "https://app.pendo.io/mcp/v0/shttp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "intercom": {
+          "url": "https://mcp.intercom.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "fireflies": {
+          "url": "https://api.fireflies.ai/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "productivity",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "asana": {
+          "url": "https://mcp.asana.com/v2/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "linear": {
+          "url": "https://mcp.linear.app/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        },
+        "monday": {
+          "url": "https://mcp.monday.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "clickup": {
+          "url": "https://mcp.clickup.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        }
+      }
+    },
+    {
+      "plugin": "sales",
+      "version": "1.0.0",
+      "servers": {
+        "slack": {
+          "url": "https://mcp.slack.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "hubspot": {
+          "url": "https://mcp.hubspot.com/anthropic",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "close": {
+          "url": "https://mcp.close.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "clay": {
+          "url": "https://api.clay.com/v3/mcp",
+          "reachable": true,
+          "status": 405,
+          "note": "http_error"
+        },
+        "zoominfo": {
+          "url": "https://mcp.zoominfo.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "notion": {
+          "url": "https://mcp.notion.com/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "atlassian": {
+          "url": "https://mcp.atlassian.com/v1/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "fireflies": {
+          "url": "https://api.fireflies.ai/mcp",
+          "reachable": true,
+          "status": 401,
+          "note": "http_error"
+        },
+        "ms365": {
+          "url": "https://microsoft365.mcp.claude.com/mcp",
+          "reachable": true,
+          "status": 404,
+          "note": "http_error"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "plugins": 9,
+    "unique_urls": 26,
+    "reachable_urls": 26,
+    "auth_or_access_required": 20
+  }
+}

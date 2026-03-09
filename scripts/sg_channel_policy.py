@@ -126,20 +126,24 @@ def classify_sensitivity(text: str, policy: Dict[str, Any]) -> str:
 
 
 def worker_auth_check(event: Dict[str, Any], actor: str, policy: Dict[str, Any]) -> Dict[str, Any]:
-    if actor != "worker":
-        return {"status": "not_applicable", "needs_owner_approval": False}
     auth = event.get("auth", {})
     if not isinstance(auth, dict):
         auth = {}
-    password_ok = bool(auth.get("password_ok", False))
+
     password_hash = str(policy.get("worker_password_hash", "")).strip().lower()
     password_candidate = str(auth.get("password", "")).strip()
     if not password_candidate:
         password_candidate = str(event.get("password", "")).strip()
     if not password_candidate:
         password_candidate = str(event.get("text", "")).strip()
+    password_ok = bool(auth.get("password_ok", False))
     if not password_ok and password_candidate and password_hash:
         password_ok = _hash_password(password_candidate) == password_hash
+
+    # Allow direct password validation even when actor keyword is omitted in a follow-up message.
+    if actor != "worker" and not password_ok:
+        return {"status": "not_applicable", "needs_owner_approval": False}
+
     owner_approved = bool(auth.get("owner_approved", False))
     mode = str(policy.get("worker_auth_mode", "password_plus_owner_approval"))
 

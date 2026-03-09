@@ -1,0 +1,214 @@
+{
+  "run_at_utc": "2026-02-22T19:05:00Z",
+  "source": "20260222T162442Z_065f800160 (reingest v2 artifacts)",
+  "files_touched": [
+    "memory/01_PROFILE_CURRENT.md",
+    "memory/03_PREFERENCES.ndjson",
+    "memory/05_DECISIONS.ndjson",
+    "memory/06_TIMELINE.ndjson",
+    "memory/profile/00_INDEX.md",
+    "memory/profile/40_SYSTEM_PREFERENCES.md",
+    "memory/profile/50_DECISION_PATTERNS.md",
+    "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md",
+    "brain/domains/personal_ops/00_INDEX.md",
+    "brain/domains/personal_ops/95_CHATGPT_CAPABILITY_EXTRACT_20260222.md",
+    "brain/personal/2026-02-22_chatgpt_reingest_profile_insights.md"
+  ],
+  "metrics": {
+    "preferences_records": 7,
+    "decisions_records": 4,
+    "timeline_records": 5,
+    "profile_queries": 20,
+    "profile_hit_rate": 0.95,
+    "brain_queries": 20,
+    "brain_hit_rate": 1.0
+  },
+  "coverage": {
+    "strong_fields": [
+      "identity_mission",
+      "interaction_contract",
+      "execution_preferences",
+      "safety_boundaries",
+      "operational_history_markers"
+    ],
+    "gaps": [
+      "biographical_non_technical_profile",
+      "stable_non_work_personal_preferences"
+    ]
+  },
+  "qa": {
+    "profile_queries": [
+      {
+        "q": "autonomía absoluta",
+        "hit": true
+      },
+      {
+        "q": "foco en cerebro",
+        "hit": true
+      },
+      {
+        "q": "lenguaje natural sin comandos",
+        "hit": true
+      },
+      {
+        "q": "otto workspace",
+        "hit": true
+      },
+      {
+        "q": "single codex",
+        "hit": true
+      },
+      {
+        "q": "no stash",
+        "hit": true
+      },
+      {
+        "q": "research completo",
+        "hit": true
+      },
+      {
+        "q": "multicuenta codex claude",
+        "hit": false
+      },
+      {
+        "q": "telegram vinculado",
+        "hit": true
+      },
+      {
+        "q": "jobs vacíos",
+        "hit": true
+      },
+      {
+        "q": "identidad operativa",
+        "hit": true
+      },
+      {
+        "q": "preferencias estables",
+        "hit": true
+      },
+      {
+        "q": "patrones de decisión",
+        "hit": true
+      },
+      {
+        "q": "contrato de comunicación",
+        "hit": true
+      },
+      {
+        "q": "límites de colaboración",
+        "hit": true
+      },
+      {
+        "q": "preguntas abiertas perfil",
+        "hit": true
+      },
+      {
+        "q": "timeline misión",
+        "hit": true
+      },
+      {
+        "q": "timeline telegram",
+        "hit": true
+      },
+      {
+        "q": "decision clear_jobs_list",
+        "hit": true
+      },
+      {
+        "q": "preference execution single_repo",
+        "hit": true
+      }
+    ],
+    "brain_queries": [
+      {
+        "q": "nl-first runtime contract",
+        "hit": true
+      },
+      {
+        "q": "single-writer execution",
+        "hit": true
+      },
+      {
+        "q": "non-destructive default",
+        "hit": true
+      },
+      {
+        "q": "capacity-first prioritization",
+        "hit": true
+      },
+      {
+        "q": "efficiency with quality",
+        "hit": true
+      },
+      {
+        "q": "evidence-backed research",
+        "hit": true
+      },
+      {
+        "q": "anti-fricción",
+        "hit": true
+      },
+      {
+        "q": "flujos reversibles auditables",
+        "hit": true
+      },
+      {
+        "q": "decisiones tácticas temporales",
+        "hit": true
+      },
+      {
+        "q": "delegación scope no superpuesto",
+        "hit": true
+      },
+      {
+        "q": "rollback incremental",
+        "hit": true
+      },
+      {
+        "q": "batch slice dedupe",
+        "hit": true
+      },
+      {
+        "q": "brain-first protocol",
+        "hit": true
+      },
+      {
+        "q": "resource budget tactics",
+        "hit": true
+      },
+      {
+        "q": "channel operating rules",
+        "hit": true
+      },
+      {
+        "q": "failure patterns",
+        "hit": true
+      },
+      {
+        "q": "self optimization protocol",
+        "hit": true
+      },
+      {
+        "q": "review queue",
+        "hit": true
+      },
+      {
+        "q": "go/no-go checks",
+        "hit": true
+      },
+      {
+        "q": "zero-mix por canal",
+        "hit": true
+      }
+    ],
+    "profile_hit_rate": 0.95,
+    "brain_hit_rate": 1.0,
+    "confusions": []
+  },
+  "defects_profile_brain_confusion": [],
+  "next_steps": [
+    "Mantener dedupe por key antes de futuras promociones de perfil.",
+    "Agregar test de frontera PROFILE vs BRAIN en pipeline de ingest.",
+    "Revisar periódicamente decisiones tácticas para desactivarlas o archivarlas cuando caduquen."
+  ]
+}

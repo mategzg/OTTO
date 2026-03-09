@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-02-22T19:16:51.386125+00:00",
+  "targets": {
+    "strategy_business": {
+      "target": "brain/domains/sg_acabados/30_STRATEGY_BUSINESS_PLAYBOOK.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "professional_sg": {
+      "target": "brain/domains/sg_acabados/40_PERSUASION_AND_CLIENT_COMMUNICATION.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "philosophy": {
+      "target": "brain/domains/personal_ops/36_PHILOSOPHY_DECISION_MODELS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "psychology": {
+      "target": "brain/domains/personal_ops/37_PSYCHOLOGY_BEHAVIOR_MODELS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "neuroscience_health": {
+      "target": "brain/domains/personal_ops/38_NEUROSCIENCE_HEALTH_PROTOCOLS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "persuasion_communication": {
+      "target": "brain/domains/personal_ops/39_PERSUASION_COMMUNICATION_SYSTEMS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "habits_execution": {
+      "target": "brain/domains/personal_ops/41_HABITS_EXECUTION_SYSTEMS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "personal_development": {
+      "target": "brain/domains/personal_ops/42_PERSONAL_DEVELOPMENT_SYNTHESIS.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "vision_owner": {
+      "target": "memory/vision/95_EXPORT_REINGEST_EVIDENCE_20260222.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "profile_owner": {
+      "target": "memory/profile/96_EXPORT_PROFILE_EVIDENCE_20260222.md",
+      "insights": 12,
+      "source_items_considered": 25
+    },
+    "biography_history": {
+      "target": "memory/profile/97_EXPORT_BIOGRAPHY_HISTORY_20260222.md",
+      "insights": 12,
+      "source_items_considered": 25
+    }
+  },
+  "source_manifest": "docs/_inbox/export_raw_bucketization_latest.json",
+  "version": 1
+}

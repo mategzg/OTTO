@@ -13,3 +13,6 @@ Todo conocimiento profesional (business/legal/marketing/sales/accountability/fin
 - `brain/domains/sg_acabados/10_BIZ_FUNCTIONS_MAP.md`
 - `brain/domains/sg_acabados/20_OPERATING_STANDARDS.md`
 - `brain/domains/sg_acabados/90_GAPS_AND_RESEARCH_QUEUE.md`
+
+- `brain/domains/sg_acabados/30_STRATEGY_BUSINESS_PLAYBOOK.md`
+- `brain/domains/sg_acabados/40_PERSUASION_AND_CLIENT_COMMUNICATION.md`

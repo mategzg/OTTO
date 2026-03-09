@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "created_at": "2026-02-23T19:37:44.333968+00:00",
+      "decision": "create",
+      "impact_score": 9,
+      "priority": "high",
+      "reason": "score_above_threshold",
+      "repeat_count_30d": 11,
+      "requires_approval": false,
+      "risk_score": 1,
+      "route_type": "workflow",
+      "score": 0.81,
+      "selected_target": "plugin.sales",
+      "status": "pending",
+      "updated_at": "2026-02-23T19:37:44.387554+00:00"
+    },
+    {
+      "artifact_type": "skill",
+      "created_at": "2026-02-23T19:45:49.223512+00:00",
+      "decision": "create",
+      "impact_score": 9,
+      "pattern_key": "mission.lead_hunting.optimized",
+      "priority": "high",
+      "reason": "score_above_threshold",
+      "repeat_count_30d": 10,
+      "requires_approval": false,
+      "risk_score": 1,
+      "route_type": "workflow",
+      "score": 0.81,
+      "selected_target": "plugin.code-review",
+      "status": "pending",
+      "suggested_name": "skill.lead-hunting-otto",
+      "updated_at": "2026-02-23T19:45:49.261672+00:00"
+    }
+  ],
+  "updated_at": "2026-02-23T19:45:49.261677+00:00"
+}

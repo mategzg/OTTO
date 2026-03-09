@@ -1,6 +1,6 @@
 # Corpus Assimilation Apply Report
 
-- Plan ID: `PLAN-20260219T133432Z-bbd1aa21`
+- Plan ID: `PLAN-20260223T040936Z-e2537aab`
 - Status: `success`
 - Created files: 2
 - Unchanged files: 0
@@ -13,9 +13,9 @@
 
 ## Writes
 
-- `brain/cards/external_ingest/card_23cfd0ef81_01.md` | status=created | category=brain_knowledge
-- `brain/domains/external_ingest/sources/23cfd0ef81_index.md` | status=created | category=brain_knowledge
+- `brain/cards/external_ingest/card_4c92779c30_01.md` | status=created | category=brain_knowledge
+- `brain/domains/external_ingest/sources/4c92779c30_index.md` | status=created | category=brain_knowledge
 
 ## Processed Moves
 
-- `sources/20260219T133432Z_6c8e0dd191` -> `vault/inbox_raw/_processed/20260219T133432Z_23cfd0ef81` | manifest=`vault/inbox_raw/_processed/20260219T133432Z_23cfd0ef81/MANIFEST.json`
+- `sources/20260223T040935Z_4205b85142` -> `vault/inbox_raw/_processed/20260223T040936Z_4c92779c30` | manifest=`vault/inbox_raw/_processed/20260223T040936Z_4c92779c30/MANIFEST.json`

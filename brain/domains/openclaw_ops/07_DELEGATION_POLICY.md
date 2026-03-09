@@ -21,6 +21,19 @@ Definir a que agente delegar cada tipo de trabajo manteniendo autoridad unica y 
 - **Claude Cowork** permitido en paralelo con Codex para contraste o doble validacion.
 - Fallback: si Codex falla por reglas/imports del stack Claude, reintentar con Claude Code.
 
+## Criticality Matrix (autonomia vs control)
+
+- **Nivel 1 (equiv. P0) - Critico / alta precision / alto riesgo / primera vez**
+  - Resolver directo por OTTO (sin delegacion).
+  - No usar subagente ni coder autonomo end-to-end.
+  - Requiere evidencia dura por fase (diff, tests, riesgos, rollback) antes de cerrar.
+- **Nivel 2 (equiv. P1) - Importante / clave de calidad pero delegable**
+  - Delegar por subagente OpenClaw (`sessions_spawn`) con scope acotado.
+  - Cierre solo con handoff verificable (artefactos + estado final).
+- **Nivel 3 (equiv. P2) - Repetitivo, bajo riesgo, receta conocida**
+  - Delegacion directa a coder permitida para ahorrar cuota/contexto.
+  - No requiere vigilancia en vivo: basta handoff verificable al cierre (archivos, pruebas, estado final).
+
 ## Delegation Record
 
 Cada run delegado debe registrar:

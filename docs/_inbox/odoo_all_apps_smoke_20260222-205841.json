@@ -1,0 +1,126 @@
+{
+  "stamp": "20260222-205841",
+  "uid": 2,
+  "tests": [
+    {
+      "app": "Contactos",
+      "ok": true,
+      "result": {
+        "partner_id": 55
+      }
+    },
+    {
+      "app": "CRM",
+      "ok": true,
+      "result": {
+        "lead_id": 16
+      }
+    },
+    {
+      "app": "Actividades",
+      "ok": false,
+      "error": "list index out of range"
+    },
+    {
+      "app": "Conversaciones",
+      "ok": true,
+      "result": {
+        "message_id": 1954
+      }
+    },
+    {
+      "app": "Calendario",
+      "ok": true,
+      "result": {
+        "event_id": 1
+      }
+    },
+    {
+      "app": "Citas",
+      "ok": false,
+      "error": "execute_kw:appointment.type.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "app": "Ventas",
+      "ok": true,
+      "result": {
+        "sale_order_id": 4
+      }
+    },
+    {
+      "app": "Tableros/To-Do",
+      "ok": true,
+      "result": {
+        "todo_id": 2
+      }
+    },
+    {
+      "app": "Contabilidad",
+      "ok": true,
+      "result": {
+        "invoice_id": 7
+      }
+    },
+    {
+      "app": "Documentos",
+      "ok": false,
+      "error": "execute_kw:documents.document.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "app": "Proyecto",
+      "ok": true,
+      "result": {
+        "task_id": 3
+      }
+    },
+    {
+      "app": "Planeación",
+      "ok": false,
+      "error": "execute_kw:planning.slot.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n "
+    },
+    {
+      "app": "Marketing",
+      "ok": false,
+      "error": "execute_kw:mailing.mailing.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\"
+    },
+    {
+      "app": "Compras",
+      "ok": true,
+      "result": {
+        "purchase_order_id": 5
+      }
+    },
+    {
+      "app": "Inventario",
+      "ok": false,
+      "error": "execute_kw:stock.picking.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n "
+    },
+    {
+      "app": "Empleados",
+      "ok": false,
+      "error": "execute_kw:hr.employee.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  F"
+    },
+    {
+      "app": "Asistencias",
+      "ok": false,
+      "error": "execute_kw:hr.attendance.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n "
+    },
+    {
+      "app": "Reclutamiento",
+      "ok": false,
+      "error": "execute_kw:hr.applicant.create failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \""
+    },
+    {
+      "app": "Gastos",
+      "ok": false,
+      "error": "execute_kw:hr.expense.search_count failed after 3 attempts: <Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/custom/trial/saas_trial/controllers/main.py\", line 467, in _xmlrpc\\n    res = super()._xmlrpc(service)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/http.py\", line 439, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 130, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/19.0/odoo/service/model.py\", line 147, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  Fi"
+    },
+    {
+      "app": "Ajustes",
+      "ok": true,
+      "result": {
+        "settings_model": true
+      }
+    }
+  ]
+}

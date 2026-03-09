@@ -1,29 +1,33 @@
 {
   "approvals_summary": {
-    "pending_count": 0,
-    "pending_sg_promotion": 0,
-    "pending_worker_pairing": 0,
-    "total_count": 2
+    "pending_count": 0
   },
-  "autonomy_paths": {
-    "json": "docs/_inbox/autonomy_latest.json",
-    "log": "logs/autonomy_latest.json",
-    "markdown": "docs/_inbox/autonomy_latest.md"
-  },
-  "autonomy_status": "idle",
+  "autonomy_paths": {},
+  "autonomy_status": "delegated",
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T15:35:06.320900+00:00",
-  "hook_backlog_paths": {
-    "json": "docs/_inbox/hook_backlog_report_latest.json",
-    "log": "logs/hook_backlog_latest.json",
-    "markdown": "docs/_inbox/hook_backlog_report_latest.md"
+  "created_at": "2026-02-23T16:55:15.934750+00:00",
+  "delegation": {
+    "active_mission_id": "hbdel_codex_20260223165530_54ecd251",
+    "coder_used": "codex",
+    "ingest_progress": {
+      "last_batch_at": "2026-02-23T16:55:30.579956+00:00",
+      "packages_processed": 0,
+      "packages_remaining": 0,
+      "total_packages_detected": 0
+    },
+    "items_delegated": 1,
+    "status": "delegated",
+    "workload": "light"
   },
+  "episodic_memory": {
+    "episodes_built": 0,
+    "index_size_bytes": 0,
+    "status": "delegated"
+  },
+  "hook_backlog_paths": {},
   "hook_backlog_replay_summary": {
     "failed_count": 0,
-    "pending_before_count": 0,
     "pending_count": 0,
-    "processed_count": 0,
-    "replay_seconds": 0.001404,
     "selected_count": 0
   },
   "hook_backlog_scan_summary": {
@@ -39,7 +43,7 @@
   "intake_apply_summary": {
     "ingested": [],
     "ingested_count": 0,
-    "max_entries": 2
+    "max_entries": 10
   },
   "intake_scan_summary": {
     "duplicate_count": 0,
@@ -48,23 +52,28 @@
     "pending_total_bytes": 0,
     "pending_total_files": 0
   },
-  "legacy_recovery_paths": {
-    "json": "docs/_inbox/legacy_recovery_latest.json",
-    "log": "logs/legacy_recovery_latest.json",
-    "markdown": "docs/_inbox/legacy_recovery_latest.md",
-    "policy": "state/legacy_recovery_policy.json",
-    "state": "state/legacy_recovery_state.json"
+  "learning_status": "delegated",
+  "learning_summary": {
+    "candidate_files_processed": 0,
+    "promoted_count": 0
   },
-  "legacy_recovery_status": "no_candidates_selected",
+  "legacy_recovery_paths": {},
+  "legacy_recovery_status": "delegated",
   "legacy_recovery_summary": {
-    "blocked_count": 33,
-    "legacy_disabled_reason": "selection_rules_filtered_all",
-    "legacy_scan_ran": true,
-    "packaged_bytes": 0,
+    "blocked_count": 0,
+    "legacy_disabled_reason": "delegated",
+    "legacy_scan_ran": false,
     "packaged_count": 0,
     "selected_count": 0
   },
+  "odoo": {
+    "status": "delegated",
+    "tasks_done": 0,
+    "tasks_failed": 0,
+    "tasks_processed": 0
+  },
   "outbox_delivery_summary": {
+    "blocked_by_policy": 0,
     "delivered_in_run": 0,
     "failed_in_run": 0,
     "missing_target": 0,
@@ -95,6 +104,10 @@
     "run_project_docs_maintainer": true,
     "version": 1
   },
+  "proactivity_status": "delegated",
+  "proactivity_summary": {
+    "queued_count": 0
+  },
   "prod_doctor_status": "ok",
   "prod_doctor_summary": {
     "checks_gap": 1,
@@ -108,8 +121,19 @@
       "log": "logs/project_docs_latest.json",
       "markdown": "docs/_inbox/project_docs_report_latest.md"
     },
-    "status": "skipped_interval",
-    "updated_files_count": 0
+    "status": "updated",
+    "updated_files_count": 1
+  },
+  "reminders": {
+    "delivered": 0,
+    "expired": 0,
+    "pending": 0
+  },
+  "research": {
+    "status": "delegated",
+    "tasks_done": 0,
+    "tasks_failed": 0,
+    "tasks_processed": 0
   },
   "runtime_paths": {
     "json": "docs/_inbox/runtime_report_latest.json",
@@ -119,10 +143,8 @@
   "runtime_summary": {
     "compactions_done": 0,
     "distills_done": 0,
-    "errors": 0,
-    "runtime_seconds": 0.011,
-    "sessions_scanned": 5,
-    "sessions_total": 5
+    "sessions_touched": 0,
+    "status": "delegated"
   },
   "safety_status": {
     "canonical_root": "/home/agente/otto-workspace",
@@ -141,42 +163,99 @@
     "version": 1
   },
   "sg_promotion_summary": {
-    "changed": 0,
-    "pending": 0,
     "pending_approval": 0,
-    "promoted": 2,
-    "promoted_approved": 0,
-    "promoted_auto": 0,
-    "total": 2
+    "promoted_auto": 0
   },
   "status": "success",
+  "summarizer": {
+    "check": {
+      "added": 0,
+      "pending": 0
+    },
+    "create": {
+      "created": 0,
+      "fallback": 0
+    },
+    "ingest": {
+      "done": 0
+    },
+    "status": "delegated"
+  },
   "summary": {
-    "approvals_delivery_reason": "no_new_items",
+    "approvals_delivery_reason": "delegated",
     "approvals_delivery_sent": false,
     "approvals_pending": 0,
+    "breaker_cron_jobs_allowed": true,
+    "breaker_retrieval_allowed": true,
+    "breaker_tooling_allowed": true,
+    "day2_doc_created": 845,
+    "day2_doc_deleted": 0,
+    "day2_doc_modified": 0,
+    "day2_doc_renamed": 0,
+    "day2_doc_rot": 0,
+    "delegation_active_mission": "hbdel_codex_20260223165530_54ecd251",
+    "delegation_coder": "codex",
+    "delegation_ingest_packages_processed": 0,
+    "delegation_ingest_packages_remaining": 0,
+    "delegation_ingest_rescue_status": "",
+    "delegation_ingest_total_packages": 0,
+    "delegation_items": 1,
+    "delegation_status": "delegated",
+    "delegation_workload": "light",
+    "episodic_episodes_built": 0,
+    "episodic_memory_status": "delegated",
+    "health_notify_queued": false,
+    "health_notify_reason": "proactivity_engine_unavailable",
     "hook_backlog_failed": 0,
     "hook_backlog_pending": 0,
     "hook_backlog_replayed": 0,
     "ingested_count": 0,
-    "legacy_disabled_reason": "selection_rules_filtered_all",
-    "legacy_recovery_blocked": 33,
+    "learning_candidate_files_processed": 0,
+    "learning_promoted_count": 0,
+    "learning_status": "delegated",
+    "legacy_disabled_reason": "delegated",
+    "legacy_recovery_blocked": 0,
     "legacy_recovery_packaged": 0,
     "legacy_recovery_selected": 0,
-    "legacy_recovery_status": "no_candidates_selected",
-    "legacy_scan_ran": true,
+    "legacy_recovery_status": "delegated",
+    "legacy_scan_ran": false,
+    "memory_inbox_pending": 0,
+    "mission_learning_pending_count": 0,
     "normalized_count": 0,
+    "odoo_pending": 0,
+    "odoo_status": "delegated",
+    "odoo_tasks_done": 0,
+    "odoo_tasks_processed": 0,
     "outbox_delivered": 0,
     "outbox_failed": 0,
+    "outbox_pending": 0,
     "outbox_queued": 0,
     "pending_drop_count": 0,
+    "proactivity_queued_count": 0,
+    "proactivity_status": "delegated",
     "prod_doctor_status": "ok",
-    "project_docs_status": "skipped_interval",
-    "project_docs_updated_files_count": 0,
+    "project_docs_status": "updated",
+    "project_docs_updated_files_count": 1,
+    "reminders_delivered": 0,
+    "reminders_expired": 0,
+    "reminders_pending": 0,
+    "research_pending": 0,
+    "research_status": "delegated",
+    "research_tasks_done": 0,
+    "research_tasks_processed": 0,
     "runtime_compactions": 0,
     "runtime_distills": 0,
     "sg_pending_approval": 0,
     "sg_promoted_auto": 0,
-    "slices_processed_count": 0
+    "slices_processed_count": 0,
+    "summarizer_added": 0,
+    "summarizer_done": 0,
+    "summarizer_missions_created": 0,
+    "summarizer_status": "delegated",
+    "whatsapp_5h_remaining_pct": null,
+    "whatsapp_hold_release_status": "no_usage_data",
+    "whatsapp_hold_released": 0,
+    "whatsapp_usage_status": "ok"
   },
   "version": 1
 }

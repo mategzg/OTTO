@@ -1,13 +1,176 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T15:35:13.724822+00:00",
+  "created_at": "2026-02-23T17:00:47.539527+00:00",
   "inbox_rel": "vault/inbox_raw",
-  "sources": [],
+  "sources": [
+    {
+      "approx_language": "markdown",
+      "extensions": {
+        ".json": 3,
+        ".md": 15
+      },
+      "file_count": 18,
+      "files": [
+        {
+          "mtime": 1771866033.3080363,
+          "rel_path": "quarantine_review_20260223T170033Z/EVENT_META.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/EVENT_META.json",
+          "sha256": "123403a15bbfd13d4d3931677b318a6ae0bb8a81a74e93873efe7085958017d7",
+          "size": 4527
+        },
+        {
+          "mtime": 1771739741.962988,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/AGENTS.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/AGENTS.md",
+          "sha256": "6598f0ae44ab356afe1ede20edda4db8a19ee31734f87a5759f6beabdeedfb08",
+          "size": 631
+        },
+        {
+          "mtime": 1771738740.5069113,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/HEARTBEAT.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/HEARTBEAT.md",
+          "sha256": "dac422286075ba178e9bae58154cc0ae8749a66854e438c9c58e8eb91f22c126",
+          "size": 168
+        },
+        {
+          "mtime": 1771738740.5069113,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/IDENTITY.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/IDENTITY.md",
+          "sha256": "1379f924cf4b4d6d0a306ecc2544a913dab706a1325fcf8eb9b267686ee8551c",
+          "size": 636
+        },
+        {
+          "mtime": 1771865698.7175016,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/README.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/README.md",
+          "sha256": "fda199efc09db9c198124d0e2d34a77babee26bb600b4b776c97fc38646efca6",
+          "size": 310
+        },
+        {
+          "mtime": 1771739741.9509876,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/SOUL.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/SOUL.md",
+          "sha256": "2d3cf5091f93dfc3d205eb1bdab5082c8b4f6bce9c36f19934e8b517f475ceb1",
+          "size": 559
+        },
+        {
+          "mtime": 1771738740.5069113,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/TOOLS.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/TOOLS.md",
+          "sha256": "78f3e26b8625ea283c615cec291d4978da5f9f01df730628c5c42094418b8dc2",
+          "size": 860
+        },
+        {
+          "mtime": 1771739741.9749882,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/USER.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/USER.md",
+          "sha256": "cd3af3d40731296e0509ed80e92db4574b096f685bce2b603f9254143f78d858",
+          "size": 182
+        },
+        {
+          "mtime": 1771769009.49624,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/state/sg_policy.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_45f4d07b1a/state/sg_policy.json",
+          "sha256": "00eb6185845e4ead0d36e1ca50dd1b18122535b6c52268e8dd6aab4e63881470",
+          "size": 165
+        },
+        {
+          "mtime": 1771739434.7987242,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/AGENTS.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/AGENTS.md",
+          "sha256": "71ee8f85dd3bd224de3301e2529368df9a9c81db594e2fa95b43f4699a7649f1",
+          "size": 730
+        },
+        {
+          "mtime": 1771738628.099157,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/CEO.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/CEO.md",
+          "sha256": "5b26cebc5e3abbddf324e6759ab0a7bed1820c518d9fca4b892608454aa18b2e",
+          "size": 6
+        },
+        {
+          "mtime": 1771738628.099157,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/INDEX.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/INDEX.md",
+          "sha256": "1fea6ca1fe2a80cfff35166250bfc3ce7e810b6c29d2cb8a914dd94e4a0c6730",
+          "size": 8
+        },
+        {
+          "mtime": 1771738634.7350888,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/MEMORY.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/MEMORY.md",
+          "sha256": "5a430a6e14910e5d6def4b47b76a030d2f21bc18414cf0e45341471b15a2ad1e",
+          "size": 98
+        },
+        {
+          "mtime": 1771865698.7175016,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/README.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/README.md",
+          "sha256": "d4db05b3fd9e888e4c787bce93cb6abb5ded1e0789ba4b7c973f5da71c1d009e",
+          "size": 312
+        },
+        {
+          "mtime": 1771739434.794724,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/SOUL.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/SOUL.md",
+          "sha256": "813851acf359f01e108672a6e8942e5859d65e5f4fc6b4c05f75e3bb5208555d",
+          "size": 1148
+        },
+        {
+          "mtime": 1771738890.5987318,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/USER.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/USER.md",
+          "sha256": "3c9717ac9a5266aa198486e9373dcb8762a50663ad7098cb6a140a9b400435df",
+          "size": 178
+        },
+        {
+          "mtime": 1771738628.099157,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/openclaw/CONTEXT_MAP.md",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/openclaw/CONTEXT_MAP.md",
+          "sha256": "04f5a7c9d152cc902375215fc15f66d8827594ff7bf74b36568b182c652ebba8",
+          "size": 10
+        },
+        {
+          "mtime": 1771739122.2792673,
+          "rel_path": "quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/state/sg_policy.json",
+          "root_rel_path": "vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6/source/quarantine_review_20260223T170033Z/original/20260223T165458Z_c412f69a86/state/sg_policy.json",
+          "sha256": "78e07e100eef8b23d1d51bd8bde93179b0afb7ef9a3a921cbb327fd32cdb85ce",
+          "size": 375
+        }
+      ],
+      "high_signal": true,
+      "inbox_rel_path": "sources/20260223T170036Z_fbb57be4b6",
+      "keywords": [
+        "agents",
+        "context_map",
+        "event_meta",
+        "generic_corpus",
+        "heartbeat",
+        "identity",
+        "index",
+        "memory",
+        "readme",
+        "sg_policy",
+        "soul",
+        "tools",
+        "user"
+      ],
+      "kind": "dir",
+      "recommended_domain": "external_ingest",
+      "recommended_domain_source": "hints",
+      "source_hash": "346de515a96c41154ad7d9985f9d0ba14eeb4c56c1aae2f923f6637067878e33",
+      "source_id": "7b02d43073",
+      "source_kind": "generic_corpus",
+      "source_name": "20260223T170036Z_fbb57be4b6",
+      "source_path": "/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T170036Z_fbb57be4b6",
+      "total_bytes": 10903
+    }
+  ],
   "summary": {
-    "high_signal_sources": 0,
-    "pending_files": 0,
-    "pending_sources": 0,
-    "pending_total_bytes": 0,
+    "high_signal_sources": 1,
+    "pending_files": 18,
+    "pending_sources": 1,
+    "pending_total_bytes": 10903,
     "slice_units": 0,
     "suggested_units_per_tick": 2,
     "suspicious_entries": 0

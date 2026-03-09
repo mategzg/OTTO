@@ -1,0 +1,87 @@
+{
+  "run_at_utc": "2026-02-22T17:08:30Z",
+  "source_original": "vault/inbox_raw/sources/20260222T162442Z_065f800160",
+  "source_processed": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160",
+  "phases": {
+    "1_normalizacion_chunked": {
+      "status": "ok",
+      "method": "streaming jq + line-by-line python (sin cargar conversations.json completo en memoria)",
+      "script": "scripts/chatgpt_reingest_v2.py",
+      "ignored": {
+        "pattern": "*:Zone.Identifier",
+        "zone_identifier_entries_in_manifest": 643
+      },
+      "counts": {
+        "conversation_count": 1887,
+        "message_count": 31499,
+        "attachment_count": 1967,
+        "slice_count": 459
+      },
+      "outputs": {
+        "conversations_ndjson": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160/normalized/conversations.ndjson",
+        "messages_ndjson": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160/normalized/messages.ndjson",
+        "attachments_ndjson": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160/normalized/attachments.ndjson",
+        "slices_index": "vault/inbox_raw/_processed/20260222T170659Z_cdf87af412/source/20260222T162442Z_065f800160/normalized/slices_index.json"
+      }
+    },
+    "2_dedupe_por_hash": {
+      "status": "ok",
+      "hash": "sha256 conversation-level canonical JSON",
+      "unique_conversation_hashes": 1887,
+      "duplicate_conversations_skipped": 0
+    },
+    "3_triage_router_write_router": {
+      "status": "ok",
+      "triage": {
+        "report": "docs/_inbox/corpus_triage_latest.json",
+        "summary": {
+          "pending_sources": 459,
+          "pending_files": 459,
+          "pending_total_bytes": 87075797,
+          "slice_units": 459
+        }
+      },
+      "write_router": {
+        "report": "docs/_inbox/write_router_latest.json",
+        "routing_summary": {
+          "brain_knowledge": 459
+        }
+      },
+      "brain_ingest_router": {
+        "plan_id": "PLAN-20260222T170655Z-b5332134",
+        "plan_report": "docs/_inbox/corpus_assimilation_plan_latest.json",
+        "apply_report": "docs/_inbox/corpus_assimilation_report_latest.json",
+        "apply_summary": {
+          "created": 100,
+          "by_category": {
+            "brain_knowledge": 100
+          },
+          "processed_moves": 1,
+          "unchanged": 0,
+          "errors": 0
+        }
+      }
+    },
+    "4_indice_memoria": {
+      "status": "ok",
+      "report": "docs/_inbox/memory_index_report_latest.json",
+      "index_path": "state/memory_index.json",
+      "summary": {
+        "record_count": 26,
+        "token_count": 1398,
+        "parse_error_count": 0
+      }
+    },
+    "5_qa_smoke_20_queries": {
+      "status": "ok",
+      "queries": 20,
+      "hits": 20,
+      "hit_rate": 1.0
+    }
+  },
+  "pending": [],
+  "next_steps": [
+    "Si se desea cobertura total de slices en Brain artifacts (no solo batch actual), correr otro --plan/--apply con max-sources mayor antes de nuevas ingestas.",
+    "Opcional: borrar o archivar script ad-hoc scripts/chatgpt_reingest_v2.py tras consolidarlo en pipeline oficial."
+  ]
+}

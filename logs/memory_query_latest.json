@@ -1,26 +1,74 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
   "include_superseded": false,
-  "k": 3,
-  "question": "test",
-  "response_md": "## Memory Answer\n\n- [profile_fact] test | test (best_known=True, confidence=medium)\n\n## EVIDENCIA\n\n- `memin-ca010263af49` -> `manual:2026-02-18T16:47:56.314735+00:00`\n",
-  "result_count": 1,
+  "k": 5,
+  "question": "profile",
+  "response_md": "## Memory Answer\n\n- [profile_doc] 95 — Reingest Profile Evidence (2026-02-22) (best_known=True, confidence=high)\n- [profile_doc] 90 — Preguntas abiertas (Perfil) (best_known=True, confidence=high)\n- [profile_doc] 80 — Mentality Compass (Nietzsche + Hormozi) (best_known=True, confidence=high)\n- [profile_doc] 70 — Límites de colaboración (best_known=True, confidence=high)\n- [profile_doc] 60 — Contrato de comunicación (best_known=True, confidence=high)\n\n## EVIDENCIA\n\n- `memmd-d9af45a1d9e2` -> `memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md#md`\n- `memmd-a470522da885` -> `memory/profile/90_OPEN_QUESTIONS.md#md`\n- `memmd-d200c10e5250` -> `memory/profile/80_MENTALITY_COMPASS.md#md`\n- `memmd-5a62c8725685` -> `memory/profile/70_COLLABORATION_BOUNDARIES.md#md`\n- `memmd-3c103d6ddc1c` -> `memory/profile/60_COMMUNICATION_CONTRACT.md#md`\n",
+  "result_count": 5,
   "results": [
     {
       "best_known": true,
-      "captured_at": "2026-02-18T16:47:56.314735+00:00",
-      "confidence": "medium",
-      "id": "memin-ca010263af49",
-      "key": "profile:test",
-      "score": 20,
-      "source_ref": "manual:2026-02-18T16:47:56.314735+00:00",
+      "captured_at": "2026-02-22T18:49:23.845206+00:00",
+      "confidence": "high",
+      "id": "memmd-d9af45a1d9e2",
+      "key": "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md",
+      "score": 21,
+      "source_ref": "memory/profile/95_REINGEST_PROFILE_EVIDENCE_20260222.md#md",
       "status": "active",
-      "summary": "test | test",
-      "type": "profile_fact"
+      "summary": "95 — Reingest Profile Evidence (2026-02-22)",
+      "type": "profile_doc"
+    },
+    {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844985+00:00",
+      "confidence": "high",
+      "id": "memmd-a470522da885",
+      "key": "memory/profile/90_OPEN_QUESTIONS.md",
+      "score": 21,
+      "source_ref": "memory/profile/90_OPEN_QUESTIONS.md#md",
+      "status": "active",
+      "summary": "90 — Preguntas abiertas (Perfil)",
+      "type": "profile_doc"
+    },
+    {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844567+00:00",
+      "confidence": "high",
+      "id": "memmd-d200c10e5250",
+      "key": "memory/profile/80_MENTALITY_COMPASS.md",
+      "score": 21,
+      "source_ref": "memory/profile/80_MENTALITY_COMPASS.md#md",
+      "status": "active",
+      "summary": "80 — Mentality Compass (Nietzsche + Hormozi)",
+      "type": "profile_doc"
+    },
+    {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844341+00:00",
+      "confidence": "high",
+      "id": "memmd-5a62c8725685",
+      "key": "memory/profile/70_COLLABORATION_BOUNDARIES.md",
+      "score": 21,
+      "source_ref": "memory/profile/70_COLLABORATION_BOUNDARIES.md#md",
+      "status": "active",
+      "summary": "70 — Límites de colaboración",
+      "type": "profile_doc"
+    },
+    {
+      "best_known": true,
+      "captured_at": "2026-02-22T18:49:23.844133+00:00",
+      "confidence": "high",
+      "id": "memmd-3c103d6ddc1c",
+      "key": "memory/profile/60_COMMUNICATION_CONTRACT.md",
+      "score": 21,
+      "source_ref": "memory/profile/60_COMMUNICATION_CONTRACT.md#md",
+      "status": "active",
+      "summary": "60 — Contrato de comunicación",
+      "type": "profile_doc"
     }
   ],
   "tokens": [
-    "test"
+    "profile"
   ],
   "types": [],
   "version": 1

@@ -1,0 +1,104 @@
+{
+  "updated_at": "2026-02-23T20:43:02Z",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "checks": [
+    {
+      "text": "Necesito revisar pipeline de ventas y forecast del mes",
+      "expected": "plugin.sales",
+      "selected_target": "plugin.sales",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Tengo un ticket de soporte y posible escalacion con cliente",
+      "expected": "plugin.customer-support",
+      "selected_target": "plugin.customer-support",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Haz un SEO audit y plan de campaña",
+      "expected": "plugin.marketing",
+      "selected_target": "plugin.marketing",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Quiero reconciliacion contable y asiento",
+      "expected": "plugin.finance",
+      "selected_target": "plugin.finance",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Revisa este contrato y riesgo NDA",
+      "expected": "plugin.legal",
+      "selected_target": "plugin.legal",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Ayudame con roadmap y update de stakeholders",
+      "expected": "plugin.product-management",
+      "selected_target": "plugin.product-management",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Necesito priorizar tareas y follow-up",
+      "expected": "plugin.productivity",
+      "selected_target": "plugin.productivity",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Haz query SQL y dashboard de analitica",
+      "expected": "plugin.data",
+      "selected_target": "plugin.data",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Necesito enterprise search sobre documentos internos",
+      "expected": "plugin.enterprise-search",
+      "selected_target": "plugin.enterprise-search",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Haz code review del PR y revisa seguridad",
+      "expected": "plugin.code-review",
+      "selected_target": "plugin.code-review",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Muestrame docs de API y referencia versionada",
+      "expected": "plugin.context7",
+      "selected_target": "plugin.context7",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    },
+    {
+      "text": "Deploy en vercel y revisar build fail",
+      "expected": "plugin.vercel",
+      "selected_target": "plugin.vercel",
+      "route_type": "workflow",
+      "execution_status": "OK",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-19T15:35:06.490221+00:00",
+  "normalized_results": [],
+  "summary": {
+    "chatgpt_detected_count": 0,
+    "message_count": 0,
+    "normalized_count": 0,
+    "slice_count": 0,
+    "target_count": 0
+  },
+  "targets": [],
+  "version": 1
+}

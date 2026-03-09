@@ -1,0 +1,91 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-23T03:56:04.419107+00:00",
+  "operations": [
+    {
+      "content": "# Card: 20260223T035604Z_40f0d7c629 [1/1]\n\nid: card-external_ingest-b50b754905-01\ntype: concept\ntags: ingest,external_ingest,b50b754905\nsource_ref: vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/01_file_69---e157c4cb-c81d-49f3-b59a-0731ad32e897.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/02_file_70---d2d4b41b-7d13-4f4e-a610-f1e85c5351a1.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/03_file_71---f5511a2a-cae4-4405-a255-6721c19be76b.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/04_file_72---4085d3e9-2c69-49b0-94e6-70b6ebdaddb5.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/05_file_73---18cdaa39-c277-4114-b082-5afd0702f51b.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/06_file_74---512cbe4c-cab6-45e7-85f8-295af4520711.md; vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/EVENT_META.json\nstatus: active\nconfidence: 0.8\nlast_confirmed_at: 2026-02-23\n\n## Summary\n\nSegmento 1/1 del source `20260223T035604Z_40f0d7c629` asimilado en `external_ingest`.\nCategoria de escritura: `brain_knowledge`.\n\n## How to apply\n\n- Responder desde esta card primero.\n- Escalar a snapshot `_processed` solo si el detalle no alcanza.\n\n## References\n\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/01_file_69---e157c4cb-c81d-49f3-b59a-0731ad32e897.md` sha=2779cf591793 size=6906\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/02_file_70---d2d4b41b-7d13-4f4e-a610-f1e85c5351a1.md` sha=63184c6555d6 size=1853\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/03_file_71---f5511a2a-cae4-4405-a255-6721c19be76b.md` sha=80946c9ce2f0 size=17981\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/04_file_72---4085d3e9-2c69-49b0-94e6-70b6ebdaddb5.md` sha=1effda5a289d size=16749\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/05_file_73---18cdaa39-c277-4114-b082-5afd0702f51b.md` sha=343e36c2e316 size=174999\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/06_file_74---512cbe4c-cab6-45e7-85f8-295af4520711.md` sha=ac2fca846c35 size=8682\n- `vault/inbox_raw/sources/20260223T035604Z_40f0d7c629/source/jack_b2b_text_20260223T035557Z/EVENT_META.json` sha=ad19a6550c7c size=121\n",
+      "content_sha256": "b59cfea152718af2982089407ab0e26afe5a886b7c03600a885a7b604a104f6d",
+      "op_category": "brain_knowledge",
+      "op_id": "183abfa8ae86",
+      "op_type": "write",
+      "source_id": "b50b754905",
+      "target_rel": "brain/cards/external_ingest/card_b50b754905_01.md"
+    },
+    {
+      "content": "# Source Router: 20260223T035604Z_40f0d7c629\n\n## Purpose\n\nNodo router para navegar cards derivadas de un source pending sin leer el corpus completo.\n\n## Use when\n\n- Necesitas respuesta basada en esta fuente concreta.\n- Necesitas ubicar rapidamente cards y source refs.\n\n## Avoid when\n\n- Necesitas operacion general de repo (usar openclaw_ops).\n\n## Routing\n\n- Source id: `b50b754905`\n- Domain target: `external_ingest`\n- Category: `brain_knowledge`\n- Processed hint: `vault/inbox_raw/_processed/*_b50b754905/source/`\n- Cards derivadas:\n  - `brain/cards/external_ingest/card_b50b754905_01.md`\n\n## Maintenance\n\n- Regenerar con nuevo plan si cambia el source hash.\n\n## Links\n\n- `/home/agente/otto-workspace/vault/inbox_raw/sources/20260223T035604Z_40f0d7c629`\n",
+      "content_sha256": "dc422a7f8e9bfa157d5f80a67f950f680623a403bbdeb39ad1ed91ec20438e05",
+      "op_category": "brain_knowledge",
+      "op_id": "c5d376f0c972",
+      "op_type": "write",
+      "source_id": "b50b754905",
+      "target_rel": "brain/domains/external_ingest/sources/b50b754905_index.md"
+    }
+  ],
+  "plan_id": "PLAN-20260223T035604Z-175003ef",
+  "routing_decisions": [
+    {
+      "category": "brain_knowledge",
+      "destinations": [
+        {
+          "kind": "brain_domain",
+          "path": "brain/domains/external_ingest"
+        },
+        {
+          "kind": "brain_cards",
+          "path": "brain/cards/external_ingest"
+        },
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "category=brain_knowledge via rule=default_brain_knowledge",
+      "reserved_files": [],
+      "rule_id": "default_brain_knowledge",
+      "source_id": "b50b754905",
+      "source_name": "20260223T035604Z_40f0d7c629"
+    }
+  ],
+  "routing_summary": {
+    "brain_knowledge": 1
+  },
+  "sources": [
+    {
+      "card_count": 1,
+      "category": "brain_knowledge",
+      "domain": "external_ingest",
+      "inbox_rel_path": "sources/20260223T035604Z_40f0d7c629",
+      "node_rel_path": "brain/domains/external_ingest/sources/b50b754905_index.md",
+      "source_hash": "2eb5d441ce5f9fc691d77b1bb31e403a3b5faebffefad630efaef606502ff502",
+      "source_id": "b50b754905",
+      "source_name": "20260223T035604Z_40f0d7c629"
+    }
+  ],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 104857600,
+    "max_card_chars": 3000,
+    "max_files": 500,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 1,
+    "pending_files": 7,
+    "pending_sources": 1,
+    "pending_total_bytes": 227291,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 1,
+    "pending_files": 7,
+    "pending_sources": 1,
+    "pending_total_bytes": 227291,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

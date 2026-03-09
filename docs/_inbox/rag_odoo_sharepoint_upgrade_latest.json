@@ -1,0 +1,54 @@
+{
+  "status": "partial_complete",
+  "timestamp_utc": "2026-02-22T19:50:00Z",
+  "decisions": [
+    "Se implemento wrapper tipado OdooWorkflow con odoo_read, odoo_write, quote_draft y order_draft.",
+    "Se agregaron guardrails: idempotency store, audit log JSONL y handoff gate al confirmar order_draft.",
+    "Se implemento sync incremental SharePoint local por mtime+hash y manifest persistente.",
+    "Se agrego conversion a markdown para md/txt/html y fallback seguro para binarios (docx/pdf/xlsx).",
+    "Se preserva separacion PROFILE/BRAIN via audience_tag+domain_tag y route_target explicito.",
+    "Se agrego regression gate de retrieval por categoria/autor con hit-rate configurable."
+  ],
+  "sharepoint": {
+    "detected_root": "/mnt/c/Users/sgaca/SG Acabados",
+    "validated": true
+  },
+  "files_touched": [
+    "scripts/odoo/odoo_workflow.py",
+    "scripts/sharepoint_sync.py",
+    "scripts/retrieval_regression_gate.py",
+    "tests/test_spec004_m5_odoo_workflow.py",
+    "tests/test_spec004_m4_sharepoint_sync.py",
+    "tests/test_retrieval_regression_gate.py"
+  ],
+  "qa": {
+    "executed": [
+      "tests/test_spec004_m5_odoo_workflow.py",
+      "tests/test_spec004_m4_sharepoint_sync.py",
+      "tests/test_retrieval_regression_gate.py",
+      "tests/test_retrieval_hybrid_pipeline.py",
+      "tests/test_retrieval_whatsapp_boundary.py",
+      "tests/test_odoo_client.py",
+      "tests/test_odoo_actions.py"
+    ],
+    "result": "19 passed"
+  },
+  "metrics": {
+    "before": {
+      "retrieval_regression_gate": "not_available",
+      "odoo_workflow_typed": false,
+      "sharepoint_incremental_manifest": false
+    },
+    "after": {
+      "retrieval_regression_gate": "available",
+      "odoo_workflow_typed": true,
+      "sharepoint_incremental_manifest": true,
+      "tests_passed": 19
+    }
+  },
+  "pending": [
+    "Smoke real contra Odoo admin (draft/no-op) pendiente por ejecutar con credenciales runtime activas.",
+    "Conversores profundos docx/pdf/xlsx (parse semantico completo) pendientes; hoy fallback seguro/no destructivo.",
+    "Commit bloqueado por workspace pre-sucio con cambios no relacionados y .env local sin trackear."
+  ]
+}

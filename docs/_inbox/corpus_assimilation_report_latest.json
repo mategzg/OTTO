@@ -1,38 +1,33 @@
 {
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T13:34:32.585763+00:00",
+  "created_at": "2026-02-23T17:00:52.984043+00:00",
   "errors": [],
   "needs_review": false,
-  "plan_id": "PLAN-20260219T133432Z-bbd1aa21",
+  "plan_id": "PLAN-20260223T170047Z-80995c87",
   "processed_moves": [
     {
-      "manifest": "vault/inbox_raw/_processed/20260219T133432Z_23cfd0ef81/MANIFEST.json",
-      "processed_root": "vault/inbox_raw/_processed/20260219T133432Z_23cfd0ef81",
-      "readme": "vault/inbox_raw/_processed/20260219T133432Z_23cfd0ef81/README.md",
-      "source_id": "23cfd0ef81",
-      "source_rel": "sources/20260219T133432Z_6c8e0dd191"
+      "manifest": "vault/inbox_raw/_processed/20260223T170052Z_7b02d43073/MANIFEST.json",
+      "processed_root": "vault/inbox_raw/_processed/20260223T170052Z_7b02d43073",
+      "readme": "vault/inbox_raw/_processed/20260223T170052Z_7b02d43073/README.md",
+      "source_id": "7b02d43073",
+      "source_rel": "sources/20260223T170036Z_fbb57be4b6"
     }
   ],
   "status": "success",
   "summary": {
     "by_category": {
-      "brain_knowledge": 2
+      "inbox_only": 1
     },
     "conflict_side_by_side": 0,
-    "created": 2,
+    "created": 1,
     "processed_moves": 1,
     "unchanged": 0
   },
   "version": 2,
   "writes": [
     {
-      "category": "brain_knowledge",
-      "path": "brain/cards/external_ingest/card_23cfd0ef81_01.md",
-      "status": "created"
-    },
-    {
-      "category": "brain_knowledge",
-      "path": "brain/domains/external_ingest/sources/23cfd0ef81_index.md",
+      "category": "inbox_only",
+      "path": "brain/cards/external_ingest/card_7b02d43073_agents_example.md",
       "status": "created"
     }
   ]

@@ -51,3 +51,9 @@ CLAUDE.local.md
 *password*
 *CREDENTIAL*
 *credential*
+
+# Final audit bundles are generated artifacts
+audit/final/
+
+# Local environment secrets
+.env.odoo.local

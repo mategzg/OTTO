@@ -1,15 +1,9 @@
 {
-  "apply": {
-    "ingested": [],
-    "ingested_count": 0,
-    "max_entries": 2
-  },
   "candidates": [],
   "canonical_root": "/home/agente/otto-workspace",
-  "created_at": "2026-02-19T15:35:06.487340+00:00",
+  "created_at": "2026-02-23T17:05:54.843127+00:00",
   "pending_root": "vault/inbox_raw/_pending_drop",
   "sources_root": "vault/inbox_raw/sources",
-  "state_path": "state/intake_state.json",
   "summary": {
     "duplicate_count": 0,
     "new_count": 0,

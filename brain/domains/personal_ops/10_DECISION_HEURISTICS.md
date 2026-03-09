@@ -29,6 +29,10 @@ If any critical answer is "no", do not close yet.
 Accepted directives cannot remain conversational only.
 Persist them in policy/docs/code in the same work cycle.
 
+## NL-First Runtime Gate (MUST)
+Before proposing UX/flow changes, verify that interaction remains natural-language-first.
+Do not make command syntax, triggers, or hidden operator commands a prerequisite for normal operation.
+
 ## Anti-Patterns
 - Asking to repeat an already accepted directive.
 - Closing with interpretation only and no evidence.

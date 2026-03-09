@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import time
 from pathlib import Path
 from typing import Any, Dict, List
@@ -14,11 +15,15 @@ from scripts.observability import record_event
 from scripts.repo_root import get_canonical_root
 from scripts.retrieval_service import retrieve as retrieval_v2_retrieve
 from scripts.evidence_guard import build_and_validate as evidence_build_and_validate
-from scripts.skill_creation_heuristics import evaluate_creation
+from scripts.skill_creation_heuristics import evaluate_creation, observed_repeat_count_30d
 from scripts.skill_recipe_registry import ensure_default_registries, resolve_target
+from scripts.runtime_guardrails import is_tool_allowed
+from scripts.plugin_execution_contract import evaluate_plugin_target
 
 POLICY_PATH = Path("state/skill_creation_policy.json")
 RETRIEVAL_POLICY_PATH = Path("state/retrieval_policy.json")
+PLUGIN_ROUTING_PATH = Path("state/plugin_nl_routing.json")
+CC_PLUGIN_ROUTING_PATH = Path("state/cc_plugin_nl_routing.json")
 
 DEFAULT_POLICY: Dict[str, Any] = {
     "repeat_threshold_30d": 3,
@@ -62,6 +67,54 @@ def _retrieval_v2_enabled(root: Path) -> bool:
     payload = _load_json(root / RETRIEVAL_POLICY_PATH)
     cfg = payload.get("retrieval_v2", {}) if isinstance(payload.get("retrieval_v2"), dict) else {}
     return bool(cfg.get("enabled", False))
+
+
+def _plugin_route_candidates(root: Path) -> List[Dict[str, str]]:
+    rows: List[Dict[str, str]] = []
+    for rel in (PLUGIN_ROUTING_PATH, CC_PLUGIN_ROUTING_PATH):
+        payload = _load_json(root / rel)
+        key = "intent_routes" if "intent_routes" in payload else "routes"
+        for item in payload.get(key, []) if isinstance(payload.get(key), list) else []:
+            pattern = str((item or {}).get("intent", "")).strip()
+            plugin = str((item or {}).get("plugin", "")).strip()
+            if not pattern or not plugin:
+                continue
+            rows.append({"pattern": pattern, "plugin": plugin})
+    return rows
+
+
+def _match_plugin_route(root: Path, text: str) -> Dict[str, str]:
+    query = (text or "").strip()
+    if not query:
+        return {}
+    for row in _plugin_route_candidates(root):
+        try:
+            if re.search(row["pattern"], query, flags=re.IGNORECASE):
+                return row
+        except re.error:
+            continue
+
+    # Minimal synonym fallback for high-frequency intents when patterns are too strict.
+    lower = query.lower()
+    if ("document" in lower or "docs" in lower or "documentacion" in lower or "referencia" in lower) and ("api" in lower or "version" in lower):
+        return {"pattern": "synonym_fallback_context7", "plugin": "context7"}
+
+    return {}
+
+
+def _autocreate_signature(text: str, selected_target: str) -> Dict[str, str]:
+    t = (text or "").lower()
+    st = str(selected_target or "")
+    if any(k in t for k in ["lead", "leads", "prospect", "prospecto", "prospeccion", "lista de clientes"]):
+        return {
+            "suggested_name": "skill.lead-hunting-otto",
+            "pattern_key": "mission.lead_hunting.optimized",
+        }
+    base = st.replace("plugin.", "").replace(".", "-").strip("-") or "general"
+    return {
+        "suggested_name": f"skill.{base}-workflow",
+        "pattern_key": f"mission.{base}.optimized",
+    }
 
 
 def _domain_for_intent(intent: str) -> str:
@@ -112,6 +165,8 @@ def run_nl_router(
     message_id: str = "",
     timeout_ms: int = 1500,
     cancel_requested: bool = False,
+    agent_id: str = "otto",
+    actor_type: str = "",
 ) -> Dict[str, Any]:
     canonical_root = get_canonical_root(root)
     ensure_default_registries(canonical_root)
@@ -205,6 +260,11 @@ def run_nl_router(
 
         _ensure_timeout("post_classification")
         route = INTENT_ROUTE_MAP.get(intent, {"route_type": "tool", "selected_target": "rag.answer"})
+
+        plugin_match = _match_plugin_route(canonical_root, text)
+        if plugin_match:
+            route = {"route_type": "workflow", "selected_target": f"plugin.{plugin_match['plugin']}"}
+
         resolution = resolve_target(
             canonical_root,
             route_type=route["route_type"],
@@ -218,13 +278,20 @@ def run_nl_router(
                 "selected_target": str(fallback.get("selected_target", "rag.answer")),
             }
 
+        tool_gate = is_tool_allowed(canonical_root, agent_id=agent_id or "otto", target=str(route["selected_target"]))
+        if not bool(tool_gate.get("allowed", False)):
+            route = {"route_type": "tool", "selected_target": "rag.answer"}
+
         pol = _policy(canonical_root)
 
         repeat = _safe_int(repeat_count_30d)
+        if repeat <= 0:
+            repeat = observed_repeat_count_30d(canonical_root, selected_target=str(route["selected_target"]))
         impact = _safe_int(impact_score)
         risk = _safe_int(risk_score)
         requires_approval = risk >= int(pol.get("high_risk_requires_approval", 8))
 
+        signature = _autocreate_signature(text, str(route["selected_target"]))
         creation_eval = evaluate_creation(
             canonical_root,
             route_type=route["route_type"],
@@ -233,6 +300,8 @@ def run_nl_router(
             impact_score=impact,
             risk_score=risk,
             trace_id=idempotency_key,
+            suggested_name=signature.get("suggested_name", ""),
+            pattern_key=signature.get("pattern_key", ""),
         )
 
         plan = {
@@ -244,10 +313,11 @@ def run_nl_router(
             "reasons": [
                 f"intent={intent}",
                 f"repeat_count_30d={repeat}",
+                f"repeat_source={'auto_log' if _safe_int(repeat_count_30d) <= 0 else 'input'}",
                 f"impact_score={impact}",
                 f"risk_score={risk}",
                 f"registry_resolution={'ok' if resolution.get('ok') else resolution.get('reason', 'fallback')}",
-            ],
+            ] + ([f"plugin_route={plugin_match.get('plugin','')}", f"plugin_pattern={plugin_match.get('pattern','')}"] if plugin_match else []),
             "risk_level": "high" if risk >= 8 else "medium" if risk >= 4 else "low",
             "requires_approval": requires_approval,
             "fallback_plan": {
@@ -264,6 +334,13 @@ def run_nl_router(
                 "checked": True,
                 "resolution": resolution,
             },
+            "plugin_dispatch": {
+                "matched": bool(plugin_match),
+                "plugin": plugin_match.get("plugin", "") if plugin_match else "",
+                "pattern": plugin_match.get("pattern", "") if plugin_match else "",
+                "status": "planned" if plugin_match else "n/a",
+            },
+            "tool_policy": tool_gate,
         }
 
         retrieval_v2 = {
@@ -274,7 +351,12 @@ def run_nl_router(
             retrieval_v2["pack"] = retrieval_v2_retrieve(
                 canonical_root,
                 query=text,
-                principal_ctx={"channel": channel, "conversation_id": conversation_id, "user_id": conversation_id},
+                principal_ctx={
+                    "channel": channel,
+                    "actor_type": actor_type,
+                    "conversation_id": conversation_id,
+                    "user_id": conversation_id,
+                },
                 retrieval_mode="grounded_answer",
                 filters={},
             )
@@ -315,6 +397,49 @@ def run_nl_router(
             meta={"status": "success", "target": plan["selected_target"]},
         )
         _obs("success", success=True, elapsed_ms=elapsed_ms, route_type=plan["route_type"], selected_target=plan["selected_target"])
+        if plugin_match:
+            record_event(
+                canonical_root,
+                {
+                    "kind": "plugin_route",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": True,
+                    "latency_ms": elapsed_ms,
+                    "plugin": plugin_match.get("plugin", ""),
+                    "pattern": plugin_match.get("pattern", ""),
+                    "selected_target": plan["selected_target"],
+                },
+            )
+
+        plugin_exec = evaluate_plugin_target(canonical_root, plan["selected_target"])
+        execution_payload = {
+            "selected_target": plan["selected_target"],
+            "route_type": plan["route_type"],
+            "status": "planned",
+        }
+        if plugin_exec.get("applicable"):
+            execution_payload = {
+                "selected_target": plan["selected_target"],
+                "route_type": plan["route_type"],
+                "status": str(plugin_exec.get("status", "OK_PARTIAL")),
+                "mode": plugin_exec.get("mode", "standalone"),
+                "next_action": plugin_exec.get("next_action", "run_playbook"),
+                "connector_summary": plugin_exec.get("connector_summary", {}),
+            }
+            record_event(
+                canonical_root,
+                {
+                    "kind": "plugin_execution",
+                    "trace_id": idempotency_key,
+                    "channel": channel,
+                    "success": str(plugin_exec.get("status", "")).startswith("OK"),
+                    "latency_ms": elapsed_ms,
+                    "plugin": plugin_exec.get("plugin", ""),
+                    "status": plugin_exec.get("status", ""),
+                },
+            )
+
         return {
             "status": "success",
             "idempotency_key": idempotency_key,
@@ -334,11 +459,7 @@ def run_nl_router(
             },
             "classification": classification,
             "plan": plan,
-            "execution": {
-                "selected_target": plan["selected_target"],
-                "route_type": plan["route_type"],
-                "status": "planned",
-            },
+            "execution": execution_payload,
             "retrieval_v2": retrieval_v2,
             "grounded_response": {
                 "mode": "evidence_first",
@@ -465,6 +586,7 @@ def main() -> int:
         message_id=args.message_id,
         timeout_ms=args.timeout_ms,
         cancel_requested=args.cancel,
+        agent_id="otto",
     )
     print(json.dumps(out, indent=2, ensure_ascii=False, sort_keys=True))
     return 0

@@ -11,6 +11,8 @@ from scripts.repo_root import get_canonical_root
 
 SKILLS_REGISTRY_PATH = Path("state/skills_registry.json")
 RECIPES_REGISTRY_PATH = Path("state/recipes_registry.json")
+PLUGIN_RUNTIME_REGISTRY_PATH = Path("state/plugin_runtime_registry.json")
+CC_PLUGIN_RUNTIME_REGISTRY_PATH = Path("state/cc_plugin_runtime_registry.json")
 
 LIFECYCLE_STATES = ["draft", "test", "enabled", "deprecated", "retired"]
 VALID_TRANSITIONS = {
@@ -96,6 +98,42 @@ def _save_json(path: Path, payload: Dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _collect_plugin_recipe_names(root: Path) -> List[str]:
+    names: List[str] = []
+    for rel in (PLUGIN_RUNTIME_REGISTRY_PATH, CC_PLUGIN_RUNTIME_REGISTRY_PATH):
+        payload = _load_json(root / rel)
+        for row in payload.get("plugins", []) if isinstance(payload.get("plugins"), list) else []:
+            pname = str((row or {}).get("plugin", "")).strip()
+            if not pname:
+                continue
+            names.append(f"plugin.{pname}")
+    return sorted(set(names))
+
+
+def _inject_plugin_recipes(root: Path, recipes_payload: Dict[str, Any]) -> Dict[str, Any]:
+    entities = recipes_payload.get("entities", {}) if isinstance(recipes_payload.get("entities"), dict) else {}
+    changed = False
+    for recipe_name in _collect_plugin_recipe_names(root):
+        if recipe_name in entities:
+            continue
+        entities[recipe_name] = {
+            "name": recipe_name,
+            "kind": "recipe",
+            "version": "1.0.0",
+            "status": "enabled",
+            "risk_level": "medium",
+            "permissions": ["plugin.route"],
+            "side_effects": ["plugin_dispatch_plan"],
+            "input_schema": {"required": ["text"], "optional": ["channel", "context"]},
+            "compatibility": {"channels": ["telegram", "discord", "whatsapp"]},
+            "source": "plugin_runtime_registry",
+        }
+        changed = True
+    if changed:
+        recipes_payload["entities"] = entities
+    return recipes_payload
+
+
 def ensure_default_registries(root: str | Path) -> None:
     canonical_root = get_canonical_root(root)
     skills_path = canonical_root / SKILLS_REGISTRY_PATH
@@ -104,6 +142,15 @@ def ensure_default_registries(root: str | Path) -> None:
         _save_json(skills_path, DEFAULT_SKILLS_REGISTRY)
     if not recipes_path.exists():
         _save_json(recipes_path, DEFAULT_RECIPES_REGISTRY)
+
+    # Keep plugin recipes discoverable by NL router when plugin registries exist.
+    recipes_payload = _load_json(recipes_path)
+    if recipes_payload:
+        before = json.dumps(recipes_payload, ensure_ascii=False, sort_keys=True)
+        after_payload = _inject_plugin_recipes(canonical_root, recipes_payload)
+        after = json.dumps(after_payload, ensure_ascii=False, sort_keys=True)
+        if after != before:
+            _save_json(recipes_path, after_payload)
 
 
 def _registry_for_kind(root: Path, kind: str) -> Dict[str, Any]:

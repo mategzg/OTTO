@@ -882,12 +882,16 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
                 "remaining_pending": 0,
             }
 
-        # Delegated run contract: no handoff => failed attempt, must retry after root-cause fix.
+        # If there is no delegated workload remaining, release lock even without handoff
+        # to keep heartbeat operational and avoid deadlocks.
         if handoff_path and not handoff_exists:
             attempts = int(state.get("missing_handoff_attempts", 0) or 0) + 1
+            raw_handoff = state.get("active_handoff_path")
+            strict_handoff_required = raw_handoff is not None and str(raw_handoff).strip() != ""
+            next_status = "missing_handoff_retry" if strict_handoff_required else "completed_no_pending"
             state.update(
                 {
-                    "status": "missing_handoff_retry",
+                    "status": next_status,
                     "active_mission_id": None,
                     "active_handoff_path": None,
                     "missing_handoff_attempts": attempts,
@@ -896,7 +900,7 @@ def check_completed_delegations(root: str | Path) -> Dict[str, Any]:
             state["ingest_progress"] = _compute_ingest_progress(state.get("ingest_progress", {}), rescanned, stamp=_utc_now())
             _save_json(canonical_root / STATE_PATH, state)
             return {
-                "status": "missing_handoff_retry",
+                "status": next_status,
                 "active": False,
                 "mission_id": mission_id,
                 "handoff_path": handoff_rel,

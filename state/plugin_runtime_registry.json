@@ -1,0 +1,338 @@
+{
+  "updated_at": "2026-02-23T00:07:54Z",
+  "source_dir": "docs/_inbox/plugin_drop",
+  "policy": {
+    "nl_first": true,
+    "p0_p1_no_autonomous_coder": true,
+    "p2_delegable_with_handoff": true
+  },
+  "plugins": [
+    {
+      "plugin": "customer-support",
+      "version": "1.0.0",
+      "domain_fit": "sg_ops",
+      "priority": "high",
+      "commands": [
+        "/draft-response",
+        "/escalate",
+        "/kb-article",
+        "/research",
+        "/triage"
+      ],
+      "skills": [
+        "customer-research",
+        "escalation",
+        "knowledge-management",
+        "response-drafting",
+        "ticket-triage"
+      ],
+      "mcp_servers": [
+        "atlassian",
+        "guru",
+        "hubspot",
+        "intercom",
+        "ms365",
+        "notion",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "data",
+      "version": "1.0.0",
+      "domain_fit": "knowledge_retrieval",
+      "priority": "medium",
+      "commands": [
+        "/analyze",
+        "/build-dashboard",
+        "/create-viz",
+        "/explore-data",
+        "/validate",
+        "/write-query"
+      ],
+      "skills": [
+        "data-exploration",
+        "data-validation",
+        "data-visualization",
+        "interactive-dashboard-builder",
+        "sql-queries",
+        "statistical-analysis"
+      ],
+      "mcp_servers": [
+        "amplitude",
+        "atlassian",
+        "bigquery",
+        "databricks",
+        "hex",
+        "snowflake"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "enterprise-search",
+      "version": "1.0.0",
+      "domain_fit": "knowledge_retrieval",
+      "priority": "medium",
+      "commands": [
+        "/digest",
+        "/search"
+      ],
+      "skills": [],
+      "mcp_servers": [
+        "asana",
+        "atlassian",
+        "guru",
+        "ms365",
+        "notion",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "finance",
+      "version": "1.0.0",
+      "domain_fit": "sg_governance",
+      "priority": "high",
+      "commands": [
+        "/income-statement",
+        "/journal-entry",
+        "/reconciliation",
+        "/sox-testing",
+        "/variance-analysis"
+      ],
+      "skills": [
+        "audit-support",
+        "close-management",
+        "financial-statements",
+        "journal-entry-prep",
+        "reconciliation",
+        "variance-analysis"
+      ],
+      "mcp_servers": [
+        "bigquery",
+        "databricks",
+        "ms365",
+        "slack",
+        "snowflake"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "legal",
+      "version": "1.0.0",
+      "domain_fit": "sg_governance",
+      "priority": "high",
+      "commands": [],
+      "skills": [
+        "canned-responses",
+        "compliance",
+        "contract-review",
+        "legal-risk-assessment",
+        "meeting-briefing",
+        "nda-triage"
+      ],
+      "mcp_servers": [
+        "atlassian",
+        "box",
+        "egnyte",
+        "ms365",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "marketing",
+      "version": "1.0.0",
+      "domain_fit": "sg_ops",
+      "priority": "high",
+      "commands": [
+        "/brand-review",
+        "/campaign-plan",
+        "/competitive-brief",
+        "/draft-content",
+        "/email-sequence",
+        "/performance-report",
+        "/seo-audit"
+      ],
+      "skills": [
+        "brand-voice",
+        "campaign-planning",
+        "competitive-analysis",
+        "content-creation",
+        "performance-analytics"
+      ],
+      "mcp_servers": [
+        "ahrefs",
+        "amplitude",
+        "canva",
+        "figma",
+        "hubspot",
+        "klaviyo",
+        "notion",
+        "similarweb",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "product-management",
+      "version": "1.0.0",
+      "domain_fit": "execution_system",
+      "priority": "medium",
+      "commands": [
+        "/competitive-brief",
+        "/metrics-review",
+        "/roadmap-update",
+        "/stakeholder-update",
+        "/synthesize-research",
+        "/write-spec"
+      ],
+      "skills": [
+        "competitive-analysis",
+        "feature-spec",
+        "metrics-tracking",
+        "roadmap-management",
+        "stakeholder-comms",
+        "user-research-synthesis"
+      ],
+      "mcp_servers": [
+        "amplitude",
+        "asana",
+        "atlassian",
+        "clickup",
+        "figma",
+        "fireflies",
+        "intercom",
+        "linear",
+        "monday",
+        "notion",
+        "pendo",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "productivity",
+      "version": "1.0.0",
+      "domain_fit": "execution_system",
+      "priority": "medium",
+      "commands": [
+        "/start",
+        "/update",
+        "/update --comprehensive"
+      ],
+      "skills": [
+        "memory-management",
+        "task-management"
+      ],
+      "mcp_servers": [
+        "asana",
+        "atlassian",
+        "clickup",
+        "linear",
+        "monday",
+        "ms365",
+        "notion",
+        "slack"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    },
+    {
+      "plugin": "sales",
+      "version": "1.0.0",
+      "domain_fit": "sg_ops",
+      "priority": "high",
+      "commands": [
+        "/call-summary",
+        "/forecast",
+        "/pipeline-review"
+      ],
+      "skills": [
+        "account-research",
+        "call-prep",
+        "competitive-intelligence",
+        "create-an-asset",
+        "daily-briefing",
+        "draft-outreach"
+      ],
+      "mcp_servers": [
+        "atlassian",
+        "clay",
+        "close",
+        "fireflies",
+        "hubspot",
+        "ms365",
+        "notion",
+        "slack",
+        "zoominfo"
+      ],
+      "status": "GAP_REQUIRES_CONNECTORS",
+      "notes": [
+        "Standalone mode usable via docs/playbooks",
+        "Supercharged mode requires MCP auth per connector"
+      ]
+    }
+  ],
+  "unique_mcp_servers": [
+    "ahrefs",
+    "amplitude",
+    "asana",
+    "atlassian",
+    "bigquery",
+    "box",
+    "canva",
+    "clay",
+    "clickup",
+    "close",
+    "databricks",
+    "egnyte",
+    "figma",
+    "fireflies",
+    "guru",
+    "hex",
+    "hubspot",
+    "intercom",
+    "klaviyo",
+    "linear",
+    "monday",
+    "ms365",
+    "notion",
+    "pendo",
+    "similarweb",
+    "slack",
+    "snowflake",
+    "zoominfo"
+  ]
+}

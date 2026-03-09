@@ -1,0 +1,64 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-22T04:28:25.100237+00:00",
+  "operations": [],
+  "plan_id": "PLAN-20260222T042825Z-f79ddaf7",
+  "routing_decisions": [
+    {
+      "category": "ignore",
+      "destinations": [
+        {
+          "kind": "processed_snapshot",
+          "path": "vault/inbox_raw/_processed"
+        }
+      ],
+      "domain": "external_ingest",
+      "reason": "category=ignore via rule=ignore_archives",
+      "reserved_files": [],
+      "rule_id": "ignore_archives",
+      "source_id": "8b2a4f7be1",
+      "source_name": "20260222T042521Z_0cc409a21f"
+    }
+  ],
+  "routing_summary": {
+    "ignore": 1
+  },
+  "sources": [
+    {
+      "card_count": 0,
+      "category": "ignore",
+      "domain": "external_ingest",
+      "inbox_rel_path": "sources/20260222T042521Z_0cc409a21f",
+      "node_rel_path": "",
+      "source_hash": "0b5533b8bdcfbd320539f8e04b9c2ef2ad84d7c3b983054257cc187566ab052e",
+      "source_id": "8b2a4f7be1",
+      "source_name": "20260222T042521Z_0cc409a21f"
+    }
+  ],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 130000000,
+    "max_card_chars": 3000,
+    "max_files": 100,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 1,
+    "pending_files": 6,
+    "pending_sources": 1,
+    "pending_total_bytes": 104824470,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 1,
+    "pending_files": 6,
+    "pending_sources": 1,
+    "pending_total_bytes": 104824470,
+    "slice_units": 0,
+    "suggested_units_per_tick": 2,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

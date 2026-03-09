@@ -3,9 +3,10 @@
   "enabled": true,
   "pipeline_phases": [
     "phase_1_ingest_raw",
-    "phase_2_reduce_noise",
-    "phase_3_curate_and_write",
-    "phase_4_index_and_verify"
+    "phase_2_raw_bucketization",
+    "phase_3_reduce_noise",
+    "phase_4_curate_and_write",
+    "phase_5_index_and_verify"
   ],
   "phase_1_ingest_raw": {
     "goal": "Ingesta completa sin pérdida",
@@ -20,7 +21,29 @@
       "triage report generated"
     ]
   },
-  "phase_2_reduce_noise": {
+  "phase_2_raw_bucketization": {
+    "goal": "Separar todo el corpus en buckets raw antes de sintetizar",
+    "buckets": [
+      "professional_sg",
+      "personal_development",
+      "profile_owner",
+      "vision_owner",
+      "biography_history",
+      "strategy_business",
+      "philosophy",
+      "psychology",
+      "neuroscience_health",
+      "persuasion_communication",
+      "habits_execution",
+      "misc_knowledge"
+    ],
+    "must_have": [
+      "bucket manifests generated",
+      "source refs per bucket",
+      "confidence score per item"
+    ]
+  },
+  "phase_3_reduce_noise": {
     "goal": "Reducir señal basura y duplicidad",
     "steps": [
       "dedupe by source_ref/hash",
@@ -32,7 +55,7 @@
       "no blind copy of raw corpus into canonical branches"
     ]
   },
-  "phase_3_curate_and_write": {
+  "phase_4_curate_and_write": {
     "goal": "Redacción de conocimiento útil en rama correcta",
     "routing": {
       "profile_identity": "memory/profile/*",
@@ -46,7 +69,7 @@
       "markdown quality: concise/actionable/non-redundant"
     ]
   },
-  "phase_4_index_and_verify": {
+  "phase_5_index_and_verify": {
     "goal": "Dejarlo operable para uso diario",
     "steps": [
       "memory_index_build",

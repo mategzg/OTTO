@@ -1,0 +1,35 @@
+{
+  "canonical_root": "/home/agente/otto-workspace",
+  "created_at": "2026-02-22T17:06:45.961194+00:00",
+  "operations": [],
+  "plan_id": "PLAN-20260222T170645Z-empty",
+  "routing_decisions": [],
+  "routing_summary": {},
+  "sources": [],
+  "status": "ok",
+  "stop_reasons": [],
+  "thresholds": {
+    "max_bytes": 2000000000,
+    "max_card_chars": 3000,
+    "max_files": 2000,
+    "max_node_chars": 20000,
+    "max_refs": 40
+  },
+  "triage_summary": {
+    "high_signal_sources": 0,
+    "pending_files": 0,
+    "pending_sources": 0,
+    "pending_total_bytes": 0,
+    "suspicious_entries": 0
+  },
+  "triage_summary_total": {
+    "high_signal_sources": 459,
+    "pending_files": 459,
+    "pending_sources": 459,
+    "pending_total_bytes": 87075797,
+    "slice_units": 459,
+    "suggested_units_per_tick": 1,
+    "suspicious_entries": 0
+  },
+  "version": 2
+}

@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-02-22T00:00:00Z",
+  "status": "completed",
+  "scope": "pending_closure_after_upgrade",
+  "odoo": {
+    "auth": "ok",
+    "uid": 2,
+    "smoke_report": "docs/_inbox/odoo_smoke_latest.json",
+    "notes": [
+      "non-destructive smoke using dry_run workflow",
+      "read + quote_draft + order_draft handoff gate validated"
+    ]
+  },
+  "sharepoint": {
+    "detected_root": "/mnt/c/Users/sgaca/SG Acabados",
+    "sync_status": "ok",
+    "processed": 2191,
+    "changed": 2191,
+    "total_seen": 2191,
+    "report": "docs/_inbox/sharepoint_sync_latest.json",
+    "manifest": "state/sharepoint_sync_manifest.json"
+  },
+  "repo_hygiene": {
+    "env_secret_ignored": ".env.odoo.local"
+  }
+}

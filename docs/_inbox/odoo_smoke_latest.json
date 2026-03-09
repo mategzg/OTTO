@@ -1,0 +1,47 @@
+{
+  "auth_ping": {
+    "ok": true,
+    "uid": 2
+  },
+  "read_partner": {
+    "ok": true,
+    "model": "res.partner",
+    "count": 3,
+    "records": [
+      {
+        "id": 10,
+        "name": "AID Ingenieros",
+        "email": false
+      },
+      {
+        "id": 11,
+        "name": "Harol Taco",
+        "email": false
+      },
+      {
+        "id": 8,
+        "name": "Bridget",
+        "email": false
+      }
+    ]
+  },
+  "quote_draft": {
+    "ok": true,
+    "idempotent": false,
+    "dry_run": true,
+    "model": "sale.order",
+    "values": {
+      "partner_id": 1,
+      "order_line": [],
+      "state": "draft",
+      "client_order_ref": "spec004-smoke-draft-001"
+    }
+  },
+  "order_draft_blocked": {
+    "ok": true,
+    "idempotent": false,
+    "handoff_required": true,
+    "status": "blocked_until_human_confirmation",
+    "quote_id": 999999
+  }
+}

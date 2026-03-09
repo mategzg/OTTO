@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-02-23T01:07:26Z",
+  "status": "OK",
+  "checks": {
+    "env_key_present": true,
+    "sdk_installed": true,
+    "inbox_create": true
+  },
+  "notes": [
+    "inbox_created_successfully"
+  ],
+  "created_inbox": "zanybath258@agentmail.to"
+}

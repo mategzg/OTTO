@@ -1,0 +1,41 @@
+{
+  "updated_at": "2026-02-23T00:07:54Z",
+  "intent_routes": [
+    {
+      "intent": "ventas|pipeline|prospecto|outreach",
+      "plugin": "sales"
+    },
+    {
+      "intent": "ticket|soporte|cliente molesto|escalacion",
+      "plugin": "customer-support"
+    },
+    {
+      "intent": "campaña|contenido|seo|marketing",
+      "plugin": "marketing"
+    },
+    {
+      "intent": "cierre contable|asiento|reconciliacion|pnl",
+      "plugin": "finance"
+    },
+    {
+      "intent": "contrato|clausula|riesgo legal|nda",
+      "plugin": "legal"
+    },
+    {
+      "intent": "prd|roadmap|stakeholder|feature",
+      "plugin": "product-management"
+    },
+    {
+      "intent": "tareas|prioridades|briefing|follow-up",
+      "plugin": "productivity"
+    },
+    {
+      "intent": "query|sql|dashboard|analitica",
+      "plugin": "data"
+    },
+    {
+      "intent": "buscar en empresa|enterprise search|documento interno",
+      "plugin": "enterprise-search"
+    }
+  ]
+}

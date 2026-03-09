@@ -1,0 +1,46 @@
+{
+  "updated_at": "2026-02-23T13:25:00-05:00",
+  "policy": {
+    "goal": "adapt third-party plugin connectors to OTTO stack",
+    "prefer_native_stack": true
+  },
+  "native_stack": [
+    "telegram",
+    "whatsapp",
+    "discord",
+    "odoo",
+    "sharepoint",
+    "notion",
+    "github",
+    "google_workspace"
+  ],
+  "connector_aliases": {
+    "slack": "telegram",
+    "hubspot": "odoo",
+    "close": "odoo",
+    "clay": "google_workspace",
+    "zoominfo": "google_workspace",
+    "intercom": "whatsapp",
+    "ms365": "sharepoint",
+    "atlassian": "github",
+    "asana": "notion",
+    "linear": "github",
+    "monday": "notion",
+    "clickup": "notion",
+    "fireflies": "google_workspace",
+    "pendo": "google_workspace",
+    "amplitude": "odoo",
+    "bigquery": "google_workspace",
+    "databricks": "odoo",
+    "snowflake": "odoo",
+    "guru": "notion",
+    "box": "sharepoint",
+    "egnyte": "sharepoint",
+    "canva": "notion",
+    "figma": "notion",
+    "ahrefs": "google_workspace",
+    "similarweb": "google_workspace",
+    "klaviyo": "whatsapp",
+    "hex": "google_workspace"
+  }
+}

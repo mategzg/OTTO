@@ -1,17 +1,1860 @@
 {
-  "version": 1,
-  "updated_at": "",
   "entities": {
-    "status.check": {
-      "name": "status.check",
+    "plugin.Notion": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
       "kind": "recipe",
-      "version": "1.0.0",
+      "name": "plugin.Notion",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
       "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.agent-sdk-dev": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.agent-sdk-dev",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.asana": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.asana",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.atlassian": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.atlassian",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.circleback": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.circleback",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.clangd-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.clangd-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.claude-code-setup": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.claude-code-setup",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.claude-md-management": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.claude-md-management",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.code-review": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.code-review",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.code-simplifier": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.code-simplifier",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.context7": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.context7",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.csharp-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.csharp-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.customer-support": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.customer-support",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.data": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.data",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.enterprise-search": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.enterprise-search",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.explanatory-output-style": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.explanatory-output-style",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.feature-dev": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.feature-dev",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.figma": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.figma",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.finance": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.finance",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.firebase": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.firebase",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.firecrawl": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.firecrawl",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.frontend-design": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.frontend-design",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.github": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.github",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.gitlab": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.gitlab",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.gopls-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.gopls-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.greptile": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.greptile",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.hookify": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.hookify",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.huggingface-skills": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.huggingface-skills",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.jdtls-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.jdtls-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.kotlin-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.kotlin-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.laravel-boost": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.laravel-boost",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.learning-output-style": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.learning-output-style",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.legal": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.legal",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.linear": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.linear",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.lua-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.lua-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.marketing": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.marketing",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.php-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.php-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.pinecone": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.pinecone",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.playground": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.playground",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.playwright": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.playwright",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.plugin-dev": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.plugin-dev",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.posthog": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.posthog",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.pr-review-toolkit": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.pr-review-toolkit",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.product-management": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.product-management",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.productivity": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.productivity",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.pyright-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.pyright-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.qodo-skills": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.qodo-skills",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.ralph-loop": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.ralph-loop",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.rust-analyzer-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.rust-analyzer-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.sales": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.sales",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.security-guidance": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.security-guidance",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.semgrep": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.semgrep",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.sentry": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.sentry",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.serena": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.serena",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.skill-creator": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.skill-creator",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.slack": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.slack",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.sonatype-guide": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.sonatype-guide",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.stripe": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.stripe",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.superpowers": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.superpowers",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.typescript-lsp": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.typescript-lsp",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "plugin.vercel": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "channel",
+          "context"
+        ],
+        "required": [
+          "text"
+        ]
+      },
+      "kind": "recipe",
+      "name": "plugin.vercel",
+      "permissions": [
+        "plugin.route"
+      ],
+      "risk_level": "medium",
+      "side_effects": [
+        "plugin_dispatch_plan"
+      ],
+      "source": "plugin_runtime_registry",
+      "status": "enabled",
+      "version": "1.0.0"
+    },
+    "status.check": {
+      "compatibility": {
+        "channels": [
+          "telegram",
+          "discord",
+          "whatsapp"
+        ]
+      },
+      "input_schema": {
+        "optional": [
+          "scope"
+        ],
+        "required": []
+      },
+      "kind": "recipe",
+      "name": "status.check",
+      "permissions": [
+        "status.read"
+      ],
       "risk_level": "low",
-      "permissions": ["status.read"],
       "side_effects": [],
-      "input_schema": {"required": [], "optional": ["scope"]},
-      "compatibility": {"channels": ["telegram", "discord", "whatsapp"]}
+      "status": "enabled",
+      "version": "1.0.0"
     }
-  }
+  },
+  "updated_at": "",
+  "version": 1
 }

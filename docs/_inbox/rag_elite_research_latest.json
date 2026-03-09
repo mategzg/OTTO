@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "RAG Elite Research for OTTO - v2 (Brave + Fetch)",
+    "generated_at": "2026-02-22T14:40:00-05:00",
+    "language": "es",
+    "method": {
+      "discovery": "web_search (Brave)",
+      "validation": "web_fetch",
+      "notes": "Se priorizaron fuentes primarias (MS/OpenAI/Anthropic/OWASP/ACL) y se usaron surveys arXiv como soporte"
+    }
+  },
+  "executive_summary": [
+    "Adoptar RAG híbrido (dense+sparse+rerank) como default de producción",
+    "Imponer filtros duros por channel/thread/audience/visibility antes de rerank y generación",
+    "Aplicar contrato claim->citation con política de abstención cuando evidencia insuficiente",
+    "Operar con evaluación continua (offline+online) como gate de deploy",
+    "Tratar contenido recuperado como no confiable para mitigar prompt injection indirecta",
+    "Desplegar por shadow+canary con rollback automático"
+  ],
+  "recommended_decisions_for_otto": {
+    "default_stack": "hybrid retrieval + cross-encoder rerank + metadata hard filters",
+    "response_contract": [
+      "ningún claim factual sin cita",
+      "si no hay evidencia suficiente: abstenerse + pedir dato",
+      "trazar fuente y spans para auditoría"
+    ],
+    "security_posture": [
+      "separación instrucciones/datos",
+      "retrieved content marked as untrusted",
+      "least privilege tool access",
+      "adversarial testing recurrente"
+    ],
+    "release_governance": [
+      "eval gate obligatorio",
+      "canary por fases",
+      "rollback por SLO/safety degradation"
+    ]
+  },
+  "coverage": {
+    "architecture": {
+      "recommendation": "pipeline en capas: ingest -> hybrid index -> retrieval policy-aware -> grounded generation -> observability",
+      "key_points": [
+        "metadata enrichment y versionado de documentos",
+        "hybrid search con fusión y rerank",
+        "salida estructurada con citas"
+      ]
+    },
+    "advanced_retrieval": {
+      "strategies": [
+        {
+          "name": "dense-only",
+          "pros": ["buena semántica"],
+          "cons": ["falla con términos exactos/IDs"],
+          "use_when": "Q&A conceptual simple"
+        },
+        {
+          "name": "sparse-only",
+          "pros": ["exact match fuerte"],
+          "cons": ["débil en sinonimia"],
+          "use_when": "queries tipo comando/ID"
+        },
+        {
+          "name": "hybrid + RRF",
+          "pros": ["mejor recall general"],
+          "cons": ["requiere tuning"],
+          "use_when": "default producción"
+        },
+        {
+          "name": "hybrid + rerank",
+          "pros": ["mejor precisión final"],
+          "cons": ["latencia/costo extra"],
+          "use_when": "respuestas críticas"
+        },
+        {
+          "name": "multi-query",
+          "pros": ["mejora cobertura"],
+          "cons": ["ruido y token spend"],
+          "use_when": "consultas ambiguas/multi-intent"
+        }
+      ]
+    },
+    "chunking_context_packing": {
+      "policy": {
+        "default_chunk_tokens": [350, 900],
+        "overlap_ratio": "0.1-0.2",
+        "policy_docs_chunk_tokens": [200, 500],
+        "packing": ["relevancia", "diversidad/MMR", "recency", "dedupe"]
+      },
+      "rationale": [
+        "chunking es el principal determinante de calidad de retrieval",
+        "long context sufre 'lost in the middle'",
+        "contextual retrieval mejora recuperación en chunks ambiguos"
+      ]
+    },
+    "evals_observability": {
+      "offline": {
+        "dataset": ["factual", "abstention", "policy", "adversarial", "long-context"],
+        "metrics": ["Recall@k", "MRR", "nDCG", "groundedness", "citation correctness", "p95 latency", "cost/query"]
+      },
+      "online": {
+        "sampling": "5-20%",
+        "signals": ["unsupported-claim rate", "abstention rate", "user correction rate", "drift"]
+      },
+      "ops_loop": "fallos de prod -> dataset de eval -> tuning -> deploy"
+    },
+    "security_isolation": {
+      "threats": ["direct injection", "indirect injection", "RAG poisoning"],
+      "controls": [
+        "content untrusted segregation",
+        "input/output filtering",
+        "strict privilege boundaries",
+        "human approval for high-risk actions",
+        "tenant/channel/thread isolation"
+      ]
+    },
+    "cost_latency": {
+      "tradeoffs": [
+        "hybrid+rerank aumenta costo/latencia pero mejora groundedness",
+        "multi-query mejora recall pero requiere activación condicional",
+        "chunks muy pequeños mejoran cita pero fragmentan contexto"
+      ],
+      "mitigations": ["rerank condicional", "dynamic top-k", "caching por capas", "retrieval jerárquico"]
+    },
+    "rollout_canary_day2": {
+      "rollout": ["shadow", "canary 5->25->50->100", "rollback automático"],
+      "day2": {
+        "daily": ["p95 latency", "cost/query", "groundedness", "security incidents"],
+        "weekly": ["retuning thresholds", "refresh eval set from failures"],
+        "monthly": ["rollback drill", "embedding/reranker benchmark"]
+      }
+    }
+  },
+  "implementation_plan": {
+    "quick_wins_1_2_weeks": [
+      "hybrid retrieval + rerank en ruta principal",
+      "metadata schema obligatorio y validación",
+      "claim->citation + abstention template",
+      "eval set inicial (100-300) + gate básico",
+      "dashboard mínimo de calidad/costo/latencia"
+    ],
+    "medium_1_2_months": [
+      "multi-query adaptativo",
+      "hierarchical retrieval",
+      "cache por capas",
+      "canary formal + rollback",
+      "suite de pruebas adversariales recurrente"
+    ],
+    "long_term": [
+      "policy engine declarativo",
+      "auto-tuning retrieval params",
+      "graph augmentation para entidades críticas",
+      "active learning loop"
+    ]
+  },
+  "optional_brain_institutionalization": {
+    "proposed_files": [
+      "brain/domains/openclaw_ops/16_RAG_ELITE_ARCHITECTURE.md",
+      "brain/domains/openclaw_ops/17_RAG_EVAL_OBSERVABILITY.md",
+      "brain/domains/openclaw_ops/18_RAG_SECURITY_ISOLATION.md",
+      "brain/cards/openclaw_ops/card_rag_rollout_day2.md"
+    ]
+  },
+  "references_by_section": {
+    "architecture_retrieval": [
+      "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview",
+      "https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview",
+      "https://developers.openai.com/api/docs/guides/retrieval"
+    ],
+    "chunking_context": [
+      "https://weaviate.io/blog/chunking-strategies-for-rag",
+      "https://aclanthology.org/2024.tacl-1.9/",
+      "https://www.anthropic.com/engineering/contextual-retrieval"
+    ],
+    "eval_observability": [
+      "https://developers.openai.com/api/docs/guides/evals",
+      "https://docs.langchain.com/langsmith/evaluation",
+      "https://docs.haystack.deepset.ai/docs/evaluation"
+    ],
+    "security_isolation": [
+      "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html"
+    ],
+    "rollout": [
+      "https://cloud.google.com/deploy/docs/deployment-strategies/canary"
+    ],
+    "surveys_support": [
+      "https://arxiv.org/abs/2410.12837",
+      "https://arxiv.org/abs/2506.00054",
+      "https://arxiv.org/abs/2504.14891"
+    ]
+  }
+}
