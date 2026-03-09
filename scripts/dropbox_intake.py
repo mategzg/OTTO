@@ -164,7 +164,7 @@ def _scan_entry(root: Path, pending_root: Path, entry: Path) -> Dict[str, Any]:
 
     ext_counts: Dict[str, int] = {}
     total_bytes = 0
-    parts: List[str] = [entry.name]
+    parts: List[str] = []
     sample_files: List[str] = []
 
     for fp in files:
@@ -183,11 +183,11 @@ def _scan_entry(root: Path, pending_root: Path, entry: Path) -> Dict[str, Any]:
 
     if entry.is_file():
         fingerprint = hashlib.sha256(
-            f"file|{entry.name}|{entry.stat().st_size}|{_sha256_file(entry)}".encode("utf-8")
+            f"file|{entry.stat().st_size}|{_sha256_file(entry)}".encode("utf-8")
         ).hexdigest()
     else:
         payload = "\n".join(sorted(parts))
-        fingerprint = hashlib.sha256(f"dir|{entry.name}|{payload}".encode("utf-8")).hexdigest()
+        fingerprint = hashlib.sha256(f"dir|{payload}".encode("utf-8")).hexdigest()
 
     source_id = hashlib.sha1(fingerprint.encode("utf-8")).hexdigest()[:10]
     suspected_kind = _guess_kind(entry, sample_files)

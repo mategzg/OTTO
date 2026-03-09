@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:29:23Z", "cmd": "pytest -q tests/test_spec004_m3_ingest.py tests/test_chat_to_inbox_drop.py tests/test_dropbox_intake.py", "output": "audit/M3/pytest_m3.txt"}
+{"ts": "2026-02-22T03:29:23Z", "cmd": "python3 -m scripts.pending_ingest_trigger --root . --max-entries 3", "output": "audit/M3/trigger_run.json"}

@@ -71,6 +71,19 @@ def _text_filename(text: str) -> str:
     return "message.txt"
 
 
+def _classify_attachment(name: str) -> str:
+    n = str(name or "").lower()
+    if n.endswith((".zip", ".tgz", ".tar.gz")):
+        return "archive"
+    if n.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif")):
+        return "image"
+    if n.endswith((".mp3", ".wav", ".m4a", ".ogg")):
+        return "audio"
+    if n.endswith((".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".txt", ".md", ".json", ".csv")):
+        return "document"
+    return "file"
+
+
 def _copy_attachment(root: Path, source_dir: Path, item: Dict[str, Any]) -> Dict[str, Any]:
     src_path_raw = str(item.get("path", "")).strip()
     if src_path_raw:
@@ -90,14 +103,18 @@ def _copy_attachment(root: Path, source_dir: Path, item: Dict[str, Any]) -> Dict
                 "source_path": src.as_posix(),
                 "target_path": target.as_posix(),
                 "size": stat.st_size,
+                "sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
+                "attachment_type": _classify_attachment(target.name),
             }
 
     # Keep external or invalid refs as metadata only.
+    name = str(item.get("name", "")).strip()
     return {
         "kind": "external_ref",
-        "name": str(item.get("name", "")).strip(),
+        "name": name,
         "url": str(item.get("url", "")).strip(),
         "path": src_path_raw,
+        "attachment_type": _classify_attachment(name),
     }
 
 

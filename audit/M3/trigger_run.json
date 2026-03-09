@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "json": "docs/_inbox/pending_ingest_trigger_latest.json"
+  },
+  "report": {
+    "artifacts": {
+      "dropbox_intake_report": "docs/_inbox/dropbox_intake_report_latest.json",
+      "state": "state/intake_state.json"
+    },
+    "backpressure": {
+      "active": false,
+      "remaining": 0
+    },
+    "created_at": "2026-02-22T03:29:23.894120+00:00",
+    "ingested_count": 0,
+    "max_entries": 3,
+    "pending_after": 0,
+    "status": "success",
+    "trigger_to_done_ms": 6,
+    "version": 1
+  }
+}

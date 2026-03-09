@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "requirements": {
+    "attachment_classification": true,
+    "idempotent_hash_ingest": true,
+    "backpressure": true,
+    "trigger_to_done_latency": true,
+    "qa_post_ingest": true
+  },
+  "artifacts": [
+    "audit/M3/pytest_m3.txt",
+    "audit/M3/trigger_run.json",
+    "docs/_inbox/pending_ingest_trigger_latest.json"
+  ],
+  "generated_at": "2026-02-22T03:29:23Z"
+}
