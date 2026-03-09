@@ -1,0 +1,12 @@
+{
+  "status": "awaiting_approval",
+  "lead_id": "M5DEMO",
+  "quote_id": "Q-M5DEMO",
+  "order_draft_id": "OD-M5DEMO",
+  "handoff": {
+    "state": "AwaitApproval",
+    "resume_token": "lobster:M5DEMO:3a039b8975bb1cc2ba5e59f8"
+  },
+  "idempotency_key": "3a039b8975bb1cc2ba5e59f8",
+  "blocked_without_approval": true
+}

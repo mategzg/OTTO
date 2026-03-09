@@ -1,0 +1,11 @@
+{
+  "handoff": {
+    "resume_token": "lobster:M5DEMO:3a039b8975bb1cc2ba5e59f8",
+    "state": "AwaitApproval"
+  },
+  "idempotency_key": "3a039b8975bb1cc2ba5e59f8",
+  "lead_id": "M5DEMO",
+  "order_draft_id": "OD-M5DEMO",
+  "quote_id": "Q-M5DEMO",
+  "status": "dry_run"
+}

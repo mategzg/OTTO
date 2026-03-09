@@ -1,0 +1,2 @@
+{"ts": "2026-02-22T03:37:42Z", "cmd": "pytest -q tests/test_spec004_m5_odoo_workflow.py tests/test_circuit_breaker.py", "output": "audit/M5/pytest_m5.txt"}
+{"ts": "2026-02-22T03:37:42Z", "cmd": "python3 -m scripts.odoo_workflow --root . --lead-id M5DEMO --dry-run", "output": "audit/M5/dry_run.json"}
